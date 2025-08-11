@@ -1,10 +1,10 @@
 # efmi-pss-use-case
 Models and resources for the application of eFMI to the use case of a power system stabilizer (i.e., damping control system).
 
-## Quickstart
+## QuickStart
 ### A. Setup the environment and load the project files
-1. Lauch Dymola and connect to the 3DEXPERIENCE platform: ``Dymola > Tools > 3DEXPERIENCE > Connection``
-    - If successfull, your user name and information will be displayed in a new pop-up, similar to the one shown below: 
+1. Launch Dymola and connect to the 3DEXPERIENCE platform: ``Dymola > Tools > 3DEXPERIENCE > Connection``
+    - If successful, your user name and information will be displayed in a new pop-up, similar to the one shown below: 
     <img src="./docs/images/3dexconinf.png" width=300>
 2. Load the OpenIPSL library from the linked dependency as described below.
 3. Load the `PSSDesign` package, described below.
@@ -19,12 +19,11 @@ Models and resources for the application of eFMI to the use case of a power syst
 - The generated files will be in the working directory. Within this repository, the files have been copied to ``./Modelica/eFMUs``
 
 
-
 ## Packages and Dependencies
 ### A. Linked Dependencies
-- The latest version of OpenIPSL is already linked via sub-modules and can be fournd under ``./dependencies/OpenIPSL``
+- The latest version of OpenIPSL is already linked via sub-modules and can be found under ``./dependencies/OpenIPSL``
 ### B. Packages Required
-Under ``./Modelica/`` the two required pacakages can be found:
+Under ``./Modelica/`` the two required packages can be found:
 - `PSSDesign` contains the power system models with different plant architectures that are extended to create the new model to test the `eBlock` with the generated `eFMU`.
 - `efmiPSSusecase` contains the package with the modified PSS model to generate the `eBlock` and the `eBlock` inheriting from `DymolaEmbedded.EmbeddedConfiguration`.
 
@@ -40,7 +39,9 @@ The following should be available and adequately configurated
 - Java 17 has been installed, the version used herein is [jdk-17.0.12_windows-x64_bin](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
   - The following environment variables need to be configured and point to the Java installation root directory: ``DYMOLA_JAVA_HOME`` and ``JAVA_HOME``
   - The ``PATH`` environment variable needs to also point to the `./bin` directory within the Java installation folder.
-  - Verify that the ``DYMOLA_JAVA_HOME`` variable has been set up propertly by going to: ``Dymola > Tools> Options> General``, under "Java runtima" the folder pointing to the Java installation directory should be listed.
+  - Verify that the ``DYMOLA_JAVA_HOME`` variable has been set up propertly by going to: ``Dymola > Tools> Options> General``, under "Java runtime" the folder pointing to the Java installation directory should be listed.
 
-### Issues
+### Build Issues
+When attempting to build the eFMU, several issues were faced.
 - Although Java appears to be properly installed and configured, the following error might appear when attempting to build the eFMU: see [here](./docs/excerpts/dymjavaerror01.md)
+- While this is pointed as a Java error, testing in a different computer shows the following error: see [here](./docs/excerpts/dymbuilderror02.md).

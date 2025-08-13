@@ -1,0 +1,28 @@
+﻿// Script to load dependencies
+// Resolve HOME on Windows or Linux/macOS
+home := if Modelica.Utilities.System.getEnvironmentVariable("USERPROFILE") <> "" then
+          Modelica.Utilities.System.getEnvironmentVariable("USERPROFILE")
+        else
+          Modelica.Utilities.System.getEnvironmentVariable("HOME");
+
+// Specifying the location of the repositories, assumes the "./Documents" folder is used
+// Alternatively, a second location can be specified, e.g., "./OneDrive/Documents"
+// Fallback is the user "HOME" directory
+// Prefer Documents (or OneDrive/Documents); fall back to home
+docs1 := home + "/Documents";
+docs2 := home + "/OneDrive/Documents";
+if Modelica.Utilities.Files.exist(docs1) then
+  docs := docs1;
+elseif Modelica.Utilities.Files.exist(docs2) then
+  docs := docs2;
+else
+  docs := home;
+end if;
+
+// Use forward slashes (fine on Windows)
+// Specify the relative path with dependencies
+// "C:\Users\vanfr\Documents\
+openModel(docs + "/Github/efmi-pss-use-case/dependencies/openipsl/OpenIPSL/package.mo");
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/PSSDesign/package.mo");
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/efmiPSSusecase/package.mo");
+cd(       docs + "/Dymola");

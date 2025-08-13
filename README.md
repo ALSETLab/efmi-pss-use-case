@@ -47,7 +47,7 @@ The following should be available and adequately configurated
   - The following environment variables need have been configured and point to the Java installation root directory: ``DYMOLA_JAVA_HOME`` and ``JAVA_HOME``
   - Verify that the ``DYMOLA_JAVA_HOME`` variable has been set up propertly by going to: ``Dymola > Tools> Options> General``, under "Java runtime" the folder pointing to the Java installation directory should be listed.
   - The ``PATH`` environment variable needs to also point to the `./bin` directory within the Java installation folder:
-    <img src="./docs/images/javaenvvars.png" width=400>
+  <img src="./docs/images/javaenvvars.png" width=400>
 
 ### Build Issues
 When attempting to build the eFMU, several issues were faced.

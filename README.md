@@ -35,11 +35,19 @@ The following should be available and adequately configurated
 - Ensure that that the 3DExperience account has been linked:
     - To verify call the function ``DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account``
     - If not linked, call the function: ``DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account``
+    - The platform URL used for testing is: ``https://r1132102445656-eu1-ifwe.3dexperience.3ds.com/``
 
-- Java 17 has been installed, the version used herein is [jdk-17.0.12_windows-x64_bin](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)
-  - The following environment variables need to be configured and point to the Java installation root directory: ``DYMOLA_JAVA_HOME`` and ``JAVA_HOME``
-  - The ``PATH`` environment variable needs to also point to the `./bin` directory within the Java installation folder.
+- Ensure that Java has been installed:
+  - To install Java the OpenJDK JDK 24.0.2 was used:
+    - Link to download: [https://jdk.java.net/24/](https://jdk.java.net/24/)
+    - The contents of the .zip file, e.g., ``openjdk-24.0.2_windows-x64_bin.zip``, are uncompressed and pasted into the following Java installation directory:
+    ``` C:\Program Files\Java\ ```
+    - Verify that the path is now as follows:
+    ```C:\Program Files\Java\jdk-24.0.2```
+  - The following environment variables need have been configured and point to the Java installation root directory: ``DYMOLA_JAVA_HOME`` and ``JAVA_HOME``
   - Verify that the ``DYMOLA_JAVA_HOME`` variable has been set up propertly by going to: ``Dymola > Tools> Options> General``, under "Java runtime" the folder pointing to the Java installation directory should be listed.
+  - The ``PATH`` environment variable needs to also point to the `./bin` directory within the Java installation folder:
+    <img src="./docs/images/javaenvvars.png" width=400>
 
 ### Build Issues
 When attempting to build the eFMU, several issues were faced.

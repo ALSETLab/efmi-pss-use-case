@@ -53,3 +53,6 @@ The following should be available and adequately configurated
 When attempting to build the eFMU, several issues were faced.
 - Although Java appears to be properly installed and configured, the following error might appear when attempting to build the eFMU: see [here](./docs/excerpts/dymjavaerror01.md)
 - While this is pointed as a Java error, testing in a different computer shows the following error: see [here](./docs/excerpts/dymbuilderror02.md).
+
+### Resources
+- 3DExperience SPE documentation: [here](https://help.3ds.com/2025x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433)

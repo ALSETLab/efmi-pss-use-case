@@ -1,5 +1,5 @@
-within PSSDesign;
-model Example_2_EM
+within PSSDesign.Examples;
+model Example_3_AVRIO
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation(
     Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -7,7 +7,7 @@ model Example_2_EM
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B3 annotation(
     Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Generator.GeneratorEM G1(P_0 = 1997999999.99364, Q_0 = 967924969.9065781, angle_0 = 0.4946771769891539) annotation(
+  Generator.GeneratorAVRIO G1(P_0 = 1997999999.99364, Q_0 = 967924969.9065781, angle_0 = 0.4946771769891539) annotation(
     Placement(visible = true, transformation(origin = {-80, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   inner OpenIPSL.Electrical.SystemBase SysData(fn = 60) annotation(
     Placement(visible = true, transformation(origin = {-50, -50}, extent = {{-30, -10}, {30, 10}}, rotation = 0)));
@@ -21,6 +21,10 @@ model Example_2_EM
     Placement(visible = true, transformation(origin = {80, 0}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
   OpenIPSL.Electrical.Events.PwFault pwFault(R = 0, X = 0.01*100/2220, t1 = 0.5, t2 = 0.57) annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, -60}, {40, -40}}, rotation = 0)));
+  Modelica.Blocks.Interfaces.RealInput u annotation(
+    Placement(transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-106, -2}, extent = {{-20, -20}, {20, 20}})));
+  Modelica.Blocks.Interfaces.RealOutput w annotation(
+    Placement(transformation(origin = {110, 0}, extent = {{-10, -10}, {10, 10}}), iconTransformation(origin = {108, -2}, extent = {{-10, -10}, {10, 10}})));
 equation
   connect(G1.pwPin, B1.p) annotation(
     Line(points = {{-69, 0}, {-60, 0}}, color = {0, 0, 255}));
@@ -40,6 +44,10 @@ equation
     Line(points = {{39, -20}, {50, -20}, {50, 0}, {60, 0}}, color = {0, 0, 255}));
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
+  connect(G1.u, u) annotation(
+    Line(points={{-92,0},{-120,0}},      color = {0, 0, 127}));
+  connect(G1.w, w) annotation(
+    Line(points = {{-68, 6}, {-64, 6}, {-64, 40}, {94, 40}, {94, 0}, {110, 0}}, color = {0, 0, 127}));
   annotation(
-    experiment(StopTime = 10, Interval = 0.0001, Tolerance = 1e-06, StartTime = 0));
-end Example_2_EM;
+    experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 0.0001));
+end Example_3_AVRIO;

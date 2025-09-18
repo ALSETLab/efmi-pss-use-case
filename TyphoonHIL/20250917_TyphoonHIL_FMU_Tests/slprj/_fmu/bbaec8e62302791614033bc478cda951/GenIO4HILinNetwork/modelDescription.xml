@@ -1,0 +1,2960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  fmiVersion="2.0"
+  modelName="PSSDesign.FMUs4RTHIL.GenIO4HILinNetwork"
+  guid="{6cd37720-5980-4da2-a322-84951152fed5}"
+  description="Model with generator inside of pwoer network"
+  version=""
+  generationTool="OpenModelica Compiler OpenModelica v1.25.0 (64-bit)"
+  generationDateAndTime="2025-09-17T14:16:24Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="9">
+  <ModelExchange
+    modelIdentifier="GenIO4HILinNetwork"
+    needsExecutionTool="false"
+    completedIntegratorStepNotNeeded="false"
+    canBeInstantiatedOnlyOncePerProcess="false"
+    canNotUseMemoryManagementFunctions="false"
+    canGetAndSetFMUstate="false"
+    canSerializeFMUstate="false"
+    providesDirectionalDerivative="false">
+    <SourceFiles>
+      <File name="GenIO4HILinNetwork.c" />
+      <File name="GenIO4HILinNetwork_functions.c" />
+      <File name="GenIO4HILinNetwork_records.c" />
+      <File name="GenIO4HILinNetwork_01exo.c" />
+      <File name="GenIO4HILinNetwork_02nls.c" />
+      <File name="GenIO4HILinNetwork_03lsy.c" />
+      <File name="GenIO4HILinNetwork_04set.c" />
+      <File name="GenIO4HILinNetwork_05evt.c" />
+      <File name="GenIO4HILinNetwork_06inz.c" />
+      <File name="GenIO4HILinNetwork_07dly.c" />
+      <File name="GenIO4HILinNetwork_08bnd.c" />
+      <File name="GenIO4HILinNetwork_09alg.c" />
+      <File name="GenIO4HILinNetwork_10asr.c" />
+      <File name="GenIO4HILinNetwork_11mix.c" />
+      <File name="GenIO4HILinNetwork_12jac.c" />
+      <File name="GenIO4HILinNetwork_13opt.c" />
+      <File name="GenIO4HILinNetwork_14lnz.c" />
+      <File name="GenIO4HILinNetwork_15syn.c" />
+      <File name="GenIO4HILinNetwork_16dae.c" />
+      <File name="GenIO4HILinNetwork_17inl.c" />
+      <File name="GenIO4HILinNetwork_18spd.c" />
+      <File name="GenIO4HILinNetwork_init_fmu.c" />
+      <File name="GenIO4HILinNetwork_FMU.c" />
+      <File name="./gc/memory_pool.c" />
+      <File name="./gc/omc_gc.c" />
+      <File name="./util/base_array.c" />
+      <File name="./util/boolean_array.c" />
+      <File name="./util/context.c" />
+      <File name="./util/division.c" />
+      <File name="./util/doubleEndedList.c" />
+      <File name="./util/generic_array.c" />
+      <File name="./util/index_spec.c" />
+      <File name="./util/integer_array.c" />
+      <File name="./util/list.c" />
+      <File name="./util/modelica_string_lit.c" />
+      <File name="./util/modelica_string.c" />
+      <File name="./util/ModelicaUtilities.c" />
+      <File name="./util/omc_error.c" />
+      <File name="./util/omc_file.c" />
+      <File name="./util/omc_init.c" />
+      <File name="./util/omc_mmap.c" />
+      <File name="./util/omc_msvc.c" />
+      <File name="./util/omc_numbers.c" />
+      <File name="./util/parallel_helper.c" />
+      <File name="./util/rational.c" />
+      <File name="./util/real_array.c" />
+      <File name="./util/ringbuffer.c" />
+      <File name="./util/simulation_options.c" />
+      <File name="./util/string_array.c" />
+      <File name="./util/utility.c" />
+      <File name="./util/varinfo.c" />
+      <File name="./math-support/pivot.c" />
+      <File name="./simulation/jacobian_util.c" />
+      <File name="./simulation/omc_simulation_util.c" />
+      <File name="./simulation/options.c" />
+      <File name="./simulation/simulation_info_json.c" />
+      <File name="./simulation/simulation_omc_assert.c" />
+      <File name="./simulation/solver/delay.c" />
+      <File name="./simulation/solver/fmi_events.c" />
+      <File name="./simulation/solver/model_help.c" />
+      <File name="./simulation/solver/omc_math.c" />
+      <File name="./simulation/solver/spatialDistribution.c" />
+      <File name="./simulation/solver/stateset.c" />
+      <File name="./simulation/solver/synchronous.c" />
+      <File name="./simulation/solver/initialization/initialization.c" />
+      <File name="./meta/meta_modelica_catch.c" />
+      <File name="./simulation/solver/linearSystem.c" />
+      <File name="./simulation/solver/linearSolverLapack.c" />
+      <File name="./simulation/solver/linearSolverTotalPivot.c" />
+      <File name="./external_solvers/dgesv.c" />
+      <File name="./external_solvers/dgetrf.c" />
+      <File name="./external_solvers/dlamch.c" />
+      <File name="./external_solvers/ilaenv.c" />
+      <File name="./external_solvers/xerbla.c" />
+      <File name="./external_solvers/dgetf2.c" />
+      <File name="./external_solvers/dgetrs.c" />
+      <File name="./external_solvers/dlaswp.c" />
+      <File name="./external_solvers/ieeeck.c" />
+      <File name="./external_solvers/iparmq.c" />
+      <File name="./external_solvers/dgemm.c" />
+      <File name="./external_solvers/dger.c" />
+      <File name="./external_solvers/dscal.c" />
+      <File name="./external_solvers/dswap.c" />
+      <File name="./external_solvers/dtrsm.c" />
+      <File name="./external_solvers/idamax.c" />
+      <File name="./external_solvers/lsame.c" />
+      <File name="./external_solvers/i_nint.c" />
+      <File name="./external_solvers/pow_di.c" />
+      <File name="./external_solvers/s_cmp.c" />
+      <File name="./external_solvers/s_copy.c" />
+    </SourceFiles>
+  </ModelExchange>
+  <CoSimulation
+    modelIdentifier="GenIO4HILinNetwork"
+    needsExecutionTool="false"
+    canHandleVariableCommunicationStepSize="true"
+    canInterpolateInputs="true"
+    maxOutputDerivativeOrder="1"
+    canRunAsynchronuously = "false"
+    canBeInstantiatedOnlyOncePerProcess="false"
+    canNotUseMemoryManagementFunctions="false"
+    canGetAndSetFMUstate="false"
+    canSerializeFMUstate="false"
+    providesDirectionalDerivative="false">
+    <SourceFiles>
+      <File name="GenIO4HILinNetwork.c" />
+      <File name="GenIO4HILinNetwork_functions.c" />
+      <File name="GenIO4HILinNetwork_records.c" />
+      <File name="GenIO4HILinNetwork_01exo.c" />
+      <File name="GenIO4HILinNetwork_02nls.c" />
+      <File name="GenIO4HILinNetwork_03lsy.c" />
+      <File name="GenIO4HILinNetwork_04set.c" />
+      <File name="GenIO4HILinNetwork_05evt.c" />
+      <File name="GenIO4HILinNetwork_06inz.c" />
+      <File name="GenIO4HILinNetwork_07dly.c" />
+      <File name="GenIO4HILinNetwork_08bnd.c" />
+      <File name="GenIO4HILinNetwork_09alg.c" />
+      <File name="GenIO4HILinNetwork_10asr.c" />
+      <File name="GenIO4HILinNetwork_11mix.c" />
+      <File name="GenIO4HILinNetwork_12jac.c" />
+      <File name="GenIO4HILinNetwork_13opt.c" />
+      <File name="GenIO4HILinNetwork_14lnz.c" />
+      <File name="GenIO4HILinNetwork_15syn.c" />
+      <File name="GenIO4HILinNetwork_16dae.c" />
+      <File name="GenIO4HILinNetwork_17inl.c" />
+      <File name="GenIO4HILinNetwork_18spd.c" />
+      <File name="GenIO4HILinNetwork_init_fmu.c" />
+      <File name="GenIO4HILinNetwork_FMU.c" />
+      <File name="./gc/memory_pool.c" />
+      <File name="./gc/omc_gc.c" />
+      <File name="./util/base_array.c" />
+      <File name="./util/boolean_array.c" />
+      <File name="./util/context.c" />
+      <File name="./util/division.c" />
+      <File name="./util/doubleEndedList.c" />
+      <File name="./util/generic_array.c" />
+      <File name="./util/index_spec.c" />
+      <File name="./util/integer_array.c" />
+      <File name="./util/list.c" />
+      <File name="./util/modelica_string_lit.c" />
+      <File name="./util/modelica_string.c" />
+      <File name="./util/ModelicaUtilities.c" />
+      <File name="./util/omc_error.c" />
+      <File name="./util/omc_file.c" />
+      <File name="./util/omc_init.c" />
+      <File name="./util/omc_mmap.c" />
+      <File name="./util/omc_msvc.c" />
+      <File name="./util/omc_numbers.c" />
+      <File name="./util/parallel_helper.c" />
+      <File name="./util/rational.c" />
+      <File name="./util/real_array.c" />
+      <File name="./util/ringbuffer.c" />
+      <File name="./util/simulation_options.c" />
+      <File name="./util/string_array.c" />
+      <File name="./util/utility.c" />
+      <File name="./util/varinfo.c" />
+      <File name="./math-support/pivot.c" />
+      <File name="./simulation/jacobian_util.c" />
+      <File name="./simulation/omc_simulation_util.c" />
+      <File name="./simulation/options.c" />
+      <File name="./simulation/simulation_info_json.c" />
+      <File name="./simulation/simulation_omc_assert.c" />
+      <File name="./simulation/solver/delay.c" />
+      <File name="./simulation/solver/fmi_events.c" />
+      <File name="./simulation/solver/model_help.c" />
+      <File name="./simulation/solver/omc_math.c" />
+      <File name="./simulation/solver/spatialDistribution.c" />
+      <File name="./simulation/solver/stateset.c" />
+      <File name="./simulation/solver/synchronous.c" />
+      <File name="./simulation/solver/initialization/initialization.c" />
+      <File name="./meta/meta_modelica_catch.c" />
+      <File name="./simulation/solver/linearSystem.c" />
+      <File name="./simulation/solver/linearSolverLapack.c" />
+      <File name="./simulation/solver/linearSolverTotalPivot.c" />
+      <File name="./external_solvers/dgesv.c" />
+      <File name="./external_solvers/dgetrf.c" />
+      <File name="./external_solvers/dlamch.c" />
+      <File name="./external_solvers/ilaenv.c" />
+      <File name="./external_solvers/xerbla.c" />
+      <File name="./external_solvers/dgetf2.c" />
+      <File name="./external_solvers/dgetrs.c" />
+      <File name="./external_solvers/dlaswp.c" />
+      <File name="./external_solvers/ieeeck.c" />
+      <File name="./external_solvers/iparmq.c" />
+      <File name="./external_solvers/dgemm.c" />
+      <File name="./external_solvers/dger.c" />
+      <File name="./external_solvers/dscal.c" />
+      <File name="./external_solvers/dswap.c" />
+      <File name="./external_solvers/dtrsm.c" />
+      <File name="./external_solvers/idamax.c" />
+      <File name="./external_solvers/lsame.c" />
+      <File name="./external_solvers/i_nint.c" />
+      <File name="./external_solvers/pow_di.c" />
+      <File name="./external_solvers/s_cmp.c" />
+      <File name="./external_solvers/s_copy.c" />
+    </SourceFiles>
+  </CoSimulation>
+  <UnitDefinitions>
+    <Unit name="s">
+      <BaseUnit s="1" />
+    </Unit>
+    <Unit name="V">
+      <BaseUnit m="2" s="-3" A="-1" kg="1" />
+    </Unit>
+    <Unit name="V.A">
+      <BaseUnit m="2" s="-3" kg="1" />
+    </Unit>
+    <Unit name="var">
+    </Unit>
+    <Unit name="W">
+      <BaseUnit m="2" s="-3" kg="1" />
+    </Unit>
+    <Unit name="deg">
+    </Unit>
+    <Unit name="Hz">
+      <BaseUnit s="-1" />
+    </Unit>
+    <Unit name="1">
+      <BaseUnit />
+    </Unit>
+    <Unit name="rad">
+      <BaseUnit />
+    </Unit>
+  </UnitDefinitions>
+  <LogCategories>
+    <Category name="logEvents" />
+    <Category name="logSingularLinearSystems" />
+    <Category name="logNonlinearSystems" />
+    <Category name="logDynamicStateSelection" />
+    <Category name="logStatusWarning" />
+    <Category name="logStatusDiscard" />
+    <Category name="logStatusError" />
+    <Category name="logStatusFatal" />
+    <Category name="logStatusPending" />
+    <Category name="logAll" />
+    <Category name="logFmi2Call" />
+  </LogCategories>
+  <DefaultExperiment startTime="0.0" stopTime="10.0" tolerance="1e-6" stepSize="1e-4"/>
+  <ModelVariables>
+  <!-- Index of variable = "1" -->
+  <ScalarVariable
+    name="G1.machine.delta"
+    valueReference="0"
+    description="Rotor angle"
+    >
+    <Real unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "2" -->
+  <ScalarVariable
+    name="G1.machine.e1d"
+    valueReference="1"
+    description="d-axis transient voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "3" -->
+  <ScalarVariable
+    name="G1.machine.e1q"
+    valueReference="2"
+    description="q-axis transient voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "4" -->
+  <ScalarVariable
+    name="G1.machine.e2d"
+    valueReference="3"
+    description="d-axis sub-transient voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "5" -->
+  <ScalarVariable
+    name="G1.machine.e2q"
+    valueReference="4"
+    description="q-axis sub-transient voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "6" -->
+  <ScalarVariable
+    name="G1.machine.w"
+    valueReference="5"
+    description="Rotor speed [pu]"
+    initial="exact">
+    <Real start="1.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "7" -->
+  <ScalarVariable
+    name="der(G1.machine.delta)"
+    valueReference="6"
+    description="der(Rotor angle)"
+    >
+    <Real derivative="1" unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "8" -->
+  <ScalarVariable
+    name="der(G1.machine.e1d)"
+    valueReference="7"
+    description="der(d-axis transient voltage)"
+    >
+    <Real derivative="2" unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "9" -->
+  <ScalarVariable
+    name="der(G1.machine.e1q)"
+    valueReference="8"
+    description="der(q-axis transient voltage)"
+    >
+    <Real derivative="3" unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "10" -->
+  <ScalarVariable
+    name="der(G1.machine.e2d)"
+    valueReference="9"
+    description="der(d-axis sub-transient voltage)"
+    >
+    <Real derivative="4" unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "11" -->
+  <ScalarVariable
+    name="der(G1.machine.e2q)"
+    valueReference="10"
+    description="der(q-axis sub-transient voltage)"
+    >
+    <Real derivative="5" unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "12" -->
+  <ScalarVariable
+    name="der(G1.machine.w)"
+    valueReference="11"
+    description="der(Rotor speed [pu])"
+    >
+    <Real derivative="6"/>
+  </ScalarVariable>
+  <!-- Index of variable = "13" -->
+  <ScalarVariable
+    name="B1.angle"
+    valueReference="14"
+    description="Bus voltage angle"
+    >
+    <Real unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "14" -->
+  <ScalarVariable
+    name="B1.angleDisplay"
+    valueReference="15"
+    description="Angle in degrees for display purposes"
+    >
+    <Real unit="deg"/>
+  </ScalarVariable>
+  <!-- Index of variable = "15" -->
+  <ScalarVariable
+    name="B1.p.ii"
+    valueReference="16"
+    description="Imaginary part of the current"
+    initial="exact">
+    <Real start="1e-15" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "16" -->
+  <ScalarVariable
+    name="B1.p.ir"
+    valueReference="17"
+    description="Real part of the current"
+    initial="exact">
+    <Real start="1e-15" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "17" -->
+  <ScalarVariable
+    name="B1.v"
+    valueReference="18"
+    description="Bus voltage magnitude"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "18" -->
+  <ScalarVariable
+    name="B2.angle"
+    valueReference="19"
+    description="Bus voltage angle"
+    >
+    <Real unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "19" -->
+  <ScalarVariable
+    name="B2.angleDisplay"
+    valueReference="20"
+    description="Angle in degrees for display purposes"
+    >
+    <Real unit="deg"/>
+  </ScalarVariable>
+  <!-- Index of variable = "20" -->
+  <ScalarVariable
+    name="B2.p.ii"
+    valueReference="21"
+    description="Imaginary part of the current"
+    initial="exact">
+    <Real start="1e-15" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "21" -->
+  <ScalarVariable
+    name="B2.p.ir"
+    valueReference="22"
+    description="Real part of the current"
+    initial="exact">
+    <Real start="1e-15" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "22" -->
+  <ScalarVariable
+    name="B2.v"
+    valueReference="23"
+    description="Bus voltage magnitude"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "23" -->
+  <ScalarVariable
+    name="B3.angle"
+    valueReference="24"
+    description="Bus voltage angle"
+    >
+    <Real unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "24" -->
+  <ScalarVariable
+    name="B3.angleDisplay"
+    valueReference="25"
+    description="Angle in degrees for display purposes"
+    >
+    <Real unit="deg"/>
+  </ScalarVariable>
+  <!-- Index of variable = "25" -->
+  <ScalarVariable
+    name="B3.p.ii"
+    valueReference="26"
+    description="Imaginary part of the current"
+    initial="exact">
+    <Real start="1e-15" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "26" -->
+  <ScalarVariable
+    name="B3.p.ir"
+    valueReference="27"
+    description="Real part of the current"
+    initial="exact">
+    <Real start="1e-15" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "27" -->
+  <ScalarVariable
+    name="B3.v"
+    valueReference="28"
+    description="Bus voltage magnitude"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "28" -->
+  <ScalarVariable
+    name="G1.P"
+    valueReference="29"
+    description="Active power"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "29" -->
+  <ScalarVariable
+    name="G1.Q"
+    valueReference="30"
+    description="Reactive power"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "30" -->
+  <ScalarVariable
+    name="G1.feedbackVf0.y"
+    valueReference="31"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "31" -->
+  <ScalarVariable
+    name="G1.gainVf0.y"
+    valueReference="32"
+    description="Output signal connector"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "32" -->
+  <ScalarVariable
+    name="G1.machine.anglev"
+    valueReference="33"
+    description="Bus voltage angle"
+    >
+    <Real unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "33" -->
+  <ScalarVariable
+    name="G1.machine.id"
+    valueReference="34"
+    description="d-axis current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "34" -->
+  <ScalarVariable
+    name="G1.machine.iq"
+    valueReference="35"
+    description="q-axis current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "35" -->
+  <ScalarVariable
+    name="G1.machine.vd"
+    valueReference="37"
+    description="d-axis voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "36" -->
+  <ScalarVariable
+    name="G1.machine.vq"
+    valueReference="39"
+    description="q-axis voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "37" -->
+  <ScalarVariable
+    name="Pgen"
+    valueReference="40"
+    description="Active power [pu]"
+    causality="output"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "38" -->
+  <ScalarVariable
+    name="Qgen"
+    valueReference="41"
+    description="Reactive power [pu]"
+    causality="output"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "39" -->
+  <ScalarVariable
+    name="infiniteBus.P"
+    valueReference="42"
+    description="Active Power absorbed by the Infinite bus"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "40" -->
+  <ScalarVariable
+    name="infiniteBus.Q"
+    valueReference="43"
+    description="Reactive Power absorbed by the Infinite bus"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "41" -->
+  <ScalarVariable
+    name="infiniteBus.p.ii"
+    valueReference="44"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "42" -->
+  <ScalarVariable
+    name="infiniteBus.p.ir"
+    valueReference="45"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "43" -->
+  <ScalarVariable
+    name="infiniteBus.p.vi"
+    valueReference="46"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "44" -->
+  <ScalarVariable
+    name="infiniteBus.p.vr"
+    valueReference="47"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "45" -->
+  <ScalarVariable
+    name="pwFault.p.ii"
+    valueReference="48"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "46" -->
+  <ScalarVariable
+    name="pwFault.p.ir"
+    valueReference="49"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "47" -->
+  <ScalarVariable
+    name="pwLine1.P12"
+    valueReference="50"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "48" -->
+  <ScalarVariable
+    name="pwLine1.P21"
+    valueReference="51"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "49" -->
+  <ScalarVariable
+    name="pwLine1.Q12"
+    valueReference="52"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "50" -->
+  <ScalarVariable
+    name="pwLine1.Q21"
+    valueReference="53"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "51" -->
+  <ScalarVariable
+    name="pwLine1.ir.im"
+    valueReference="54"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "52" -->
+  <ScalarVariable
+    name="pwLine1.ir.re"
+    valueReference="55"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "53" -->
+  <ScalarVariable
+    name="pwLine1.is.im"
+    valueReference="56"
+    description="Imaginary part of complex number"
+    initial="approx">
+    <Real start="1e-15"/>
+  </ScalarVariable>
+  <!-- Index of variable = "54" -->
+  <ScalarVariable
+    name="pwLine1.is.re"
+    valueReference="57"
+    description="Real part of complex number"
+    initial="approx">
+    <Real start="1e-15"/>
+  </ScalarVariable>
+  <!-- Index of variable = "55" -->
+  <ScalarVariable
+    name="pwLine2.P12"
+    valueReference="58"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "56" -->
+  <ScalarVariable
+    name="pwLine2.P21"
+    valueReference="59"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "57" -->
+  <ScalarVariable
+    name="pwLine2.Q12"
+    valueReference="60"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "58" -->
+  <ScalarVariable
+    name="pwLine2.Q21"
+    valueReference="61"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "59" -->
+  <ScalarVariable
+    name="pwLine2.ir.im"
+    valueReference="62"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "60" -->
+  <ScalarVariable
+    name="pwLine2.ir.re"
+    valueReference="63"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "61" -->
+  <ScalarVariable
+    name="pwLine2.is.im"
+    valueReference="64"
+    description="Imaginary part of complex number"
+    initial="approx">
+    <Real start="1e-15"/>
+  </ScalarVariable>
+  <!-- Index of variable = "62" -->
+  <ScalarVariable
+    name="pwLine2.is.re"
+    valueReference="65"
+    description="Real part of complex number"
+    initial="approx">
+    <Real start="1e-15"/>
+  </ScalarVariable>
+  <!-- Index of variable = "63" -->
+  <ScalarVariable
+    name="pwLine2.vs.im"
+    valueReference="66"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "64" -->
+  <ScalarVariable
+    name="pwLine2.vs.re"
+    valueReference="67"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "65" -->
+  <ScalarVariable
+    name="transformer.P12"
+    valueReference="68"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "66" -->
+  <ScalarVariable
+    name="transformer.P21"
+    valueReference="69"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "67" -->
+  <ScalarVariable
+    name="transformer.Q12"
+    valueReference="70"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "68" -->
+  <ScalarVariable
+    name="transformer.Q21"
+    valueReference="71"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "69" -->
+  <ScalarVariable
+    name="transformer.ir.im"
+    valueReference="72"
+    description="Imaginary part of complex number"
+    initial="approx">
+    <Real start="1e-15"/>
+  </ScalarVariable>
+  <!-- Index of variable = "70" -->
+  <ScalarVariable
+    name="transformer.ir.re"
+    valueReference="73"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "71" -->
+  <ScalarVariable
+    name="transformer.is.im"
+    valueReference="74"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "72" -->
+  <ScalarVariable
+    name="transformer.is.re"
+    valueReference="75"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "73" -->
+  <ScalarVariable
+    name="transformer.vs.im"
+    valueReference="76"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "74" -->
+  <ScalarVariable
+    name="transformer.vs.re"
+    valueReference="77"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "75" -->
+  <ScalarVariable
+    name="v"
+    valueReference="78"
+    description="Generator terminal voltage [pu]"
+    causality="output"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "76" -->
+  <ScalarVariable
+    name="vf"
+    valueReference="79"
+    description="Field voltage"
+    causality="input"
+    >
+    <Real start="0.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "77" -->
+  <ScalarVariable
+    name="vf0OUT"
+    valueReference="80"
+    description="Initial field voltage [pu]"
+    causality="output"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "78" -->
+  <ScalarVariable
+    name="w"
+    valueReference="81"
+    description="Speed [pu]"
+    causality="output"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "79" -->
+  <ScalarVariable
+    name="B1.P_0"
+    valueReference="83"
+    description="Initial active power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e6" nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "80" -->
+  <ScalarVariable
+    name="B1.Q_0"
+    valueReference="84"
+    description="Initial reactive power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "81" -->
+  <ScalarVariable
+    name="B1.S_b"
+    valueReference="85"
+    description="System base power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "82" -->
+  <ScalarVariable
+    name="B1.V_b"
+    valueReference="86"
+    description="Base voltage of the bus"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "83" -->
+  <ScalarVariable
+    name="B1.angle_0"
+    valueReference="87"
+    description="Initial voltage angle"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "84" -->
+  <ScalarVariable
+    name="B1.fn"
+    valueReference="88"
+    description="System frequency"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "85" -->
+  <ScalarVariable
+    name="B1.v_0"
+    valueReference="89"
+    description="Initial voltage magnitude"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "86" -->
+  <ScalarVariable
+    name="B2.P_0"
+    valueReference="90"
+    description="Initial active power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e6" nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "87" -->
+  <ScalarVariable
+    name="B2.Q_0"
+    valueReference="91"
+    description="Initial reactive power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "88" -->
+  <ScalarVariable
+    name="B2.S_b"
+    valueReference="92"
+    description="System base power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "89" -->
+  <ScalarVariable
+    name="B2.V_b"
+    valueReference="93"
+    description="Base voltage of the bus"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "90" -->
+  <ScalarVariable
+    name="B2.angle_0"
+    valueReference="94"
+    description="Initial voltage angle"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "91" -->
+  <ScalarVariable
+    name="B2.fn"
+    valueReference="95"
+    description="System frequency"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "92" -->
+  <ScalarVariable
+    name="B2.v_0"
+    valueReference="96"
+    description="Initial voltage magnitude"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "93" -->
+  <ScalarVariable
+    name="B3.P_0"
+    valueReference="97"
+    description="Initial active power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e6" nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "94" -->
+  <ScalarVariable
+    name="B3.Q_0"
+    valueReference="98"
+    description="Initial reactive power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "95" -->
+  <ScalarVariable
+    name="B3.S_b"
+    valueReference="99"
+    description="System base power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "96" -->
+  <ScalarVariable
+    name="B3.V_b"
+    valueReference="100"
+    description="Base voltage of the bus"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "97" -->
+  <ScalarVariable
+    name="B3.angle_0"
+    valueReference="101"
+    description="Initial voltage angle"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "98" -->
+  <ScalarVariable
+    name="B3.fn"
+    valueReference="102"
+    description="System frequency"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "99" -->
+  <ScalarVariable
+    name="B3.v_0"
+    valueReference="103"
+    description="Initial voltage magnitude"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "100" -->
+  <ScalarVariable
+    name="G1.P_0"
+    valueReference="104"
+    description="Initial active power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.9979999999936e9" nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "101" -->
+  <ScalarVariable
+    name="G1.Q_0"
+    valueReference="105"
+    description="Initial reactive power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="9.6792496990658e8" nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "102" -->
+  <ScalarVariable
+    name="G1.S_b"
+    valueReference="106"
+    description="System base power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "103" -->
+  <ScalarVariable
+    name="G1.V_b"
+    valueReference="107"
+    description="Base voltage of the bus"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "104" -->
+  <ScalarVariable
+    name="G1.angle_0"
+    valueReference="108"
+    description="Initial voltage angle"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.49467717698916" unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "105" -->
+  <ScalarVariable
+    name="G1.fn"
+    valueReference="109"
+    description="System frequency"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "106" -->
+  <ScalarVariable
+    name="G1.gainVf0.k"
+    valueReference="110"
+    description="Gain value multiplied with input signal"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="-1.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "107" -->
+  <ScalarVariable
+    name="G1.gainVf0.u"
+    valueReference="111"
+    description="Input signal connector"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "108" -->
+  <ScalarVariable
+    name="G1.machine.D"
+    valueReference="112"
+    description="Damping coefficient"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "109" -->
+  <ScalarVariable
+    name="G1.machine.M"
+    valueReference="120"
+    description="Mechanical starting time, 2H [Ws/VA]"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="7.0" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "110" -->
+  <ScalarVariable
+    name="G1.machine.P_0"
+    valueReference="121"
+    description="Initial active power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "111" -->
+  <ScalarVariable
+    name="G1.machine.Q_0"
+    valueReference="122"
+    description="Initial reactive power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "112" -->
+  <ScalarVariable
+    name="G1.machine.S_b"
+    valueReference="126"
+    description="System base power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "113" -->
+  <ScalarVariable
+    name="G1.machine.Sn"
+    valueReference="127"
+    description="Power rating"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="2.22e9" nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "114" -->
+  <ScalarVariable
+    name="G1.machine.T1d0"
+    valueReference="128"
+    description="d-axis open circuit transient time constant"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="8.0" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "115" -->
+  <ScalarVariable
+    name="G1.machine.T1q0"
+    valueReference="129"
+    description="q-axis open circuit transient time constant"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.0" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "116" -->
+  <ScalarVariable
+    name="G1.machine.T2d0"
+    valueReference="130"
+    description="d-axis open circuit sub-transient time constant"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.03" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "117" -->
+  <ScalarVariable
+    name="G1.machine.T2q0"
+    valueReference="131"
+    description="q-axis open circuit sub-transient time constant"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.07" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "118" -->
+  <ScalarVariable
+    name="G1.machine.Taa"
+    valueReference="132"
+    description="d-axis additional leakage time constant"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.002" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "119" -->
+  <ScalarVariable
+    name="G1.machine.V_b"
+    valueReference="134"
+    description="Base voltage of the bus"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "120" -->
+  <ScalarVariable
+    name="G1.machine.Vn"
+    valueReference="137"
+    description="Voltage rating"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "121" -->
+  <ScalarVariable
+    name="G1.machine.angle_0"
+    valueReference="141"
+    description="Initial voltage angle"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "122" -->
+  <ScalarVariable
+    name="G1.machine.fn"
+    valueReference="147"
+    description="System frequency"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "123" -->
+  <ScalarVariable
+    name="G1.machine.pm"
+    valueReference="153"
+    description="Mechanical power [pu]"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "124" -->
+  <ScalarVariable
+    name="G1.machine.pm0"
+    valueReference="154"
+    description="Initial mechanical power [pu]"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "125" -->
+  <ScalarVariable
+    name="G1.machine.ra"
+    valueReference="157"
+    description="Armature resistance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.003" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "126" -->
+  <ScalarVariable
+    name="G1.machine.v_0"
+    valueReference="158"
+    description="Initial voltage magnitude"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "127" -->
+  <ScalarVariable
+    name="G1.machine.vf0"
+    valueReference="160"
+    description="Initial field voltage [pu]"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "128" -->
+  <ScalarVariable
+    name="G1.machine.x1d"
+    valueReference="166"
+    description="d-axis transient reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.3" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "129" -->
+  <ScalarVariable
+    name="G1.machine.x1q"
+    valueReference="167"
+    description="q-axis transient reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.65" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "130" -->
+  <ScalarVariable
+    name="G1.machine.x2d"
+    valueReference="168"
+    description="d-axis sub-transient reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.23" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "131" -->
+  <ScalarVariable
+    name="G1.machine.x2q"
+    valueReference="169"
+    description="q-axis sub-transient reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.25" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "132" -->
+  <ScalarVariable
+    name="G1.machine.xd"
+    valueReference="170"
+    description="d-axis synchronous reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.81" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "133" -->
+  <ScalarVariable
+    name="G1.machine.xq"
+    valueReference="171"
+    description="q-axis synchronous reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.76" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "134" -->
+  <ScalarVariable
+    name="G1.v_0"
+    valueReference="173"
+    description="Initial voltage magnitude"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "135" -->
+  <ScalarVariable
+    name="G1.vf0OUT"
+    valueReference="174"
+    description="Initial field voltage [pu]"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "136" -->
+  <ScalarVariable
+    name="SysData.S_b"
+    valueReference="175"
+    description="System base"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e8" nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "137" -->
+  <ScalarVariable
+    name="SysData.fn"
+    valueReference="176"
+    description="System frequency"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="60.0" unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "138" -->
+  <ScalarVariable
+    name="infiniteBus.P_0"
+    valueReference="177"
+    description="Initial active power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="-1.998e9" nominal="1e8" unit="W"/>
+  </ScalarVariable>
+  <!-- Index of variable = "139" -->
+  <ScalarVariable
+    name="infiniteBus.Q_0"
+    valueReference="178"
+    description="Initial reactive power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="8.7066e7" nominal="1e8" unit="var"/>
+  </ScalarVariable>
+  <!-- Index of variable = "140" -->
+  <ScalarVariable
+    name="infiniteBus.S_b"
+    valueReference="179"
+    description="System base power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "141" -->
+  <ScalarVariable
+    name="infiniteBus.V_b"
+    valueReference="180"
+    description="Base voltage of the bus"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "142" -->
+  <ScalarVariable
+    name="infiniteBus.angle_0"
+    valueReference="181"
+    description="Initial voltage angle"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="rad"/>
+  </ScalarVariable>
+  <!-- Index of variable = "143" -->
+  <ScalarVariable
+    name="infiniteBus.fn"
+    valueReference="182"
+    description="System frequency"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real unit="Hz"/>
+  </ScalarVariable>
+  <!-- Index of variable = "144" -->
+  <ScalarVariable
+    name="infiniteBus.v_0"
+    valueReference="183"
+    description="Initial voltage magnitude"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.90081" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "145" -->
+  <ScalarVariable
+    name="pwFault.R"
+    valueReference="184"
+    description="Resistance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "146" -->
+  <ScalarVariable
+    name="pwFault.X"
+    valueReference="185"
+    description="Reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4.5045045045045046e-4" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "147" -->
+  <ScalarVariable
+    name="pwFault.t1"
+    valueReference="186"
+    description="Start time of the fault"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="30.5" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "148" -->
+  <ScalarVariable
+    name="pwFault.t2"
+    valueReference="187"
+    description="End time of the fault"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="30.57" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "149" -->
+  <ScalarVariable
+    name="pwLine1.B"
+    valueReference="188"
+    description="Shunt half susceptance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "150" -->
+  <ScalarVariable
+    name="pwLine1.G"
+    valueReference="189"
+    description="Shunt half conductance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "151" -->
+  <ScalarVariable
+    name="pwLine1.R"
+    valueReference="190"
+    description="Resistance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "152" -->
+  <ScalarVariable
+    name="pwLine1.S_b"
+    valueReference="191"
+    description="System base power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e8" nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "153" -->
+  <ScalarVariable
+    name="pwLine1.X"
+    valueReference="192"
+    description="Reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.02252252252252252" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "154" -->
+  <ScalarVariable
+    name="pwLine1.t1"
+    valueReference="197"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e60" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "155" -->
+  <ScalarVariable
+    name="pwLine1.t2"
+    valueReference="198"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e60" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "156" -->
+  <ScalarVariable
+    name="pwLine2.B"
+    valueReference="199"
+    description="Shunt half susceptance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "157" -->
+  <ScalarVariable
+    name="pwLine2.G"
+    valueReference="200"
+    description="Shunt half conductance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "158" -->
+  <ScalarVariable
+    name="pwLine2.R"
+    valueReference="201"
+    description="Resistance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "159" -->
+  <ScalarVariable
+    name="pwLine2.S_b"
+    valueReference="202"
+    description="System base power"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e8" nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "160" -->
+  <ScalarVariable
+    name="pwLine2.X"
+    valueReference="203"
+    description="Reactance"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.041891891891891894" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "161" -->
+  <ScalarVariable
+    name="pwLine2.t1"
+    valueReference="208"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e60" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "162" -->
+  <ScalarVariable
+    name="pwLine2.t2"
+    valueReference="209"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1e60" unit="s"/>
+  </ScalarVariable>
+  <!-- Index of variable = "163" -->
+  <ScalarVariable
+    name="transformer.S_b"
+    valueReference="210"
+    description="System base power"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Real nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "164" -->
+  <ScalarVariable
+    name="transformer.Sn"
+    valueReference="211"
+    description="Power rating"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="2.22e9" nominal="1e8" unit="V.A"/>
+  </ScalarVariable>
+  <!-- Index of variable = "165" -->
+  <ScalarVariable
+    name="transformer.V_b"
+    valueReference="212"
+    description="Sending end bus voltage"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "166" -->
+  <ScalarVariable
+    name="transformer.Vn"
+    valueReference="213"
+    description="Voltage rating"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="4e5" nominal="1e4" unit="V"/>
+  </ScalarVariable>
+  <!-- Index of variable = "167" -->
+  <ScalarVariable
+    name="transformer.m"
+    valueReference="216"
+    description="Optional fixed tap ratio"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="1.0"/>
+  </ScalarVariable>
+  <!-- Index of variable = "168" -->
+  <ScalarVariable
+    name="transformer.rT"
+    valueReference="218"
+    description="Resistance(transformer base)"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.0" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "169" -->
+  <ScalarVariable
+    name="transformer.xT"
+    valueReference="220"
+    description="Reactance(transformer base)"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Real start="0.15" unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "170" -->
+  <ScalarVariable
+    name="B1.p.vi"
+    valueReference="76"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "171" -->
+  <ScalarVariable
+    name="B1.p.vr"
+    valueReference="77"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "172" -->
+  <ScalarVariable
+    name="B2.p.vi"
+    valueReference="66"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "173" -->
+  <ScalarVariable
+    name="B2.p.vr"
+    valueReference="67"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "174" -->
+  <ScalarVariable
+    name="B3.p.vi"
+    valueReference="46"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "175" -->
+  <ScalarVariable
+    name="B3.p.vr"
+    valueReference="47"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "176" -->
+  <ScalarVariable
+    name="G1.Pgen"
+    valueReference="40"
+    description="Active power [pu]"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "177" -->
+  <ScalarVariable
+    name="G1.Qgen"
+    valueReference="41"
+    description="Reactive power [pu]"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "178" -->
+  <ScalarVariable
+    name="G1.delta"
+    valueReference="0"
+    description="Rotor angle"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "179" -->
+  <ScalarVariable
+    name="G1.feedbackVf0.u1"
+    valueReference="79"
+    description="Commanded input"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "180" -->
+  <ScalarVariable
+    name="G1.feedbackVf0.u2"
+    valueReference="32"
+    description="Feedback input"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "181" -->
+  <ScalarVariable
+    name="G1.machine.P"
+    valueReference="40"
+    description="Active power [pu]"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "182" -->
+  <ScalarVariable
+    name="G1.machine.Q"
+    valueReference="41"
+    description="Reactive power [pu]"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "183" -->
+  <ScalarVariable
+    name="G1.machine.p.ii"
+    valueReference="238"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "184" -->
+  <ScalarVariable
+    name="G1.machine.p.ir"
+    valueReference="239"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "185" -->
+  <ScalarVariable
+    name="G1.machine.p.vi"
+    valueReference="76"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "186" -->
+  <ScalarVariable
+    name="G1.machine.p.vr"
+    valueReference="77"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "187" -->
+  <ScalarVariable
+    name="G1.machine.v"
+    valueReference="78"
+    description="Generator terminal voltage [pu]"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "188" -->
+  <ScalarVariable
+    name="G1.machine.vf"
+    valueReference="31"
+    description="Field voltage [pu]"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "189" -->
+  <ScalarVariable
+    name="G1.pwPin.ii"
+    valueReference="244"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "190" -->
+  <ScalarVariable
+    name="G1.pwPin.ir"
+    valueReference="245"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "191" -->
+  <ScalarVariable
+    name="G1.pwPin.vi"
+    valueReference="76"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "192" -->
+  <ScalarVariable
+    name="G1.pwPin.vr"
+    valueReference="77"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "193" -->
+  <ScalarVariable
+    name="G1.u"
+    valueReference="79"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "194" -->
+  <ScalarVariable
+    name="G1.v"
+    valueReference="78"
+    description="Generator terminal voltage [pu]"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "195" -->
+  <ScalarVariable
+    name="G1.w"
+    valueReference="5"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "196" -->
+  <ScalarVariable
+    name="pwFault.p.vi"
+    valueReference="66"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "197" -->
+  <ScalarVariable
+    name="pwFault.p.vr"
+    valueReference="67"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "198" -->
+  <ScalarVariable
+    name="pwLine1.n.ii"
+    valueReference="54"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "199" -->
+  <ScalarVariable
+    name="pwLine1.n.ir"
+    valueReference="55"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "200" -->
+  <ScalarVariable
+    name="pwLine1.n.vi"
+    valueReference="46"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "201" -->
+  <ScalarVariable
+    name="pwLine1.n.vr"
+    valueReference="47"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "202" -->
+  <ScalarVariable
+    name="pwLine1.p.ii"
+    valueReference="56"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "203" -->
+  <ScalarVariable
+    name="pwLine1.p.ir"
+    valueReference="57"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "204" -->
+  <ScalarVariable
+    name="pwLine1.p.vi"
+    valueReference="66"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "205" -->
+  <ScalarVariable
+    name="pwLine1.p.vr"
+    valueReference="67"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "206" -->
+  <ScalarVariable
+    name="pwLine1.vr.im"
+    valueReference="46"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "207" -->
+  <ScalarVariable
+    name="pwLine1.vr.re"
+    valueReference="47"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "208" -->
+  <ScalarVariable
+    name="pwLine1.vs.im"
+    valueReference="66"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "209" -->
+  <ScalarVariable
+    name="pwLine1.vs.re"
+    valueReference="67"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "210" -->
+  <ScalarVariable
+    name="pwLine2.n.ii"
+    valueReference="62"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "211" -->
+  <ScalarVariable
+    name="pwLine2.n.ir"
+    valueReference="63"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "212" -->
+  <ScalarVariable
+    name="pwLine2.n.vi"
+    valueReference="46"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "213" -->
+  <ScalarVariable
+    name="pwLine2.n.vr"
+    valueReference="47"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "214" -->
+  <ScalarVariable
+    name="pwLine2.p.ii"
+    valueReference="64"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "215" -->
+  <ScalarVariable
+    name="pwLine2.p.ir"
+    valueReference="65"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "216" -->
+  <ScalarVariable
+    name="pwLine2.p.vi"
+    valueReference="66"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "217" -->
+  <ScalarVariable
+    name="pwLine2.p.vr"
+    valueReference="67"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "218" -->
+  <ScalarVariable
+    name="pwLine2.vr.im"
+    valueReference="46"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "219" -->
+  <ScalarVariable
+    name="pwLine2.vr.re"
+    valueReference="47"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "220" -->
+  <ScalarVariable
+    name="transformer.n.ii"
+    valueReference="72"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "221" -->
+  <ScalarVariable
+    name="transformer.n.ir"
+    valueReference="73"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "222" -->
+  <ScalarVariable
+    name="transformer.n.vi"
+    valueReference="66"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "223" -->
+  <ScalarVariable
+    name="transformer.n.vr"
+    valueReference="67"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "224" -->
+  <ScalarVariable
+    name="transformer.p.ii"
+    valueReference="74"
+    description="Imaginary part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "225" -->
+  <ScalarVariable
+    name="transformer.p.ir"
+    valueReference="75"
+    description="Real part of the current"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "226" -->
+  <ScalarVariable
+    name="transformer.p.vi"
+    valueReference="76"
+    description="Imaginary part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "227" -->
+  <ScalarVariable
+    name="transformer.p.vr"
+    valueReference="77"
+    description="Real part of the voltage"
+    >
+    <Real unit="1"/>
+  </ScalarVariable>
+  <!-- Index of variable = "228" -->
+  <ScalarVariable
+    name="transformer.vr.im"
+    valueReference="66"
+    description="Imaginary part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "229" -->
+  <ScalarVariable
+    name="transformer.vr.re"
+    valueReference="67"
+    description="Real part of complex number"
+    >
+    <Real/>
+  </ScalarVariable>
+  <!-- Index of variable = "230" -->
+  <ScalarVariable
+    name="pwLine1.opening"
+    valueReference="0"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Integer/>
+  </ScalarVariable>
+  <!-- Index of variable = "231" -->
+  <ScalarVariable
+    name="pwLine2.opening"
+    valueReference="1"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Integer/>
+  </ScalarVariable>
+  <!-- Index of variable = "232" -->
+  <ScalarVariable
+    name="B1.displayPF"
+    valueReference="0"
+    description="Display power flow:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "233" -->
+  <ScalarVariable
+    name="B1.enableP_0"
+    valueReference="1"
+    description="Enable P_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "234" -->
+  <ScalarVariable
+    name="B1.enableQ_0"
+    valueReference="2"
+    description="Enable Q_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "235" -->
+  <ScalarVariable
+    name="B1.enableS_b"
+    valueReference="3"
+    description="Enable S_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "236" -->
+  <ScalarVariable
+    name="B1.enableV_b"
+    valueReference="4"
+    description="Enable V_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "237" -->
+  <ScalarVariable
+    name="B1.enableangle_0"
+    valueReference="5"
+    description="Enable angle_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "238" -->
+  <ScalarVariable
+    name="B1.enabledisplayPF"
+    valueReference="6"
+    description="Enable displayPF in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "239" -->
+  <ScalarVariable
+    name="B1.enablefn"
+    valueReference="7"
+    description="Enable fn in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "240" -->
+  <ScalarVariable
+    name="B1.enablev_0"
+    valueReference="8"
+    description="Enable v_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "241" -->
+  <ScalarVariable
+    name="B2.displayPF"
+    valueReference="9"
+    description="Display power flow:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "242" -->
+  <ScalarVariable
+    name="B2.enableP_0"
+    valueReference="10"
+    description="Enable P_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "243" -->
+  <ScalarVariable
+    name="B2.enableQ_0"
+    valueReference="11"
+    description="Enable Q_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "244" -->
+  <ScalarVariable
+    name="B2.enableS_b"
+    valueReference="12"
+    description="Enable S_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "245" -->
+  <ScalarVariable
+    name="B2.enableV_b"
+    valueReference="13"
+    description="Enable V_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "246" -->
+  <ScalarVariable
+    name="B2.enableangle_0"
+    valueReference="14"
+    description="Enable angle_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "247" -->
+  <ScalarVariable
+    name="B2.enabledisplayPF"
+    valueReference="15"
+    description="Enable displayPF in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "248" -->
+  <ScalarVariable
+    name="B2.enablefn"
+    valueReference="16"
+    description="Enable fn in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "249" -->
+  <ScalarVariable
+    name="B2.enablev_0"
+    valueReference="17"
+    description="Enable v_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "250" -->
+  <ScalarVariable
+    name="B3.displayPF"
+    valueReference="18"
+    description="Display power flow:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "251" -->
+  <ScalarVariable
+    name="B3.enableP_0"
+    valueReference="19"
+    description="Enable P_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "252" -->
+  <ScalarVariable
+    name="B3.enableQ_0"
+    valueReference="20"
+    description="Enable Q_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "253" -->
+  <ScalarVariable
+    name="B3.enableS_b"
+    valueReference="21"
+    description="Enable S_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "254" -->
+  <ScalarVariable
+    name="B3.enableV_b"
+    valueReference="22"
+    description="Enable V_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "255" -->
+  <ScalarVariable
+    name="B3.enableangle_0"
+    valueReference="23"
+    description="Enable angle_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "256" -->
+  <ScalarVariable
+    name="B3.enabledisplayPF"
+    valueReference="24"
+    description="Enable displayPF in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "257" -->
+  <ScalarVariable
+    name="B3.enablefn"
+    valueReference="25"
+    description="Enable fn in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "258" -->
+  <ScalarVariable
+    name="B3.enablev_0"
+    valueReference="26"
+    description="Enable v_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "259" -->
+  <ScalarVariable
+    name="G1.displayPF"
+    valueReference="27"
+    description="Display power flow:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "260" -->
+  <ScalarVariable
+    name="G1.enableP_0"
+    valueReference="28"
+    description="Enable P_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "261" -->
+  <ScalarVariable
+    name="G1.enableQ_0"
+    valueReference="29"
+    description="Enable Q_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "262" -->
+  <ScalarVariable
+    name="G1.enableS_b"
+    valueReference="30"
+    description="Enable S_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "263" -->
+  <ScalarVariable
+    name="G1.enableV_b"
+    valueReference="31"
+    description="Enable V_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "264" -->
+  <ScalarVariable
+    name="G1.enableangle_0"
+    valueReference="32"
+    description="Enable angle_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "265" -->
+  <ScalarVariable
+    name="G1.enabledisplayPF"
+    valueReference="33"
+    description="Enable displayPF in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "266" -->
+  <ScalarVariable
+    name="G1.enablefn"
+    valueReference="34"
+    description="Enable fn in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "267" -->
+  <ScalarVariable
+    name="G1.enablev_0"
+    valueReference="35"
+    description="Enable v_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "268" -->
+  <ScalarVariable
+    name="G1.machine.displayPF"
+    valueReference="36"
+    description="Display power flow:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "269" -->
+  <ScalarVariable
+    name="G1.machine.enableP_0"
+    valueReference="37"
+    description="Enable P_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "270" -->
+  <ScalarVariable
+    name="G1.machine.enableQ_0"
+    valueReference="38"
+    description="Enable Q_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "271" -->
+  <ScalarVariable
+    name="G1.machine.enableS_b"
+    valueReference="39"
+    description="Enable S_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "272" -->
+  <ScalarVariable
+    name="G1.machine.enableV_b"
+    valueReference="40"
+    description="Enable V_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "273" -->
+  <ScalarVariable
+    name="G1.machine.enableangle_0"
+    valueReference="41"
+    description="Enable angle_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "274" -->
+  <ScalarVariable
+    name="G1.machine.enabledisplayPF"
+    valueReference="42"
+    description="Enable displayPF in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "275" -->
+  <ScalarVariable
+    name="G1.machine.enablefn"
+    valueReference="43"
+    description="Enable fn in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "276" -->
+  <ScalarVariable
+    name="G1.machine.enablev_0"
+    valueReference="44"
+    description="Enable v_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "277" -->
+  <ScalarVariable
+    name="infiniteBus.displayPF"
+    valueReference="45"
+    description="Display power flow:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "278" -->
+  <ScalarVariable
+    name="infiniteBus.enableP_0"
+    valueReference="46"
+    description="Enable P_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "279" -->
+  <ScalarVariable
+    name="infiniteBus.enableQ_0"
+    valueReference="47"
+    description="Enable Q_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "280" -->
+  <ScalarVariable
+    name="infiniteBus.enableS_b"
+    valueReference="48"
+    description="Enable S_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "281" -->
+  <ScalarVariable
+    name="infiniteBus.enableV_b"
+    valueReference="49"
+    description="Enable V_b in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "282" -->
+  <ScalarVariable
+    name="infiniteBus.enableangle_0"
+    valueReference="50"
+    description="Enable angle_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "283" -->
+  <ScalarVariable
+    name="infiniteBus.enabledisplayPF"
+    valueReference="51"
+    description="Enable displayPF in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "284" -->
+  <ScalarVariable
+    name="infiniteBus.enablefn"
+    valueReference="52"
+    description="Enable fn in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "285" -->
+  <ScalarVariable
+    name="infiniteBus.enablev_0"
+    valueReference="53"
+    description="Enable v_0 in parameter list"
+    variability="fixed"
+    causality="calculatedParameter"
+    >
+    <Boolean/>
+  </ScalarVariable>
+  <!-- Index of variable = "286" -->
+  <ScalarVariable
+    name="pwLine1.displayPF"
+    valueReference="55"
+    description="Display power flow results:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "287" -->
+  <ScalarVariable
+    name="pwLine2.displayPF"
+    valueReference="56"
+    description="Display power flow results:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  <!-- Index of variable = "288" -->
+  <ScalarVariable
+    name="transformer.displayPF"
+    valueReference="57"
+    description="Display power flow results:"
+    variability="fixed"
+    causality="parameter"
+    >
+    <Boolean start="false"/>
+  </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="37" dependencies="1 4 5" dependenciesKind="dependent dependent dependent" />
+      <Unknown index="38" dependencies="1 4 5" dependenciesKind="dependent dependent dependent" />
+      <Unknown index="75" dependencies="1 4 5" dependenciesKind="dependent dependent dependent" />
+      <Unknown index="77" dependencies="" dependenciesKind="" />
+      <Unknown index="78" dependencies="6" dependenciesKind="dependent" />
+    </Outputs>
+    <Derivatives>
+      <Unknown index="7" dependencies="6" dependenciesKind="dependent" />
+      <Unknown index="8" dependencies="1 2 4 5" dependenciesKind="dependent dependent dependent dependent" />
+      <Unknown index="9" dependencies="1 3 4 5 76" dependenciesKind="dependent dependent dependent dependent dependent" />
+      <Unknown index="10" dependencies="1 2 4 5" dependenciesKind="dependent dependent dependent dependent" />
+      <Unknown index="11" dependencies="1 3 4 5 76" dependenciesKind="dependent dependent dependent dependent dependent" />
+      <Unknown index="12" dependencies="1 4 5" dependenciesKind="dependent dependent dependent" />
+    </Derivatives>
+    <InitialUnknowns>
+      <Unknown index="1" dependencies="125" dependenciesKind="dependent" />
+      <Unknown index="2" dependencies="115 117 125 129 130 131 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="3" dependencies="114 118 125 130" dependenciesKind="dependent dependent dependent dependent" />
+      <Unknown index="4" dependencies="115 117 125 129 130 131 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="5" dependencies="125 130" dependenciesKind="dependent dependent" />
+      <Unknown index="7" dependencies="6" dependenciesKind="dependent" />
+      <Unknown index="8" dependencies="" dependenciesKind="" />
+      <Unknown index="9" dependencies="76 106 114 115 116 117 118 120 125 128 129 130 131 132 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="10" dependencies="" dependenciesKind="" />
+      <Unknown index="11" dependencies="76 106 114 115 116 117 118 120 125 128 129 130 131 132 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="12" dependencies="109 115 117 125 129 130 131 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="37" dependencies="115 117 125 129 130 131 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="38" dependencies="115 117 125 129 130 131 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="75" dependencies="115 117 125 129 130 131 133 142 144 145 146 147 148 154 155 161 162 167" dependenciesKind="dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent dependent" />
+      <Unknown index="77" dependencies="114 118 125 130" dependenciesKind="dependent dependent dependent dependent" />
+      <Unknown index="78" dependencies="6" dependenciesKind="dependent" />
+      <Unknown index="81" dependencies="136" dependenciesKind="dependent" />
+      <Unknown index="84" dependencies="137" dependenciesKind="dependent" />
+      <Unknown index="88" dependencies="136" dependenciesKind="dependent" />
+      <Unknown index="91" dependencies="137" dependenciesKind="dependent" />
+      <Unknown index="95" dependencies="136" dependenciesKind="dependent" />
+      <Unknown index="98" dependencies="137" dependenciesKind="dependent" />
+      <Unknown index="102" dependencies="136" dependenciesKind="dependent" />
+      <Unknown index="105" dependencies="137" dependenciesKind="dependent" />
+      <Unknown index="107" dependencies="114 118 125 130" dependenciesKind="dependent dependent dependent dependent" />
+      <Unknown index="108" dependencies="" dependenciesKind="" />
+      <Unknown index="110" dependencies="100" dependenciesKind="dependent" />
+      <Unknown index="111" dependencies="101" dependenciesKind="dependent" />
+      <Unknown index="112" dependencies="136" dependenciesKind="dependent" />
+      <Unknown index="119" dependencies="103" dependenciesKind="dependent" />
+      <Unknown index="121" dependencies="104" dependenciesKind="dependent" />
+      <Unknown index="122" dependencies="137" dependenciesKind="dependent" />
+      <Unknown index="123" dependencies="125" dependenciesKind="dependent" />
+      <Unknown index="124" dependencies="125" dependenciesKind="dependent" />
+      <Unknown index="126" dependencies="134" dependenciesKind="dependent" />
+      <Unknown index="127" dependencies="114 118 125 130" dependenciesKind="dependent dependent dependent dependent" />
+      <Unknown index="135" dependencies="114 118 125 130" dependenciesKind="dependent dependent dependent dependent" />
+      <Unknown index="140" dependencies="136" dependenciesKind="dependent" />
+      <Unknown index="143" dependencies="137" dependenciesKind="dependent" />
+      <Unknown index="163" dependencies="136" dependenciesKind="dependent" />
+      <Unknown index="230" dependencies="" dependenciesKind="" />
+      <Unknown index="231" dependencies="" dependenciesKind="" />
+      <Unknown index="233" dependencies="" dependenciesKind="" />
+      <Unknown index="234" dependencies="" dependenciesKind="" />
+      <Unknown index="235" dependencies="" dependenciesKind="" />
+      <Unknown index="236" dependencies="" dependenciesKind="" />
+      <Unknown index="237" dependencies="" dependenciesKind="" />
+      <Unknown index="238" dependencies="" dependenciesKind="" />
+      <Unknown index="239" dependencies="" dependenciesKind="" />
+      <Unknown index="240" dependencies="" dependenciesKind="" />
+      <Unknown index="242" dependencies="" dependenciesKind="" />
+      <Unknown index="243" dependencies="" dependenciesKind="" />
+      <Unknown index="244" dependencies="" dependenciesKind="" />
+      <Unknown index="245" dependencies="" dependenciesKind="" />
+      <Unknown index="246" dependencies="" dependenciesKind="" />
+      <Unknown index="247" dependencies="" dependenciesKind="" />
+      <Unknown index="248" dependencies="" dependenciesKind="" />
+      <Unknown index="249" dependencies="" dependenciesKind="" />
+      <Unknown index="251" dependencies="" dependenciesKind="" />
+      <Unknown index="252" dependencies="" dependenciesKind="" />
+      <Unknown index="253" dependencies="" dependenciesKind="" />
+      <Unknown index="254" dependencies="" dependenciesKind="" />
+      <Unknown index="255" dependencies="" dependenciesKind="" />
+      <Unknown index="256" dependencies="" dependenciesKind="" />
+      <Unknown index="257" dependencies="" dependenciesKind="" />
+      <Unknown index="258" dependencies="" dependenciesKind="" />
+      <Unknown index="260" dependencies="" dependenciesKind="" />
+      <Unknown index="261" dependencies="" dependenciesKind="" />
+      <Unknown index="262" dependencies="" dependenciesKind="" />
+      <Unknown index="263" dependencies="" dependenciesKind="" />
+      <Unknown index="264" dependencies="" dependenciesKind="" />
+      <Unknown index="265" dependencies="" dependenciesKind="" />
+      <Unknown index="266" dependencies="" dependenciesKind="" />
+      <Unknown index="267" dependencies="" dependenciesKind="" />
+      <Unknown index="269" dependencies="" dependenciesKind="" />
+      <Unknown index="270" dependencies="" dependenciesKind="" />
+      <Unknown index="271" dependencies="" dependenciesKind="" />
+      <Unknown index="272" dependencies="" dependenciesKind="" />
+      <Unknown index="273" dependencies="" dependenciesKind="" />
+      <Unknown index="274" dependencies="" dependenciesKind="" />
+      <Unknown index="275" dependencies="" dependenciesKind="" />
+      <Unknown index="276" dependencies="" dependenciesKind="" />
+      <Unknown index="278" dependencies="" dependenciesKind="" />
+      <Unknown index="279" dependencies="" dependenciesKind="" />
+      <Unknown index="280" dependencies="" dependenciesKind="" />
+      <Unknown index="281" dependencies="" dependenciesKind="" />
+      <Unknown index="282" dependencies="" dependenciesKind="" />
+      <Unknown index="283" dependencies="" dependenciesKind="" />
+      <Unknown index="284" dependencies="" dependenciesKind="" />
+      <Unknown index="285" dependencies="" dependenciesKind="" />
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>

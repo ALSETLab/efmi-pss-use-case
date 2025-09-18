@@ -1,0 +1,221 @@
+version = 4.2
+
+//
+// Saved by sw version: 2025.3
+//
+
+model "FMUimportTestSimplePiDymolaFMU" {
+    configuration {
+        hil_device = "HIL604"
+        hil_configuration_id = 5
+        simulation_method = euler
+        simulation_time_step = auto
+        simulation_discret_scaling = 1.0
+        dsp_timer_periods = 100e-6, 50e-3
+        ss_calc_method = "systematic elimination"
+        enb_pole_shift = True
+        enb_gds_oversampling = True
+        show_modes = False
+        device_ao_limit_enable = False
+        reset_analog_outputs_on_sim_stop = True
+        reset_analog_outputs_on_sim_stop_mode = Offset values
+        reset_digital_outputs_on_sim_stop = True
+        vhil_adio_loopback = False
+        cpl_stb = False
+        enb_dep_sw_detect = False
+        code_section = "internal memory"
+        data_section = "internal memory"
+        sys_sp_rate_1 = 0.0001
+        sys_sp_rate_2 = 0.05
+        sys_real_type_precision = "default"
+        user_real_type_precision = "default"
+        sys_cpu_optimization = "high"
+        user_cpu_optimization = "high"
+        user_cpu_part_option = "default"
+        matrix_based_reduction = True
+        cpl_dynamics_analysis = False
+        export_ss_to_pickle = False
+        ground_scope_core = False
+        dss_num_tol = 1e-15
+        cce_platform = "generic"
+        cce_use_relative_names = False
+        cce_type_mapping_real = "double"
+        cce_type_mapping_uint = "unsigned int"
+        cce_type_mapping_int = "int"
+        cce_platform = "generic"
+        cce_use_relative_names = False
+        cce_type_mapping_real = "double"
+        cce_type_mapping_uint = "unsigned int"
+        cce_type_mapping_int = "int"
+        cce_term_var_location = "local"
+        cce_directory = ""
+        cce_custom_type_int = ""
+        cce_custom_type_uint = ""
+        cce_custom_type_real = ""
+        tunable_params = "component defined"
+        sp_compiler_type = "C compiler"
+        sig_stim = "off"
+        export_resource_list = ""
+        export_dependency_list = ""
+        excluded_resource_list = ""
+        excluded_component_from_locking_list = ""
+        export_out_file = ""
+        export_lock_top_level = True
+        export_encrypt_library = True
+        export_encrypt_resources = True
+        solver_type = "DAE"
+        integration_method = "Trapezoidal - Robust"
+        max_sim_step = 1e-4
+        simulation_time = 1.0
+        abs_tol = 1e-3
+        rel_tol = 1e-3
+        init_sim_step = 1e-6
+        r_on_sw = 1e-3
+        v_on_diode = 0.1
+        data_sampling_rate = 0
+        feedthrough_validation_error_level = error
+    }
+
+    component Subsystem Root {
+        component "core/FMU Import" FMU {
+            fmu_data = "{\'model_info\': {\'fmi_version\': \'2.0\', \'fmi_type\': \'Model Exchange, Co-Simulation\', \'model_name\': \'PSSDesign.FMUs4RTHIL.SimplePI\', \'Co-simulation identifier\': \'PSSDesign_FMUs4RTHIL_SimplePI\', \'description\': \'Simple PI to test FMU export/import\', \'platforms\': \'c-code, win32, win64\', \'variables\': 11, \'generation_tool\': \'Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)\', \'generation_date\': \'2025-09-17T18:38:23Z\', \'needs_execution_tool\': False}, \'simulation_info\': {}, \'inputs\': {\'u\': {\'start\': \'0.0\', \'default_value\': \'0.0\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 620756992, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real input signal\', \'enable_plot\': False, \'model_control\': \'External\'}}, \'outputs\': {\'y\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 603979776, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real output signal\', \'enable_plot\': False, \'model_control\': \'External\'}}, \'parameters\': {\'PI_k\': {\'start\': \'1\', \'default_value\': \'1\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'tunable\', \'ref\': 16777216, \'dim\': 1, \'unit\': \'1\', \'description\': \'Gain\', \'enable_plot\': False, \'model_control\': \'Constant\'}, \'PI_T\': {\'start\': \'0.1\', \'default_value\': \'0.1\', \'type\': \'Real\', \'enumeration\': {}, \'min\': \'1E-60\', \'max\': None, \'variability\': \'tunable\', \'ref\': 16777217, \'dim\': 1, \'unit\': None, \'description\': \'Time Constant (T>0 required)\', \'enable_plot\': False, \'model_control\': \'Constant\'}, \'PI_x_start\': {\'start\': \'0\', \'default_value\': \'0\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'fixed\', \'ref\': 16777218, \'dim\': 1, \'unit\': None, \'description\': \'Initial or guess value of state\', \'enable_plot\': False, \'model_control\': \'Constant\'}, \'PI_y_start\': {\'start\': \'0\', \'default_value\': \'0\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'fixed\', \'ref\': 16777219, \'dim\': 1, \'unit\': None, \'description\': \'Initial value of output\', \'enable_plot\': False, \'model_control\': \'Constant\'}}, \'locals\': {\'PI_initType\': {\'start\': \'1\', \'default_value\': \'1\', \'type\': \'Enumeration\', \'enumeration\': {\'name\': \'Modelica.Blocks.Types.Init\', \'items\': {\'NoInit\': {\'value\': \'1\', \'description\': \'No initialization (start values are used as guess values with fixed=false)\'}, \'SteadyState\': {\'value\': \'2\', \'description\': \'Steady state initialization (derivatives of states are zero)\'}, \'InitialState\': {\'value\': \'3\', \'description\': \'Initialization with initial states\'}, \'InitialOutput\': {\'value\': \'4\', \'description\': \'Initialization with initial outputs (and steady state of the states if possible)\'}}}, \'min\': None, \'max\': None, \'variability\': \'constant\', \'ref\': 100663296, \'dim\': 1, \'unit\': None, \'description\': \'Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)\', \'enable_plot\': False, \'model_control\': \'External\'}, \'PI_u\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 1711276033, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real input signal\', \'enable_plot\': False, \'model_control\': \'External\'}, \'PI_y\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 603979776, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real output signal\', \'enable_plot\': False, \'model_control\': \'External\'}, \'PI_x\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 33554432, \'dim\': 1, \'unit\': None, \'description\': \'State of block\', \'enable_plot\': False, \'model_control\': \'External\'}, \'der(PI_x)\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 1124073472, \'dim\': 1, \'unit\': None, \'description\': \'der(State of block)\', \'enable_plot\': False, \'model_control\': \'External\'}}, \'fmi_version\': \'fmi2\', \'model_name\': \'PSSDesign.FMUs4RTHIL.SimplePI\', \'guid\': \'{309ac829-ba66-4946-8a10-82fdffa551a7}\', \'Co-simulation source files\': [\'all_PSSDesign_FMUs4RTHIL_SimplePI.c\'], \'Co-simulation preprocessor definitions\': [], \'typhoon_binaries_files_exists\': False, \'typhoon_su_file_exists\': False, \'typhoon_su_files_exists\': False}"
+            fmu_file_path = "C:/Users/Luigi/Documents/TyphoonHIL/fmus/Dymola/PSSDesign_FMUs4RTHIL_SimplePI.fmu"
+            logging_enabled = "True"
+            terminal_properties = "{\'inputs\': [{\'name\': \'u\', \'type\': \'real\', \'feedthrough\': False}], \'parameters\': [{\'name\': \'PI_k\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}, {\'name\': \'PI_T\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}, {\'name\': \'PI_x_start\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}, {\'name\': \'PI_y_start\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}], \'outputs\': [{\'name\': \'y\', \'type\': \'real\', \'feedthrough\': False}]}"
+        }
+        [
+            position = 8228, 8116
+            size = 152, 96
+        ]
+
+        component "core/Step" Step {
+            step_time = "2"
+        }
+        [
+            position = 8036, 8116
+        ]
+
+        component "core/Probe" y {
+            override_signal_name = "True"
+            signal_name = "y"
+            signal_type = "voltage"
+            streaming_en = "True"
+        }
+        [
+            position = 8400, 8016
+        ]
+
+        component "core/Probe" status {
+            streaming_en = "True"
+        }
+        [
+            position = 8264, 8012
+        ]
+
+        component "core/Signal Controlled Voltage Source" Vsp1 {
+        }
+        [
+            position = 8452, 8116
+            rotation = right
+            scale = -1, 1
+            size = 64, 32
+        ]
+
+        component "core/Series RLC Branch" "Series RLC Branch1" {
+            initial_voltage = "1"
+        }
+        [
+            position = 8608, 8052
+            size = 128, 100
+        ]
+
+        junction Junction1 sp
+        [
+            position = 8344, 8116
+        ]
+
+        connect Vsp1.p_node "Series RLC Branch1.P1_pos" as Connection16
+        [
+            breakpoints = 8452, 8052
+        ]
+        connect "Series RLC Branch1.P1_neg" Vsp1.n_node as Connection17
+        [
+            breakpoints = 8708, 8068; 8704, 8192; 8452, 8184
+        ]
+        connect status.in FMU.Status as Connection19
+        [
+            breakpoints = 8220, 8012
+        ]
+        connect Step.out FMU.u as Connection20
+        connect FMU.y Junction1 as Connection22
+        connect Junction1 Vsp1.in as Connection23
+        connect y.in Junction1 as Connection24
+        [
+            breakpoints = 8344, 8016
+        ]
+    }
+
+    default {
+        "core/Probe" {
+            signal_access = "inherit"
+            addr = "0"
+            override_signal_name = "False"
+            signal_name = ""
+            signal_type = "generic"
+            streaming_en = "False"
+            streaming_er_idx = "0"
+            execution_rate = "inherit"
+        }
+
+        "core/Step" {
+            step_time = "1"
+            initial_value = "0"
+            final_value = "1"
+            signal_type = "real"
+            execution_rate = "100e-6"
+        }
+
+        "core/FMU Import" {
+            terminal_properties = "{
+                                \'inputs\': [],
+                                \'parameters\': [],
+                                \'outputs\': []
+                            }"
+            logging_enabled = "False"
+            fmu_file_path = ""
+            path_type = "Absolute"
+            fmu_data = "{
+                                \'model_info\': {},
+                                \'simulation_info\': {},
+                                \'inputs\': {},
+                                \'outputs\': {},
+                                \'parameters\': {},
+                                \'locals\': {},
+                                \'fmi_version\': \'\',
+                                \'model_name\': \'\',
+                                \'guid\': \'\',
+                                \'Co-simulation source files\': [],
+                                \'Co-simulation preprocessor definitions\': [],
+                                \'typhoon_binaries_files_exists\': False,
+                                \'typhoon_su_file_exists\': False,
+                            }"
+            compile_source_files = "True"
+            additional_definitions = ""
+            execution_rate = "inherit"
+        }
+
+        "core/Series RLC Branch" {
+            num_phases = "Single-Phase"
+            branch_type = "RLC"
+            resistance = "10"
+            inductance = "10e-3"
+            initial_current = "0"
+            capacitance = "10e-6"
+            initial_voltage = "0"
+        }
+
+        "core/Signal Controlled Voltage Source" {
+            execution_rate = "inherit"
+        }
+    }
+}

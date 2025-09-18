@@ -1,0 +1,222 @@
+version = 4.2
+
+//
+// Saved by sw version: 2025.3
+//
+
+model "FMUimportTestSimplePiOMFMU" {
+    configuration {
+        hil_device = "HIL604"
+        hil_configuration_id = 5
+        simulation_method = euler
+        simulation_time_step = auto
+        simulation_discret_scaling = 1.0
+        dsp_timer_periods = 100e-6, 50e-3
+        ss_calc_method = "systematic elimination"
+        enb_pole_shift = True
+        enb_gds_oversampling = True
+        show_modes = False
+        device_ao_limit_enable = False
+        reset_analog_outputs_on_sim_stop = True
+        reset_analog_outputs_on_sim_stop_mode = Offset values
+        reset_digital_outputs_on_sim_stop = True
+        vhil_adio_loopback = False
+        cpl_stb = False
+        enb_dep_sw_detect = False
+        code_section = "internal memory"
+        data_section = "internal memory"
+        sys_sp_rate_1 = 0.0001
+        sys_sp_rate_2 = 0.05
+        sys_real_type_precision = "default"
+        user_real_type_precision = "default"
+        sys_cpu_optimization = "high"
+        user_cpu_optimization = "high"
+        user_cpu_part_option = "default"
+        matrix_based_reduction = True
+        cpl_dynamics_analysis = False
+        export_ss_to_pickle = False
+        ground_scope_core = False
+        dss_num_tol = 1e-15
+        cce_platform = "generic"
+        cce_use_relative_names = False
+        cce_type_mapping_real = "double"
+        cce_type_mapping_uint = "unsigned int"
+        cce_type_mapping_int = "int"
+        cce_platform = "generic"
+        cce_use_relative_names = False
+        cce_type_mapping_real = "double"
+        cce_type_mapping_uint = "unsigned int"
+        cce_type_mapping_int = "int"
+        cce_term_var_location = "local"
+        cce_directory = ""
+        cce_custom_type_int = ""
+        cce_custom_type_uint = ""
+        cce_custom_type_real = ""
+        tunable_params = "component defined"
+        sp_compiler_type = "C compiler"
+        sig_stim = "off"
+        export_resource_list = ""
+        export_dependency_list = ""
+        excluded_resource_list = ""
+        excluded_component_from_locking_list = ""
+        export_out_file = ""
+        export_lock_top_level = True
+        export_encrypt_library = True
+        export_encrypt_resources = True
+        solver_type = "DAE"
+        integration_method = "Trapezoidal - Robust"
+        max_sim_step = 1e-4
+        simulation_time = 1.0
+        abs_tol = 1e-3
+        rel_tol = 1e-3
+        init_sim_step = 1e-6
+        r_on_sw = 1e-3
+        v_on_diode = 0.1
+        data_sampling_rate = 0
+        feedthrough_validation_error_level = error
+    }
+
+    component Subsystem Root {
+        component "core/FMU Import" FMU {
+            fmu_data = "{\'model_info\': {\'fmi_version\': \'2.0\', \'fmi_type\': \'Model Exchange, Co-Simulation\', \'model_name\': \'PSSDesign.FMUs4RTHIL.SimplePI\', \'Co-simulation identifier\': \'SimplePI\', \'description\': \'Simple PI to test FMU export/import\', \'platforms\': \'c-code, win64\', \'variables\': 11, \'generation_tool\': \'OpenModelica Compiler OpenModelica v1.25.0 (64-bit)\', \'generation_date\': \'2025-09-17T14:41:23Z\', \'needs_execution_tool\': False}, \'simulation_info\': {}, \'inputs\': {\'u\': {\'start\': \'0.0\', \'default_value\': \'0.0\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 2, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real input signal\', \'enable_plot\': False, \'model_control\': \'External\'}}, \'outputs\': {\'y\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 3, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real output signal\', \'enable_plot\': False, \'model_control\': \'External\'}}, \'parameters\': {\'PI_T\': {\'start\': \'0.1\', \'default_value\': \'0.1\', \'type\': \'Real\', \'enumeration\': {}, \'min\': \'1e-60\', \'max\': None, \'variability\': \'fixed\', \'ref\': 4, \'dim\': 1, \'unit\': \'s\', \'description\': \'Time Constant (T>0 required)\', \'enable_plot\': False, \'model_control\': \'Constant\'}, \'PI_k\': {\'start\': \'1.0\', \'default_value\': \'1.0\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'fixed\', \'ref\': 5, \'dim\': 1, \'unit\': \'1\', \'description\': \'Gain\', \'enable_plot\': False, \'model_control\': \'Constant\'}, \'PI_x_start\': {\'start\': \'0.0\', \'default_value\': \'0.0\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'fixed\', \'ref\': 6, \'dim\': 1, \'unit\': None, \'description\': \'Initial or guess value of state\', \'enable_plot\': False, \'model_control\': \'Constant\'}, \'PI_y_start\': {\'start\': \'0.0\', \'default_value\': \'0.0\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'fixed\', \'ref\': 7, \'dim\': 1, \'unit\': None, \'description\': \'Initial value of output\', \'enable_plot\': False, \'model_control\': \'Constant\'}}, \'locals\': {\'PI_x\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 0, \'dim\': 1, \'unit\': None, \'description\': \'State of block\', \'enable_plot\': False, \'model_control\': \'External\'}, \'der(PI_x)\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 1, \'dim\': 1, \'unit\': None, \'description\': \'der(State of block)\', \'enable_plot\': False, \'model_control\': \'External\'}, \'PI_u\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 2, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real input signal\', \'enable_plot\': False, \'model_control\': \'External\'}, \'PI_y\': {\'start\': \'\', \'default_value\': \'\', \'type\': \'Real\', \'enumeration\': {}, \'min\': None, \'max\': None, \'variability\': \'continuous\', \'ref\': 3, \'dim\': 1, \'unit\': None, \'description\': \'Connector of Real output signal\', \'enable_plot\': False, \'model_control\': \'External\'}}, \'fmi_version\': \'fmi2\', \'model_name\': \'PSSDesign.FMUs4RTHIL.SimplePI\', \'guid\': \'{4976243b-afc1-4e5f-b898-1ee0f43d8734}\', \'Co-simulation source files\': [\'SimplePI.c\', \'SimplePI_functions.c\', \'SimplePI_records.c\', \'SimplePI_01exo.c\', \'SimplePI_02nls.c\', \'SimplePI_03lsy.c\', \'SimplePI_04set.c\', \'SimplePI_05evt.c\', \'SimplePI_06inz.c\', \'SimplePI_07dly.c\', \'SimplePI_08bnd.c\', \'SimplePI_09alg.c\', \'SimplePI_10asr.c\', \'SimplePI_11mix.c\', \'SimplePI_12jac.c\', \'SimplePI_13opt.c\', \'SimplePI_14lnz.c\', \'SimplePI_15syn.c\', \'SimplePI_16dae.c\', \'SimplePI_17inl.c\', \'SimplePI_18spd.c\', \'SimplePI_init_fmu.c\', \'SimplePI_FMU.c\', \'./gc/memory_pool.c\', \'./gc/omc_gc.c\', \'./util/base_array.c\', \'./util/boolean_array.c\', \'./util/context.c\', \'./util/division.c\', \'./util/doubleEndedList.c\', \'./util/generic_array.c\', \'./util/index_spec.c\', \'./util/integer_array.c\', \'./util/list.c\', \'./util/modelica_string_lit.c\', \'./util/modelica_string.c\', \'./util/ModelicaUtilities.c\', \'./util/omc_error.c\', \'./util/omc_file.c\', \'./util/omc_init.c\', \'./util/omc_mmap.c\', \'./util/omc_msvc.c\', \'./util/omc_numbers.c\', \'./util/parallel_helper.c\', \'./util/rational.c\', \'./util/real_array.c\', \'./util/ringbuffer.c\', \'./util/simulation_options.c\', \'./util/string_array.c\', \'./util/utility.c\', \'./util/varinfo.c\', \'./math-support/pivot.c\', \'./simulation/jacobian_util.c\', \'./simulation/omc_simulation_util.c\', \'./simulation/options.c\', \'./simulation/simulation_info_json.c\', \'./simulation/simulation_omc_assert.c\', \'./simulation/solver/delay.c\', \'./simulation/solver/fmi_events.c\', \'./simulation/solver/model_help.c\', \'./simulation/solver/omc_math.c\', \'./simulation/solver/spatialDistribution.c\', \'./simulation/solver/stateset.c\', \'./simulation/solver/synchronous.c\', \'./simulation/solver/initialization/initialization.c\', \'./meta/meta_modelica_catch.c\'], \'Co-simulation preprocessor definitions\': [], \'typhoon_binaries_files_exists\': False, \'typhoon_su_file_exists\': False, \'typhoon_su_files_exists\': False}"
+            fmu_file_path = "fmus/OM/SimplePI.fmu"
+            logging_enabled = "True"
+            path_type = "Relative"
+            terminal_properties = "{\'inputs\': [{\'name\': \'u\', \'type\': \'real\', \'feedthrough\': False}], \'parameters\': [{\'name\': \'PI_T\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}, {\'name\': \'PI_k\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}, {\'name\': \'PI_x_start\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}, {\'name\': \'PI_y_start\', \'type\': \'real\', \'feedthrough\': False, \'model_control\': \'Constant\'}], \'outputs\': [{\'name\': \'y\', \'type\': \'real\', \'feedthrough\': False}]}"
+        }
+        [
+            position = 8228, 8116
+            size = 152, 96
+        ]
+
+        component "core/Step" Step {
+            step_time = "2"
+        }
+        [
+            position = 8036, 8116
+        ]
+
+        component "core/Probe" y {
+            override_signal_name = "True"
+            signal_name = "y"
+            signal_type = "voltage"
+            streaming_en = "True"
+        }
+        [
+            position = 8444, 8048
+        ]
+
+        component "core/Probe" status {
+            streaming_en = "True"
+        }
+        [
+            position = 8264, 8012
+        ]
+
+        component "core/Signal Controlled Voltage Source" Vsp1 {
+        }
+        [
+            position = 8560, 8120
+            rotation = right
+            scale = -1, 1
+            size = 64, 32
+        ]
+
+        component "core/Series RLC Branch" "Series RLC Branch1" {
+            initial_voltage = "1"
+        }
+        [
+            position = 8712, 8056
+            size = 128, 100
+        ]
+
+        junction Junction1 sp
+        [
+            position = 8364, 8116
+        ]
+
+        connect Vsp1.p_node "Series RLC Branch1.P1_pos" as Connection16
+        [
+            breakpoints = 8560, 8056
+        ]
+        connect "Series RLC Branch1.P1_neg" Vsp1.n_node as Connection17
+        [
+            breakpoints = 8816, 8072; 8808, 8196; 8560, 8188
+        ]
+        connect Step.out FMU.u as Connection18
+        connect FMU.Status status.in as Connection19
+        [
+            breakpoints = 8224, 8012
+        ]
+        connect FMU.y Junction1 as Connection21
+        connect Junction1 Vsp1.in as Connection22
+        connect y.in Junction1 as Connection23
+        [
+            breakpoints = 8368, 8044
+        ]
+    }
+
+    default {
+        "core/Probe" {
+            signal_access = "inherit"
+            addr = "0"
+            override_signal_name = "False"
+            signal_name = ""
+            signal_type = "generic"
+            streaming_en = "False"
+            streaming_er_idx = "0"
+            execution_rate = "inherit"
+        }
+
+        "core/Step" {
+            step_time = "1"
+            initial_value = "0"
+            final_value = "1"
+            signal_type = "real"
+            execution_rate = "100e-6"
+        }
+
+        "core/FMU Import" {
+            terminal_properties = "{
+                                \'inputs\': [],
+                                \'parameters\': [],
+                                \'outputs\': []
+                            }"
+            logging_enabled = "False"
+            fmu_file_path = ""
+            path_type = "Absolute"
+            fmu_data = "{
+                                \'model_info\': {},
+                                \'simulation_info\': {},
+                                \'inputs\': {},
+                                \'outputs\': {},
+                                \'parameters\': {},
+                                \'locals\': {},
+                                \'fmi_version\': \'\',
+                                \'model_name\': \'\',
+                                \'guid\': \'\',
+                                \'Co-simulation source files\': [],
+                                \'Co-simulation preprocessor definitions\': [],
+                                \'typhoon_binaries_files_exists\': False,
+                                \'typhoon_su_file_exists\': False,
+                            }"
+            compile_source_files = "True"
+            additional_definitions = ""
+            execution_rate = "inherit"
+        }
+
+        "core/Series RLC Branch" {
+            num_phases = "Single-Phase"
+            branch_type = "RLC"
+            resistance = "10"
+            inductance = "10e-3"
+            initial_current = "0"
+            capacitance = "10e-6"
+            initial_voltage = "0"
+        }
+
+        "core/Signal Controlled Voltage Source" {
+            execution_rate = "inherit"
+        }
+    }
+}

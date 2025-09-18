@@ -1,0 +1,2202 @@
+{
+    "ver": "1.0",
+    "_cls": "Model",
+    "name": "FMUimportTestSimplePiDymolaFMU",
+    "core_model_id": "d3e025f0-93de-11f0-9b81-34e12dea0613",
+    "vars": {
+        "sys_cpu_exec_rate_1": 0.0001,
+        "sys_cpu_exec_rate_2": 0.05
+    },
+    "dev_partitions": [
+        {
+            "_cls": "DevPartition",
+            "name": "hil0",
+            "dev_id": "0",
+            "dev_settings": {
+                "hil_descr": {
+                    "general": {
+                        "fw_mng_st_chk_time": 55,
+                        "af_m1_en_delay": 300,
+                        "ssd_support": false,
+                        "udc_name": "ci_hdrc.0",
+                        "cmd_executor": true,
+                        "hw_platform": "z7",
+                        "host_os": "linux",
+                        "standalone boot di selection": false,
+                        "product_name": "HIL604",
+                        "af_rst_cnt_width": 16,
+                        "af_m0_num": 2,
+                        "driver_product_id": "0x025E",
+                        "uart_bus_port": 1,
+                        "uart_bus_dio": 1,
+                        "pwm_ctrl_led_num": 1,
+                        "min_sim_step": 5e-07,
+                        "zynq_gem_no": 2,
+                        "gpio_width": 0,
+                        "ethercat_master_support": false,
+                        "standalone_boot": true,
+                        "post_load_init_time": 6,
+                        "can_fd_ports": 0,
+                        "hw_device": true,
+                        "uart_mio_pin_set": 0,
+                        "ethercat_ports": 0,
+                        "ptp_pps_support": true,
+                        "af_m1_num": 4,
+                        "uart_max_baudrate": 230400,
+                        "af_m1_oc_inv": true,
+                        "sys_clk_freq": 160000000.0,
+                        "gps_pps_support": true,
+                        "af_m0_en_delay": 301,
+                        "irig_b_support": true,
+                        "af_oc_delay": 8,
+                        "active_fuses": true,
+                        "comm_cpu_vars_in_ddr": true,
+                        "pwm_ctrl_fan_num": 0,
+                        "af_m1_inv": false,
+                        "common_phys_baseaddr": 1073741824,
+                        "comm_cpu": true,
+                        "fw_mng_update_time": 14,
+                        "can_bus_ports": 2,
+                        "calibration": true
+                    },
+                    "fpga_solver": {
+                        "pwm_min_freq": 100,
+                        "hssl_ext_reset": true,
+                        "plink_s_demo": false,
+                        "hssl_in_vars_per_spc": 8,
+                        "pwm_modulator_num": 12,
+                        "mchn_max_num": 16,
+                        "ssl_lane_num": 0,
+                        "ddcs_m_module_num": 2,
+                        "hssl_max_out_vars_per_dev": 16,
+                        "streaming_buffer_size": 8388608,
+                        "clk_freq": 160000000.0,
+                        "gds_per_fsm": 6,
+                        "mvm_mem_map_id": 2,
+                        "par_sync_kp": 230,
+                        "topology_selector": true,
+                        "hssl_time_sync": true,
+                        "mchn_enc_io_sig_num": 2,
+                        "spc_lines": 4,
+                        "plink_m_demo": false,
+                        "signal_stim_msg_size": 1024,
+                        "mchn_gp_regs_max_num": 512,
+                        "gds_oversampling": true,
+                        "signal_stim_comm_buffer_size": 262144,
+                        "gds_var_del_line_length": 32,
+                        "mmem_size": 4096,
+                        "dc_dc_mvm_out_width": 8,
+                        "switch_level_gds_ovs": true,
+                        "mchn_num": 1,
+                        "par_sync_dac_width": 12,
+                        "cmp_per_spc": 6,
+                        "ssl_aurora_bandwidth": 5.0,
+                        "mchn_mc_ao_num": 7,
+                        "dc_bus_update_period": 1,
+                        "ddcs_s_module_max_num": 8,
+                        "hssl_lane_num": 8,
+                        "ddcs_m_module_max_num": 8,
+                        "ssl_out_vars_max": 0,
+                        "mchn_ext_io": true,
+                        "time_cnt_width": 41,
+                        "plink_m_base_tick": 25,
+                        "hssl_sp": true,
+                        "dc_ch_num": 128,
+                        "scope_ds_ch_num": 32,
+                        "max_dc_dc_solver_num": 16,
+                        "gds_var_del_lut_width": 250,
+                        "lt_ch_num": 8,
+                        "ssl_indp_lane_num": 0,
+                        "par_sync_clk_duty_cycle": 20,
+                        "gds_var_del_width_per_fsm": 4,
+                        "ao_wr_decoder_internal": false,
+                        "x_mant_width": 39,
+                        "sg_mem_size": 1024,
+                        "ssl_max_no_of_devices": 4,
+                        "mchn_mvm_out_num": 8,
+                        "ms_as_size": 16,
+                        "dc_dc_solver_num": 0,
+                        "par_sync_ki": 46,
+                        "pwm_max_freq": 500000,
+                        "ssl_aurora_crc": false,
+                        "sp_digital_mem_size": 512,
+                        "gds_comp_latency": 8,
+                        "ms_ds_size": 4,
+                        "par_sync_shift_width": 16,
+                        "sg_channel_latency": 45,
+                        "mchn_mech_w_ovf_limit": 20000.0,
+                        "third_party_module_max_num": 8,
+                        "hssl_resettable": true,
+                        "ctc_per_spc": 6,
+                        "dc_dc_fast_tick_cycles": 8,
+                        "scope_buffer_size": 67108864,
+                        "sp_analog_mem_size": 1024,
+                        "mchn_3d_lut_size": 32,
+                        "par_sync_pi_shift_val": 20,
+                        "plink_m_module_max_num": 8,
+                        "dc_dc_mvm_in_width": 6,
+                        "mchn_absenc": true,
+                        "hssl_sp_max_streams": 16,
+                        "mchn_mc2dsp_num": 6,
+                        "spc_num": 4,
+                        "mchn_mech_latency": 48,
+                        "mm_mant_width": 31,
+                        "glb_sync_kp": 230,
+                        "plink_s_module_num": 4,
+                        "mchn_pdsp_latency_fixed": 5,
+                        "ssl_num": 0,
+                        "ssl_sp_vars_per_stream": 256,
+                        "scope_ch_num": 32,
+                        "pwm_analyzer_num": 0,
+                        "mac_num": 8,
+                        "spc_ts_max_no_of_modes": 2048,
+                        "plink_s_module_max_num": 8,
+                        "mchn_mant_width": 41,
+                        "par_dtv_leg_num": 4,
+                        "par_sync_clk_freq": 100,
+                        "spc_high_res_do": true,
+                        "tve_per_spc": 16,
+                        "fsms_per_ts": 4,
+                        "mchn_dsp_ao_num": 8,
+                        "ddcs_s_module_num": 2,
+                        "hssl": true,
+                        "gds_var_del_max_lut_width": 256,
+                        "ssl_in_vars_per_spc": 16,
+                        "mchn_3d_lut_latency_fixed": 61,
+                        "di_ch_num": 64,
+                        "pipe_latency_fixed": 19,
+                        "lut_mem_size": 512,
+                        "mchn_enc_cnt_width": 30,
+                        "ssl_egston_in_vars_per_spc": 12,
+                        "ssl_egston_max_out_vars": 12,
+                        "abb_proprietary_protocols": false,
+                        "sp_sources_num": 16,
+                        "ssl_protocol_version": 0,
+                        "ssl_allowed_sp_vars_per_stream": 250,
+                        "mchn_dsp2mc_num": 1,
+                        "ext_cpu_app_num": 8,
+                        "plink_m_module_num": 4,
+                        "sg_max_period": 16777216,
+                        "pwm_analyzer_min_freq": 100,
+                        "glb_sync_ki": 46,
+                        "mchn_gp_regs_num": 128,
+                        "pwm_max_dead_time": 10,
+                        "third_party_module_num": 4,
+                        "lut_channel_latency": 53,
+                        "ssl_high_speed_support": false,
+                        "gds_var_del_max_decim": 1000,
+                        "pwr_loss_calc": true,
+                        "forward_voltage_drop": true,
+                        "mchn_div": true,
+                        "hssl_sp_vars_per_stream": 16,
+                        "signal_stim_buffer_size": 4194304,
+                        "ssl_egston_num": 0,
+                        "hssl_indp_lane_num": 1,
+                        "mchn_3d_lut": true,
+                        "mchn_mvm_in_num": 8,
+                        "glb_sync_pi_shift_val": 20,
+                        "sg_ch_num": 12,
+                        "dtsm_per_spc": 32,
+                        "par_dtv_num": 3,
+                        "hssl_max_devices": 16,
+                        "gds_var_del": true,
+                        "ssl_sp_max_streams": 1,
+                        "gds_ovs_period": 6.25e-09
+                    },
+                    "io": {
+                        "analog_inputs": 32,
+                        "digital_inputs": 64,
+                        "ao_limit_en": true,
+                        "pwr_rail_oc_ind": [
+                            [
+                                0,
+                                1
+                            ],
+                            [
+                                0,
+                                1
+                            ],
+                            [
+                                0,
+                                1
+                            ]
+                        ],
+                        "analog_output_range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ]
+                        ],
+                        "digital_outputs": 64,
+                        "analog_outputs": 64,
+                        "ao_lane_num": 4,
+                        "analog_output_scale": [
+                            10.0,
+                            10.0,
+                            10.0
+                        ],
+                        "ai_ch_per_lane": 1,
+                        "ao_latencies": 68,
+                        "loopback_gain": [
+                            1,
+                            1,
+                            1
+                        ],
+                        "analog_input_scale": [
+                            0.1,
+                            0.1,
+                            0.1
+                        ],
+                        "ao_ch_width": 16,
+                        "ai_ch_width": 16,
+                        "analog_input_range": [
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10,
+                                10
+                            ],
+                            [
+                                -10.24,
+                                10.24
+                            ]
+                        ]
+                    },
+                    "sp_platform": {
+                        "comm_cpu": [
+                            {
+                                "cpu_type": "mb_v9",
+                                "os": "baremetal",
+                                "sys_intr": false,
+                                "timer_intr": 2,
+                                "cpu_cfg": "mb_cfg7",
+                                "gems": [
+                                    null,
+                                    1,
+                                    null,
+                                    null
+                                ],
+                                "exec_rates_no": 2,
+                                "DEF_SAMPLE_TIME": 1,
+                                "comm_dmem_size": 65536,
+                                "comm_dmem_addr": 0,
+                                "eth_ve_max_input_size": 350,
+                                "bytes_used_by_eth_ve_module": 2048,
+                                "cache_line_len": 16
+                            }
+                        ],
+                        "user_sp_cpu": [
+                            {
+                                "cpu_type": "arm_a9",
+                                "os": "baremetal",
+                                "sys_intr": false,
+                                "timer_intr": 1,
+                                "cpu_cfg": "arm_cfg2",
+                                "exec_rates_no": 4,
+                                "indep_irq_per_er": true
+                            }
+                        ],
+                        "host_cpu": [
+                            {
+                                "cpu_type": "arm_a9_linux",
+                                "os": "linux",
+                                "sys_intr": true,
+                                "gems": [
+                                    0,
+                                    null,
+                                    null,
+                                    null
+                                ]
+                            }
+                        ],
+                        "sys_sp_cpu": [
+                            {
+                                "cpu_type": "mb_v9",
+                                "os": "baremetal",
+                                "sys_intr": false,
+                                "timer_intr": 1,
+                                "cpu_cfg": "mb_cfg4",
+                                "exec_rates_no": 2,
+                                "indep_irq_per_er": true
+                            }
+                        ]
+                    }
+                },
+                "mem_map": {
+                    "AS_MEM_MAP": {
+                        "spc_baseaddr": 0,
+                        "cop_baseaddr": 32,
+                        "mch_baseaddr": 64,
+                        "sg_baseaddr": 65,
+                        "ds_baseaddr": 66,
+                        "c0_baseaddr": 67,
+                        "ai_baseaddr": 68
+                    },
+                    "CE_MAP_REG": {
+                        "cmd_time_lo": 0,
+                        "cmd_time_hi": 1,
+                        "cmd_addr": 2,
+                        "cmd_wr_data": 3,
+                        "cmd_rd_data_ready": 8,
+                        "cmd_rd_data": 9,
+                        "fifo_status": 16
+                    },
+                    "CU_MAP_REG": {
+                        "sample_period": 0,
+                        "system_enable": 1,
+                        "uart_cfg_reg": 2,
+                        "mod_enable": 3,
+                        "system_running": 4,
+                        "ext_cpu_app_en": 5,
+                        "one_wire_rst": 6,
+                        "par_en": 8,
+                        "sync_master": 9,
+                        "par_sp_exist": 10,
+                        "cu_2_mv_om_init_reset": 11,
+                        "gpio_out": 12,
+                        "gpio_in": 13,
+                        "time_synch_cfg": 14,
+                        "proc_rev": 16,
+                        "product_id": 17,
+                        "configuration_id": 18,
+                        "release_date": 19,
+                        "ow_sn_data_l": 20,
+                        "ow_sn_data_h": 21,
+                        "hil_id": 22,
+                        "hil_io_board_rev": 23,
+                        "tick_cnt_lo": 24,
+                        "tick_cnt_hi": 25,
+                        " irig_b_time_l": 26,
+                        " irig_b_time_h": 27,
+                        "time_sync_status": 28,
+                        "pwr_rail_oc_ignore_modulo": 30,
+                        "par_stf_status": 31,
+                        "dc_dc_ovf_status": 32,
+                        "spc_ovf_status": 33,
+                        "mch_ovf_status": 34,
+                        "hssl_link_up": 36,
+                        "hssl_link_err": 37,
+                        "hssl_gtx_rst_n": 38,
+                        "sf_period": 39,
+                        "pwr_rail_oc_status": 40,
+                        "pwr_rail_rst": 41,
+                        "pwr_rail_rst_lenght": 42,
+                        "fan_failure_status": 43,
+                        "synchro_ph_err": 44,
+                        "synchro_kp": 45,
+                        "synchro_ki": 46,
+                        "synchro_pi_shift": 47,
+                        "ssl_cfg": 48,
+                        "ssl_link_up": 49,
+                        "ssl_link_err": 50,
+                        "cu_sp_init_timeout": 51,
+                        "hil_dev_unit_sum": 52,
+                        "cu_before_load": 53,
+                        "cu_ext_app_status": 54,
+                        "gen_ptp_pps": 55,
+                        "cu_cpu_sp_init_done": 56,
+                        "model_rst_dur": 64,
+                        "sp_init_dur": 65,
+                        "sp_init_timeout_modulo": 66,
+                        "comm_cpu_timeout_modulo": 67,
+                        "sf_trigg_tick_cnt_lo": 68,
+                        "sf_trigg_tick_cnt_hi": 69,
+                        "cu_cpu_cfg": 80,
+                        "gp_reg0": 96,
+                        "gp_reg1": 97,
+                        "gp_reg2": 98,
+                        "gp_reg3": 99,
+                        "eth_phy_reset": 100,
+                        "cu_system_irq_en": 104,
+                        "cu_system_irq_ack": 112,
+                        "egston_master_mode": 118,
+                        "gpio_mode": 128,
+                        "gds_stf_status_1": 144,
+                        "gds_stf_status_2": 145,
+                        "gds_stf_status_3": 146,
+                        "gds_stf_status_4": 147,
+                        "sp_monitor_violation": 2097152,
+                        "sp_monitor_cio_clear": 2097155,
+                        "sp_monitor_clr": 2097156,
+                        "sp_monitor_exception_occurred": 2097157,
+                        "sp_monitor_exception_id": 2097158,
+                        "sp_monitor_exception_addr": 2097159,
+                        "sp_monitor_en": 2097160,
+                        "sp_monitor_cnt_modulo": 2097168,
+                        "sp_monitor_stop": 2097184,
+                        "sp_monitor_curr_cnt": 2097192,
+                        "sp_monitor_max_cnt": 2097200,
+                        "sp_monitor_cnt_timeout_modulo": 2097208
+                    },
+                    "CU_PARAMS": {
+                        "mod_enable_ms_pos": 65535,
+                        "mod_enable_lut_pos": 16777216,
+                        "mod_enable_sg_pos": 65536,
+                        "sp_monitor_offset": 64,
+                        "uart_cfg_reg_dio_mask": 2147483648
+                    },
+                    "DS_MEM_MAP": {
+                        "const_0": 1,
+                        "ptp_pps_baseaddr": 2,
+                        "gps_pps_baseaddr": 3,
+                        "system_pps_baseaddr": 4,
+                        "gps_pps_sync_baseaddr": 5,
+                        "pps_baseaddr": 6,
+                        "irig_b_baseaddr": 7,
+                        "ao_status_baseaddr": 8,
+                        "dtv_status_baseaddr": 9,
+                        "capture_trigger_baseaddr": 16,
+                        "gpio_baseaddr": 64,
+                        "di_do_baseaddr": 128,
+                        "mch_do_baseaddr": 256,
+                        "pwm_mod_do_baseaddr": 512,
+                        "spc_cb_do_baseaddr": 1024,
+                        "sp_do_baseaddr": 2048
+                    },
+                    "HIL_UNIT_OFFSETS": {
+                        "cu_baseaddr": 0,
+                        "sg_baseaddr": 4194304,
+                        "ms_baseaddr": 8388608,
+                        "io_baseaddr": 12582912,
+                        "lt_baseaddr": 16777216,
+                        "sc_baseaddr": 20971520,
+                        "ce_baseaddr": 25165824,
+                        "te_baseaddr": 25165824,
+                        "hs_baseaddr": 29360128,
+                        "pm_baseaddr": 33554432,
+                        "pd_baseaddr": 37748736,
+                        "pa_baseaddr": 41943040,
+                        "dc_baseaddr": 46137344,
+                        "tp_baseaddr": 50331648,
+                        "sa_baseaddr": 134217728
+                    },
+                    "HIL_UNIT_PARAMS": {
+                        "cb_data_width": 32,
+                        "unit_size": 4194304
+                    },
+                    "HS_MAP_MEM": {
+                        "tx_config": 262144,
+                        "rx_config": 524288,
+                        "tx_data_sp": 1310720,
+                        "rx_data_sp": 1572864
+                    },
+                    "HS_MAP_REG": {
+                        "tx_data_count": 1048576,
+                        "tx_dst_id": 1048577,
+                        "tx_stream_id": 1048578,
+                        "tx_req": 1048579,
+                        "tx_busy": 1048580,
+                        "ssl_header_regs": 3145728,
+                        "ssl_header_valid_reg": 3145730,
+                        "ssl_disable_header_reg": 3145731
+                    },
+                    "IO_MAP_MEM": {
+                        "as_readout_table": 524288,
+                        "ds_readout_table": 3670016,
+                        "sp_analog_mem": 65536,
+                        "sp_digital_mem": 3146752
+                    },
+                    "IO_MAP_REG": {
+                        "ao_sf": 0,
+                        "ao_offset": 256,
+                        "ao_signal_addr": 512,
+                        "ai_sf": 768,
+                        "ai_offset": 1024,
+                        "ao_lower_limit": 1280,
+                        "ao_upper_limit": 1536,
+                        "ao_zero_on_mdl_rst": 1792,
+                        "do_zero_on_mdl_rst": 3145728,
+                        "do_inv_mask": 3145792,
+                        "do_sw_value": 3145856,
+                        "do_signal_addr": 3145984
+                    },
+                    "LT_MAP_MEM": {
+                        "data_mem": 2097152
+                    },
+                    "LT_MAP_PARAMS": {
+                        "data_mem_size": 512
+                    },
+                    "LT_MAP_REG": {
+                        "no_of_luts": 0,
+                        "toggle_filed": 256,
+                        "input_addr": 512,
+                        "input_offset": 768,
+                        "input_sf": 1024,
+                        "mem_base_addr": 1280,
+                        "input_max_add": 1536
+                    },
+                    "MS_MAP_MEM": {
+                        "mechanical_solver'": 0,
+                        "reg_bank": 65536,
+                        "prog_dsp": 131072,
+                        "lut_3d": 196608
+                    },
+                    "MS_MAP_PARAMS": {
+                        "ms_mem_space_size": 262144
+                    },
+                    "MS_MCH_REG_MAP": {
+                        "tsm": 1,
+                        "load_type": 4,
+                        "angle_mode": 5,
+                        "w_inc_coef": 17,
+                        "mew_ratio": 18,
+                        "enc_rpp": 19,
+                        "enc_ppr": 20,
+                        "enc_ppr_int": 21,
+                        "enc_ppr_rec": 22,
+                        "const_load": 24,
+                        "linear_load": 25,
+                        "square_load": 26,
+                        "load_source_select": 27,
+                        "const_load_type": 28,
+                        "ext_load_type": 29,
+                        "ext_load_offset": 30,
+                        "ext_load_sf": 31,
+                        "ext_load_ai": 32,
+                        "absenc_cfg": 33,
+                        "absenc_data_di_addr": 34,
+                        "absenc_clock_di_addr": 35,
+                        "res_a_rst_val": 36,
+                        "res_b_rst_val": 37,
+                        "ext_carr_offset": 38,
+                        "ext_carr_sf": 39,
+                        "absenc_mt_cnt_tc": 40,
+                        "res_pole_pairs": 43,
+                        "res_carrier_tsw": 44,
+                        "carr_source_sel": 45,
+                        "ext_carr_ai_0": 46,
+                        "zero_marker_pos": 47,
+                        "w_e": 48,
+                        "res_sin_a": 49,
+                        "res_sin_b": 50,
+                        "sin_e": 51,
+                        "cos_e": 52,
+                        "res_carr_a": 53,
+                        "res_carr_b": 54,
+                        "enc_phase": 55,
+                        "angle_m": 56,
+                        "enc_cnt": 57,
+                        "sin_enc_a": 58,
+                        "sin_enc_b": 59,
+                        "ext_carr_ai_1": 60,
+                        "zero_marker_cfg": 61,
+                        "lut_angle1_max": 64,
+                        "lut_angle1_seg_max": 65,
+                        "lut_angle1": 66,
+                        "lut_angle1_segment": 67,
+                        "lut_angle2_max": 68,
+                        "lut_angle2_seg_max": 69,
+                        "lut_angle2": 70,
+                        "lut_angle2_segment": 71
+                    },
+                    "MS_RB_MAP_REG": {
+                        "mvm_in_addr": 0,
+                        "lut2dsp_init": 32,
+                        "gp_regs": 1024
+                    },
+                    "MS_3D_LUT_MAP_REG": {
+                        "ch_offset": 0,
+                        "max_addr_x": 32,
+                        "in_sf_x": 64,
+                        "in_offset_x": 96,
+                        "no_of_el_x": 224,
+                        "max_addr_y": 128,
+                        "in_sf_y": 160,
+                        "in_offset_y": 192,
+                        "no_of_el_y": 384,
+                        "start": 256,
+                        "table_toggle": 272,
+                        "max_addr_z": 288,
+                        "in_sf_z": 320,
+                        "in_offset_z": 352
+                    },
+                    "MS_3D_LUT_MEM_MAP": {
+                        "lut_3d_table": 32768
+                    },
+                    "MVM_MEM_MAP": {
+                        "mvm_nb_states": [
+                            128,
+                            256,
+                            1024
+                        ],
+                        "mvm_nb_rows": [
+                            256,
+                            512,
+                            2048
+                        ],
+                        "mvm_dtsm_vars_baseaddr": [
+                            0,
+                            256,
+                            1024
+                        ],
+                        "mvm_nb_dtsm_vars_per_spc": [
+                            128,
+                            128,
+                            128
+                        ],
+                        "mvm_mon_vars_baseaddr": [
+                            128,
+                            384,
+                            1152
+                        ],
+                        "mvm_nb_mon_vars_per_spc": [
+                            48,
+                            48,
+                            64
+                        ],
+                        "mvm_mon_vars_fsm_space": [
+                            8,
+                            8,
+                            8
+                        ],
+                        "mvm_spc_tve_msrs_baseaddr": [
+                            176,
+                            432,
+                            1216
+                        ],
+                        "mvm_nb_spc_tve_msrs": [
+                            16,
+                            16,
+                            64
+                        ],
+                        "mvm_spc_cpl_msrs_baseaddr": [
+                            192,
+                            448,
+                            1280
+                        ],
+                        "mvm_nb_spc_cpl_msrs": [
+                            64,
+                            64,
+                            64
+                        ],
+                        "mvm_dtsm_srcs_baseaddr": [
+                            0,
+                            0,
+                            0
+                        ],
+                        "mvm_nb_dtsm_srcs": [
+                            64,
+                            64,
+                            64
+                        ],
+                        "mvm_sp_srcs_baseaddr": [
+                            64,
+                            64,
+                            64
+                        ],
+                        "mvm_nb_sp_srcs": [
+                            16,
+                            16,
+                            128
+                        ],
+                        "mvm_spc_tve_srcs_baseaddr": [
+                            80,
+                            80,
+                            192
+                        ],
+                        "mvm_nb_spc_tve_srcs": [
+                            16,
+                            16,
+                            64
+                        ],
+                        "mvm_spc_fvd_srcs_baseaddr": [
+                            96,
+                            96,
+                            256
+                        ],
+                        "mvm_nb_spc_fvd_srcs": [
+                            16,
+                            32,
+                            64
+                        ],
+                        "mvm_sig_gen_baseaddr": [
+                            112,
+                            128,
+                            320
+                        ],
+                        "mvm_nb_sig_gen": [
+                            16,
+                            16,
+                            64
+                        ],
+                        "mvm_lut_srcs_baseaddr": [
+                            128,
+                            144,
+                            384
+                        ],
+                        "mvm_nb_lut_srcs": [
+                            16,
+                            16,
+                            128
+                        ],
+                        "mvm_ext_ctr_srcs_baseaddr": [
+                            144,
+                            160,
+                            512
+                        ],
+                        "mvm_nb_ext_ctr_srcs": [
+                            16,
+                            32,
+                            32
+                        ],
+                        "mvm_dev_cpl_srcs_baseaddr": [
+                            160,
+                            192,
+                            544
+                        ],
+                        "mvm_nb_dev_cpl_srcs": [
+                            8,
+                            8,
+                            8
+                        ],
+                        "mvm_constant_0": [
+                            168,
+                            200,
+                            552
+                        ],
+                        "mvm_constant_1": [
+                            169,
+                            201,
+                            553
+                        ],
+                        "mvm_machine_srcs_base_index": [
+                            176,
+                            208,
+                            560
+                        ],
+                        "mvm_nb_machine_srcs": [
+                            16,
+                            64,
+                            256
+                        ],
+                        "mvm_nb_machine_srcs_per_mch": [
+                            8,
+                            8,
+                            8
+                        ],
+                        "mvm_spc_cpl_srcs_baseaddr": [
+                            192,
+                            272,
+                            816
+                        ],
+                        "mvm_nb_spc_cpl_srcs": [
+                            64,
+                            64,
+                            64
+                        ],
+                        "mvm_nr_vars_spc2spc": [
+                            4,
+                            4,
+                            4
+                        ],
+                        "mvm_hil_sfp_srcs_baseaddr": [
+                            0,
+                            336,
+                            880
+                        ],
+                        "mvm_hil_sfp_srcs": [
+                            32,
+                            32,
+                            32
+                        ],
+                        "mvm_hil_sfp_srcs_per_module": [
+                            16,
+                            16,
+                            16
+                        ],
+                        "mvm_hil_dcdc_srcs_baseaddr": [
+                            0,
+                            368,
+                            912
+                        ],
+                        "mvm_hil_dcdc_srcs": [
+                            128,
+                            128,
+                            128
+                        ],
+                        "mvm_hil_dcdc_srcs_per_solver": [
+                            8,
+                            8,
+                            8
+                        ]
+                    },
+                    "PM_MAP_REG": {
+                        "pwm_enable": 0,
+                        "ref_sig": 64,
+                        "max_cnt": 128,
+                        "d_time": 192,
+                        "mask": 320,
+                        "mask_up": 321,
+                        "reset": 384,
+                        "carr_phase_off": 448,
+                        "carr_sig_dir": 512,
+                        "use_di": 576,
+                        "di_addr": 640,
+                        "update_car_phase_off": 704,
+                        "cfg_reg": 768,
+                        "carr_sel": 832
+                    },
+                    "SC_MAP_MEM": {
+                        "sp_analog_mem": 65536
+                    },
+                    "SC_MAP_REG": {
+                        "cb_start_addr": 0,
+                        "number_of_samples_at": 1,
+                        "capture_done": 2,
+                        "decimation": 3,
+                        "ch_num": 4,
+                        "trigger_occurred": 6,
+                        "cb_last_addr": 7,
+                        "cb_trigger_addr": 8,
+                        "number_of_samples_bt": 9,
+                        "start_data_acq": 10,
+                        "clear_capture": 11,
+                        "stop_capture": 12,
+                        "num_of_captured_samples": 13,
+                        "first_trigg_occ": 14,
+                        "sw_trigger": 16,
+                        "hw_trigger_en": 17,
+                        "hw_trigger_source": 18,
+                        "ao_trigger_level": 20,
+                        "ao_trigger_edge": 21,
+                        "ao_trigger_addr": 22,
+                        "di_trigger_addr": 24,
+                        "di_trigger_edge": 25,
+                        "signal_addr_analog": 128,
+                        "signal_addr_digital": 256
+                    },
+                    "SG_MAP_MEM": {
+                        "wave_mem": 2097152
+                    },
+                    "SG_MAP_PARAMS": {
+                        "wave_mem_size": 2048
+                    },
+                    "SG_MAP_REG": {
+                        "sample_cnt_inc_lo": 0,
+                        "sg_update": 128,
+                        "wave_length": 256,
+                        "offset": 384,
+                        "sf": 512,
+                        "sample_cnt_inc_hi": 640,
+                        "wg_update_en": 768,
+                        "sample_cnt_cmp": 896
+                    },
+                    "SPC_CP_MAP_REG": {
+                        "source_addr": 0,
+                        "threshold": 16,
+                        "op_code": 32,
+                        "abs_val": 48
+                    },
+                    "SPC_CT_MAP_REG": {
+                        "mode": 0,
+                        "di1_addr": 128,
+                        "di1_inv_mask": 256,
+                        "on_delay": 384,
+                        "off_delay": 512,
+                        "init_state": 640,
+                        "off_mode": 768,
+                        "curr_addr": 896,
+                        "ctrl_src": 1024,
+                        "sw_ctrl_val": 1152,
+                        "sup_ctrl_mode": 1280,
+                        "sup_ctrl_val": 1408
+                    },
+                    "SPC_DT_MAP_REG": {
+                        "ctrl_mode": 0,
+                        "ctrl_src": 128,
+                        "sw_ctrl_val": 256,
+                        "di_addr": 384,
+                        "di_inv_mask": 512,
+                        "ct_off_mode": 640,
+                        "init_state": 768,
+                        "sup_ctrl_mode": 896,
+                        "sup_ctrl_val": 1024
+                    },
+                    "SPC_MM_MAP_MEM": {
+                        "instr_mem": 0,
+                        "cu_sa_lut": 131072,
+                        "vec_img_mem": 262144,
+                        "matrix_mem": 524288
+                    },
+                    "SPC_MM_MAP_REG": {
+                        "gds_comp_en": 786432,
+                        "x_vec_length": 786433,
+                        "gds_cnt_sc_coeff_h": 786436,
+                        "gds_cnt_sc_coeff_l": 786437
+                    },
+                    "SPC_SP_MAP_REG": {
+                        "sp_in_regs": 0
+                    },
+                    "SPC_TS_MAP_MEM": {
+                        "fsm_memories": 262144,
+                        "var_del_calc_lut": 917504,
+                        "top_ind_tt": 524288
+                    },
+                    "SPC_TS_MAP_PARAMS": {
+                        "fsm_reg_offset": 32,
+                        "sw_losses_reg_offset": 32,
+                        "fsm_mem_size": 32768,
+                        "fsm_lut_offset": 8192
+                    },
+                    "SPC_TS_MAP_REG": {
+                        "gds_os_ratio": 0,
+                        "gds_var_del_en": 1,
+                        "gds_filter_en": 2,
+                        "gds_var_del_prsc": 3,
+                        "aux_gds_en_mask": 4,
+                        "vout_cmp_op_mode": 5,
+                        "vout_cmp_timeout": 6,
+                        "gds_cnt_calc_mode": 7,
+                        "no_fsm_states": 32,
+                        "fsm_gds_en_mask": 33,
+                        "fsm_inv_mask": 34,
+                        "gds_st_leg_en": 35,
+                        "gds_st_leg_mode": 36,
+                        "fsm_gds_hw_gating_en": 37,
+                        "fsm_gds_hwg_di_addr": 38,
+                        "fsm_gds_hwg_inv": 39,
+                        "fsm1_di_addr": 40,
+                        "fsm2_di_addr": 41,
+                        "fsm3_di_addr": 42,
+                        "fsm4_di_addr": 43,
+                        "fsm5_di_addr": 44,
+                        "fsm6_di_addr": 45,
+                        "fsm_source_sel": 46,
+                        "fsm_sw_gds": 47,
+                        "fsm_sup_ctrl_mode": 48,
+                        "fsm_sup_ctrl_val": 49,
+                        "fsm_gds_disc_en": 50,
+                        "fsm_gds_disc_inv_mask": 51,
+                        "fsm_gds1_disc_mv_addr": 52,
+                        "fsm_gds2_disc_mv_addr": 53,
+                        "fsm_gds3_disc_mv_addr": 54,
+                        "fsm_gds4_disc_mv_addr": 55,
+                        "fsm_gds5_disc_mv_addr": 56,
+                        "fsm_gds6_disc_mv_addr": 57,
+                        "fsm_fvd_val1": 58,
+                        "fsm_fvd_val2": 59,
+                        "fsm_fvd_val3": 60,
+                        "fsm_fvd_val4": 61,
+                        "fsm_fvd_val5": 62,
+                        "fsm_fvd_val6": 63,
+                        "sw_loss_rd_en": 512,
+                        "sw_loss_rd_period": 513,
+                        "sw_loss_gds1_on_time": 520,
+                        "sw_loss_gds2_on_time": 521,
+                        "sw_loss_gds3_on_time": 522,
+                        "sw_loss_gds4_on_time": 523,
+                        "sw_loss_gds5_on_time": 524,
+                        "sw_loss_gds6_on_time": 525,
+                        "sw_loss_gds1_events": 528,
+                        "sw_loss_gds2_events": 529,
+                        "sw_loss_gds3_events": 530,
+                        "sw_loss_gds4_events": 531,
+                        "sw_loss_gds5_events": 532,
+                        "sw_loss_gds6_events": 533
+                    },
+                    "SPC_TV_MAP_REG": {
+                        "gain_regs": 0,
+                        "mvm_prog_addrs_regs": 32,
+                        "sel_gain_src_addr": 64
+                    },
+                    "SPC_UNIT_OFFSETS": {
+                        "mm_baseaddr": 0,
+                        "ts_baseaddr": 1048576,
+                        "cp_baseaddr": 2097152,
+                        "ct_baseaddr": 2359296,
+                        "dt_baseaddr": 2621440,
+                        "sp_baseaddr": 2883584,
+                        "tv_baseaddr": 3145728
+                    },
+                    "SPC_VD_MAP_REG": {
+                        "const_input_en": 786432,
+                        "input_address": 786440,
+                        "input_offset": 786448,
+                        "input_sf": 786456,
+                        "input_min": 786464,
+                        "input_max": 786472,
+                        "fixed_deley": 786480,
+                        "const_input": 786488
+                    },
+                    "SPC_ZONE_SIZE": 32
+                },
+                "general": {
+                    "sw_version": "2025.3",
+                    "hil_device": "HIL604",
+                    "hil_configuration_id": 5,
+                    "simulation_method": "euler",
+                    "simulation_time_step": "auto",
+                    "simulation_discret_scaling": "1.0",
+                    "ss_calc_method": "systematic elimination",
+                    "device_ao_limit_enable": false,
+                    "reset_analog_outputs_on_sim_stop": true,
+                    "reset_analog_outputs_on_sim_stop_mode": "Offset values",
+                    "reset_digital_outputs_on_sim_stop": true,
+                    "vhil_adio_loopback": false,
+                    "enb_pole_shift": true,
+                    "enb_gds_oversampling": true,
+                    "show_modes": false,
+                    "cpl_stb": false,
+                    "enb_dep_sw_detect": false,
+                    "code_section": "internal memory",
+                    "data_section": "internal memory",
+                    "user_cpu_optimization": "high",
+                    "user_real_type_precision": "default",
+                    "user_cpu_part_option": "default",
+                    "sys_real_type_precision": "default",
+                    "sys_sp_rate_1": 0.0001,
+                    "sys_sp_rate_2": 0.05,
+                    "sys_cpu_optimization": "high",
+                    "cpl_dynamics_analysis": false,
+                    "matrix_based_reduction": true,
+                    "export_ss_to_pickle": false,
+                    "ground_scope_core": false,
+                    "dss_num_tol": "1e-15",
+                    "sp_compiler_type": "C compiler",
+                    "cce_platform": "generic",
+                    "cce_custom_type_int": "",
+                    "cce_custom_type_real": "",
+                    "cce_custom_type_uint": "",
+                    "cce_directory": "",
+                    "cce_use_custom_type_int": "int",
+                    "cce_use_custom_type_real": "double",
+                    "cce_use_custom_type_uint": "unsigned int",
+                    "cce_use_relative_names": false,
+                    "cce_term_var_location": "local",
+                    "sig_stim": "off",
+                    "feedthrough_validation_error_level": "error",
+                    "offline_sim": {
+                        "solver_type": "DAE",
+                        "integration_method": "Trapezoidal - Robust",
+                        "max_sim_step": "1e-4",
+                        "abs_tol": "1e-3",
+                        "rel_tol": "1e-3",
+                        "simulation_time": 1.0,
+                        "init_sim_step": "1e-6",
+                        "r_on_sw": "1e-3",
+                        "v_on_diode": "0.1",
+                        "data_sampling_rate": "0",
+                        "blockset_mode": false
+                    }
+                }
+            },
+            "nodes": [
+                {
+                    "_cls": "Node",
+                    "id": 1700092046352,
+                    "terminals": [
+                        1700000182032,
+                        1699940426384
+                    ]
+                },
+                {
+                    "_cls": "Node",
+                    "id": 1700065387792,
+                    "terminals": [
+                        1699940430224,
+                        1699936190928
+                    ]
+                },
+                {
+                    "_cls": "Node",
+                    "id": 1699935910992,
+                    "terminals": [
+                        1699991081232,
+                        1699940222416
+                    ]
+                },
+                {
+                    "_cls": "Node",
+                    "id": 1700141212816,
+                    "terminals": [
+                        1699935890704,
+                        1699940425104
+                    ]
+                },
+                {
+                    "_cls": "Node",
+                    "id": 1700138079952,
+                    "terminals": [
+                        1699936199824,
+                        1699940227984,
+                        1700141666576
+                    ]
+                }
+            ],
+            "components": [
+                {
+                    "_cls": "Component",
+                    "id": 1699997127184,
+                    "name": "Step",
+                    "vars": {
+                        "prop_value_map": {
+                            "initial_value": [
+                                0.0
+                            ],
+                            "signal_type": "real",
+                            "final_value": [
+                                1.0
+                            ],
+                            "step_time": [
+                                2.0
+                            ]
+                        },
+                        "step_time": [
+                            2.0
+                        ],
+                        "initial_value": [
+                            0.0
+                        ],
+                        "final_value": [
+                            1.0
+                        ],
+                        "step_time_len": 1,
+                        "initial_value_len": 1,
+                        "final_value_len": 1,
+                        "out_size": 1,
+                        "max_step_time": 2.0
+                    },
+                    "comp_type": "Step",
+                    "lib_fqn": "Signal Processing.Sources.Step",
+                    "resource_root": "C:/Users/Luigi/Documents/TyphoonHIL",
+                    "core_type_name": "Step",
+                    "composite": false,
+                    "phase_number": null,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "signal_type",
+                            "value": "real",
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "string",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "final_value",
+                            "value": [
+                                1.0
+                            ],
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "real",
+                            "vector": true,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "initial_value",
+                            "value": [
+                                0.0
+                            ],
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "real",
+                            "vector": true,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "execution_rate",
+                            "value": 0.0001,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "real",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "step_time",
+                            "value": [
+                                2.0
+                            ],
+                            "min_value": "0",
+                            "max_value": "100000000",
+                            "specified_value": null,
+                            "value_type": "real",
+                            "vector": true,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699991081232,
+                            "name": "out",
+                            "kind": "sp",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "out",
+                            "sp_type": "real",
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": [
+                        "user_sp_cpu",
+                        0
+                    ],
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ],
+                    "signals": [],
+                    "state_depends_on_input": false
+                },
+                {
+                    "_cls": "Component",
+                    "id": 1700147516560,
+                    "name": "y",
+                    "vars": {
+                        "ITEM_SIGNAL": "signal",
+                        "out_size": 1
+                    },
+                    "comp_type": "Probe",
+                    "lib_fqn": "Signal Processing.Sinks.Probe",
+                    "resource_root": "C:/Users/Luigi/Documents/TyphoonHIL",
+                    "core_type_name": "Probe",
+                    "composite": false,
+                    "phase_number": null,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "streaming_er_idx",
+                            "value": 0,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "uint",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": false
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_name",
+                            "value": "y",
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "signal_name",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_type",
+                            "value": "voltage",
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "string",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "addr",
+                            "value": 0,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "uint",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": false
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_access",
+                            "value": "inherit",
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "signal_access",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "streaming_en",
+                            "value": true,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "bool",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "override_signal_name",
+                            "value": true,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "bool",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "execution_rate",
+                            "value": 0.0001,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "real",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 1700141666576,
+                            "name": "in",
+                            "kind": "sp",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "in",
+                            "sp_type": "real",
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": [
+                        "user_sp_cpu",
+                        0
+                    ],
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ],
+                    "signals": [
+                        {
+                            "_cls": "Signal",
+                            "name": "value",
+                            "address": null,
+                            "signal_type": "analog",
+                            "_id": "bda7e6f8-93f9-11f0-bb65-34e12dea0613",
+                            "nonvisible": false,
+                            "physical_type": null,
+                            "fqn": "y.value",
+                            "display_name": "y",
+                            "reference_to": null,
+                            "previous_names": [
+                                "y"
+                            ],
+                            "exclusive_data": null,
+                            "signal_access": "public",
+                            "restriction_level": {
+                                "_cls": "SignalRestrictionLevel",
+                                "value": 3
+                            },
+                            "referenced_by": null
+                        }
+                    ],
+                    "state_depends_on_input": false
+                },
+                {
+                    "_cls": "Component",
+                    "id": 1699940420816,
+                    "name": "status",
+                    "vars": {
+                        "ITEM_SIGNAL": "signal",
+                        "out_size": 1
+                    },
+                    "comp_type": "Probe",
+                    "lib_fqn": "Signal Processing.Sinks.Probe",
+                    "resource_root": "C:/Users/Luigi/Documents/TyphoonHIL",
+                    "core_type_name": "Probe",
+                    "composite": false,
+                    "phase_number": null,
+                    "properties": [
+                        {
+                            "_cls": "Property",
+                            "name": "execution_rate",
+                            "value": 0.0001,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "real",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_name",
+                            "value": "vf0Probe1",
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "signal_name",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "addr",
+                            "value": 0,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "uint",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": false
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "streaming_er_idx",
+                            "value": 0,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "uint",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": false
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_access",
+                            "value": "inherit",
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "signal_access",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "override_signal_name",
+                            "value": false,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "bool",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "streaming_en",
+                            "value": true,
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "bool",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        },
+                        {
+                            "_cls": "Property",
+                            "name": "signal_type",
+                            "value": "generic",
+                            "min_value": null,
+                            "max_value": null,
+                            "specified_value": null,
+                            "value_type": "string",
+                            "vector": false,
+                            "calc_value": null,
+                            "tunable": false,
+                            "visible": true
+                        }
+                    ],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699940426384,
+                            "name": "in",
+                            "kind": "sp",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "in",
+                            "sp_type": "int",
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [],
+                    "parent_comp_id": null,
+                    "target_cpu": [
+                        "user_sp_cpu",
+                        0
+                    ],
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ],
+                    "signals": [
+                        {
+                            "_cls": "Signal",
+                            "name": "value",
+                            "address": null,
+                            "signal_type": "analog",
+                            "_id": "bda834af-93f9-11f0-ad9a-34e12dea0613",
+                            "nonvisible": false,
+                            "physical_type": null,
+                            "fqn": "status.value",
+                            "display_name": "status",
+                            "reference_to": null,
+                            "previous_names": [
+                                "status"
+                            ],
+                            "exclusive_data": null,
+                            "signal_access": "public",
+                            "restriction_level": {
+                                "_cls": "SignalRestrictionLevel",
+                                "value": 3
+                            },
+                            "referenced_by": null
+                        }
+                    ],
+                    "state_depends_on_input": false
+                },
+                {
+                    "_cls": "Component",
+                    "id": 1699940426000,
+                    "name": "Series RLC Branch1",
+                    "vars": {},
+                    "comp_type": "Series RLC Branch",
+                    "lib_fqn": "Passive Components.Series RLC Branch",
+                    "resource_root": "C:/Users/Luigi/Documents/TyphoonHIL",
+                    "core_type_name": "Series RLC Branch",
+                    "composite": true,
+                    "phase_number": null,
+                    "properties": [],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699940425104,
+                            "name": "P1_pos",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "out",
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699940430224,
+                            "name": "P1_neg",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "out",
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [
+                        {
+                            "_cls": "Mask",
+                            "vars": {},
+                            "properties": [
+                                {
+                                    "_cls": "Property",
+                                    "name": "num_phases",
+                                    "value": "Single-Phase",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "string",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "resistance",
+                                    "value": 10,
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "generic",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "branch_type",
+                                    "value": "RLC",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "string",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "initial_voltage",
+                                    "value": 1,
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "generic",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "inductance",
+                                    "value": 0.01,
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "generic",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "initial_current",
+                                    "value": 0,
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "generic",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "capacitance",
+                                    "value": 1e-05,
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "generic",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                }
+                            ],
+                            "signals": [
+                                {
+                                    "_cls": "Signal",
+                                    "name": "C",
+                                    "address": null,
+                                    "signal_type": "analog",
+                                    "_id": "bda80dcc-93f9-11f0-b52b-34e12dea0613",
+                                    "nonvisible": false,
+                                    "physical_type": "voltage",
+                                    "fqn": "Series RLC Branch1.C1.C",
+                                    "display_name": "Series RLC Branch1.C1",
+                                    "reference_to": null,
+                                    "previous_names": [],
+                                    "exclusive_data": null,
+                                    "signal_access": "public",
+                                    "restriction_level": {
+                                        "_cls": "SignalRestrictionLevel",
+                                        "value": 3
+                                    },
+                                    "referenced_by": null
+                                },
+                                {
+                                    "_cls": "Signal",
+                                    "name": "L",
+                                    "address": null,
+                                    "signal_type": "analog",
+                                    "_id": "bda80dcd-93f9-11f0-99d8-34e12dea0613",
+                                    "nonvisible": false,
+                                    "physical_type": "current",
+                                    "fqn": "Series RLC Branch1.L1.L",
+                                    "display_name": "Series RLC Branch1.L1",
+                                    "reference_to": null,
+                                    "previous_names": [],
+                                    "exclusive_data": null,
+                                    "signal_access": "public",
+                                    "restriction_level": {
+                                        "_cls": "SignalRestrictionLevel",
+                                        "value": 3
+                                    },
+                                    "referenced_by": null
+                                }
+                            ]
+                        }
+                    ],
+                    "parent_comp_id": null,
+                    "target_cpu": null,
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ],
+                    "signals": [
+                        {
+                            "_cls": "Signal",
+                            "name": "L",
+                            "address": null,
+                            "signal_type": "analog",
+                            "_id": "bda834ae-93f9-11f0-8da2-34e12dea0613",
+                            "nonvisible": false,
+                            "physical_type": "current",
+                            "fqn": "Series RLC Branch1.L1.L",
+                            "display_name": "Series RLC Branch1.L1",
+                            "reference_to": null,
+                            "previous_names": [],
+                            "exclusive_data": null,
+                            "signal_access": "public",
+                            "restriction_level": {
+                                "_cls": "SignalRestrictionLevel",
+                                "value": 3
+                            },
+                            "referenced_by": null
+                        },
+                        {
+                            "_cls": "Signal",
+                            "name": "C",
+                            "address": null,
+                            "signal_type": "analog",
+                            "_id": "bda80dce-93f9-11f0-a431-34e12dea0613",
+                            "nonvisible": false,
+                            "physical_type": "voltage",
+                            "fqn": "Series RLC Branch1.C1.C",
+                            "display_name": "Series RLC Branch1.C1",
+                            "reference_to": null,
+                            "previous_names": [],
+                            "exclusive_data": null,
+                            "signal_access": "public",
+                            "restriction_level": {
+                                "_cls": "SignalRestrictionLevel",
+                                "value": 3
+                            },
+                            "referenced_by": null
+                        }
+                    ],
+                    "state_depends_on_input": false
+                },
+                {
+                    "_cls": "Component",
+                    "id": 1699835183504,
+                    "name": "Vsp1",
+                    "vars": {},
+                    "comp_type": "Signal Controlled Voltage Source",
+                    "lib_fqn": "Sources.Signal Controlled Voltage Source",
+                    "resource_root": "C:/Users/Luigi/Documents/TyphoonHIL",
+                    "core_type_name": "Signal Controlled Voltage Source",
+                    "composite": true,
+                    "phase_number": null,
+                    "properties": [],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699936199824,
+                            "name": "in",
+                            "kind": "sp",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "in",
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699935890704,
+                            "name": "p_node",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699936190928,
+                            "name": "n_node",
+                            "kind": "pe",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": null,
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [
+                        {
+                            "_cls": "Mask",
+                            "vars": {},
+                            "properties": [
+                                {
+                                    "_cls": "Property",
+                                    "name": "execution_rate",
+                                    "value": "inherit",
+                                    "min_value": ".1e-9",
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "real",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                }
+                            ],
+                            "signals": []
+                        }
+                    ],
+                    "parent_comp_id": null,
+                    "target_cpu": [
+                        "user_sp_cpu",
+                        0
+                    ],
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ],
+                    "signals": [],
+                    "state_depends_on_input": false
+                },
+                {
+                    "_cls": "Component",
+                    "id": 1699940224976,
+                    "name": "FMU",
+                    "vars": {},
+                    "comp_type": "FMU Import",
+                    "lib_fqn": "Signal Processing.Extras.FMU Import",
+                    "resource_root": "C:/Users/Luigi/Documents/TyphoonHIL",
+                    "core_type_name": "FMU Import",
+                    "composite": true,
+                    "phase_number": null,
+                    "properties": [],
+                    "terminals": [
+                        {
+                            "_cls": "Terminal",
+                            "id": 1700000182032,
+                            "name": "Status",
+                            "kind": "sp",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "out",
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699940227984,
+                            "name": "y",
+                            "kind": "sp",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "out",
+                            "sp_type": null,
+                            "feedthrough": true
+                        },
+                        {
+                            "_cls": "Terminal",
+                            "id": 1699940222416,
+                            "name": "u",
+                            "kind": "sp",
+                            "dimension": [
+                                1
+                            ],
+                            "direction": "in",
+                            "sp_type": null,
+                            "feedthrough": true
+                        }
+                    ],
+                    "masks": [
+                        {
+                            "_cls": "Mask",
+                            "vars": {},
+                            "properties": [
+                                {
+                                    "_cls": "Property",
+                                    "name": "terminal_properties",
+                                    "value": "{'inputs': [{'name': 'u', 'type': 'real', 'feedthrough': False}], 'parameters': [{'name': 'PI_k', 'type': 'real', 'feedthrough': False, 'model_control': 'Constant'}, {'name': 'PI_T', 'type': 'real', 'feedthrough': False, 'model_control': 'Constant'}, {'name': 'PI_x_start', 'type': 'real', 'feedthrough': False, 'model_control': 'Constant'}, {'name': 'PI_y_start', 'type': 'real', 'feedthrough': False, 'model_control': 'Constant'}], 'outputs': [{'name': 'y', 'type': 'real', 'feedthrough': False}]}",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "string",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": false
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "compile_source_files",
+                                    "value": true,
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "bool",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": false
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "fmu_data",
+                                    "value": "{'model_info': {'fmi_version': '2.0', 'fmi_type': 'Model Exchange, Co-Simulation', 'model_name': 'PSSDesign.FMUs4RTHIL.SimplePI', 'Co-simulation identifier': 'PSSDesign_FMUs4RTHIL_SimplePI', 'description': 'Simple PI to test FMU export/import', 'platforms': 'c-code, win32, win64', 'variables': 11, 'generation_tool': 'Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)', 'generation_date': '2025-09-17T18:38:23Z', 'needs_execution_tool': False}, 'simulation_info': {}, 'inputs': {'u': {'start': '0.0', 'default_value': '0.0', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'continuous', 'ref': 620756992, 'dim': 1, 'unit': None, 'description': 'Connector of Real input signal', 'enable_plot': False, 'model_control': 'External'}}, 'outputs': {'y': {'start': '', 'default_value': '', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'continuous', 'ref': 603979776, 'dim': 1, 'unit': None, 'description': 'Connector of Real output signal', 'enable_plot': False, 'model_control': 'External'}}, 'parameters': {'PI_k': {'start': '1', 'default_value': '1', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'tunable', 'ref': 16777216, 'dim': 1, 'unit': '1', 'description': 'Gain', 'enable_plot': False, 'model_control': 'Constant'}, 'PI_T': {'start': '0.1', 'default_value': '0.1', 'type': 'Real', 'enumeration': {}, 'min': '1E-60', 'max': None, 'variability': 'tunable', 'ref': 16777217, 'dim': 1, 'unit': None, 'description': 'Time Constant (T>0 required)', 'enable_plot': False, 'model_control': 'Constant'}, 'PI_x_start': {'start': '0', 'default_value': '0', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'fixed', 'ref': 16777218, 'dim': 1, 'unit': None, 'description': 'Initial or guess value of state', 'enable_plot': False, 'model_control': 'Constant'}, 'PI_y_start': {'start': '0', 'default_value': '0', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'fixed', 'ref': 16777219, 'dim': 1, 'unit': None, 'description': 'Initial value of output', 'enable_plot': False, 'model_control': 'Constant'}}, 'locals': {'PI_initType': {'start': '1', 'default_value': '1', 'type': 'Enumeration', 'enumeration': {'name': 'Modelica.Blocks.Types.Init', 'items': {'NoInit': {'value': '1', 'description': 'No initialization (start values are used as guess values with fixed=false)'}, 'SteadyState': {'value': '2', 'description': 'Steady state initialization (derivatives of states are zero)'}, 'InitialState': {'value': '3', 'description': 'Initialization with initial states'}, 'InitialOutput': {'value': '4', 'description': 'Initialization with initial outputs (and steady state of the states if possible)'}}}, 'min': None, 'max': None, 'variability': 'constant', 'ref': 100663296, 'dim': 1, 'unit': None, 'description': 'Type of initialization (1: no init, 2: steady state, 3: initial state, 4: initial output)', 'enable_plot': False, 'model_control': 'External'}, 'PI_u': {'start': '', 'default_value': '', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'continuous', 'ref': 1711276033, 'dim': 1, 'unit': None, 'description': 'Connector of Real input signal', 'enable_plot': False, 'model_control': 'External'}, 'PI_y': {'start': '', 'default_value': '', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'continuous', 'ref': 603979776, 'dim': 1, 'unit': None, 'description': 'Connector of Real output signal', 'enable_plot': False, 'model_control': 'External'}, 'PI_x': {'start': '', 'default_value': '', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'continuous', 'ref': 33554432, 'dim': 1, 'unit': None, 'description': 'State of block', 'enable_plot': False, 'model_control': 'External'}, 'der(PI_x)': {'start': '', 'default_value': '', 'type': 'Real', 'enumeration': {}, 'min': None, 'max': None, 'variability': 'continuous', 'ref': 1124073472, 'dim': 1, 'unit': None, 'description': 'der(State of block)', 'enable_plot': False, 'model_control': 'External'}}, 'fmi_version': 'fmi2', 'model_name': 'PSSDesign.FMUs4RTHIL.SimplePI', 'guid': '{309ac829-ba66-4946-8a10-82fdffa551a7}', 'Co-simulation source files': ['all_PSSDesign_FMUs4RTHIL_SimplePI.c'], 'Co-simulation preprocessor definitions': [], 'typhoon_binaries_files_exists': False, 'typhoon_su_file_exists': False, 'typhoon_su_files_exists': False}",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "string",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "fmu_file_path",
+                                    "value": "C:/Users/Luigi/Documents/TyphoonHIL/fmus/Dymola/PSSDesign_FMUs4RTHIL_SimplePI.fmu",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "string",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "execution_rate",
+                                    "value": "inherit",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "real",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "additional_definitions",
+                                    "value": "",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "string",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "logging_enabled",
+                                    "value": true,
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "bool",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                },
+                                {
+                                    "_cls": "Property",
+                                    "name": "path_type",
+                                    "value": "Absolute",
+                                    "min_value": null,
+                                    "max_value": null,
+                                    "specified_value": null,
+                                    "value_type": "string",
+                                    "vector": false,
+                                    "calc_value": null,
+                                    "tunable": false,
+                                    "visible": true
+                                }
+                            ],
+                            "signals": []
+                        }
+                    ],
+                    "parent_comp_id": null,
+                    "target_cpu": [
+                        "user_sp_cpu",
+                        0
+                    ],
+                    "selected_for_export": false,
+                    "root_for_export": false,
+                    "supported_platforms": [
+                        "generic"
+                    ],
+                    "signals": [],
+                    "state_depends_on_input": false
+                }
+            ],
+            "parent_components": [],
+            "core_couplings": [],
+            "core_partitions": [],
+            "signals": [
+                {
+                    "_cls": "Signal",
+                    "name": "C",
+                    "address": null,
+                    "signal_type": "analog",
+                    "_id": "bda85ba3-93f9-11f0-a375-34e12dea0613",
+                    "nonvisible": false,
+                    "physical_type": "voltage",
+                    "fqn": "Series RLC Branch1.C1.C",
+                    "display_name": "Series RLC Branch1.C1",
+                    "reference_to": null,
+                    "previous_names": [],
+                    "exclusive_data": null,
+                    "signal_access": "public",
+                    "restriction_level": {
+                        "_cls": "SignalRestrictionLevel",
+                        "value": 3
+                    },
+                    "referenced_by": null
+                },
+                {
+                    "_cls": "Signal",
+                    "name": "value",
+                    "address": null,
+                    "signal_type": "analog",
+                    "_id": "bda85ba2-93f9-11f0-8397-34e12dea0613",
+                    "nonvisible": false,
+                    "physical_type": null,
+                    "fqn": "status.value",
+                    "display_name": "status",
+                    "reference_to": null,
+                    "previous_names": [
+                        "status"
+                    ],
+                    "exclusive_data": null,
+                    "signal_access": "public",
+                    "restriction_level": {
+                        "_cls": "SignalRestrictionLevel",
+                        "value": 3
+                    },
+                    "referenced_by": null
+                },
+                {
+                    "_cls": "Signal",
+                    "name": "L",
+                    "address": null,
+                    "signal_type": "analog",
+                    "_id": "bda85ba4-93f9-11f0-b4b2-34e12dea0613",
+                    "nonvisible": false,
+                    "physical_type": "current",
+                    "fqn": "Series RLC Branch1.L1.L",
+                    "display_name": "Series RLC Branch1.L1",
+                    "reference_to": null,
+                    "previous_names": [],
+                    "exclusive_data": null,
+                    "signal_access": "public",
+                    "restriction_level": {
+                        "_cls": "SignalRestrictionLevel",
+                        "value": 3
+                    },
+                    "referenced_by": null
+                },
+                {
+                    "_cls": "Signal",
+                    "name": "value",
+                    "address": null,
+                    "signal_type": "analog",
+                    "_id": "bda834b0-93f9-11f0-862c-34e12dea0613",
+                    "nonvisible": false,
+                    "physical_type": null,
+                    "fqn": "y.value",
+                    "display_name": "y",
+                    "reference_to": null,
+                    "previous_names": [
+                        "y"
+                    ],
+                    "exclusive_data": null,
+                    "signal_access": "public",
+                    "restriction_level": {
+                        "_cls": "SignalRestrictionLevel",
+                        "value": 3
+                    },
+                    "referenced_by": null
+                }
+            ]
+        }
+    ],
+    "interface_descr": null
+}

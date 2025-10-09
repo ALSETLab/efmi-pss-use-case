@@ -3,5 +3,6 @@ package PSSDesign "PSS Design Tutorial"
 
   annotation(
     uses(OpenIPSL(version="3.1.0-dev"),
-                                      Modelica(version = "4.0.0")));
+                                      Modelica(version = "4.0.0"),
+      DymolaEmbedded(version="1.0.5")));
 end PSSDesign;

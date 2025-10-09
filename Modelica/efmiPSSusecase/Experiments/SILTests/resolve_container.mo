@@ -1,4 +1,4 @@
-within efmiPSSusecase.Experiments.efmiSILTest;
+within efmiPSSusecase.Experiments.SILTests;
 function resolve_container "Resolve the root directory of the eFMI Behavioral Model container backing
      this package. The directory is created on request if it does not exist yet."
 

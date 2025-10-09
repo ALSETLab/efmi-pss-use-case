@@ -5,5 +5,6 @@ package efmiPSSusecase "eFMI Use Case for Power System Stabilizers"
       Modelica(version="4.0.0"),
       OpenIPSL(version="3.1.0-dev"),
       DymolaEmbedded(version="1.0.5"),
-      DymolaCommands(version="1.19")));
+      DymolaCommands(version="1.19"),
+      Testing(version="1.10.0")));
 end efmiPSSusecase;

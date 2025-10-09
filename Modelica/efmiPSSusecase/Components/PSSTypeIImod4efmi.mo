@@ -15,4 +15,9 @@ model PSSTypeIImod4efmi  "Extends the PSS Type II in OpenIPSL with parametrizati
   // Provide start value as parameter
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
+  annotation (Icon(graphics={Text(
+          extent={{-100,100},{100,-100}},
+          textColor={0,140,72},
+          textString="PSS 4 
+efmi Export")}));
 end PSSTypeIImod4efmi;

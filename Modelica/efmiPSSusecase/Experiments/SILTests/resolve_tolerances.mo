@@ -1,4 +1,4 @@
-within efmiPSSusecase.Experiments.efmiSILTest;
+within efmiPSSusecase.Experiments.SILTests;
 function resolve_tolerances "Return all absolute and relative tolerances, for every floating-point
      precision and test scenario, as a simple vector (ordered by first test
      scenario, then floating-point precision, absolute before relative
@@ -9,7 +9,8 @@ function resolve_tolerances "Return all absolute and relative tolerances, for ev
   extends .DymolaEmbedded.Icons.eFMI_ExperimentConfiguration;
 
 algorithm
-  tolerances := fill(0.0, 0);
+  tolerances := {tolerances_Scenario_1.absolute_x32.vs,tolerances_Scenario_1.relative_x32.vs,
+    tolerances_Scenario_1.absolute_x64.vs,tolerances_Scenario_1.relative_x64.vs};
 
   annotation (preferredView="info", Protection(hideFromBrowser=true));
 end resolve_tolerances;

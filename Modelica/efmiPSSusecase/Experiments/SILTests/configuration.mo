@@ -1,2 +1,2 @@
-within efmiPSSusecase.Experiments.efmiSILTest;
+within efmiPSSusecase.Experiments.SILTests;
 final package configuration = .efmiPSSusecase.eBlockDymolaEmbedded;

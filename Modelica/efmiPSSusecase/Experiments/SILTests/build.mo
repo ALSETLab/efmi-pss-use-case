@@ -1,4 +1,4 @@
-within efmiPSSusecase.Experiments.efmiSILTest;
+within efmiPSSusecase.Experiments.SILTests;
 function build "Build the Behavioral Model container administered by this
      eFMU experiment package."
 

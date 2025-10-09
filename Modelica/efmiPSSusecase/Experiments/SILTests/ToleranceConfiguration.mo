@@ -1,4 +1,4 @@
-within efmiPSSusecase.Experiments.efmiSILTest;
+within efmiPSSusecase.Experiments.SILTests;
 record ToleranceConfiguration
   "Configuration of tolerances (absolute or relative)."
 

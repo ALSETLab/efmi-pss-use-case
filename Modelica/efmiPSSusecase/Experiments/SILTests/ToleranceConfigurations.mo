@@ -1,4 +1,4 @@
-within efmiPSSusecase.Experiments.efmiSILTest;
+within efmiPSSusecase.Experiments.SILTests;
 record ToleranceConfigurations "Configuration of absolute and relative tolerances for varying
      floating-point precisions."
 

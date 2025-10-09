@@ -1,4 +1,4 @@
-within efmiPSSusecase.Experiments.efmiSILTest;
+within efmiPSSusecase.Experiments.SILTests;
 function browse_container "Open the root directory of the eFMI Behavioral Model container backing
      this package."
 

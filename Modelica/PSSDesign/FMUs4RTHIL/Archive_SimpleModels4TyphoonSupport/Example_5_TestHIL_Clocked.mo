@@ -1,6 +1,6 @@
-within PSSDesign.Examples.Archive;
+within PSSDesign.FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
 model Example_5_TestHIL_Clocked "Tests model for HIL without AVR"
-  extends PSSDesign.Examples.Archive.Example_4_TestHILModelNoAVR(
+  extends PSSDesign.FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport.Example_4_TestHILModelNoAVR(
                                                          break connect(step.y,
       genIO4HILinNetwork.vf));
 

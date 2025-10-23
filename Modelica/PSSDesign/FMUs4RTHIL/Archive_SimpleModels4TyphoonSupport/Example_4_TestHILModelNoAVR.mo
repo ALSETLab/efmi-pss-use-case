@@ -1,7 +1,8 @@
-within PSSDesign.Examples.Archive;
+within PSSDesign.FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
 model Example_4_TestHILModelNoAVR "Tests model for HIL without AVR"
   extends Modelica.Icons.Example;
-  FMUs4RTHIL.GenIO4HILinNetwork genIO4HILinNetwork
+  FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport.GenIO4HILinNetwork
+    genIO4HILinNetwork
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Sources.Step step(height=0.05, startTime=5)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));

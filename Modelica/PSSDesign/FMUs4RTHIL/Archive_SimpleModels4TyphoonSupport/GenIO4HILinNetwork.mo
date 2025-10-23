@@ -1,4 +1,4 @@
-within PSSDesign.FMUs4RTHIL;
+within PSSDesign.FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
 model GenIO4HILinNetwork "Model with generator inside of pwoer network"
 
   OpenIPSL.Electrical.Buses.Bus B1 annotation(

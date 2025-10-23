@@ -1,5 +1,5 @@
 within PSSDesign.Network;
-model Example_1_final
+model ReferenceSystemWitPSS "Reference model with PSS"
   OpenIPSL.Electrical.Buses.Bus B1 annotation(
     Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B2 annotation(
@@ -45,4 +45,4 @@ equation
     Line(points = {{39, -20}, {50, -20}, {50, 0}, {60, 0}}, color = {0, 0, 255}));
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
-end Example_1_final;
+end ReferenceSystemWitPSS;

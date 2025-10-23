@@ -35,4 +35,11 @@ equation
     Line(points = {{39, -20}, {50, -20}, {50, 0}, {60, 0}}, color = {0, 0, 255}));
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
+  annotation (Icon(graphics={
+        Ellipse(lineColor={0,127,0},
+                fillColor={255,255,255},
+                fillPattern = FillPattern.Solid,
+                extent={{-100,-100},{100,100}},
+          lineThickness=1)}),
+    experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.0001));
 end PartialNetwork;

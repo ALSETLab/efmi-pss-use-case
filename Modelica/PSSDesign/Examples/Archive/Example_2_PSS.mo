@@ -1,26 +1,21 @@
-within PSSDesign.Network;
-model ReferenceSystemWitPSS "Reference model with PSS"
+within PSSDesign.Examples.Archive;
+model Example_2_PSS
+  extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation(
     Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B2 annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B3 annotation(
     Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  PSSDesign.Generator.Generator G1(
-    P_0=1997999999.99364,
-    Q_0=967924969.9065781,
-    angle_0=0.4946771769891539) annotation (Placement(visible=true,
-        transformation(
-        origin={-80,0},
-        extent={{-10,-10},{10,10}},
-        rotation=0)));
+  Generator.GeneratorPSS G1(P_0 = 1997999999.99364, Q_0 = 967924969.9065781, angle_0 = 0.4946771769891539) annotation(
+    Placement(visible = true, transformation(origin = {-80, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   inner OpenIPSL.Electrical.SystemBase SysData(fn = 60) annotation(
     Placement(visible = true, transformation(origin = {-50, -50}, extent = {{-30, -10}, {30, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(Sn(displayUnit = "V.A") = 2220000000, V_b = 400000, Vn = 400000, rT = 0, xT = 0.15) annotation(
     Placement(visible = true, transformation(origin = {12, 0}, extent = {{-50, -10}, {-30, 10}}, rotation = 0)));
-  OpenIPSL.Electrical.Branches.PwLine pwLine1(B = 0, G = 0, R = 0, S_b(displayUnit = "V.A") = 100000000, X = 0.5*100/2220) annotation(
+  OpenIPSL.Electrical.Branches.PwLine pwLine1(B = 0, G = 0, R = 0, S_b = 1e8, X = 0.5*100/2220) annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, 10}, {40, 30}}, rotation = 0)));
-  OpenIPSL.Electrical.Branches.PwLine pwLine2(B = 0, G = 0, R = 0, S_b(displayUnit = "V.A") = 100000000, X = 0.93*100/2220) annotation(
+  OpenIPSL.Electrical.Branches.PwLine pwLine2(B = 0, G = 0, R = 0, S_b = 1e8, X = 0.93*100/2220) annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, -30}, {40, -10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(P_0 = -1998000000, Q_0 = 87066000, angle_0 = 0, v_0 = 0.90081) annotation(
     Placement(visible = true, transformation(origin = {80, 0}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
@@ -45,4 +40,6 @@ equation
     Line(points = {{39, -20}, {50, -20}, {50, 0}, {60, 0}}, color = {0, 0, 255}));
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
-end ReferenceSystemWitPSS;
+  annotation(
+    experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 0.0001));
+end Example_2_PSS;

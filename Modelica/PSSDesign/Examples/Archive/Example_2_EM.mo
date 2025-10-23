@@ -1,4 +1,4 @@
-within PSSDesign.Examples;
+within PSSDesign.Examples.Archive;
 model Example_2_EM
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation(

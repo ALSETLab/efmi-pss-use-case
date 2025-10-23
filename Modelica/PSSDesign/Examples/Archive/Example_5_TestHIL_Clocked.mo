@@ -1,6 +1,7 @@
-within PSSDesign.Examples;
+within PSSDesign.Examples.Archive;
 model Example_5_TestHIL_Clocked "Tests model for HIL without AVR"
-  extends PSSDesign.Examples.Example_4_TestHILModelNoAVR(break connect(step.y,
+  extends PSSDesign.Examples.Archive.Example_4_TestHILModelNoAVR(
+                                                         break connect(step.y,
       genIO4HILinNetwork.vf));
 
   Modelica.Clocked.RealSignals.Sampler.SampleClocked sampler

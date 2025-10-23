@@ -1,4 +1,4 @@
-within PSSDesign.Examples;
+within PSSDesign.Examples.Archive;
 model Example_4_TestHILModelNoAVR "Tests model for HIL without AVR"
   extends Modelica.Icons.Example;
   FMUs4RTHIL.GenIO4HILinNetwork genIO4HILinNetwork

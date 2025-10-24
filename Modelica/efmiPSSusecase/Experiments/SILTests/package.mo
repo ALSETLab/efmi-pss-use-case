@@ -7,10 +7,11 @@ package SILTests "Test scenarios of original experiment
   extends .DymolaEmbedded.Icons.eFMI_ExperimentPackage;
 
   constant ToleranceConfigurations tolerances_default(
-    absolute_x32(vs=0.5),
-    relative_x32(vs=0.5),
-    absolute_x64(vs=0.5),
-    relative_x64(vs=0.5)) "Configuration of default tolerances." annotation (
+    absolute_x32(vs=1.0e-3),
+    relative_x32(vs=1.0e-4),
+    absolute_x64(vs=1.0e-6),
+    relative_x64(vs=1.0e-8))
+                          "Configuration of default tolerances." annotation (
       HideResult=true, Placement(transformation(extent={{-80,40},{-40,80}})));
 
   constant ToleranceConfigurations tolerances_Scenario_1(
@@ -26,7 +27,7 @@ package SILTests "Test scenarios of original experiment
     Behavioral Model container:
   */
   constant String bmodel_container_directory=
-      "C:/Users/vanfr/Documents/Dymola/PSSefmu/eFMU/BModel_Dymola_d25b61af2505a38fdeb5f5837722c454f960701f"
+      "C:/Users/CBR5.DSONE/Documents/Dymola/PSSefmu/eFMU/BModel_Dymola_d25b61af2505a38fdeb5f5837722c454f960701f"
     annotation (Protection(hideFromBrowser=true));
 
   annotation (

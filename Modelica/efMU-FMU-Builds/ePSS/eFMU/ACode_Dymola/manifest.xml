@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
+	efmiVersion="1.0.0"
+	xsdVersion="0.13.0"
+	id="{48d2d1bd-f1a3-411e-8c53-7ce6e8a055cc}"
+	kind="AlgorithmCode"
+	name="PSSDesign.Components.PSSTypeIImod4efmi"
+	generationDateAndTime="2025-10-25T12:09:27Z"
+	generationTool="Dymola Version 2025x Refresh 1, 2025-04-11"
+	description="Extends the PSS Type II in OpenIPSL with parametrization for eFMI use case"
+	version="">
+
+	<Files>
+		<File
+			name="block.alg"
+			id="block.alg"
+			path="./"
+			needsChecksum="true"
+			checksum="e950a672a188b6903fe9cd326119b4cbcfe4e649"
+			role="Code"/>
+	</Files>
+
+	<Clock id="'discrete.clock'" variableRefId="df1003005ba75481f5dbaa0fde984f7dcf9a86d6e3ba796c501f119049e8d67eb85a70b170ecae44d2780809ca84f5585163f420b93b01c9246a113502b83bbc"/>
+
+	<BlockMethods fileRefId="block.alg" writeOutputs="Undefined">
+		<BlockMethod id="Recalibrate()" kind="Recalibrate">
+			<Signals>
+				<Signal value="NAN"/>
+			</Signals>
+		</BlockMethod>
+		<BlockMethod id="Startup()" kind="Startup">
+			<Signals>
+				<Signal value="NAN"/>
+				<Signal value="SOLVE_LINEAR_EQUATIONS_FAILED"/>
+			</Signals>
+		</BlockMethod>
+		<BlockMethod id="DoStep()" kind="DoStep">
+			<Signals>
+				<Signal value="NAN"/>
+			</Signals>
+		</BlockMethod>
+	</BlockMethods>
+
+	<ErrorSignalStatus id="block:fake-signal-variable-anchor"/>
+
+	<Units>
+		<Unit id="[1]" name="1"/>
+		<Unit id="[s]" name="s">
+			<BaseUnit
+				s="1"/>
+		</Unit>
+	</Units>
+
+	<Variables>
+		<RealVariable
+			id="vSI"
+			name="vSI"
+			description="PSS input signal "
+			blockCausality="input"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="vs"
+			name="vs"
+			description="PSS output signal"
+			blockCausality="output"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="Kw"
+			name="Kw"
+			description="Stabilizer gain [pu/pu]"
+			blockCausality="tunableParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="9.5">
+		</RealVariable>
+		<RealVariable
+			id="T1"
+			name="T1"
+			description="First stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.53999999999999998e-1">
+		</RealVariable>
+		<RealVariable
+			id="T2"
+			name="T2"
+			description="Second stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="3.30000000000000016e-2">
+		</RealVariable>
+		<RealVariable
+			id="T3"
+			name="T3"
+			description="Third stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="T4"
+			name="T4"
+			description="Fourth stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="Tw"
+			name="Tw"
+			description="Wash-out time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.40999999999999992">
+		</RealVariable>
+		<RealVariable
+			id="vSI_start"
+			name="vSI_start"
+			description="Default start value for vSI, the PSS input signal."
+			blockCausality="tunableParameter"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="vsmax"
+			name="vsmax"
+			description="Max stabilizer output signal"
+			blockCausality="tunableParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="2.00000000000000011e-1">
+		</RealVariable>
+		<RealVariable
+			id="vsmin"
+			name="vsmin"
+			description="Min stabilizer output signal"
+			blockCausality="tunableParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="-2.00000000000000011e-1">
+		</RealVariable>
+		<RealVariable
+			id="df1003005ba75481f5dbaa0fde984f7dcf9a86d6e3ba796c501f119049e8d67eb85a70b170ecae44d2780809ca84f5585163f420b93b01c9246a113502b83bbc"
+			name="df1003005ba75481f5dbaa0fde984f7dcf9a86d6e3ba796c501f119049e8d67eb85a70b170ecae44d2780809ca84f5585163f420b93b01c9246a113502b83bbc"
+			blockCausality="constant"
+			start="1.00000000000000002e-3">
+		</RealVariable>
+	</Variables>
+</Manifest>

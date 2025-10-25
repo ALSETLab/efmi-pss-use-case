@@ -1,0 +1,114 @@
+****************************************************************************************************************************
+Get Service Info...
+Service Version: 1
+Following operation types are availables:
+- AUTOSAR ECU Extract
+- AUTOSAR Middleware Generation
+- C & C++ Build
+- FMU Checker
+- FMU Middleware Generation
+- FMU Target Build
+- Tester Generator
+- UML to C
+- UML to C++
+- UML to Java
+- Zip
+- eFMU Algorithm To Production Code Generator
+- eFMU Algorithmic Code To Component Generator
+- eFMU Binary Code Generator
+- eFMU Production Code Generator
+Get Service Info... done
+****************************************************************************************************************************
+Create Workspace "ePSS"...
+Check if Workspace "ePSS" already exists
+Workspace "ePSS" already exists
+Create Workspace "ePSS"... done
+****************************************************************************************************************************
+Synchronize remote workspace path with local file system path...
+Synchronize remote workspace path "\eFMU" with local file system path  "C:\Users\vanfr\Documents\Dymola\ePSS\eFMU"
+Synchronize remote workspace path with local file system path... done
+****************************************************************************************************************************
+Invoke Operation...
+Lock acquired for C:\Users\vanfr\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Lock released for C:\Users\vanfr\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Invoke Operation "eFMU Algorithm To Production Code Generator"
+***** Start of eFMU Generator - Algoritmic Code to Production Code *****
+Parameter {-floatPrec:64}
+Parameter {-interfaceName:H0cd5e2fb2801360cebb2e36f93c4a1b96253dcd5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c}
+Parameter {-outputAsEFMU:false}
+Parameter {-outputEFMUName:eFMU}
+Parameter {-prodCodeName:PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c}
+Arguments:[-srcDir, spo_docker_shared/eFMU/, -dstDir, spo_docker_shared/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -interfaceName, H0cd5e2fb2801360cebb2e36f93c4a1b96253dcd5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -floatPrec, 64, -interfaceName, H0cd5e2fb2801360cebb2e36f93c4a1b96253dcd5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -outputAsEFMU, false, -outputEFMUName, eFMU, -prodCodeName, PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c]
+Read arguments... 
+Destination eFMU path        : spo_docker_shared/eFMU/
+Production code name         : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+Output As EFMU               : false
+Output EFMU Name             : eFMU
+
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+Read arguments... OK
+
+Read Manifests... 
+Reading manifest: __content.xml
+Reading manifest: manifest.xml
+Reading ACode_Dymola ModelRepresentation
+Reading manifest: manifest.xml
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_0
+File list : .//block.c/FILE_ID_block.c_1
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_5
+File list : .//galec_types.h/FILE_ID_galec_types.h_6
+File list : .//block.h/FILE_ID_block.h_7
+Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
+Read Manifests... OK
+
+Write Manifest... 
+add File... mei_block_interface.h
+add File... galec_types.h
+add File... block.h
+add File... sii_block_interface.c
+add File... mei_block_interface.c
+add File... sii_block_interface.h
+add File... galec_stl.h
+add File... block.c
+Writing: manifest.xml
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_0
+File list : .//block.c/FILE_ID_block.c_1
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_5
+File list : .//galec_types.h/FILE_ID_galec_types.h_6
+File list : .//block.h/FILE_ID_block.h_7
+Writing: manifest.xml
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_0
+File list : .//galec_types.h/FILE_ID_galec_types.h_1
+File list : .//block.h/FILE_ID_block.h_2
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_3
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_4
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_5
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_6
+File list : .//block.c/FILE_ID_block.c_7
+Writing: __content.xml
+Write Manifest... OK
+
+***** End of eFMU Generator - Algoritmic Code to Production Code *****
+Operation "eFMU Algorithm To Production Code Generator" finished
+eFMU "\eFMU" generated
+Operation returned with code with message Generation is OK (0)
+Exit with code 0
+Invoke Operation... done
+****************************************************************************************************************************
+Synchronize local file system path with remote workspace path...
+Synchronize file system path "C:\Users\vanfr\Documents\Dymola\ePSS\eFMU" from workspace path "\eFMU"
+Synchronize local file system path with remote workspace path... done

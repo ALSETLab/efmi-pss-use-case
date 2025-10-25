@@ -20,5 +20,10 @@ model PSSTypeIImod4efmi
           extent={{-100,100},{100,-100}},
           textColor={0,140,72},
           textString="PSS 4 
-efmi Export")}));
+efmi Export")}),
+    experiment(__Dymola_fixedstepsize=0.001, __Dymola_Algorithm="Euler"),
+    __Dymola_experimentFlags(Advanced(
+        InlineMethod=1,
+        InlineOrder=2,
+        InlineFixedStep=0.001)));
 end PSSTypeIImod4efmi;

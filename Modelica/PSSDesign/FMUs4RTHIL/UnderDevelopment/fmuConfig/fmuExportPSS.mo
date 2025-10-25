@@ -11,6 +11,11 @@ function fmuExportPSS "Function to generate the FMU of the PSS"
   output String FMUname "FMI model identifier on success, empty string on failure";
 
 algorithm
+  Advanced.FMI.FMUIncludeSource :=true;
+  Advanced.FMI.SourceCodeImport :=true;
+  Advanced.Translation.Log.ExternalResources :=true;
+  Advanced.EnableCodeExport :=true;
+
   FMUname :=translateModelFMU(
   modelToOpen,
   false,

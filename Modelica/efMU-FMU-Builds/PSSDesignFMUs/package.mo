@@ -9,7 +9,7 @@ block package
   import FMI.FMI2.Functions.*;
 
 
-  parameter Modelica.Units.SI.Time communicationStepSize = 1e-2 annotation(Dialog(tab="FMI", group="Parameters"));
+  parameter Modelica.Units.SI.Time communicationStepSize = 0.001 annotation(Dialog(tab="FMI", group="Parameters"));
 
   parameter FMI2Real SysData_S_b(unit="V.A", quantity="Power") = 100000000.0 "System base";
 
@@ -193,12 +193,12 @@ initial algorithm
 
   FMI.Internal.loadFMU(
     instance=instance,
-    unzipdir=Modelica.Utilities.Files.loadResource("modelica://PSSDesignFMUs/Resources/FMUs/7c3bdb0"),
+    unzipdir=Modelica.Utilities.Files.loadResource("modelica://PSSDesignFMUs/Resources/FMUs/042a579"),
     fmiVersion=2,
-    modelIdentifier="fmuV2CvodeGridForHILTesting",
+    modelIdentifier="fmuV2ExpEulerGridForHILTesting",
     instanceName=getInstanceName(),
     interfaceType=1,
-    instantiationToken="{e0363a38-9856-44c9-9e6b-4f6b244ad7b4}",
+    instantiationToken="{08b51f79-dc85-49a3-9c37-c72b90634cac}",
     visible=visible,
     loggingOn=loggingOn,
     logFMICalls=logFMICalls,
@@ -359,13 +359,13 @@ equation
    Icon(coordinateSystem(
       preserveAspectRatio=false,
       extent={{-100,-100},{100,100}}),
-      graphics={Bitmap(extent={{-90,-90},{90,90}}, fileName="modelica://PSSDesignFMUs/Resources/FMUs/7c3bdb0/model.png")}
+      graphics={Bitmap(extent={{-90,-90},{90,90}}, fileName="modelica://PSSDesignFMUs/Resources/FMUs/042a579/model.png")}
     ),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     experiment(StopTime=10.0),
     uses(FMI(version="0.0.8")),
     Documentation(info="<html>
-<p>For more information open the FMU's <a href=\"modelica://PSSDesignFMUs/Resources/FMUs/7c3bdb0/documentation/index.html\">original documentation</a>.</p>
+<p>For more information open the FMU's <a href=\"modelica://PSSDesignFMUs/Resources/FMUs/042a579/documentation/index.html\">original documentation</a>.</p>
 </html>")
   );
 end package;

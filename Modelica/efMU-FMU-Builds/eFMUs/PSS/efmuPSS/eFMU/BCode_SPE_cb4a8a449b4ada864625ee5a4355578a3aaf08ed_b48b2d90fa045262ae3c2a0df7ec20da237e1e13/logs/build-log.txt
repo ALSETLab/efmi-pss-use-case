@@ -1,0 +1,220 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.17
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+Source eFMU path                    : C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU
+Destination eFMU path               : null
+Production code name                : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Binary code name                    : BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+Ignore reading Errors               : false
+Ignore writing Errors               : false
+Compiler name                       : VS
+Compiler vendor                     : Microsoft
+Compiler version                    : Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+Compiler executable name            : cl
+Compiler option sets                : 
+	Name: default
+	Options: 
+		SWT nologo
+Default compiler option set         : default
+Specific compiler option set        : 
+Linker name                         : VS
+Linker vendor                       : Microsoft
+Linker version                      : Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x64
+Linker executable name              : lib
+linker option set                   : 
+		SWT nologo
+Target name                         : Windows
+Target vendor                       : Software Production Engineering
+Target chip version                 : 1.0
+Target instruction set architecture : x64
+Target endianess                    : big
+Target register width               : 64
+Target address width                : 64
+Object extension                    : obj
+Binary extension                    : lib
+Execute link                        : true
+
+ 
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+
+READ MANIFESTS
+Reading: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\__content.xml
+Import-Module : Illegal characters in path.
+At line:1 char:46
++ ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.ImportModuleCommand
+ 
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+Reading: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 7b24c4a4d7f97a5f0a3e58930baa4092492bde96
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 28eda490a94f0b789c863a9f27761391678eb9b9
+Reading: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+Send-VsDevShellTelemetry : The term 'Send-VsDevShellTelemetry' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At line:1 char:170
++ ... icrosoft.VisualStudio.DevShell.dll'; Send-VsDevShellTelemetry -NewIns ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 31b42af6ffdf815fea4c478065f5a59ddde9a96c
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: b46527a8fd0a3df87630674ec49ca82341905cb9
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: d384ee1b753f3001d6ab4cbaa6a8b7e179c62cb5
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 58efffeadc7f7927d4a68ee23ba6c9d7da667813
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: d3d9de97ff6560b89329c28456a94250d0d465ff
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 3c42e16c0d78eb317a15caf21e9ded890c9992ef
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 15b1d2c4256dcb937a40a6dd96235763d4368a77
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_types.h
+OK: Manifest file CheckSum valid: 770be80720278037fd22dd270d7af5a1caa74847
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: aafcda1c212854f30ac1436fe3167720c554415b
+Reading: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: db605b72f32e1631badac6a37e2dd06029630f84
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 9b3b63060e5eea227b3ce16fda8cb86d6d1d612f
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_types.h
+OK: Manifest file CheckSum valid: ccd5846e0eeff641519a7c1c10bbaca57216503d
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: 85429ab61bb31f3340958cdb67498095f8251e79
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 9b09ea4be6a9ea559813b48e5d61fae936b0573b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: bc9625df015bd4390a38eea48428f3b24f934eae
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 9b23a4dc9401738f42e47b45148cbf0792227f8f
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: 490dda8073de5b1cd09c224a63b7a01c9554cb02
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: 8b55f918943b089965b4d11db65c0d2ce5dcf36c
+Reading: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 6147074643da8b9fd411b9ad7df9741150d15294
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 79fde50d89afbd06e5b1c6ff2580c28603b5826b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
+OK: Manifest file CheckSum valid: 7fd823fa66677ca4691ac200bd276dc3162a2799
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 0c59b4b10d99754c3245dd7f1199d1343071ab73
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 061fc2772393d796c6b105aa4020c8fdf46e1dd0
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: aa82d0ab3b36ef6cbd9c0cd9d2a0697e73b77ae0
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
+OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
+OK: Manifest file CheckSum valid: e97d7be265edb62734c126cf4d4ec75391fe27de
+
+GENERATE BINARY CODE MAKEFILES
+C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./makefile
+C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./build.bat
+C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./where.bat
+
+GENERATE BINARY CODE SOURCES
+
+Microsoft (R) Program Maintenance Utility Version 14.44.35217.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c /Fo.\default\mei_block_interface.obj
+mei_block_interface.c
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c /Fo.\default\block.obj
+block.c
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c /Fo.\default\sii_block_interface.obj
+sii_block_interface.c
+	lib /nologo .\default\mei_block_interface.obj .\default\block.obj .\default\sii_block_interface.obj /OUT:block.lib
+
+
+GENERATE BINARY CODE MANIFEST
+BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+
+WRITE MANIFESTS
+Writing: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 6147074643da8b9fd411b9ad7df9741150d15294
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 79fde50d89afbd06e5b1c6ff2580c28603b5826b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
+OK: Manifest file CheckSum valid: 7fd823fa66677ca4691ac200bd276dc3162a2799
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 0c59b4b10d99754c3245dd7f1199d1343071ab73
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 061fc2772393d796c6b105aa4020c8fdf46e1dd0
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: aa82d0ab3b36ef6cbd9c0cd9d2a0697e73b77ae0
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
+OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
+OK: Manifest file CheckSum valid: e97d7be265edb62734c126cf4d4ec75391fe27de
+Writing: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: e845224c3230798a52d679e02f501b0a9e86d930
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 446292b51716692ebdf19a8c6b316c02f37ee5d5
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
+OK: Manifest file CheckSum valid: b2bba795d1e3ebb8e306a0c82579e0ad2959fded
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 4c0097789f1738d22c6ea660c69f3e5dc0186393
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: da3188f29fbbdbb53275a1da92ef199676f9fbaa
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: aa82d0ab3b36ef6cbd9c0cd9d2a0697e73b77ae0
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
+OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
+OK: Manifest file CheckSum valid: e97d7be265edb62734c126cf4d4ec75391fe27de
+Writing: C:\Users\vanfr\Documents\Dymola\efmuPSS\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Dymola/efmuPSS/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+GENERATION SUCCESS

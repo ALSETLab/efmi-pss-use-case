@@ -34,4 +34,5 @@ equation
           110,-40}}, color={0,0,127}));
   connect(step.y, G4HIL.vf)
     annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
+  annotation (experiment(StopTime=60, __Dymola_Algorithm="Dassl"));
 end TestGridForHIL;

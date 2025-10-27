@@ -51,4 +51,5 @@ equation
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
+  annotation (experiment(StopTime=60, __Dymola_Algorithm="Dassl"));
 end TestGridForHILClocked;

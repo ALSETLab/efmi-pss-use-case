@@ -1,5 +1,5 @@
 within PSSDesign.FMUs4RTHIL;
-model TestGridForHILReIO "Tests the model for HIL testing"
+model TestGridForHILReIOClocked "Tests the model for HIL testing"
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Step step(
     height=0.05,
@@ -32,6 +32,15 @@ model TestGridForHILReIO "Tests the model for HIL testing"
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-60,108})));
+  Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
+    period(displayUnit="ms") = 0.001,
+    useSolver=true,
+    solverMethod="ExplicitEuler") annotation (Placement(transformation(
+        extent={{-6,-6},{6,6}},
+        rotation=90,
+        origin={-50,-34})));
+  Modelica.Clocked.RealSignals.Sampler.SampleClocked sampler
+    annotation (Placement(transformation(extent={{-56,-6},{-44,6}})));
 equation
   connect(G4HIL.w, w)
     annotation (Line(points={{22,16},{22,60},{110,60}}, color={0,0,127}));
@@ -41,11 +50,18 @@ equation
     annotation (Line(points={{22,8},{94,8},{94,0},{110,0}}, color={0,0,127}));
   connect(G4HIL.Qgen, Qgen) annotation (Line(points={{22,4},{90,4},{90,-40},{
           110,-40}}, color={0,0,127}));
-  connect(step.y, G4HIL.vf)
-    annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
   connect(pulse.y, G4HIL.u1)
     annotation (Line(points={{-79,-70},{0,-70},{0,-24}}, color={0,0,127}));
   connect(G4HIL.vf0OUT, vf0OUT1) annotation (Line(points={{-16,22},{-16,80},{
           -60,80},{-60,108}}, color={0,0,127}));
+  connect(periodicClock.y, sampler.clock) annotation (Line(
+      points={{-50,-27.4},{-50,-7.2}},
+      color={175,175,175},
+      pattern=LinePattern.Dot,
+      thickness=0.5));
+  connect(sampler.u, step.y)
+    annotation (Line(points={{-57.2,0},{-79,0}}, color={0,0,127}));
+  connect(sampler.y, G4HIL.vf)
+    annotation (Line(points={{-43.4,0},{-24,0}}, color={0,0,127}));
   annotation (experiment(StopTime=60, __Dymola_Algorithm="Dassl"));
-end TestGridForHILReIO;
+end TestGridForHILReIOClocked;

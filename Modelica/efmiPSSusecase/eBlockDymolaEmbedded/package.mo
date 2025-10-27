@@ -7,6 +7,6 @@ package eBlockDymolaEmbedded
     integrator_configuration(sample_period=0.001, solver_method=DymolaEmbedded.BuildUtilities.AlgorithmCode.Integrator.SolverMethod.Explicit_Euler),
     code_configuration(
       obfuscate=DymolaEmbedded.BuildUtilities.AlgorithmCode.Code.ObfuscationLevel.None),
-    efmu_configuration(name="PSSefmu")
+    efmu_configuration(name="efmuPSS")
                               );
 end eBlockDymolaEmbedded;

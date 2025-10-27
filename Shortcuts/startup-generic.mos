@@ -22,7 +22,13 @@ end if;
 // Use forward slashes (fine on Windows)
 // Specify the relative path with dependencies
 // "C:\Users\vanfr\Documents\
+// Load Dependencies
 openModel(docs + "/Github/efmi-pss-use-case/dependencies/openipsl/OpenIPSL/package.mo");
+openModel(docs + "/Github/efmi-pss-use-case/dependencies/Modelica-FMI/FMI/package.mo");
+// Load Libraries
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/PSSDesign/package.mo");
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/efmiPSSusecase/package.mo");
+// Load eFMU SIL Integration Tests
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/efMU-FMU-Builds/eFMUs/PSS/efmuPSS/SiL-integration/eFMU/_package_.mo");
+// Go back to working directory
 cd(       docs + "/Dymola");

@@ -1,0 +1,11 @@
+
+Microsoft (R) Program Maintenance Utility Version 14.44.35217.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c /Fo.\default\mei_block_interface.obj
+mei_block_interface.c
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c /Fo.\default\block.obj
+block.c
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c /Fo.\default\sii_block_interface.obj
+sii_block_interface.c
+	lib /nologo .\default\mei_block_interface.obj .\default\block.obj .\default\sii_block_interface.obj /OUT:block.lib

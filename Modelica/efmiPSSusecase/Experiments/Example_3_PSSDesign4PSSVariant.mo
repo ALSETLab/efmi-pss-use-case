@@ -26,8 +26,12 @@ model Example_3_PSSDesign4PSSVariant
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, -30}, {40, -10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(P_0 = -1998000000, Q_0 = 87066000, angle_0 = 0, v_0 = 0.90081) annotation(
     Placement(visible = true, transformation(origin = {80, 0}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
-  OpenIPSL.Electrical.Events.PwFault pwFault(R = 0, X = 0.01*100/2220, t1 = 0.5, t2 = 0.57) annotation(
-    Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, -60}, {40, -40}}, rotation = 0)));
+  OpenIPSL.Electrical.Events.PwFault pwFault(
+    R=0,
+    X=0.01*100/2220,
+    t1=0.5,
+    t2=0.57)                                                                                annotation(
+    Placement(visible = true, transformation(                 extent = {{20, -60}, {40, -40}}, rotation = 0)));
 equation
   connect(G1.pwPin, B1.p) annotation(
     Line(points = {{-69, 0}, {-60, 0}}, color = {0, 0, 255}));
@@ -39,14 +43,14 @@ equation
     Line(points = {{0, 0}, {10, 0}, {10, 20}, {21, 20}}, color = {0, 0, 255}));
   connect(pwLine2.p, B2.p) annotation(
     Line(points = {{21, -20}, {10, -20}, {10, 0}, {0, 0}}, color = {0, 0, 255}));
-  connect(pwFault.p, B2.p) annotation(
-    Line(points = {{18.3333, -50}, {10, -50}, {10, 0}, {0, 0}}, color = {0, 0, 255}));
   connect(B3.p, pwLine1.n) annotation(
     Line(points = {{60, 0}, {50, 0}, {50, 20}, {39, 20}}, color = {0, 0, 255}));
   connect(pwLine2.n, B3.p) annotation(
     Line(points = {{39, -20}, {50, -20}, {50, 0}, {60, 0}}, color = {0, 0, 255}));
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
+  connect(pwFault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,-50},{10,0},
+          {0,0}}, color={0,0,255}));
   annotation(
-    experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 0.0001));
+    experiment(StartTime = 0, StopTime = 30, Tolerance = 1e-6, Interval = 0.0001));
 end Example_3_PSSDesign4PSSVariant;

@@ -54,7 +54,7 @@ equation
           {0,0}}, color={0,0,255}));
   annotation(
     experiment(
-      StopTime=30,
+      StopTime=15,
       Interval=0.0001,
       Tolerance=1e-06));
 end Example_3_PSSDesign4PSSVariantClocked_eBlock;

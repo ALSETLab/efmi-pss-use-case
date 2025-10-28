@@ -28,7 +28,9 @@ openModel(docs + "/Github/efmi-pss-use-case/dependencies/Modelica-FMI/FMI/packag
 // Load Libraries
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/PSSDesign/package.mo");
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/efmiPSSusecase/package.mo");
-// Load eFMU SIL Integration Tests
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/efMU-FMU-Builds/eFMUs/PSS/efmuPSS/SiL-integration/eFMU/_package_.mo");
+// Load eFMU and SIL Integration Tests
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/efmuPSS/SiL-integration/eFMU/_package_.mo");
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/'eFMU experiment package (efmuPSS, efmiPSSusecase.Experiments.Example_3_PSSDesign4PSSVariantClocked)'/package.mo");
+
 // Go back to working directory
 cd(       docs + "/Dymola");

@@ -52,5 +52,5 @@ equation
   connect(pwFault.p, B2.p) annotation (Line(points={{18.3333,-50},{10,-50},{10,0},
           {0,0}}, color={0,0,255}));
   annotation(
-    experiment(StartTime = 0, StopTime = 30, Tolerance = 1e-6, Interval = 0.0001));
+    experiment(StartTime = 0, StopTime = 15, Tolerance = 1e-6, Interval = 0.0001));
 end Example_3_PSSDesign4PSSVariant;

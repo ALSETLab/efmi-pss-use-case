@@ -3,5 +3,7 @@ package efmuConfig "Configures the model for efmu code generation (export)"
   extends DymolaEmbedded.EmbeddedConfiguration(model_configuration(model_name=
           "PSSDesign.FMUs4RTHIL.GridForHILTesting"),  integrator_configuration(
         sample_period(displayUnit="ms") = 0.001, solver_method=DymolaEmbedded.BuildUtilities.AlgorithmCode.Integrator.SolverMethod.Explicit_Euler),
-    efmu_configuration(name="Grid4HIL"));
+    efmu_configuration(name="Grid4HIL"),
+    code_configuration(obfuscate=DymolaEmbedded.BuildUtilities.AlgorithmCode.Code.ObfuscationLevel.None)
+                                       );
 end efmuConfig;

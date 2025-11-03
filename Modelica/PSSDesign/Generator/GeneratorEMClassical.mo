@@ -2,7 +2,10 @@ within PSSDesign.Generator;
 model GeneratorEMClassical
   "Generator, simplified synchronous machine (no AVR, no PSS)"
   extends PSSDesign.Generator.GeneratorTemplate;
-  OpenIPSL.Electrical.Machines.PSAT.Order2 machine(D = 0, M = 7, P_0 = P_0, Q_0 = Q_0, Sn = 2220000000, V_b = V_b, Vn = 400000, angle_0 = angle_0, ra = 0, v_0 = v_0, x1d = 0.3) annotation(
+  replaceable PSSDesign.Components.Machines.Order2 machine(D = 0, M = 7, P_0 = P_0, Q_0 = Q_0,
+    Sn=2220000000,                                                                                      V_b = V_b,
+    Vn=400000,                                                                                                                  angle_0 = angle_0, ra = 0, v_0 = v_0, x1d = 0.3)
+    constrainedby Components.Machines.Base.baseMachine                                                                                                                                     annotation(
     Placement(visible = true, transformation(origin = {49, 5}, extent = {{-31, -31}, {31, 31}}, rotation = 0)));
 equation
   connect(machine.p, pwPin) annotation(

@@ -8,8 +8,7 @@ model Example_3_PSSDesign4PSSVariantClocked
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B3 annotation(
     Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Components.GeneratorPSSefmuVariantClocked
-                                     G1(
+  GeneratorUnits.GeneratorPSSefmuVariantClocked G1(
     P_0=1997999999.99364,
     Q_0=967924969.9065781,
     angle_0=0.4946771769891539) annotation (Placement(visible=true,

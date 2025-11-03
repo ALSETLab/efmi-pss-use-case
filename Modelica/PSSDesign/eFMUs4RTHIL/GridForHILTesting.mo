@@ -1,4 +1,4 @@
-within PSSDesign.FMUs4RTHIL;
+within PSSDesign.eFMUs4RTHIL;
 model GridForHILTesting "System model for HIL testing"
   extends Modelica.Icons.Example;
   extends Network.PartialNetwork4efmu;

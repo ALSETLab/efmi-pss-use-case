@@ -1,9 +1,8 @@
-within PSSDesign.FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
+within PSSDesign.eFMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
 model Example_5_TestHIL_Clocked_4OpenModelica
   "Tests model for HIL without AVR, this variant does not use the advanced Modelica language feature that applies a \"break\" to Example_4 to build the new model, as it won't work on OM..."
   extends Modelica.Icons.Example;
-  FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport.GenIO4HILinNetwork
-    genIO4HILinNetwork
+  eFMUs4RTHIL.Archive_SimpleModels4TyphoonSupport.GenIO4HILinNetwork genIO4HILinNetwork
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Sources.Step step(height=0.05, startTime=5)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));

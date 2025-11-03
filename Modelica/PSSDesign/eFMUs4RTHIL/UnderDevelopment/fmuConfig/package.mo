@@ -1,4 +1,4 @@
-within PSSDesign.FMUs4RTHIL.UnderDevelopment;
+within PSSDesign.eFMUs4RTHIL.UnderDevelopment;
 package fmuConfig
   "Functions to generate FMUs for HIL testing for different sub-systems"
   extends Modelica.Icons.FunctionsPackage;

@@ -1,4 +1,4 @@
-within PSSDesign.FMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
+within PSSDesign.eFMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
 model SimplePI "Simple PI to test FMU export/import"
   extends Modelica.Blocks.Icons.Block;
   Modelica.Blocks.Continuous.PI PI(

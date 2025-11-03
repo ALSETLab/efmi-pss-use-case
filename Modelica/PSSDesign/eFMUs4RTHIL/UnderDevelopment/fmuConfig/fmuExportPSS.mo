@@ -1,4 +1,4 @@
-within PSSDesign.FMUs4RTHIL.UnderDevelopment.fmuConfig;
+within PSSDesign.eFMUs4RTHIL.UnderDevelopment.fmuConfig;
 function fmuExportPSS "Function to generate the FMU of the PSS"
   input String modelToOpen = "PSSDesign.Components.PSSTypeIImod4efmi" "Model to open";
   input String modelName = "fmuPSSv2Cvode" "User-selected FMU modelIdentifier (also used as modelName)";

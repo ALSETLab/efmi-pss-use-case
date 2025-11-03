@@ -1,4 +1,4 @@
-within PSSDesign.FMUs4RTHIL;
+within PSSDesign.eFMUs4RTHIL.Archive_SimpleModels4TyphoonSupport;
 model GridForHilTestingReIO
   "Adds conversion from real-to boolean to GridForHilTesting model to attempt to resolve fmu import issues in Typhoon hil"
 

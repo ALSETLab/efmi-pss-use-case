@@ -1,4 +1,4 @@
-within PSSDesign.FMUs4RTHIL;
+within PSSDesign.eFMUs4RTHIL;
 package UnderDevelopment
   extends Modelica.Icons.Package;
   extends Modelica.Icons.UnderConstruction;

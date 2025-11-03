@@ -15,5 +15,5 @@ package efmuGridForHILTesting "eFMI export configuration"
           DymolaEmbedded.BuildUtilities.BinaryCode.ISA.x86_32bit),
           DymolaEmbedded.BuildUtilities.BinaryCode.SPE_Configuration(
           isa=DymolaEmbedded.BuildUtilities.BinaryCode.ISA.x86_64bit)}),
-    efmu_configuration(name="GridForHILTesting"));
+    efmu_configuration(name="Grid4HIL"));
 end efmuGridForHILTesting;

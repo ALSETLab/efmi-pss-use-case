@@ -1,0 +1,91 @@
+Source eFMU path             : C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/efmuPSS/eFMU
+Destination eFMU path        : null
+Production code name         : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Interface name               : H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Float precision              : 32
+Ignore reading Errors        : false
+Ignore writing Errors        : false
+EFMI Type associations: 
+EFMI_INTEGER_8               : signed char
+EFMI_UNSIGNED_INTEGER_8      : unsigned char
+EFMI_INTEGER_16              : signed short
+EFMI_UNSIGNED_INTEGER_16     : unsigned short
+EFMI_INTEGER_32              : signed int
+EFMI_UNSIGNED_INTEGER_32     : unsigned int
+EFMI_FLOAT_32                : float
+EFMI_FLOAT_64                : double
+EFMI_VOID                    : void
+EFMI_BOOL                    : unsigned int
+
+PRODUCTION CODE Type associations: 
+BOOLEAN                      : EFMI_BOOL
+INTEGER                      : EFMI_INTEGER_32
+REAL(32 bits)                : EFMI_FLOAT_32
+REAL(64 bits)                : EFMI_FLOAT_64
+ERRORSIGNAL                  : EFMI_UNSIGNED_INTEGER_32
+Compiler option sets         : 
+linker option set            : 
+ALG code as comments         : true
+ALG Line Numbers as comments : true
+Parameters in header         : true
+
+ 
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+
+READ MANIFESTS
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/efmuPSS/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/efmuPSS/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: e3a46a67da07267c813efed966a9b02f90a372e7
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 5ce4594e24350a98ca9c3794993a874dac7e9b81
+
+GENERATE PRODUCTION CODE SOURCES
+OK: Generation succesfull for source files of C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/efmuPSS/eFMU\ACode_Dymola\./block.alg
+
+GENERATE PRODUCTION CODE MANIFEST
+PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+
+WRITE MANIFESTS
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/efmuPSS/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: d6f264a1017d936b988bb633341223ad4f72cf9a
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 370f24e4c7d3dccbdcd48a6c916ca8f3a051f041
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: efd7c6ac83ff4a8620dfa6ea0b1283e6e00f4150
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: f1a0bfb85e28926d39f2ce04f9a57ee074eef32a
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 515cf9d70786cbdda61758e8aad9d93652973594
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 67aa82c188403bc82e657bfe8251b8e52ddb072e
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_types.h
+OK: Manifest file CheckSum valid: 5aacb03877be109d4020302dfe3a0035b585bbe2
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 4d9fb2bd90e9df6a745f830ede012cf16e35c920
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: f5199853d216cc2185351be33feec6b084c2b642
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\efmuPSS\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/efmuPSS/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+GENERATION SUCCESS

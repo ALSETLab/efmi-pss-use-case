@@ -3,7 +3,17 @@ model Test_SiL_Scenario_1_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
   "SiL test Production Code container [PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c] in the scenario defined by component [G1.pss]."
 
   extends
-    hidden_Test_SiL_Scenario_1_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
+    hidden_Test_SiL_Scenario_1_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(
+eBlock(
+    Kw=10.8,
+    T1=0.278203917593164,
+    T2=0.0551479681529786,
+    T3=0.278203917593164,
+    T4=0.0551479681529786,
+    Tw=5.0,
+    vsmax=0.2,
+    vsmin=-0.2)
+);
 
   annotation (
     preferredView="diagram",

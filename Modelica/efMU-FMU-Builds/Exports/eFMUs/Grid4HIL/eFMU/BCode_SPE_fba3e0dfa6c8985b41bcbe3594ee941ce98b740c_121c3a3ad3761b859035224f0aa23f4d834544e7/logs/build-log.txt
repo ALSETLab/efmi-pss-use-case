@@ -1,0 +1,264 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.17
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x86'
+Source eFMU path                    : C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU
+Destination eFMU path               : null
+Production code name                : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+Binary code name                    : BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
+Ignore reading Errors               : false
+Ignore writing Errors               : false
+Compiler name                       : VS
+Compiler vendor                     : Microsoft
+Compiler version                    : Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x86
+Compiler executable name            : cl
+Compiler option sets                : 
+	Name: default
+	Options: 
+		SWT nologo
+Default compiler option set         : default
+Specific compiler option set        : 
+Linker name                         : VS
+Linker vendor                       : Microsoft
+Linker version                      : Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x86
+Linker executable name              : lib
+linker option set                   : 
+		SWT nologo
+Target name                         : Windows
+Target vendor                       : Software Production Engineering
+Target chip version                 : 1.0
+Target instruction set architecture : x86
+Target endianess                    : big
+Target register width               : 32
+Target address width                : 32
+Object extension                    : obj
+Binary extension                    : lib
+Execute link                        : true
+
+ 
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+
+READ MANIFESTS
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\__content.xml
+Import-Module : Illegal characters in path.
+At line:1 char:46
++ ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.ImportModuleCommand
+ 
+Send-VsDevShellTelemetry : The term 'Send-VsDevShellTelemetry' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At line:1 char:170
++ ... icrosoft.VisualStudio.DevShell.dll'; Send-VsDevShellTelemetry -NewIns ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: ad8f7fba253328366e5cef1d02b0e071d5b6036e
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 7ff34d5c5db94d5bdab6302a77d0b45a50cd8910
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 6721c436e00cfdb0033117ecfba9699fbfedfce0
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: e24239e2c5a427d994e043101de984406f875e01
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 8ee015944cf6b2cbc51434e8b714b65f3492892d
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 077307ac4210c124485b9679123a26dc91fc4fcf
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: 11bf10b87e30d199b11e94d6416d8d5353a7548b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 8951bb0a32e42e13900ba30aa08d1ea36c1c7daa
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 222f462d624f2fab2b20c79fd4774904ddc95f49
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 7fcab6986acaf8726aced65c69d88546e2932121
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_types.h
+OK: Manifest file CheckSum valid: c9e183df45441670ded805a62c09797f8b0dc212
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: abe26514af1d66a1c30569276123c3df0b23de78
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_types.h
+OK: Manifest file CheckSum valid: 95aae8f7b7d0701dad14fd621867a4ef2ceb2d84
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: e441f93d6a594754831d8a29658103f2b8d390f3
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 274b77ac6fb7e9c980a6abbcd5aa08035c57b46b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: 66238dce4b50a24f415a83d53f8dbd3059ff8afd
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: fb89ba1367a2815795848cb379fbd29a9b7e37ae
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: a1e48f81e6a68d8409d4ae144d742a7495b6568b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 33ee07a17d83ec58cd146c356bd1629070ca0dd6
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: 0ef967d82c8f37ce71fef421212b562d6598f021
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 997cf45917e9183ac9d04c6e898105feb8ee8346
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: c550642de69f183aa197fd020676fecdc6806966
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
+OK: Manifest file CheckSum valid: 6a9885a0a433ed3361eaa897f261b0bed4f50b6e
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 31703241b2859faf2c260edaf7df0ef2cc8548fc
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 634e8c9a61e102f907fbd0ac508476ddef7e4622
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 5c5fd8b94e9ed2d05a3fa4ea115d97b7dc934087
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
+OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
+OK: Manifest file CheckSum valid: 3c29cffdde8219e025aa6724f941ddf8a45ddb64
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 036b12b8b14aa20b82b9cdaf683351bf969b4eae
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: fde8c411a68377bd2c1cc69df7187441ee760a69
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
+OK: Manifest file CheckSum valid: 2501f258246fb0fec71e60c46546938065bea6cb
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: e4dbfb693bcee70be88746ef1e434f31495eb610
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: 923abb324e7c61842972b30f8a146ff193a26c1b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: 5c5fd8b94e9ed2d05a3fa4ea115d97b7dc934087
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
+OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
+OK: Manifest file CheckSum valid: 3c29cffdde8219e025aa6724f941ddf8a45ddb64
+
+GENERATE BINARY CODE MAKEFILES
+C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
+C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\./build.bat
+C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\./where.bat
+
+GENERATE BINARY CODE SOURCES
+
+Microsoft (R) Program Maintenance Utility Version 14.44.35217.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c /Fo.\default\mei_block_interface.obj
+mei_block_interface.c
+	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c /Fo.\default\block.obj
+block.c
+	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c /Fo.\default\sii_block_interface.obj
+sii_block_interface.c
+	lib /nologo .\default\mei_block_interface.obj .\default\block.obj .\default\sii_block_interface.obj /OUT:block.lib
+
+
+GENERATE BINARY CODE MANIFEST
+BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
+
+WRITE MANIFESTS
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 997cf45917e9183ac9d04c6e898105feb8ee8346
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: c550642de69f183aa197fd020676fecdc6806966
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
+OK: Manifest file CheckSum valid: 6a9885a0a433ed3361eaa897f261b0bed4f50b6e
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 31703241b2859faf2c260edaf7df0ef2cc8548fc
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 634e8c9a61e102f907fbd0ac508476ddef7e4622
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 5c5fd8b94e9ed2d05a3fa4ea115d97b7dc934087
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
+OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
+OK: Manifest file CheckSum valid: 3c29cffdde8219e025aa6724f941ddf8a45ddb64
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 036b12b8b14aa20b82b9cdaf683351bf969b4eae
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: fde8c411a68377bd2c1cc69df7187441ee760a69
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
+OK: Manifest file CheckSum valid: 2501f258246fb0fec71e60c46546938065bea6cb
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: e4dbfb693bcee70be88746ef1e434f31495eb610
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: 923abb324e7c61842972b30f8a146ff193a26c1b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: 5c5fd8b94e9ed2d05a3fa4ea115d97b7dc934087
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
+OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
+OK: Manifest file CheckSum valid: 3c29cffdde8219e025aa6724f941ddf8a45ddb64
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: aa19be92fb06ccc44cac221755623b241bc36fd9
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 5fe2ccebde7fe143aa4e9ba4fc4aa3965c567d27
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
+OK: Manifest file CheckSum valid: c6a3b5bda4a9e1534f193b8cb2ce8d3dfbd530e1
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 2592b9e735b4273a54e3437fdd4fe8579b862e11
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 1bd3dcec7a17e4ff5a4b121bc07edd4905098217
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: cdf9befbafc2c4f81018a96758bd837eb7033b14
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
+OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
+OK: Manifest file CheckSum valid: 170b769b1b0275e8069d2d6cb0bbf0dc919eeed6
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+OK: Model representation manifest exists: BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
+GENERATION SUCCESS

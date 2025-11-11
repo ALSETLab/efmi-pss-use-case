@@ -24,4 +24,8 @@ equation
     Line(points = {{-59, 10}, {-44.3333, 10}}, color = {0, 0, 127}));
   connect(machine.vf0, avr.vf0) annotation(
     Line(points = {{24.2, 39.1}, {24.2, 60}, {-26, 60}, {-26, 38.3333}}, color = {0, 0, 127}));
+  annotation (Icon(graphics={Text(
+          extent={{-52,-48},{48,-88}},
+          textColor={238,46,47},
+          textString="AVR")}));
 end GeneratorAVR;

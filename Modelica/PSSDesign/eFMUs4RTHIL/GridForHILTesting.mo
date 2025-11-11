@@ -59,9 +59,13 @@ equation
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           lineThickness=1,
-          fillColor={255,255,255},
+          fillColor={255,170,213},
           fillPattern=FillPattern.Solid), Text(
           extent={{-84,42},{88,-38}},
           textColor={28,108,200},
-          textString="%name")}));
+          textString="%name"),
+        Text(
+          extent={{-98,-60},{100,-100}},
+          textColor={217,67,180},
+          textString="HIL")}));
 end GridForHILTesting;

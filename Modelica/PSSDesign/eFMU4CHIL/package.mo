@@ -1,4 +1,4 @@
 within PSSDesign;
-package eFMUchil "Plant model for CHIL testing"
+package eFMU4CHIL "Plant model for CHIL testing"
   extends Modelica.Icons.Package;
-end eFMUchil;
+end eFMU4CHIL;

@@ -1,5 +1,5 @@
-within PSSDesign.eFMUchil;
-model GridForHILTesting "System model for HIL testing"
+within PSSDesign.eFMU4CHIL;
+model Grid4CHILTesting "System model for CHIL testing"
   extends Modelica.Icons.Example;
   extends Network.PartialNetwork4efmu;
 

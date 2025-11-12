@@ -53,10 +53,5 @@ equation
       pattern=LinePattern.Dot,
       thickness=0.5));
   annotation (experiment(
-      StopTime=60,
-      __Dymola_fixedstepsize=0.001,
-      __Dymola_Algorithm="Euler"), __Dymola_experimentFlags(Advanced(
-        InlineMethod=1,
-        InlineOrder=2,
-        InlineFixedStep=0.001)));
+      StopTime=60));
 end FaultClocked;

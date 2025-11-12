@@ -1,0 +1,3681 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fmiModelDescription
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  fmiVersion="2.0"
+  modelName="PSSDesign.VerificationTests.FaultTrigger.FaultBinStub"
+  guid="{e331479e-0012-4357-b162-611085b9b784}"
+  description="Model to replicate fault triggering test with binary stub"
+  generationTool="Dymola Version 2025x Refresh 1, 2025-04-11 (Co-simulation using Cvode)"
+  generationDateAndTime="2025-11-12T15:15:39Z"
+  variableNamingConvention="structured"
+  numberOfEventIndicators="4">
+  <ModelExchange
+    modelIdentifier="PSSDesign_VerificationTests_FaultTrigger_FaultBinStub"
+    completedIntegratorStepNotNeeded="true"
+    canNotUseMemoryManagementFunctions="true"
+    canGetAndSetFMUstate="true"
+    canSerializeFMUstate="true"
+    providesDirectionalDerivative="true">
+    <SourceFiles>
+      <File
+        name="all_PSSDesign_VerificationTests_FaultTrigger_FaultBinStub.c"/>
+    </SourceFiles>
+  </ModelExchange>
+  <CoSimulation
+    modelIdentifier="PSSDesign_VerificationTests_FaultTrigger_FaultBinStub"
+    canHandleVariableCommunicationStepSize="true"
+    canInterpolateInputs="true"
+    maxOutputDerivativeOrder="1"
+    canNotUseMemoryManagementFunctions="true"
+    canGetAndSetFMUstate="true"
+    canSerializeFMUstate="true"
+    providesDirectionalDerivative="true">
+    <SourceFiles>
+      <File
+        name="all_PSSDesign_VerificationTests_FaultTrigger_FaultBinStub.c"/>
+    </SourceFiles>
+  </CoSimulation>
+  <UnitDefinitions>
+    <Unit
+      name="s">
+      <BaseUnit s="1"/>
+    </Unit>
+  </UnitDefinitions>
+  <TypeDefinitions>
+    <SimpleType
+      name="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes">
+      <Enumeration>
+        <Item name="Mockup"
+          value="1"
+          description="non-functional mockup"/>
+        <Item name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed"
+          value="2"/>
+        <Item name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c"
+          value="3"/>
+      </Enumeration>
+    </SimpleType>
+  </TypeDefinitions>
+  <DefaultExperiment startTime="0.0"
+    stopTime="20.0"
+    tolerance="0.0001"/>
+  <VendorAnnotations>
+    <Tool
+      name="Dymola">
+      <EquationBlocks>
+        <Data
+          id="0"
+          kind="simple scalar"
+          equation="G4HIL.w = hold(G4HIL.__sampled.w); "
+          dependencies="26"
+          unknowns="102"
+          iteration=""/>
+        <Data
+          id="1"
+          kind="simple scalar"
+          equation="G4HIL.v = hold(G4HIL.__sampled.v); "
+          dependencies="24"
+          unknowns="103"
+          iteration=""/>
+        <Data
+          id="2"
+          kind="simple scalar"
+          equation="G4HIL.Pgen = hold(G4HIL.__sampled.Pgen); "
+          dependencies="22"
+          unknowns="104"
+          iteration=""/>
+        <Data
+          id="3"
+          kind="simple scalar"
+          equation="G4HIL.Qgen = hold(G4HIL.__sampled.Qgen); "
+          dependencies="23"
+          unknowns="105"
+          iteration=""/>
+        <Data
+          id="4"
+          kind="simple scalar"
+          equation="faultTimerLogic.clock.y = faultTimerLogic.clock.offset+(if time &lt; faultTimerLogic.clock.startTime then 0 else time-faultTimerLogic.clock.startTime); "
+          dependencies="1"
+          unknowns="89"
+          iteration=""/>
+        <Data
+          id="5"
+          kind="simple scalar"
+          equation="faultTimerLogic.gEqThrshld.y = faultTimerLogic.gEqThrshld.u &gt;= faultTimerLogic.gEqThrshld.threshold; "
+          dependencies="89"
+          unknowns="96"
+          iteration=""/>
+        <Data
+          id="6"
+          kind="simple scalar"
+          equation="faultTimerLogic.lessEqThrshld.y = faultTimerLogic.lessEqThrshld.u &lt;= faultTimerLogic.lessEqThrshld.threshold; "
+          dependencies="89"
+          unknowns="90"
+          iteration=""/>
+        <Data
+          id="7"
+          kind="simple scalar"
+          equation="faultTimerLogic.and1.y = faultTimerLogic.and1.u1 and faultTimerLogic.and1.u2; "
+          dependencies="90 96"
+          unknowns="87"
+          iteration=""/>
+        <Data
+          id="8"
+          kind="simple scalar"
+          equation="G4HIL.fault = faultTimerLogic.y; "
+          dependencies="87"
+          unknowns="32"
+          iteration=""/>
+        <Data
+          id="9"
+          kind="simple scalar"
+          equation="step.y = step.offset+(if time &lt; step.startTime then 0 else step.height); "
+          dependencies="1"
+          unknowns="3"
+          iteration=""/>
+        <Data
+          id="10"
+          kind="simple scalar"
+          equation="G4HIL.vf = step.y; "
+          dependencies="3"
+          unknowns="33"
+          iteration=""/>
+        <Data
+          id="11"
+          kind="simple scalar"
+          equation="G4HIL.__error_signals_Recalibrate = hold(G4HIL.__sampled.__error_signals_Recalibrate); "
+          dependencies="16"
+          unknowns="7"
+          iteration=""/>
+        <Data
+          id="12"
+          kind="simple scalar"
+          equation="G4HIL.__error_signals_Reinitialize = hold(G4HIL.__sampled.__error_signals_Reinitialize); "
+          dependencies="18"
+          unknowns="8"
+          iteration=""/>
+        <Data
+          id="13"
+          kind="simple scalar"
+          equation="G4HIL.__error_signals_DoStep = hold(G4HIL.__sampled.__error_signals_DoStep); "
+          dependencies="19"
+          unknowns="9"
+          iteration=""/>
+        <Data
+          id="14"
+          kind="simple scalar"
+          equation="G4HIL.__recalibrated = hold(G4HIL.__sampled.__recalibrate); "
+          dependencies="15"
+          unknowns="6"
+          iteration=""/>
+        <Data
+          id="15"
+          kind="simple scalar"
+          equation="G4HIL.vf0OUT = hold(G4HIL.__sampled.vf0OUT); "
+          dependencies="25"
+          unknowns="37"
+          iteration=""/>
+        <Data
+          id="16"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.active =    sample(_Clocks.Start, 0.001, 0, 1); "
+          dependencies=""
+          unknowns="119"
+          iteration=""/>
+        <Data
+          id="17"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   _Clocks.BaseClock_0.SubClock_1.activationCount = 1+pre(_Clocks.BaseClock_0.SubClock_1.activationCount); end when;  "
+          dependencies="119"
+          unknowns="120"
+          iteration=""/>
+        <Data
+          id="18"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   G4HIL.__cosimulation_results[1]_.previous = G4HIL.__cosimulation_results[1]; end when;  "
+          dependencies="42 44 46 48 50 52 54 56 58 60 119"
+          unknowns="109 110 111 112 113 114 115 116 117 118"
+          iteration=""/>
+        <Data
+          id="19"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   _Clocks.BaseClock_0.SubClock_1.sample_2 = G4HIL.__reinitialize_connector.y; end when;  "
+          dependencies="119"
+          unknowns="106"
+          iteration=""/>
+        <Data
+          id="20"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   _Clocks.BaseClock_0.SubClock_1.sample_3 = G4HIL.fault; end when;  "
+          dependencies="32 119"
+          unknowns="107"
+          iteration=""/>
+        <Data
+          id="21"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   _Clocks.BaseClock_0.SubClock_1.sample_4 = G4HIL.vf; end when;  "
+          dependencies="33 119"
+          unknowns="108"
+          iteration=""/>
+        <Data
+          id="22"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   G4HIL.__sampled.__reinitialize = _Clocks.BaseClock_0.SubClock_1.sample_2; end when;  "
+          dependencies="106 119"
+          unknowns="17"
+          iteration=""/>
+        <Data
+          id="23"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   G4HIL.__sampled.fault = _Clocks.BaseClock_0.SubClock_1.sample_3; end when;  "
+          dependencies="107 119"
+          unknowns="20"
+          iteration=""/>
+        <Data
+          id="24"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   G4HIL.__sampled.vf = _Clocks.BaseClock_0.SubClock_1.sample_4; end when;  "
+          dependencies="108 119"
+          unknowns="21"
+          iteration=""/>
+        <Data
+          id="25"
+          kind="simple"
+          equation="when _Clocks.BaseClock_0.SubClock_1.active then   algorithm      if ( not G4HIL.__is_initialized) then        // No equations     end if;     G4HIL.__sampled.__recalibrate := false;     if (G4HIL.__sampled.__recalibrate) then        &#39;Grid4HIL.eFMU_SiL_Support&#39;.__Tuning(        ) := &#39;Grid4HIL.eFMU_SiL_Support&#39;.__Tuning(        );     end if;     G4HIL.__cosimulation_results[1] := G4HIL.__cosimulation_results[1]_.previous;     G4HIL.__cosimulation_results[1].__production_code := &#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes.Mockup;     G4HIL.__cosimulation_results[1].__is_active := false;     G4HIL.__cosimulation_results[1].__error_signals_Recalibrate := 1;     G4HIL.__cosimulation_results[1].__error_signals_Reinitialize := 1;     G4HIL.__cosimulation_results[1].__error_signals_DoStep := 1;     G4HIL.__cosimulation_results[2].__production_code := &#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes.PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;     G4HIL.__cosimulation_results[2].__is_active := true;     if (G4HIL.__cosimulation_results[2].__is_active) then        G4HIL.__cosimulation_results[2].__error_signals_Recalibrate := 0;       if (G4HIL.__sampled.__recalibrate) then          G4HIL.__cosimulation_results[2].__error_signals_Recalibrate := &#39;Grid4HIL.eFMU_SiL_Support&#39;.BinaryStub.__Recalibrate_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(           G4HIL.__block_state_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed);       end if;       G4HIL.__cosimulation_results[2].__error_signals_Reinitialize := 0;       if (G4HIL.__sampled.__reinitialize or  not G4HIL.__is_initialized) then          (G4HIL.__cosimulation_results[2].__error_signals_Reinitialize, G4HIL.__cosimulation_results[2].Pgen, G4HIL.__cosimulation_results[2].Qgen, G4HIL.__cosimulation_results[2].v, G4HIL.__cosimulation_results[2].vf0OUT, G4HIL.__cosimulation_results[2].w)  := &#39;Grid4HIL.eFMU_SiL_Support&#39;.BinaryStub.__Reinitialize_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(           G4HIL.__block_state_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed,            G4HIL.__sampled.fault,            G4HIL.__sampled.vf);       end if;       (G4HIL.__cosimulation_results[2].__error_signals_DoStep, G4HIL.__cosimulation_results[2].Pgen, G4HIL.__cosimulation_results[2].Qgen, G4HIL.__cosimulation_results[2].v, G4HIL.__cosimulation_results[2].vf0OUT, G4HIL.__cosimulation_results[2].w)  := &#39;Grid4HIL.eFMU_SiL_Support&#39;.BinaryStub.__DoStep_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(         G4HIL.__block_state_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed,          G4HIL.__sampled.fault,          G4HIL.__sampled.vf);     end if;     G4HIL.__cosimulation_results[3].__production_code := &#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes.PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;     G4HIL.__cosimulation_results[3].__is_active := true;     if (G4HIL.__cosimulation_results[3].__is_active) then        G4HIL.__cosimulation_results[3].__error_signals_Recalibrate := 0;       if (G4HIL.__sampled.__recalibrate) then          G4HIL.__cosimulation_results[3].__error_signals_Recalibrate := &#39;Grid4HIL.eFMU_SiL_Support&#39;.BinaryStub.__Recalibrate_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(           G4HIL.__block_state_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c);       end if;       G4HIL.__cosimulation_results[3].__error_signals_Reinitialize := 0;       if (G4HIL.__sampled.__reinitialize or  not G4HIL.__is_initialized) then          (G4HIL.__cosimulation_results[3].__error_signals_Reinitialize, G4HIL.__cosimulation_results[3].Pgen, G4HIL.__cosimulation_results[3].Qgen, G4HIL.__cosimulation_results[3].v, G4HIL.__cosimulation_results[3].vf0OUT, G4HIL.__cosimulation_results[3].w)  := &#39;Grid4HIL.eFMU_SiL_Support&#39;.BinaryStub.__Reinitialize_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(           G4HIL.__block_state_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c,            G4HIL.__sampled.fault,            G4HIL.__sampled.vf);       end if;       (G4HIL.__cosimulation_results[3].__error_signals_DoStep, G4HIL.__cosimulation_results[3].Pgen, G4HIL.__cosimulation_results[3].Qgen, G4HIL.__cosimulation_results[3].v, G4HIL.__cosimulation_results[3].vf0OUT, G4HIL.__cosimulation_results[3].w)  := &#39;Grid4HIL.eFMU_SiL_Support&#39;.BinaryStub.__DoStep_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(         G4HIL.__block_state_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c,          G4HIL.__sampled.fault,          G4HIL.__sampled.vf);     end if;     G4HIL.__is_initialized := true;     G4HIL.__sampled.__error_signals_Recalibrate := G4HIL.__cosimulation_results[3].__error_signals_Recalibrate;     G4HIL.__sampled.__error_signals_Reinitialize := G4HIL.__cosimulation_results[3].__error_signals_Reinitialize;     G4HIL.__sampled.__error_signals_DoStep := G4HIL.__cosimulation_results[3].__error_signals_DoStep;     G4HIL.__sampled.Pgen := G4HIL.__cosimulation_results[3].Pgen;     G4HIL.__sampled.Qgen := G4HIL.__cosimulation_results[3].Qgen;     G4HIL.__sampled.v := G4HIL.__cosimulation_results[3].v;     G4HIL.__sampled.vf0OUT := G4HIL.__cosimulation_results[3].vf0OUT;     G4HIL.__sampled.w := G4HIL.__cosimulation_results[3].w; end when;  "
+          dependencies="17 20 21 109 110 111 112 113 114 115 116 117 118 119"
+          unknowns="26 25 24 23 19 18 16 76 81 80 79 78 77 75 74 73 72 66 71 70 69 68 67 65 64 63 62 60 58 56 54 52 50 48 46 44 42 15 29 22"
+          iteration=""/>
+        <Data
+          id="26"
+          kind="trivial"
+          equation="G4HIL.Pgen = Pgen; "
+          dependencies="104"
+          unknowns="34"
+          iteration=""/>
+        <Data
+          id="27"
+          kind="trivial"
+          equation="G4HIL.Qgen = Qgen; "
+          dependencies="105"
+          unknowns="35"
+          iteration=""/>
+        <Data
+          id="28"
+          kind="simple scalar"
+          equation="G4HIL.__clock = _Clocks.BaseClock_0.SubClock_1.active; "
+          dependencies="119"
+          unknowns="27"
+          iteration=""/>
+        <Data
+          id="29"
+          kind="simple scalar"
+          equation="G4HIL.__embedded_clock = _Clocks.BaseClock_0.SubClock_1.active; "
+          dependencies="119"
+          unknowns="28"
+          iteration=""/>
+        <Data
+          id="30"
+          kind="trivial"
+          equation="G4HIL.v = v; "
+          dependencies="103"
+          unknowns="36"
+          iteration=""/>
+        <Data
+          id="31"
+          kind="trivial"
+          equation="G4HIL.w = w; "
+          dependencies="102"
+          unknowns="38"
+          iteration=""/>
+        <Data
+          id="32"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].Pgen = G4HIL.__cosimulation_results[1].Pgen; "
+          dependencies="52"
+          unknowns="121"
+          iteration=""/>
+        <Data
+          id="33"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].Qgen = G4HIL.__cosimulation_results[1].Qgen; "
+          dependencies="54"
+          unknowns="122"
+          iteration=""/>
+        <Data
+          id="34"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__error_signals_DoStep = G4HIL.__cosimulation_results[1].__error_signals_DoStep; "
+          dependencies="50"
+          unknowns="123"
+          iteration=""/>
+        <Data
+          id="35"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__error_signals_Recalibrate = G4HIL.__cosimulation_results[1].__error_signals_Recalibrate; "
+          dependencies="46"
+          unknowns="124"
+          iteration=""/>
+        <Data
+          id="36"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__error_signals_Reinitialize = G4HIL.__cosimulation_results[1].__error_signals_Reinitialize; "
+          dependencies="48"
+          unknowns="125"
+          iteration=""/>
+        <Data
+          id="37"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__is_active = G4HIL.__cosimulation_results[1].__is_active; "
+          dependencies="44"
+          unknowns="126"
+          iteration=""/>
+        <Data
+          id="38"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__production_code = G4HIL.__cosimulation_results[1].__production_code; "
+          dependencies="42"
+          unknowns="127"
+          iteration=""/>
+        <Data
+          id="39"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].v = G4HIL.__cosimulation_results[1].v; "
+          dependencies="56"
+          unknowns="128"
+          iteration=""/>
+        <Data
+          id="40"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].vf0OUT = G4HIL.__cosimulation_results[1].vf0OUT; "
+          dependencies="58"
+          unknowns="129"
+          iteration=""/>
+        <Data
+          id="41"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].w = G4HIL.__cosimulation_results[1].w; "
+          dependencies="60"
+          unknowns="130"
+          iteration=""/>
+        <Data
+          id="42"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].Pgen = G4HIL.__cosimulation_results[2].Pgen; "
+          dependencies="67"
+          unknowns="131"
+          iteration=""/>
+        <Data
+          id="43"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].Qgen = G4HIL.__cosimulation_results[2].Qgen; "
+          dependencies="68"
+          unknowns="132"
+          iteration=""/>
+        <Data
+          id="44"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__error_signals_DoStep = G4HIL.__cosimulation_results[2].__error_signals_DoStep; "
+          dependencies="66"
+          unknowns="133"
+          iteration=""/>
+        <Data
+          id="45"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__error_signals_Recalibrate = G4HIL.__cosimulation_results[2].__error_signals_Recalibrate; "
+          dependencies="64"
+          unknowns="134"
+          iteration=""/>
+        <Data
+          id="46"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__error_signals_Reinitialize = G4HIL.__cosimulation_results[2].__error_signals_Reinitialize; "
+          dependencies="65"
+          unknowns="135"
+          iteration=""/>
+        <Data
+          id="47"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__is_active = G4HIL.__cosimulation_results[2].__is_active; "
+          dependencies="63"
+          unknowns="136"
+          iteration=""/>
+        <Data
+          id="48"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__production_code = G4HIL.__cosimulation_results[2].__production_code; "
+          dependencies="62"
+          unknowns="137"
+          iteration=""/>
+        <Data
+          id="49"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].v = G4HIL.__cosimulation_results[2].v; "
+          dependencies="69"
+          unknowns="138"
+          iteration=""/>
+        <Data
+          id="50"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].vf0OUT = G4HIL.__cosimulation_results[2].vf0OUT; "
+          dependencies="70"
+          unknowns="139"
+          iteration=""/>
+        <Data
+          id="51"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].w = G4HIL.__cosimulation_results[2].w; "
+          dependencies="71"
+          unknowns="140"
+          iteration=""/>
+        <Data
+          id="52"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].Pgen = G4HIL.__cosimulation_results[3].Pgen; "
+          dependencies="77"
+          unknowns="141"
+          iteration=""/>
+        <Data
+          id="53"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].Qgen = G4HIL.__cosimulation_results[3].Qgen; "
+          dependencies="78"
+          unknowns="142"
+          iteration=""/>
+        <Data
+          id="54"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__error_signals_DoStep = G4HIL.__cosimulation_results[3].__error_signals_DoStep; "
+          dependencies="76"
+          unknowns="143"
+          iteration=""/>
+        <Data
+          id="55"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__error_signals_Recalibrate = G4HIL.__cosimulation_results[3].__error_signals_Recalibrate; "
+          dependencies="74"
+          unknowns="144"
+          iteration=""/>
+        <Data
+          id="56"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__error_signals_Reinitialize = G4HIL.__cosimulation_results[3].__error_signals_Reinitialize; "
+          dependencies="75"
+          unknowns="145"
+          iteration=""/>
+        <Data
+          id="57"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__is_active = G4HIL.__cosimulation_results[3].__is_active; "
+          dependencies="73"
+          unknowns="146"
+          iteration=""/>
+        <Data
+          id="58"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__production_code = G4HIL.__cosimulation_results[3].__production_code; "
+          dependencies="72"
+          unknowns="147"
+          iteration=""/>
+        <Data
+          id="59"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].v = G4HIL.__cosimulation_results[3].v; "
+          dependencies="79"
+          unknowns="148"
+          iteration=""/>
+        <Data
+          id="60"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].vf0OUT = G4HIL.__cosimulation_results[3].vf0OUT; "
+          dependencies="80"
+          unknowns="149"
+          iteration=""/>
+        <Data
+          id="61"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].w = G4HIL.__cosimulation_results[3].w; "
+          dependencies="81"
+          unknowns="150"
+          iteration=""/>
+        <Data
+          id="62"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__is_initialized = G4HIL.__is_initialized; "
+          dependencies="29"
+          unknowns="151"
+          iteration=""/>
+        <Data
+          id="63"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.Pgen = G4HIL.__sampled.Pgen; "
+          dependencies="22"
+          unknowns="152"
+          iteration=""/>
+        <Data
+          id="64"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.Qgen = G4HIL.__sampled.Qgen; "
+          dependencies="23"
+          unknowns="153"
+          iteration=""/>
+        <Data
+          id="65"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__error_signals_DoStep = G4HIL.__sampled.__error_signals_DoStep; "
+          dependencies="19"
+          unknowns="154"
+          iteration=""/>
+        <Data
+          id="66"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__error_signals_Recalibrate = G4HIL.__sampled.__error_signals_Recalibrate; "
+          dependencies="16"
+          unknowns="155"
+          iteration=""/>
+        <Data
+          id="67"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__error_signals_Reinitialize = G4HIL.__sampled.__error_signals_Reinitialize; "
+          dependencies="18"
+          unknowns="156"
+          iteration=""/>
+        <Data
+          id="68"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__recalibrate = G4HIL.__sampled.__recalibrate; "
+          dependencies="15"
+          unknowns="157"
+          iteration=""/>
+        <Data
+          id="69"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__reinitialize = G4HIL.__sampled.__reinitialize; "
+          dependencies="17"
+          unknowns="158"
+          iteration=""/>
+        <Data
+          id="70"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.fault = G4HIL.__sampled.fault; "
+          dependencies="20"
+          unknowns="159"
+          iteration=""/>
+        <Data
+          id="71"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.v = G4HIL.__sampled.v; "
+          dependencies="24"
+          unknowns="160"
+          iteration=""/>
+        <Data
+          id="72"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.vf = G4HIL.__sampled.vf; "
+          dependencies="21"
+          unknowns="161"
+          iteration=""/>
+        <Data
+          id="73"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.vf0OUT = G4HIL.__sampled.vf0OUT; "
+          dependencies="25"
+          unknowns="162"
+          iteration=""/>
+        <Data
+          id="74"
+          kind="simple scalar"
+          equation="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.w = G4HIL.__sampled.w; "
+          dependencies="26"
+          unknowns="163"
+          iteration=""/>
+        <Data
+          id="75"
+          kind="trivial"
+          equation="faultTimerLogic.and1.u1 = faultTimerLogic.gEqThrshld.y; "
+          dependencies="96"
+          unknowns="97"
+          iteration=""/>
+        <Data
+          id="76"
+          kind="trivial"
+          equation="faultTimerLogic.and1.u2 = faultTimerLogic.lessEqThrshld.y; "
+          dependencies="90"
+          unknowns="98"
+          iteration=""/>
+        <Data
+          id="77"
+          kind="trivial"
+          equation="faultTimerLogic.and1.y = faultTimerLogic.y; "
+          dependencies="87"
+          unknowns="99"
+          iteration=""/>
+        <Data
+          id="78"
+          kind="trivial"
+          equation="faultTimerLogic.clock.y = faultTimerLogic.lessEqThrshld.u; "
+          dependencies="89"
+          unknowns="91"
+          iteration=""/>
+        <Data
+          id="79"
+          kind="trivial"
+          equation="faultTimerLogic.gEqThrshld.u = faultTimerLogic.lessEqThrshld.u; "
+          dependencies="89"
+          unknowns="95"
+          iteration=""/>
+      </EquationBlocks>
+    </Tool>
+  </VendorAnnotations>
+  <ModelVariables>
+    <!-- Index for next variable = 1 -->
+    <ScalarVariable
+      name="time"
+      valueReference="268435455"
+      causality="independent">
+      <Real
+        unit="s"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 2 -->
+    <ScalarVariable
+      name="step.height"
+      valueReference="16777216"
+      description="Height of step"
+      causality="parameter"
+      variability="fixed">
+      <Real start="0.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 3 -->
+    <ScalarVariable
+      name="step.y"
+      valueReference="1711276049"
+      description="Connector of Real output signal"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="9"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 4 -->
+    <ScalarVariable
+      name="step.offset"
+      valueReference="16777217"
+      description="Offset of output signal y"
+      causality="parameter"
+      variability="fixed">
+      <Real start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 5 -->
+    <ScalarVariable
+      name="step.startTime"
+      valueReference="16777218"
+      description="Output y = offset for time &lt; startTime"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        quantity="Time"
+        unit="s"
+        start="10"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 6 -->
+    <ScalarVariable
+      name="G4HIL.__recalibrated"
+      valueReference="1711276050"
+      description="Signals whether the eFMU has been recalibrated before calling &#39;DoStep()&#39;\n     or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="14"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 7 -->
+    <ScalarVariable
+      name="G4HIL.__error_signals_Recalibrate"
+      valueReference="1711276051"
+      description="Error signals returned throughout the execution of the &#39;Recalibrate()&#39;\n     function of the defining production code."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="11"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 8 -->
+    <ScalarVariable
+      name="G4HIL.__error_signals_Reinitialize"
+      valueReference="1711276052"
+      description="Error signals returned throughout the execution of the &#39;Reinitialize()&#39;\n     function of the defining production code."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="12"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 9 -->
+    <ScalarVariable
+      name="G4HIL.__error_signals_DoStep"
+      valueReference="1711276053"
+      description="Error signals returned throughout the execution of the &#39;DoStep()&#39;\n     function of the defining production code."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="13"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 10 -->
+    <ScalarVariable
+      name="G4HIL.__assert_error_signals"
+      valueReference="16777219"
+      description="Configures if error signals of the defining production code are asserted\n     or not."
+      causality="parameter"
+      variability="fixed">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 11 -->
+    <ScalarVariable
+      name="G4HIL.__embedd_clock"
+      valueReference="100663296"
+      description="Configures the synchronous integration of the stub; whether it defines\n     such itself (i.e., has its own clock; &#39;__embedd_clock = true&#39;) or uses the\n     clock of its instanciation context (i.e., uses an external clock;\n     &#39;__embedd_clock = false&#39;)."
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 12 -->
+    <ScalarVariable
+      name="G4HIL.__sampling_period"
+      valueReference="100663297"
+      description="Configures the sampling period of the stub. In case of an embedded clock\n     (&#39;__embedd_clock = true&#39;) its sampling period and in case of an external\n     clock the expected sampling period of such as required by the eFMU."
+      variability="constant">
+      <Real
+        quantity="Time"
+        unit="s"
+        start="0.001"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 13 -->
+    <ScalarVariable
+      name="G4HIL.__enable_tuning"
+      valueReference="100663298"
+      description="Configures if tuning via the tuning bus is supported or not."
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 14 -->
+    <ScalarVariable
+      name="G4HIL.__enable_reinitialization"
+      valueReference="100663299"
+      description="Configures if reinitialization is supported or not; if enabled, runtime\n     values for the &#39;__reinitialize&#39; input must be provided."
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 15 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.__recalibrate"
+      valueReference="1711276054"
+      description="Support variable used to decide if a recalibration of eFMU production\n     codes is required before executing their &#39;DoStep()&#39; implementation."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 16 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.__error_signals_Recalibrate"
+      valueReference="1711276055"
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 17 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.__reinitialize"
+      valueReference="1711276056"
+      description="Support variable used to decide if a reinitialization of eFMU production\n     codes is requested before executing their &#39;DoStep()&#39; implementation."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="22"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 18 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.__error_signals_Reinitialize"
+      valueReference="1711276057"
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 19 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.__error_signals_DoStep"
+      valueReference="1711276058"
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 20 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.fault"
+      valueReference="1711276059"
+      description="Fault input sigal, default false = fault inactive"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="23"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 21 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.vf"
+      valueReference="1711276060"
+      description="Field voltage"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="24"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 22 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.Pgen"
+      valueReference="1711276061"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 23 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.Qgen"
+      valueReference="1711276062"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 24 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.v"
+      valueReference="1711276063"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 25 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.vf0OUT"
+      valueReference="1711276064"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 26 -->
+    <ScalarVariable
+      name="G4HIL.__sampled.w"
+      valueReference="1711276065"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 27 -->
+    <ScalarVariable
+      name="G4HIL.__clock"
+      valueReference="637534303"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="16"
+            block="28"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 28 -->
+    <ScalarVariable
+      name="G4HIL.__embedded_clock"
+      valueReference="637534303"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="16"
+            block="29"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 29 -->
+    <ScalarVariable
+      name="G4HIL.__is_initialized"
+      valueReference="1711276066"
+      description="Support variable used to ensure correct initialization of eFMU production\n     codes right before the first &#39;DoStep()&#39; call (e.g., tuneables parameters\n     are correctly recalibrated according to modifications of the stub instance,\n     states are initialized using the inputs at the first clock tick etc)."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 30 -->
+    <ScalarVariable
+      name="G4HIL.__reinitialize_connector.u"
+      valueReference="100663300"
+      description="Connector of Boolean input signal"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 31 -->
+    <ScalarVariable
+      name="G4HIL.__reinitialize_connector.y"
+      valueReference="100663301"
+      description="Connector of Boolean output signal"
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 32 -->
+    <ScalarVariable
+      name="G4HIL.fault"
+      valueReference="1711276067"
+      description="Fault input sigal, default false = fault inactive"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="8"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 33 -->
+    <ScalarVariable
+      name="G4HIL.vf"
+      valueReference="1711276068"
+      description="Field voltage"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="10"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 34 -->
+    <ScalarVariable
+      name="G4HIL.Pgen"
+      valueReference="603979778"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="2"
+            block="26"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 35 -->
+    <ScalarVariable
+      name="G4HIL.Qgen"
+      valueReference="603979779"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="3"
+            block="27"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 36 -->
+    <ScalarVariable
+      name="G4HIL.v"
+      valueReference="603979777"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="1"
+            block="30"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 37 -->
+    <ScalarVariable
+      name="G4HIL.vf0OUT"
+      valueReference="1711276069"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="15"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 38 -->
+    <ScalarVariable
+      name="G4HIL.w"
+      valueReference="603979776"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="0"
+            block="31"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 39 -->
+    <ScalarVariable
+      name="G4HIL.__defining_code"
+      valueReference="100663302"
+      description="The production code defining the stub&#39;s results,\n       i.e., whose results are propagated by the stub."
+      variability="constant">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"
+        start="3"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 40 -->
+    <ScalarVariable
+      name="G4HIL.__active_codes[1]"
+      valueReference="100663303"
+      description="Set of production codes co-simulated. By default, all production codes\n       are co-simulated. The &#39;__defining_code&#39; is always active, even if not\n       explicitly listed in the set."
+      variability="constant">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"
+        start="2"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 41 -->
+    <ScalarVariable
+      name="G4HIL.__active_codes[2]"
+      valueReference="100663304"
+      description="Set of production codes co-simulated. By default, all production codes\n       are co-simulated. The &#39;__defining_code&#39; is always active, even if not\n       explicitly listed in the set."
+      variability="constant">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"
+        start="3"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 42 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].__production_code"
+      valueReference="1711276070"
+      description="The production code this are the results of."
+      variability="discrete"
+      initial="exact">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"
+        start="1"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 109 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__production_code"
+      valueReference="1711276123"
+      description="The production code this are the results of."
+      variability="discrete">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 44 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].__is_active"
+      valueReference="1711276071"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete"
+      initial="exact">
+      <Boolean start="false"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 110 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__is_active"
+      valueReference="1711276122"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 46 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].__error_signals_Recalibrate"
+      valueReference="1711276072"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete"
+      initial="exact">
+      <Integer start="0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 111 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__error_signals_Recalibrate"
+      valueReference="1711276120"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 48 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].__error_signals_Reinitialize"
+      valueReference="1711276073"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete"
+      initial="exact">
+      <Integer start="0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 112 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__error_signals_Reinitialize"
+      valueReference="1711276121"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 50 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].__error_signals_DoStep"
+      valueReference="1711276074"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete"
+      initial="exact">
+      <Integer start="0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 113 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__error_signals_DoStep"
+      valueReference="1711276119"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 52 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].Pgen"
+      valueReference="1711276075"
+      description="Active power [pu]"
+      variability="discrete"
+      initial="exact">
+      <Real start="0.0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 114 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.Pgen"
+      valueReference="1711276117"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 54 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].Qgen"
+      valueReference="1711276076"
+      description="Reactive power [pu]"
+      variability="discrete"
+      initial="exact">
+      <Real start="0.0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 115 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.Qgen"
+      valueReference="1711276118"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 56 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].v"
+      valueReference="1711276077"
+      description="Generator terminal voltage [pu]"
+      variability="discrete"
+      initial="exact">
+      <Real start="0.0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 116 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.v"
+      valueReference="1711276124"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 58 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].vf0OUT"
+      valueReference="1711276078"
+      description="Initial field voltage [pu]"
+      variability="discrete"
+      initial="exact">
+      <Real start="0.0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 117 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.vf0OUT"
+      valueReference="1711276125"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 60 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1].w"
+      valueReference="1711276079"
+      description="Speed [pu]"
+      variability="discrete"
+      initial="exact">
+      <Real start="0.0"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 118 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.w"
+      valueReference="1711276126"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 62 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].__production_code"
+      valueReference="1711276080"
+      description="The production code this are the results of."
+      variability="discrete">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 63 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].__is_active"
+      valueReference="1711276081"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 64 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].__error_signals_Recalibrate"
+      valueReference="1711276082"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 65 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].__error_signals_Reinitialize"
+      valueReference="1711276083"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 66 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].__error_signals_DoStep"
+      valueReference="1711276084"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 67 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].Pgen"
+      valueReference="1711276085"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 68 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].Qgen"
+      valueReference="1711276086"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 69 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].v"
+      valueReference="1711276087"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 70 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].vf0OUT"
+      valueReference="1711276088"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 71 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[2].w"
+      valueReference="1711276089"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 72 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].__production_code"
+      valueReference="1711276090"
+      description="The production code this are the results of."
+      variability="discrete">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 73 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].__is_active"
+      valueReference="1711276091"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 74 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].__error_signals_Recalibrate"
+      valueReference="1711276092"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 75 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].__error_signals_Reinitialize"
+      valueReference="1711276093"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 76 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].__error_signals_DoStep"
+      valueReference="1711276094"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 77 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].Pgen"
+      valueReference="1711276095"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 78 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].Qgen"
+      valueReference="1711276096"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 79 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].v"
+      valueReference="1711276097"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 80 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].vf0OUT"
+      valueReference="1711276098"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 81 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[3].w"
+      valueReference="1711276099"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="25"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 82 -->
+    <ScalarVariable
+      name="G4HIL.__active_codes_map[1]"
+      valueReference="100663305"
+      description="Internal precomputed cache mapping production codes to their\n       activation-status."
+      variability="constant">
+      <Boolean start="false"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 83 -->
+    <ScalarVariable
+      name="G4HIL.__active_codes_map[2]"
+      valueReference="100663306"
+      description="Internal precomputed cache mapping production codes to their\n       activation-status."
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 84 -->
+    <ScalarVariable
+      name="G4HIL.__active_codes_map[3]"
+      valueReference="100663307"
+      description="Internal precomputed cache mapping production codes to their\n       activation-status."
+      variability="constant">
+      <Boolean start="true"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 85 -->
+    <ScalarVariable
+      name="G4HIL.__block_state_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.id"
+      valueReference="100663308"
+      variability="fixed">
+      <Integer/>
+    </ScalarVariable>
+    <!-- Index for next variable = 86 -->
+    <ScalarVariable
+      name="G4HIL.__block_state_PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.id"
+      valueReference="100663309"
+      variability="fixed">
+      <Integer/>
+    </ScalarVariable>
+    <!-- Index for next variable = 87 -->
+    <ScalarVariable
+      name="faultTimerLogic.y"
+      valueReference="1711276100"
+      description="Connector of Boolean output signal"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="7"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 88 -->
+    <ScalarVariable
+      name="faultTimerLogic.lessEqThrshld.threshold"
+      valueReference="100663310"
+      description="Comparison with respect to threshold"
+      variability="fixed">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 89 -->
+    <ScalarVariable
+      name="faultTimerLogic.lessEqThrshld.u"
+      valueReference="1711276103"
+      description="Connector of Real input signal">
+      <Real
+        unit="s"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="4"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 90 -->
+    <ScalarVariable
+      name="faultTimerLogic.lessEqThrshld.y"
+      valueReference="1711276101"
+      description="Connector of Boolean output signal"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="6"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 91 -->
+    <ScalarVariable
+      name="faultTimerLogic.clock.y"
+      valueReference="1711276103"
+      description="Connector of Real output signal">
+      <Real
+        unit="s"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="4"
+            block="78"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 92 -->
+    <ScalarVariable
+      name="faultTimerLogic.clock.offset"
+      valueReference="16777220"
+      description="Offset of output signal y"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        unit="s"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 93 -->
+    <ScalarVariable
+      name="faultTimerLogic.clock.startTime"
+      valueReference="16777221"
+      description="Output y = offset for time &lt; startTime"
+      causality="parameter"
+      variability="fixed">
+      <Real
+        quantity="Time"
+        unit="s"
+        start="0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 94 -->
+    <ScalarVariable
+      name="faultTimerLogic.gEqThrshld.threshold"
+      valueReference="100663311"
+      description="Comparison with respect to threshold"
+      variability="fixed">
+      <Real/>
+    </ScalarVariable>
+    <!-- Index for next variable = 95 -->
+    <ScalarVariable
+      name="faultTimerLogic.gEqThrshld.u"
+      valueReference="1711276103"
+      description="Connector of Real input signal">
+      <Real
+        unit="s"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="4"
+            block="79"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 96 -->
+    <ScalarVariable
+      name="faultTimerLogic.gEqThrshld.y"
+      valueReference="1711276102"
+      description="Connector of Boolean output signal"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="5"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 97 -->
+    <ScalarVariable
+      name="faultTimerLogic.and1.u1"
+      valueReference="1711276102"
+      description="Connector of first Boolean input signal"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="5"
+            block="75"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 98 -->
+    <ScalarVariable
+      name="faultTimerLogic.and1.u2"
+      valueReference="1711276101"
+      description="Connector of second Boolean input signal"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="6"
+            block="76"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 99 -->
+    <ScalarVariable
+      name="faultTimerLogic.and1.y"
+      valueReference="1711276100"
+      description="Connector of Boolean output signal"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="7"
+            block="77"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 100 -->
+    <ScalarVariable
+      name="faultTimerLogic.ton"
+      valueReference="16777222"
+      description="Start time of the fault"
+      causality="parameter"
+      variability="fixed">
+      <Real start="10.0"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 101 -->
+    <ScalarVariable
+      name="faultTimerLogic.toff"
+      valueReference="16777223"
+      description="End time of the fault"
+      causality="parameter"
+      variability="fixed">
+      <Real start="10.05"/>
+    </ScalarVariable>
+    <!-- Index for next variable = 102 -->
+    <ScalarVariable
+      name="w"
+      valueReference="603979776"
+      description="Speed [pu]"
+      causality="output"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="0"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 103 -->
+    <ScalarVariable
+      name="v"
+      valueReference="603979777"
+      description="Generator terminal voltage [pu]"
+      causality="output"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="1"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 104 -->
+    <ScalarVariable
+      name="Pgen"
+      valueReference="603979778"
+      description="Active power [pu]"
+      causality="output"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="2"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 105 -->
+    <ScalarVariable
+      name="Qgen"
+      valueReference="603979779"
+      description="Reactive power [pu]"
+      causality="output"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="3"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 106 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.sample_2"
+      valueReference="637534280"
+      description="G4HIL.__reinitialize_connector.y"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="19"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 107 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.sample_3"
+      valueReference="637534281"
+      description="G4HIL.fault"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="20"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 108 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.sample_4"
+      valueReference="637534282"
+      description="G4HIL.vf">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="21"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 109 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__production_code"
+      valueReference="1711276123"
+      description="The production code this are the results of."
+      variability="discrete">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 110 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__is_active"
+      valueReference="1711276122"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 111 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__error_signals_Recalibrate"
+      valueReference="1711276120"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 112 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__error_signals_Reinitialize"
+      valueReference="1711276121"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 113 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.__error_signals_DoStep"
+      valueReference="1711276119"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 114 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.Pgen"
+      valueReference="1711276117"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 115 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.Qgen"
+      valueReference="1711276118"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 116 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.v"
+      valueReference="1711276124"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 117 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.vf0OUT"
+      valueReference="1711276125"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 118 -->
+    <ScalarVariable
+      name="G4HIL.__cosimulation_results[1]_.previous.w"
+      valueReference="1711276126"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="18"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 119 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.active"
+      valueReference="637534303"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="16"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 120 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.activationCount"
+      valueReference="637534304"
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            block="17"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 121 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].Pgen"
+      valueReference="1711276075"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="32"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 122 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].Qgen"
+      valueReference="1711276076"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="33"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 123 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__error_signals_DoStep"
+      valueReference="1711276074"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="34"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 124 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__error_signals_Recalibrate"
+      valueReference="1711276072"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="35"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 125 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__error_signals_Reinitialize"
+      valueReference="1711276073"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="36"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 126 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__is_active"
+      valueReference="1711276071"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="37"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 127 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].__production_code"
+      valueReference="1711276070"
+      description="The production code this are the results of."
+      variability="discrete">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="38"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 128 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].v"
+      valueReference="1711276077"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="39"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 129 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].vf0OUT"
+      valueReference="1711276078"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="40"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 130 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[1].w"
+      valueReference="1711276079"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="41"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 131 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].Pgen"
+      valueReference="1711276085"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="42"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 132 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].Qgen"
+      valueReference="1711276086"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="43"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 133 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__error_signals_DoStep"
+      valueReference="1711276084"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="44"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 134 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__error_signals_Recalibrate"
+      valueReference="1711276082"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="45"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 135 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__error_signals_Reinitialize"
+      valueReference="1711276083"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="46"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 136 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__is_active"
+      valueReference="1711276081"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="47"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 137 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].__production_code"
+      valueReference="1711276080"
+      description="The production code this are the results of."
+      variability="discrete">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="48"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 138 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].v"
+      valueReference="1711276087"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="49"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 139 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].vf0OUT"
+      valueReference="1711276088"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="50"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 140 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[2].w"
+      valueReference="1711276089"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="51"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 141 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].Pgen"
+      valueReference="1711276095"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="52"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 142 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].Qgen"
+      valueReference="1711276096"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="53"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 143 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__error_signals_DoStep"
+      valueReference="1711276094"
+      description="Errors signaled by the last execution of the &#39;DoStep()&#39; block-interface\n       method of the production code; 0 in case of no errors (cf. the eFMI\n       specification for pre-defined error signals and the encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="54"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 144 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__error_signals_Recalibrate"
+      valueReference="1711276092"
+      description="Errors signaled by the last execution of the &#39;Recalibrate()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="55"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 145 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__error_signals_Reinitialize"
+      valueReference="1711276093"
+      description="Errors signaled by the last execution of the &#39;Reinitialize()&#39;\n       block-interface method of the production code; 0 in case of no errors\n       (cf. the eFMI specification for pre-defined error signals and the\n       encoding of such)."
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="56"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 146 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__is_active"
+      valueReference="1711276091"
+      description="Whether the production code has been co-simulated or not."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="57"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 147 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].__production_code"
+      valueReference="1711276090"
+      description="The production code this are the results of."
+      variability="discrete">
+      <Enumeration
+        declaredType="&#39;Grid4HIL.eFMU_SiL_Support&#39;.ProductionCodes"/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="58"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 148 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].v"
+      valueReference="1711276097"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="59"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 149 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].vf0OUT"
+      valueReference="1711276098"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="60"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 150 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__cosimulation_results[3].w"
+      valueReference="1711276099"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="61"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 151 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__is_initialized"
+      valueReference="1711276066"
+      description="Support variable used to ensure correct initialization of eFMU production\n     codes right before the first &#39;DoStep()&#39; call (e.g., tuneables parameters\n     are correctly recalibrated according to modifications of the stub instance,\n     states are initialized using the inputs at the first clock tick etc)."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="62"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 152 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.Pgen"
+      valueReference="1711276061"
+      description="Active power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="63"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 153 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.Qgen"
+      valueReference="1711276062"
+      description="Reactive power [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="64"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 154 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__error_signals_DoStep"
+      valueReference="1711276058"
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="65"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 155 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__error_signals_Recalibrate"
+      valueReference="1711276055"
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="66"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 156 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__error_signals_Reinitialize"
+      valueReference="1711276057"
+      variability="discrete">
+      <Integer/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="67"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 157 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__recalibrate"
+      valueReference="1711276054"
+      description="Support variable used to decide if a recalibration of eFMU production\n     codes is required before executing their &#39;DoStep()&#39; implementation."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="68"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 158 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.__reinitialize"
+      valueReference="1711276056"
+      description="Support variable used to decide if a reinitialization of eFMU production\n     codes is requested before executing their &#39;DoStep()&#39; implementation."
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="22"
+            block="69"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 159 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.fault"
+      valueReference="1711276059"
+      description="Fault input sigal, default false = fault inactive"
+      variability="discrete">
+      <Boolean/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="23"
+            block="70"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 160 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.v"
+      valueReference="1711276063"
+      description="Generator terminal voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="71"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 161 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.vf"
+      valueReference="1711276060"
+      description="Field voltage"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="24"
+            block="72"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 162 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.vf0OUT"
+      valueReference="1711276064"
+      description="Initial field voltage [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="73"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+    <!-- Index for next variable = 163 -->
+    <ScalarVariable
+      name="_Clocks.BaseClock_0.SubClock_1.G4HIL.__sampled.w"
+      valueReference="1711276065"
+      description="Speed [pu]"
+      variability="discrete">
+      <Real/>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Data
+            blockAliasTo="25"
+            block="74"/>
+        </Tool>
+      </Annotations>
+      <Annotations>
+        <Tool
+          name="Dymola">
+          <Plot clock="120"/>
+        </Tool>
+      </Annotations>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="102"/>
+      <Unknown index="103"/>
+      <Unknown index="104"/>
+      <Unknown index="105"/>
+    </Outputs>
+    <InitialUnknowns>
+      <Unknown index="102"/>
+      <Unknown index="103"/>
+      <Unknown index="104"/>
+      <Unknown index="105"/>
+    </InitialUnknowns>
+  </ModelStructure>
+</fmiModelDescription>

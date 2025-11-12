@@ -1,12 +1,15 @@
 within PSSDesign.VerificationTests.FaultTrigger;
-model Fault "Model to replicate fault triggering test"
+model FaultBinStub
+  "Model to replicate fault triggering test with binary stub"
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Step step(
     height=0.0,
     offset=0,
     startTime=10)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  eFMUs4RTHIL.GridForHILTesting G4HIL
+  'Grid4HIL.eFMU_SiL_Support'.BinaryStub
+                                G4HIL(__defining_code=
+        'Grid4HIL.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
                                              annotation (Placement(
@@ -37,4 +40,4 @@ equation
     annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
   annotation (experiment(
       StopTime=20));
-end Fault;
+end FaultBinStub;

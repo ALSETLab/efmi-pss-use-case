@@ -53,5 +53,5 @@ equation
       pattern=LinePattern.Dot,
       thickness=0.5));
   annotation (experiment(
-      StopTime=60));
+      StopTime=20));
 end FaultClocked;

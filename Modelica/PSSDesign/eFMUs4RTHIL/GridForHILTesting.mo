@@ -28,9 +28,11 @@ model GridForHILTesting "System model for HIL testing"
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
   Modelica.Blocks.Sources.RealExpression G1v(y=G1.v)
     annotation (Placement(transformation(extent={{60,50},{80,70}})));
-  Modelica.Blocks.Sources.RealExpression G1P(y=G1.P)
+  Modelica.Blocks.Sources.RealExpression G1P(y=
+        OpenIPSL.NonElectrical.Functions.div0protect(G1.P, SysData.S_b))
     annotation (Placement(transformation(extent={{60,30},{80,50}})));
-  Modelica.Blocks.Sources.RealExpression G1Q(y=G1.Q)
+  Modelica.Blocks.Sources.RealExpression G1Q(y=
+        OpenIPSL.NonElectrical.Functions.div0protect(G1.Q, SysData.S_b))
     annotation (Placement(transformation(extent={{60,10},{80,30}})));
   Modelica.Blocks.Interfaces.BooleanInput fault
     "Fault input sigal, default false = fault inactive" annotation (Placement(

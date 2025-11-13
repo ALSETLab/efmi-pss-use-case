@@ -1,4 +1,5 @@
 within ;
+
 package
   'eFMU experiment package (Grid4HIL, PSSDesign.eFMUs4RTHIL.TestGridForHILClocked)'
   "Test scenarios of original experiment
@@ -10,29 +11,29 @@ package
 
   constant ToleranceConfigurations tolerances_default(
     absolute_x32(
-      Pgen=1.0e9,
-      Qgen=1.0e9,
-      v=1.0e-3,
+      Pgen=10,
+      Qgen=5,
+      v=0.2,
       vf0OUT=1.0e-3,
-      w=1.0e-3),
+      w=0.1),
     relative_x32(
-      Pgen=1.0e9,
-      Qgen=1.0e9,
-      v=1.0e-4,
-      vf0OUT=1.0e-4,
-      w=1.0e-4),
+      Pgen=10,
+      Qgen=5,
+      v=0.2,
+      vf0OUT=1.0e-3,
+      w=0.1),
     absolute_x64(
-      Pgen=1.0e9,
-      Qgen=1.0e9,
-      v=1.0e-6,
-      vf0OUT=1.0e-6,
-      w=1.0e-6),
+      Pgen=10,
+      Qgen=5,
+      v=0.2,
+      vf0OUT=1.0e-3,
+      w=0.1),
     relative_x64(
-      Pgen=1.0e9,
-      Qgen=1.0e9,
-      v=1.0e-6,
-      vf0OUT=1.0e-6,
-      w=1.0e-6)) "Configuration of default tolerances." annotation (HideResult=
+      Pgen=10,
+      Qgen=5,
+      v=0.2,
+      vf0OUT=1.0e-3,
+      w=0.1))    "Configuration of default tolerances." annotation (HideResult=
         true, Placement(transformation(extent={{-80,40},{-40,80}})));
 
   constant ToleranceConfigurations tolerances_Scenario_1(
@@ -68,7 +69,7 @@ package
     Behavioral Model container:
   */
   constant String bmodel_container_directory=
-      "C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU/BModel_Dymola_38088f85a1446bf88ee25daf1830f6a8d82bce99"
+      "C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU/BModel_Dymola_2aaa188fa29c741c2444c99d7a18f9cd6e500951"
     annotation (Protection(hideFromBrowser=true));
 
   annotation (

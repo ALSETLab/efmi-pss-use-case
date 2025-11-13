@@ -3,7 +3,8 @@ model Grid4CHILTesting "System model for CHIL testing"
   extends Modelica.Icons.Example;
   extends Network.PartialNetwork4efmu;
 
-  replaceable Generator.GeneratorAVRIO     G1(displayPF=false) constrainedby
+  replaceable Generator.GeneratorAVRIO     G1(displayPF=false, K0=K0)
+                                                               constrainedby
     Generator.GeneratorTemplate
     annotation (Placement(transformation(extent={{-98,-14},{-70,14}})),
       choicesAllMatching=true);
@@ -20,7 +21,8 @@ model Grid4CHILTesting "System model for CHIL testing"
     annotation (Placement(transformation(extent={{100,30},{120,50}})));
   Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
     annotation (Placement(transformation(extent={{100,10},{120,30}})));
-  Modelica.Blocks.Interfaces.RealInput vf "Field voltage"
+  Modelica.Blocks.Interfaces.RealInput vf(start=0.0)
+                                          "Field voltage"
     annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Sources.RealExpression G1vf0(y=G1.vf0OUT)
     annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
@@ -28,9 +30,11 @@ model Grid4CHILTesting "System model for CHIL testing"
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
   Modelica.Blocks.Sources.RealExpression G1v(y=G1.v)
     annotation (Placement(transformation(extent={{60,50},{80,70}})));
-  Modelica.Blocks.Sources.RealExpression G1P(y=G1.P)
+  Modelica.Blocks.Sources.RealExpression G1P(y=
+        OpenIPSL.NonElectrical.Functions.div0protect(G1.P, SysData.S_b))
     annotation (Placement(transformation(extent={{60,30},{80,50}})));
-  Modelica.Blocks.Sources.RealExpression G1Q(y=G1.Q)
+  Modelica.Blocks.Sources.RealExpression G1Q(y=
+        OpenIPSL.NonElectrical.Functions.div0protect(G1.Q, SysData.S_b))
     annotation (Placement(transformation(extent={{60,10},{80,30}})));
   Modelica.Blocks.Interfaces.BooleanInput fault
     "Fault input sigal, default false = fault inactive" annotation (Placement(
@@ -38,6 +42,8 @@ model Grid4CHILTesting "System model for CHIL testing"
         extent={{-20,-20},{20,20}},
         rotation=90,
         origin={0,-120})));
+  parameter OpenIPSL.Types.PerUnit K0=30 "regulator gain"
+    annotation (Dialog(group="AVR Parameters"));
 equation
   connect(G1.pwPin, B1.p)
     annotation (Line(points={{-68.6,0},{-60,0}},

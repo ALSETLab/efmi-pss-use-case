@@ -28,15 +28,18 @@ openModel(docs + "/Github/efmi-pss-use-case/dependencies/openipsl/OpenIPSL/packa
 // Load Libraries
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/PSSDesign/package.mo");
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/efmiPSSusecase/package.mo");
-// Load eFMU and SIL Integration Tests
+// Load eFMU and SIL Integration Tests for the PSS
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/efmuPSS/SiL-integration/eFMU/_package_.mo");
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/H525b873079cf7a65f464c408f25344d5bd630cab.mo");
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/'eFMU experiment package (efmuPSS, efmiPSSusecase.Experiments.Example_3_PSSDesign4PSSVariantClocked)'/package.mo");
+// Load eFMU and SIL Integration Tests for the HIL testing model
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/SiL-integration/eFMU/_package_.mo");
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3.mo");
 openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/'eFMU experiment package (Grid4HIL, PSSDesign.eFMUs4RTHIL.TestGridForHILClocked)'/package.mo");
-
-
+// Load eFMU and SIL Integration Tests for the Controller-HIL testing model
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/CHILTest/SiL-integration/eFMU/_package_.mo");
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/H283cd02180511b024b59731032fd3290f8675b29.mo");
+openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/'eFMU experiment package (CHILTest, PSSDesign.eFMU4CHIL.TestGridForCHILpClocked)'/package.mo");
 // Go back to working directory
 //cd(       docs + "/Dymola");
 

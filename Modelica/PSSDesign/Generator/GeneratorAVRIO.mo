@@ -7,9 +7,11 @@ model GeneratorAVRIO "Generator with AVR and I/O for linearization"
     Vn=400000,                                                                                                                                                                             angle_0 = angle_0, ra = 0.003, v_0 = v_0, x1d = 0.3, x1q = 0.65, x2d = 0.23, x2q = 0.25, xd = 1.81, xq = 1.76)
     constrainedby Components.Machines.Base.baseMachine                                                                                                                                                                                                         annotation(
     Placement(visible = true, transformation(origin = {49, 5}, extent = {{-31, -31}, {31, 31}}, rotation = 0)));
-  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1, Te = 0.0001, Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
+    K0=K0,                                                       T1 = 1, T2 = 1, Te = 0.0001, Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  Modelica.Blocks.Interfaces.RealInput u annotation(
+  Modelica.Blocks.Interfaces.RealInput u(start=0.0)
+                                         annotation(
     Placement(transformation(origin = {-120, 10}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}})));
   Modelica.Blocks.Interfaces.RealOutput vf0OUT "Initial field voltage [pu]"
     annotation (Placement(transformation(
@@ -26,6 +28,8 @@ model GeneratorAVRIO "Generator with AVR and I/O for linearization"
     annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
   Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
     annotation (Placement(transformation(extent={{100,-90},{120,-70}})));
+  parameter OpenIPSL.Types.PerUnit K0=200 "regulator gain"
+    annotation (Dialog(group="AVR Parameters"));
 equation
   connect(avr.vf, machine.vf) annotation(
     Line(points = {{-4.33333, 20}, {4, 20}, {4, 20.5}, {11.8, 20.5}}, color = {0, 0, 127}));

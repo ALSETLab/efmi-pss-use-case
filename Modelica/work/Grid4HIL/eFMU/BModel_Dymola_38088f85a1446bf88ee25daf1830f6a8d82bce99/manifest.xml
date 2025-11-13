@@ -4,21 +4,21 @@
 	xsi:noNamespaceSchemaLocation="../schemas/BehavioralModel/efmiBehavioralModelManifest.xsd"
 	kind="BehavioralModel"
 	efmiVersion="1.0.0"
-	id="{ee4c1542-505d-5270-b31f-23e3b59f368b}"
+	id="{52ffd806-8678-ed20-b566-036c449364cd}"
 	name="&apos;eFMU experiment package (Grid4HIL, PSSDesign.eFMUs4RTHIL.TestGridForHILClocked)&apos;"
 	description="Test scenarios of original experiment
 		     [PSSDesign.eFMUs4RTHIL.TestGridForHILClocked]
 		   for eBlock model
 		     [PSSDesign.eFMUs4RTHIL.GridForHILTesting]."
 	version=""
-	generationDateAndTime="2025-11-03T22:23:07Z"
+	generationDateAndTime="2025-11-13T00:29:13Z"
 	generationTool="Dymola Version 2025x Refresh 1, 2025-04-11">
 
 	<ManifestReferences>
 		<ManifestReference
 			id="ManifestReference:ACode_Dymola"
 			manifestRefId="{7c3adc9e-74e8-4d94-8d7c-9e9b688cac66}"
-			checksum="ad8f7fba253328366e5cef1d02b0e071d5b6036e"
+			checksum="d5431e9eb275e468a759e5f515f1a6d3641db089"
 			origin="false"/>
 	</ManifestReferences>
 
@@ -28,7 +28,7 @@
 			name="Scenario_1.csv"
 			path="./"
 			needsChecksum="true"
-			checksum="77005cbebfbefeef913abb6bb16cf8e15277d9e1"
+			checksum="16835d9f7fed2495a937153ee2831c2268cb434f"
 			role="ReferenceData"
 			description="Reference trajectories file for Scenario_1."/>
 	</Files>
@@ -149,13 +149,13 @@
 				<TolerancesDefinition
 					variableRefId="Pgen"
 					unitRefId="TODO"
-					absoluteTolerance="0.001"
-					relativeTolerance="0.0001"/>
+					absoluteTolerance="1.0e+09"
+					relativeTolerance="1.0e+09"/>
 				<TolerancesDefinition
 					variableRefId="Qgen"
 					unitRefId="TODO"
-					absoluteTolerance="0.001"
-					relativeTolerance="0.0001"/>
+					absoluteTolerance="1.0e+09"
+					relativeTolerance="1.0e+09"/>
 				<TolerancesDefinition
 					variableRefId="v"
 					unitRefId="TODO"
@@ -176,13 +176,13 @@
 				<TolerancesDefinition
 					variableRefId="Pgen"
 					unitRefId="TODO"
-					absoluteTolerance="1.0e-06"
-					relativeTolerance="1.0e-06"/>
+					absoluteTolerance="1.0e+09"
+					relativeTolerance="1.0e+09"/>
 				<TolerancesDefinition
 					variableRefId="Qgen"
 					unitRefId="TODO"
-					absoluteTolerance="1.0e-06"
-					relativeTolerance="1.0e-06"/>
+					absoluteTolerance="1.0e+09"
+					relativeTolerance="1.0e+09"/>
 				<TolerancesDefinition
 					variableRefId="v"
 					unitRefId="TODO"

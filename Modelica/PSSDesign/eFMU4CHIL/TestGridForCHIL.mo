@@ -2,13 +2,14 @@ within PSSDesign.eFMU4CHIL;
 model TestGridForCHIL "Tests the model for CHIL testing"
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Step step(
-    height=0.05,
+    height=0.2,
     offset=0,
     startTime=5)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   Grid4CHILTesting G4CHIL(G1(avr(K0=30)))
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-  Components.FaultTimerLogic faultTimerLogic annotation (Placement(
+  Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+                                             annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
@@ -34,5 +35,8 @@ equation
           110,-40}}, color={0,0,127}));
   connect(step.y, G4CHIL.vf)
     annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
-  annotation (experiment(StopTime=60, __Dymola_Algorithm="Dassl"));
+  annotation (experiment(
+      StopTime=20,
+      __Dymola_NumberOfIntervals=5000,
+      __Dymola_Algorithm="Dassl"));
 end TestGridForCHIL;

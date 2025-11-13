@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.12.0" kind="BinaryCode" efmiVersion="1.0.0" id="{500065f1-1c92-4e03-b4f6-8120da24e7f8}" name="BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7" generationDateAndTime="2025-11-03T22:17:58Z" generationTool="ESP" xsi:noNamespaceSchemaLocation="../schemas\BinaryCode\efmiBinaryCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.12.0" kind="BinaryCode" efmiVersion="1.0.0" id="{81b15fa4-3645-4713-b24e-cb71b9aa5b93}" name="BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7" generationDateAndTime="2025-11-13T00:39:33Z" generationTool="ESP" xsi:noNamespaceSchemaLocation="../schemas\BinaryCode\efmiBinaryCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="PROD_MAN_ID" manifestRefId="{bf57db72-e400-4c35-9d0a-ff31736bb4a2}" checksum="6721c436e00cfdb0033117ecfba9699fbfedfce0" origin="true"/>
+        <ManifestReference id="PROD_MAN_ID" manifestRefId="{a7e36db9-88ee-49f7-8cdb-45edd6cc88f1}" checksum="647d57cf44692a483669985453efd0f763a09d7e" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_sii_block_interface.obj_0" name="sii_block_interface.obj" path="./default/" needsChecksum="true" checksum="c550642de69f183aa197fd020676fecdc6806966" role="Code"/>
-        <File id="FILE_ID_block.obj_1" name="block.obj" path="./default/" needsChecksum="true" checksum="6a9885a0a433ed3361eaa897f261b0bed4f50b6e" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.obj_2" name="mei_block_interface.obj" path="./default/" needsChecksum="true" checksum="31703241b2859faf2c260edaf7df0ef2cc8548fc" role="Code"/>
-        <File id="FILE_ID_block.lib_3" name="block.lib" path="./" needsChecksum="true" checksum="634e8c9a61e102f907fbd0ac508476ddef7e4622" role="other"/>
+        <File id="FILE_ID_sii_block_interface.obj_0" name="sii_block_interface.obj" path="./default/" needsChecksum="true" checksum="45bacddf3f35f181207e437674702fb49ba026c7" role="Code"/>
+        <File id="FILE_ID_block.obj_1" name="block.obj" path="./default/" needsChecksum="true" checksum="49e9b0226e37fa2540d1fa6069f58c6575eaca1b" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.obj_2" name="mei_block_interface.obj" path="./default/" needsChecksum="true" checksum="e5d5847d2d747adcce322360d3c1f792f8f3b269" role="Code"/>
+        <File id="FILE_ID_block.lib_3" name="block.lib" path="./" needsChecksum="true" checksum="b730a18d782aeb71bdb585262790196e8349138f" role="other"/>
         <File id="FILE_ID_makefile_4" name="makefile" path="./" needsChecksum="true" checksum="5c5fd8b94e9ed2d05a3fa4ea115d97b7dc934087" role="other"/>
         <File id="FILE_ID_build.bat_5" name="build.bat" path="./" needsChecksum="true" checksum="88f0b424eda669d0be871d24b7869727dd0bbead" role="other"/>
         <File id="FILE_ID_where.bat_6" name="where.bat" path="./" needsChecksum="true" checksum="5b46161d488831d2d02c1eeb5f768a38726de443" role="other"/>
-        <File id="FILE_ID_buildReport.txt_7" name="buildReport.txt" path="./" needsChecksum="true" checksum="3c29cffdde8219e025aa6724f941ddf8a45ddb64" role="other"/>
+        <File id="FILE_ID_buildReport.txt_7" name="buildReport.txt" path="./" needsChecksum="true" checksum="50798ff50367f0d2cd7b10272c05d4265ab89db1" role="other"/>
     </Files>
     <BinaryContainer>
         <BuildConfiguration>
-            <Compiler id="COMPILER_ID" vendor="Microsoft" name="VS" version="Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x86" executableName="cl"/>
-            <Linker vendor="Microsoft" name="VS" version="Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35217 for x86" executableName="lib"/>
+            <Compiler id="COMPILER_ID" vendor="Microsoft" name="VS" version="Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35220 for x86" executableName="cl"/>
+            <Linker vendor="Microsoft" name="VS" version="Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35220 for x86" executableName="lib"/>
             <CompilerOptionSets>
                 <CompilerOptionSet id="CMPOPTSET_ID_default_0" compilerRefId="COMPILER_ID">
                     <CompilerOptions compileRoot="./default">
@@ -33,19 +33,19 @@
             <CompileTarget vendor="Software Production Engineering" targetName="Windows" chipVersion="1.0" instructionSetArchitecture="x86" endianess="big" registerWidth="32" addressWidth="32"/>
         </BuildConfiguration>
         <Modules>
-            <BinaryModule id="BINMOD_ID_0" generationTool="ESP" generationDateAndTime="2025-11-03T22:17:58Z">
+            <BinaryModule id="BINMOD_ID_0" generationTool="ESP" generationDateAndTime="2025-11-13T00:39:33Z">
                 <ObjectFile id="OBJFILE_ID_0">
                     <FileReference fileRefId="FILE_ID_sii_block_interface.obj_0"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_sii_block_interface.c_0"/>
                 </ObjectFile>
             </BinaryModule>
-            <BinaryModule id="BINMOD_ID_1" generationTool="ESP" generationDateAndTime="2025-11-03T22:17:58Z">
+            <BinaryModule id="BINMOD_ID_1" generationTool="ESP" generationDateAndTime="2025-11-13T00:39:33Z">
                 <ObjectFile id="OBJFILE_ID_1">
                     <FileReference fileRefId="FILE_ID_block.obj_1"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_block.c_5"/>
                 </ObjectFile>
             </BinaryModule>
-            <BinaryModule id="BINMOD_ID_2" generationTool="ESP" generationDateAndTime="2025-11-03T22:17:58Z">
+            <BinaryModule id="BINMOD_ID_2" generationTool="ESP" generationDateAndTime="2025-11-13T00:39:33Z">
                 <ObjectFile id="OBJFILE_ID_2">
                     <FileReference fileRefId="FILE_ID_mei_block_interface.obj_2"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_mei_block_interface.c_6"/>

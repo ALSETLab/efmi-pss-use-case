@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{7c3adc9e-74e8-4d94-8d7c-9e9b688cac66}"
+	id="{e55b2a5b-b0bf-4169-92e6-56a89b04174a}"
 	kind="AlgorithmCode"
 	name="PSSDesign.eFMUs4RTHIL.GridForHILTesting"
-	generationDateAndTime="2025-11-03T22:17:49Z"
+	generationDateAndTime="2025-11-13T00:39:26Z"
 	generationTool="Dymola Version 2025x Refresh 1, 2025-04-11"
 	description="System model for HIL testing"
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="7ff34d5c5db94d5bdab6302a77d0b45a50cd8910"
+			checksum="b86b43e611e103d4b54aebfb2afcfafc9718d3aa"
 			role="Code"/>
 	</Files>
 
@@ -121,9 +121,6 @@
 			name="Pgen"
 			description="Active power [pu]"
 			blockCausality="output"
-			unitRefId="[W]"
-			relativeQuantity="false"
-			nominal="1.0e+8"
 			start="">
 		</RealVariable>
 		<RealVariable
@@ -131,9 +128,6 @@
 			name="Qgen"
 			description="Reactive power [pu]"
 			blockCausality="output"
-			unitRefId="[var]"
-			relativeQuantity="false"
-			nominal="1.0e+8"
 			start="">
 		</RealVariable>
 		<RealVariable

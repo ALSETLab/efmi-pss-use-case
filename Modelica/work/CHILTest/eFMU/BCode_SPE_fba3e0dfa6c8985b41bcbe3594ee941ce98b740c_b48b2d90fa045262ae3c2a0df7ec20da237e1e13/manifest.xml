@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.12.0" kind="BinaryCode" efmiVersion="1.0.0" id="{c00cfaf0-cc49-4cbe-a44a-754b4405423e}" name="BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13" generationDateAndTime="2025-11-13T01:11:33Z" generationTool="ESP" xsi:noNamespaceSchemaLocation="../schemas\BinaryCode\efmiBinaryCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.12.0" kind="BinaryCode" efmiVersion="1.0.0" id="{71b1b774-7070-48b1-9dc3-1dc29cc5cbe5}" name="BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13" generationDateAndTime="2025-12-22T23:05:31Z" generationTool="ESP" xsi:noNamespaceSchemaLocation="../schemas\BinaryCode\efmiBinaryCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="PROD_MAN_ID" manifestRefId="{0e84d93c-11c8-4f78-9005-eece48b7178d}" checksum="3bf2f31bc1db296ce40ebcd1583b9da108fd95ef" origin="true"/>
+        <ManifestReference id="PROD_MAN_ID" manifestRefId="{87b82f6c-0c5d-4153-9b8d-9ca77de4889b}" checksum="c13a2cba4dde0a71a61ff95dbba9368482e5fa7e" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_sii_block_interface.obj_0" name="sii_block_interface.obj" path="./default/" needsChecksum="true" checksum="0f12e38ee8b3178d6d212a849a50695d1e66451d" role="Code"/>
-        <File id="FILE_ID_block.obj_1" name="block.obj" path="./default/" needsChecksum="true" checksum="bc6d87c1c85b78e6e1c46e7a567ffab6da68a8c2" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.obj_2" name="mei_block_interface.obj" path="./default/" needsChecksum="true" checksum="09fda55c4ad8a8a0a5856f08e29f2177aea01d78" role="Code"/>
-        <File id="FILE_ID_block.lib_3" name="block.lib" path="./" needsChecksum="true" checksum="6408d7d498ba4b582552da7f4b821c59405e0e2c" role="other"/>
+        <File id="FILE_ID_sii_block_interface.obj_0" name="sii_block_interface.obj" path="./default/" needsChecksum="true" checksum="53ea50789a6c64a26163f3a3ee6a93779580a0f6" role="Code"/>
+        <File id="FILE_ID_block.obj_1" name="block.obj" path="./default/" needsChecksum="true" checksum="58936bb5d3f6a58918f1ee86acd22de8e93f5e3f" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.obj_2" name="mei_block_interface.obj" path="./default/" needsChecksum="true" checksum="e514405feebf143697f2070419c2d4d9fb46507c" role="Code"/>
+        <File id="FILE_ID_block.lib_3" name="block.lib" path="./" needsChecksum="true" checksum="867bcd165decf3470ebc65f18c014fc02d7fe256" role="other"/>
         <File id="FILE_ID_makefile_4" name="makefile" path="./" needsChecksum="true" checksum="415b88fcbe7242858937e3d2f8e1229f6f16b3ef" role="other"/>
         <File id="FILE_ID_build.bat_5" name="build.bat" path="./" needsChecksum="true" checksum="71b613fa7ce26d9d09916d39697201991ad558e7" role="other"/>
         <File id="FILE_ID_where.bat_6" name="where.bat" path="./" needsChecksum="true" checksum="5b46161d488831d2d02c1eeb5f768a38726de443" role="other"/>
@@ -33,19 +33,19 @@
             <CompileTarget vendor="Software Production Engineering" targetName="Windows" chipVersion="1.0" instructionSetArchitecture="x64" endianess="big" registerWidth="64" addressWidth="64"/>
         </BuildConfiguration>
         <Modules>
-            <BinaryModule id="BINMOD_ID_0" generationTool="ESP" generationDateAndTime="2025-11-13T01:11:33Z">
+            <BinaryModule id="BINMOD_ID_0" generationTool="ESP" generationDateAndTime="2025-12-22T23:05:31Z">
                 <ObjectFile id="OBJFILE_ID_0">
                     <FileReference fileRefId="FILE_ID_sii_block_interface.obj_0"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_sii_block_interface.c_1"/>
                 </ObjectFile>
             </BinaryModule>
-            <BinaryModule id="BINMOD_ID_1" generationTool="ESP" generationDateAndTime="2025-11-13T01:11:33Z">
+            <BinaryModule id="BINMOD_ID_1" generationTool="ESP" generationDateAndTime="2025-12-22T23:05:31Z">
                 <ObjectFile id="OBJFILE_ID_1">
                     <FileReference fileRefId="FILE_ID_block.obj_1"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_block.c_2"/>
                 </ObjectFile>
             </BinaryModule>
-            <BinaryModule id="BINMOD_ID_2" generationTool="ESP" generationDateAndTime="2025-11-13T01:11:33Z">
+            <BinaryModule id="BINMOD_ID_2" generationTool="ESP" generationDateAndTime="2025-12-22T23:05:31Z">
                 <ObjectFile id="OBJFILE_ID_2">
                     <FileReference fileRefId="FILE_ID_mei_block_interface.obj_2"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_mei_block_interface.c_4"/>

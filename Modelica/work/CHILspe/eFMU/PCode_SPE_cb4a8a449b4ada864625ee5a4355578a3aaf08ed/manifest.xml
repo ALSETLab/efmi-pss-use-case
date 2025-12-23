@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{eddab7fa-7fd4-47d2-86b8-254e05e25518}" name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" generationDateAndTime="2025-12-22T23:07:25Z" generationTool="dymola-embedded/MEI_SII_CodeGen 0.3.0 (beta, internal R&amp;D version)" xsi:noNamespaceSchemaLocation="../schemas\ProductionCode\efmiProductionCodeManifest.xsd">
+    <ManifestReferences>
+        <ManifestReference id="ALG_MAN_ID" manifestRefId="{89302b00-dace-4241-b584-f3b11493a6e5}" checksum="656574bc5a35970a715eb67088dfbc49cdf2a5e4" origin="true"/>
+    </ManifestReferences>
+    <Files>
+        <File id="FILE_ID_galec_types.h_0" name="galec_types.h" path="./" needsChecksum="true" checksum="641f17b88e1c78cf1d5928f0a424208b50007489" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.c_1" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="18a045794b489e9126e5c0c0c234ba042e031f65" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.h_2" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="1bac6c381625a25d78a51eb0077aeefb9cd639cc" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.h_3" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="2aa8583f93d6e93598d2f10dff4b550eb7a35798" role="Code"/>
+        <File id="FILE_ID_block.h_4" name="block.h" path="./" needsChecksum="true" checksum="5a3c6d4d0e1bf5b4042d4080fb15bb0702b6bd6d" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.c_5" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="770eb6fdf7831599eb5e1bed5d94caffe5425af0" role="Code"/>
+        <File id="FILE_ID_block.c_6" name="block.c" path="./" needsChecksum="true" checksum="7303dc28b6a1f4c1cff2db05789bee90c8490b5b" role="Code"/>
+        <File id="FILE_ID_galec_stl.h_7" name="galec_stl.h" path="./" needsChecksum="true" checksum="226bc1a7dd657b33514add35de01e95bab1c110d" role="Code"/>
+    </Files>
+    <CodeContainer language="C" standard="C99" platform="Legacy" floatPrecision="32-bit">
+        <Target>Generic</Target>
+        <CompilerOptions compileRoot="./"/>
+        <LinkerOptions/>
+        <TargetTypes>
+            <TargetType id="TGT_ID_efmiInteger8_0" kind="efmiInteger8" codedType="signed char"/>
+            <TargetType id="TGT_ID_efmiUnsignedInteger8_1" kind="efmiUnsignedInteger8" codedType="unsigned char"/>
+            <TargetType id="TGT_ID_efmiInteger16_2" kind="efmiInteger16" codedType="signed short"/>
+            <TargetType id="TGT_ID_efmiUnsignedInteger16_3" kind="efmiUnsignedInteger16" codedType="unsigned short"/>
+            <TargetType id="TGT_ID_efmiInteger32_4" kind="efmiInteger32" codedType="signed int"/>
+            <TargetType id="TGT_ID_efmiUnsignedInteger32_5" kind="efmiUnsignedInteger32" codedType="unsigned int"/>
+            <TargetType id="TGT_ID_efmiFloat32_6" kind="efmiFloat32" codedType="float"/>
+            <TargetType id="TGT_ID_efmiFloat64_7" kind="efmiFloat64" codedType="double"/>
+            <TargetType id="TGT_ID_efmiVoid_8" kind="efmiVoid" codedType="void"/>
+            <TargetType id="TGT_ID_efmiBool_9" kind="efmiBool" codedType="unsigned int"/>
+        </TargetTypes>
+        <CodeFiles>
+            <CodeFile id="CFILE_ID_galec_types.h_0" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_types.h_0"/>
+                <Typedefs>
+                    <Typedef id="TYPE_ID_Boolean_1" name="Boolean">
+                        <Alias targetTypeRefId="TGT_ID_efmiBool_9"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_Integer_2" name="Integer">
+                        <Alias targetTypeRefId="TGT_ID_efmiInteger32_4"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_Real_3" name="Real">
+                        <Alias targetTypeRefId="TGT_ID_efmiFloat32_6"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_ErrorSignal_0" name="ErrorSignal">
+                        <Alias targetTypeRefId="TGT_ID_efmiUnsignedInteger32_5"/>
+                    </Typedef>
+                </Typedefs>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_sii_block_interface.c_1" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.c_1"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_sii_block_interface.h_3"/>
+                </Includes>
+                <Variables>
+                    <Variable id="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" typeDefRefId="TYPE_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" const="false" volatile="false" static="false"/>
+                </Variables>
+                <Functions>
+                    <Function id="FNC_ID_sii_Startup_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="sii_Startup_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_0" typeDefRefId="TYPE_ID_Boolean_1"/>
+                    </Function>
+                    <Function id="FNC_ID_sii_DoStep_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_1" name="sii_DoStep_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_1" typeDefRefId="TYPE_ID_Boolean_1"/>
+                    </Function>
+                    <Function id="FNC_ID_sii_Recalibrate_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_2" name="sii_Recalibrate_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_2" typeDefRefId="TYPE_ID_Boolean_1"/>
+                    </Function>
+                </Functions>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_mei_block_interface.h_2" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_mei_block_interface.h_2"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_block.h_4"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_sii_block_interface.h_3" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.h_3"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_block.h_4"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_block.h_4" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_block.h_4"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_galec_types.h_0"/>
+                </Includes>
+                <Typedefs>
+                    <Typedef id="TYPE_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" name="BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <Components>
+                            <Component id="COMP_ID_ErrorSignals_0" name="ErrorSignals" typeDefRefId="TYPE_ID_ErrorSignal_0" pointer="false"/>
+                            <Component id="COMP_ID_fault_1" name="fault" typeDefRefId="TYPE_ID_Boolean_1" pointer="false"/>
+                            <Component id="COMP_ID_vf_2" name="vf" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_Pgen_3" name="Pgen" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_Qgen_4" name="Qgen" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_v_5" name="v" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_vf0OUT_6" name="vf0OUT" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_w_7" name="w" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_K0_8" name="K0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_s0_9" name="G1_avr_s0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vref_10" name="G1_avr_vref" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_I_MBtoSB_11" name="G1_machine_I_MBtoSB" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_K1_12" name="G1_machine_K1" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_K2_13" name="G1_machine_K2" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_S_SBtoMB_14" name="G1_machine_S_SBtoMB" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_V_MBtoSB_15" name="G1_machine_V_MBtoSB" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Z_MBtoSB_16" name="G1_machine_Z_MBtoSB" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_delta0_17" name="G1_machine_delta0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e1d0_18" name="G1_machine_e1d0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e1q0_19" name="G1_machine_e1q0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e2d0_20" name="G1_machine_e2d0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e2q0_21" name="G1_machine_e2q0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_id0_22" name="G1_machine_id0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_iq0_23" name="G1_machine_iq0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_p0_24" name="G1_machine_p0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_pm00_25" name="G1_machine_pm00" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_q0_26" name="G1_machine_q0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_vd0_27" name="G1_machine_vd0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_vf00_28" name="G1_machine_vf00" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_vq0_29" name="G1_machine_vq0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_w_b_30" name="G1_machine_w_b" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_I0_im_31" name="G1_machine_I0_im" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_I0_re_32" name="G1_machine_I0_re" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Idq0_im_33" name="G1_machine_Idq0_im" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Idq0_re_34" name="G1_machine_Idq0_re" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_S0_im_35" name="G1_machine_S0_im" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vdq0_im_36" name="G1_machine_Vdq0_im" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vdq0_re_37" name="G1_machine_Vdq0_re" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vt0_im_38" name="G1_machine_Vt0_im" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vt0_re_39" name="G1_machine_Vt0_re" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_auxCMval_im_40" name="G1_machine_auxCMval_im" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_auxCMval_re_41" name="G1_machine_auxCMval_re" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Zb_42" name="transformer_Zb" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Zn_43" name="transformer_Zn" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_r_44" name="transformer_r" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_x_45" name="transformer_x" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_B3_angle_0_46" name="B3_angle_0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_B3_v_0_47" name="B3_v_0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_P_0_48" name="G1_P_0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_Q_0_49" name="G1_Q_0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_V_b_50" name="G1_V_b" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_angle_0_51" name="G1_angle_0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_v_0_52" name="G1_v_0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_T1_53" name="G1_avr_T1" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_T2_54" name="G1_avr_T2" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_Te_55" name="G1_avr_Te" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_Tr_56" name="G1_avr_Tr" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vfmax_57" name="G1_avr_vfmax" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vfmin_58" name="G1_avr_vfmin" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_M_59" name="G1_machine_M" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Sn_60" name="G1_machine_Sn" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T1d0_61" name="G1_machine_T1d0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T1q0_62" name="G1_machine_T1q0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T2d0_63" name="G1_machine_T2d0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T2q0_64" name="G1_machine_T2q0" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Taa_65" name="G1_machine_Taa" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vn_66" name="G1_machine_Vn" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_ra_67" name="G1_machine_ra" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x1d_68" name="G1_machine_x1d" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x1q_69" name="G1_machine_x1q" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x2d_70" name="G1_machine_x2d" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x2q_71" name="G1_machine_x2q" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_xd_72" name="G1_machine_xd" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_xq_73" name="G1_machine_xq" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_B_74" name="L1_B" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_G_75" name="L1_G" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_R_76" name="L1_R" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_X_77" name="L1_X" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_B_78" name="L2_B" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_G_79" name="L2_G" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_R_80" name="L2_R" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_X_81" name="L2_X" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_SysData_S_b_82" name="SysData_S_b" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_SysData_fn_83" name="SysData_fn" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Sn_84" name="transformer_Sn" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_V_b_85" name="transformer_V_b" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Vn_86" name="transformer_Vn" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_m_87" name="transformer_m" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_rT_88" name="transformer_rT" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_xT_89" name="transformer_xT" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_discrete_stepSize_90" name="discrete_stepSize" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_B3_p_vi_91" name="B3_p_vi" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_B3_p_vr_92" name="B3_p_vr" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_avr_vf1_93" name="der_G1_avr_vf1" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_avr_vm_94" name="der_G1_avr_vm" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_avr_vr_95" name="der_G1_avr_vr" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vf1_96" name="G1_avr_vf1" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vm_97" name="G1_avr_vm" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vr_98" name="G1_avr_vr" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_delta_99" name="der_G1_machine_delta" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e1d_100" name="der_G1_machine_e1d" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e1q_101" name="der_G1_machine_e1q" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e2d_102" name="der_G1_machine_e2d" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e2q_103" name="der_G1_machine_e2q" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_w_104" name="der_G1_machine_w" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_delta_105" name="G1_machine_delta" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e1d_106" name="G1_machine_e1d" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e1q_107" name="G1_machine_e1q" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e2d_108" name="G1_machine_e2d" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e2q_109" name="G1_machine_e2q" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_id_110" name="G1_machine_id" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_iq_111" name="G1_machine_iq" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_w_112" name="G1_machine_w" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_p_ii_113" name="L2_p_ii" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_p_ir_114" name="L2_p_ir" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_n_ii_115" name="transformer_n_ii" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_n_ir_116" name="transformer_n_ir" typeDefRefId="TYPE_ID_Real_3" pointer="false"/>
+                        </Components>
+                    </Typedef>
+                </Typedefs>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_mei_block_interface.c_5" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_mei_block_interface.c_5"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_mei_block_interface.h_2"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_block.c_6" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_block.c_6"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_block.h_4"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl.h_7"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_galec_stl.h_7" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_stl.h_7"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_galec_types.h_0"/>
+                </Includes>
+            </CodeFile>
+        </CodeFiles>
+        <TechnicalInformationLookUps>
+            <DeclaredTypedefs>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_ErrorSignal_0"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_Boolean_1"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_Integer_2"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_Real_3"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiInteger8_0"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiUnsignedInteger8_1"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiInteger16_2"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiUnsignedInteger16_3"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiInteger32_4"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiUnsignedInteger32_5"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiFloat32_6"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiFloat64_7"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiVoid_8"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiBool_9"/>
+            </DeclaredTypedefs>
+            <GlobalAccessableDataElements>
+                <GlobalAccessableDataElement variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0"/>
+            </GlobalAccessableDataElements>
+        </TechnicalInformationLookUps>
+        <LogicalData>
+            <DataReferences>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="block:fake-signal-variable-anchor"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.ErrorSignals"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="fault"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.fault"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="vf"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.vf"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Pgen"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.Pgen"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Qgen"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.Qgen"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="v"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.v"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="vf0OUT"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.vf0OUT"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="w"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.w"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="K0"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.K0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.s0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_s0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.vref'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_vref"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.I_MBtoSB'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_I_MBtoSB"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.K1'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_K1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.K2'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_K2"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.S_SBtoMB'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_S_SBtoMB"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.V_MBtoSB'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_V_MBtoSB"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Z_MBtoSB'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Z_MBtoSB"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.delta0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_delta0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e1d0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e1d0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e1q0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e1q0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e2d0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e2d0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e2q0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e2q0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.id0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_id0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.iq0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_iq0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.p0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_p0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.pm00'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_pm00"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.q0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_q0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.vd0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_vd0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.vf00'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_vf00"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.vq0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_vq0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.w_b'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_w_b"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.I0.im'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_I0_im"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.I0.re'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_I0_re"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Idq0.im'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Idq0_im"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Idq0.re'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Idq0_re"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.S0.im'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_S0_im"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Vdq0.im'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Vdq0_im"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Vdq0.re'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Vdq0_re"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Vt0.im'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Vt0_im"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Vt0.re'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Vt0_re"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.auxCMval.im'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_auxCMval_im"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.auxCMval.re'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_auxCMval_re"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.Zb'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_Zb"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.Zn'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_Zn"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.r'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_r"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.x'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_x"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'B3.angle_0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.B3_angle_0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'B3.v_0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.B3_v_0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.P_0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_P_0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.Q_0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_Q_0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.V_b'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_V_b"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.angle_0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_angle_0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.v_0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_v_0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.T1'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_T1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.T2'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_T2"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.Te'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_Te"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.Tr'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_Tr"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.vfmax'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_vfmax"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.vfmin'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_vfmin"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.M'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_M"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Sn'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Sn"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.T1d0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_T1d0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.T1q0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_T1q0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.T2d0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_T2d0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.T2q0'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_T2q0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Taa'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Taa"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.Vn'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_Vn"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.ra'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_ra"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.x1d'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_x1d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.x1q'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_x1q"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.x2d'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_x2d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.x2q'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_x2q"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.xd'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_xd"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.xq'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_xq"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L1.B'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L1_B"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L1.G'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L1_G"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L1.R'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L1_R"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L1.X'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L1_X"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L2.B'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L2_B"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L2.G'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L2_G"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L2.R'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L2_R"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L2.X'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L2_X"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'SysData.S_b'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.SysData_S_b"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'SysData.fn'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.SysData_fn"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.Sn'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_Sn"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.V_b'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_V_b"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.Vn'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_Vn"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.m'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_m"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.rT'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_rT"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.xT'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_xT"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'discrete.stepSize'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.discrete_stepSize"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'B3.p.vi'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.B3_p_vi"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'B3.p.vr'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.B3_p_vr"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.avr.vf1)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_avr_vf1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.avr.vm)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_avr_vm"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.avr.vr)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_avr_vr"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.vf1'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_vf1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.vm'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_vm"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.avr.vr'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_avr_vr"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.machine.delta)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_machine_delta"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.machine.e1d)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_machine_e1d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.machine.e1q)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_machine_e1q"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.machine.e2d)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_machine_e2d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.machine.e2q)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_machine_e2q"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(G1.machine.w)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_G1_machine_w"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.delta'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_delta"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e1d'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e1d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e1q'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e1q"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e2d'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e2d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.e2q'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_e2q"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.id'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_id"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.iq'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_iq"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.machine.w'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.G1_machine_w"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L2.p.ii'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L2_p_ii"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'L2.p.ir'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.L2_p_ir"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.n.ii'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_n_ii"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.n.ir'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.transformer_n_ir"/>
+                </DataReference>
+            </DataReferences>
+            <FunctionReferences>
+                <FunctionReference>
+                    <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Startup()"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_Startup_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0"/>
+                </FunctionReference>
+                <FunctionReference>
+                    <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="DoStep()"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_DoStep_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_1"/>
+                </FunctionReference>
+                <FunctionReference>
+                    <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Recalibrate()"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_Recalibrate_Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_2"/>
+                </FunctionReference>
+            </FunctionReferences>
+        </LogicalData>
+    </CodeContainer>
+</Manifest>

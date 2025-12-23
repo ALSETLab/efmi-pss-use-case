@@ -1,0 +1,176 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.20
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x86'
+Source eFMU path                    : C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU
+Destination eFMU path               : null
+Production code name                : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Binary code name                    : BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+Ignore reading Errors               : false
+Ignore writing Errors               : false
+Compiler name                       : VS
+Compiler vendor                     : Microsoft
+Compiler version                    : Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35220 for x86
+Compiler executable name            : cl
+Compiler option sets                : 
+	Name: default
+	Options: 
+		SWT nologo
+Default compiler option set         : default
+Specific compiler option set        : 
+Linker name                         : VS
+Linker vendor                       : Microsoft
+Linker version                      : Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35220 for x86
+Linker executable name              : lib
+linker option set                   : 
+		SWT nologo
+Target name                         : Windows
+Target vendor                       : Software Production Engineering
+Target chip version                 : 1.0
+Target instruction set architecture : x86
+Target endianess                    : big
+Target register width               : 32
+Target address width                : 32
+Object extension                    : obj
+Binary extension                    : lib
+Execute link                        : true
+
+ 
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+
+READ MANIFESTS
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\__content.xml
+Import-Module : Illegal characters in path.
+At line:1 char:46
++ ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.ImportModuleCommand
+ 
+Send-VsDevShellTelemetry : The term 'Send-VsDevShellTelemetry' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At line:1 char:170
++ ... icrosoft.VisualStudio.DevShell.dll'; Send-VsDevShellTelemetry -NewIns ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 656574bc5a35970a715eb67088dfbc49cdf2a5e4
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 93d3872a28b2c9ef678e1711beebfc00d0894934
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 4de385d71763aa587a38f82788c8b0cc7c417b50
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_types.h
+OK: Manifest file CheckSum valid: 641f17b88e1c78cf1d5928f0a424208b50007489
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 18a045794b489e9126e5c0c0c234ba042e031f65
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 1bac6c381625a25d78a51eb0077aeefb9cd639cc
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 2aa8583f93d6e93598d2f10dff4b550eb7a35798
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 5a3c6d4d0e1bf5b4042d4080fb15bb0702b6bd6d
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 770eb6fdf7831599eb5e1bed5d94caffe5425af0
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 7303dc28b6a1f4c1cff2db05789bee90c8490b5b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: 226bc1a7dd657b33514add35de01e95bab1c110d
+Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 31cd8b04e1162442dcaa44887bee835e77ba2380
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: e116fe8e3ec137164233ead14e239043bbb663e9
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: dd02a28cebbe29c7518101f5cd62b1515ff01a8c
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_types.h
+OK: Manifest file CheckSum valid: 2d6a5bb830c79e486986185444f8b3bc70c69c3b
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: f29893a6fa49a8557ab9319370bb0a3347e397d9
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: 64aca3b94d8367beb54e3ed0f70c662164cb5de9
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 83da6b16abf56007d0987aa5b05780b2ea0ff869
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: 96b8ca312e943dffa9491a975bd42da852ed3fd4
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 184454f78b78f7fa92a88e5e505f6599ffc3ba1d
+
+GENERATE BINARY CODE MAKEFILES
+C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
+C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./build.bat
+C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./where.bat
+
+GENERATE BINARY CODE SOURCES
+
+Microsoft (R) Program Maintenance Utility Version 14.44.35220.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c /Fo.\default\sii_block_interface.obj
+sii_block_interface.c
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c /Fo.\default\mei_block_interface.obj
+mei_block_interface.c
+	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c /Fo.\default\block.obj
+block.c
+	lib /nologo .\default\sii_block_interface.obj .\default\mei_block_interface.obj .\default\block.obj /OUT:block.lib
+
+
+GENERATE BINARY CODE MANIFEST
+BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+
+WRITE MANIFESTS
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 5b8d121a193391ce8441a08b6cbb4d2cab0ed08e
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
+OK: Manifest file CheckSum valid: fcb2db068f459845394cb14701044698cb25c8f2
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
+OK: Manifest file CheckSum valid: d07512edf54cf161e311faf82c700062d13ea628
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
+OK: Manifest file CheckSum valid: 121513c5dfcdbf40d2c21cbd2ab95b73c29d380a
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: be4fec05fd39a71eb3abb990246988833cbd02ec
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 8d767ec92ade6f1bf60689c1f30ea0db479b942d
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
+OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
+OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
+OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
+OK: Manifest file CheckSum valid: 0d5337440f6e71ac2e35ff0df7a1d8c58f61c19b
+Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+GENERATION SUCCESS

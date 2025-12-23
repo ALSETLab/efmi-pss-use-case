@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.12.0" kind="BinaryCode" efmiVersion="1.0.0" id="{af46121e-926f-4bf5-a5e6-1db52db31c54}" name="BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7" generationDateAndTime="2025-12-22T23:07:46Z" generationTool="ESP" xsi:noNamespaceSchemaLocation="../schemas\BinaryCode\efmiBinaryCodeManifest.xsd">
+    <ManifestReferences>
+        <ManifestReference id="PROD_MAN_ID" manifestRefId="{2f04b621-6aa7-4399-aa60-dc08e26f15aa}" checksum="31cd8b04e1162442dcaa44887bee835e77ba2380" origin="true"/>
+    </ManifestReferences>
+    <Files>
+        <File id="FILE_ID_sii_block_interface.obj_0" name="sii_block_interface.obj" path="./default/" needsChecksum="true" checksum="272a8d09edbc8573355b72ea09f4ad6ef733e076" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.obj_1" name="mei_block_interface.obj" path="./default/" needsChecksum="true" checksum="4a0fc69a24e9abb3fd49bf373c0d7791fc0269c5" role="Code"/>
+        <File id="FILE_ID_block.obj_2" name="block.obj" path="./default/" needsChecksum="true" checksum="d3ff1038218a410749fe5987e77814b1a98d0dda" role="Code"/>
+        <File id="FILE_ID_block.lib_3" name="block.lib" path="./" needsChecksum="true" checksum="9d4e4995856bad8d8ba4ad34de2675a2d6a7f93b" role="other"/>
+        <File id="FILE_ID_makefile_4" name="makefile" path="./" needsChecksum="true" checksum="bbcc3fd5eee450090db993d94fadadf8d792a883" role="other"/>
+        <File id="FILE_ID_build.bat_5" name="build.bat" path="./" needsChecksum="true" checksum="88f0b424eda669d0be871d24b7869727dd0bbead" role="other"/>
+        <File id="FILE_ID_where.bat_6" name="where.bat" path="./" needsChecksum="true" checksum="5b46161d488831d2d02c1eeb5f768a38726de443" role="other"/>
+        <File id="FILE_ID_buildReport.txt_7" name="buildReport.txt" path="./" needsChecksum="true" checksum="780228810bab8125b5cc681ad103966f400edacb" role="other"/>
+    </Files>
+    <BinaryContainer>
+        <BuildConfiguration>
+            <Compiler id="COMPILER_ID" vendor="Microsoft" name="VS" version="Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35220 for x86" executableName="cl"/>
+            <Linker vendor="Microsoft" name="VS" version="Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35220 for x86" executableName="lib"/>
+            <CompilerOptionSets>
+                <CompilerOptionSet id="CMPOPTSET_ID_default_0" compilerRefId="COMPILER_ID">
+                    <CompilerOptions compileRoot="./default">
+                        <CompilerSwitch index="1" id="CMPOPT_ID_0" name="nologo"/>
+                    </CompilerOptions>
+                </CompilerOptionSet>
+            </CompilerOptionSets>
+            <DefaultCompilerOptions compilerOptionsRefId="CMPOPTSET_ID_default_0"/>
+            <LinkerOptionSet>
+                <LinkerOptions>
+                    <LinkerSwitch index="1" id="LKROPT_ID_0" name="nologo"/>
+                </LinkerOptions>
+            </LinkerOptionSet>
+            <CompileTarget vendor="Software Production Engineering" targetName="Windows" chipVersion="1.0" instructionSetArchitecture="x86" endianess="big" registerWidth="32" addressWidth="32"/>
+        </BuildConfiguration>
+        <Modules>
+            <BinaryModule id="BINMOD_ID_0" generationTool="ESP" generationDateAndTime="2025-12-22T23:07:46Z">
+                <ObjectFile id="OBJFILE_ID_0">
+                    <FileReference fileRefId="FILE_ID_sii_block_interface.obj_0"/>
+                    <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_sii_block_interface.c_3"/>
+                </ObjectFile>
+            </BinaryModule>
+            <BinaryModule id="BINMOD_ID_1" generationTool="ESP" generationDateAndTime="2025-12-22T23:07:46Z">
+                <ObjectFile id="OBJFILE_ID_1">
+                    <FileReference fileRefId="FILE_ID_mei_block_interface.obj_1"/>
+                    <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_mei_block_interface.c_5"/>
+                </ObjectFile>
+            </BinaryModule>
+            <BinaryModule id="BINMOD_ID_2" generationTool="ESP" generationDateAndTime="2025-12-22T23:07:46Z">
+                <ObjectFile id="OBJFILE_ID_2">
+                    <FileReference fileRefId="FILE_ID_block.obj_2"/>
+                    <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_block.c_6"/>
+                </ObjectFile>
+            </BinaryModule>
+        </Modules>
+        <BinaryContainerInfo/>
+    </BinaryContainer>
+</Manifest>

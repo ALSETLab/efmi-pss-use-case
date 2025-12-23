@@ -1,0 +1,1112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
+	efmiVersion="1.0.0"
+	xsdVersion="0.13.0"
+	id="{89302b00-dace-4241-b584-f3b11493a6e5}"
+	kind="AlgorithmCode"
+	name="PSSDesign.eFMU4CHIL.Grid4CHILTesting"
+	generationDateAndTime="2025-12-22T23:07:23Z"
+	generationTool="Dymola Version 2025x Refresh 1, 2025-04-11"
+	description="System model for CHIL testing"
+	version="">
+
+	<Files>
+		<File
+			name="block.alg"
+			id="block.alg"
+			path="./"
+			needsChecksum="true"
+			checksum="93d3872a28b2c9ef678e1711beebfc00d0894934"
+			role="Code"/>
+	</Files>
+
+	<Clock id="'discrete.clock'" variableRefId="'discrete.stepSize'"/>
+
+	<BlockMethods fileRefId="block.alg" writeOutputs="Undefined">
+		<BlockMethod id="Recalibrate()" kind="Recalibrate"/>
+		<BlockMethod id="Startup()" kind="Startup">
+			<Signals>
+				<Signal value="NAN"/>
+				<Signal value="SOLVE_LINEAR_EQUATIONS_FAILED"/>
+			</Signals>
+		</BlockMethod>
+		<BlockMethod id="DoStep()" kind="DoStep">
+			<Signals>
+				<Signal value="NAN"/>
+				<Signal value="SOLVE_LINEAR_EQUATIONS_FAILED"/>
+			</Signals>
+		</BlockMethod>
+	</BlockMethods>
+
+	<ErrorSignalStatus id="block:fake-signal-variable-anchor"/>
+
+	<Units>
+		<Unit id="[1]" name="1"/>
+		<Unit id="[Hz]" name="Hz">
+			<BaseUnit
+				s="-1"/>
+		</Unit>
+		<Unit id="[Ohm]" name="Ohm">
+			<BaseUnit
+				m="2"
+				kg="1"
+				s="-3"
+				A="-2"/>
+		</Unit>
+		<Unit id="[V]" name="V">
+			<BaseUnit
+				m="2"
+				kg="1"
+				s="-3"
+				A="-1"/>
+		</Unit>
+		<Unit id="[V.A]" name="V.A">
+			<BaseUnit
+				m="2"
+				kg="1"
+				s="-3"/>
+		</Unit>
+		<Unit id="[W]" name="W">
+			<BaseUnit
+				m="2"
+				kg="1"
+				s="-3"/>
+		</Unit>
+		<Unit id="[rad]" name="rad">
+			<BaseUnit
+				rad="1"/>
+		</Unit>
+		<Unit id="[rad/s]" name="rad/s">
+			<BaseUnit
+				s="-1"
+				rad="1"/>
+		</Unit>
+		<Unit id="[s]" name="s">
+			<BaseUnit
+				s="1"/>
+		</Unit>
+		<Unit id="[s-1]" name="s-1">
+			<BaseUnit
+				s="-1"/>
+		</Unit>
+		<Unit id="[var]" name="var">
+			<BaseUnit
+				m="2"
+				kg="1"
+				s="-3"/>
+		</Unit>
+	</Units>
+
+	<Variables>
+		<BooleanVariable
+			id="fault"
+			name="fault"
+			description="Fault input sigal, default false = fault inactive"
+			blockCausality="input"
+			start="">
+		</BooleanVariable>
+		<RealVariable
+			id="vf"
+			name="vf"
+			description="Field voltage"
+			blockCausality="input"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="Pgen"
+			name="Pgen"
+			description="Active power [pu]"
+			blockCausality="output"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="Qgen"
+			name="Qgen"
+			description="Reactive power [pu]"
+			blockCausality="output"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="v"
+			name="v"
+			description="Generator terminal voltage [pu]"
+			blockCausality="output"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="vf0OUT"
+			name="vf0OUT"
+			description="Initial field voltage [pu]"
+			blockCausality="output"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="w"
+			name="w"
+			description="Speed [pu]"
+			blockCausality="output"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="K0"
+			name="K0"
+			description="regulator gain"
+			blockCausality="tunableParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'B3.angle_0'"
+			name="'B3.angle_0'"
+			description="Initial voltage angle"
+			blockCausality="constant"
+			unitRefId="[rad]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'B3.v_0'"
+			name="'B3.v_0'"
+			description="Initial voltage magnitude"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'B3.p.vi'"
+			name="'B3.p.vi'"
+			description="Imaginary part of the voltage"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'B3.p.vr'"
+			name="'B3.p.vr'"
+			description="Real part of the voltage"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.P_0'"
+			name="'G1.P_0'"
+			description="Initial active power"
+			blockCausality="constant"
+			unitRefId="[W]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.Q_0'"
+			name="'G1.Q_0'"
+			description="Initial reactive power"
+			blockCausality="constant"
+			unitRefId="[var]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.V_b'"
+			name="'G1.V_b'"
+			description="Base voltage of the bus"
+			blockCausality="constant"
+			unitRefId="[V]"
+			relativeQuantity="false"
+			nominal="1.0e+4"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.angle_0'"
+			name="'G1.angle_0'"
+			description="Initial voltage angle"
+			blockCausality="constant"
+			unitRefId="[rad]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.v_0'"
+			name="'G1.v_0'"
+			description="Initial voltage magnitude"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.T1'"
+			name="'G1.avr.T1'"
+			description="Regulator zero"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.T2'"
+			name="'G1.avr.T2'"
+			description="regulator pole"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.Te'"
+			name="'G1.avr.Te'"
+			description="Field circuit time constant"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.Tr'"
+			name="'G1.avr.Tr'"
+			description="Measurement time constant"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.vfmax'"
+			name="'G1.avr.vfmax'"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.vfmin'"
+			name="'G1.avr.vfmin'"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.s0'"
+			name="'G1.avr.s0'"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.vref'"
+			name="'G1.avr.vref'"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.avr.vf1)'"
+			name="'derivative(G1.avr.vf1)'"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.avr.vm)'"
+			name="'derivative(G1.avr.vm)'"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.avr.vr)'"
+			name="'derivative(G1.avr.vr)'"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.vf1'"
+			name="'G1.avr.vf1'"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.vm'"
+			name="'G1.avr.vm'"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.avr.vr'"
+			name="'G1.avr.vr'"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.M'"
+			name="'G1.machine.M'"
+			description="Mechanical starting time, 2H [Ws/VA]"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Sn'"
+			name="'G1.machine.Sn'"
+			description="Power rating"
+			blockCausality="constant"
+			unitRefId="[V.A]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.T1d0'"
+			name="'G1.machine.T1d0'"
+			description="d-axis open circuit transient time constant"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.T1q0'"
+			name="'G1.machine.T1q0'"
+			description="q-axis open circuit transient time constant"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.T2d0'"
+			name="'G1.machine.T2d0'"
+			description="d-axis open circuit sub-transient time constant"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.T2q0'"
+			name="'G1.machine.T2q0'"
+			description="q-axis open circuit sub-transient time constant"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Taa'"
+			name="'G1.machine.Taa'"
+			description="d-axis additional leakage time constant"
+			blockCausality="constant"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Vn'"
+			name="'G1.machine.Vn'"
+			description="Voltage rating"
+			blockCausality="constant"
+			unitRefId="[V]"
+			relativeQuantity="false"
+			nominal="1.0e+4"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.ra'"
+			name="'G1.machine.ra'"
+			description="Armature resistance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.x1d'"
+			name="'G1.machine.x1d'"
+			description="d-axis transient reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.x1q'"
+			name="'G1.machine.x1q'"
+			description="q-axis transient reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.x2d'"
+			name="'G1.machine.x2d'"
+			description="d-axis sub-transient reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.x2q'"
+			name="'G1.machine.x2q'"
+			description="q-axis sub-transient reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.xd'"
+			name="'G1.machine.xd'"
+			description="d-axis synchronous reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.xq'"
+			name="'G1.machine.xq'"
+			description="q-axis synchronous reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.I_MBtoSB'"
+			name="'G1.machine.I_MBtoSB'"
+			description="I(machine base) -&gt; I(system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.K1'"
+			name="'G1.machine.K1'"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.K2'"
+			name="'G1.machine.K2'"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.S_SBtoMB'"
+			name="'G1.machine.S_SBtoMB'"
+			description="S(system base) -&gt; S(machine base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.V_MBtoSB'"
+			name="'G1.machine.V_MBtoSB'"
+			description="V(machine base) -&gt; V(system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Z_MBtoSB'"
+			name="'G1.machine.Z_MBtoSB'"
+			description="Z(machine base) -&gt; Z(system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.delta0'"
+			name="'G1.machine.delta0'"
+			description="Init. val. of mach. angle"
+			blockCausality="dependentParameter"
+			unitRefId="[rad]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e1d0'"
+			name="'G1.machine.e1d0'"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e1q0'"
+			name="'G1.machine.e1q0'"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e2d0'"
+			name="'G1.machine.e2d0'"
+			description="Initialization"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e2q0'"
+			name="'G1.machine.e2q0'"
+			description="Initialization"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.id0'"
+			name="'G1.machine.id0'"
+			description="Init. val."
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.iq0'"
+			name="'G1.machine.iq0'"
+			description="Init. val."
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.p0'"
+			name="'G1.machine.p0'"
+			description="Initial active power generation in pu (system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.pm00'"
+			name="'G1.machine.pm00'"
+			description="Initial value (system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.q0'"
+			name="'G1.machine.q0'"
+			description="Initial reactive power generation in pu (system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.vd0'"
+			name="'G1.machine.vd0'"
+			description="Init. val."
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.vf00'"
+			name="'G1.machine.vf00'"
+			description="Init. val. (pu, SB)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.vq0'"
+			name="'G1.machine.vq0'"
+			description="Init. val."
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.w_b'"
+			name="'G1.machine.w_b'"
+			description="Base frequency in rad/s"
+			blockCausality="dependentParameter"
+			unitRefId="[rad/s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.machine.delta)'"
+			name="'derivative(G1.machine.delta)'"
+			description="der(Rotor angle)"
+			blockCausality="state"
+			unitRefId="[rad/s]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.machine.e1d)'"
+			name="'derivative(G1.machine.e1d)'"
+			description="der(d-axis transient voltage)"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.machine.e1q)'"
+			name="'derivative(G1.machine.e1q)'"
+			description="der(q-axis transient voltage)"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.machine.e2d)'"
+			name="'derivative(G1.machine.e2d)'"
+			description="der(d-axis sub-transient voltage)"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.machine.e2q)'"
+			name="'derivative(G1.machine.e2q)'"
+			description="der(q-axis sub-transient voltage)"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(G1.machine.w)'"
+			name="'derivative(G1.machine.w)'"
+			description="der(Rotor speed [pu])"
+			blockCausality="state"
+			unitRefId="[s-1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.delta'"
+			name="'G1.machine.delta'"
+			description="Rotor angle"
+			blockCausality="state"
+			unitRefId="[rad]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e1d'"
+			name="'G1.machine.e1d'"
+			description="d-axis transient voltage"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e1q'"
+			name="'G1.machine.e1q'"
+			description="q-axis transient voltage"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e2d'"
+			name="'G1.machine.e2d'"
+			description="d-axis sub-transient voltage"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.e2q'"
+			name="'G1.machine.e2q'"
+			description="q-axis sub-transient voltage"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.id'"
+			name="'G1.machine.id'"
+			description="d-axis current"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.iq'"
+			name="'G1.machine.iq'"
+			description="q-axis current"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.w'"
+			name="'G1.machine.w'"
+			description="Rotor speed [pu]"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.I0.im'"
+			name="'G1.machine.I0.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.I0.re'"
+			name="'G1.machine.I0.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Idq0.im'"
+			name="'G1.machine.Idq0.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Idq0.re'"
+			name="'G1.machine.Idq0.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.S0.im'"
+			name="'G1.machine.S0.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Vdq0.im'"
+			name="'G1.machine.Vdq0.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Vdq0.re'"
+			name="'G1.machine.Vdq0.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Vt0.im'"
+			name="'G1.machine.Vt0.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Vt0.re'"
+			name="'G1.machine.Vt0.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.auxCMval.im'"
+			name="'G1.machine.auxCMval.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.auxCMval.re'"
+			name="'G1.machine.auxCMval.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L1.B'"
+			name="'L1.B'"
+			description="Shunt half susceptance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L1.G'"
+			name="'L1.G'"
+			description="Shunt half conductance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L1.R'"
+			name="'L1.R'"
+			description="Resistance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L1.X'"
+			name="'L1.X'"
+			description="Reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L2.B'"
+			name="'L2.B'"
+			description="Shunt half susceptance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L2.G'"
+			name="'L2.G'"
+			description="Shunt half conductance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L2.R'"
+			name="'L2.R'"
+			description="Resistance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L2.X'"
+			name="'L2.X'"
+			description="Reactance"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L2.p.ii'"
+			name="'L2.p.ii'"
+			description="Imaginary part of the current"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'L2.p.ir'"
+			name="'L2.p.ir'"
+			description="Real part of the current"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'SysData.S_b'"
+			name="'SysData.S_b'"
+			description="System base"
+			blockCausality="constant"
+			unitRefId="[V.A]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'SysData.fn'"
+			name="'SysData.fn'"
+			description="System frequency"
+			blockCausality="constant"
+			unitRefId="[Hz]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.Sn'"
+			name="'transformer.Sn'"
+			description="Power rating"
+			blockCausality="constant"
+			unitRefId="[V.A]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.V_b'"
+			name="'transformer.V_b'"
+			description="Sending end bus voltage"
+			blockCausality="constant"
+			unitRefId="[V]"
+			relativeQuantity="false"
+			nominal="1.0e+4"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.Vn'"
+			name="'transformer.Vn'"
+			description="Voltage rating"
+			blockCausality="constant"
+			unitRefId="[V]"
+			relativeQuantity="false"
+			nominal="1.0e+4"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.m'"
+			name="'transformer.m'"
+			description="Optional fixed tap ratio"
+			blockCausality="constant"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.rT'"
+			name="'transformer.rT'"
+			description="Resistance(transformer base)"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.xT'"
+			name="'transformer.xT'"
+			description="Reactance(transformer base)"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.Zb'"
+			name="'transformer.Zb'"
+			description="System base impedance"
+			blockCausality="dependentParameter"
+			unitRefId="[Ohm]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.Zn'"
+			name="'transformer.Zn'"
+			description="Transformer base impedance"
+			blockCausality="dependentParameter"
+			unitRefId="[Ohm]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.r'"
+			name="'transformer.r'"
+			description="Resistance (system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.x'"
+			name="'transformer.x'"
+			description="Reactance (system base)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.n.ii'"
+			name="'transformer.n.ii'"
+			description="Imaginary part of the current"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.n.ir'"
+			name="'transformer.n.ir'"
+			description="Real part of the current"
+			blockCausality="state"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="">
+		</RealVariable>
+		<RealVariable
+			id="'discrete.stepSize'"
+			name="'discrete.stepSize'"
+			blockCausality="constant"
+			start="">
+		</RealVariable>
+	</Variables>
+</Manifest>

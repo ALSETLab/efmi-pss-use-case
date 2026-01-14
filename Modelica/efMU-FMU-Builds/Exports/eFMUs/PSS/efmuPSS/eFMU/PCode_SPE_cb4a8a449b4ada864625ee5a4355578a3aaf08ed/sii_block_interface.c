@@ -1,4 +1,4 @@
-/*2025-10-27T17:05:02.025835080Z*/
+/*2026-01-14T20:53:28.961550149Z*/
 
 /**********************************************************************************************************************
  * sii_block_interface.c
@@ -9,7 +9,7 @@
  *
  * with calling convention :
  *   Arguments = global var (block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
- *   Ret. type = Boolean
+ *   Ret. type = bool
  *
  * with names :
  *   Init Fcn  = sii_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
@@ -26,28 +26,28 @@ extern "C" {
 
 BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 
-Boolean sii_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
+bool sii_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
     Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed);
     return block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.ErrorSignals \
-        == ErrorSignal_NONE ? (Boolean)1 : (Boolean)0;
+        == SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 }
 
-Boolean sii_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
+bool sii_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
     DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed);
     return block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.ErrorSignals \
-        == ErrorSignal_NONE ? (Boolean)1 : (Boolean)0;
+        == SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 }
 
-Boolean sii_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
+bool sii_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
     Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed);
     return block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.ErrorSignals \
-        == ErrorSignal_NONE ? (Boolean)1 : (Boolean)0;
+        == SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 }
 
-Boolean sii_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
+bool sii_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
     Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed);
     return block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.ErrorSignals \
-        == ErrorSignal_NONE ? (Boolean)1 : (Boolean)0;
+        == SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 }
 
 #ifdef __cplusplus

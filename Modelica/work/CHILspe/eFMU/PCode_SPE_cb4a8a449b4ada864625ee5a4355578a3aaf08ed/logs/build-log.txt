@@ -1,35 +1,52 @@
-Source eFMU path             : C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU
-Destination eFMU path        : null
+****************************************************************************************************************************
+Get Service Info...
+Service Version: 1
+Following operation types are availables:
+- C & C++ Build
+- FMU Checker
+- FMU Middleware Generation
+- FMU Target Build
+- Tester Generator
+- UML to AUTOSAR Runnable Code
+- UML to C
+- UML to C++
+- UML to Java
+- UML to Kotlin
+- Zip
+- eFMU Algorithm To Production Code Generator
+- eFMU Algorithmic Code To Component Generator
+- eFMU Binary Code Generator
+- eFMU Production Code Generator
+Get Service Info... done
+****************************************************************************************************************************
+Create Workspace "CHILspe"...
+Check if Workspace "CHILspe" already exists
+No workspace "CHILspe" exists
+Create Workspace "CHILspe"... done
+****************************************************************************************************************************
+Synchronize remote workspace path with local file system path...
+Synchronize remote workspace path "\eFMU" with local file system path  "C:\Users\CBR5.DSONE\Documents\Dymola\CHILspe\eFMU"
+Synchronize remote workspace path with local file system path... done
+****************************************************************************************************************************
+Invoke Operation...
+Lock acquired for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Lock released for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Lock acquired for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Lock released for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Invoke Operation "eFMU Algorithm To Production Code Generator"
+***** Start of eFMU Generator - Algoritmic Code to Production Code *****
+Parameter {-floatPrec:32}
+Parameter {-interfaceName:Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed}
+Parameter {-outputAsEFMU:false}
+Parameter {-outputEFMUName:eFMU}
+Parameter {-prodCodeName:PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed}
+Arguments:[-srcDir, spo_docker_shared/eFMU/, -dstDir, spo_docker_shared/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, -interfaceName, Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, -floatPrec, 32, -interfaceName, Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, -outputAsEFMU, false, -outputEFMUName, eFMU, -prodCodeName, PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed]
+Read arguments... 
+Destination eFMU path        : spo_docker_shared/eFMU/
 Production code name         : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-Interface name               : Hc234cad58156ccbc9047c71532b337747dea4c15_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-Float precision              : 32
-Ignore reading Errors        : false
-Ignore writing Errors        : false
-EFMI Type associations: 
-EFMI_INTEGER_8               : signed char
-EFMI_UNSIGNED_INTEGER_8      : unsigned char
-EFMI_INTEGER_16              : signed short
-EFMI_UNSIGNED_INTEGER_16     : unsigned short
-EFMI_INTEGER_32              : signed int
-EFMI_UNSIGNED_INTEGER_32     : unsigned int
-EFMI_FLOAT_32                : float
-EFMI_FLOAT_64                : double
-EFMI_VOID                    : void
-EFMI_BOOL                    : unsigned int
+Output As EFMU               : false
+Output EFMU Name             : eFMU
 
-PRODUCTION CODE Type associations: 
-BOOLEAN                      : EFMI_BOOL
-INTEGER                      : EFMI_INTEGER_32
-REAL(32 bits)                : EFMI_FLOAT_32
-REAL(64 bits)                : EFMI_FLOAT_64
-ERRORSIGNAL                  : EFMI_UNSIGNED_INTEGER_32
-Compiler option sets         : 
-linker option set            : 
-ALG code as comments         : true
-ALG Line Numbers as comments : true
-Parameters in header         : true
-
- 
 EFMI Version       : 1.0.0
 
 XSD Versions: 
@@ -39,53 +56,44 @@ AlgorithmCode      : 0.13.0
 ProductionCode     : 0.17.0
 BinaryCode         : 0.12.0
 
+Read arguments... OK
 
-READ MANIFESTS
-Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\__content.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\efmiContainerManifest.xsd
-OK: Model representation manifest exists: ACode_Dymola
-Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\ACode_Dymola\manifest.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.13.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
-OK: Manifest CheckSum valid: 656574bc5a35970a715eb67088dfbc49cdf2a5e4
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\ACode_Dymola\.\block.alg
-OK: Manifest file CheckSum valid: 93d3872a28b2c9ef678e1711beebfc00d0894934
+Read Manifests... 
+Reading manifest: __content.xml
+Reading manifest: manifest.xml
+Reading ACode_Dymola ModelRepresentation
+Read Manifests... OK
 
-GENERATE PRODUCTION CODE SOURCES
-OK: Generation succesfull for source files of C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\ACode_Dymola\./block.alg
+Write Manifest... 
+add File... mei_block_interface.c
+add File... block.c
+add File... mei_block_interface.h
+add File... galec_stl.h
+add File... sii_block_interface.h
+add File... galec_stl.c
+add File... sii_block_interface.c
+add File... galec_stl_configuration.h
+add File... block.h
+Writing: manifest.xml
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_0
+File list : .//block.c/FILE_ID_block.c_1
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_6
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_7
+File list : .//block.h/FILE_ID_block.h_8
+Writing: __content.xml
+Write Manifest... OK
 
-GENERATE PRODUCTION CODE MANIFEST
-PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-
-WRITE MANIFESTS
-Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 4de385d71763aa587a38f82788c8b0cc7c417b50
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_types.h
-OK: Manifest file CheckSum valid: 641f17b88e1c78cf1d5928f0a424208b50007489
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: 18a045794b489e9126e5c0c0c234ba042e031f65
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 1bac6c381625a25d78a51eb0077aeefb9cd639cc
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 2aa8583f93d6e93598d2f10dff4b550eb7a35798
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
-OK: Manifest file CheckSum valid: 5a3c6d4d0e1bf5b4042d4080fb15bb0702b6bd6d
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 770eb6fdf7831599eb5e1bed5d94caffe5425af0
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
-OK: Manifest file CheckSum valid: 7303dc28b6a1f4c1cff2db05789bee90c8490b5b
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
-OK: Manifest file CheckSum valid: 226bc1a7dd657b33514add35de01e95bab1c110d
-Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\CHILspe\eFMU\__content.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/CHILspe/eFMU\schemas\efmiContainerManifest.xsd
-OK: Model representation manifest exists: ACode_Dymola
-OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-GENERATION SUCCESS
+***** End of eFMU Generator - Algoritmic Code to Production Code *****
+Operation "eFMU Algorithm To Production Code Generator" finished
+eFMU "\eFMU" generated
+Operation returned with code with message Generation is OK (0)
+Exit with code 0
+Invoke Operation... done
+****************************************************************************************************************************
+Synchronize local file system path with remote workspace path...
+Synchronize file system path "C:\Users\CBR5.DSONE\Documents\Dymola\CHILspe\eFMU" from workspace path "\eFMU"
+Synchronize local file system path with remote workspace path... done

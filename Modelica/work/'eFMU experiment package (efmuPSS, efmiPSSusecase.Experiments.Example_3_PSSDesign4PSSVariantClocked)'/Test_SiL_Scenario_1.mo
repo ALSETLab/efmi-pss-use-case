@@ -1,18 +1,7 @@
 within 'eFMU experiment package (efmuPSS, efmiPSSusecase.Experiments.Example_3_PSSDesign4PSSVariantClocked)';
-model Test_SiL_Scenario_1
-  "Test scenario defined by component [G1.pss]."
+model Test_SiL_Scenario_1 "Test scenario defined by component [G1.pss]."
 
-  extends hidden_Test_SiL_Scenario_1('vs|match'(skip_check=.Testing.Utilities.Types.Skip.True),
-    eBlock(
-    Kw=10.8,
-    T1=0.278203917593164,
-    T2=0.0551479681529786,
-    T3=0.278203917593164,
-    T4=0.0551479681529786,
-    Tw=5.0,
-    vsmax=0.2,
-    vsmin=-0.2)
-    );
+  extends hidden_Test_SiL_Scenario_1('vs|match'(skip_check=.Testing.Utilities.Types.Skip.True));
 
   annotation (
     preferredView="diagram",

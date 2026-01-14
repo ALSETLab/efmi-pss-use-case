@@ -1,20 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Content
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:noNamespaceSchemaLocation="./schemas/efmiContainerManifest.xsd"
-	efmiVersion="1.0.0"
-	xsdVersion="0.10.0"
-	id="{c6bde478-dd58-4a88-8d56-6fe5b3ec8b88}"
-	name="PSSDesign.eFMUs4RTHIL.GridForHILTesting"
-	generationDateAndTime="2025-12-22T20:40:09Z"
-	generationTool="Dymola Version 2025x Refresh 1, 2025-04-11"
-	description="System model for HIL testing"
-	version="">
-
-	<ModelRepresentation
-		name="ACode_Dymola"
-		kind="AlgorithmCode"
-		manifest="manifest.xml"
-		checksum="e72e60245cc3187e0c4cbe7c2be42482c2e990b4"
-		manifestRefId="{e6ea8cac-8c65-4cbf-a2a8-1454b4bef45b}"/>
+<Content xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.10.0" efmiVersion="1.0.0" id="{9828a730-a646-4f2c-9464-459920226f97}" name="PSSDesign.eFMUs4RTHIL.GridForHILTesting" description="System model for HIL testing" version="" generationDateAndTime="2026-01-14T21:22:18Z" generationTool="Dymola Version 2026x Refresh 1 Dev 3, 2026-01-23" xsi:noNamespaceSchemaLocation="./schemas\efmiContainerManifest.xsd">
+    <ModelRepresentation name="ACode_Dymola" kind="AlgorithmCode" manifest="manifest.xml" checksum="923850288d8e91d12d20dd044664fc9e319c501d" manifestRefId="{b4f95915-1881-4af4-8d67-66370e77b568}"/>
+    <ModelRepresentation name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" kind="ProductionCode" manifest="manifest.xml" checksum="d904403967ed170e6da35b052a2fb971d4e4f42c" manifestRefId="{5d954a47-237f-4eb4-a636-4d60f16e8687}"/>
+    <ModelRepresentation name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c" kind="ProductionCode" manifest="manifest.xml" checksum="22d301ae39201258505941c7b07abcd58807de6f" manifestRefId="{61c7668e-c1e6-453d-b774-e11f3fc66696}"/>
+    <ModelRepresentation name="BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7" kind="BinaryCode" manifest="manifest.xml" checksum="28044712700db9f640964a9bc2dcf1bac216157d" manifestRefId="{f5957c12-87fc-4766-9dcc-93a1583cd6ac}"/>
+    <ModelRepresentation name="BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13" kind="BinaryCode" manifest="manifest.xml" checksum="654951c7a179a29d5ee51cd3496038bcb863901a" manifestRefId="{df6efe99-7492-43c1-928b-54b24f189b49}"/>
+    <ModelRepresentation name="BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7" kind="BinaryCode" manifest="manifest.xml" checksum="f9f20d67ede2cca4012a6ef99922f8a6e0797a99" manifestRefId="{d14306b3-371c-4bad-a55e-6cc4abec9a70}"/>
+    <ModelRepresentation name="BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13" kind="BinaryCode" manifest="manifest.xml" checksum="e0ff5915a821b69dd4b3f7ae645935d15074f478" manifestRefId="{3881bb03-15d5-4682-9257-25c9cd5c2058}"/>
+	<ModelRepresentation name="BModel_Dymola_2aaa188fa29c741c2444c99d7a18f9cd6e500951" kind="BehavioralModel" manifest="manifest.xml" checksum="6df1244b35e53de7a13d4c0a5eb1b29e247ef268" manifestRefId="{d67f7b74-d310-e471-9c64-3b969c2df218}"/>
 </Content>

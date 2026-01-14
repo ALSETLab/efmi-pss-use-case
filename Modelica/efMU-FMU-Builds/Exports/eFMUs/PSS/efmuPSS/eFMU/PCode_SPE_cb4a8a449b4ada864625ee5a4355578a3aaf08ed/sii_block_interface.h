@@ -1,4 +1,4 @@
-/*2025-10-27T17:05:02.023508787Z*/
+/*2026-01-14T20:53:28.959306335Z*/
 
 /**********************************************************************************************************************
  * sii_block_interface.h
@@ -9,7 +9,7 @@
  *
  * with calling convention :
  *   Arguments = global var (block_state_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
- *   Ret. type = Boolean
+ *   Ret. type = bool
  *
  * with names :
  *   Init Fcn  = sii_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
@@ -18,8 +18,8 @@
  *   Reinit Fcn = sii_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
  **********************************************************************************************************************/
 
-#ifndef SII_BLOCK_INTERFACE_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
-#define SII_BLOCK_INTERFACE_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
+#ifndef SII_BLOCK_INTERFACE_BLOCK_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
+#define SII_BLOCK_INTERFACE_BLOCK_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
 
 #include "block.h"
 
@@ -33,11 +33,11 @@ extern "C" {
 /**********************************************************************************************************************
  * code
  **********************************************************************************************************************/
-extern Boolean sii_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
-extern Boolean sii_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
-extern Boolean sii_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
+extern bool sii_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
+extern bool sii_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
+extern bool sii_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
 
-extern Boolean sii_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
+extern bool sii_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void);
 /**********************************************************************************************************************
  * data
  **********************************************************************************************************************/
@@ -48,5 +48,5 @@ extern BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625
 }
 #endif
 
-#endif /* SII_BLOCK_INTERFACE_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H */
+#endif /* SII_BLOCK_INTERFACE_BLOCK_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H */
 /* end of file */

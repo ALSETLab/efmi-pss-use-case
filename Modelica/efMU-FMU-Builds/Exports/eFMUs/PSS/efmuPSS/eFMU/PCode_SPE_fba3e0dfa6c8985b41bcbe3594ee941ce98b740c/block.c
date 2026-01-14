@@ -1,4 +1,4 @@
-/*2025-10-27T17:05:38.650270892Z*/
+/*2026-01-14T20:53:54.684666243Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -23,17 +23,13 @@
 extern "C" {
 #endif
 
-#define ALGONAME    "H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c"
 #define ALGOSTRUCT  BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 
-#include "galec_stl.h"
 
 /**********************************************************************************************************************
  * Prototypes
  **********************************************************************************************************************/
-static Boolean ESP_cmp_lt(ALGOSTRUCT *instance, Real a, Real b);
 static void Recalibrate(ALGOSTRUCT *instance);
-static Boolean ESP_cmp_gt(ALGOSTRUCT *instance, Real a, Real b);
 static void Reinitialize(ALGOSTRUCT *instance);
 static void Startup(ALGOSTRUCT *instance);
 static void DoStep(ALGOSTRUCT *instance);
@@ -41,22 +37,6 @@ static void DoStep(ALGOSTRUCT *instance);
 /**********************************************************************************************************************
  * User function(s)
  **********************************************************************************************************************/
-static Boolean ESP_cmp_lt(ALGOSTRUCT *instance, Real a, Real b)
-{
-    /* Output variable */
-    Boolean y;
-
-    /* Algorithm */
-    if(ESP_isTrue(isNaN(a)) || ESP_isTrue(isNaN(b))) {
-        instance->ErrorSignals |= ErrorSignal_NAN;
-        y = ESP_false;
-    } else {
-        y = (a < b) ? ESP_true : ESP_false;
-    }
-
-    return y;
-}
-
 static void Recalibrate(ALGOSTRUCT *instance)
 {
     /* Algorithm */
@@ -64,208 +44,135 @@ static void Recalibrate(ALGOSTRUCT *instance)
     Initialize variables with start value equation (dependent initializations):
     */
 
-    /* (170:3) self.'imLeadLag.TF.b'[1] := self.'imLeadLag.K' * self.T1; */
-    instance->imLeadLag_TF_b[0] = instance->imLeadLag_K * instance->T1;
+    instance->imLeadLag_T1 = instance->T1;
 
-    /* (171:3) self.'imLeadLag.TF.b'[2] := self.'imLeadLag.K'; */
+    instance->imLeadLag_T2 = instance->T2;
+
+    instance->imLeadLag_TF_b[0] = instance->imLeadLag_K * instance->imLeadLag_T1;
+
     instance->imLeadLag_TF_b[1] = instance->imLeadLag_K;
 
-    /* (172:3) self.'imLeadLag.T2_dummy' := if absolute(self.T1 - self.T2) < 1.00000000000000008e-15 then 1.0e+3 else self.T2; */
-    instance->imLeadLag_T2_dummy = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->T1 - instance->T2), 1.0E-15)) ? 1000.0 \
-        : instance->T2;
+    instance->imLeadLag_T2_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag_T1 \
+        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag_T2;
 
-    /* (173:3) self.'imLeadLag.TF.a'[1] := self.'imLeadLag.T2_dummy'; */
     instance->imLeadLag_TF_a[0] = instance->imLeadLag_T2_dummy;
 
-    /* (174:3) self.'imLeadLag.TF.x_start'[1] := self.'imLeadLag.x_start'; */
-    instance->imLeadLag_TF_x_start[0] = instance->imLeadLag_x_start;
+    instance->imLeadLag_TF_y_start = instance->imLeadLag_y_start;
 
-    /* (175:3) self.'imLeadLag.TF.bb'[1] := self.'imLeadLag.TF.b'[1]; */
     instance->imLeadLag_TF_bb[0] = instance->imLeadLag_TF_b[0];
 
-    /* (176:3) self.'imLeadLag.TF.bb'[2] := self.'imLeadLag.TF.b'[2]; */
     instance->imLeadLag_TF_bb[1] = instance->imLeadLag_TF_b[1];
 
-    /* (177:3) self.'imLeadLag.TF.d' := self.'imLeadLag.TF.bb'[1] / self.'imLeadLag.TF.a'[1]; */
     instance->imLeadLag_TF_d = instance->imLeadLag_TF_bb[0] / instance->imLeadLag_TF_a[0];
 
-    /* (178:3) self.'imLeadLag1.TF.b'[1] := self.'imLeadLag1.K' * self.T3; */
-    instance->imLeadLag1_TF_b[0] = instance->imLeadLag1_K * instance->T3;
+    instance->imLeadLag1_T1 = instance->T3;
 
-    /* (179:3) self.'imLeadLag1.TF.b'[2] := self.'imLeadLag1.K'; */
+    instance->imLeadLag1_T2 = instance->T4;
+
+    instance->imLeadLag1_TF_b[0] = instance->imLeadLag1_K * instance->imLeadLag1_T1;
+
     instance->imLeadLag1_TF_b[1] = instance->imLeadLag1_K;
 
-    /* (180:3) self.'imLeadLag1.T2_dummy' := if absolute(self.T3 - self.T4) < 1.00000000000000008e-15 then 1.0e+3 else self.T4; */
-    instance->imLeadLag1_T2_dummy = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->T3 - instance->T4), 1.0E-15)) ? \
-        1000.0 : instance->T4;
+    instance->imLeadLag1_T2_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag1_T1 \
+        - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag1_T2;
 
-    /* (181:3) self.'imLeadLag1.TF.a'[1] := self.'imLeadLag1.T2_dummy'; */
     instance->imLeadLag1_TF_a[0] = instance->imLeadLag1_T2_dummy;
 
-    /* (182:3) self.'imLeadLag1.TF.x_start'[1] := self.'imLeadLag1.x_start'; */
-    instance->imLeadLag1_TF_x_start[0] = instance->imLeadLag1_x_start;
+    instance->imLeadLag1_TF_y_start = instance->imLeadLag1_y_start;
 
-    /* (183:3) self.'imLeadLag1.TF.bb'[1] := self.'imLeadLag1.TF.b'[1]; */
     instance->imLeadLag1_TF_bb[0] = instance->imLeadLag1_TF_b[0];
 
-    /* (184:3) self.'imLeadLag1.TF.bb'[2] := self.'imLeadLag1.TF.b'[2]; */
     instance->imLeadLag1_TF_bb[1] = instance->imLeadLag1_TF_b[1];
 
-    /* (185:3) self.'imLeadLag1.TF.d' := self.'imLeadLag1.TF.bb'[1] / self.'imLeadLag1.TF.a'[1]; */
     instance->imLeadLag1_TF_d = instance->imLeadLag1_TF_bb[0] / instance->imLeadLag1_TF_a[0];
 
-    /* (186:3) self.'derivativeLag.K' := self.Kw * self.Tw; */
+    instance->limiter_uMax = instance->vsmax;
+
+    instance->limiter_uMin = instance->vsmin;
+
     instance->derivativeLag_K = instance->Kw * instance->Tw;
 
-    /* (187:3) self.'derivativeLag.K_dummy' := if absolute(self.'derivativeLag.K') < 1.00000000000000008e-15 then 1.0 else self.'derivativeLag.K'; */
-    instance->derivativeLag_K_dummy = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->derivativeLag_K), 1.0E-15)) ? \
-        1.0 : instance->derivativeLag_K;
+    instance->derivativeLag_T = instance->Tw;
 
-    /* (188:3) self.'derivativeLag.TF.b'[1] := self.'derivativeLag.K_dummy'; */
+    instance->derivativeLag_K_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_K), \
+        2.22044604925031308e-16) ? 1.0 : instance->derivativeLag_K;
+
     instance->derivativeLag_TF_b[0] = instance->derivativeLag_K_dummy;
 
-    /* (189:3) self.'derivativeLag.T_dummy' := if absolute(self.Tw) < 1.00000000000000008e-15 then 1.0e+3 else self.Tw; */
-    instance->derivativeLag_T_dummy = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->Tw), 1.0E-15)) ? 1000.0 : instance->Tw;
+    instance->derivativeLag_T_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
+        2.22044604925031308e-16) ? 1.0e+3 : instance->derivativeLag_T;
 
-    /* (190:3) self.'derivativeLag.TF.a'[1] := self.'derivativeLag.T_dummy'; */
     instance->derivativeLag_TF_a[0] = instance->derivativeLag_T_dummy;
 
-    /* (191:3) self.'derivativeLag.TF.x_start'[1] := self.'derivativeLag.x_start'; */
-    instance->derivativeLag_TF_x_start[0] = instance->derivativeLag_x_start;
+    instance->derivativeLag_TF_y_start = instance->derivativeLag_y_start;
 
-    /* (192:3) self.'derivativeLag.TF.bb'[1] := self.'derivativeLag.TF.b'[1]; */
     instance->derivativeLag_TF_bb[0] = instance->derivativeLag_TF_b[0];
 
-    /* (193:3) self.'derivativeLag.TF.d' := self.'derivativeLag.TF.bb'[1] / self.'derivativeLag.TF.a'[1]; */
     instance->derivativeLag_TF_d = instance->derivativeLag_TF_bb[0] / instance->derivativeLag_TF_a[0];
-}
-
-static Boolean ESP_cmp_gt(ALGOSTRUCT *instance, Real a, Real b)
-{
-    /* Output variable */
-    Boolean y;
-
-    /* Algorithm */
-    if(ESP_isTrue(isNaN(a)) || ESP_isTrue(isNaN(b))) {
-        instance->ErrorSignals |= ErrorSignal_NAN;
-        y = ESP_false;
-    } else {
-        y = (a > b) ? ESP_true : ESP_false;
-    }
-
-    return y;
 }
 
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    Real derivativeLag_TF_y;
-    Real imLeadLag_u;
-    Real imLeadLag_y;
-    Real imLeadLag_TF_y;
-    Real imLeadLag1_y;
-    Real imLeadLag1_TF_y;
-    Real solution_buffer_for_x;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_u;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
 
     /* Algorithm */
     /*
     Initialize variables without explicit start value or equation (implicit initializations):
     */
 
-    /* (112:3) self.'derivative(derivativeLag.TF.x_scaled[1])' := 0.0; */
     instance->der_derivativeLag_TF_x_scaled_1 = 0.0;
 
-    /* (113:3) self.'derivative(imLeadLag.TF.x_scaled[1])' := 0.0; */
     instance->der_imLeadLag_TF_x_scaled_1 = 0.0;
 
-    /* (114:3) self.'derivative(imLeadLag1.TF.x_scaled[1])' := 0.0; */
     instance->der_imLeadLag1_TF_x_scaled_1 = 0.0;
 
     /*
     Initialize variables with start value equation (dependent initializations):
     */
 
-    /* (118:3) 'derivativeLag.TF.y' := self.'derivativeLag.y_start'; */
-    derivativeLag_TF_y = instance->derivativeLag_y_start;
+    derivativeLag_TF_y = instance->derivativeLag_TF_y_start;
 
-    /* (119:3) 'solution_buffer.for.x' := ((self.'derivativeLag.TF.d' * self.vSI) - 'derivativeLag.TF.y') / self.'derivativeLag.TF.d'; */
-    solution_buffer_for_x = ((instance->derivativeLag_TF_d * instance->vSI) - derivativeLag_TF_y) / instance->derivativeLag_TF_d;
+    instance->derivativeLag_TF_x_scaled[0] = ((instance->derivativeLag_TF_d * instance->vSI) - derivativeLag_TF_y) / instance->derivativeLag_TF_d;
 
-    /* (120:3) if isNaN('solution_buffer.for.x') or isInfinite('solution_buffer.for.x') then... */
-    if(ESP_isTrue(isNaN(solution_buffer_for_x)) || ESP_isTrue(isInfinite(solution_buffer_for_x))) {
-        /* Set state to default start-value and signal error: */
+    imLeadLag_u = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
+        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
 
-        /* (122:4) self.'derivativeLag.TF.x_scaled[1]' := self.'derivativeLag.TF.x_start'[1]; */
-        instance->derivativeLag_TF_x_scaled_1 = instance->derivativeLag_TF_x_start[0];
+    imLeadLag_TF_y = instance->imLeadLag_TF_y_start;
 
-        /* (123:4) signal SOLVE_LINEAR_EQUATIONS_FAILED */
-        instance->ErrorSignals |= ErrorSignal_SOLVE_LINEAR_EQUATIONS_FAILED;
-    } else {
-        /* Only if the system can be solved, assign computed state: */
+    instance->imLeadLag_TF_x_scaled[0] = ((instance->imLeadLag_TF_d * imLeadLag_u) - imLeadLag_TF_y) / (instance->imLeadLag_TF_d \
+        - instance->imLeadLag_TF_bb[1]);
 
-        /* (126:4) self.'derivativeLag.TF.x_scaled[1]' := 'solution_buffer.for.x'; */
-        instance->derivativeLag_TF_x_scaled_1 = solution_buffer_for_x;
-    }
+    imLeadLag_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag_T1 \
+        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
 
-    /* (128:3) 'imLeadLag.TF.y' := self.'imLeadLag.y_start'; */
-    imLeadLag_TF_y = instance->imLeadLag_y_start;
+    imLeadLag1_TF_y = instance->imLeadLag1_TF_y_start;
 
-    /* (129:3) 'imLeadLag.u' := if absolute(self.Tw) < 1.00000000000000008e-15 then self.vSI else 'derivativeLag.TF.y'; */
-    imLeadLag_u = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->Tw), 1.0E-15)) ? instance->vSI : derivativeLag_TF_y;
-
-    /* (130:3) 'solution_buffer.for.x' := ((self.'imLeadLag.TF.d' * 'imLeadLag.u') - 'imLeadLag.TF.y') / (self.'imLeadLag.TF.d' - self.'imLeadLag.TF.bb'[2]); */
-    solution_buffer_for_x = ((instance->imLeadLag_TF_d * imLeadLag_u) - imLeadLag_TF_y) / (instance->imLeadLag_TF_d - instance->imLeadLag_TF_bb[1]);
-
-    /* (131:3) if isNaN('solution_buffer.for.x') or isInfinite('solution_buffer.for.x') then... */
-    if(ESP_isTrue(isNaN(solution_buffer_for_x)) || ESP_isTrue(isInfinite(solution_buffer_for_x))) {
-        /* Set state to default start-value and signal error: */
-
-        /* (133:4) self.'imLeadLag.TF.x_scaled[1]' := self.'imLeadLag.TF.x_start'[1]; */
-        instance->imLeadLag_TF_x_scaled_1 = instance->imLeadLag_TF_x_start[0];
-
-        /* (134:4) signal SOLVE_LINEAR_EQUATIONS_FAILED */
-        instance->ErrorSignals |= ErrorSignal_SOLVE_LINEAR_EQUATIONS_FAILED;
-    } else {
-        /* Only if the system can be solved, assign computed state: */
-
-        /* (137:4) self.'imLeadLag.TF.x_scaled[1]' := 'solution_buffer.for.x'; */
-        instance->imLeadLag_TF_x_scaled_1 = solution_buffer_for_x;
-    }
-
-    /* (139:3) 'imLeadLag1.TF.y' := self.'imLeadLag1.y_start'; */
-    imLeadLag1_TF_y = instance->imLeadLag1_y_start;
-
-    /* (140:3) 'imLeadLag.y' := if absolute(self.T1 - self.T2) < 1.00000000000000008e-15 then self.'imLeadLag.K' * 'imLeadLag.u' else 'imLeadLag.TF.y'; */
-    imLeadLag_y = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->T1 - instance->T2), 1.0E-15)) ? (instance->imLeadLag_K \
-        * imLeadLag_u) : imLeadLag_TF_y;
-
-    /* (141:3) 'solution_buffer.for.x' := ((self.'imLeadLag1.TF.d' * 'imLeadLag.y') - 'imLeadLag1.TF.y') / (self.'imLeadLag1.TF.d' - self.'imLeadLag1.TF.bb'[2]); */
-    solution_buffer_for_x = ((instance->imLeadLag1_TF_d * imLeadLag_y) - imLeadLag1_TF_y) / (instance->imLeadLag1_TF_d \
+    instance->imLeadLag1_TF_x_scaled[0] = ((instance->imLeadLag1_TF_d * imLeadLag_y) - imLeadLag1_TF_y) / (instance->imLeadLag1_TF_d \
         - instance->imLeadLag1_TF_bb[1]);
 
-    /* (142:3) if isNaN('solution_buffer.for.x') or isInfinite('solution_buffer.for.x') then... */
-    if(ESP_isTrue(isNaN(solution_buffer_for_x)) || ESP_isTrue(isInfinite(solution_buffer_for_x))) {
-        /* Set state to default start-value and signal error: */
+    imLeadLag1_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag1_T1 \
+        - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
 
-        /* (144:4) self.'imLeadLag1.TF.x_scaled[1]' := self.'imLeadLag1.TF.x_start'[1]; */
-        instance->imLeadLag1_TF_x_scaled_1 = instance->imLeadLag1_TF_x_start[0];
+    instance->vs = SPE_greater_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
 
-        /* (145:4) signal SOLVE_LINEAR_EQUATIONS_FAILED */
-        instance->ErrorSignals |= ErrorSignal_SOLVE_LINEAR_EQUATIONS_FAILED;
-    } else {
-        /* Only if the system can be solved, assign computed state: */
+    /* Conduct delta(t) = 0 super-dense time initialization at next sampling:: */
 
-        /* (148:4) self.'imLeadLag1.TF.x_scaled[1]' := 'solution_buffer.for.x'; */
-        instance->imLeadLag1_TF_x_scaled_1 = solution_buffer_for_x;
-    }
-
-    /* (150:3) 'imLeadLag1.y' := if absolute(self.T3 - self.T4) < 1.00000000000000008e-15 then self.'imLeadLag1.K' * 'imLeadLag.y' else 'imLeadLag1.TF.y'; */
-    imLeadLag1_y = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->T3 - instance->T4), 1.0E-15)) ? (instance->imLeadLag1_K \
-        * imLeadLag_y) : imLeadLag1_TF_y;
-
-    /* (151:3) self.vs := if 'imLeadLag1.y' > self.vsmax then self.vsmax elseif 'imLeadLag1.y' < self.vsmin self.vsmin else 'imLeadLag1.y'; */
-    instance->vs = ESP_isTrue(ESP_cmp_gt(instance, imLeadLag1_y, instance->vsmax)) ? instance->vsmax : ESP_isTrue(ESP_cmp_lt(instance, \
-        imLeadLag1_y, instance->vsmin)) ? instance->vsmin : imLeadLag1_y;
+    instance->discrete_stepSize_active = false;
 }
 
 static void Startup(ALGOSTRUCT *instance)
@@ -276,151 +183,122 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    /* (208:3) self.'discrete.stepSize' := 1.00000000000000002e-3; */
-    instance->discrete_stepSize = 0.001;
+    instance->discrete_stepSize = 1.00000000000000002e-3;
 
-    /* (209:3) self.'imLeadLag.K' := 1.0; */
     instance->imLeadLag_K = 1.0;
 
-    /* (210:3) self.'imLeadLag1.K' := 1.0; */
     instance->imLeadLag1_K = 1.0;
 
-    /* (211:3) self.'imLeadLag1.y_start' := 0.0; */
-    instance->imLeadLag1_y_start = 0.0;
-
-    /* (212:3) self.'imLeadLag.y_start' := 0.0; */
-    instance->imLeadLag_y_start = 0.0;
-
-    /* (213:3) self.'derivativeLag.y_start' := 0.0; */
     instance->derivativeLag_y_start = 0.0;
 
-    /* (214:3) self.'derivativeLag.x_start' := 0.0; */
-    instance->derivativeLag_x_start = 0.0;
+    instance->imLeadLag1_y_start = 0.0;
 
-    /* (215:3) self.'imLeadLag1.x_start' := 0.0; */
-    instance->imLeadLag1_x_start = 0.0;
-
-    /* (216:3) self.'imLeadLag.x_start' := 0.0; */
-    instance->imLeadLag_x_start = 0.0;
+    instance->imLeadLag_y_start = 0.0;
 
     /* ******************************************************* Default initialize tuneable parameters (based on constants): */
     /*
     Initialize variables with explicit start value (independent initializations):
     */
 
-    /* (222:3) self.Tw := 1.40999999999999992; */
-    instance->Tw = 1.41;
+    instance->Tw = 1.40999999999999992;
 
-    /* (223:3) self.T1 := 1.53999999999999998e-1; */
-    instance->T1 = 0.154;
-
-    /* (224:3) self.T2 := 3.30000000000000016e-2; */
-    instance->T2 = 0.033;
-
-    /* (225:3) self.T3 := 1.0; */
-    instance->T3 = 1.0;
-
-    /* (226:3) self.T4 := 1.0; */
-    instance->T4 = 1.0;
-
-    /* (227:3) self.vsmax := 2.00000000000000011e-1; */
-    instance->vsmax = 0.2;
-
-    /* (228:3) self.vsmin := -2.00000000000000011e-1; */
-    instance->vsmin = -0.2;
-
-    /* (229:3) self.Kw := 9.5; */
     instance->Kw = 9.5;
 
-    /* (230:3) self.vSI_start := 1.0; */
+    instance->vsmin = -0.200000000000000011;
+
+    instance->vsmax = 2.00000000000000011e-1;
+
+    instance->T4 = 1.0;
+
+    instance->T3 = 1.0;
+
+    instance->T2 = 3.30000000000000016e-2;
+
+    instance->T1 = 1.53999999999999998e-1;
+
     instance->vSI_start = 1.0;
 
     /* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
 
-    /* (233:3) () := Recalibrate(); */
     Recalibrate(instance);
 
     /* ***************************************************** Default initialize inputs (based on constants and parameters): */
     /*
-    Initialize variables with explicit start value (independent initializations):
+    Initialize variables with start value equation (dependent initializations):
     */
 
-    /* (239:3) self.vSI := self.vSI_start; */
     instance->vSI = instance->vSI_start;
 
     /* ********************************* Default initialize states and outputs (based on constants, parameters and inputs): */
 
-    /* (242:3) () := Reinitialize(); */
     Reinitialize(instance);
 }
 
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    Real derivativeLag_TF_y;
-    Real imLeadLag_u;
-    Real imLeadLag_y;
-    Real imLeadLag_TF_y;
-    Real imLeadLag1_y;
-    Real imLeadLag1_TF_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_u;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
 
     /* Algorithm */
-    /* *************************************************************************** Update-equations for inline integration: */
+    if(instance->discrete_stepSize_active) {
+        /* *********************************************************************** Update-equations for inline integration: */
 
-    /* (271:3) self.'derivativeLag.TF.x_scaled[1]' := self.'derivativeLag.TF.x_scaled[1]' + (self.'discrete.stepSize' * self.'derivative(derivativeLag.TF.x_scaled[1])'); */
-    instance->derivativeLag_TF_x_scaled_1 += instance->discrete_stepSize * instance->der_derivativeLag_TF_x_scaled_1;
+        instance->derivativeLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_derivativeLag_TF_x_scaled_1;
 
-    /* (272:3) self.'imLeadLag.TF.x_scaled[1]' := self.'imLeadLag.TF.x_scaled[1]' + (self.'discrete.stepSize' * self.'derivative(imLeadLag.TF.x_scaled[1])'); */
-    instance->imLeadLag_TF_x_scaled_1 += instance->discrete_stepSize * instance->der_imLeadLag_TF_x_scaled_1;
+        instance->imLeadLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag_TF_x_scaled_1;
 
-    /* (273:3) self.'imLeadLag1.TF.x_scaled[1]' := self.'imLeadLag1.TF.x_scaled[1]' + (self.'discrete.stepSize' * self.'derivative(imLeadLag1.TF.x_scaled[1])'); */
-    instance->imLeadLag1_TF_x_scaled_1 += instance->discrete_stepSize * instance->der_imLeadLag1_TF_x_scaled_1;
+        instance->imLeadLag1_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag1_TF_x_scaled_1;
+    } else {
+        /* no action */;
+    }
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    /* (276:3) self.'derivative(derivativeLag.TF.x_scaled[1])' := (self.vSI - self.'derivativeLag.TF.x_scaled[1]') / self.'derivativeLag.TF.a'[1]; */
-    instance->der_derivativeLag_TF_x_scaled_1 = (instance->vSI - instance->derivativeLag_TF_x_scaled_1) / instance->derivativeLag_TF_a[0];
+    instance->der_derivativeLag_TF_x_scaled_1 = (instance->vSI - instance->derivativeLag_TF_x_scaled[0]) / instance->derivativeLag_TF_a[0];
 
-    /* (277:3) 'derivativeLag.TF.y' := (self.'derivativeLag.TF.d' * self.vSI) - (self.'derivativeLag.TF.d' * self.'derivativeLag.TF.x_scaled[1]'); */
-    derivativeLag_TF_y = (instance->derivativeLag_TF_d * instance->vSI) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled_1);
+    derivativeLag_TF_y = (instance->derivativeLag_TF_d * instance->vSI) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled[0]);
 
-    /* (278:3) 'imLeadLag.u' := if absolute(self.Tw) < 1.00000000000000008e-15 then self.vSI else 'derivativeLag.TF.y'; */
-    imLeadLag_u = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->Tw), 1.0E-15)) ? instance->vSI : derivativeLag_TF_y;
+    imLeadLag_u = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
+        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
 
-    /* (279:3) self.'derivative(imLeadLag.TF.x_scaled[1])' := ('imLeadLag.u' - self.'imLeadLag.TF.x_scaled[1]') / self.'imLeadLag.TF.a'[1]; */
-    instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled_1) / instance->imLeadLag_TF_a[0];
+    instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled[0]) / instance->imLeadLag_TF_a[0];
 
-    /* (280:3) 'imLeadLag.TF.y' := ((self.'imLeadLag.TF.bb'[2] - self.'imLeadLag.TF.d') * self.'imLeadLag.TF.x_scaled[1]') + (self.'imLeadLag.TF.d' * 'imLeadLag.u'); */
-    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled_1) + \
+    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled[0]) + \
         (instance->imLeadLag_TF_d * imLeadLag_u);
 
-    /* (281:3) 'imLeadLag.y' := if absolute(self.T1 - self.T2) < 1.00000000000000008e-15 then self.'imLeadLag.K' * 'imLeadLag.u' else 'imLeadLag.TF.y'; */
-    imLeadLag_y = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->T1 - instance->T2), 1.0E-15)) ? (instance->imLeadLag_K \
-        * imLeadLag_u) : imLeadLag_TF_y;
+    imLeadLag_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag_T1 \
+        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
 
-    /* (282:3) self.'derivative(imLeadLag1.TF.x_scaled[1])' := ('imLeadLag.y' - self.'imLeadLag1.TF.x_scaled[1]') / self.'imLeadLag1.TF.a'[1]; */
-    instance->der_imLeadLag1_TF_x_scaled_1 = (imLeadLag_y - instance->imLeadLag1_TF_x_scaled_1) / instance->imLeadLag1_TF_a[0];
+    instance->der_imLeadLag1_TF_x_scaled_1 = (imLeadLag_y - instance->imLeadLag1_TF_x_scaled[0]) / instance->imLeadLag1_TF_a[0];
 
     /* ******************************************************************************** Inline integration post-processing: */
 
-    /* (285:3) 'imLeadLag1.TF.y' := ((self.'imLeadLag1.TF.bb'[2] - self.'imLeadLag1.TF.d') * self.'imLeadLag1.TF.x_scaled[1]') + (self.'imLeadLag1.TF.d' * 'imLeadLag.y'); */
-    imLeadLag1_TF_y = ((instance->imLeadLag1_TF_bb[1] - instance->imLeadLag1_TF_d) * instance->imLeadLag1_TF_x_scaled_1) \
+    imLeadLag1_TF_y = ((instance->imLeadLag1_TF_bb[1] - instance->imLeadLag1_TF_d) * instance->imLeadLag1_TF_x_scaled[0]) \
         + (instance->imLeadLag1_TF_d * imLeadLag_y);
 
-    /* (286:3) 'imLeadLag1.y' := if absolute(self.T3 - self.T4) < 1.00000000000000008e-15 then self.'imLeadLag1.K' * 'imLeadLag.y' else 'imLeadLag1.TF.y'; */
-    imLeadLag1_y = ESP_isTrue(ESP_cmp_lt(instance, absolute(instance->T3 - instance->T4), 1.0E-15)) ? (instance->imLeadLag1_K \
-        * imLeadLag_y) : imLeadLag1_TF_y;
+    imLeadLag1_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag1_T1 \
+        - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
 
-    /* (287:3) self.vs := if 'imLeadLag1.y' > self.vsmax then self.vsmax elseif 'imLeadLag1.y' < self.vsmin self.vsmin else 'imLeadLag1.y'; */
-    instance->vs = ESP_isTrue(ESP_cmp_gt(instance, imLeadLag1_y, instance->vsmax)) ? instance->vsmax : ESP_isTrue(ESP_cmp_lt(instance, \
-        imLeadLag1_y, instance->vsmin)) ? instance->vsmin : imLeadLag1_y;
+    instance->vs = SPE_greater_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+
+    instance->discrete_stepSize_active = true;
 }
 
 /**********************************************************************************************************************
  * init
  **********************************************************************************************************************/
 void Startup_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(ALGOSTRUCT *instance) {
-    instance->ErrorSignals = ErrorSignal_NONE;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
     Startup(instance);
 }
 
@@ -428,7 +306,7 @@ void Startup_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe359
  * step
  **********************************************************************************************************************/
 void DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(ALGOSTRUCT *instance) {
-    instance->ErrorSignals = ErrorSignal_NONE;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
     DoStep(instance);
 }
 
@@ -437,7 +315,7 @@ void DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594
  **********************************************************************************************************************/
 void Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(ALGOSTRUCT *instance) \
     {
-    instance->ErrorSignals = ErrorSignal_NONE;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
     Recalibrate(instance);
 }
 
@@ -446,7 +324,7 @@ void Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcb
  **********************************************************************************************************************/
 void Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(ALGOSTRUCT *instance) \
     {
-    instance->ErrorSignals = ErrorSignal_NONE;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
     Reinitialize(instance);
 }
 

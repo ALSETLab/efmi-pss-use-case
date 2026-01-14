@@ -1,4 +1,4 @@
-/*2025-12-22T20:20:43.566947324Z*/
+/*2026-01-14T21:01:35.293991283Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -47,43 +47,48 @@ typedef struct {
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vsmin;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_K;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_K_dummy;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_T;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_T_dummy;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_a[1];
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_b[1];
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_bb[1];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_a[2];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_b[2];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_bb[2];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_d;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_x_start[1];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_y_start;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_T1;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_T2;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_T2_dummy;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_a[1];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_a[2];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_b[2];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_bb[2];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_d;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_x_start[1];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_y_start;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_T1;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_T2;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_T2_dummy;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_a[1];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_a[2];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_b[2];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_bb[2];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_d;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_x_start[1];
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y_start;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c limiter_uMax;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c limiter_uMin;
 
     /* Constants */
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_x_start;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_y_start;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_K;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_x_start;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_y_start;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_K;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_x_start;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y_start;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c discrete_stepSize;
 
     /* States */
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_derivativeLag_TF_x_scaled_1;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_x_scaled_1;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_x_scaled[1];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_imLeadLag_TF_x_scaled_1;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_x_scaled_1;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_x_scaled[1];
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_imLeadLag1_TF_x_scaled_1;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_x_scaled_1;
+    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_x_scaled[1];
+    bool     discrete_stepSize_active;
 
     /* Signals */
     SPE_ErrorSignal_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c ErrorSignals;

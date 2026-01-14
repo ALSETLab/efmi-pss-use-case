@@ -1,4 +1,4 @@
-/*2025-10-27T17:05:01.986681508Z*/
+/*2026-01-14T20:53:28.928661073Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -17,10 +17,11 @@
  *   Line len = 120
  **********************************************************************************************************************/
 
-#ifndef H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
-#define H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
+#ifndef BLOCK_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
+#define BLOCK_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H
 
-#include "galec_types.h"
+#include "galec_stl.h"
+#include "galec_stl_configuration.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,62 +31,68 @@ extern "C" {
  * structure declaration
  **********************************************************************************************************************/
 typedef struct {
-    /* Signals */
-    ErrorSignal ErrorSignals;
-
     /* Ports */
-    Real vSI;
-    Real vs;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vSI;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vs;
 
     /* Parameters */
-    Real Kw;
-    Real T1;
-    Real T2;
-    Real T3;
-    Real T4;
-    Real Tw;
-    Real vSI_start;
-    Real vsmax;
-    Real vsmin;
-    Real derivativeLag_K;
-    Real derivativeLag_K_dummy;
-    Real derivativeLag_T_dummy;
-    Real derivativeLag_TF_a[1];
-    Real derivativeLag_TF_b[1];
-    Real derivativeLag_TF_bb[1];
-    Real derivativeLag_TF_d;
-    Real derivativeLag_TF_x_start[1];
-    Real imLeadLag_T2_dummy;
-    Real imLeadLag_TF_a[1];
-    Real imLeadLag_TF_b[2];
-    Real imLeadLag_TF_bb[2];
-    Real imLeadLag_TF_d;
-    Real imLeadLag_TF_x_start[1];
-    Real imLeadLag1_T2_dummy;
-    Real imLeadLag1_TF_a[1];
-    Real imLeadLag1_TF_b[2];
-    Real imLeadLag1_TF_bb[2];
-    Real imLeadLag1_TF_d;
-    Real imLeadLag1_TF_x_start[1];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed Kw;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed T1;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed T2;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed T3;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed T4;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed Tw;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vSI_start;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vsmax;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vsmin;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_K;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_K_dummy;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_T;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_T_dummy;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_a[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_b[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_bb[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_d;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_y_start;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_T1;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_T2;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_T2_dummy;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_a[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_b[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_bb[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_d;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y_start;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_T1;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_T2;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_T2_dummy;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_a[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_b[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_bb[2];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_d;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y_start;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed limiter_uMax;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed limiter_uMin;
 
     /* Constants */
-    Real derivativeLag_x_start;
-    Real derivativeLag_y_start;
-    Real imLeadLag_K;
-    Real imLeadLag_x_start;
-    Real imLeadLag_y_start;
-    Real imLeadLag1_K;
-    Real imLeadLag1_x_start;
-    Real imLeadLag1_y_start;
-    Real discrete_stepSize;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_y_start;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_K;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y_start;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_K;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y_start;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed discrete_stepSize;
 
     /* States */
-    Real der_derivativeLag_TF_x_scaled_1;
-    Real derivativeLag_TF_x_scaled_1;
-    Real der_imLeadLag_TF_x_scaled_1;
-    Real imLeadLag_TF_x_scaled_1;
-    Real der_imLeadLag1_TF_x_scaled_1;
-    Real imLeadLag1_TF_x_scaled_1;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed der_derivativeLag_TF_x_scaled_1;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_x_scaled[1];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed der_imLeadLag_TF_x_scaled_1;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_x_scaled[1];
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed der_imLeadLag1_TF_x_scaled_1;
+    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_x_scaled[1];
+    bool     discrete_stepSize_active;
+
+    /* Signals */
+    SPE_ErrorSignal_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ErrorSignals;
+
 } BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 
 void Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
@@ -101,5 +108,5 @@ void Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625
 }
 #endif
 
-#endif /* H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H */
+#endif /* BLOCK_H525B873079CF7A65F464C408F25344D5BD630CAB_CB4A8A449B4ADA864625EE5A4355578A3AAF08ED_H */
 /* end of file */

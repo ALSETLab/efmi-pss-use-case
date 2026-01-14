@@ -4,11 +4,11 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{e6ea8cac-8c65-4cbf-a2a8-1454b4bef45b}"
+	id="{b4f95915-1881-4af4-8d67-66370e77b568}"
 	kind="AlgorithmCode"
 	name="PSSDesign.eFMUs4RTHIL.GridForHILTesting"
-	generationDateAndTime="2025-12-22T20:40:09Z"
-	generationTool="Dymola Version 2025x Refresh 1, 2025-04-11"
+	generationDateAndTime="2026-01-14T21:21:02Z"
+	generationTool="Dymola Version 2026x Refresh 1 Dev 3, 2026-01-23"
 	description="System model for HIL testing"
 	version="">
 
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="1bd94f955fb6dc1504009a9884ba7de326207fa8"
+			checksum="3fdf32b804cdec31f6bc02a12fabd303a0494439"
 			role="Code"/>
 	</Files>
 
@@ -105,7 +105,7 @@
 			name="fault"
 			description="Fault input sigal, default false = fault inactive"
 			blockCausality="input"
-			start="">
+			start="false">
 		</BooleanVariable>
 		<RealVariable
 			id="vf"
@@ -114,21 +114,21 @@
 			blockCausality="input"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="Pgen"
 			name="Pgen"
 			description="Active power [pu]"
 			blockCausality="output"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="Qgen"
 			name="Qgen"
 			description="Reactive power [pu]"
 			blockCausality="output"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="v"
@@ -137,7 +137,7 @@
 			blockCausality="output"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="vf0OUT"
@@ -146,7 +146,7 @@
 			blockCausality="output"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.42070164207690164">
 		</RealVariable>
 		<RealVariable
 			id="w"
@@ -155,25 +155,7 @@
 			blockCausality="output"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
-		</RealVariable>
-		<RealVariable
-			id="'B3.angle_0'"
-			name="'B3.angle_0'"
-			description="Initial voltage angle"
-			blockCausality="constant"
-			unitRefId="[rad]"
-			relativeQuantity="false"
-			start="">
-		</RealVariable>
-		<RealVariable
-			id="'B3.v_0'"
-			name="'B3.v_0'"
-			description="Initial voltage magnitude"
-			blockCausality="constant"
-			unitRefId="[1]"
-			relativeQuantity="false"
-			start="">
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'B3.p.vi'"
@@ -182,7 +164,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'B3.p.vr'"
@@ -191,7 +173,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="9.0081e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.P_0'"
@@ -201,7 +183,7 @@
 			unitRefId="[W]"
 			relativeQuantity="false"
 			nominal="1.0e+8"
-			start="">
+			start="1.99799999999359989e+9">
 		</RealVariable>
 		<RealVariable
 			id="'G1.Q_0'"
@@ -211,7 +193,7 @@
 			unitRefId="[var]"
 			relativeQuantity="false"
 			nominal="1.0e+8"
-			start="">
+			start="9.67924969906579971e+8">
 		</RealVariable>
 		<RealVariable
 			id="'G1.V_b'"
@@ -221,7 +203,7 @@
 			unitRefId="[V]"
 			relativeQuantity="false"
 			nominal="1.0e+4"
-			start="">
+			start="4.0e+5">
 		</RealVariable>
 		<RealVariable
 			id="'G1.angle_0'"
@@ -230,7 +212,7 @@
 			blockCausality="constant"
 			unitRefId="[rad]"
 			relativeQuantity="false"
-			start="">
+			start="4.94677176989159972e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.v_0'"
@@ -239,7 +221,17 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'G1.S_b'"
+			name="'G1.S_b'"
+			description="System base power"
+			blockCausality="dependentParameter"
+			unitRefId="[V.A]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="1.0e+8">
 		</RealVariable>
 		<RealVariable
 			id="'G1.feedbackVf0.u2'"
@@ -248,16 +240,14 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="-2.42070164207690164">
 		</RealVariable>
 		<RealVariable
 			id="'G1.gainVf0.k'"
 			name="'G1.gainVf0.k'"
 			description="Gain value multiplied with input signal"
 			blockCausality="constant"
-			unitRefId="[1]"
-			relativeQuantity="false"
-			start="">
+			start="-1.0">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.M'"
@@ -266,7 +256,7 @@
 			blockCausality="constant"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="">
+			start="7.0">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Sn'"
@@ -276,7 +266,7 @@
 			unitRefId="[V.A]"
 			relativeQuantity="false"
 			nominal="1.0e+8"
-			start="">
+			start="2.22e+9">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.T1d0'"
@@ -285,7 +275,7 @@
 			blockCausality="constant"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="">
+			start="8.0">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.T1q0'"
@@ -294,7 +284,7 @@
 			blockCausality="constant"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="">
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.T2d0'"
@@ -303,7 +293,7 @@
 			blockCausality="constant"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="">
+			start="2.99999999999999989e-2">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.T2q0'"
@@ -312,7 +302,7 @@
 			blockCausality="constant"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="">
+			start="7.00000000000000067e-2">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Taa'"
@@ -321,7 +311,7 @@
 			blockCausality="constant"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="">
+			start="2.00000000000000004e-3">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Vn'"
@@ -331,7 +321,7 @@
 			unitRefId="[V]"
 			relativeQuantity="false"
 			nominal="1.0e+4"
-			start="">
+			start="4.0e+5">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.ra'"
@@ -340,7 +330,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="3.00000000000000006e-3">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.x1d'"
@@ -349,7 +339,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.99999999999999989e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.x1q'"
@@ -358,7 +348,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="6.50000000000000022e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.x2d'"
@@ -367,7 +357,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.3000000000000001e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.x2q'"
@@ -376,7 +366,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.5e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.xd'"
@@ -385,7 +375,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.81000000000000005">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.xq'"
@@ -394,7 +384,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.76000000000000001">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.I_MBtoSB'"
@@ -403,7 +393,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.21999999999999993e+1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.K1'"
@@ -411,7 +401,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.50565875000000005">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.K2'"
@@ -419,7 +409,27 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="7.43412499999999837e-2">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.P_0'"
+			name="'G1.machine.P_0'"
+			description="Initial active power"
+			blockCausality="dependentParameter"
+			unitRefId="[W]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="1.99799999999359989e+9">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.Q_0'"
+			name="'G1.machine.Q_0'"
+			description="Initial reactive power"
+			blockCausality="dependentParameter"
+			unitRefId="[var]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="9.67924969906579971e+8">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.S_SBtoMB'"
@@ -428,7 +438,17 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="4.50450450450450429e-2">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.S_b'"
+			name="'G1.machine.S_b'"
+			description="System base power"
+			blockCausality="dependentParameter"
+			unitRefId="[V.A]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="1.0e+8">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.V_MBtoSB'"
@@ -437,7 +457,17 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.V_b'"
+			name="'G1.machine.V_b'"
+			description="Base voltage of the bus"
+			blockCausality="dependentParameter"
+			unitRefId="[V]"
+			relativeQuantity="false"
+			nominal="1.0e+4"
+			start="4.0e+5">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Z_MBtoSB'"
@@ -446,7 +476,16 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="4.50450450450450429e-2">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.angle_0'"
+			name="'G1.machine.angle_0'"
+			description="Initial voltage angle"
+			blockCausality="dependentParameter"
+			unitRefId="[rad]"
+			relativeQuantity="false"
+			start="4.94677176989159972e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.delta0'"
@@ -455,15 +494,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[rad]"
 			relativeQuantity="false"
-			start="">
-		</RealVariable>
-		<RealVariable
-			id="'G1.machine.e1d0'"
-			name="'G1.machine.e1d0'"
-			blockCausality="dependentParameter"
-			unitRefId="[1]"
-			relativeQuantity="false"
-			start="">
+			start="1.22424746441249721">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.e1q0'"
@@ -471,16 +502,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
-		</RealVariable>
-		<RealVariable
-			id="'G1.machine.e2d0'"
-			name="'G1.machine.e2d0'"
-			description="Initialization"
-			blockCausality="dependentParameter"
-			unitRefId="[1]"
-			relativeQuantity="false"
-			start="">
+			start="1.02748702363574251">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.e2q0'"
@@ -489,7 +511,16 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="9.59332709715295051e-1">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.fn'"
+			name="'G1.machine.fn'"
+			description="System frequency"
+			blockCausality="dependentParameter"
+			unitRefId="[Hz]"
+			relativeQuantity="false"
+			start="6.0e+1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.id0'"
@@ -498,7 +529,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="9.24917045798485105e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.iq0'"
@@ -507,7 +538,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="3.80297791914061711e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.p0'"
@@ -516,7 +547,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.99799999999359983e+1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.pm00'"
@@ -525,7 +556,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.00466065235487427e+1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.q0'"
@@ -534,7 +565,16 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="9.67924969906579946">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.v_0'"
+			name="'G1.machine.v_0'"
+			description="Initial voltage magnitude"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.vd0'"
@@ -543,7 +583,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="6.66549362631353226e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.vf00'"
@@ -552,7 +592,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.42070164207690164">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.vq0'"
@@ -561,7 +601,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="7.45460895805901247e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.w_b'"
@@ -570,7 +610,16 @@
 			blockCausality="dependentParameter"
 			unitRefId="[rad/s]"
 			relativeQuantity="false"
-			start="">
+			start="3.76991118430775145e+2">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.xq0'"
+			name="'G1.machine.xq0'"
+			description="used for setting the initial rotor angle"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="1.76000000000000001">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(G1.machine.delta)'"
@@ -579,7 +628,7 @@
 			blockCausality="state"
 			unitRefId="[rad/s]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(G1.machine.e1d)'"
@@ -588,7 +637,7 @@
 			blockCausality="state"
 			unitRefId="[s-1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(G1.machine.e1q)'"
@@ -597,7 +646,7 @@
 			blockCausality="state"
 			unitRefId="[s-1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(G1.machine.e2d)'"
@@ -606,7 +655,7 @@
 			blockCausality="state"
 			unitRefId="[s-1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(G1.machine.e2q)'"
@@ -615,7 +664,7 @@
 			blockCausality="state"
 			unitRefId="[s-1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(G1.machine.w)'"
@@ -624,7 +673,7 @@
 			blockCausality="state"
 			unitRefId="[s-1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.delta'"
@@ -633,7 +682,7 @@
 			blockCausality="state"
 			unitRefId="[rad]"
 			relativeQuantity="false"
-			start="">
+			start="1.22424746441249721">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.e1d'"
@@ -642,7 +691,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="4.10765495780108736e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.e1q'"
@@ -651,7 +700,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.02748702363574251">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.e2d'"
@@ -660,7 +709,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="5.74249665788094887e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.e2q'"
@@ -669,7 +718,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="9.59332709715295051e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.id'"
@@ -678,7 +727,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="9.24917045801083026e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.iq'"
@@ -687,7 +736,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="3.80297791912645622e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.w'"
@@ -696,35 +745,35 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.I0.im'"
 			name="'G1.machine.I0.im'"
 			description="Imaginary part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="9.66535346345128943e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.I0.re'"
 			name="'G1.machine.I0.re'"
 			description="Real part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="2.21800379656702447e+1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Idq0.im'"
 			name="'G1.machine.Idq0.im'"
 			description="Imaginary part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="3.80297791914061711e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Idq0.re'"
 			name="'G1.machine.Idq0.re'"
 			description="Real part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="9.24917045798485105e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.S0.im'"
@@ -733,49 +782,58 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="-9.67924969906579946">
+		</RealVariable>
+		<RealVariable
+			id="'G1.machine.S0.re'"
+			name="'G1.machine.S0.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="1.99799999999359983e+1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Vdq0.im'"
 			name="'G1.machine.Vdq0.im'"
 			description="Imaginary part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="7.45460895805901247e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Vdq0.re'"
 			name="'G1.machine.Vdq0.re'"
 			description="Real part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="6.66549362631353226e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Vt0.im'"
 			name="'G1.machine.Vt0.im'"
 			description="Imaginary part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="4.74747552374891135e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.Vt0.re'"
 			name="'G1.machine.Vt0.re'"
 			description="Real part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="8.80122015128612767e-1">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.auxCMval.im'"
 			name="'G1.machine.auxCMval.im'"
 			description="Imaginary part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="2.23329558956492091">
 		</RealVariable>
 		<RealVariable
 			id="'G1.machine.auxCMval.re'"
 			name="'G1.machine.auxCMval.re'"
 			description="Real part of complex number"
 			blockCausality="dependentParameter"
-			start="">
+			start="8.06493091900215675e-1">
 		</RealVariable>
 		<RealVariable
 			id="'L1.B'"
@@ -784,7 +842,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L1.G'"
@@ -793,7 +851,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L1.R'"
@@ -802,7 +860,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L1.X'"
@@ -811,7 +869,43 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="2.25225225225225215e-2">
+		</RealVariable>
+		<RealVariable
+			id="'L1.Y.im'"
+			name="'L1.Y.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'L1.Y.re'"
+			name="'L1.Y.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'L1.Z.im'"
+			name="'L1.Z.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="2.25225225225225215e-2">
+		</RealVariable>
+		<RealVariable
+			id="'L1.Z.re'"
+			name="'L1.Z.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L2.B'"
@@ -820,7 +914,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L2.G'"
@@ -829,7 +923,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L2.R'"
@@ -838,7 +932,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L2.X'"
@@ -847,7 +941,43 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="4.18918918918918942e-2">
+		</RealVariable>
+		<RealVariable
+			id="'L2.Y.im'"
+			name="'L2.Y.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'L2.Y.re'"
+			name="'L2.Y.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'L2.Z.im'"
+			name="'L2.Z.im'"
+			description="Imaginary part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="4.18918918918918942e-2">
+		</RealVariable>
+		<RealVariable
+			id="'L2.Z.re'"
+			name="'L2.Z.re'"
+			description="Real part of complex number"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'L2.p.ii'"
@@ -856,7 +986,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="3.37949421781805981e-1">
 		</RealVariable>
 		<RealVariable
 			id="'L2.p.ir'"
@@ -865,7 +995,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="7.75525802996986524">
 		</RealVariable>
 		<RealVariable
 			id="'SysData.S_b'"
@@ -875,7 +1005,7 @@
 			unitRefId="[V.A]"
 			relativeQuantity="false"
 			nominal="1.0e+8"
-			start="">
+			start="1.0e+8">
 		</RealVariable>
 		<RealVariable
 			id="'SysData.fn'"
@@ -884,7 +1014,25 @@
 			blockCausality="constant"
 			unitRefId="[Hz]"
 			relativeQuantity="false"
-			start="">
+			start="6.0e+1">
+		</RealVariable>
+		<RealVariable
+			id="'infiniteBus.angle_0'"
+			name="'infiniteBus.angle_0'"
+			description="Initial voltage angle"
+			blockCausality="constant"
+			unitRefId="[rad]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'infiniteBus.v_0'"
+			name="'infiniteBus.v_0'"
+			description="Initial voltage magnitude"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="9.0081e-1">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.Sn'"
@@ -894,7 +1042,7 @@
 			unitRefId="[V.A]"
 			relativeQuantity="false"
 			nominal="1.0e+8"
-			start="">
+			start="2.22e+9">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.V_b'"
@@ -904,7 +1052,7 @@
 			unitRefId="[V]"
 			relativeQuantity="false"
 			nominal="1.0e+4"
-			start="">
+			start="4.0e+5">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.Vn'"
@@ -914,14 +1062,14 @@
 			unitRefId="[V]"
 			relativeQuantity="false"
 			nominal="1.0e+4"
-			start="">
+			start="4.0e+5">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.m'"
 			name="'transformer.m'"
 			description="Optional fixed tap ratio"
 			blockCausality="constant"
-			start="">
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.rT'"
@@ -930,7 +1078,7 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.xT'"
@@ -939,7 +1087,17 @@
 			blockCausality="constant"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="1.49999999999999994e-1">
+		</RealVariable>
+		<RealVariable
+			id="'transformer.S_b'"
+			name="'transformer.S_b'"
+			description="System base power"
+			blockCausality="dependentParameter"
+			unitRefId="[V.A]"
+			relativeQuantity="false"
+			nominal="1.0e+8"
+			start="1.0e+8">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.Zb'"
@@ -948,7 +1106,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[Ohm]"
 			relativeQuantity="false"
-			start="">
+			start="1.6e+3">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.Zn'"
@@ -957,7 +1115,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[Ohm]"
 			relativeQuantity="false"
-			start="">
+			start="7.20720720720720749e+1">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.r'"
@@ -966,7 +1124,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.x'"
@@ -975,7 +1133,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="6.75675675675675626e-3">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.n.ii'"
@@ -984,7 +1142,7 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="-9.6653534629596527e-1">
 		</RealVariable>
 		<RealVariable
 			id="'transformer.n.ir'"
@@ -993,13 +1151,19 @@
 			blockCausality="state"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="">
+			start="-2.21800379657138151e+1">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"
 			name="'discrete.stepSize'"
 			blockCausality="constant"
-			start="">
+			start="1.00000000000000002e-3">
 		</RealVariable>
+		<BooleanVariable
+			id="'discrete.stepSize.active'"
+			name="'discrete.stepSize.active'"
+			blockCausality="state"
+			start="false">
+		</BooleanVariable>
 	</Variables>
 </Manifest>

@@ -153,38 +153,38 @@ equation
       pattern=LinePattern.Dot,
       thickness=0.5));
   connect('fault|table'.y, eBlock.fault)
-    annotation (Line(points={{-59,40},{0,-18}}, color={255,0,255}));
+    annotation (Line(points={{-59,40},{-15,0}}, color={255,0,255}));
   connect('vf|table'.y, eBlock.vf)
     annotation (Line(points={{-59,0},{-15,0}}, color={0,0,127}));
   connect('Pgen|table'.y, 'Pgen|match'.ref) annotation (Line(points={{69,40},{
           66,40},{66,20},{32,20},{32,34},{36,34}}, color={0,0,127}));
 
   connect('Pgen|match'.act, eBlock.Pgen)
-    annotation (Line(points={{36,46},{16.5,6}}, color={0,0,127}));
+    annotation (Line(points={{36,46},{15,0}}, color={0,0,127}));
 
   connect('Qgen|table'.y, 'Qgen|match'.ref) annotation (Line(points={{69,0},{66,
           0},{66,-20},{32,-20},{32,-6},{36,-6}}, color={0,0,127}));
 
   connect('Qgen|match'.act, eBlock.Qgen)
-    annotation (Line(points={{36,6},{16.5,3}}, color={0,0,127}));
+    annotation (Line(points={{36,6},{15,0}}, color={0,0,127}));
 
   connect('v|table'.y, 'v|match'.ref) annotation (Line(points={{69,-40},{66,-40},
           {66,-60},{32,-60},{32,-46},{36,-46}}, color={0,0,127}));
 
   connect('v|match'.act, eBlock.v)
-    annotation (Line(points={{36,-34},{16.5,9}}, color={0,0,127}));
+    annotation (Line(points={{36,-34},{15,0}}, color={0,0,127}));
 
   connect('vf0OUT|table'.y, 'vf0OUT|match'.ref) annotation (Line(points={{69,-80},
           {66,-80},{66,-100},{32,-100},{32,-86},{36,-86}}, color={0,0,127}));
 
   connect('vf0OUT|match'.act, eBlock.vf0OUT)
-    annotation (Line(points={{36,-74},{-12,16.5}}, color={0,0,127}));
+    annotation (Line(points={{36,-74},{15,0}}, color={0,0,127}));
 
   connect('w|table'.y, 'w|match'.ref) annotation (Line(points={{69,-120},{66,-120},
           {66,-140},{32,-140},{32,-126},{36,-126}}, color={0,0,127}));
 
   connect('w|match'.act, eBlock.w)
-    annotation (Line(points={{36,-114},{16.5,12}}, color={0,0,127}));
+    annotation (Line(points={{36,-114},{15,0}}, color={0,0,127}));
 
   annotation (
     Protection(hideFromBrowser=true),

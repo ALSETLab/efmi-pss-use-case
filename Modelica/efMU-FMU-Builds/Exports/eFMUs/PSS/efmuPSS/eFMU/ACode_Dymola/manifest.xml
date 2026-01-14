@@ -4,11 +4,11 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{1376699c-b2d8-4069-a285-e4b58ce83b34}"
+	id="{17262ada-749f-47c2-89c3-ec8f8a3a3ae2}"
 	kind="AlgorithmCode"
 	name="efmiPSSusecase.Components.PSSTypeIImod4efmi"
-	generationDateAndTime="2025-10-27T17:04:40Z"
-	generationTool="Dymola Version 2025x Refresh 1, 2025-04-11"
+	generationDateAndTime="2026-01-14T20:53:07Z"
+	generationTool="Dymola Version 2026x Refresh 1 Dev 3, 2026-01-23"
 	description="Extends the PSS Type II in OpenIPSL with parametrization for eFMI use case"
 	version="">
 
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="28eda490a94f0b789c863a9f27761391678eb9b9"
+			checksum="478ea36db979161bc137a565b9c5113485a9163b"
 			role="Code"/>
 	</Files>
 
@@ -33,7 +33,6 @@
 		<BlockMethod id="Startup()" kind="Startup">
 			<Signals>
 				<Signal value="NAN"/>
-				<Signal value="SOLVE_LINEAR_EQUATIONS_FAILED"/>
 			</Signals>
 		</BlockMethod>
 		<BlockMethod id="DoStep()" kind="DoStep">
@@ -150,13 +149,6 @@
 			start="-2.00000000000000011e-1">
 		</RealVariable>
 		<RealVariable
-			id="'derivativeLag.x_start'"
-			name="'derivativeLag.x_start'"
-			description="Start value of state variable"
-			blockCausality="constant"
-			start="0.0">
-		</RealVariable>
-		<RealVariable
 			id="'derivativeLag.y_start'"
 			name="'derivativeLag.y_start'"
 			description="Output start value"
@@ -182,6 +174,15 @@
 			start="1.33949999999999996e+1">
 		</RealVariable>
 		<RealVariable
+			id="'derivativeLag.T'"
+			name="'derivativeLag.T'"
+			description="Time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.40999999999999992">
+		</RealVariable>
+		<RealVariable
 			id="'derivativeLag.T_dummy'"
 			name="'derivativeLag.T_dummy'"
 			description="Lead time constant"
@@ -193,28 +194,30 @@
 		<RealVariable
 			id="'derivativeLag.TF.a'"
 			name="'derivativeLag.TF.a'"
+			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
 			blockCausality="dependentParameter"
-			start="1.40999999999999992">
+			start="1.40999999999999992 0.0">
 			<Dimensions>
-				<Dimension number="1" size="1"/>
+				<Dimension number="1" size="2"/>
 			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.TF.b'"
 			name="'derivativeLag.TF.b'"
+			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
 			blockCausality="dependentParameter"
-			start="1.33949999999999996e+1">
+			start="1.33949999999999996e+1 0.0">
 			<Dimensions>
-				<Dimension number="1" size="1"/>
+				<Dimension number="1" size="2"/>
 			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.TF.bb'"
 			name="'derivativeLag.TF.bb'"
 			blockCausality="dependentParameter"
-			start="1.33949999999999996e+1">
+			start="1.33949999999999996e+1 0.0">
 			<Dimensions>
-				<Dimension number="1" size="1"/>
+				<Dimension number="1" size="2"/>
 			</Dimensions>
 		</RealVariable>
 		<RealVariable
@@ -224,13 +227,11 @@
 			start="9.5">
 		</RealVariable>
 		<RealVariable
-			id="'derivativeLag.TF.x_start'"
-			name="'derivativeLag.TF.x_start'"
+			id="'derivativeLag.TF.y_start'"
+			name="'derivativeLag.TF.y_start'"
+			description="Initial value of output (derivatives of y are zero up to nx-1-th derivative)"
 			blockCausality="dependentParameter"
 			start="0.0">
-			<Dimensions>
-				<Dimension number="1" size="1"/>
-			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'derivative(derivativeLag.TF.x_scaled[1])'"
@@ -240,11 +241,14 @@
 			start="0.0">
 		</RealVariable>
 		<RealVariable
-			id="'derivativeLag.TF.x_scaled[1]'"
-			name="'derivativeLag.TF.x_scaled[1]'"
+			id="'derivativeLag.TF.x_scaled'"
+			name="'derivativeLag.TF.x_scaled'"
 			description="Scaled vector x"
 			blockCausality="state"
 			start="1.0">
+			<Dimensions>
+				<Dimension number="1" size="1"/>
+			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag.K'"
@@ -254,18 +258,29 @@
 			start="1.0">
 		</RealVariable>
 		<RealVariable
-			id="'imLeadLag.x_start'"
-			name="'imLeadLag.x_start'"
-			description="Start value of state variable"
-			blockCausality="constant"
-			start="0.0">
-		</RealVariable>
-		<RealVariable
 			id="'imLeadLag.y_start'"
 			name="'imLeadLag.y_start'"
 			description="Output start value"
 			blockCausality="constant"
 			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.T1'"
+			name="'imLeadLag.T1'"
+			description="Lead time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.53999999999999998e-1">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.T2'"
+			name="'imLeadLag.T2'"
+			description="Lag time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="3.30000000000000016e-2">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag.T2_dummy'"
@@ -279,15 +294,17 @@
 		<RealVariable
 			id="'imLeadLag.TF.a'"
 			name="'imLeadLag.TF.a'"
+			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
 			blockCausality="dependentParameter"
-			start="3.30000000000000016e-2">
+			start="3.30000000000000016e-2 0.0">
 			<Dimensions>
-				<Dimension number="1" size="1"/>
+				<Dimension number="1" size="2"/>
 			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag.TF.b'"
 			name="'imLeadLag.TF.b'"
+			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
 			blockCausality="dependentParameter"
 			start="1.53999999999999998e-1 1.0">
 			<Dimensions>
@@ -310,13 +327,11 @@
 			start="4.66666666666666607">
 		</RealVariable>
 		<RealVariable
-			id="'imLeadLag.TF.x_start'"
-			name="'imLeadLag.TF.x_start'"
+			id="'imLeadLag.TF.y_start'"
+			name="'imLeadLag.TF.y_start'"
+			description="Initial value of output (derivatives of y are zero up to nx-1-th derivative)"
 			blockCausality="dependentParameter"
 			start="0.0">
-			<Dimensions>
-				<Dimension number="1" size="1"/>
-			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'derivative(imLeadLag.TF.x_scaled[1])'"
@@ -326,11 +341,14 @@
 			start="0.0">
 		</RealVariable>
 		<RealVariable
-			id="'imLeadLag.TF.x_scaled[1]'"
-			name="'imLeadLag.TF.x_scaled[1]'"
+			id="'imLeadLag.TF.x_scaled'"
+			name="'imLeadLag.TF.x_scaled'"
 			description="Scaled vector x"
 			blockCausality="state"
 			start="0.0">
+			<Dimensions>
+				<Dimension number="1" size="1"/>
+			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag1.K'"
@@ -340,13 +358,6 @@
 			start="1.0">
 		</RealVariable>
 		<RealVariable
-			id="'imLeadLag1.x_start'"
-			name="'imLeadLag1.x_start'"
-			description="Start value of state variable"
-			blockCausality="constant"
-			start="0.0">
-		</RealVariable>
-		<RealVariable
 			id="'imLeadLag1.y_start'"
 			name="'imLeadLag1.y_start'"
 			description="Output start value"
@@ -354,6 +365,24 @@
 			unitRefId="[1]"
 			relativeQuantity="false"
 			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.T1'"
+			name="'imLeadLag1.T1'"
+			description="Lead time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.T2'"
+			name="'imLeadLag1.T2'"
+			description="Lag time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag1.T2_dummy'"
@@ -367,15 +396,17 @@
 		<RealVariable
 			id="'imLeadLag1.TF.a'"
 			name="'imLeadLag1.TF.a'"
+			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
 			blockCausality="dependentParameter"
-			start="1.0e+3">
+			start="1.0e+3 0.0">
 			<Dimensions>
-				<Dimension number="1" size="1"/>
+				<Dimension number="1" size="2"/>
 			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag1.TF.b'"
 			name="'imLeadLag1.TF.b'"
+			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
 			blockCausality="dependentParameter"
 			start="1.0 1.0">
 			<Dimensions>
@@ -398,13 +429,13 @@
 			start="1.00000000000000002e-3">
 		</RealVariable>
 		<RealVariable
-			id="'imLeadLag1.TF.x_start'"
-			name="'imLeadLag1.TF.x_start'"
+			id="'imLeadLag1.TF.y_start'"
+			name="'imLeadLag1.TF.y_start'"
+			description="Initial value of output (derivatives of y are zero up to nx-1-th derivative)"
 			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
 			start="0.0">
-			<Dimensions>
-				<Dimension number="1" size="1"/>
-			</Dimensions>
 		</RealVariable>
 		<RealVariable
 			id="'derivative(imLeadLag1.TF.x_scaled[1])'"
@@ -414,11 +445,32 @@
 			start="0.0">
 		</RealVariable>
 		<RealVariable
-			id="'imLeadLag1.TF.x_scaled[1]'"
-			name="'imLeadLag1.TF.x_scaled[1]'"
+			id="'imLeadLag1.TF.x_scaled'"
+			name="'imLeadLag1.TF.x_scaled'"
 			description="Scaled vector x"
 			blockCausality="state"
 			start="0.0">
+			<Dimensions>
+				<Dimension number="1" size="1"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'limiter.uMax'"
+			name="'limiter.uMax'"
+			description="Upper limits of input signals"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="2.00000000000000011e-1">
+		</RealVariable>
+		<RealVariable
+			id="'limiter.uMin'"
+			name="'limiter.uMin'"
+			description="Lower limits of input signals"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="-2.00000000000000011e-1">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"
@@ -426,5 +478,11 @@
 			blockCausality="constant"
 			start="1.00000000000000002e-3">
 		</RealVariable>
+		<BooleanVariable
+			id="'discrete.stepSize.active'"
+			name="'discrete.stepSize.active'"
+			blockCausality="state"
+			start="false">
+		</BooleanVariable>
 	</Variables>
 </Manifest>

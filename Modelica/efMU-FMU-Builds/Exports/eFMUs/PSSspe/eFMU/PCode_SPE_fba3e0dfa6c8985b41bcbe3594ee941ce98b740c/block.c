@@ -1,4 +1,4 @@
-/*2025-12-22T20:20:43.537181330Z*/
+/*2026-01-14T21:01:35.258613548Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -44,17 +44,21 @@ static void Recalibrate(ALGOSTRUCT *instance)
     Initialize variables with start value equation (dependent initializations):
     */
 
-    instance->imLeadLag_TF_b[0] = instance->imLeadLag_K * instance->T1;
+    instance->imLeadLag_T1 = instance->T1;
+
+    instance->imLeadLag_T2 = instance->T2;
+
+    instance->imLeadLag_TF_b[0] = instance->imLeadLag_K * instance->imLeadLag_T1;
 
     instance->imLeadLag_TF_b[1] = instance->imLeadLag_K;
 
     instance->imLeadLag_T2_dummy = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->T1 - \
-        instance->T2), 1.00000000000000008e-15) ? 1.0e+3 : instance->T2;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag_T1 \
+        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag_T2;
 
     instance->imLeadLag_TF_a[0] = instance->imLeadLag_T2_dummy;
 
-    instance->imLeadLag_TF_x_start[0] = instance->imLeadLag_x_start;
+    instance->imLeadLag_TF_y_start = instance->imLeadLag_y_start;
 
     instance->imLeadLag_TF_bb[0] = instance->imLeadLag_TF_b[0];
 
@@ -62,17 +66,21 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->imLeadLag_TF_d = instance->imLeadLag_TF_bb[0] / instance->imLeadLag_TF_a[0];
 
-    instance->imLeadLag1_TF_b[0] = instance->imLeadLag1_K * instance->T3;
+    instance->imLeadLag1_T1 = instance->T3;
+
+    instance->imLeadLag1_T2 = instance->T4;
+
+    instance->imLeadLag1_TF_b[0] = instance->imLeadLag1_K * instance->imLeadLag1_T1;
 
     instance->imLeadLag1_TF_b[1] = instance->imLeadLag1_K;
 
     instance->imLeadLag1_T2_dummy = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->T3 - \
-        instance->T4), 1.00000000000000008e-15) ? 1.0e+3 : instance->T4;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag1_T1 \
+        - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag1_T2;
 
     instance->imLeadLag1_TF_a[0] = instance->imLeadLag1_T2_dummy;
 
-    instance->imLeadLag1_TF_x_start[0] = instance->imLeadLag1_x_start;
+    instance->imLeadLag1_TF_y_start = instance->imLeadLag1_y_start;
 
     instance->imLeadLag1_TF_bb[0] = instance->imLeadLag1_TF_b[0];
 
@@ -80,21 +88,27 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->imLeadLag1_TF_d = instance->imLeadLag1_TF_bb[0] / instance->imLeadLag1_TF_a[0];
 
+    instance->limiter_uMax = instance->vsmax;
+
+    instance->limiter_uMin = instance->vsmin;
+
     instance->derivativeLag_K = instance->Kw * instance->Tw;
+
+    instance->derivativeLag_T = instance->Tw;
 
     instance->derivativeLag_K_dummy = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
         SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_K), \
-        1.00000000000000008e-15) ? 1.0 : instance->derivativeLag_K;
+        2.22044604925031308e-16) ? 1.0 : instance->derivativeLag_K;
 
     instance->derivativeLag_TF_b[0] = instance->derivativeLag_K_dummy;
 
     instance->derivativeLag_T_dummy = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->Tw), \
-        1.00000000000000008e-15) ? 1.0e+3 : instance->Tw;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
+        2.22044604925031308e-16) ? 1.0e+3 : instance->derivativeLag_T;
 
     instance->derivativeLag_TF_a[0] = instance->derivativeLag_T_dummy;
 
-    instance->derivativeLag_TF_x_start[0] = instance->derivativeLag_x_start;
+    instance->derivativeLag_TF_y_start = instance->derivativeLag_y_start;
 
     instance->derivativeLag_TF_bb[0] = instance->derivativeLag_TF_b[0];
 
@@ -110,7 +124,6 @@ static void Reinitialize(ALGOSTRUCT *instance)
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_y;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y;
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
-    SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c solution_buffer_for_x;
 
     /* Algorithm */
     /*
@@ -127,76 +140,39 @@ static void Reinitialize(ALGOSTRUCT *instance)
     Initialize variables with start value equation (dependent initializations):
     */
 
-    derivativeLag_TF_y = instance->derivativeLag_y_start;
+    derivativeLag_TF_y = instance->derivativeLag_TF_y_start;
 
-    solution_buffer_for_x = ((instance->derivativeLag_TF_d * instance->vSI) - derivativeLag_TF_y) / instance->derivativeLag_TF_d;
-
-    if(SPE_isNan_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(solution_buffer_for_x) \
-        || SPE_isInfinite_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(solution_buffer_for_x)) \
-        {
-        /* Set state to default start-value and signal error: */
-
-        instance->derivativeLag_TF_x_scaled_1 = instance->derivativeLag_TF_x_start[0];
-
-        instance->ErrorSignals |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
-    } else {
-        /* Only if the system can be solved, assign computed state: */
-
-        instance->derivativeLag_TF_x_scaled_1 = solution_buffer_for_x;
-    }
-
-    imLeadLag_TF_y = instance->imLeadLag_y_start;
+    instance->derivativeLag_TF_x_scaled[0] = ((instance->derivativeLag_TF_d * instance->vSI) - derivativeLag_TF_y) / instance->derivativeLag_TF_d;
 
     imLeadLag_u = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->Tw), \
-        1.00000000000000008e-15) ? instance->vSI : derivativeLag_TF_y;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
+        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
 
-    solution_buffer_for_x = ((instance->imLeadLag_TF_d * imLeadLag_u) - imLeadLag_TF_y) / (instance->imLeadLag_TF_d - instance->imLeadLag_TF_bb[1]);
+    imLeadLag_TF_y = instance->imLeadLag_TF_y_start;
 
-    if(SPE_isNan_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(solution_buffer_for_x) \
-        || SPE_isInfinite_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(solution_buffer_for_x)) \
-        {
-        /* Set state to default start-value and signal error: */
-
-        instance->imLeadLag_TF_x_scaled_1 = instance->imLeadLag_TF_x_start[0];
-
-        instance->ErrorSignals |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
-    } else {
-        /* Only if the system can be solved, assign computed state: */
-
-        instance->imLeadLag_TF_x_scaled_1 = solution_buffer_for_x;
-    }
-
-    imLeadLag1_TF_y = instance->imLeadLag1_y_start;
+    instance->imLeadLag_TF_x_scaled[0] = ((instance->imLeadLag_TF_d * imLeadLag_u) - imLeadLag_TF_y) / (instance->imLeadLag_TF_d \
+        - instance->imLeadLag_TF_bb[1]);
 
     imLeadLag_y = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->T1 - \
-        instance->T2), 1.00000000000000008e-15) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag_T1 \
+        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
 
-    solution_buffer_for_x = ((instance->imLeadLag1_TF_d * imLeadLag_y) - imLeadLag1_TF_y) / (instance->imLeadLag1_TF_d \
+    imLeadLag1_TF_y = instance->imLeadLag1_TF_y_start;
+
+    instance->imLeadLag1_TF_x_scaled[0] = ((instance->imLeadLag1_TF_d * imLeadLag_y) - imLeadLag1_TF_y) / (instance->imLeadLag1_TF_d \
         - instance->imLeadLag1_TF_bb[1]);
 
-    if(SPE_isNan_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(solution_buffer_for_x) \
-        || SPE_isInfinite_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(solution_buffer_for_x)) \
-        {
-        /* Set state to default start-value and signal error: */
-
-        instance->imLeadLag1_TF_x_scaled_1 = instance->imLeadLag1_TF_x_start[0];
-
-        instance->ErrorSignals |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c;
-    } else {
-        /* Only if the system can be solved, assign computed state: */
-
-        instance->imLeadLag1_TF_x_scaled_1 = solution_buffer_for_x;
-    }
-
     imLeadLag1_y = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->T3 - \
-        instance->T4), 1.00000000000000008e-15) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag1_T1 \
+        - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
 
     instance->vs = SPE_greater_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        imLeadLag1_y, instance->vsmax) ? instance->vsmax : SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        imLeadLag1_y, instance->vsmin) ? instance->vsmin : imLeadLag1_y;
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+
+    /* Conduct delta(t) = 0 super-dense time initialization at next sampling:: */
+
+    instance->discrete_stepSize_active = false;
 }
 
 static void Startup(ALGOSTRUCT *instance)
@@ -213,17 +189,11 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->imLeadLag1_K = 1.0;
 
+    instance->derivativeLag_y_start = 0.0;
+
     instance->imLeadLag1_y_start = 0.0;
 
     instance->imLeadLag_y_start = 0.0;
-
-    instance->derivativeLag_y_start = 0.0;
-
-    instance->derivativeLag_x_start = 0.0;
-
-    instance->imLeadLag1_x_start = 0.0;
-
-    instance->imLeadLag_x_start = 0.0;
 
     /* ******************************************************* Default initialize tuneable parameters (based on constants): */
     /*
@@ -232,19 +202,19 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->Tw = 1.40999999999999992;
 
-    instance->T1 = 1.53999999999999998e-1;
-
-    instance->T2 = 3.30000000000000016e-2;
-
-    instance->T3 = 1.0;
-
-    instance->T4 = 1.0;
-
-    instance->vsmax = 2.00000000000000011e-1;
+    instance->Kw = 9.5;
 
     instance->vsmin = -0.200000000000000011;
 
-    instance->Kw = 9.5;
+    instance->vsmax = 2.00000000000000011e-1;
+
+    instance->T4 = 1.0;
+
+    instance->T3 = 1.0;
+
+    instance->T2 = 3.30000000000000016e-2;
+
+    instance->T1 = 1.53999999999999998e-1;
 
     instance->vSI_start = 1.0;
 
@@ -254,7 +224,7 @@ static void Startup(ALGOSTRUCT *instance)
 
     /* ***************************************************** Default initialize inputs (based on constants and parameters): */
     /*
-    Initialize variables with explicit start value (independent initializations):
+    Initialize variables with start value equation (dependent initializations):
     */
 
     instance->vSI = instance->vSI_start;
@@ -275,47 +245,53 @@ static void DoStep(ALGOSTRUCT *instance)
     SPE_Real_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
 
     /* Algorithm */
-    /* *************************************************************************** Update-equations for inline integration: */
+    if(instance->discrete_stepSize_active) {
+        /* *********************************************************************** Update-equations for inline integration: */
 
-    instance->derivativeLag_TF_x_scaled_1 += instance->discrete_stepSize * instance->der_derivativeLag_TF_x_scaled_1;
+        instance->derivativeLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_derivativeLag_TF_x_scaled_1;
 
-    instance->imLeadLag_TF_x_scaled_1 += instance->discrete_stepSize * instance->der_imLeadLag_TF_x_scaled_1;
+        instance->imLeadLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag_TF_x_scaled_1;
 
-    instance->imLeadLag1_TF_x_scaled_1 += instance->discrete_stepSize * instance->der_imLeadLag1_TF_x_scaled_1;
+        instance->imLeadLag1_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag1_TF_x_scaled_1;
+    } else {
+        /* no action */;
+    }
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_derivativeLag_TF_x_scaled_1 = (instance->vSI - instance->derivativeLag_TF_x_scaled_1) / instance->derivativeLag_TF_a[0];
+    instance->der_derivativeLag_TF_x_scaled_1 = (instance->vSI - instance->derivativeLag_TF_x_scaled[0]) / instance->derivativeLag_TF_a[0];
 
-    derivativeLag_TF_y = (instance->derivativeLag_TF_d * instance->vSI) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled_1);
+    derivativeLag_TF_y = (instance->derivativeLag_TF_d * instance->vSI) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled[0]);
 
     imLeadLag_u = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->Tw), \
-        1.00000000000000008e-15) ? instance->vSI : derivativeLag_TF_y;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
+        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
 
-    instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled_1) / instance->imLeadLag_TF_a[0];
+    instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled[0]) / instance->imLeadLag_TF_a[0];
 
-    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled_1) + \
+    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled[0]) + \
         (instance->imLeadLag_TF_d * imLeadLag_u);
 
     imLeadLag_y = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->T1 - \
-        instance->T2), 1.00000000000000008e-15) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag_T1 \
+        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
 
-    instance->der_imLeadLag1_TF_x_scaled_1 = (imLeadLag_y - instance->imLeadLag1_TF_x_scaled_1) / instance->imLeadLag1_TF_a[0];
+    instance->der_imLeadLag1_TF_x_scaled_1 = (imLeadLag_y - instance->imLeadLag1_TF_x_scaled[0]) / instance->imLeadLag1_TF_a[0];
 
     /* ******************************************************************************** Inline integration post-processing: */
 
-    imLeadLag1_TF_y = ((instance->imLeadLag1_TF_bb[1] - instance->imLeadLag1_TF_d) * instance->imLeadLag1_TF_x_scaled_1) \
+    imLeadLag1_TF_y = ((instance->imLeadLag1_TF_bb[1] - instance->imLeadLag1_TF_d) * instance->imLeadLag1_TF_x_scaled[0]) \
         + (instance->imLeadLag1_TF_d * imLeadLag_y);
 
     imLeadLag1_y = SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->T3 - \
-        instance->T4), 1.00000000000000008e-15) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
+        SPE_absolute_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->imLeadLag1_T1 \
+        - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
 
     instance->vs = SPE_greater_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        imLeadLag1_y, instance->vsmax) ? instance->vsmax : SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
-        imLeadLag1_y, instance->vsmin) ? instance->vsmin : imLeadLag1_y;
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_He61c9e6d5af0d56a3b757d54a04e861698c3a4f4_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+
+    instance->discrete_stepSize_active = true;
 }
 
 /**********************************************************************************************************************

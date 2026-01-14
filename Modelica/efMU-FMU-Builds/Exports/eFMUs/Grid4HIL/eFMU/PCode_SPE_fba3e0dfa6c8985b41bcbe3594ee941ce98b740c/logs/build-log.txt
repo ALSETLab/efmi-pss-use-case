@@ -1,35 +1,50 @@
-Source eFMU path             : C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU
-Destination eFMU path        : null
+****************************************************************************************************************************
+Get Service Info...
+Service Version: 1
+Following operation types are availables:
+- C & C++ Build
+- FMU Checker
+- FMU Middleware Generation
+- FMU Target Build
+- Tester Generator
+- UML to AUTOSAR Runnable Code
+- UML to C
+- UML to C++
+- UML to Java
+- UML to Kotlin
+- Zip
+- eFMU Algorithm To Production Code Generator
+- eFMU Algorithmic Code To Component Generator
+- eFMU Binary Code Generator
+- eFMU Production Code Generator
+Get Service Info... done
+****************************************************************************************************************************
+Create Workspace "Grid4HIL"...
+Check if Workspace "Grid4HIL" already exists
+Workspace "Grid4HIL" already exists
+Create Workspace "Grid4HIL"... done
+****************************************************************************************************************************
+Synchronize remote workspace path with local file system path...
+Synchronize remote workspace path "\eFMU" with local file system path  "C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU"
+Synchronize remote workspace path with local file system path... done
+****************************************************************************************************************************
+Invoke Operation...
+Lock acquired for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Lock released for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
+Invoke Operation "eFMU Algorithm To Production Code Generator"
+***** Start of eFMU Generator - Algoritmic Code to Production Code *****
+Parameter {-floatPrec:64}
+Parameter {-interfaceName:Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c}
+Parameter {-outputAsEFMU:false}
+Parameter {-outputEFMUName:eFMU}
+Parameter {-prodCodeName:PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c}
+Arguments:[-srcDir, spo_docker_shared/eFMU/, -dstDir, spo_docker_shared/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -interfaceName, Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -floatPrec, 64, -interfaceName, Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -outputAsEFMU, false, -outputEFMUName, eFMU, -prodCodeName, PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c]
+Read arguments... 
+Destination eFMU path        : spo_docker_shared/eFMU/
 Production code name         : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-Interface name               : Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-Float precision              : 64
-Ignore reading Errors        : false
-Ignore writing Errors        : false
-EFMI Type associations: 
-EFMI_INTEGER_8               : signed char
-EFMI_UNSIGNED_INTEGER_8      : unsigned char
-EFMI_INTEGER_16              : signed short
-EFMI_UNSIGNED_INTEGER_16     : unsigned short
-EFMI_INTEGER_32              : signed int
-EFMI_UNSIGNED_INTEGER_32     : unsigned int
-EFMI_FLOAT_32                : float
-EFMI_FLOAT_64                : double
-EFMI_VOID                    : void
-EFMI_BOOL                    : unsigned int
+Output As EFMU               : false
+Output EFMU Name             : eFMU
 
-PRODUCTION CODE Type associations: 
-BOOLEAN                      : EFMI_BOOL
-INTEGER                      : EFMI_INTEGER_32
-REAL(32 bits)                : EFMI_FLOAT_32
-REAL(64 bits)                : EFMI_FLOAT_64
-ERRORSIGNAL                  : EFMI_UNSIGNED_INTEGER_32
-Compiler option sets         : 
-linker option set            : 
-ALG code as comments         : true
-ALG Line Numbers as comments : true
-Parameters in header         : true
-
- 
 EFMI Version       : 1.0.0
 
 XSD Versions: 
@@ -39,97 +54,65 @@ AlgorithmCode      : 0.13.0
 ProductionCode     : 0.17.0
 BinaryCode         : 0.12.0
 
+Read arguments... OK
 
-READ MANIFESTS
-Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\__content.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\efmiContainerManifest.xsd
-OK: Model representation manifest exists: ACode_Dymola
-OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\ACode_Dymola\manifest.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.13.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
-OK: Manifest CheckSum valid: a7ca89fda6c092c3dae8716d7729b1d60baa3d3b
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\ACode_Dymola\.\block.alg
-OK: Manifest file CheckSum valid: b86b43e611e103d4b54aebfb2afcfafc9718d3aa
-Reading: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 647d57cf44692a483669985453efd0f763a09d7e
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: 3b66ce4c1e9123777b56ba967c1c3637177c62b4
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
-OK: Manifest file CheckSum valid: 8b608c2a99941fa2d75babf5eab6349863a75369
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 1325b1fc298c34d753a7c3459d7d9a581bb87b9b
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
-OK: Manifest file CheckSum valid: 5a586e7881dfbddc9719023f6527ed1e70a1ba78
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 6131c14563900daaf742ec4412664a137ce54f70
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
-OK: Manifest file CheckSum valid: 9d038f146d23c2950f875e0c25f75e391abcb276
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 319cd6755f1ecad1560b85765784b6d2ab46ab69
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_types.h
-OK: Manifest file CheckSum valid: c18334149088099a1c65caf242ccc23ac97cae54
+Read Manifests... 
+Reading manifest: __content.xml
+Reading manifest: manifest.xml
+Reading ACode_Dymola ModelRepresentation
+Reading manifest: manifest.xml
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_0
+File list : .//block.c/FILE_ID_block.c_1
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_6
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_7
+File list : .//block.h/FILE_ID_block.h_8
+Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
+Read Manifests... OK
 
-GENERATE PRODUCTION CODE SOURCES
-OK: Generation succesfull for source files of C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\ACode_Dymola\./block.alg
+Write Manifest... 
+add File... mei_block_interface.h
+add File... block.h
+add File... sii_block_interface.c
+add File... galec_stl.c
+add File... mei_block_interface.c
+add File... galec_stl_configuration.h
+add File... sii_block_interface.h
+add File... galec_stl.h
+add File... block.c
+Writing: manifest.xml
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_0
+File list : .//block.c/FILE_ID_block.c_1
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_6
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_7
+File list : .//block.h/FILE_ID_block.h_8
+Writing: manifest.xml
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_0
+File list : .//block.h/FILE_ID_block.h_1
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_2
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_3
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_4
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_5
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_6
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_7
+File list : .//block.c/FILE_ID_block.c_8
+Writing: __content.xml
+Write Manifest... OK
 
-GENERATE PRODUCTION CODE MANIFEST
-PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-
-WRITE MANIFESTS
-Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 647d57cf44692a483669985453efd0f763a09d7e
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: 3b66ce4c1e9123777b56ba967c1c3637177c62b4
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
-OK: Manifest file CheckSum valid: 8b608c2a99941fa2d75babf5eab6349863a75369
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 1325b1fc298c34d753a7c3459d7d9a581bb87b9b
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
-OK: Manifest file CheckSum valid: 5a586e7881dfbddc9719023f6527ed1e70a1ba78
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 6131c14563900daaf742ec4412664a137ce54f70
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
-OK: Manifest file CheckSum valid: 9d038f146d23c2950f875e0c25f75e391abcb276
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 319cd6755f1ecad1560b85765784b6d2ab46ab69
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_types.h
-OK: Manifest file CheckSum valid: c18334149088099a1c65caf242ccc23ac97cae54
-Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: a3c6cf88c9a30f93bdd3d24895b6ce69130b8a2c
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_types.h
-OK: Manifest file CheckSum valid: 7c2c9f4e59acf24a481e8de6bfb22596285df0a2
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
-OK: Manifest file CheckSum valid: cb83248bb74a2a8dad5297b4c50c3db62745b8dc
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 7f5711a721b18931898a198a18e5d5451dd2ecf2
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
-OK: Manifest file CheckSum valid: 9ffc5caee129e15fa6b6403a9b46ed7001e4c626
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 0975150602c322e44a23bc3059851ad2b09ee70a
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: 290d4a152a98a4f556b1cc275901307520f22517
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 0326fb1b06f46d69aa1aabb8e654452499f279dd
-OK: Manifest file exists: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
-OK: Manifest file CheckSum valid: be260c1017d066af683b0e77ff404f74c064e4c0
-Writing: C:\Users\vanfr\Documents\Github\efmi-pss-use-case\Modelica\work\Grid4HIL\eFMU\__content.xml
-OK: Manifest EFMI version: 1.0.0
-OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/vanfr/Documents/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/eFMU\schemas\efmiContainerManifest.xsd
-OK: Model representation manifest exists: ACode_Dymola
-OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-GENERATION SUCCESS
+***** End of eFMU Generator - Algoritmic Code to Production Code *****
+Operation "eFMU Algorithm To Production Code Generator" finished
+eFMU "\eFMU" generated
+Operation returned with code with message Generation is OK (0)
+Exit with code 0
+Invoke Operation... done
+****************************************************************************************************************************
+Synchronize local file system path with remote workspace path...
+Synchronize file system path "C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU" from workspace path "\eFMU"
+Synchronize local file system path with remote workspace path... done

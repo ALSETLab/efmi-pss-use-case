@@ -1,4 +1,4 @@
-/*2025-10-27T17:05:02.028986053Z*/
+/*2026-01-14T20:53:28.964396181Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.c
@@ -14,12 +14,14 @@
 extern "C" {
 #endif
 
+#include <stdlib.h>
+
 #define ALGOSTRUCT  BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 
 void *mei_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void) {
-    void *self = malloc(sizeof(ALGOSTRUCT));
+    ALGOSTRUCT* self = ((ALGOSTRUCT*) malloc(sizeof(ALGOSTRUCT)));
     if(self != NULL) {
-        Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((ALGOSTRUCT*) self);
+        Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(self);
     }
     return self;
 }
@@ -30,73 +32,75 @@ void mei_Terminate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada86462
     }
 }
 
-int mei_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void *object
-,   /* IN */    double  vSI
-,   /* OUT */   double* vs
+MODELICA_Integer mei_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void *object
+,   /* IN */    MODELICA_Real   vSI
+,   /* OUT */   MODELICA_Real*  vs
 ) {
     ALGOSTRUCT *self = (ALGOSTRUCT *) object;
-    int result = -1;
+    MODELICA_Integer result = -1;
 
     if(self != NULL) {
-        self->vSI = (Real)vSI;
+        self->vSI = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) vSI;
 
-        DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((ALGOSTRUCT*) self);
+        DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(self);
 
-        *vs = (double)self->vs;
-        result = (int)self->ErrorSignals;
+        *vs = ((MODELICA_Real) self->vs);
+        result = ((MODELICA_Integer) self->ErrorSignals);
     }
 
     return result;
 }
 
-int mei_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void *object
-,   /* TUNEABLE */  double  Kw
-,   /* TUNEABLE */  double  T1
-,   /* TUNEABLE */  double  T2
-,   /* TUNEABLE */  double  T3
-,   /* TUNEABLE */  double  T4
-,   /* TUNEABLE */  double  Tw
-,   /* TUNEABLE */  double  vSI_start
-,   /* TUNEABLE */  double  vsmax
-,   /* TUNEABLE */  double  vsmin
+MODELICA_Integer mei_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void \
+    *object
+,   /* TUNEABLE */  MODELICA_Real   Kw
+,   /* TUNEABLE */  MODELICA_Real   T1
+,   /* TUNEABLE */  MODELICA_Real   T2
+,   /* TUNEABLE */  MODELICA_Real   T3
+,   /* TUNEABLE */  MODELICA_Real   T4
+,   /* TUNEABLE */  MODELICA_Real   Tw
+,   /* TUNEABLE */  MODELICA_Real   vSI_start
+,   /* TUNEABLE */  MODELICA_Real   vsmax
+,   /* TUNEABLE */  MODELICA_Real   vsmin
 ) {
     ALGOSTRUCT *self = (ALGOSTRUCT *) object;
-    int result = -1;
+    MODELICA_Integer result = -1;
 
     if(self != NULL) {
-        self->Kw = (Real)Kw;
-        self->T1 = (Real)T1;
-        self->T2 = (Real)T2;
-        self->T3 = (Real)T3;
-        self->T4 = (Real)T4;
-        self->Tw = (Real)Tw;
-        self->vSI_start = (Real)vSI_start;
-        self->vsmax = (Real)vsmax;
-        self->vsmin = (Real)vsmin;
+        self->Kw = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) Kw;
+        self->T1 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) T1;
+        self->T2 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) T2;
+        self->T3 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) T3;
+        self->T4 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) T4;
+        self->Tw = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) Tw;
+        self->vSI_start = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+            vSI_start;
+        self->vsmax = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) vsmax;
+        self->vsmin = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) vsmin;
 
-        Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((ALGOSTRUCT *) self);
+        Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(self);
 
-        result = (int)self->ErrorSignals;
+        result = ((MODELICA_Integer) self->ErrorSignals);
     }
 
     return result;
 }
 
-int mei_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void *object
-,   /* IN */    double  vSI
-,   /* OUT */   double* vs
+MODELICA_Integer mei_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void \
+    *object
+,   /* IN */    MODELICA_Real   vSI
+,   /* OUT */   MODELICA_Real*  vs
 ) {
     ALGOSTRUCT *self = (ALGOSTRUCT *) object;
-    int result = -1;
+    MODELICA_Integer result = -1;
 
     if(self != NULL) {
-        self->vSI = (Real)vSI;
+        self->vSI = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) vSI;
 
-        Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((ALGOSTRUCT *) \
-            self);
+        Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(self);
 
-        *vs = (double)self->vs;
-        result = (int)self->ErrorSignals;
+        *vs = ((MODELICA_Real) self->vs);
+        result = ((MODELICA_Integer) self->ErrorSignals);
     }
 
     return result;

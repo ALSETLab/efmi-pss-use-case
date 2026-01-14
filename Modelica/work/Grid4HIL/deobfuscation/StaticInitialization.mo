@@ -15,10 +15,6 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 	Real v;
 	Real vf0OUT;
 	Real w;
-	/* B3: */
-	Real 'B3.angle_0';
-	Real 'B3.v_0';
-
 	/* B3.p: */
 	Real 'B3.p.vi';
 	Real 'B3.p.vr';
@@ -29,6 +25,7 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 	Real 'G1.V_b';
 	Real 'G1.angle_0';
 	Real 'G1.v_0';
+	Real 'G1.S_b';
 
 	/* G1.feedbackVf0: */
 	Real 'G1.feedbackVf0.u2';
@@ -55,23 +52,29 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 	Real 'G1.machine.I_MBtoSB';
 	Real 'G1.machine.K1';
 	Real 'G1.machine.K2';
+	Real 'G1.machine.P_0';
+	Real 'G1.machine.Q_0';
 	Real 'G1.machine.S_SBtoMB';
+	Real 'G1.machine.S_b';
 	Real 'G1.machine.V_MBtoSB';
+	Real 'G1.machine.V_b';
 	Real 'G1.machine.Z_MBtoSB';
+	Real 'G1.machine.angle_0';
 	Real 'G1.machine.delta0';
-	Real 'G1.machine.e1d0';
 	Real 'G1.machine.e1q0';
-	Real 'G1.machine.e2d0';
 	Real 'G1.machine.e2q0';
+	Real 'G1.machine.fn';
 	Real 'G1.machine.id0';
 	Real 'G1.machine.iq0';
 	Real 'G1.machine.p0';
 	Real 'G1.machine.pm00';
 	Real 'G1.machine.q0';
+	Real 'G1.machine.v_0';
 	Real 'G1.machine.vd0';
 	Real 'G1.machine.vf00';
 	Real 'G1.machine.vq0';
 	Real 'G1.machine.w_b';
+	Real 'G1.machine.xq0';
 	Real 'derivative(G1.machine.delta)';
 	Real 'derivative(G1.machine.e1d)';
 	Real 'derivative(G1.machine.e1q)';
@@ -97,6 +100,7 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 
 	/* G1.machine.S0: */
 	Real 'G1.machine.S0.im';
+	Real 'G1.machine.S0.re';
 
 	/* G1.machine.Vdq0: */
 	Real 'G1.machine.Vdq0.im';
@@ -116,11 +120,27 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 	Real 'L1.R';
 	Real 'L1.X';
 
+	/* L1.Y: */
+	Real 'L1.Y.im';
+	Real 'L1.Y.re';
+
+	/* L1.Z: */
+	Real 'L1.Z.im';
+	Real 'L1.Z.re';
+
 	/* L2: */
 	Real 'L2.B';
 	Real 'L2.G';
 	Real 'L2.R';
 	Real 'L2.X';
+
+	/* L2.Y: */
+	Real 'L2.Y.im';
+	Real 'L2.Y.re';
+
+	/* L2.Z: */
+	Real 'L2.Z.im';
+	Real 'L2.Z.re';
 
 	/* L2.p: */
 	Real 'L2.p.ii';
@@ -130,6 +150,10 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 	Real 'SysData.S_b';
 	Real 'SysData.fn';
 
+	/* infiniteBus: */
+	Real 'infiniteBus.angle_0';
+	Real 'infiniteBus.v_0';
+
 	/* transformer: */
 	Real 'transformer.Sn';
 	Real 'transformer.V_b';
@@ -137,6 +161,7 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 	Real 'transformer.m';
 	Real 'transformer.rT';
 	Real 'transformer.xT';
+	Real 'transformer.S_b';
 	Real 'transformer.Zb';
 	Real 'transformer.Zn';
 	Real 'transformer.r';
@@ -148,6 +173,8 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 
 	/* Internal sampling time: */
 	Real 'discrete.stepSize';
+	Boolean 'discrete.stepSize.active';
+
 	end Self;
 
 	function ReadStartupModelResults
@@ -190,8 +217,6 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 			  "self.v",
 			  "self.vf0OUT",
 			  "self.w",
-			  "self.'B3.angle_0'",
-			  "self.'B3.v_0'",
 			  "self.'B3.p.vi'",
 			  "self.'B3.p.vr'",
 			  "self.'G1.P_0'",
@@ -199,6 +224,7 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 			  "self.'G1.V_b'",
 			  "self.'G1.angle_0'",
 			  "self.'G1.v_0'",
+			  "self.'G1.S_b'",
 			  "self.'G1.feedbackVf0.u2'",
 			  "self.'G1.gainVf0.k'",
 			  "self.'G1.machine.M'",
@@ -219,34 +245,35 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 			  "self.'G1.machine.I_MBtoSB'",
 			  "self.'G1.machine.K1'",
 			  "self.'G1.machine.K2'",
+			  "self.'G1.machine.P_0'",
+			  "self.'G1.machine.Q_0'",
 			  "self.'G1.machine.S_SBtoMB'",
+			  "self.'G1.machine.S_b'",
 			  "self.'G1.machine.V_MBtoSB'",
+			  "self.'G1.machine.V_b'",
 			  "self.'G1.machine.Z_MBtoSB'",
+			  "self.'G1.machine.angle_0'",
 			  "self.'G1.machine.delta0'",
-			  "self.'G1.machine.e1d0'",
 			  "self.'G1.machine.e1q0'",
-			  "self.'G1.machine.e2d0'",
 			  "self.'G1.machine.e2q0'",
+			  "self.'G1.machine.fn'",
 			  "self.'G1.machine.id0'",
 			  "self.'G1.machine.iq0'",
 			  "self.'G1.machine.p0'",
 			  "self.'G1.machine.pm00'",
 			  "self.'G1.machine.q0'",
+			  "self.'G1.machine.v_0'",
 			  "self.'G1.machine.vd0'",
 			  "self.'G1.machine.vf00'",
 			  "self.'G1.machine.vq0'",
 			  "self.'G1.machine.w_b'",
+			  "self.'G1.machine.xq0'",
 			  "self.'derivative(G1.machine.delta)'",
 			  "self.'derivative(G1.machine.e1d)'",
 			  "self.'derivative(G1.machine.e1q)'",
 			  "self.'derivative(G1.machine.e2d)'",
 			  "self.'derivative(G1.machine.e2q)'",
-			  "self.'derivative(G1.machine.w)'",
-			  "self.'G1.machine.delta'",
-			  "self.'G1.machine.e1d'",
-			  "self.'G1.machine.e1q'",
-			  "self.'G1.machine.e2d'",
-			  "self.'G1.machine.e2q'"});
+			  "self.'derivative(G1.machine.w)'"});
 			self.fault := trajectories_buffer[1, 1] > 0.0;
 			self.vf := trajectories_buffer[2, 1];
 			self.Pgen := trajectories_buffer[3, 1];
@@ -254,68 +281,73 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 			self.v := trajectories_buffer[5, 1];
 			self.vf0OUT := trajectories_buffer[6, 1];
 			self.w := trajectories_buffer[7, 1];
-			self.'B3.angle_0' := trajectories_buffer[8, 1];
-			self.'B3.v_0' := trajectories_buffer[9, 1];
-			self.'B3.p.vi' := trajectories_buffer[10, 1];
-			self.'B3.p.vr' := trajectories_buffer[11, 1];
-			self.'G1.P_0' := trajectories_buffer[12, 1];
-			self.'G1.Q_0' := trajectories_buffer[13, 1];
-			self.'G1.V_b' := trajectories_buffer[14, 1];
-			self.'G1.angle_0' := trajectories_buffer[15, 1];
-			self.'G1.v_0' := trajectories_buffer[16, 1];
-			self.'G1.feedbackVf0.u2' := trajectories_buffer[17, 1];
-			self.'G1.gainVf0.k' := trajectories_buffer[18, 1];
-			self.'G1.machine.M' := trajectories_buffer[19, 1];
-			self.'G1.machine.Sn' := trajectories_buffer[20, 1];
-			self.'G1.machine.T1d0' := trajectories_buffer[21, 1];
-			self.'G1.machine.T1q0' := trajectories_buffer[22, 1];
-			self.'G1.machine.T2d0' := trajectories_buffer[23, 1];
-			self.'G1.machine.T2q0' := trajectories_buffer[24, 1];
-			self.'G1.machine.Taa' := trajectories_buffer[25, 1];
-			self.'G1.machine.Vn' := trajectories_buffer[26, 1];
-			self.'G1.machine.ra' := trajectories_buffer[27, 1];
-			self.'G1.machine.x1d' := trajectories_buffer[28, 1];
-			self.'G1.machine.x1q' := trajectories_buffer[29, 1];
-			self.'G1.machine.x2d' := trajectories_buffer[30, 1];
-			self.'G1.machine.x2q' := trajectories_buffer[31, 1];
-			self.'G1.machine.xd' := trajectories_buffer[32, 1];
-			self.'G1.machine.xq' := trajectories_buffer[33, 1];
-			self.'G1.machine.I_MBtoSB' := trajectories_buffer[34, 1];
-			self.'G1.machine.K1' := trajectories_buffer[35, 1];
-			self.'G1.machine.K2' := trajectories_buffer[36, 1];
-			self.'G1.machine.S_SBtoMB' := trajectories_buffer[37, 1];
-			self.'G1.machine.V_MBtoSB' := trajectories_buffer[38, 1];
-			self.'G1.machine.Z_MBtoSB' := trajectories_buffer[39, 1];
-			self.'G1.machine.delta0' := trajectories_buffer[40, 1];
-			self.'G1.machine.e1d0' := trajectories_buffer[41, 1];
-			self.'G1.machine.e1q0' := trajectories_buffer[42, 1];
-			self.'G1.machine.e2d0' := trajectories_buffer[43, 1];
-			self.'G1.machine.e2q0' := trajectories_buffer[44, 1];
-			self.'G1.machine.id0' := trajectories_buffer[45, 1];
-			self.'G1.machine.iq0' := trajectories_buffer[46, 1];
-			self.'G1.machine.p0' := trajectories_buffer[47, 1];
-			self.'G1.machine.pm00' := trajectories_buffer[48, 1];
-			self.'G1.machine.q0' := trajectories_buffer[49, 1];
-			self.'G1.machine.vd0' := trajectories_buffer[50, 1];
-			self.'G1.machine.vf00' := trajectories_buffer[51, 1];
-			self.'G1.machine.vq0' := trajectories_buffer[52, 1];
-			self.'G1.machine.w_b' := trajectories_buffer[53, 1];
-			self.'derivative(G1.machine.delta)' := trajectories_buffer[54, 1];
-			self.'derivative(G1.machine.e1d)' := trajectories_buffer[55, 1];
-			self.'derivative(G1.machine.e1q)' := trajectories_buffer[56, 1];
-			self.'derivative(G1.machine.e2d)' := trajectories_buffer[57, 1];
-			self.'derivative(G1.machine.e2q)' := trajectories_buffer[58, 1];
-			self.'derivative(G1.machine.w)' := trajectories_buffer[59, 1];
-			self.'G1.machine.delta' := trajectories_buffer[60, 1];
-			self.'G1.machine.e1d' := trajectories_buffer[61, 1];
-			self.'G1.machine.e1q' := trajectories_buffer[62, 1];
-			self.'G1.machine.e2d' := trajectories_buffer[63, 1];
-			self.'G1.machine.e2q' := trajectories_buffer[64, 1];
+			self.'B3.p.vi' := trajectories_buffer[8, 1];
+			self.'B3.p.vr' := trajectories_buffer[9, 1];
+			self.'G1.P_0' := trajectories_buffer[10, 1];
+			self.'G1.Q_0' := trajectories_buffer[11, 1];
+			self.'G1.V_b' := trajectories_buffer[12, 1];
+			self.'G1.angle_0' := trajectories_buffer[13, 1];
+			self.'G1.v_0' := trajectories_buffer[14, 1];
+			self.'G1.S_b' := trajectories_buffer[15, 1];
+			self.'G1.feedbackVf0.u2' := trajectories_buffer[16, 1];
+			self.'G1.gainVf0.k' := trajectories_buffer[17, 1];
+			self.'G1.machine.M' := trajectories_buffer[18, 1];
+			self.'G1.machine.Sn' := trajectories_buffer[19, 1];
+			self.'G1.machine.T1d0' := trajectories_buffer[20, 1];
+			self.'G1.machine.T1q0' := trajectories_buffer[21, 1];
+			self.'G1.machine.T2d0' := trajectories_buffer[22, 1];
+			self.'G1.machine.T2q0' := trajectories_buffer[23, 1];
+			self.'G1.machine.Taa' := trajectories_buffer[24, 1];
+			self.'G1.machine.Vn' := trajectories_buffer[25, 1];
+			self.'G1.machine.ra' := trajectories_buffer[26, 1];
+			self.'G1.machine.x1d' := trajectories_buffer[27, 1];
+			self.'G1.machine.x1q' := trajectories_buffer[28, 1];
+			self.'G1.machine.x2d' := trajectories_buffer[29, 1];
+			self.'G1.machine.x2q' := trajectories_buffer[30, 1];
+			self.'G1.machine.xd' := trajectories_buffer[31, 1];
+			self.'G1.machine.xq' := trajectories_buffer[32, 1];
+			self.'G1.machine.I_MBtoSB' := trajectories_buffer[33, 1];
+			self.'G1.machine.K1' := trajectories_buffer[34, 1];
+			self.'G1.machine.K2' := trajectories_buffer[35, 1];
+			self.'G1.machine.P_0' := trajectories_buffer[36, 1];
+			self.'G1.machine.Q_0' := trajectories_buffer[37, 1];
+			self.'G1.machine.S_SBtoMB' := trajectories_buffer[38, 1];
+			self.'G1.machine.S_b' := trajectories_buffer[39, 1];
+			self.'G1.machine.V_MBtoSB' := trajectories_buffer[40, 1];
+			self.'G1.machine.V_b' := trajectories_buffer[41, 1];
+			self.'G1.machine.Z_MBtoSB' := trajectories_buffer[42, 1];
+			self.'G1.machine.angle_0' := trajectories_buffer[43, 1];
+			self.'G1.machine.delta0' := trajectories_buffer[44, 1];
+			self.'G1.machine.e1q0' := trajectories_buffer[45, 1];
+			self.'G1.machine.e2q0' := trajectories_buffer[46, 1];
+			self.'G1.machine.fn' := trajectories_buffer[47, 1];
+			self.'G1.machine.id0' := trajectories_buffer[48, 1];
+			self.'G1.machine.iq0' := trajectories_buffer[49, 1];
+			self.'G1.machine.p0' := trajectories_buffer[50, 1];
+			self.'G1.machine.pm00' := trajectories_buffer[51, 1];
+			self.'G1.machine.q0' := trajectories_buffer[52, 1];
+			self.'G1.machine.v_0' := trajectories_buffer[53, 1];
+			self.'G1.machine.vd0' := trajectories_buffer[54, 1];
+			self.'G1.machine.vf00' := trajectories_buffer[55, 1];
+			self.'G1.machine.vq0' := trajectories_buffer[56, 1];
+			self.'G1.machine.w_b' := trajectories_buffer[57, 1];
+			self.'G1.machine.xq0' := trajectories_buffer[58, 1];
+			self.'derivative(G1.machine.delta)' := trajectories_buffer[59, 1];
+			self.'derivative(G1.machine.e1d)' := trajectories_buffer[60, 1];
+			self.'derivative(G1.machine.e1q)' := trajectories_buffer[61, 1];
+			self.'derivative(G1.machine.e2d)' := trajectories_buffer[62, 1];
+			self.'derivative(G1.machine.e2q)' := trajectories_buffer[63, 1];
+			self.'derivative(G1.machine.w)' := trajectories_buffer[64, 1];
 
-			trajectories_buffer[1:39] := .DymolaCommands.Trajectories.readTrajectory(
+			trajectories_buffer[1:57] := .DymolaCommands.Trajectories.readTrajectory(
 			 fileName = result_file + ".mat",
 			 rows = 1,
 			 signals = {
+			  "self.'G1.machine.delta'",
+			  "self.'G1.machine.e1d'",
+			  "self.'G1.machine.e1q'",
+			  "self.'G1.machine.e2d'",
+			  "self.'G1.machine.e2q'",
 			  "self.'G1.machine.id'",
 			  "self.'G1.machine.iq'",
 			  "self.'G1.machine.w'",
@@ -324,6 +356,7 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 			  "self.'G1.machine.Idq0.im'",
 			  "self.'G1.machine.Idq0.re'",
 			  "self.'G1.machine.S0.im'",
+			  "self.'G1.machine.S0.re'",
 			  "self.'G1.machine.Vdq0.im'",
 			  "self.'G1.machine.Vdq0.re'",
 			  "self.'G1.machine.Vt0.im'",
@@ -334,66 +367,96 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 			  "self.'L1.G'",
 			  "self.'L1.R'",
 			  "self.'L1.X'",
+			  "self.'L1.Y.im'",
+			  "self.'L1.Y.re'",
+			  "self.'L1.Z.im'",
+			  "self.'L1.Z.re'",
 			  "self.'L2.B'",
 			  "self.'L2.G'",
 			  "self.'L2.R'",
 			  "self.'L2.X'",
+			  "self.'L2.Y.im'",
+			  "self.'L2.Y.re'",
+			  "self.'L2.Z.im'",
+			  "self.'L2.Z.re'",
 			  "self.'L2.p.ii'",
 			  "self.'L2.p.ir'",
 			  "self.'SysData.S_b'",
 			  "self.'SysData.fn'",
+			  "self.'infiniteBus.angle_0'",
+			  "self.'infiniteBus.v_0'",
 			  "self.'transformer.Sn'",
 			  "self.'transformer.V_b'",
 			  "self.'transformer.Vn'",
 			  "self.'transformer.m'",
 			  "self.'transformer.rT'",
 			  "self.'transformer.xT'",
+			  "self.'transformer.S_b'",
 			  "self.'transformer.Zb'",
 			  "self.'transformer.Zn'",
 			  "self.'transformer.r'",
 			  "self.'transformer.x'",
 			  "self.'transformer.n.ii'",
 			  "self.'transformer.n.ir'",
-			  "self.'discrete.stepSize'"});
-			self.'G1.machine.id' := trajectories_buffer[1, 1];
-			self.'G1.machine.iq' := trajectories_buffer[2, 1];
-			self.'G1.machine.w' := trajectories_buffer[3, 1];
-			self.'G1.machine.I0.im' := trajectories_buffer[4, 1];
-			self.'G1.machine.I0.re' := trajectories_buffer[5, 1];
-			self.'G1.machine.Idq0.im' := trajectories_buffer[6, 1];
-			self.'G1.machine.Idq0.re' := trajectories_buffer[7, 1];
-			self.'G1.machine.S0.im' := trajectories_buffer[8, 1];
-			self.'G1.machine.Vdq0.im' := trajectories_buffer[9, 1];
-			self.'G1.machine.Vdq0.re' := trajectories_buffer[10, 1];
-			self.'G1.machine.Vt0.im' := trajectories_buffer[11, 1];
-			self.'G1.machine.Vt0.re' := trajectories_buffer[12, 1];
-			self.'G1.machine.auxCMval.im' := trajectories_buffer[13, 1];
-			self.'G1.machine.auxCMval.re' := trajectories_buffer[14, 1];
-			self.'L1.B' := trajectories_buffer[15, 1];
-			self.'L1.G' := trajectories_buffer[16, 1];
-			self.'L1.R' := trajectories_buffer[17, 1];
-			self.'L1.X' := trajectories_buffer[18, 1];
-			self.'L2.B' := trajectories_buffer[19, 1];
-			self.'L2.G' := trajectories_buffer[20, 1];
-			self.'L2.R' := trajectories_buffer[21, 1];
-			self.'L2.X' := trajectories_buffer[22, 1];
-			self.'L2.p.ii' := trajectories_buffer[23, 1];
-			self.'L2.p.ir' := trajectories_buffer[24, 1];
-			self.'SysData.S_b' := trajectories_buffer[25, 1];
-			self.'SysData.fn' := trajectories_buffer[26, 1];
-			self.'transformer.Sn' := trajectories_buffer[27, 1];
-			self.'transformer.V_b' := trajectories_buffer[28, 1];
-			self.'transformer.Vn' := trajectories_buffer[29, 1];
-			self.'transformer.m' := trajectories_buffer[30, 1];
-			self.'transformer.rT' := trajectories_buffer[31, 1];
-			self.'transformer.xT' := trajectories_buffer[32, 1];
-			self.'transformer.Zb' := trajectories_buffer[33, 1];
-			self.'transformer.Zn' := trajectories_buffer[34, 1];
-			self.'transformer.r' := trajectories_buffer[35, 1];
-			self.'transformer.x' := trajectories_buffer[36, 1];
-			self.'transformer.n.ii' := trajectories_buffer[37, 1];
-			self.'transformer.n.ir' := trajectories_buffer[38, 1];
-			self.'discrete.stepSize' := trajectories_buffer[39, 1];
+			  "self.'discrete.stepSize'",
+			  "self.'discrete.stepSize.active'"});
+			self.'G1.machine.delta' := trajectories_buffer[1, 1];
+			self.'G1.machine.e1d' := trajectories_buffer[2, 1];
+			self.'G1.machine.e1q' := trajectories_buffer[3, 1];
+			self.'G1.machine.e2d' := trajectories_buffer[4, 1];
+			self.'G1.machine.e2q' := trajectories_buffer[5, 1];
+			self.'G1.machine.id' := trajectories_buffer[6, 1];
+			self.'G1.machine.iq' := trajectories_buffer[7, 1];
+			self.'G1.machine.w' := trajectories_buffer[8, 1];
+			self.'G1.machine.I0.im' := trajectories_buffer[9, 1];
+			self.'G1.machine.I0.re' := trajectories_buffer[10, 1];
+			self.'G1.machine.Idq0.im' := trajectories_buffer[11, 1];
+			self.'G1.machine.Idq0.re' := trajectories_buffer[12, 1];
+			self.'G1.machine.S0.im' := trajectories_buffer[13, 1];
+			self.'G1.machine.S0.re' := trajectories_buffer[14, 1];
+			self.'G1.machine.Vdq0.im' := trajectories_buffer[15, 1];
+			self.'G1.machine.Vdq0.re' := trajectories_buffer[16, 1];
+			self.'G1.machine.Vt0.im' := trajectories_buffer[17, 1];
+			self.'G1.machine.Vt0.re' := trajectories_buffer[18, 1];
+			self.'G1.machine.auxCMval.im' := trajectories_buffer[19, 1];
+			self.'G1.machine.auxCMval.re' := trajectories_buffer[20, 1];
+			self.'L1.B' := trajectories_buffer[21, 1];
+			self.'L1.G' := trajectories_buffer[22, 1];
+			self.'L1.R' := trajectories_buffer[23, 1];
+			self.'L1.X' := trajectories_buffer[24, 1];
+			self.'L1.Y.im' := trajectories_buffer[25, 1];
+			self.'L1.Y.re' := trajectories_buffer[26, 1];
+			self.'L1.Z.im' := trajectories_buffer[27, 1];
+			self.'L1.Z.re' := trajectories_buffer[28, 1];
+			self.'L2.B' := trajectories_buffer[29, 1];
+			self.'L2.G' := trajectories_buffer[30, 1];
+			self.'L2.R' := trajectories_buffer[31, 1];
+			self.'L2.X' := trajectories_buffer[32, 1];
+			self.'L2.Y.im' := trajectories_buffer[33, 1];
+			self.'L2.Y.re' := trajectories_buffer[34, 1];
+			self.'L2.Z.im' := trajectories_buffer[35, 1];
+			self.'L2.Z.re' := trajectories_buffer[36, 1];
+			self.'L2.p.ii' := trajectories_buffer[37, 1];
+			self.'L2.p.ir' := trajectories_buffer[38, 1];
+			self.'SysData.S_b' := trajectories_buffer[39, 1];
+			self.'SysData.fn' := trajectories_buffer[40, 1];
+			self.'infiniteBus.angle_0' := trajectories_buffer[41, 1];
+			self.'infiniteBus.v_0' := trajectories_buffer[42, 1];
+			self.'transformer.Sn' := trajectories_buffer[43, 1];
+			self.'transformer.V_b' := trajectories_buffer[44, 1];
+			self.'transformer.Vn' := trajectories_buffer[45, 1];
+			self.'transformer.m' := trajectories_buffer[46, 1];
+			self.'transformer.rT' := trajectories_buffer[47, 1];
+			self.'transformer.xT' := trajectories_buffer[48, 1];
+			self.'transformer.S_b' := trajectories_buffer[49, 1];
+			self.'transformer.Zb' := trajectories_buffer[50, 1];
+			self.'transformer.Zn' := trajectories_buffer[51, 1];
+			self.'transformer.r' := trajectories_buffer[52, 1];
+			self.'transformer.x' := trajectories_buffer[53, 1];
+			self.'transformer.n.ii' := trajectories_buffer[54, 1];
+			self.'transformer.n.ir' := trajectories_buffer[55, 1];
+			self.'discrete.stepSize' := trajectories_buffer[56, 1];
+			self.'discrete.stepSize.active' := trajectories_buffer[57, 1] > 0.0;
 
 		end if;
 		
@@ -440,20 +503,11 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 			Initialize variables with explicit start value (independent initializations):
 		*/
 		self.'discrete.stepSize' := 1.00000000000000002e-3;
-		self.'G1.V_b' := 4.0e+5;
 		self.'G1.machine.Vn' := 4.0e+5;
 		self.'transformer.m' := 1.0;
 		self.'G1.machine.x2q' := 2.5e-1;
 		self.'G1.machine.ra' := 3.00000000000000006e-3;
 		self.'G1.machine.x2d' := 2.3000000000000001e-1;
-		self.'L1.X' := 2.25225225225225215e-2;
-		self.'L1.R' := 0.0;
-		self.'L1.G' := 0.0;
-		self.'L1.B' := 0.0;
-		self.'L2.R' := 0.0;
-		self.'L2.X' := 4.18918918918918942e-2;
-		self.'L2.B' := 0.0;
-		self.'L2.G' := 0.0;
 		self.'G1.machine.Taa' := 2.00000000000000004e-3;
 		self.'G1.machine.T1d0' := 8.0;
 		self.'G1.machine.xd' := 1.81000000000000005;
@@ -465,15 +519,24 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 		self.'G1.machine.T2q0' := 7.00000000000000067e-2;
 		self.'G1.machine.T1q0' := 1.0;
 		self.'SysData.S_b' := 1.0e+8;
-		self.'B3.v_0' := 1.0;
-		self.'B3.angle_0' := 0.0;
+		self.'infiniteBus.v_0' := 9.0081e-1;
+		self.'infiniteBus.angle_0' := 0.0;
 		self.'G1.gainVf0.k' := -1.0;
-		self.'G1.v_0' := 1.0;
+		self.'G1.machine.Sn' := 2.22e+9;
 		self.'G1.angle_0' := 4.94677176989159972e-1;
+		self.'G1.v_0' := 1.0;
 		self.'G1.Q_0' := 9.67924969906579971e+8;
 		self.'G1.P_0' := 1.99799999999359989e+9;
-		self.'G1.machine.Sn' := 2.22e+9;
 		self.'SysData.fn' := 6.0e+1;
+		self.'G1.V_b' := 4.0e+5;
+		self.'L2.X' := 4.18918918918918942e-2;
+		self.'L2.R' := 0.0;
+		self.'L2.B' := 0.0;
+		self.'L2.G' := 0.0;
+		self.'L1.X' := 2.25225225225225215e-2;
+		self.'L1.R' := 0.0;
+		self.'L1.B' := 0.0;
+		self.'L1.G' := 0.0;
 		self.'transformer.xT' := 1.49999999999999994e-1;
 		self.'transformer.rT' := 0.0;
 		self.'transformer.V_b' := 4.0e+5;
@@ -509,24 +572,43 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 		/*
 			Initialize variables with start value equation (dependent initializations):
 		*/
+		self.'transformer.S_b' := self.'SysData.S_b';
 		self.'transformer.Zn' := ((self.'transformer.Vn' ^ 2) / self.'transformer.Sn');
-		self.'transformer.Zb' := ((self.'transformer.V_b' ^ 2) / self.'SysData.S_b');
+		self.'transformer.Zb' := ((self.'transformer.V_b' ^ 2) / self.'transformer.S_b');
 		self.'transformer.r' := ((self.'transformer.rT' * self.'transformer.Zn') / self.'transformer.Zb');
 		self.'transformer.x' := ((self.'transformer.xT' * self.'transformer.Zn') / self.'transformer.Zb');
-		self.'G1.machine.w_b' := (6.28318530717958623 * self.'SysData.fn');
-		self.'G1.machine.S_SBtoMB' := (self.'SysData.S_b' / self.'G1.machine.Sn');
-		self.'G1.machine.I_MBtoSB' := ((self.'G1.machine.Sn' * self.'G1.V_b') / (self.'SysData.S_b' * self.'G1.machine.Vn'));
-		self.'G1.machine.V_MBtoSB' := (self.'G1.machine.Vn' / self.'G1.V_b');
-		self.'G1.machine.Z_MBtoSB' := ((self.'SysData.S_b' * (self.'G1.machine.Vn' ^ 2)) / (self.'G1.machine.Sn' * (self.'G1.V_b' ^ 2)));
-		self.'G1.machine.p0' := (self.'G1.P_0' / self.'SysData.S_b');
-		self.'G1.machine.q0' := (self.'G1.Q_0' / self.'SysData.S_b');
-		self.'G1.machine.Vt0.re' := (self.'G1.v_0' * cos(self.'G1.angle_0'));
-		self.'G1.machine.Vt0.im' := (self.'G1.v_0' * sin(self.'G1.angle_0'));
+		self.'L1.Y.re' := self.'L1.G';
+		self.'L1.Y.im' := self.'L1.B';
+		self.'L1.Z.re' := self.'L1.R';
+		self.'L1.Z.im' := self.'L1.X';
+		self.'L2.Y.re' := self.'L2.G';
+		self.'L2.Y.im' := self.'L2.B';
+		self.'L2.Z.re' := self.'L2.R';
+		self.'L2.Z.im' := self.'L2.X';
+		self.'G1.S_b' := self.'SysData.S_b';
+		self.'G1.machine.S_b' := self.'SysData.S_b';
+		self.'G1.machine.V_b' := self.'G1.V_b';
+		self.'G1.machine.fn' := self.'SysData.fn';
+		self.'G1.machine.P_0' := self.'G1.P_0';
+		self.'G1.machine.Q_0' := self.'G1.Q_0';
+		self.'G1.machine.v_0' := self.'G1.v_0';
+		self.'G1.machine.angle_0' := self.'G1.angle_0';
+		self.'G1.machine.w_b' := (6.28318530717958623 * self.'G1.machine.fn');
+		self.'G1.machine.S_SBtoMB' := (self.'G1.machine.S_b' / self.'G1.machine.Sn');
+		self.'G1.machine.I_MBtoSB' := ((self.'G1.machine.Sn' * self.'G1.machine.V_b') / (self.'G1.machine.S_b' * self.'G1.machine.Vn'));
+		self.'G1.machine.V_MBtoSB' := (self.'G1.machine.Vn' / self.'G1.machine.V_b');
+		self.'G1.machine.Z_MBtoSB' := ((self.'G1.machine.S_b' * (self.'G1.machine.Vn' ^ 2)) / (self.'G1.machine.Sn' * (self.'G1.machine.V_b' ^ 2)));
+		self.'G1.machine.p0' := (self.'G1.machine.P_0' / self.'G1.machine.S_b');
+		self.'G1.machine.q0' := (self.'G1.machine.Q_0' / self.'G1.machine.S_b');
+		self.'G1.machine.Vt0.re' := (self.'G1.machine.v_0' * cos(self.'G1.machine.angle_0'));
+		self.'G1.machine.Vt0.im' := (self.'G1.machine.v_0' * sin(self.'G1.machine.angle_0'));
+		self.'G1.machine.S0.re' := self.'G1.machine.p0';
 		self.'G1.machine.S0.im' := (-1.0 * (self.'G1.machine.q0'));
-		self.'G1.machine.I0.re' := (((self.'G1.machine.p0' * self.'G1.machine.Vt0.re') - (self.'G1.machine.S0.im' * self.'G1.machine.Vt0.im')) / ((self.'G1.machine.Vt0.re' * self.'G1.machine.Vt0.re') + (self.'G1.machine.Vt0.im' * self.'G1.machine.Vt0.im')));
-		self.'G1.machine.I0.im' := (((self.'G1.machine.p0' * self.'G1.machine.Vt0.im') + (self.'G1.machine.S0.im' * self.'G1.machine.Vt0.re')) / ((self.'G1.machine.Vt0.re' * self.'G1.machine.Vt0.re') + (self.'G1.machine.Vt0.im' * self.'G1.machine.Vt0.im')));
-		self.'G1.machine.auxCMval.re' := (self.'G1.machine.Vt0.re' + (((self.'G1.machine.ra' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.re') - ((self.'G1.machine.xq' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.im')));
-		self.'G1.machine.auxCMval.im' := (self.'G1.machine.Vt0.im' + (((self.'G1.machine.ra' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.im') + ((self.'G1.machine.xq' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.re')));
+		self.'G1.machine.I0.re' := (((self.'G1.machine.S0.re' * self.'G1.machine.Vt0.re') - (self.'G1.machine.S0.im' * self.'G1.machine.Vt0.im')) / ((self.'G1.machine.Vt0.re' * self.'G1.machine.Vt0.re') + (self.'G1.machine.Vt0.im' * self.'G1.machine.Vt0.im')));
+		self.'G1.machine.I0.im' := (((self.'G1.machine.S0.re' * self.'G1.machine.Vt0.im') + (self.'G1.machine.S0.im' * self.'G1.machine.Vt0.re')) / ((self.'G1.machine.Vt0.re' * self.'G1.machine.Vt0.re') + (self.'G1.machine.Vt0.im' * self.'G1.machine.Vt0.im')));
+		self.'G1.machine.xq0' := self.'G1.machine.xq';
+		self.'G1.machine.auxCMval.re' := (self.'G1.machine.Vt0.re' + (((self.'G1.machine.ra' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.re') - ((self.'G1.machine.xq0' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.im')));
+		self.'G1.machine.auxCMval.im' := (self.'G1.machine.Vt0.im' + (((self.'G1.machine.ra' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.im') + ((self.'G1.machine.xq0' * self.'G1.machine.Z_MBtoSB') * self.'G1.machine.I0.re')));
 		self.'G1.machine.delta0' := atan2(self.'G1.machine.auxCMval.im', self.'G1.machine.auxCMval.re');
 		self.'G1.machine.Vdq0.re' := (((self.'G1.machine.Vt0.re' * cos((1.57079632679489656 - self.'G1.machine.delta0'))) - (self.'G1.machine.Vt0.im' * sin((1.57079632679489656 - self.'G1.machine.delta0')))) / self.'G1.machine.V_MBtoSB');
 		self.'G1.machine.Vdq0.im' := (((self.'G1.machine.Vt0.re' * sin((1.57079632679489656 - self.'G1.machine.delta0'))) + (self.'G1.machine.Vt0.im' * cos((1.57079632679489656 - self.'G1.machine.delta0')))) / self.'G1.machine.V_MBtoSB');
@@ -538,13 +620,13 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 		self.'G1.machine.iq0' := self.'G1.machine.Idq0.im';
 		self.'G1.machine.pm00' := ((((self.'G1.machine.vq0' + (self.'G1.machine.ra' * self.'G1.machine.iq0')) * self.'G1.machine.iq0') + ((self.'G1.machine.vd0' + (self.'G1.machine.ra' * self.'G1.machine.id0')) * self.'G1.machine.id0')) / self.'G1.machine.S_SBtoMB');
 		self.'G1.machine.e2q0' := ((self.'G1.machine.vq0' + (self.'G1.machine.ra' * self.'G1.machine.iq0')) + (self.'G1.machine.x2d' * self.'G1.machine.id0'));
-		self.'G1.machine.e2d0' := ((self.'G1.machine.vd0' + (self.'G1.machine.ra' * self.'G1.machine.id0')) - (self.'G1.machine.x2q' * self.'G1.machine.iq0'));
-		self.'G1.machine.e1d0' := (((self.'G1.machine.xq' - self.'G1.machine.x1q') - (((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / (self.'G1.machine.T1q0' * self.'G1.machine.x1q'))) * self.'G1.machine.iq0');
 		self.'G1.machine.K1' := ((self.'G1.machine.xd' - self.'G1.machine.x1d') - (((self.'G1.machine.T2d0' * self.'G1.machine.x2d') * (self.'G1.machine.xd' - self.'G1.machine.x1d')) / (self.'G1.machine.T1d0' * self.'G1.machine.x1d')));
 		self.'G1.machine.K2' := ((self.'G1.machine.x1d' - self.'G1.machine.x2d') + (((self.'G1.machine.T2d0' * self.'G1.machine.x2d') * (self.'G1.machine.xd' - self.'G1.machine.x1d')) / (self.'G1.machine.T1d0' * self.'G1.machine.x1d')));
 		self.'G1.machine.e1q0' := ((self.'G1.machine.e2q0' + (self.'G1.machine.K2' * self.'G1.machine.id0')) - ((self.'G1.machine.Taa' * (((self.'G1.machine.K1' + self.'G1.machine.K2') * self.'G1.machine.id0') + self.'G1.machine.e2q0')) / self.'G1.machine.T1d0'));
 		self.'G1.machine.vf00' := ((self.'G1.machine.V_MBtoSB' * ((self.'G1.machine.K1' * self.'G1.machine.id0') + self.'G1.machine.e1q0')) / (1.0 - (self.'G1.machine.Taa' / self.'G1.machine.T1d0')));
 		self.'G1.feedbackVf0.u2' := (self.'G1.gainVf0.k' * self.'G1.machine.vf00');
+		self.'B3.p.vr' := (self.'infiniteBus.v_0' * cos(self.'infiniteBus.angle_0'));
+		self.'B3.p.vi' := (self.'infiniteBus.v_0' * sin(self.'infiniteBus.angle_0'));
 		self.vf0OUT := self.'G1.machine.vf00';
 	end Recalibrate;
 
@@ -555,6 +637,7 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 
 	protected
 		Boolean DymolaConvertInputToREAL0;
+		Real DymolaConvertInputToReal0;
 
 		/* Internal work-buffers for solutions of linear systems of equations: */
 		Real 'solution_buffer.for.x[6]'[ 6 ];
@@ -575,19 +658,15 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 		self.'G1.machine.e1q' := self.'G1.machine.e1q0';
 		self.'G1.machine.e2q' := self.'G1.machine.e2q0';
 		self.'G1.machine.w' := 1.0;
-		self.'G1.machine.delta' := self.'G1.machine.delta0';
-		self.'G1.machine.e1d' := self.'G1.machine.e1d0';
-		self.'G1.machine.e2d' := self.'G1.machine.e2d0';
-		DymolaConvertInputToREAL0 := false;
-		self.'B3.p.vr' := (self.'B3.v_0' * cos(self.'B3.angle_0'));
-		self.'B3.p.vi' := (self.'B3.v_0' * sin(self.'B3.angle_0'));
 		self.w := 1.0;
-		self.v := self.'G1.v_0';
 		/*
 			Initialize variables with start value equation (dependent initializations):
 		*/
 		self.'derivative(G1.machine.e1d)' := 0.0;
 		self.'derivative(G1.machine.e2d)' := 0.0;
+		self.'G1.machine.delta' := self.'G1.machine.delta0';
+		DymolaConvertInputToReal0 := (if self.fault then 2.0 else 0.0);
+		DymolaConvertInputToREAL0 := (DymolaConvertInputToReal0 > 1);
 		/* Solve linear system of equations A*x = b: */
 		'solution_buffer.for.x[6]' := solveLinearEquations(
 			/* A matrix: */
@@ -597,22 +676,22 @@ encapsulated package 'PSSDesign.eFMUs4RTHIL.GridForHILTesting: static initializa
 				/* Row 2: */
 				{ (self.'transformer.r' / self.'transformer.m'), (self.'transformer.x' / self.'transformer.m'), 0.0, 0.0, (((self.'transformer.r' * (self.'G1.machine.I_MBtoSB' * sin(self.'G1.machine.delta'))) - (((((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'G1.machine.T1q0') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'G1.machine.T2q0')) + (((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.x2q')) + (((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.ra'))) + (self.'transformer.x' * (self.'G1.machine.I_MBtoSB' * cos(self.'G1.machine.delta')))), ((((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.ra') - (((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.x2d')) - (self.'transformer.r' * (self.'G1.machine.I_MBtoSB' * cos(self.'G1.machine.delta')))) + (self.'transformer.x' * (self.'G1.machine.I_MBtoSB' * sin(self.'G1.machine.delta')))) },
 				/* Row 3: */
-				{ ((((((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))) * self.'transformer.r') - ((1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X'))) * self.'transformer.x')) - self.'L1.X'), ((((1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X'))) * self.'transformer.r') + ((((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))) * self.'transformer.x')) + self.'L1.R'), self.'L1.R', (-1.0 * self.'L1.X'), (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X')))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X')))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))))) * self.'G1.machine.x2d')) / self.'transformer.m'))) },
+				{ ((((((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))) * self.'transformer.r') - ((1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im'))) * self.'transformer.x')) - self.'L1.Z.im'), ((((1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im'))) * self.'transformer.r') + ((((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))) * self.'transformer.x')) + self.'L1.Z.re'), self.'L1.Z.re', (-1.0 * self.'L1.Z.im'), (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im')))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im')))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im')))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))))) * self.'G1.machine.x2d')) / self.'transformer.m'))) },
 				/* Row 4: */
-				{ ((((1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))) * self.'transformer.r') - ((((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R')) * self.'transformer.x')) + self.'L1.R'), ((((((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R')) * self.'transformer.r') + ((1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))) * self.'transformer.x')) + self.'L1.X'), self.'L1.X', self.'L1.R', (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))))) * self.'G1.machine.x2d')) / self.'transformer.m'))) },
+				{ ((((1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))) * self.'transformer.r') - ((((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re')) * self.'transformer.x')) + self.'L1.Z.re'), ((((((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re')) * self.'transformer.r') + ((1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))) * self.'transformer.x')) + self.'L1.Z.im'), self.'L1.Z.im', self.'L1.Z.re', (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))))) * self.'G1.machine.x2d')) / self.'transformer.m'))) },
 				/* Row 5: */
-				{ (-1.0 * ((((1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))) * self.'transformer.x') + (((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')) * self.'transformer.r')))), (((1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))) * self.'transformer.r') - (((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')) * self.'transformer.x')), (-1.0 * (self.'L2.R')), self.'L2.X', (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B')))) - ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B')))) - ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')))) * self.'G1.machine.x2d')) / self.'transformer.m'))) },
+				{ (-1.0 * ((((1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))) * self.'transformer.x') + (((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')) * self.'transformer.r')))), (((1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))) * self.'transformer.r') - (((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')) * self.'transformer.x')), (-1.0 * (self.'L2.Z.re')), self.'L2.Z.im', (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im')))) - ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im')))) + ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im')))) - ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')))) * self.'G1.machine.x2d')) / self.'transformer.m'))) },
 				/* Row 6: */
-				{ (((1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))) * self.'transformer.r') - (((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')) * self.'transformer.x')), ((((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')) * self.'transformer.r') + ((1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))) * self.'transformer.x')), (-1.0 * (self.'L2.X')), (-1.0 * (self.'L2.R')), (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))))) * self.'G1.machine.x2d')) / self.'transformer.m'))) }
+				{ (((1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))) * self.'transformer.r') - (((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')) * self.'transformer.x')), ((((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')) * self.'transformer.r') + ((1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))) * self.'transformer.x')), (-1.0 * (self.'L2.Z.im')), (-1.0 * (self.'L2.Z.re')), (((((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))))) * (self.'G1.machine.T1q0' * ((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T1q0') + ((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))))) * (self.'G1.machine.T2q0' * ((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')))) / self.'transformer.m') / self.'G1.machine.T2q0')) + (((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))))) * self.'G1.machine.x2q') / self.'transformer.m')) - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))))) * self.'G1.machine.ra') / self.'transformer.m')), (-1.0 * (((((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re'))) - ((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))))) * self.'G1.machine.ra') + ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))))) * self.'G1.machine.x2d')) / self.'transformer.m'))) }
 			},
 			/* b vector: */
-			{ (-1.0 * ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.e2q'))), (-1.0 * ((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.e2q'))), (self.'B3.p.vr' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) - ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.X')))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.R') - ((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G'))))) * self.'G1.machine.e2q') / self.'transformer.m')), (self.'B3.p.vi' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((self.'L1.R' * self.'L1.B') + (self.'L1.X' * self.'L1.G')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then -2.22e+3 else 0.0) * self.'L1.R'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.R' * self.'L1.G') - (self.'L1.X' * self.'L1.B')) + ((if (real(DymolaConvertInputToREAL0) == false) then 0.0 elseif (real(DymolaConvertInputToREAL0) == true) then 2.22e+3 else 0.0) * self.'L1.X'))))) * self.'G1.machine.e2q') / self.'transformer.m')), (self.'B3.p.vr' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B')))) - ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G')))) * self.'G1.machine.e2q') / self.'transformer.m')), (self.'B3.p.vi' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.R' * self.'L2.B') + (self.'L2.X' * self.'L2.G'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.R' * self.'L2.G') - (self.'L2.X' * self.'L2.B'))))) * self.'G1.machine.e2q') / self.'transformer.m')) });
+			{ (-1.0 * ((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.e2q'))), (-1.0 * ((((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((1.0 / self.'transformer.m') / self.'transformer.m') - (1.0 / (self.'transformer.m' ^ 2)))) * self.'G1.machine.e2q'))), (self.'B3.p.vr' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) - ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.im')))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.re') - ((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re'))))) * self.'G1.machine.e2q') / self.'transformer.m')), (self.'B3.p.vi' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (((self.'L1.Z.re' * self.'L1.Y.im') + (self.'L1.Z.im' * self.'L1.Y.re')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then -2.22e+3 else 0.0) * self.'L1.Z.re'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + (((self.'L1.Z.re' * self.'L1.Y.re') - (self.'L1.Z.im' * self.'L1.Y.im')) + ((if (DymolaConvertInputToREAL0 == false) then 0.0 elseif (DymolaConvertInputToREAL0 == true) then 2.22e+3 else 0.0) * self.'L1.Z.im'))))) * self.'G1.machine.e2q') / self.'transformer.m')), (self.'B3.p.vr' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im')))) - ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re')))) * self.'G1.machine.e2q') / self.'transformer.m')), (self.'B3.p.vi' - (((((self.'G1.machine.V_MBtoSB' * cos(self.'G1.machine.delta')) * ((self.'L2.Z.re' * self.'L2.Y.im') + (self.'L2.Z.im' * self.'L2.Y.re'))) + ((self.'G1.machine.V_MBtoSB' * sin(self.'G1.machine.delta')) * (1.0 + ((self.'L2.Z.re' * self.'L2.Y.re') - (self.'L2.Z.im' * self.'L2.Y.im'))))) * self.'G1.machine.e2q') / self.'transformer.m')) });
 if false then
 			/* Set states to default start-values and propagate error: */
-			self.'transformer.n.ii' := 1.00000000000000008e-15;
-			self.'transformer.n.ir' := 1.00000000000000008e-15;
-			self.'L2.p.ir' := 1.00000000000000008e-15;
-			self.'L2.p.ii' := 1.00000000000000008e-15;
+			self.'transformer.n.ii' := 2.22044604925031308e-16;
+			self.'transformer.n.ir' := 2.22044604925031308e-16;
+			self.'L2.p.ir' := 2.22044604925031308e-16;
+			self.'L2.p.ii' := 2.22044604925031308e-16;
 			self.'G1.machine.iq' := self.'G1.machine.iq0';
 			self.'G1.machine.id' := self.'G1.machine.id0';
 
@@ -625,6 +704,11 @@ if false then
 			self.'G1.machine.iq' := 'solution_buffer.for.x[6]'[5];
 			self.'G1.machine.id' := 'solution_buffer.for.x[6]'[6];
 		end if;
+		self.'G1.machine.e1d' := (((((self.'G1.machine.xq' - self.'G1.machine.x1q') - ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')) * self.'G1.machine.iq') * self.'G1.machine.T1q0') / self.'G1.machine.T1q0');
+		self.'G1.machine.e2d' := (((self.'G1.machine.e1d' + (((self.'G1.machine.x1q' - self.'G1.machine.x2q') + ((((self.'G1.machine.T2q0' * self.'G1.machine.x2q') * (self.'G1.machine.xq' - self.'G1.machine.x1q')) / self.'G1.machine.T1q0') / self.'G1.machine.x1q')) * self.'G1.machine.iq')) * self.'G1.machine.T2q0') / self.'G1.machine.T2q0');
+		self.v := self.'G1.machine.v_0';
+		/* Conduct delta(t) = 0 super-dense time initialization at next sampling:: */
+		self.'discrete.stepSize.active' := false;
 	end Reinitialize;
 
 	function Saturate

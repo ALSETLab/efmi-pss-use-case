@@ -1,7 +1,8 @@
 within PSSDesign;
 package Generator
-  extends Modelica.Icons.Package;
+  extends Modelica.Icons.VariantsPackage;
 
 equation
+
 
 end Generator;

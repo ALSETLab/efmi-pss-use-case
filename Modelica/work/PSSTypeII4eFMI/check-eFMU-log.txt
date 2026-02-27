@@ -1,0 +1,207 @@
+*************************************************************************** eFMI Compliance Checker: 
+
+Checking if the given file exists and is an eFMU archive
+         The provided file is a valid 'fmu' archive
+
+
+Extracting the fmu archive  eFMU-cc.fmu
+         The [eFMU] folder is correctly contained in the fmu archive
+         [eFMU] folder extracted correctly
+
+Checking the eFMU container architecture
+         The schemas folder is correctly contained in the  C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\tmp\eFMU
+         The __content.xml is correctly located in the C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\tmp\eFMU
+
+Parsing the __content.xml file
+         __content.xml was parsed correctly
+
+Running the consistency check for all model representations in the __content.xml file
+   - The AlgorithmCode model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         The manifest.xml manifest file does not contain any manifest references
+
+   - The ProductionCode model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         All manifest references in the manifest.xml manifest file are valid
+
+   - The ProductionCode model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         All manifest references in the manifest.xml manifest file are valid
+
+   - The BinaryCode model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         All manifest references in the manifest.xml manifest file are valid
+
+   - The BinaryCode model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         All manifest references in the manifest.xml manifest file are valid
+
+   - The BinaryCode model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         All manifest references in the manifest.xml manifest file are valid
+
+   - The BinaryCode model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         All manifest references in the manifest.xml manifest file are valid
+
+   - The BehavioralModel model representation
+         The representation id matches the id in the manifest
+         The representation checksum matches the calculated checksum of the manifest
+         The manifest.xml manifest file was correctly validated against the relevant schema file
+         All manifest references in the manifest.xml manifest file are valid
+
+Other consistency checks
+         All variables in the AlgorithmCode manifest are consistent with the variables in the  manifest
+
+Validating the __content.xml file against the efmiContainerManifest.xsd schema file
+         The __content.xml file was validated correctly against the efmiContainerManifest.xsd schema file
+
+Reading all 'alg' files from the manifest.xml file and checking if these files exist in the AlgorithmCode folder
+         The block.alg file is listed in the manifest.xml file
+         block.alg exists in the C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\tmp\eFMU\ACode_Dymola directory
+
+Parsing the block.alg file 
+
+Validating all variables:
+
+  All model variables in the manifest file are declared in the Algorithm Code file and vice versa
+  All model variables types and blockCausalities in the manifest file match the types and causalities in the Algorithm Code file
+
+functions
+
+The Reinitialize function
+
+The Recalibrate function
+
+The Startup function
+
+   All variables of expressions are declared in the Algorithm code block
+   Function expressions do not contain any errors
+
+The DoStep function
+
+Errors:
+Evaluating the condition of the if_expression: The binary operation in line 126 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 129 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 132 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 158 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 168 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 178 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 180 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 268 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 271 cannot be evaluated as a logical expression 
+Evaluating the condition of the if_expression: The binary operation in line 276 cannot be evaluated as a logical expression 
+
+
+ERROR: eFMI Compliance Checker failed; the eFMU is invalid.
+
+**************************************************************************** eFMI Container Manager: 
+Call arguments:
+ ContainerOperation: ListContainerContent
+ ContainerFilePath: eFMU-cm.fmu
+
+Container will be managed in temporary directory 'C:\Users\CBR5.DSONE\AppData\Local\Temp\ac3qr1rm.5bm'
+>> Reading zipped EFMU container: eFMU-cm.fmu
+>> Reading container manifest
+> Validating XML tree against schema (read container manifest XML file)
+=> XML tree has been validated successfully
+> Extracting data from container manifest
+- Found 8 model representation(s)
+> Validating checksum of manifest of model representation #0
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+> Validating checksum of manifest of model representation #1
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+> Validating checksum of manifest of model representation #2
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+> Validating checksum of manifest of model representation #3
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+> Validating checksum of manifest of model representation #4
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+> Validating checksum of manifest of model representation #5
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+> Validating checksum of manifest of model representation #6
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+> Validating checksum of manifest of model representation #7
+> Validating XML tree against schema (model representation manifest XML file)
+=> XML tree has been validated successfully
+=> Container manifest has been read successfully
+
+=== Dump of content of EFMU container ===
+ id: {360a7fe8-3f07-4d13-9185-a5ca60359416}
+ xsdVersion: 0.10.0
+ efmiVersion: 1.0.0
+ name: PSSDesign.Components.PSSTypeII4eFMI
+ creationDate: 2026-02-27T16:07:10Z
+Model representation #0
+ name: ACode_Dymola
+ kind: AlgorithmCode
+ manifest: manifest.xml
+ checksum: 0b1f722a09b535dd17fc3f7cb7eaeeec74cc046b
+ manifestRefId: {17deebad-9daf-4310-b39a-5076aad6f45b}
+Model representation #1
+ name: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+ kind: BinaryCode
+ manifest: manifest.xml
+ checksum: 0ae0f6110d3115b926ef88c9839f5fb025fb9f85
+ manifestRefId: {6a0f3098-b934-4087-a99c-c8f4c3c1c640}
+Model representation #2
+ name: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+ kind: BinaryCode
+ manifest: manifest.xml
+ checksum: e3bc79b00b557ecd33f2d2386873d9ac7cf1acb7
+ manifestRefId: {0d158377-b80e-4cc8-b359-93a762478f96}
+Model representation #3
+ name: BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
+ kind: BinaryCode
+ manifest: manifest.xml
+ checksum: b89119c0e9a019eac0d2cca1a35552cd6463e6c5
+ manifestRefId: {d29c36f6-5c69-4cde-b4bb-a36aa2b3a256}
+Model representation #4
+ name: BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+ kind: BinaryCode
+ manifest: manifest.xml
+ checksum: 0ed9e5153c3645bc75b6637658c67929351f661b
+ manifestRefId: {37e6523e-a52b-4a7d-8982-170d9b0f7318}
+Model representation #5
+ name: BModel_Dymola_1cdf13902f8ff1051dd45e29521f833634c3c750
+ kind: BehavioralModel
+ manifest: manifest.xml
+ checksum: b7382398ef33bda9a4a12245e955fd5b81b8afe2
+ manifestRefId: {99e05f12-2d9b-42e6-b07b-8b6358ec78f9}
+Model representation #6
+ name: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+ kind: ProductionCode
+ manifest: manifest.xml
+ checksum: a81948451fdb6de44c0a58d8b68df81bf1db6f9d
+ manifestRefId: {b57c201e-46a4-444c-8ba8-e4e75187cd2f}
+Model representation #7
+ name: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+ kind: ProductionCode
+ manifest: manifest.xml
+ checksum: 05392456d0924ee15a7de0f2f74e16546a471f8b
+ manifestRefId: {be3710c5-03ca-4e2e-b939-393f29cf4f47}
+=== END of dump ===
+
+********************************************************************************************* eFMPy: 
+No problems have been found.

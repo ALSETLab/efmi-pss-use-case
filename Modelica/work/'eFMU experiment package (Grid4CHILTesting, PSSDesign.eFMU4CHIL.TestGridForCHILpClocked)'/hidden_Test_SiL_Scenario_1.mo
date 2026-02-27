@@ -2,13 +2,14 @@ within 'eFMU experiment package (Grid4CHILTesting, PSSDesign.eFMU4CHIL.TestGridF
 model hidden_Test_SiL_Scenario_1 "Test scenario defined by component [G4CHIL]."
 
   extends .DymolaEmbedded.BuildUtilities.BehavioralModel.Experiment(redeclare
-      final package eFMU_configuration = configuration, setup(final mode=.Testing.Utilities.Types.Mode.check));
+      final package eFMU_configuration = configuration, setup(final mode=.Testing.Base.Choices.Mode.test));
 
 protected
   final parameter
     .DymolaEmbedded.BuildUtilities.ProductionCode.SPE_Configuration
-    code_configuration='Grid4CHILTesting.eFMU_SiL_Support'.resolve_code_configuration(
-      eBlock.__defining_code);
+    code_configuration=
+      'Grid4CHILTesting.eFMU_SiL_Support'.resolve_code_configuration(eBlock.
+      __defining_code);
 
 public
   final parameter ToleranceConfiguration tol_rel=(if code_configuration.float_precision
@@ -48,7 +49,8 @@ public
   final eFMU_configuration.Clocked.PeriodicRealClock clock
     annotation (Placement(transformation(extent={{48,72},{32,88}})));
 
-  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub eBlock(final __embedd_clock=false)
+  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub eBlock(final __embedd_clock=
+        false)
     annotation (Placement(transformation(extent={{-15,-15},{15,15}})));
 
   final .Testing.Clocked.Tables.BoolTable 'fault|table'(
@@ -152,10 +154,13 @@ equation
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
+
   connect('fault|table'.y, eBlock.fault)
     annotation (Line(points={{-59,40},{-15,0}}, color={255,0,255}));
+
   connect('vf|table'.y, eBlock.vf)
     annotation (Line(points={{-59,0},{-15,0}}, color={0,0,127}));
+
   connect('Pgen|table'.y, 'Pgen|match'.ref) annotation (Line(points={{69,40},{
           66,40},{66,20},{32,20},{32,34},{36,34}}, color={0,0,127}));
 

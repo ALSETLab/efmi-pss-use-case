@@ -1,4 +1,4 @@
-/*2026-01-14T21:28:47.347938773Z*/
+/*2026-02-27T15:56:20.697204400Z*/
 
 /**********************************************************************************************************************
  * galec_stl.c
@@ -33,8 +33,8 @@ extern "C" {
 /*
 	INT_MIN, LONG_MIN, LLONG_MIN, INT_MAX, LONG_MAX, LLONG_MAX
 */
-#if (!SPE_NO_minInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_maxInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_minInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_maxInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 #include <limits.h>
 #endif
 
@@ -42,9 +42,9 @@ extern "C" {
 	FLT_MAX, DBL_MAX, LDBL_MAX, FLT_MIN, DBL_MIN, LDBL_MIN, FLT_TRUE_MIN,
 	DBL_TRUE_MIN, LDBL_TRUE_MIN, FLT_EPSILON, DBL_EPSILON, LDBL_EPSILON
 */
-#if (!SPE_NO_maxReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_posMinReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_epsReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_maxReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_posMinReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_epsReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 #include <float.h>
 #endif
 
@@ -58,38 +58,38 @@ extern "C" {
 	acosf, acos, acosl, atanf, atan, atanl, atan2f, atan2, atan2l, sinhf,
 	sinh, sinhl, tanhf, tanh, tanhl, powf, pow, powl
 */
-#if (!SPE_NO_less_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_lessEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_greater_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_greaterEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_equal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_unequal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_isInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_isFinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_plusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_euler_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_fractionalPart_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_sqrt_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_exp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_ln_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_lg_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_sin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_cos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_tan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_asin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_acos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_atan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_atan2_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_sinh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_cosh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_tanh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_less_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_lessEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_greater_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_greaterEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_equal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_unequal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_isInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_isFinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_plusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_euler_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_fractionalPart_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_sqrt_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_exp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_ln_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_lg_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_sin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_cos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_tan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_asin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_acos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_atan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_atan2_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_sinh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_cosh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_tanh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 #include <math.h>
 #endif
 
@@ -97,31 +97,31 @@ extern "C" {
 	Internal static support functions:
 *******************************************************************************/
 
-#if (!SPE_NO_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_solveLinearEquations_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_interpolation3D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_solveLinearEquations_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_interpolation3D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 /*
 	Change if you don't accept floating-point comparison to zero:
 */
-static inline bool SPE_isZero(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+static inline bool SPE_isZero(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) == SPE_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+	return ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) == SPE_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
 }
 #endif
 
-#if (!SPE_NO_realMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_realMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 static inline void SPE_lift_IR(
-	  SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
+	  SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
 	, const size_t n)
 {
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* in_c = in;
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* out_c = out;
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* in_c = in;
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* out_c = out;
 	for (size_t n_c = n; ((size_t) 0) != n_c; --n_c)
 	{
 		*out_c = F(*in_c);
@@ -131,48 +131,48 @@ static inline void SPE_lift_IR(
 }
 #endif
 
-#if (!SPE_NO_ipowSquareDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_ipowCubeDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfToEvenMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_roundHalfToOddMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_fractionalPartMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_signMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_absoluteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_sqrtMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_expMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_lnMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_lgMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_sqrtSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_lnSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_lgSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_sinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_cosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_tanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_asinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_acosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_atanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_sinhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_coshMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_tanhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_tanSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_asinSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_acosSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_ipowSquareDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_ipowCubeDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfToEvenMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_roundHalfToOddMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_fractionalPartMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_signMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_absoluteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_sqrtMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_expMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_lnMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_lgMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_sqrtSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_lnSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_lgSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_sinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_cosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_tanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_asinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_acosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_atanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_sinhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_coshMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_tanhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_tanSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_asinSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_acosSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 static inline void SPE_lift_RR(
-	  SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
+	  SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
 	, const size_t n)
 {
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* in_c = in;
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* out_c = out;
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* in_c = in;
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* out_c = out;
 	for (size_t n_c = n; ((size_t) 0) != n_c; --n_c)
 	{
 		*out_c = F(*in_c);
@@ -182,18 +182,18 @@ static inline void SPE_lift_RR(
 }
 #endif
 
-#if (!SPE_NO_integerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_integerMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 static inline void SPE_lift_RI_E(
-	  SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(
-		  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const
-		, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-	, SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
+	  SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(
+		  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const
+		, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+	, SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
 	, const size_t n)
 {
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* in_c = in;
-	SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* out_c = out;
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* in_c = in;
+	SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* out_c = out;
 	for (size_t n_c = n; ((size_t) 0) != n_c; --n_c)
 	{
 		*out_c = F(error_signal, *in_c);
@@ -203,13 +203,13 @@ static inline void SPE_lift_RI_E(
 }
 #endif
 
-#if (!SPE_NO_iminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_imaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_iminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_imaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 static inline void SPE_lift_III(
-	  SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in2
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
+	  SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in2
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -219,14 +219,14 @@ static inline void SPE_lift_III(
 }
 #endif
 
-#if (!SPE_NO_rminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_rmaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_atan2MD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_rminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_rmaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_atan2MD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 static inline void SPE_lift_RRR(
-	  SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
+	  SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const out
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -236,20 +236,20 @@ static inline void SPE_lift_RRR(
 }
 #endif
 
-#if (!SPE_NO_lessMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_lessEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_greaterMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_greaterEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_equalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_unequalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_lessMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_lessEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_greaterMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_greaterEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_equalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_unequalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 static inline void SPE_lift_RRB_E(
 	  bool (*F)(
-		  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const
-		, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-		, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-	, SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in2
+		  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const
+		, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+	, SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const in2
 	, bool* const out
 	, const size_t n)
 {
@@ -264,10 +264,10 @@ static inline void SPE_lift_RRB_E(
 	Not GALEC STL support functions:
 *******************************************************************************/
 
-#if (!SPE_NO_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline size_t SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+#if (!SPE_NO_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline size_t SPE_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 	  const size_t s
-	, const SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
+	, const SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
 {
 	return (s < range.lower)
 		? range.lower
@@ -275,10 +275,10 @@ inline size_t SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a
 }
 #endif
 
-#if (!SPE_NO_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed i
-	, const SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
+#if (!SPE_NO_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed i
+	, const SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
 {
 	return (i < range.lower)
 		? range.lower
@@ -286,206 +286,206 @@ inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada86462
 }
 #endif
 
-#if (!SPE_NO_saturateIntegerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_saturateIntegerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i
-	, const SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i_saturated
+#if (!SPE_NO_saturateIntegerMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_saturateIntegerMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i
+	, const SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i_saturated
 	, const size_t i_size)
 {
 	for (size_t i_index = ((size_t) 0); i_index < i_size; ++i_index)
 	{
-		i_saturated[i_index] = SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(i[i_index], range);
+		i_saturated[i_index] = SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(i[i_index], range);
 	}
 }
 #endif
 
-#if (!SPE_NO_saturateReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_saturateReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r
-	, const SPE_RealRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
+#if (!SPE_NO_saturateReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_saturateReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r
+	, const SPE_RealRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
 {
-	return SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
+	return SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
 		? range.nan
-		: SPE_rmax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(SPE_rmin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r, range.upper), range.lower);
+		: SPE_rmax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(SPE_rmin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r, range.upper), range.lower);
 }
 #endif
 
-#if (!SPE_NO_saturateRealMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_saturateRealMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, const SPE_RealRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_saturated
+#if (!SPE_NO_saturateRealMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_saturateRealMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, const SPE_RealRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_saturated
 	, const size_t r_size)
 {
 	for (size_t r_index = ((size_t) 0); r_index < r_size; ++r_index)
 	{
-		r_saturated[r_index] = SPE_saturateReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index], range);
+		r_saturated[r_index] = SPE_saturateReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index], range);
 	}
 }
 #endif
 
-#if (!SPE_NO_less_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_less_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_less_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_less_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
 	{
-		*error_signal |= SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	return 0 != isless(x1, x2);
 }
 #endif
 
-#if (!SPE_NO_lessMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_lessMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+#if (!SPE_NO_lessMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_lessMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
 	, bool* const y
 	, const size_t n)
 {
-	SPE_lift_RRB_E(&SPE_less_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
+	SPE_lift_RRB_E(&SPE_less_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_lessEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_lessEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_lessEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_lessEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
 	{
-		*error_signal |= SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	return 0 != islessequal(x1, x2);
 }
 #endif
 
-#if (!SPE_NO_lessEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_lessEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+#if (!SPE_NO_lessEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_lessEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
 	, bool* const y
 	, const size_t n)
 {
-	SPE_lift_RRB_E(&SPE_lessEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
+	SPE_lift_RRB_E(&SPE_lessEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_greater_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_greater_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_greater_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_greater_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
 	{
-		*error_signal |= SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	return 0 != isgreater(x1, x2);
 }
 #endif
 
-#if (!SPE_NO_greaterMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_greaterMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+#if (!SPE_NO_greaterMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_greaterMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
 	, bool* const y
 	, const size_t n)
 {
-	SPE_lift_RRB_E(&SPE_greater_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
+	SPE_lift_RRB_E(&SPE_greater_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_greaterEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_greaterEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_greaterEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_greaterEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
 	{
-		*error_signal |= SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	return 0 != isgreaterequal(x1, x2);
 }
 #endif
 
-#if (!SPE_NO_greaterEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_greaterEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+#if (!SPE_NO_greaterEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_greaterEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
 	, bool* const y
 	, const size_t n)
 {
-	SPE_lift_RRB_E(&SPE_greaterEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
+	SPE_lift_RRB_E(&SPE_greaterEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_equal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_equal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_equal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_equal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
 	{
-		*error_signal |= SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	return 0 == islessgreater(x1, x2);
 }
 #endif
 
-#if (!SPE_NO_equalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_equalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+#if (!SPE_NO_equalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_equalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
 	, bool* const y
 	, const size_t n)
 {
-	SPE_lift_RRB_E(&SPE_equal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
+	SPE_lift_RRB_E(&SPE_equal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_unequal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_unequal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_unequal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_unequal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
 	{
-		*error_signal |= SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	return 0 != islessgreater(x1, x2);
 }
 #endif
 
-#if (!SPE_NO_unequalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_unequalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+#if (!SPE_NO_unequalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_unequalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
 	, bool* const y
 	, const size_t n)
 {
-	SPE_lift_RRB_E(&SPE_unequal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
+	SPE_lift_RRB_E(&SPE_unequal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_iadditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_iadditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_iadditionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_iadditionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -495,11 +495,11 @@ inline void SPE_iadditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b
 }
 #endif
 
-#if (!SPE_NO_isubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_isubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_isubtractionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_isubtractionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -509,11 +509,11 @@ inline void SPE_isubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a4
 }
 #endif
 
-#if (!SPE_NO_imultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_imultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed s
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_imultiplicationScalarMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_imultiplicationScalarMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed s
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -523,11 +523,11 @@ inline void SPE_imultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b2
 }
 #endif
 
-#if (!SPE_NO_imultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_imultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_imultiplicationDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_imultiplicationDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -537,11 +537,11 @@ inline void SPE_imultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_c
 }
 #endif
 
-#if (!SPE_NO_imultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_imultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_imultiplication2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_imultiplication2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t x1_size_rows
 	, const size_t x1_size_columns
 	, const size_t x2_size_columns)
@@ -550,7 +550,7 @@ inline void SPE_imultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a
 	{
 		for (size_t j = ((size_t) 0); j < x2_size_columns; ++j)
 		{
-			y[i * j] = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
+			y[i * j] = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
 			for (size_t k = ((size_t) 0); k < x1_size_columns; ++k)
 			{
 				y[i * j] += x1[i * k] * x2[k * j];
@@ -560,11 +560,11 @@ inline void SPE_imultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a
 }
 #endif
 
-#if (!SPE_NO_radditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_radditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_radditionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_radditionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -574,11 +574,11 @@ inline void SPE_radditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b
 }
 #endif
 
-#if (!SPE_NO_rsubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rsubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rsubtractionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rsubtractionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -588,11 +588,11 @@ inline void SPE_rsubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a4
 }
 #endif
 
-#if (!SPE_NO_rmultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rmultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rmultiplication2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rmultiplication2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t x1_size_rows
 	, const size_t x1_size_columns
 	, const size_t x2_size_columns)
@@ -601,7 +601,7 @@ inline void SPE_rmultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a
 	{
 		for (size_t j = ((size_t) 0); j < x2_size_columns; ++j)
 		{
-			y[i * j] = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
+			y[i * j] = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
 			for (size_t k = ((size_t) 0); k < x1_size_columns; ++k)
 			{
 				y[i * j] += x1[i * k] * x2[k * j];
@@ -611,11 +611,11 @@ inline void SPE_rmultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a
 }
 #endif
 
-#if (!SPE_NO_rmultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rmultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed s
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rmultiplicationScalarMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rmultiplicationScalarMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed s
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -625,11 +625,11 @@ inline void SPE_rmultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b2
 }
 #endif
 
-#if (!SPE_NO_rmultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rmultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rmultiplicationDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rmultiplicationDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -639,11 +639,11 @@ inline void SPE_rmultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_c
 }
 #endif
 
-#if (!SPE_NO_rdivisionDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rdivisionDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rdivisionDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rdivisionDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
@@ -653,61 +653,61 @@ inline void SPE_rdivisionDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a4
 }
 #endif
 
-#if (!SPE_NO_ipowSquare_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ipowSquare_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed base)
+#if (!SPE_NO_ipowSquare_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ipowSquare_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed base)
 {
 	return base * base;
 }
 #endif
 
-#if (!SPE_NO_ipowSquareDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_ipowSquareDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const bases
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_ipowSquareDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_ipowSquareDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const bases
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_ipowSquare_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, bases, y, n);
+	SPE_lift_RR(&SPE_ipowSquare_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, bases, y, n);
 }
 #endif
 
-#if (!SPE_NO_ipowCube_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ipowCube_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed base)
+#if (!SPE_NO_ipowCube_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ipowCube_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed base)
 {
 	return base * base * base;
 }
 #endif
 
-#if (!SPE_NO_ipowCubeDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_ipowCubeDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const bases
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_ipowCubeDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_ipowCubeDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const bases
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_ipowCube_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, bases, y, n);
+	SPE_lift_RR(&SPE_ipowCube_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, bases, y, n);
 }
 #endif
 
-#if (!SPE_NO_rpow_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_rpow_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed base
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed exponent)
+#if (!SPE_NO_rpow_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_rpow_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed base
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed exponent)
 {
-	return (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(base) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(exponent))
-		? SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
-		: SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(powf, pow, powl)(base, exponent);
+	return (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(base) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(exponent))
+		? SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+		: SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(powf, pow, powl)(base, exponent);
 }
 #endif
 
-#if (!SPE_NO_rpowDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rpowDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const bases
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed exponent
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rpowDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rpowDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const bases
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed exponent
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
 	for (size_t i = ((size_t) 0); i < n; ++i)
 	{
-		y[i] = SPE_rpow_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(bases[i], exponent);
+		y[i] = SPE_rpow_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(bases[i], exponent);
 	}
 }
 #endif
@@ -716,36 +716,36 @@ inline void SPE_rpowDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4a
 	Error signals:
 *******************************************************************************/
 
-const SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
-	((SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0U);
-const SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_INVALID_ARGUMENT_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
-	((SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U);
-const SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_OVERFLOW_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
-	((SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 1U;
-const SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
-	((SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 2U;
-const SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
-	((SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 3U;
-const SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
-	((SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 4U;
-const SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_UNSPECIFIED_ERROR_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
-	((SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 5U;
+const SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
+	((SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0U);
+const SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_INVALID_ARGUMENT_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
+	((SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U);
+const SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_OVERFLOW_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
+	((SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 1U;
+const SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
+	((SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 2U;
+const SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
+	((SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 3U;
+const SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
+	((SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 4U;
+const SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ERRORSIGNAL_UNSPECIFIED_ERROR_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed =
+	((SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1U) << 5U;
 
 /*******************************************************************************
 	Properties of Integer:
 *******************************************************************************/
 
-#if (!SPE_NO_minInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_minInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_minInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_minInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	return SPE_INT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(INT_MIN, LONG_MIN, LLONG_MIN);
+	return SPE_INT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(INT_MIN, LONG_MIN, LLONG_MIN);
 }
 #endif
 
-#if (!SPE_NO_maxInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_maxInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_maxInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_maxInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	return SPE_INT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(INT_MAX, LONG_MAX, LLONG_MAX);
+	return SPE_INT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(INT_MAX, LONG_MAX, LLONG_MAX);
 }
 #endif
 
@@ -753,104 +753,104 @@ inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada86462
 	Properties of Real:
 *******************************************************************************/
 
-#if (!SPE_NO_minReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_minReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_minReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_minReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	return -SPE_maxReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	return -SPE_maxReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
 }
 #endif
 
-#if (!SPE_NO_maxReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_maxReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_maxReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_maxReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_MAX, DBL_MAX, LDBL_MAX);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_MAX, DBL_MAX, LDBL_MAX);
 }
 #endif
 
-#if (!SPE_NO_posMinReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_posMinReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_posMinReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_posMinReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
 	return
 		#if defined(FLT_TRUE_MIN)
-		SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_TRUE_MIN, DBL_TRUE_MIN, LDBL_TRUE_MIN);
+		SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_TRUE_MIN, DBL_TRUE_MIN, LDBL_TRUE_MIN);
 		#else
-		SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_MIN, DBL_MIN, LDBL_MIN);
+		SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_MIN, DBL_MIN, LDBL_MIN);
 		#endif
 }
 #endif
 
-#if (!SPE_NO_epsReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_epsReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_epsReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_epsReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_EPSILON, DBL_EPSILON, LDBL_EPSILON);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(FLT_EPSILON, DBL_EPSILON, LDBL_EPSILON);
 }
 #endif
 
-#if (!SPE_NO_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	static SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1);
+	static SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1);
 	static bool result_is_cached = false;
 	if (!result_is_cached)
 	{
 		/*
-			Essentially result = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) / ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0), but
+			Essentially result = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) / ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0), but
 			camouflaged to silence code analyses tools:
 		*/
-		result -= ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1);
-		result = (((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) * result) / (((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) + result);
+		result -= ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1);
+		result = (((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) * result) / (((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) + result);
 		result_is_cached = true;
 	}
 	return result;
 }
 #endif
 
-#if (!SPE_NO_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
 	return 0 != isnan(r);
 }
 #endif
 
-#if (!SPE_NO_minusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_minusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_minusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_minusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	return -(SPE_plusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed());
+	return -(SPE_plusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed());
 }
 #endif
 
-#if (!SPE_NO_plusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_plusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_plusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_plusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
-	return ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) INFINITY);
+	return ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) INFINITY);
 }
 #endif
 
-#if (!SPE_NO_isInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_isInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_isInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_isInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
 	return 0 != isinf(r);
 }
 #endif
 
-#if (!SPE_NO_isFinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_isFinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_isFinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_isFinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
 	return 0 != isfinite(r);
 }
 #endif
 
 /*******************************************************************************
-	Multi-dimensional properties of SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed:
+	Multi-dimensional properties of SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed:
 *******************************************************************************/
 
-#if (!SPE_NO_hasNanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_hasNanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+#if (!SPE_NO_hasNanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_hasNanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
 	, const size_t r_size)
 {
 	size_t r_index = ((size_t) 0);
-	while ((r_index < r_size) && !SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index]))
+	while ((r_index < r_size) && !SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index]))
 	{
 		++r_index;
 	}
@@ -858,13 +858,13 @@ inline bool SPE_hasNanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ad
 }
 #endif
 
-#if (!SPE_NO_hasInfiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_hasInfiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+#if (!SPE_NO_hasInfiniteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_hasInfiniteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
 	, const size_t r_size)
 {
 	size_t r_index = ((size_t) 0);
-	while ((r_index < r_size) && !SPE_isInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index]))
+	while ((r_index < r_size) && !SPE_isInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index]))
 	{
 		++r_index;
 	}
@@ -872,13 +872,13 @@ inline bool SPE_hasInfiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a44
 }
 #endif
 
-#if (!SPE_NO_allFiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline bool SPE_allFiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+#if (!SPE_NO_allFiniteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline bool SPE_allFiniteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
 	, const size_t r_size)
 {
 	size_t r_index = ((size_t) 0);
-	while ((r_index < r_size) && SPE_isFinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index]))
+	while ((r_index < r_size) && SPE_isFinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index]))
 	{
 		++r_index;
 	}
@@ -890,58 +890,58 @@ inline bool SPE_allFiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b
 	Numeric type conversions:
 *******************************************************************************/
 
-#if (!SPE_NO_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed i)
+#if (!SPE_NO_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed i)
 {
-	return ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) i);
+	return ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) i);
 }
 #endif
 
-#if (!SPE_NO_realMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_realMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+#if (!SPE_NO_realMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_realMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
 	, const size_t i_size)
 {
-	SPE_lift_IR(&SPE_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, i, r, i_size);
+	SPE_lift_IR(&SPE_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, i, r, i_size);
 }
 #endif
 
-#if (!SPE_NO_integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r))
+	SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r))
 	{
-		*error_signal |= SPE_ERRORSIGNAL_NAN_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_NAN_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	else
 	{
-		const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r_truncated = SPE_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
-		if ((0 != isless(r_truncated, SPE_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(SPE_minInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed())))
-			|| (0 != isgreater(r_truncated, SPE_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(SPE_maxInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()))))
+		const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r_truncated = SPE_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+		if ((0 != isless(r_truncated, SPE_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(SPE_minInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed())))
+			|| (0 != isgreater(r_truncated, SPE_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(SPE_maxInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()))))
 		{
-			*error_signal |= SPE_ERRORSIGNAL_OVERFLOW_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+			*error_signal |= SPE_ERRORSIGNAL_OVERFLOW_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 		}
 		else
 		{
-			result = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) r_truncated);
+			result = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) r_truncated);
 		}
 	}
 	return result;
 }
 #endif
 
-#if (!SPE_NO_integerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_integerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i
+#if (!SPE_NO_integerMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_integerMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const i
 	, const size_t r_size)
 {
-	SPE_lift_RI_E(&SPE_integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, r, i, r_size);
+	SPE_lift_RI_E(&SPE_integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, error_signal, r, i, r_size);
 }
 #endif
 
@@ -949,80 +949,80 @@ inline void SPE_integerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4a
 	Direct Real rounding:
 *******************************************************************************/
 
-#if (!SPE_NO_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(floorf, floor, floorl)(r);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(floorf, floor, floorl)(r);
 }
 #endif
 
-#if (!SPE_NO_roundDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ceilf, ceil, ceill)(r);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ceilf, ceil, ceill)(r);
 }
 #endif
 
-#if (!SPE_NO_roundUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
 	#ifdef __TINYC__
 	/* Work around TCC bug in which trunc() fails to work after few calls: */
-	return (0 != isgreaterequal(r, ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
-		? SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
-		: SPE_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+	return (0 != isgreaterequal(r, ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
+		? SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
+		: SPE_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
 	#else
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(truncf, trunc, truncl)(r);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(truncf, trunc, truncl)(r);
 	#endif
 }
 #endif
 
-#if (!SPE_NO_roundTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return (0 != islessequal(r, ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
-		? SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
-		: SPE_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+	return (0 != islessequal(r, ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
+		? SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
+		: SPE_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
 }
 #endif
 
-#if (!SPE_NO_roundAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
@@ -1030,121 +1030,121 @@ inline void SPE_roundAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a
 	Nearest Real rounding (using a tie-breaking rule):
 *******************************************************************************/
 
-#if (!SPE_NO_roundHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return SPE_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r - ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.5));
+	return SPE_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r - ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.5));
 }
 #endif
 
-#if (!SPE_NO_roundHalfDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundHalfDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundHalfDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundHalfDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r + ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.5));
+	return SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r + ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.5));
 }
 #endif
 
-#if (!SPE_NO_roundHalfUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundHalfUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundHalfUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundHalfUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return ((((r - SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)) - ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.5)) == ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0))
-		? SPE_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
-		: SPE_roundHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r));
+	return ((((r - SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)) - ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.5)) == ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0))
+		? SPE_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r)
+		: SPE_roundHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r));
 }
 #endif
 
-#if (!SPE_NO_roundHalfTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundHalfTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundHalfTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundHalfTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(roundf, round, roundl)(r);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(roundf, round, roundl)(r);
 }
 #endif
 
-#if (!SPE_NO_roundHalfAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundHalfAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundHalfAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundHalfAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_down = SPE_roundHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_up = SPE_roundHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
-	return (((half_down - half_up) != ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0))
-		? (SPE_isZero(SPE_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-				r - (((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0) * SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r / ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0)))))
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_down = SPE_roundHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_up = SPE_roundHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+	return (((half_down - half_up) != ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0))
+		? (SPE_isZero(SPE_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				r - (((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0) * SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r / ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0)))))
 			? half_down
 			: half_up)
 		: half_down);
 }
 #endif
 
-#if (!SPE_NO_roundHalfToEvenMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundHalfToEvenMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundHalfToEvenMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundHalfToEvenMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
-#if (!SPE_NO_roundHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+#if (!SPE_NO_roundHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_roundHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_down = SPE_roundHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_up = SPE_roundHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
-	return (((half_down - half_up) != ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0))
-		? (SPE_isZero(SPE_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-				r - (((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0) * SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r / ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0)))))
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_down = SPE_roundHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed half_up = SPE_roundHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r);
+	return (((half_down - half_up) != ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0))
+		? (SPE_isZero(SPE_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				r - (((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0) * SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r / ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0)))))
 			? half_up
 			: half_down)
 		: half_down);
 }
 #endif
 
-#if (!SPE_NO_roundHalfToOddMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_roundHalfToOddMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
+#if (!SPE_NO_roundHalfToOddMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_roundHalfToOddMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r_rounded
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_roundHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
+	SPE_lift_RR(&SPE_roundHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, r, r_rounded, n);
 }
 #endif
 
@@ -1152,162 +1152,162 @@ inline void SPE_roundHalfToOddMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8
 	Rounded Integer division:
 *******************************************************************************/
 
-#if (!SPE_NO_divisionDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_divisionHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-static inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_division(
-	  SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
-	, SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_divisionHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+static inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_division(
+	  SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
+	, SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
-	return SPE_integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	return SPE_integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  error_signal
-		, F(SPE_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(dividend) / SPE_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(divisor)));
+		, F(SPE_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(dividend) / SPE_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(divisor)));
 }
 #endif
 
-#if (!SPE_NO_divisionDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_divisionHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_divisionHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_division(
-		  &SPE_roundHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_roundHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
@@ -1318,170 +1318,170 @@ inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada86462
 	Remainder of rounded Integer division:
 *******************************************************************************/
 
-#if (!SPE_NO_remainderDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_remainderHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-static inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainder(
-	  SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(
-		  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-		, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-		, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
-	, SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_remainderHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+static inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainder(
+	  SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed (*F)(
+		  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+		, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+		, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+	, SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed quotient = F(error_signal, dividend, divisor);
-	SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed remainder = dividend - (quotient * divisor);
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed quotient = F(error_signal, dividend, divisor);
+	SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed remainder = dividend - (quotient * divisor);
 	if (((quotient * divisor) + remainder) != dividend)
 	{ /* Handle overflow of remainder computation: */
 		remainder = dividend;
-		*error_signal |= SPE_ERRORSIGNAL_OVERFLOW_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_OVERFLOW_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	return remainder;
 }
 #endif
 
-#if (!SPE_NO_remainderDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
 }
 #endif
 
-#if (!SPE_NO_remainderHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
+#if (!SPE_NO_remainderHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_remainderHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor)
 {
 	return SPE_remainder(
-		  &SPE_divisionHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		  &SPE_divisionHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		, error_signal
 		, dividend
 		, divisor);
@@ -1492,43 +1492,43 @@ inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada86462
 	Relational Integer functions:
 *******************************************************************************/
 
-#if (!SPE_NO_imin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_imin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_imin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_imin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
 	return (x1 < x2) ? x1 : x2;
 }
 #endif
 
-#if (!SPE_NO_iminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_iminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_iminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_iminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_III(&SPE_imin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
+	SPE_lift_III(&SPE_imin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_imax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_imax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_imax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_imax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
 	return (x1 > x2) ? x1 : x2;
 }
 #endif
 
-#if (!SPE_NO_imaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_imaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_imaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_imaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_III(&SPE_imax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
+	SPE_lift_III(&SPE_imax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
 }
 #endif
 
@@ -1536,263 +1536,263 @@ inline void SPE_imaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada8
 	Relational Real functions:
 *******************************************************************************/
 
-#if (!SPE_NO_rmin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_rmin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_rmin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_rmin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	return SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1)
+	return SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1)
 		? x1
 		: ((0 != isless(x1, x2)) ? x1 : x2);
 }
 #endif
 
-#if (!SPE_NO_rminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RRR(&SPE_rmin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
+	SPE_lift_RRR(&SPE_rmin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
 }
 #endif
 
-#if (!SPE_NO_rmax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_rmax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
+#if (!SPE_NO_rmax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_rmax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
-	return SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1)
+	return SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1)
 		? x1
 		: ((0 != isgreater(x1, x2)) ? x1 : x2);
 }
 #endif
 
-#if (!SPE_NO_rmaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_rmaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_rmaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_rmaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RRR(&SPE_rmax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
+	SPE_lift_RRR(&SPE_rmax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x1, x2, y, n);
 }
 #endif
 
 /*******************************************************************************
-	Mathematical SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed constants and functions:
+	Mathematical SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed constants and functions:
 *******************************************************************************/
 
-#if (!SPE_NO_euler_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_euler_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_euler_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_euler_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
 	/*
 		Euler’s number in quadruple-precision (256-bit) of IEEE 754-2019:
 	*/
-	return ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0x1.5bf0a8b1457695355fb8ac404e7ap+1);
+	return ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0x1.5bf0a8b1457695355fb8ac404e7ap+1);
 }
 #endif
 
-#if (!SPE_NO_fractionalPart_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_fractionalPart_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_fractionalPart_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_fractionalPart_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_integral_part = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(modff, modf, modfl)(x, &x_integral_part);
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_integral_part = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(modff, modf, modfl)(x, &x_integral_part);
 }
 #endif
 
-#if (!SPE_NO_fractionalPartMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_fractionalPartMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_fractionalPartMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_fractionalPartMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_fractionalPart_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_fractionalPart_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_sign_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sign_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_sign_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sign_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x)
-		? SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
-		: ((0 != isgreater(x, ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
-			? ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
-			: ((0 != isless(x, ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
-				? ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -1)
-				: ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)));
+	return SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x)
+		? SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+		: ((0 != isgreater(x, ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
+			? ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
+			: ((0 != isless(x, ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
+				? ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -1)
+				: ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)));
 }
 #endif
 
-#if (!SPE_NO_signMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_signMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_signMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_signMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_sign_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_sign_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(fabsf, fabs, fabsl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(fabsf, fabs, fabsl)(x);
 }
 #endif
 
-#if (!SPE_NO_absoluteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_absoluteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_absoluteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_absoluteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_sqrt_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sqrt_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_sqrt_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sqrt_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(sqrtf, sqrt, sqrtl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(sqrtf, sqrt, sqrtl)(x);
 }
 #endif
 
-#if (!SPE_NO_sqrtMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_sqrtMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_sqrtMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_sqrtMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_sqrt_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_sqrt_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_exp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_exp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_exp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_exp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(expf, exp, expl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(expf, exp, expl)(x);
 }
 #endif
 
-#if (!SPE_NO_expMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_expMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_expMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_expMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_exp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_exp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_ln_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ln_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_ln_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_ln_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(logf, log, logl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(logf, log, logl)(x);
 }
 #endif
 
-#if (!SPE_NO_lnMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_lnMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_lnMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_lnMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_ln_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_ln_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_lg_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_lg_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_lg_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_lg_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(log10f, log10, log10l)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(log10f, log10, log10l)(x);
 }
 #endif
 
-#if (!SPE_NO_lgMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_lgMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_lgMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_lgMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_lg_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_lg_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_divisionSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed eps)
+#if (!SPE_NO_divisionSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_divisionSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dividend
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed divisor
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed eps)
 {
-	SPE_RealRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed eps_range;
-	eps_range.lower = SPE_posMinReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	eps_range.upper = SPE_plusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	eps_range.nan = SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed eps_saturated = SPE_saturateReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(eps, eps_range);
-	return SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(eps_saturated)
-		? SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+	SPE_RealRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed eps_range;
+	eps_range.lower = SPE_posMinReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	eps_range.upper = SPE_plusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	eps_range.nan = SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed eps_saturated = SPE_saturateReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(eps, eps_range);
+	return SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(eps_saturated)
+		? SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
 		: (dividend / ((0 != isless(divisor, eps_saturated))
 			? eps_saturated
 			: divisor));
 }
 #endif
 
-#if (!SPE_NO_sqrtSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sqrtSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_sqrtSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sqrtSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return (0 != isless(x, ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
-		? ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)
-		: SPE_sqrt_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x);
+	return (0 != isless(x, ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
+		? ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)
+		: SPE_sqrt_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x);
 }
 #endif
 
-#if (!SPE_NO_sqrtSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_sqrtSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_sqrtSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_sqrtSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_sqrtSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_sqrtSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_lnSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_lnSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_lnSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_lnSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return (0 != isless(x, ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
-		? SPE_minusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
-		: SPE_ln_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x);
+	return (0 != isless(x, ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
+		? SPE_minusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+		: SPE_ln_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x);
 }
 #endif
 
-#if (!SPE_NO_lnSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_lnSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_lnSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_lnSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_lnSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_lnSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_lgSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_lgSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_lgSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_lgSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return (0 != isless(x, ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
-		? SPE_minusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
-		: SPE_lg_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x);
+	return (0 != isless(x, ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0)))
+		? SPE_minusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+		: SPE_lg_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x);
 }
 #endif
 
-#if (!SPE_NO_lgSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_lgSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_lgSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_lgSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_lgSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_lgSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
@@ -1800,253 +1800,253 @@ inline void SPE_lgSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ad
 	Trigonometric Real constants and functions:
 *******************************************************************************/
 
-#if (!SPE_NO_pi_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_pi_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
+#if (!SPE_NO_pi_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_pi_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(void)
 {
 	/*
 		Pi in quadruple-precision (256-bit) of IEEE 754-2019:
 	*/
-	return ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0x1.921fb54442d18469898cc51701b8p+1);
+	return ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0x1.921fb54442d18469898cc51701b8p+1);
 }
 #endif
 
-#if (!SPE_NO_sin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_sin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(sinf, sin, sinl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(sinf, sin, sinl)(x);
 }
 #endif
 
-#if (!SPE_NO_sinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_sinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_sinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_sinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_sin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_sin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_cos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_cos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_cos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_cos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(cosf, cos, cosl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(cosf, cos, cosl)(x);
 }
 #endif
 
-#if (!SPE_NO_cosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_cosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_cosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_cosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_cos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_cos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_tan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_tan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(tanf, tan, tanl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(tanf, tan, tanl)(x);
 }
 #endif
 
-#if (!SPE_NO_tanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_tanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_tanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_tanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_tan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_tan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_asin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_asin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_asin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_asin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(asinf, asin, asinl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(asinf, asin, asinl)(x);
 }
 #endif
 
-#if (!SPE_NO_asinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_asinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_asinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_asinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_asin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_asin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_acos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_acos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_acos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_acos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(acosf, acos, acosl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(acosf, acos, acosl)(x);
 }
 #endif
 
-#if (!SPE_NO_acosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_acosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_acosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_acosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_acos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_acos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_atan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_atan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_atan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_atan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(atanf, atan, atanl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(atanf, atan, atanl)(x);
 }
 #endif
 
-#if (!SPE_NO_atanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_atanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_atanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_atanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_atan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_atan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_atan2_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_atan2_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed y
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_atan2_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_atan2_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed y
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return ((((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) == y) && (0 != isgreaterequal(((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0), x)))
-		? SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
-		: SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(atan2f, atan2, atan2l)(y, x);
+	return ((((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0) == y) && (0 != isgreaterequal(((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0), x)))
+		? SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+		: SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(atan2f, atan2, atan2l)(y, x);
 }
 #endif
 
-#if (!SPE_NO_atan2MD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_atan2MD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const z
+#if (!SPE_NO_atan2MD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_atan2MD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const z
 	, const size_t n)
 {
-	SPE_lift_RRR(&SPE_atan2_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, y, x, z, n);
+	SPE_lift_RRR(&SPE_atan2_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, y, x, z, n);
 }
 #endif
 
-#if (!SPE_NO_sinh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sinh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_sinh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_sinh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(sinhf, sinh, sinhl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(sinhf, sinh, sinhl)(x);
 }
 #endif
 
-#if (!SPE_NO_sinhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_sinhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_sinhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_sinhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_sinh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_sinh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_cosh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_cosh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_cosh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_cosh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(coshf, cosh, coshl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(coshf, cosh, coshl)(x);
 }
 #endif
 
-#if (!SPE_NO_coshMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_coshMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_coshMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_coshMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_cosh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_cosh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_tanh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tanh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_tanh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tanh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(tanhf, tanh, tanhl)(x);
+	return SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(tanhf, tanh, tanhl)(x);
 }
 #endif
 
-#if (!SPE_NO_tanhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_tanhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_tanhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_tanhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_tanh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_tanh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_tanSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tanSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_tanSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tanSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	return (0 != isgreaterequal((SPE_pi_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed() / ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -2.0)), x))
-		? SPE_minusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
-		: ((0 != islessequal((SPE_pi_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed() / ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0)), x))
-			? SPE_plusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
-			: SPE_tan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x));
+	return (0 != isgreaterequal((SPE_pi_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed() / ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -2.0)), x))
+		? SPE_minusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+		: ((0 != islessequal((SPE_pi_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed() / ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2.0)), x))
+			? SPE_plusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed()
+			: SPE_tan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x));
 }
 #endif
 
-#if (!SPE_NO_tanSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_tanSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_tanSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_tanSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_tanSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_tanSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_asinSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_asinSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_asinSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_asinSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	SPE_RealRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_range;
-	x_range.lower = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -1.0);
-	x_range.upper = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1.0);
-	x_range.nan = SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_saturated = SPE_saturateReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x, x_range);
-	return SPE_asin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x_saturated);
+	SPE_RealRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_range;
+	x_range.lower = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -1.0);
+	x_range.upper = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1.0);
+	x_range.nan = SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_saturated = SPE_saturateReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x, x_range);
+	return SPE_asin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x_saturated);
 }
 #endif
 
-#if (!SPE_NO_asinSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_asinSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_asinSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_asinSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_asinSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_asinSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
-#if (!SPE_NO_acosSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_acosSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
+#if (!SPE_NO_acosSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_acosSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
-	SPE_RealRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_range;
-	x_range.lower = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -1.0);
-	x_range.upper = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1.0);
-	x_range.nan = SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_saturated = SPE_saturateReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x, x_range);
-	return SPE_acos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x_saturated);
+	SPE_RealRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_range;
+	x_range.lower = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) -1.0);
+	x_range.upper = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1.0);
+	x_range.nan = SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x_saturated = SPE_saturateReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x, x_range);
+	return SPE_acos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x_saturated);
 }
 #endif
 
-#if (!SPE_NO_acosSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-inline void SPE_acosSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
+#if (!SPE_NO_acosSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+inline void SPE_acosSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y
 	, const size_t n)
 {
-	SPE_lift_RR(&SPE_acosSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
+	SPE_lift_RR(&SPE_acosSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed, x, y, n);
 }
 #endif
 
@@ -2054,14 +2054,14 @@ inline void SPE_acosSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4
 	Systems of equations:
 *******************************************************************************/
 
-#if (!SPE_NO_solveUnivariatePolynomial_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_solveUnivariatePolynomial_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const a
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x
+#if (!SPE_NO_solveUnivariatePolynomial_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_solveUnivariatePolynomial_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const a
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x
 	, const size_t n)
 {
 	/* Horner's method with a[1] coefficient of highest power: */
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b = a[1];
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b = a[1];
 	for (size_t i = ((size_t) 1); i < n; ++i)
 	{
 		b = a[i] + (b * x);
@@ -2070,7 +2070,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 }
 #endif
 
-#if (!SPE_NO_solveLinearEquations_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_solveLinearEquations_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 /*
 	Find entry along column col_ind of A (from the row with index col_ind and
 	below) with largest modulus. Then swaps the row with index col_ind with
@@ -2094,7 +2094,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		= false: Error; pivoting failed.
 */
 static bool SPE_pivot(
-	  SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const A
+	  SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const A
 	, const size_t col_ind
 	, size_t* const pivot_indexes
 	, const size_t n)
@@ -2104,7 +2104,7 @@ static bool SPE_pivot(
 	if (result)
 	{
 		const size_t cn = col_ind * n;
-		SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed max_val = SPE_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(A[cn + col_ind]);
+		SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed max_val = SPE_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(A[cn + col_ind]);
 		size_t max_ind = col_ind;
 		
 		/*
@@ -2113,7 +2113,7 @@ static bool SPE_pivot(
 		*/
 		for (size_t j = col_ind + ((size_t) 1); j != n; ++j)
 		{
-			SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed val = SPE_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(A[(j * n) + col_ind]);
+			SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed val = SPE_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(A[(j * n) + col_ind]);
 			if (0 != isgreater(val, max_val))
 			{
 				max_val = val;
@@ -2134,7 +2134,7 @@ static bool SPE_pivot(
 			for (size_t j = ((size_t) 0); j != n; ++j)
 			{
 				const size_t mn = max_ind * n;
-				const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed temp_A = A[mn + j];
+				const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed temp_A = A[mn + j];
 				A[mn + j] = A[cn + j];
 				A[cn + j] = temp_A;
 			}
@@ -2160,7 +2160,7 @@ static bool SPE_pivot(
 	
 	<-> error_signal:
 		Error signal of the runtime environment. If LU factorization failed,
-			SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+			SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		is set; otherwise unchanged.
 	-> A[n, n]:
 		A-matrix stored in one vector in row-major order
@@ -2172,14 +2172,14 @@ static bool SPE_pivot(
 		Dimensions of A and pivot_indexes
 */
 static void SPE_luFactorize(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const A
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const A
 	, size_t* const pivot_indexes
 	, const size_t n)
 {
 	if (((size_t) 0) == n)
 	{
-		*error_signal |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	else
 	{
@@ -2232,7 +2232,7 @@ static void SPE_luFactorize(
 			*/
 			|| SPE_isZero(A[(n * n) - ((size_t) 1)]))
 		{
-			*error_signal |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+			*error_signal |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 		}
 	}
 }
@@ -2246,7 +2246,7 @@ static void SPE_luFactorize(
 	<-> error_signal:
 		Error signal of the runtime environment. If failed to compute the
 		solution of the linear equations system,
-			SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+			SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 		is set; otherwise unchanged.
 	-> D[n, n]:
 		LU-decomposition of A stored in one vector in row-major order
@@ -2262,16 +2262,16 @@ static void SPE_luFactorize(
 		Dimensions of D and pivots
 */
 static void SPE_luSolve(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const D
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const b
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const D
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const b
 	, const size_t* const pivot_indexes
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const work_buffer
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const work_buffer
 	, const size_t n)
 {	
 	if (((size_t) 0) == n)
 	{
-		*error_signal |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		*error_signal |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	else
 	{
@@ -2291,7 +2291,7 @@ static void SPE_luSolve(
 		for (size_t k = ((size_t) 0); k != n; ++k)
 		{
 			const size_t kn = k * n;
-			SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed sum = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
+			SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed sum = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
 			
 			for (size_t j = ((size_t) 0); j != k; ++j)
 			{
@@ -2313,7 +2313,7 @@ static void SPE_luSolve(
 			*/
 			const size_t k_size = ((size_t) k);
 			const size_t kn = k_size * n;
-			SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed sum = ((SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
+			SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed sum = ((SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0);
 			
 			for (size_t j = k_size + ((size_t) 1); j != n; ++j)
 			{
@@ -2326,34 +2326,34 @@ static void SPE_luSolve(
 	}
 }
 
-void SPE_solveLinearEquations_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const A
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const b
+void SPE_solveLinearEquations_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const A
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const b
 	, size_t* const pivot_indexes
-	, SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const work_buffer
+	, SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const work_buffer
 	, const size_t n)
 {
-	SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = (!SPE_hasNanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(b, n)
-			&& !SPE_hasNanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(A, n * n))
-		? SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-		: SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+	SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = (!SPE_hasNanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(b, n)
+			&& !SPE_hasNanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(A, n * n))
+		? SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+		: SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	
-	if (SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
+	if (SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
 	{
 		SPE_luFactorize(&local_errors, A, pivot_indexes, n);
 	}
 	
-	if (SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
+	if (SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
 	{
 		SPE_luSolve(&local_errors, A, b, pivot_indexes, work_buffer, n);
 	}
 	
-	if (SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed != local_errors)
+	if (SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed != local_errors)
 	{
 		for (size_t i = ((size_t) 0); i < n; ++i)
 		{
-			b[i] = SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+			b[i] = SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
 		}
 		*error_signal |= local_errors;
 	}
@@ -2364,21 +2364,21 @@ void SPE_solveLinearEquations_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a44
 	Interpolation in 1D/2D/3D:
 *******************************************************************************/
 
-#if (!SPE_NO_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
-	|| (!SPE_NO_interpolation3D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+#if (!SPE_NO_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+	|| (!SPE_NO_interpolation3D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 /*
 	Are the values of multi-dimension x finite and strictly monotonically
 	increasing?
 */
 static inline bool SPE_isIncreasingMD(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
 	, const size_t r_size)
 {
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed last = SPE_minusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed last = SPE_minusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
 	size_t r_index = ((size_t) 0);
 	while ((r_index < r_size)
-		&& SPE_isFinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index])
+		&& SPE_isFinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(r[r_index])
 		&& (0 != isgreater(r[r_index], last)))
 	{
 		last = r[r_index];
@@ -2387,22 +2387,22 @@ static inline bool SPE_isIncreasingMD(
 	return r_index == r_size;
 }
 
-static inline SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolationCheckSingleArgument(
-	  bool (*F)(const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r, const size_t r_size)
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
+static inline SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolationCheckSingleArgument(
+	  bool (*F)(const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r, const size_t r_size)
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const r
 	, const size_t r_size
-	, SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const cached_errors
+	, SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const cached_errors
 	, const bool cache_is_valid
 	, const bool cache_is_active)
 {
-	SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+	SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	
 	if ((NULL != r)
 		&& (!cache_is_valid || !cache_is_active))
 	{ /* Do checks if the cache is invalid or inactive for the argument... */
 		local_errors = ((r_size < ((size_t) 2)) || !F(r, r_size))
-			? SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-			: SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+			? SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+			: SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 		if (cache_is_active)
 		{ /* ...but only update the cache if it is active for the argument. */
 			*cached_errors |= local_errors;
@@ -2412,17 +2412,17 @@ static inline SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a44
 	return local_errors;
 }
 
-static inline SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolationCheckAllArguments(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1_data
+static inline SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolationCheckAllArguments(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x1_data
 	, const size_t x1_size
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2_data
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x2_data
 	, const size_t x2_size
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x3_data
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const x3_data
 	, const size_t x3_size
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y_data
-	, SPE_InterpolationCheckscache_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y_data
+	, SPE_InterpolationCheckscache_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
 {
-	SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+	SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	
 	if (NULL != checkscache)
 	{
@@ -2432,7 +2432,7 @@ static inline SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a44
 		}
 		else
 		{
-			checkscache->error_signal = SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+			checkscache->error_signal = SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 		}
 		
 		local_errors |= SPE_interpolationCheckSingleArgument(
@@ -2457,7 +2457,7 @@ static inline SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a44
 			, checkscache->cache_is_valid
 			, checkscache->cache_x3_data_check);
 		local_errors |= SPE_interpolationCheckSingleArgument(
-			  &SPE_allFiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+			  &SPE_allFiniteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 			, y_data
 			, x1_size * x2_size * x3_size
 			, &checkscache->error_signal
@@ -2476,9 +2476,9 @@ static inline SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a44
 	Implemented as binary search:
 */
 static inline size_t SPE_interpolationSearch(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed value
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x[]
-	, const SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed value
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x[]
+	, const SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed range)
 {
 	size_t lower = range.lower;
 	size_t upper = range.upper;
@@ -2497,30 +2497,30 @@ static inline size_t SPE_interpolationSearch(
 	return lower;
 }
 
-static inline SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolationLinear(
-	  const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed a
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ya
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed yb)
+static inline SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolationLinear(
+	  const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed a
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ya
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed yb)
 {
 	return ya + (((yb - ya) * (x - a)) / (b - a));
 }
 #endif
 
-#if (!SPE_NO_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1_data[]
+#if (!SPE_NO_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1_data[]
 	, const size_t nx1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed y_data[]
-	, const SPE_InterpolationMethods_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed interpolation_methods
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed y_data[]
+	, const SPE_InterpolationMethods_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed interpolation_methods
 	, const size_t x1_size
-	, SPE_InterpolationCheckscache_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
+	, SPE_InterpolationCheckscache_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
 {
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_interpolationCheckAllArguments(
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_interpolationCheckAllArguments(
 		  x1_data
 		, x1_size
 		, NULL
@@ -2530,34 +2530,34 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		, y_data
 		, checkscache);
 	
-	const size_t nx1_saturated = SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	const size_t nx1_saturated = SPE_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  nx1
-		, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+		, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
 			  .lower = ((size_t) 2)
 			, .upper = x1_size});
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ip_saturated = SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ip_saturated = SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  interpolation_methods.interpolation
-		, (SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
-			  .lower = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
-			, .upper = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ep_saturated = SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+		, (SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+			  .lower = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
+			, .upper = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ep_saturated = SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  interpolation_methods.extrapolation
-		, (SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
-			  .lower = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
-			, .upper = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
+		, (SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+			  .lower = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
+			, .upper = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
 	
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1))
 	{
-		local_errors |= SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		local_errors |= SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	
-	if (SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
+	if (SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
 	{
 		const size_t last = nx1_saturated - ((size_t) 1); /* last index */
 		
 		if (0 != islessequal(x1, x1_data[0]))
 		{ /* Value is before first entry: */
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
 			{ /* Interpolation not needed: */
 				result = y_data[0];
 			}
@@ -2573,7 +2573,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		}
 		else if (0 != isgreaterequal(x1, x1_data[last]))
 		{ /* Value is after last entry: */
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
 			{ /* Interpolation not needed: */
 				result = y_data[last];
 			}
@@ -2592,9 +2592,9 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 			const size_t i = SPE_interpolationSearch(
 				  x1
 				, x1_data
-				, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 0), .upper = last});
+				, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 0), .upper = last});
 			
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ip_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ip_saturated)
 			{ /* Interpolation not needed: */
 				result = y_data[i];
 			}
@@ -2620,7 +2620,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 			|| (ip_saturated != interpolation_methods.interpolation)
 			|| (ep_saturated != interpolation_methods.extrapolation)))
 	{
-		local_errors |= SPE_ERRORSIGNAL_INVALID_ARGUMENT_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		local_errors |= SPE_ERRORSIGNAL_INVALID_ARGUMENT_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	
 	*error_signal |= local_errors;
@@ -2628,23 +2628,23 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 }
 #endif
 
-#if (!SPE_NO_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1_data[]
+#if (!SPE_NO_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1_data[]
 	, const size_t nx1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2_data[]
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2_data[]
 	, const size_t nx2
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y_data
-	, const SPE_InterpolationMethods_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed interpolation_methods
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y_data
+	, const SPE_InterpolationMethods_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed interpolation_methods
 	, const size_t x1_size
 	, const size_t x2_size
-	, SPE_InterpolationCheckscache_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
+	, SPE_InterpolationCheckscache_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
 {
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_interpolationCheckAllArguments(
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_interpolationCheckAllArguments(
 		  x1_data
 		, x1_size
 		, x2_data
@@ -2654,36 +2654,36 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		, y_data
 		, checkscache);
 	
-	const size_t nx1_saturated = SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	const size_t nx1_saturated = SPE_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  nx1
-		, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+		, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
 			  .lower = ((size_t) 2)
 			, .upper = x1_size});
-	const size_t nx2_saturated = SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	const size_t nx2_saturated = SPE_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  nx2
-		, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+		, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
 			  .lower = ((size_t) 2)
 			, .upper = x2_size});
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ip_saturated = SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ip_saturated = SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  interpolation_methods.interpolation
-		, (SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
-			  .lower = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
-			, .upper = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ep_saturated = SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+		, (SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+			  .lower = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
+			, .upper = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ep_saturated = SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  interpolation_methods.extrapolation
-		, (SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
-			  .lower = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
-			, .upper = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
+		, (SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+			  .lower = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
+			, .upper = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
 	
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
 	{
-		local_errors |= SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		local_errors |= SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	
-	if (SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
+	if (SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
 	{
-		const SPE_InterpolationMethods_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed im_saturated =
-			(SPE_InterpolationMethods_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+		const SPE_InterpolationMethods_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed im_saturated =
+			(SPE_InterpolationMethods_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 			{
 				  .interpolation = ip_saturated
 				, .extrapolation = ep_saturated
@@ -2693,9 +2693,9 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		
 		if (0 != islessequal(x1, x1_data[0]))
 		{ /* Data before first entry: */
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
 			{ /* Interpolation not needed: */
-				result = SPE_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				result = SPE_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 					  error_signal
 					, x2
 					, x2_data
@@ -2713,9 +2713,9 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		}
 		else if (0 != isgreaterequal(x1, x1_data[last]))
 		{ /* Data after last entry: */
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
 			{ /* Interpolation not needed: */
-				result = SPE_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				result = SPE_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 					  error_signal
 					, x2
 					, x2_data
@@ -2736,11 +2736,11 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 			last = SPE_interpolationSearch(
 				  x1
 				, x1_data
-				, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 0), .upper = last});
+				, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 0), .upper = last});
 			
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ip_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ip_saturated)
 			{ /* Interpolation not needed: */
-				result = SPE_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				result = SPE_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 					  error_signal
 					, x2
 					, x2_data
@@ -2758,7 +2758,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		
 		if (interpolate) /* interpolation needed */
 		{
-			SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed a = SPE_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+			SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed a = SPE_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 				  error_signal
 				, x2
 				, x2_data
@@ -2767,7 +2767,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 				, im_saturated
 				, x2_size
 				, NULL);
-			SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b = SPE_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+			SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b = SPE_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 				  error_signal
 				, x2
 				, x2_data
@@ -2796,7 +2796,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 			|| (ip_saturated != interpolation_methods.interpolation)
 			|| (ep_saturated != interpolation_methods.extrapolation)))
 	{
-		local_errors |= SPE_ERRORSIGNAL_INVALID_ARGUMENT_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		local_errors |= SPE_ERRORSIGNAL_INVALID_ARGUMENT_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	
 	*error_signal |= local_errors;
@@ -2804,27 +2804,27 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 }
 #endif
 
-#if (!SPE_NO_interpolation3D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
-SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolation3D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
-	  SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x3
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1_data[]
+#if (!SPE_NO_interpolation3D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_interpolation3D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	  SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x3
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1_data[]
 	, const size_t nx1
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2_data[]
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2_data[]
 	, const size_t nx2
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x3_data[]
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x3_data[]
 	, const size_t nx3
-	, const SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y_data
-	, const SPE_InterpolationMethods_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed interpolation_methods
+	, const SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const y_data
+	, const SPE_InterpolationMethods_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed interpolation_methods
 	, const size_t x1_size
 	, const size_t x2_size
 	, const size_t x3_size
-	, SPE_InterpolationCheckscache_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
+	, SPE_InterpolationCheckscache_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const checkscache)
 {
-	SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = SPE_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
-	SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_interpolationCheckAllArguments(
+	SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed result = SPE_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed();
+	SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed local_errors = SPE_interpolationCheckAllArguments(
 		  x1_data
 		, x1_size
 		, x2_data
@@ -2834,35 +2834,35 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		, y_data
 		, checkscache);
 	
-	const size_t nx1_saturated = SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+	const size_t nx1_saturated = SPE_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  nx1
-		, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 2), .upper = x1_size});
-	const size_t nx2_saturated = SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+		, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 2), .upper = x1_size});
+	const size_t nx2_saturated = SPE_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  nx2
-		, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 2), .upper = x2_size});
-	const size_t nx3_saturated = SPE_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+		, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 2), .upper = x2_size});
+	const size_t nx3_saturated = SPE_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  nx3
-		, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 2), .upper = x3_size});
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ip_saturated = SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+		, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 2), .upper = x3_size});
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ip_saturated = SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  interpolation_methods.interpolation
-		, (SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
-			  .lower = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
-			, .upper = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
-	const SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ep_saturated = SPE_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+		, (SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+			  .lower = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
+			, .upper = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
+	const SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ep_saturated = SPE_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 		  interpolation_methods.extrapolation
-		, (SPE_IntegerRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
-			  .lower = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
-			, .upper = ((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
+		, (SPE_IntegerRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){
+			  .lower = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1)
+			, .upper = ((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 2)});
 	
-	if (SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2) || SPE_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x3))
+	if (SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2) || SPE_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x3))
 	{
-		local_errors |= SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		local_errors |= SPE_ERRORSIGNAL_NO_SOLUTION_FOUND_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	
-	if (SPE_ERRORSIGNAL_NONE_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
+	if (SPE_ERRORSIGNAL_NONE_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed == local_errors)
 	{
-		const SPE_InterpolationMethods_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed im_saturated =
-			(SPE_InterpolationMethods_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
+		const SPE_InterpolationMethods_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed im_saturated =
+			(SPE_InterpolationMethods_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 			{
 				  .interpolation = ip_saturated
 				, .extrapolation = ep_saturated
@@ -2872,7 +2872,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		
 		if (0 != islessequal(x1, x1_data[0]))
 		{ /* Data before first entry: */
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
 			{ /* Interpolation not needed: */
 				/*
 					NOLINTBEGIN(readability-suspicious-call-argument)
@@ -2880,7 +2880,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 					Rationale: Argument switch part of implementation
 					by reduction to 2D interpolation.
 				*/
-				result = SPE_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				result = SPE_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 					  error_signal
 					, x2
 					, x3
@@ -2903,7 +2903,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 		}
 		else if (0 != isgreaterequal(x1, x1_data[last]))
 		{ /* Data after last entry: */
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ep_saturated)
 			{ /* Interpolation not needed: */
 				/*
 					NOLINTBEGIN(readability-suspicious-call-argument)
@@ -2911,7 +2911,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 					Rationale: Argument switch part of implementation
 					by reduction to 2D interpolation.
 				*/
-				result = SPE_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				result = SPE_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 					  error_signal
 					, x2
 					, x3
@@ -2937,9 +2937,9 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 			last = SPE_interpolationSearch(
 				  x1
 				, x1_data
-				, (SPE_IndexRange_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 0), .upper = last});
+				, (SPE_IndexRange_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed){.lower = ((size_t) 0), .upper = last});
 			
-			if (((SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ip_saturated)
+			if (((SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 1) == ip_saturated)
 			{ /* Interpolation not needed: */
 				/*
 					NOLINTBEGIN(readability-suspicious-call-argument)
@@ -2947,7 +2947,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 					Rationale: Argument switch part of implementation
 					by reduction to 2D interpolation.
 				*/
-				result = SPE_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+				result = SPE_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 					  error_signal
 					, x2
 					, x3
@@ -2976,7 +2976,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 				Rationale: Argument switch part of implementation
 				by reduction to 2D interpolation.
 			*/
-			SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed a = SPE_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+			SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed a = SPE_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 				  error_signal
 				, x2
 				, x3
@@ -2989,7 +2989,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 				, x2_size
 				, x3_size
 				, NULL);
-			SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b = SPE_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
+			SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed b = SPE_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 				  error_signal
 				, x2
 				, x3
@@ -3024,7 +3024,7 @@ SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a43555
 			|| (ip_saturated != interpolation_methods.interpolation)
 			|| (ep_saturated != interpolation_methods.extrapolation)))
 	{
-		local_errors |= SPE_ERRORSIGNAL_INVALID_ARGUMENT_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+		local_errors |= SPE_ERRORSIGNAL_INVALID_ARGUMENT_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 	}
 	
 	*error_signal |= local_errors;

@@ -3,52 +3,6 @@
 ** Copyright (c) 2022 Microsoft Corporation
 **********************************************************************
 [vcvarsall.bat] Environment initialized for: 'x86'
-Source eFMU path                    : C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU
-Destination eFMU path               : null
-Production code name                : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-Binary code name                    : BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
-Ignore reading Errors               : false
-Ignore writing Errors               : false
-Compiler name                       : VS
-Compiler vendor                     : Microsoft
-Compiler version                    : Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31944 for x86
-Compiler executable name            : cl
-Compiler option sets                : 
-	Name: default
-	Options: 
-		SWT nologo
-Default compiler option set         : default
-Specific compiler option set        : 
-Linker name                         : VS
-Linker vendor                       : Microsoft
-Linker version                      : Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31944 for x86
-Linker executable name              : lib
-linker option set                   : 
-		SWT nologo
-Target name                         : Windows
-Target vendor                       : Software Production Engineering
-Target chip version                 : 1.0
-Target instruction set architecture : x86
-Target endianess                    : big
-Target register width               : 32
-Target address width                : 32
-Object extension                    : obj
-Binary extension                    : lib
-Execute link                        : true
-
- 
-EFMI Version       : 1.0.0
-
-XSD Versions: 
-Container          : 0.10.0
-BehavioralModel    : 0.7.0
-AlgorithmCode      : 0.13.0
-ProductionCode     : 0.17.0
-BinaryCode         : 0.12.0
-
-
-READ MANIFESTS
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\__content.xml
 Import-Module : Illegal characters in path.
 At line:1 char:46
 + ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
@@ -65,120 +19,280 @@ At line:1 char:173
     + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
  
+
+BINARY CODE GENERATION
+
+Read arguments... 
+Source eFMU path                    : C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/
+Destination eFMU path               : C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/
+Production code name                : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Binary code name                    : BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+Compiler option sets                : 
+		nologo
+		O2
+		std=c17
+		W4
+linker option set                   : 
+		nologo
+Compiler name                       : VS
+Target name                         : Win32
+Target vendor                       : 
+Target chip version                 : 
+Target instruction set architecture : i686
+Target address width                : 32
+Execute link                        : true
+
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+Read arguments... OK
+
+Read Manifests... 
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@6374875e
+modelRepresentation: null
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\__content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\schemas\efmiContainerManifest.xsd
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\ACode_Dymola\manifest.xml
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@6374875e
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@a1ff8bab
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\ACode_Dymola\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.13.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
-OK: Manifest CheckSum valid: 923850288d8e91d12d20dd044664fc9e319c501d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\ACode_Dymola\.\block.alg
-OK: Manifest file CheckSum valid: 3fdf32b804cdec31f6bc02a12fabd303a0494439
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 44634521f66b7f15610c5850781cf1cf65e44299
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 9f32e484c872d0faa5a161ead740d5da43ffe232
+Reading ACode_Dymola ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@6374875e
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@52db33f2
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: d904403967ed170e6da35b052a2fb971d4e4f42c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 29fe655b37050fa43fc4c074877ae6bb34f7e4ac
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
-OK: Manifest file CheckSum valid: 7965c76fc6ddb49bddbc4c4acdb24b3f7ea68ab5
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 582b24c670a6343d05ef4e78db08ac64fc168acd
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
-OK: Manifest file CheckSum valid: 5c32ce26f8d65db415cbac18c63dbb62fa212cfe
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: e35b5440e813cb4671aef5d3bdc8017f9f53267c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
-OK: Manifest file CheckSum valid: 1c749aa1fc1197a5a0a362cd7ab2a31487ae659c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: d6ee50c9de20d8aff00db143d566de9c4e615059
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: c55767eabd097bcaf5c4364adfe2e16ef96dc2d9
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
-OK: Manifest file CheckSum valid: 3ad5e4366faa172c832ed9f4c603a3247c95e469
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 1ebf071ad8d70e6e0986af0603314015ae5e2dfc
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: 21d358c81de2b882736b1c024cbac6bdbc847166
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: e59b0df85db39cfc310d0c8e5470d0ec521b07fe
+File list : .//block.c/FILE_ID_block.c_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 4bf2d9884967ccf6a43ae45e3cf5fba782b22f88
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 54284845090ea377f849f1e1528cf5418dc8bea9
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 0ede02ff6f47bbc17bf0a38c92276797d97821ae
+File list : .//block.h/FILE_ID_block.h_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 3519b2147d76f11a69f62d9ff7d88d7fadf59e58
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: 2a91d0bc43c273dfb2c3876f6a84a32762a77a67
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: fb5433e79d70fddb2977712cfe14e3ed4b4f4099
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: 51c1e4e157621da9d5715eddeba50ef45f9018cc
+Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@6374875e
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@552ecab1
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 22d301ae39201258505941c7b07abcd58807de6f
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 5f19be3dfdb39449373639f1af13d23aa4c419e9
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
-OK: Manifest file CheckSum valid: e7897e5345919b613f1ba70fb8410b5702501a20
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: c1577c603325c3350f302d82e9714cf24ebb9372
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
-OK: Manifest file CheckSum valid: da07ceeade00bb5942d5241eb6f74d86f576b089
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 0c2c1829a89cca278b8e0e331f1ea09520e1f20f
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: 3c73df5eaf971227c48c4171075ca0ae5b60a175
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 6727b59820c4b28d46bcad101e3f9f40b889a25c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
-OK: Manifest file CheckSum valid: 7226a2a2546a33da0d9306d75f42575ad533d244
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
-OK: Manifest file CheckSum valid: 73163eb2b36378e38330e0fd32ac69b8f956d081
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 55c8e5f2efa43589971802b9bf901d0813519cd3
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: 4c090c2ebe60d11cb6dd0196388bb5f1edbf1e4c
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: f8aeb45391991b86c0eec50429b2ba80ba66b709
+File list : .//block.c/FILE_ID_block.c_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: d431ca31196317bf56b91b2a64aea305930c6c5f
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: a55da972f9ed41994868f1d531780e1b12b7fe9c
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: c3658228e01149d3a57de0f7a6a03f1bd5afcba5
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 87cc1b03e9f44d9cdf2bbdcd5a7773f59306a8ca
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
+OK: Manifest file CheckSum valid: 65ae8cdec5fef5d55fb84a33e9cd400a7bf32491
+File list : .//block.h/FILE_ID_block.h_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: 54a95fa727e65381ea86feefe0bd625cf9a8cc85
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: f273e6b955c52ff92a85b6dda9b1cbd1ca7c67ce
+Reading PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c ModelRepresentation
+Read Manifests... OK
 
-GENERATE BINARY CODE MAKEFILES
-C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
-C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./build.bat
-C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./where.bat
+Write BinaryCode Makefile... 
+C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
+Write BinaryCode Makefile... OK
 
-GENERATE BINARY CODE SOURCES
+Generate BinaryCode files... 
 
 Microsoft (R) Program Maintenance Utility Version 14.34.31944.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
-	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c /Fo.\default\mei_block_interface.obj
-mei_block_interface.c
-	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c /Fo.\default\block.obj
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c /Fo./block.obj
 block.c
-	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c /Fo.\default\galec_stl.obj
-galec_stl.c
-	cl /nologo /c ..\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c /Fo.\default\sii_block_interface.obj
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(91): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(113): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(135): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(136): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(139): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(140): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(143): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(144): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(147): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(148): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(176): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(244): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(251): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(268): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(274): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(292): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(298): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(303): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(308): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(310): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(333): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(340): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(357): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(362): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(387): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(394): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(407): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(411): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(412): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(430): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(435): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(445): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(447): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(448): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(449): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(466): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(471): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(480): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(483): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(486): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(493): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(500): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(505): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(583): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(591): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(593): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(595): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(599): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(601): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(603): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(607): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(609): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(611): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(617): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(625): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(629): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(631): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(637): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(645): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(653): warning C4305: '=': truncation from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(742): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(749): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(757): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(764): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(775): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(782): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(785): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(788): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(806): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(813): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(860): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(867): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(895): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(908): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(924): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(931): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(932): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(944): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(949): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(965): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(972): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(975): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(988): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1001): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1010): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1075): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1085): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1088): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1090): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1095): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1107): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1128): warning C4305: 'function': truncation from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1130): warning C4244: '=': conversion from 'double' to 'SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1133): warning C4305: 'function': truncation from 'double' to 'const SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/sii_block_interface.c /Fo./sii_block_interface.obj
 sii_block_interface.c
-	lib /nologo .\default\mei_block_interface.obj .\default\block.obj .\default\galec_stl.obj .\default\sii_block_interface.obj /OUT:block.lib
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.c /Fo./galec_stl.obj
+galec_stl.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c /Fo./mei_block_interface.obj
+mei_block_interface.c
+	lib /nologo ./block.obj ./sii_block_interface.obj ./galec_stl.obj ./mei_block_interface.obj /OUT:block.lib
+Generate BinaryCode files... OK
 
-
-GENERATE BINARY CODE MANIFEST
+Write Manifest... 
 BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
-
-WRITE MANIFESTS
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 28044712700db9f640964a9bc2dcf1bac216157d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 5d37c0b66af762c75fb159ae556154a2cf8eb661
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: 7350ebb94d1340c4ff5e56a4db0d4c20b89e9648
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: ea21c1708e2b6d15b9a1090c380e13aa130f4a5f
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: cf22c38d121078e4af7b77ef7039142a8e1cd4dc
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: 21669d7dba4e4cbf574a54610c04deee2ad44438
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4HIL\eFMU\__content.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: c32d521abb370c850150a0e3b74413fb8ddfb000
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: 9c5ab67f7877bcbb10b5db503f0ceceac7f5743a
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 8dafeffb6cf796a05faed586b0fe902c374b2629
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: c68a2e562e21b92fc1c6b82cac869e74faad0418
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 17611cb278b708029cad854ccede1555def12d3e
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: af0bafb5e33e4b362f70f427922f87ef7e049d9d
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 48306cd781fbe357717cbc3d6fd0755e179989b1
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\GridForHILTesting\eFMU\__content.xml
+Writing: __content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4HIL/eFMU\schemas\efmiContainerManifest.xsd
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/GridForHILTesting/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
-GENERATION SUCCESS
+Write Manifest... OK
+
+BINARY CODE GENERATION SUCCESS
+

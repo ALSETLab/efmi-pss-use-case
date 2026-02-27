@@ -3,52 +3,6 @@
 ** Copyright (c) 2022 Microsoft Corporation
 **********************************************************************
 [vcvarsall.bat] Environment initialized for: 'x86'
-Source eFMU path                    : C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU
-Destination eFMU path               : null
-Production code name                : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-Binary code name                    : BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
-Ignore reading Errors               : false
-Ignore writing Errors               : false
-Compiler name                       : VS
-Compiler vendor                     : Microsoft
-Compiler version                    : Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31944 for x86
-Compiler executable name            : cl
-Compiler option sets                : 
-	Name: default
-	Options: 
-		SWT nologo
-Default compiler option set         : default
-Specific compiler option set        : 
-Linker name                         : VS
-Linker vendor                       : Microsoft
-Linker version                      : Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31944 for x86
-Linker executable name              : lib
-linker option set                   : 
-		SWT nologo
-Target name                         : Windows
-Target vendor                       : Software Production Engineering
-Target chip version                 : 1.0
-Target instruction set architecture : x86
-Target endianess                    : big
-Target register width               : 32
-Target address width                : 32
-Object extension                    : obj
-Binary extension                    : lib
-Execute link                        : true
-
- 
-EFMI Version       : 1.0.0
-
-XSD Versions: 
-Container          : 0.10.0
-BehavioralModel    : 0.7.0
-AlgorithmCode      : 0.13.0
-ProductionCode     : 0.17.0
-BinaryCode         : 0.12.0
-
-
-READ MANIFESTS
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\__content.xml
 Import-Module : Illegal characters in path.
 At line:1 char:46
 + ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
@@ -65,216 +19,266 @@ At line:1 char:173
     + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
  
+
+BINARY CODE GENERATION
+
+Read arguments... 
+Source eFMU path                    : C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/
+Destination eFMU path               : C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/
+Production code name                : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+Binary code name                    : BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
+Compiler option sets                : 
+		nologo
+		O2
+		std=c17
+		W4
+linker option set                   : 
+		nologo
+Compiler name                       : VS
+Target name                         : Win32
+Target vendor                       : 
+Target chip version                 : 
+Target instruction set architecture : i686
+Target address width                : 32
+Execute link                        : true
+
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+Read arguments... OK
+
+Read Manifests... 
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@9628de8
+modelRepresentation: null
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\__content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\efmiContainerManifest.xsd
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\ACode_Dymola\manifest.xml
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@9628de8
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@de0cbbd8
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\ACode_Dymola\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.13.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
-OK: Manifest CheckSum valid: c8679bc53c3a1e7d493331ff8b7c06f68b59dad9
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\ACode_Dymola\.\block.alg
-OK: Manifest file CheckSum valid: 478ea36db979161bc137a565b9c5113485a9163b
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 0b1f722a09b535dd17fc3f7cb7eaeeec74cc046b
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 48d93b8657676b6b3ff18d5365cb674eb49ceb74
+Reading ACode_Dymola ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@9628de8
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@60381ae6
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 1f9653a90b4df177c7d0bfe0d6afeee285bae5bf
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 5646bb02d97beb56a589655fe42281a180f2a28c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
-OK: Manifest file CheckSum valid: 8b0974a65a4ebb404d5b129bdf00b6acceb121c2
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 3b895709fee478c109a28bb759f02b998ebe552a
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
-OK: Manifest file CheckSum valid: 8c75e4e83c7f0f03cd86cb0c0bd91c359944af4b
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 52844f51c962fbcd93da052cd4ffc8fde33033aa
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
-OK: Manifest file CheckSum valid: 60f3d0cd852f0b1b328b4ebb60f061ec674f7f3d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: 337f57d0940c6760e4641a14bc2d2ad640d6f5c2
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: 53c2a01da4b621ed91259e294a880c674fc22b40
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
-OK: Manifest file CheckSum valid: 5db98f5e27e84fc22bad722d7a23a2628e49f040
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: a81948451fdb6de44c0a58d8b68df81bf1db6f9d
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 7aa538662c3aadcf11ce94c226aef8083c36a51e
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: 6b95409b1998ec66eddd1d8badc26d6052b20fbc
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 56e9751335c0276e826e9421a7b1e3e48a7b41c2
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: f0f4f2ca981774aa5cc5ac4ce22db51badbecb6a
+File list : .//block.c/FILE_ID_block.c_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 6b6561cd2bf851d5584b014b7806d0f51255ea9c
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: a4b0717da41ab194200bc7c77b94c5bf35fced3b
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: a9b28db1130ae5471bf721c7849aea88dcbf2cf3
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: 16161fa07f71cb32efef29809f09c9358ca361b9
+File list : .//block.h/FILE_ID_block.h_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: ff21c747b7b1c26b5d0bb69c5f672e160e70efa6
+Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@9628de8
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@e63f6ff2
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: c3ab8db9971875a29791c8cf94c5b8ee8cdd144d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 585c9c71f0c159a47a79ca4d5bb409318ddcdca6
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
-OK: Manifest file CheckSum valid: 63cbf959bef1c0766c9ef42af9db7cd0cfec6dc0
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: e561d9a7ccc66299200e3f106209bc2926bdf529
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
-OK: Manifest file CheckSum valid: d1b499de2ac0e4254dc28d5844f1e05b065bc788
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 7547d9f8c68b29d266a4f32b4dcc449dd2505724
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: 40af7ef4080442f4e68187558aa8d4dcad0371c9
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: bdb0aeece7b862920638aa537c236e64e3bef65a
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
-OK: Manifest file CheckSum valid: 3475feb156621faacae4c9d08a1abff170e9c3be
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
-OK: Manifest file CheckSum valid: 49773c338c441881ba4ea43058db4ad6eb91eb91
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 05392456d0924ee15a7de0f2f74e16546a471f8b
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: a06134dda323091229a09246487c152af97c684e
+File list : .//block.c/FILE_ID_block.c_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: 8b0ccfa3ff45518db80b02bbf9fcbc4554eec18c
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: e0f91609429709c741877384ce76e14079ef670d
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: c894fed8a461d64dffa9cf24cbcc82a074ea99c2
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 8d0f231f8dee8cea3728ba9920322f76d14cd3ce
+File list : .//block.h/FILE_ID_block.h_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: bda150cbfa5616137ce2dc480c98f71ce2c53ccb
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
+OK: Manifest file CheckSum valid: 668c552cf869e15b9ecc97695bc4c2aa294a74a9
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: 74eeb96f0f6c78af58129fd01d426cc8c08d80d6
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 4d089bb8c6add49b08060c1409ac5a8a574e0c99
+Reading PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@9628de8
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@c8093ceb
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 8d63345d5701c5c5404060d0676c1ef9f314a725
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: b4301f97c17feab10afa879e9f038f20a3e98aaa
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: 6a7a45b3e11b512d41d594b819ee11f280df0a65
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 01f675eb81bad5ed28b808d8eaa14fe1e9ae0571
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: f56c25d28592761579b975ee26d5a084f232c6f5
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: b20f66ea9108dbe40e472354927f567c0bd62592
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 0ae0f6110d3115b926ef88c9839f5fb025fb9f85
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 5835060e20a68a3b121b7e614934a02740bd1459
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: c46e87290e32a6f3b4d1e0b7e584b4ba57828d99
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: db374b167d0a0d2663a396385ddb90607b5e43f1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: e3b94d322ce682ec4c671946e0b742c2ed384f60
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 3cd5d31a874dfef62866d01b79fd7e1cc81c3f94
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: aa7541d0aa07645b628c6607f6cdae7acd9e2402
+Reading BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7 ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@9628de8
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@757ea86b
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 8867e54c139baaedafc5841b5542faa4dbb88d49
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 82d59b1e35e16bc356f8e9fec5d4e01ec3fa452b
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
-OK: Manifest file CheckSum valid: 5560d133d048c572a3ac5fb6604e89cd9361a121
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 018c0cb443e128e0d2ae501b13e560d6edfbfa99
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: 94293546ac10873720ca39e8480a454eeb0bbd9d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
-OK: Manifest file CheckSum valid: daf9b9fd799e7eaa8b030d32a5dbc1ba2e56e783
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
-OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: e3bc79b00b557ecd33f2d2386873d9ac7cf1acb7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: c6e1cb8992021ef3c3628eedcf53165f73eb0ebc
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.obj
+OK: Manifest file CheckSum valid: dd6fdba267a7401460b5c74954f7be6ffcfaf739
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 5d7170c868c8e9183959fa90d5c82523bcfde734
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\galec_stl.obj
+OK: Manifest file CheckSum valid: 08abbf9879a9bc037aebc9bdd0438b86d7dbed46
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: f92d13bfd6d4ef07c2cff1eb25dc041e14ebdc41
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: aa7541d0aa07645b628c6607f6cdae7acd9e2402
+Reading BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13 ModelRepresentation
+Read Manifests... OK
 
-GENERATE BINARY CODE MAKEFILES
-C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
-C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\./build.bat
-C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\./where.bat
+Write BinaryCode Makefile... 
+C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
+Write BinaryCode Makefile... OK
 
-GENERATE BINARY CODE SOURCES
+Generate BinaryCode files... 
 
 Microsoft (R) Program Maintenance Utility Version 14.34.31944.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c /Fo.\default\sii_block_interface.obj
-sii_block_interface.c
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c /Fo.\default\galec_stl.obj
-galec_stl.c
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c /Fo.\default\mei_block_interface.obj
-mei_block_interface.c
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c /Fo.\default\block.obj
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c /Fo./block.obj
 block.c
-	lib /nologo .\default\sii_block_interface.obj .\default\galec_stl.obj .\default\mei_block_interface.obj .\default\block.obj /OUT:block.lib
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c /Fo./sii_block_interface.obj
+sii_block_interface.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c /Fo./mei_block_interface.obj
+mei_block_interface.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c /Fo./galec_stl.obj
+galec_stl.c
+	lib /nologo ./block.obj ./sii_block_interface.obj ./mei_block_interface.obj ./galec_stl.obj /OUT:block.lib
+Generate BinaryCode files... OK
 
-
-GENERATE BINARY CODE MANIFEST
+Write Manifest... 
 BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
-
-WRITE MANIFESTS
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 8d63345d5701c5c5404060d0676c1ef9f314a725
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: b4301f97c17feab10afa879e9f038f20a3e98aaa
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: 6a7a45b3e11b512d41d594b819ee11f280df0a65
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 01f675eb81bad5ed28b808d8eaa14fe1e9ae0571
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: f56c25d28592761579b975ee26d5a084f232c6f5
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: b20f66ea9108dbe40e472354927f567c0bd62592
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 0ae0f6110d3115b926ef88c9839f5fb025fb9f85
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 5835060e20a68a3b121b7e614934a02740bd1459
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: c46e87290e32a6f3b4d1e0b7e584b4ba57828d99
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: db374b167d0a0d2663a396385ddb90607b5e43f1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: e3b94d322ce682ec4c671946e0b742c2ed384f60
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 3cd5d31a874dfef62866d01b79fd7e1cc81c3f94
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: aa7541d0aa07645b628c6607f6cdae7acd9e2402
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 8867e54c139baaedafc5841b5542faa4dbb88d49
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 82d59b1e35e16bc356f8e9fec5d4e01ec3fa452b
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
-OK: Manifest file CheckSum valid: 5560d133d048c572a3ac5fb6604e89cd9361a121
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 018c0cb443e128e0d2ae501b13e560d6edfbfa99
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: 94293546ac10873720ca39e8480a454eeb0bbd9d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
-OK: Manifest file CheckSum valid: daf9b9fd799e7eaa8b030d32a5dbc1ba2e56e783
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
-OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: e3bc79b00b557ecd33f2d2386873d9ac7cf1acb7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: c6e1cb8992021ef3c3628eedcf53165f73eb0ebc
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.obj
+OK: Manifest file CheckSum valid: dd6fdba267a7401460b5c74954f7be6ffcfaf739
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 5d7170c868c8e9183959fa90d5c82523bcfde734
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\galec_stl.obj
+OK: Manifest file CheckSum valid: 08abbf9879a9bc037aebc9bdd0438b86d7dbed46
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: f92d13bfd6d4ef07c2cff1eb25dc041e14ebdc41
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: aa7541d0aa07645b628c6607f6cdae7acd9e2402
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: d1073b1a1a9a3f2027370a2a2f4fa7df59de214c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: b58421bad35639ece7e99f33b4d8f094361bfa20
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 340b53a333dbbb593a4d78976e6f76d5224f2ea9
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: cd1ab3df61ac3b9fccfd708c0bbe10b0e0009f6e
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: 429c77e8f91a52e1b9c0233d698cc1c04b6feb3a
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: 86c03bbcd7c9668a727524fa72dab8a1d83bc00a
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: 5ea82760425c4196f69869f1a111c326c6684581
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: cdf14ecda80ce8bf7a9729f53d91a90988dff8c3
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\efmuPSS\eFMU\__content.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: b89119c0e9a019eac0d2cca1a35552cd6463e6c5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: a2cec8e81b6af3a2f5ce1ec52e6ce83dbdf25af9
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: bdbf1b6e1ea8f0a672b98d106b23e537524ee602
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: ec9c0b84d643f047134f6b9f841cab22b33ede40
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: b0b7864bcae139afbfbce90946ade660be368eb1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 08ecd930e49af3d4778eab6385a400f823f987f4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 4c45cfeb27d1ed873173905f5748b690cb01b2eb
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\PSSTypeII4eFMI\eFMU\__content.xml
+Writing: __content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/efmuPSS/eFMU\schemas\efmiContainerManifest.xsd
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/PSSTypeII4eFMI/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
 OK: Model representation manifest exists: BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
-GENERATION SUCCESS
+Write Manifest... OK
+
+BINARY CODE GENERATION SUCCESS
+

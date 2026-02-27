@@ -1,4 +1,4 @@
-/*2026-01-14T21:28:47.856741326Z*/
+/*2026-02-27T15:56:21.348432500Z*/
 
 /**********************************************************************************************************************
  * galec_stl_configuration.h
@@ -22,8 +22,8 @@
  **********************************************************************************************************************/
 
 /* Include guard workaround for not standardized [#pragma once]: */
-#ifndef GALEC_STL_CONFIGURATION_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_H
-#define GALEC_STL_CONFIGURATION_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_H
+#ifndef GALEC_STL_CONFIGURATION_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_H
+#define GALEC_STL_CONFIGURATION_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -35,9 +35,9 @@ extern "C" {
 /* Supported for Integer are signed int, signed long, signed long long: */
 /* Supported for Real are: float, double, long double: */
 
-typedef unsigned int        SPE_ErrorSignal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
-typedef signed int          SPE_Integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
-typedef float               SPE_Real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+typedef unsigned int        SPE_ErrorSignal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+typedef signed int          SPE_Integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+typedef float               SPE_Real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 
 /*
 Macros to pick right version of function according to Integer/Real
@@ -45,348 +45,348 @@ type configurations. Arguments are integer, long or long long version
 of function for Integer, and float, double and long double for Real.
 Must be configure according to basic data types:
 */
-#define SPE_INT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(i,l,ll) (i)
-#define SPE_FLT_SEL_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(f,d,ld) (f)
+#define SPE_INT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(i,l,ll) (i)
+#define SPE_FLT_SEL_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(f,d,ld) (f)
 
 /**********************************************************************************************************************
  * Provided, not GALEC STL, support functions configuration:
  **********************************************************************************************************************/
 
-#define SPE_NO_saturateIndex_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
+#define SPE_NO_saturateIndex_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-#define SPE_NO_saturateInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_saturateInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
-#define SPE_NO_saturateIntegerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
+#define SPE_NO_saturateIntegerMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
-#define SPE_NO_saturateReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
+#define SPE_NO_saturateReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
             0
-#define SPE_NO_saturateRealMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
-            0
-
-#define SPE_NO_less_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_lessMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_lessEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
-            0
-#define SPE_NO_lessEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
-            0
-#define SPE_NO_greater_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_greaterMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
-            0
-#define SPE_NO_greaterEqual_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
-            0
-#define SPE_NO_greaterEqualMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
-            0
-#define SPE_NO_equal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
-            0
-#define SPE_NO_equalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_unequal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_unequalMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
+#define SPE_NO_saturateRealMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
             0
 
-#define SPE_NO_iadditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
+#define SPE_NO_less_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
             0
-#define SPE_NO_isubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+#define SPE_NO_lessMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
             0
-#define SPE_NO_imultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_lessEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
             0
-#define SPE_NO_imultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_lessEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
             0
-#define SPE_NO_imultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
+#define SPE_NO_greater_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
+            0
+#define SPE_NO_greaterMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
+            0
+#define SPE_NO_greaterEqual_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
+            0
+#define SPE_NO_greaterEqualMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+            0
+#define SPE_NO_equal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+            0
+#define SPE_NO_equalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
+            0
+#define SPE_NO_unequal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
+            0
+#define SPE_NO_unequalMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
             0
 
-#define SPE_NO_radditionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
+#define SPE_NO_iadditionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
             0
-#define SPE_NO_rsubtractionMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+#define SPE_NO_isubtractionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
             0
-#define SPE_NO_rmultiplicationScalarMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_imultiplicationScalarMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
-#define SPE_NO_rmultiplicationDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_imultiplicationDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
-#define SPE_NO_rmultiplication2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
+#define SPE_NO_imultiplication2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
-#define SPE_NO_rdivisionDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+
+#define SPE_NO_radditionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
             0
-#define SPE_NO_ipowSquare_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+#define SPE_NO_rsubtractionMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+            0
+#define SPE_NO_rmultiplicationScalarMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+            0
+#define SPE_NO_rmultiplicationDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+            0
+#define SPE_NO_rmultiplication2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
+            0
+#define SPE_NO_rdivisionDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+            0
+#define SPE_NO_ipowSquare_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
                 0
-#define SPE_NO_ipowSquareDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_ipowSquareDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
                 0
-#define SPE_NO_ipowCube_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+#define SPE_NO_ipowCube_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
             0
-#define SPE_NO_ipowCubeDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
+#define SPE_NO_ipowCubeDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-#define SPE_NO_rpow_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+#define SPE_NO_rpow_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
             0
-#define SPE_NO_rpowDotMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
+#define SPE_NO_rpowDotMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
             0
 
 /**********************************************************************************************************************
  * Provided GALEC STL functions configuration:
  **********************************************************************************************************************/
 
-#define SPE_NO_minInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+#define SPE_NO_minInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
             0
-#define SPE_NO_maxInteger_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
-            0
-
-#define SPE_NO_minReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_maxReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_posMinReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
-            0
-#define SPE_NO_epsReal_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_nan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
-            0
-#define SPE_NO_isNan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
-            0
-#define SPE_NO_minusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
-            0
-#define SPE_NO_plusInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
-            0
-#define SPE_NO_isInfinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
-            0
-#define SPE_NO_isFinite_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+#define SPE_NO_maxInteger_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
             0
 
-#define SPE_NO_hasNanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+#define SPE_NO_minReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
             0
-#define SPE_NO_hasInfiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
+#define SPE_NO_maxReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
             0
-#define SPE_NO_allFiniteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
+#define SPE_NO_posMinReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
             0
-#define SPE_NO_real_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+#define SPE_NO_epsReal_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
             0
-#define SPE_NO_realMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+#define SPE_NO_nan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
             0
-#define SPE_NO_integer_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
+#define SPE_NO_isNan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
             0
-#define SPE_NO_integerMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
+#define SPE_NO_minusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-
-#define SPE_NO_roundDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
+#define SPE_NO_plusInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
             0
-#define SPE_NO_roundDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
+#define SPE_NO_isInfinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
             0
-#define SPE_NO_roundUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_roundUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
-            0
-#define SPE_NO_roundTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
-            0
-#define SPE_NO_roundTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
-            0
-#define SPE_NO_roundAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
-            0
-#define SPE_NO_roundAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_isFinite_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
             0
 
-#define SPE_NO_roundHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
+#define SPE_NO_hasNanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
             0
-#define SPE_NO_roundHalfDownMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_hasInfiniteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-#define SPE_NO_roundHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
+#define SPE_NO_allFiniteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
             0
-#define SPE_NO_roundHalfUpMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
+#define SPE_NO_real_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
             0
-#define SPE_NO_roundHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
+#define SPE_NO_realMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
             0
-#define SPE_NO_roundHalfTowardZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_integer_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
             0
-#define SPE_NO_roundHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
-            0
-#define SPE_NO_roundHalfAwayZeroMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
-            0
-#define SPE_NO_roundHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
-            0
-#define SPE_NO_roundHalfToEvenMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
-            0
-#define SPE_NO_roundHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
-            0
-#define SPE_NO_roundHalfToOddMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
+#define SPE_NO_integerMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
             0
 
-#define SPE_NO_divisionDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
+#define SPE_NO_roundDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
             0
-#define SPE_NO_divisionUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+#define SPE_NO_roundDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
             0
-#define SPE_NO_divisionTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed   \
+#define SPE_NO_roundUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
             0
-#define SPE_NO_divisionAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
+#define SPE_NO_roundUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
             0
-#define SPE_NO_divisionHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
+#define SPE_NO_roundTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
-#define SPE_NO_divisionHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+#define SPE_NO_roundTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
-#define SPE_NO_divisionHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_roundAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-#define SPE_NO_divisionHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
-            0
-#define SPE_NO_divisionHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed   \
-            0
-#define SPE_NO_divisionHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
+#define SPE_NO_roundAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
 
-#define SPE_NO_remainderDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
+#define SPE_NO_roundHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-#define SPE_NO_remainderUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
+#define SPE_NO_roundHalfDownMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
-#define SPE_NO_remainderTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
+#define SPE_NO_roundHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
             0
-#define SPE_NO_remainderAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
+#define SPE_NO_roundHalfUpMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-#define SPE_NO_remainderHalfDown_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
+#define SPE_NO_roundHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
             0
-#define SPE_NO_remainderHalfUp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_roundHalfTowardZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
-#define SPE_NO_remainderHalfTowardZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_roundHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
-#define SPE_NO_remainderHalfAwayZero_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_roundHalfAwayZeroMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
             0
-#define SPE_NO_remainderHalfToEven_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
+#define SPE_NO_roundHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
-#define SPE_NO_remainderHalfToOdd_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed   \
+#define SPE_NO_roundHalfToEvenMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
-
-#define SPE_NO_imin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+#define SPE_NO_roundHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
             0
-#define SPE_NO_iminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_imax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_imaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+#define SPE_NO_roundHalfToOddMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
             0
 
-#define SPE_NO_rmin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+#define SPE_NO_divisionDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
             0
-#define SPE_NO_rminMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+#define SPE_NO_divisionUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
             0
-#define SPE_NO_rmax_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+#define SPE_NO_divisionTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed   \
             0
-#define SPE_NO_rmaxMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+#define SPE_NO_divisionAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
             0
-
-#define SPE_NO_euler_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+#define SPE_NO_divisionHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
             0
-#define SPE_NO_fractionalPart_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+#define SPE_NO_divisionHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
             0
-#define SPE_NO_fractionalPartMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
+#define SPE_NO_divisionHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
-#define SPE_NO_sign_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+#define SPE_NO_divisionHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
-#define SPE_NO_signMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+#define SPE_NO_divisionHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed   \
             0
-#define SPE_NO_absolute_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
-            0
-#define SPE_NO_absoluteMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
-            0
-#define SPE_NO_sqrt_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_sqrtMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_exp_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
-            0
-#define SPE_NO_expMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
-            0
-#define SPE_NO_ln_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                   \
-            0
-#define SPE_NO_lnMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_lg_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                   \
-            0
-#define SPE_NO_lgMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_divisionSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
-            0
-#define SPE_NO_sqrtSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
-            0
-#define SPE_NO_sqrtSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
-            0
-#define SPE_NO_lnSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_lnSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
-            0
-#define SPE_NO_lgSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_lgSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+#define SPE_NO_divisionHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
 
-#define SPE_NO_pi_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                   \
+#define SPE_NO_remainderDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed        \
             0
-#define SPE_NO_sin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
+#define SPE_NO_remainderUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed          \
             0
-#define SPE_NO_sinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+#define SPE_NO_remainderTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
             0
-#define SPE_NO_cos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
+#define SPE_NO_remainderAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
-#define SPE_NO_cosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+#define SPE_NO_remainderHalfDown_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed    \
             0
-#define SPE_NO_tan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
+#define SPE_NO_remainderHalfUp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
-#define SPE_NO_tanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+#define SPE_NO_remainderHalfTowardZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
-#define SPE_NO_asin_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+#define SPE_NO_remainderHalfAwayZero_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
-#define SPE_NO_asinMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+#define SPE_NO_remainderHalfToEven_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed  \
             0
-#define SPE_NO_acos_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_acosMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_atan_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_atanMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_atan2_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
-            0
-#define SPE_NO_atan2MD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_sinh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_sinhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_cosh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_coshMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_tanh_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
-            0
-#define SPE_NO_tanhMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
-            0
-#define SPE_NO_tanSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
-            0
-#define SPE_NO_tanSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
-            0
-#define SPE_NO_asinSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
-            0
-#define SPE_NO_asinSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
-            0
-#define SPE_NO_acosSafe_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
-            0
-#define SPE_NO_acosSafeMD_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+#define SPE_NO_remainderHalfToOdd_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed   \
             0
 
-#define SPE_NO_solveUnivariatePolynomial_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_imin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_iminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_imax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_imaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+
+#define SPE_NO_rmin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_rminMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_rmax_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_rmaxMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+
+#define SPE_NO_euler_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+            0
+#define SPE_NO_fractionalPart_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed       \
+            0
+#define SPE_NO_fractionalPartMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed     \
+            0
+#define SPE_NO_sign_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_signMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_absolute_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+            0
+#define SPE_NO_absoluteMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+            0
+#define SPE_NO_sqrt_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_sqrtMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_exp_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
+            0
+#define SPE_NO_expMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+            0
+#define SPE_NO_ln_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                   \
+            0
+#define SPE_NO_lnMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_lg_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                   \
+            0
+#define SPE_NO_lgMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_divisionSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed         \
+            0
+#define SPE_NO_sqrtSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+            0
+#define SPE_NO_sqrtSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+            0
+#define SPE_NO_lnSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_lnSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+            0
+#define SPE_NO_lgSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_lgSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+            0
+
+#define SPE_NO_pi_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                   \
+            0
+#define SPE_NO_sin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
+            0
+#define SPE_NO_sinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+            0
+#define SPE_NO_cos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
+            0
+#define SPE_NO_cosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+            0
+#define SPE_NO_tan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                  \
+            0
+#define SPE_NO_tanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+            0
+#define SPE_NO_asin_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_asinMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_acos_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_acosMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_atan_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_atanMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_atan2_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                \
+            0
+#define SPE_NO_atan2MD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
+            0
+#define SPE_NO_sinh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_sinhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_cosh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_coshMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_tanh_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed                 \
+            0
+#define SPE_NO_tanhMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed               \
+            0
+#define SPE_NO_tanSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed              \
+            0
+#define SPE_NO_tanSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed            \
+            0
+#define SPE_NO_asinSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+            0
+#define SPE_NO_asinSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+            0
+#define SPE_NO_acosSafe_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed             \
+            0
+#define SPE_NO_acosSafeMD_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed           \
+            0
+
+#define SPE_NO_solveUnivariatePolynomial_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
         0
-#define SPE_NO_solveLinearEquations_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
+#define SPE_NO_solveLinearEquations_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
             0
 
-#define SPE_NO_interpolation1D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_interpolation1D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
-#define SPE_NO_interpolation2D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_interpolation2D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
-#define SPE_NO_interpolation3D_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
+#define SPE_NO_interpolation3D_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed      \
             0
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* GALEC_STL_CONFIGURATION_H283cd02180511b024b59731032fd3290f8675b29_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_H */
+#endif /* GALEC_STL_CONFIGURATION_H216f2fd6bee4c6cbc88940592d1c21ea8fcaa7b3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_H */
 
 /* end of file */

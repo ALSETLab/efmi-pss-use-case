@@ -1,4 +1,4 @@
-encapsulated package 'efmiPSSusecase.Components.PSSTypeIImod4efmi: static initialization'
+encapsulated package 'PSSDesign.Components.PSSTypeII4eFMI: static initialization'
 	extends .DymolaEmbedded.Icons.EmbeddedBuiltinFunction;
 
 	import DymolaEmbedded.BuiltinFunctions.*;
@@ -104,7 +104,7 @@ encapsulated package 'efmiPSSusecase.Components.PSSTypeIImod4efmi: static initia
 		 debug = false);
 		succeeded := succeeded
 		 and .DymolaCommands.SimulatorAPI.simulateModel(
-		  problem = "'efmiPSSusecase.Components.PSSTypeIImod4efmi: static initialization'.StartupModel",
+		  problem = "'PSSDesign.Components.PSSTypeII4eFMI: static initialization'.StartupModel",
 		  resultFile = result_file);
 		
 		if succeeded then
@@ -248,7 +248,7 @@ encapsulated package 'efmiPSSusecase.Components.PSSTypeIImod4efmi: static initia
 		 old_configuration[10],
 		 old_configuration[11]);
 		
-		assert(succeeded, "Simulation of 'efmiPSSusecase.Components.PSSTypeIImod4efmi: static initialization'.StartupModel failed.");
+		assert(succeeded, "Simulation of 'PSSDesign.Components.PSSTypeII4eFMI: static initialization'.StartupModel failed.");
 		
 		annotation (
 		 __Dymola_interactive = true);
@@ -410,4 +410,4 @@ encapsulated package 'efmiPSSusecase.Components.PSSTypeIImod4efmi: static initia
 		output Self self = self_in;
 	algorithm
 	end Saturate;
-end 'efmiPSSusecase.Components.PSSTypeIImod4efmi: static initialization';
+end 'PSSDesign.Components.PSSTypeII4eFMI: static initialization';

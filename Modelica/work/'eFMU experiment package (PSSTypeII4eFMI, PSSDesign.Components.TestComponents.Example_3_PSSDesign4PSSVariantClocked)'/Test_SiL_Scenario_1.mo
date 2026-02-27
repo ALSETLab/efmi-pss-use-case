@@ -1,7 +1,7 @@
 within 'eFMU experiment package (PSSTypeII4eFMI, PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked)';
 model Test_SiL_Scenario_1 "Test scenario defined by component [G1.pss]."
 
-  extends hidden_Test_SiL_Scenario_1('vs|match'(skip_check=.Testing.Utilities.Types.Skip.True));
+  extends hidden_Test_SiL_Scenario_1('vs|match'(skip=.Testing.Base.Choices.Skip.True));
 
   annotation (
     preferredView="diagram",

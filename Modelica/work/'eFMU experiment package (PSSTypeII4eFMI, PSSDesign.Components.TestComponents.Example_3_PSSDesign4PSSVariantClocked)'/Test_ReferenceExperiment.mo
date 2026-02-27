@@ -1,6 +1,6 @@
 within 'eFMU experiment package (PSSTypeII4eFMI, PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked)';
 model Test_ReferenceExperiment "Reference experiment with test scenarios for
-       [efmiPSSusecase.Components.PSSTypeIImod4efmi]
+       [PSSDesign.Components.PSSTypeII4eFMI]
      instances."
 
   extends hidden_Test_ReferenceExperiment;
@@ -18,7 +18,7 @@ model Test_ReferenceExperiment "Reference experiment with test scenarios for
           <p>
           Reference experiment derived from – and used to generate eBlock
           reference results from, or regression-test – the original experiment
-          <a href=\"modelica://efmiPSSusecase.Experiments.Example_3_PSSDesign4PSSVariantClocked\">efmiPSSusecase.Experiments.Example_3_PSSDesign4PSSVariantClocked</a>.
+          <a href=\"modelica://PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked\">PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked</a>.
           </p>
           </html>"),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),

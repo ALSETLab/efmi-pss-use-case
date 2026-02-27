@@ -1,4 +1,4 @@
-/*2026-01-14T20:53:28.900035678Z*/
+/*2026-02-27T16:06:50.002876700Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -23,7 +23,7 @@
 extern "C" {
 #endif
 
-#define ALGOSTRUCT  BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+#define ALGOSTRUCT  BlockState_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 
 
 /**********************************************************************************************************************
@@ -52,8 +52,8 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->imLeadLag_TF_b[1] = instance->imLeadLag_K;
 
-    instance->imLeadLag_T2_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
+    instance->imLeadLag_T2_dummy = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag_T2;
 
     instance->imLeadLag_TF_a[0] = instance->imLeadLag_T2_dummy;
@@ -74,8 +74,8 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->imLeadLag1_TF_b[1] = instance->imLeadLag1_K;
 
-    instance->imLeadLag1_T2_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
+    instance->imLeadLag1_T2_dummy = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag1_T2;
 
     instance->imLeadLag1_TF_a[0] = instance->imLeadLag1_T2_dummy;
@@ -96,14 +96,14 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->derivativeLag_T = instance->Tw;
 
-    instance->derivativeLag_K_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_K), \
+    instance->derivativeLag_K_dummy = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_K), \
         2.22044604925031308e-16) ? 1.0 : instance->derivativeLag_K;
 
     instance->derivativeLag_TF_b[0] = instance->derivativeLag_K_dummy;
 
-    instance->derivativeLag_T_dummy = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
+    instance->derivativeLag_T_dummy = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
         2.22044604925031308e-16) ? 1.0e+3 : instance->derivativeLag_T;
 
     instance->derivativeLag_TF_a[0] = instance->derivativeLag_T_dummy;
@@ -118,12 +118,12 @@ static void Recalibrate(ALGOSTRUCT *instance)
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
 
     /* Algorithm */
     /*
@@ -144,8 +144,8 @@ static void Reinitialize(ALGOSTRUCT *instance)
 
     instance->derivativeLag_TF_x_scaled[0] = ((instance->derivativeLag_TF_d * instance->vSI) - derivativeLag_TF_y) / instance->derivativeLag_TF_d;
 
-    imLeadLag_u = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
+    imLeadLag_u = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
         2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
 
     imLeadLag_TF_y = instance->imLeadLag_TF_y_start;
@@ -153,8 +153,8 @@ static void Reinitialize(ALGOSTRUCT *instance)
     instance->imLeadLag_TF_x_scaled[0] = ((instance->imLeadLag_TF_d * imLeadLag_u) - imLeadLag_TF_y) / (instance->imLeadLag_TF_d \
         - instance->imLeadLag_TF_bb[1]);
 
-    imLeadLag_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
+    imLeadLag_y = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
 
     imLeadLag1_TF_y = instance->imLeadLag1_TF_y_start;
@@ -162,12 +162,12 @@ static void Reinitialize(ALGOSTRUCT *instance)
     instance->imLeadLag1_TF_x_scaled[0] = ((instance->imLeadLag1_TF_d * imLeadLag_y) - imLeadLag1_TF_y) / (instance->imLeadLag1_TF_d \
         - instance->imLeadLag1_TF_bb[1]);
 
-    imLeadLag1_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
+    imLeadLag1_y = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
 
-    instance->vs = SPE_greater_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+    instance->vs = SPE_greater_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
 
     /* Conduct delta(t) = 0 super-dense time initialization at next sampling:: */
@@ -237,12 +237,12 @@ static void Startup(ALGOSTRUCT *instance)
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
-    SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
+    SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
@@ -263,8 +263,8 @@ static void DoStep(ALGOSTRUCT *instance)
 
     derivativeLag_TF_y = (instance->derivativeLag_TF_d * instance->vSI) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled[0]);
 
-    imLeadLag_u = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
+    imLeadLag_u = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
         2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
 
     instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled[0]) / instance->imLeadLag_TF_a[0];
@@ -272,8 +272,8 @@ static void DoStep(ALGOSTRUCT *instance)
     imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled[0]) + \
         (instance->imLeadLag_TF_d * imLeadLag_u);
 
-    imLeadLag_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
+    imLeadLag_y = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
 
     instance->der_imLeadLag1_TF_x_scaled_1 = (imLeadLag_y - instance->imLeadLag1_TF_x_scaled[0]) / instance->imLeadLag1_TF_a[0];
@@ -283,12 +283,12 @@ static void DoStep(ALGOSTRUCT *instance)
     imLeadLag1_TF_y = ((instance->imLeadLag1_TF_bb[1] - instance->imLeadLag1_TF_d) * instance->imLeadLag1_TF_x_scaled[0]) \
         + (instance->imLeadLag1_TF_d * imLeadLag_y);
 
-    imLeadLag1_y = SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        SPE_absolute_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
+    imLeadLag1_y = SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        SPE_absolute_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
 
-    instance->vs = SPE_greater_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+    instance->vs = SPE_greater_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
 
     instance->discrete_stepSize_active = true;
@@ -297,34 +297,34 @@ static void DoStep(ALGOSTRUCT *instance)
 /**********************************************************************************************************************
  * init
  **********************************************************************************************************************/
-void Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+void Startup_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     Startup(instance);
 }
 
 /**********************************************************************************************************************
  * step
  **********************************************************************************************************************/
-void DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+void DoStep_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     DoStep(instance);
 }
 
 /**********************************************************************************************************************
  * recalibrate
  **********************************************************************************************************************/
-void Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
+void Recalibrate_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
     {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     Recalibrate(instance);
 }
 
 /**********************************************************************************************************************
  * reinitialize
  **********************************************************************************************************************/
-void Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
+void Reinitialize_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
     {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H9afd54c31629c3b9b38b82c0e527e0842907ae86_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     Reinitialize(instance);
 }
 

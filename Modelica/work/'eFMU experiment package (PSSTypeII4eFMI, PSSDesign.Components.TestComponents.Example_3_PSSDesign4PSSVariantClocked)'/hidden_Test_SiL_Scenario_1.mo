@@ -2,13 +2,14 @@ within 'eFMU experiment package (PSSTypeII4eFMI, PSSDesign.Components.TestCompon
 model hidden_Test_SiL_Scenario_1 "Test scenario defined by component [G1.pss]."
 
   extends .DymolaEmbedded.BuildUtilities.BehavioralModel.Experiment(redeclare
-      final package eFMU_configuration = configuration, setup(final mode=.Testing.Utilities.Types.Mode.check));
+      final package eFMU_configuration = configuration, setup(final mode=.Testing.Base.Choices.Mode.test));
 
 protected
   final parameter
     .DymolaEmbedded.BuildUtilities.ProductionCode.SPE_Configuration
-    code_configuration='PSSTypeII4eFMI.eFMU_SiL_Support'.resolve_code_configuration(
-      eBlock.__defining_code);
+    code_configuration=
+      'PSSTypeII4eFMI.eFMU_SiL_Support'.resolve_code_configuration(eBlock.
+      __defining_code);
 
 public
   final parameter ToleranceConfiguration tol_rel=(if code_configuration.float_precision
@@ -48,7 +49,8 @@ public
   final eFMU_configuration.Clocked.PeriodicRealClock clock
     annotation (Placement(transformation(extent={{48,72},{32,88}})));
 
-  'PSSTypeII4eFMI.eFMU_SiL_Support'.BinaryStub eBlock(final __embedd_clock=false)
+  'PSSTypeII4eFMI.eFMU_SiL_Support'.BinaryStub eBlock(final __embedd_clock=
+        false)
     annotation (Placement(transformation(extent={{-15,-15},{15,15}})));
 
   final .Testing.Clocked.Tables.RealTable 'vSI|table'(
@@ -80,8 +82,10 @@ equation
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
+
   connect('vSI|table'.y, eBlock.vSI)
     annotation (Line(points={{-59,40},{-15,0}}, color={0,0,127}));
+
   connect('vs|table'.y, 'vs|match'.ref) annotation (Line(points={{69,40},{66,40},
           {66,20},{32,20},{32,34},{36,34}}, color={0,0,127}));
 

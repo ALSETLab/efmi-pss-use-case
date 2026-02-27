@@ -1,4 +1,4 @@
-/*2026-01-14T21:21:24.040397200Z*/
+/*2026-02-27T16:02:12.193084200Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -23,7 +23,7 @@
 extern "C" {
 #endif
 
-#define ALGOSTRUCT  BlockState_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+#define ALGOSTRUCT  BlockState_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 
 
 /**********************************************************************************************************************
@@ -46,10 +46,10 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->transformer_S_b = instance->SysData_S_b;
 
-    instance->transformer_Zn = (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_Vn)) \
+    instance->transformer_Zn = (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_Vn)) \
         / instance->transformer_Sn;
 
-    instance->transformer_Zb = (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_V_b)) \
+    instance->transformer_Zb = (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_V_b)) \
         / instance->transformer_S_b;
 
     instance->transformer_r = (instance->transformer_rT * instance->transformer_Zn) / instance->transformer_Zb;
@@ -97,16 +97,16 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->G1_machine_V_MBtoSB = instance->G1_machine_Vn / instance->G1_machine_V_b;
 
-    instance->G1_machine_Z_MBtoSB = (instance->G1_machine_S_b * (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_Vn))) \
-        / (instance->G1_machine_Sn * (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_V_b)));
+    instance->G1_machine_Z_MBtoSB = (instance->G1_machine_S_b * (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_Vn))) \
+        / (instance->G1_machine_Sn * (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_V_b)));
 
     instance->G1_machine_p0 = instance->G1_machine_P_0 / instance->G1_machine_S_b;
 
     instance->G1_machine_q0 = instance->G1_machine_Q_0 / instance->G1_machine_S_b;
 
-    instance->G1_machine_Vt0_re = instance->G1_machine_v_0 * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_angle_0);
+    instance->G1_machine_Vt0_re = instance->G1_machine_v_0 * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_angle_0);
 
-    instance->G1_machine_Vt0_im = instance->G1_machine_v_0 * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_angle_0);
+    instance->G1_machine_Vt0_im = instance->G1_machine_v_0 * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_angle_0);
 
     instance->G1_machine_S0_re = instance->G1_machine_p0;
 
@@ -128,23 +128,23 @@ static void Recalibrate(ALGOSTRUCT *instance)
     instance->G1_machine_auxCMval_im = instance->G1_machine_Vt0_im + ((instance->G1_machine_ra * instance->G1_machine_Z_MBtoSB \
         * instance->G1_machine_I0_im) + (instance->G1_machine_xq0 * instance->G1_machine_Z_MBtoSB * instance->G1_machine_I0_re));
 
-    instance->G1_machine_delta0 = SPE_atan2_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_auxCMval_im, \
+    instance->G1_machine_delta0 = SPE_atan2_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_auxCMval_im, \
         instance->G1_machine_auxCMval_re);
 
-    instance->G1_machine_Vdq0_re = ((instance->G1_machine_Vt0_re * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
-        - instance->G1_machine_delta0)) - (instance->G1_machine_Vt0_im * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+    instance->G1_machine_Vdq0_re = ((instance->G1_machine_Vt0_re * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+        - instance->G1_machine_delta0)) - (instance->G1_machine_Vt0_im * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
         - instance->G1_machine_delta0))) / instance->G1_machine_V_MBtoSB;
 
-    instance->G1_machine_Vdq0_im = ((instance->G1_machine_Vt0_re * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
-        - instance->G1_machine_delta0)) + (instance->G1_machine_Vt0_im * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+    instance->G1_machine_Vdq0_im = ((instance->G1_machine_Vt0_re * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+        - instance->G1_machine_delta0)) + (instance->G1_machine_Vt0_im * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
         - instance->G1_machine_delta0))) / instance->G1_machine_V_MBtoSB;
 
-    instance->G1_machine_Idq0_re = ((instance->G1_machine_I0_re * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
-        - instance->G1_machine_delta0)) - (instance->G1_machine_I0_im * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+    instance->G1_machine_Idq0_re = ((instance->G1_machine_I0_re * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+        - instance->G1_machine_delta0)) - (instance->G1_machine_I0_im * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
         - instance->G1_machine_delta0))) / instance->G1_machine_I_MBtoSB;
 
-    instance->G1_machine_Idq0_im = ((instance->G1_machine_I0_re * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
-        - instance->G1_machine_delta0)) + (instance->G1_machine_I0_im * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+    instance->G1_machine_Idq0_im = ((instance->G1_machine_I0_re * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
+        - instance->G1_machine_delta0)) + (instance->G1_machine_I0_im * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(1.57079632679489656 \
         - instance->G1_machine_delta0))) / instance->G1_machine_I_MBtoSB;
 
     instance->G1_machine_vd0 = instance->G1_machine_Vdq0_re;
@@ -177,9 +177,9 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->G1_feedbackVf0_u2 = instance->G1_gainVf0_k * instance->G1_machine_vf00;
 
-    instance->B3_p_vr = instance->infiniteBus_v_0 * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->infiniteBus_angle_0);
+    instance->B3_p_vr = instance->infiniteBus_v_0 * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->infiniteBus_angle_0);
 
-    instance->B3_p_vi = instance->infiniteBus_v_0 * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->infiniteBus_angle_0);
+    instance->B3_p_vi = instance->infiniteBus_v_0 * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->infiniteBus_angle_0);
 
     instance->vf0OUT = instance->G1_machine_vf00;
 }
@@ -187,20 +187,20 @@ static void Recalibrate(ALGOSTRUCT *instance)
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Error signals helpers */
-    SPE_ErrorSignal_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals_from_caller \
+    SPE_ErrorSignal_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals_from_caller \
         = instance->ErrorSignals;
-    SPE_ErrorSignal_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals;
+    SPE_ErrorSignal_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals;
 
     /* Local variable(s) */
     bool DymolaConvertInputToREAL0;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed DymolaConvertInputToReal0;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed solution_buffer_for_x_6[6];
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _A0[36];
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed DymolaConvertInputToReal0;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed solution_buffer_for_x_6[6];
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _A0[36];
     size_t _pivot2[6];
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _work1[6];
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _work1[6];
 
     /* Remove signals from caller */
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 
     /* Algorithm */
     /*
@@ -243,7 +243,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
 
     DymolaConvertInputToReal0 = instance->fault ? 2.0 : 0.0;
 
-    DymolaConvertInputToREAL0 = SPE_greater_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+    DymolaConvertInputToREAL0 = SPE_greater_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         DymolaConvertInputToReal0, 1);
 
     /* Solve linear system of equations A*x = b: */
@@ -252,50 +252,50 @@ static void Reinitialize(ALGOSTRUCT *instance)
     _A0[1] = instance->transformer_r / instance->transformer_m;
     _A0[2] = 0.0;
     _A0[3] = 0.0;
-    _A0[4] = ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    _A0[4] = ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * (instance->G1_machine_T1q0 * (instance->G1_machine_xq - instance->G1_machine_x1q - ((instance->G1_machine_T2q0 \
         * instance->G1_machine_x2q * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 \
-        / instance->G1_machine_x1q)))) / instance->G1_machine_T1q0) + ((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        / instance->G1_machine_x1q)))) / instance->G1_machine_T1q0) + ((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * (instance->G1_machine_T2q0 * ((instance->G1_machine_x1q - instance->G1_machine_x2q) + ((instance->G1_machine_T2q0 \
         * instance->G1_machine_x2q * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 \
-        / instance->G1_machine_x1q)))) / instance->G1_machine_T2q0) + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_x2q)) - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_ra) - (instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        + (instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
-    _A0[5] = ((instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        - ((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_ra) + (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_x2d))) + (instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
+        / instance->G1_machine_x1q)))) / instance->G1_machine_T2q0) + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_x2q)) - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_ra) - (instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        + (instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
+    _A0[5] = ((instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - ((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_ra) + (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_x2d))) + (instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
     _A0[6] = instance->transformer_r / instance->transformer_m;
     _A0[7] = instance->transformer_x / instance->transformer_m;
     _A0[8] = 0.0;
     _A0[9] = 0.0;
-    _A0[10] = ((instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        - (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    _A0[10] = ((instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * (instance->G1_machine_T1q0 * (instance->G1_machine_xq - instance->G1_machine_x1q - ((instance->G1_machine_T2q0 \
         * instance->G1_machine_x2q * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 \
-        / instance->G1_machine_x1q)))) / instance->G1_machine_T1q0) + ((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        / instance->G1_machine_x1q)))) / instance->G1_machine_T1q0) + ((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * (instance->G1_machine_T2q0 * ((instance->G1_machine_x1q - instance->G1_machine_x2q) + ((instance->G1_machine_T2q0 \
         * instance->G1_machine_x2q * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 \
-        / instance->G1_machine_x1q)))) / instance->G1_machine_T2q0) + (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_x2q) + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_ra))) + (instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
-    _A0[11] = ((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_ra) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_x2d) - (instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        + (instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
+        / instance->G1_machine_x1q)))) / instance->G1_machine_T2q0) + (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_x2q) + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_ra))) + (instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
+    _A0[11] = ((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_ra) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_x2d) - (instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        + (instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)));
     _A0[12] = (((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))) * instance->transformer_r) \
         - ((1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
@@ -308,45 +308,45 @@ static void Reinitialize(ALGOSTRUCT *instance)
         + instance->L1_Z_re;
     _A0[14] = instance->L1_Z_re;
     _A0[15] = (-1.0) * instance->L1_Z_im;
-    _A0[16] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[16] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_T1q0 \
         * (instance->G1_machine_xq - instance->G1_machine_x1q - ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_T2q0 \
         * ((instance->G1_machine_x1q - instance->G1_machine_x2q) + ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * instance->G1_machine_x2q) \
-        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * instance->G1_machine_ra) \
         / instance->transformer_m);
-    _A0[17] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[17] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * instance->G1_machine_ra) \
-        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * instance->G1_machine_x2d)) \
         / instance->transformer_m);
@@ -362,45 +362,45 @@ static void Reinitialize(ALGOSTRUCT *instance)
         + instance->L1_Z_im;
     _A0[20] = instance->L1_Z_im;
     _A0[21] = instance->L1_Z_re;
-    _A0[22] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[22] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_T1q0 \
         * (instance->G1_machine_xq - instance->G1_machine_x1q - ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_T2q0 \
         * ((instance->G1_machine_x1q - instance->G1_machine_x2q) + ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_x2q) \
-        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_ra) \
         / instance->transformer_m);
-    _A0[23] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[23] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_ra) \
-        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_x2d)) \
         / instance->transformer_m);
@@ -411,34 +411,34 @@ static void Reinitialize(ALGOSTRUCT *instance)
         - (((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)) * instance->transformer_x);
     _A0[26] = (-1.0) * instance->L2_Z_re;
     _A0[27] = instance->L2_Z_im;
-    _A0[28] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[28] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) * (instance->G1_machine_T1q0 \
         * (instance->G1_machine_xq - instance->G1_machine_x1q - ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) * (instance->G1_machine_T2q0 \
         * ((instance->G1_machine_x1q - instance->G1_machine_x2q) + ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) * instance->G1_machine_x2q) \
-        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) * instance->G1_machine_ra) \
         / instance->transformer_m);
-    _A0[29] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[29] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) * instance->G1_machine_ra) \
-        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) * instance->G1_machine_x2d)) \
         / instance->transformer_m);
     _A0[30] = ((1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))) * instance->transformer_r) \
@@ -447,67 +447,67 @@ static void Reinitialize(ALGOSTRUCT *instance)
         + ((1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))) * instance->transformer_x);
     _A0[32] = (-1.0) * instance->L2_Z_im;
     _A0[33] = (-1.0) * instance->L2_Z_re;
-    _A0[34] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[34] = (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_T1q0 \
         * (instance->G1_machine_xq - instance->G1_machine_x1q - ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T1q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_T2q0 \
         * ((instance->G1_machine_x1q - instance->G1_machine_x2q) + ((instance->G1_machine_T2q0 * instance->G1_machine_x2q \
         * (instance->G1_machine_xq - instance->G1_machine_x1q)) / instance->G1_machine_T1q0 / instance->G1_machine_x1q)))) \
-        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m / instance->G1_machine_T2q0) + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * instance->G1_machine_x2q) \
-        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        / instance->transformer_m)) - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * instance->G1_machine_ra) \
         / instance->transformer_m);
-    _A0[35] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    _A0[35] = (-1.0) * (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * instance->G1_machine_ra) \
-        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * instance->G1_machine_x2d)) \
         / instance->transformer_m);
-    solution_buffer_for_x_6[0] = (-1.0) * (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    solution_buffer_for_x_6[0] = (-1.0) * (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_e2q);
-    solution_buffer_for_x_6[1] = (-1.0) * (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    solution_buffer_for_x_6[1] = (-1.0) * (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m / instance->transformer_m) - (1.0 / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_e2q);
-    solution_buffer_for_x_6[2] = instance->B3_p_vr - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    solution_buffer_for_x_6[2] = instance->B3_p_vr - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
         - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * instance->G1_machine_e2q) \
         / instance->transformer_m);
-    solution_buffer_for_x_6[3] = instance->B3_p_vi - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    solution_buffer_for_x_6[3] = instance->B3_p_vi - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_e2q) \
         / instance->transformer_m);
-    solution_buffer_for_x_6[4] = instance->B3_p_vr - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    solution_buffer_for_x_6[4] = instance->B3_p_vr - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))) - (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) * instance->G1_machine_e2q) \
         / instance->transformer_m);
-    solution_buffer_for_x_6[5] = instance->B3_p_vi - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    solution_buffer_for_x_6[5] = instance->B3_p_vi - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))) + (instance->G1_machine_V_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * instance->G1_machine_e2q) \
         / instance->transformer_m);
-    SPE_solveLinearEquations_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+    SPE_solveLinearEquations_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         _A0, solution_buffer_for_x_6, _pivot2, _work1, 6);
 
     /* A matrix: */
@@ -519,8 +519,8 @@ static void Reinitialize(ALGOSTRUCT *instance)
     /* Row 6: */
     /* b vector: */
 
-    SPE_tmp_signals = instance->ErrorSignals & SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
-    if(SPE_tmp_signals != SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+    SPE_tmp_signals = instance->ErrorSignals & SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    if(SPE_tmp_signals != SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
         {
         instance->ErrorSignals ^= SPE_tmp_signals;
         /* Set states to default start-values and propagate error: */
@@ -537,7 +537,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
 
         instance->G1_machine_id = instance->G1_machine_id0;
 
-        instance->ErrorSignals |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+        instance->ErrorSignals |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     } else {
         /* Only if the system can be solved, assign computed states: */
 
@@ -682,37 +682,37 @@ static void Startup(ALGOSTRUCT *instance)
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Error signals helpers */
-    SPE_ErrorSignal_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals_from_caller \
+    SPE_ErrorSignal_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals_from_caller \
         = instance->ErrorSignals;
-    SPE_ErrorSignal_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals;
+    SPE_ErrorSignal_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_tmp_signals;
 
     /* Local variable(s) */
     bool DymolaConvertInputToREAL0;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed DymolaConvertInputToReal0;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B1_p_vi;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B1_p_vr;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B2_p_vi;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B2_p_vr;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_P;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_Q;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_pe;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vd;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vf;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vf_MB;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vq;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed L1_p_ii;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed L1_p_ir;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed pwFault4efmi_p_ii;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed pwFault4efmi_p_ir;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_p_ii;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_p_ir;
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed solution_buffer_for_x_6[6];
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _A3[36];
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed DymolaConvertInputToReal0;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B1_p_vi;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B1_p_vr;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B2_p_vi;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B2_p_vr;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_P;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_Q;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_pe;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vd;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vf;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vf_MB;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vq;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed L1_p_ii;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed L1_p_ir;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed pwFault4efmi_p_ii;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed pwFault4efmi_p_ir;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_p_ii;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_p_ir;
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed solution_buffer_for_x_6[6];
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _A3[36];
     size_t _pivot5[6];
-    SPE_Real_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _work4[6];
+    SPE_Real_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _work4[6];
 
     /* Remove signals from caller */
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
@@ -741,7 +741,7 @@ static void DoStep(ALGOSTRUCT *instance)
 
     DymolaConvertInputToReal0 = instance->fault ? 2.0 : 0.0;
 
-    DymolaConvertInputToREAL0 = SPE_greater_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+    DymolaConvertInputToREAL0 = SPE_greater_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         DymolaConvertInputToReal0, 1);
 
     /* Solve linear system of equations A*x = b: */
@@ -750,37 +750,37 @@ static void DoStep(ALGOSTRUCT *instance)
     _A3[1] = instance->transformer_r;
     _A3[2] = 0.0;
     _A3[3] = 0.0;
-    _A3[4] = (((instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        - (instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_x2q)) - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    _A3[4] = (((instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - (instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_x2q)) - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_ra);
-    _A3[5] = ((instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        + (instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_ra) - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    _A3[5] = ((instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        + (instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_ra) - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_x2d);
     _A3[6] = instance->transformer_r;
     _A3[7] = instance->transformer_x;
     _A3[8] = 0.0;
     _A3[9] = 0.0;
-    _A3[10] = ((instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        + (instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_x2q) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    _A3[10] = ((instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        + (instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_x2q) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_ra);
-    _A3[11] = (((instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        - (instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_ra)) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    _A3[11] = (((instance->transformer_m * instance->transformer_x * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - (instance->transformer_m * instance->transformer_r * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_ra)) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_x2d);
     _A3[12] = (-1.0) * instance->L1_Z_im;
     _A3[13] = instance->L1_Z_re;
@@ -790,50 +790,50 @@ static void DoStep(ALGOSTRUCT *instance)
         - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 \
         == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->transformer_m * instance->transformer_r * ((((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
-        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         - (((instance->transformer_m * instance->transformer_r * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im \
         * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
         : 0.0) * instance->L1_Z_im)))) + (instance->transformer_m * instance->transformer_x * ((((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
-        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) \
         - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
         ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
-        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) \
         - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
         ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
     _A3[17] = (-1.0) * ((((instance->transformer_m * instance->transformer_r * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) \
         - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 \
         == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) + (instance->transformer_m * instance->transformer_x * ((((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
-        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         + (((instance->transformer_m * instance->transformer_x * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im \
         * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
         : 0.0) * instance->L1_Z_im)))) - (instance->transformer_m * instance->transformer_r * ((((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
-        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) \
         - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
         ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) \
         - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
         ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
-        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))));
+        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))));
     _A3[18] = instance->L1_Z_re;
     _A3[19] = instance->L1_Z_im;
     _A3[20] = instance->L1_Z_im;
@@ -843,180 +843,180 @@ static void DoStep(ALGOSTRUCT *instance)
         : 0.0) * instance->L1_Z_re))) - (instance->transformer_m * instance->transformer_r * (1.0 + (((instance->L1_Z_re \
         * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 == false) ? 0.0 \
         : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         - (((instance->transformer_m * instance->transformer_r * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im \
         * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
         : 0.0) * instance->L1_Z_re))) + (instance->transformer_m * instance->transformer_x * (1.0 + (((instance->L1_Z_re \
         * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 == false) ? 0.0 \
         : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
-        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
     _A3[23] = (-1.0) * ((((instance->transformer_m * instance->transformer_r * ((instance->L1_Z_re * instance->L1_Y_im) \
         + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 \
         == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) + (instance->transformer_m * instance->transformer_x * (1.0 \
         + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 \
         == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
-        * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         + (((instance->transformer_m * instance->transformer_x * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im \
         * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
         : 0.0) * instance->L1_Z_re))) - (instance->transformer_m * instance->transformer_r * (1.0 + (((instance->L1_Z_re \
         * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 == false) ? 0.0 \
         : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
-        * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
-        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))));
+        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))));
     _A3[24] = 0.0;
     _A3[25] = 0.0;
     _A3[26] = (-1.0) * instance->L2_Z_re;
     _A3[27] = instance->L2_Z_im;
     _A3[28] = ((((instance->transformer_m * instance->transformer_x * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im \
         * instance->L2_Y_re))) - (instance->transformer_m * instance->transformer_r * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) \
-        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         + (((instance->transformer_m * instance->transformer_x * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im \
         * instance->L2_Y_im)))) + (instance->transformer_m * instance->transformer_r * ((instance->L2_Z_re * instance->L2_Y_im) \
-        + (instance->L2_Z_im * instance->L2_Y_re)))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->L2_Z_im * instance->L2_Y_re)))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))))) \
-        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
     _A3[29] = (((instance->transformer_m * instance->transformer_x * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im \
         * instance->L2_Y_re))) - (instance->transformer_m * instance->transformer_r * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) \
-        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         - (((instance->transformer_m * instance->transformer_x * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im \
         * instance->L2_Y_im)))) + (instance->transformer_m * instance->transformer_r * ((instance->L2_Z_re * instance->L2_Y_im) \
-        + (instance->L2_Z_im * instance->L2_Y_re)))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        - ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->L2_Z_im * instance->L2_Y_re)))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
-        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
+        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))))) \
-        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
     _A3[30] = 0.0;
     _A3[31] = 0.0;
     _A3[32] = (-1.0) * instance->L2_Z_im;
     _A3[33] = (-1.0) * instance->L2_Z_re;
     _A3[34] = (((((instance->transformer_m * instance->transformer_x * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im \
         * instance->L2_Y_re))) - (instance->transformer_m * instance->transformer_r * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) \
-        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         - (((instance->transformer_m * instance->transformer_r * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im \
         * instance->L2_Y_re))) + (instance->transformer_m * instance->transformer_x * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) \
-        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta)))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))))) \
-        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_x2q) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        - ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
     _A3[35] = (-1.0) * ((((instance->transformer_m * instance->transformer_r * ((instance->L2_Z_re * instance->L2_Y_im) \
         + (instance->L2_Z_im * instance->L2_Y_re))) + (instance->transformer_m * instance->transformer_x * (1.0 + ((instance->L2_Z_re \
-        * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
         + (((instance->transformer_m * instance->transformer_x * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im \
         * instance->L2_Y_re))) - (instance->transformer_m * instance->transformer_r * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) \
-        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->L2_Z_im * instance->L2_Y_im))))) * (instance->G1_machine_I_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))))) \
-        * instance->G1_machine_ra) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
-        + ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_ra) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
+        + ((((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))))) \
-        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))));
-    solution_buffer_for_x_6[0] = (-1.0) * ((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_e2d) + (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_x2d) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))));
+    solution_buffer_for_x_6[0] = (-1.0) * ((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_e2d) + (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_e2q));
-    solution_buffer_for_x_6[1] = (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
-        * instance->G1_machine_e2d) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+    solution_buffer_for_x_6[1] = (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
+        * instance->G1_machine_e2d) - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * ((1.0 / instance->transformer_m) + (((-1.0) * instance->transformer_m) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)))) \
         * instance->G1_machine_e2q);
-    solution_buffer_for_x_6[2] = instance->B3_p_vr - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    solution_buffer_for_x_6[2] = instance->B3_p_vr - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) \
         - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
         ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
-        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im) \
         - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
         ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
-        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
-    solution_buffer_for_x_6[3] = instance->B3_p_vi - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+    solution_buffer_for_x_6[3] = instance->B3_p_vi - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
-        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + (((instance->L1_Z_re * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) \
         + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
-        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
-    solution_buffer_for_x_6[4] = instance->B3_p_vr - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+    solution_buffer_for_x_6[4] = instance->B3_p_vr - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))))) \
-        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im))))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re))))) \
-        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
-    solution_buffer_for_x_6[5] = instance->B3_p_vi - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+    solution_buffer_for_x_6[5] = instance->B3_p_vi - (((((instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) \
-        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        - (instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))))) \
-        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_e2d) + (((instance->G1_machine_V_MBtoSB * SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * ((instance->L2_Z_re * instance->L2_Y_im) + (instance->L2_Z_im * instance->L2_Y_re)))) \
-        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        + (instance->G1_machine_V_MBtoSB * SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * (instance->transformer_m * (1.0 + ((instance->L2_Z_re * instance->L2_Y_re) - (instance->L2_Z_im * instance->L2_Y_im)))))) \
-        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
-    SPE_solveLinearEquations_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+        * instance->G1_machine_e2q)) / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m)));
+    SPE_solveLinearEquations_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         _A3, solution_buffer_for_x_6, _pivot5, _work4, 6);
 
     /* A matrix: */
@@ -1028,13 +1028,13 @@ static void DoStep(ALGOSTRUCT *instance)
     /* Row 6: */
     /* b vector: */
 
-    SPE_tmp_signals = instance->ErrorSignals & SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
-    if(SPE_tmp_signals != SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
+    SPE_tmp_signals = instance->ErrorSignals & SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    if(SPE_tmp_signals != SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
         {
         instance->ErrorSignals ^= SPE_tmp_signals;
         /* Propagate error but leave states as they are: */
 
-        instance->ErrorSignals |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+        instance->ErrorSignals |= SPE_ERRORSIGNAL_SOLVE_LINEAR_EQUATIONS_FAILED_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     } else {
         /* Only if the system can be solved, assign computed states: */
 
@@ -1051,12 +1051,12 @@ static void DoStep(ALGOSTRUCT *instance)
         instance->G1_machine_id = solution_buffer_for_x_6[5];
     }
 
-    transformer_p_ir = instance->G1_machine_I_MBtoSB * ((SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * instance->G1_machine_id) + (SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    transformer_p_ir = instance->G1_machine_I_MBtoSB * ((SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_id) + (SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * instance->G1_machine_iq));
 
-    transformer_p_ii = instance->G1_machine_I_MBtoSB * ((SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * instance->G1_machine_iq) - (SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    transformer_p_ii = instance->G1_machine_I_MBtoSB * ((SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * instance->G1_machine_iq) - (SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * instance->G1_machine_id));
 
     G1_machine_vd = (instance->G1_machine_e2d - (instance->G1_machine_ra * instance->G1_machine_id)) + (instance->G1_machine_x2q \
@@ -1065,21 +1065,21 @@ static void DoStep(ALGOSTRUCT *instance)
     G1_machine_vq = instance->G1_machine_e2q - ((instance->G1_machine_ra * instance->G1_machine_iq) + (instance->G1_machine_x2d \
         * instance->G1_machine_id));
 
-    B1_p_vr = instance->G1_machine_V_MBtoSB * ((SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * G1_machine_vd) + (SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    B1_p_vr = instance->G1_machine_V_MBtoSB * ((SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * G1_machine_vd) + (SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * G1_machine_vq));
 
-    B2_p_vr = (((B1_p_vr / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
+    B2_p_vr = (((B1_p_vr / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
         - (instance->transformer_r * transformer_p_ir)) + (instance->transformer_x * transformer_p_ii)) * instance->transformer_m;
 
     pwFault4efmi_p_ii = (DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? ((-2.22E+3) \
         * B2_p_vr) : 0.0;
 
-    B1_p_vi = instance->G1_machine_V_MBtoSB * ((SPE_sin_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
-        * G1_machine_vq) - (SPE_cos_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+    B1_p_vi = instance->G1_machine_V_MBtoSB * ((SPE_sin_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
+        * G1_machine_vq) - (SPE_cos_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * G1_machine_vd));
 
-    B2_p_vi = ((B1_p_vi / (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
+    B2_p_vi = ((B1_p_vi / (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->transformer_m))) \
         - ((instance->transformer_r * transformer_p_ii) + (instance->transformer_x * transformer_p_ir))) * instance->transformer_m;
 
     pwFault4efmi_p_ir = (DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (2.22e+3 * B2_p_vi) \
@@ -1119,17 +1119,17 @@ static void DoStep(ALGOSTRUCT *instance)
 
     instance->w = instance->G1_machine_w;
 
-    instance->v = SPE_sqrt_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vr)) \
-        + (SPE_ipowSquare_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vi)));
+    instance->v = SPE_sqrt_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vr)) \
+        + (SPE_ipowSquare_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vi)));
 
     G1_P = ((B1_p_vr * transformer_p_ir) + (B1_p_vi * transformer_p_ii)) * instance->G1_S_b;
 
-    instance->Pgen = G1_P / SPE_rmax_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->SysData_S_b, \
+    instance->Pgen = G1_P / SPE_rmax_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->SysData_S_b, \
         2.22507385850720138e-308);
 
     G1_Q = (-1.0) * (((B1_p_vr * transformer_p_ii) - (B1_p_vi * transformer_p_ir)) * instance->G1_S_b);
 
-    instance->Qgen = G1_Q / SPE_rmax_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->SysData_S_b, \
+    instance->Qgen = G1_Q / SPE_rmax_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->SysData_S_b, \
         2.22507385850720138e-308);
 
     instance->discrete_stepSize_active = true;
@@ -1141,34 +1141,34 @@ static void DoStep(ALGOSTRUCT *instance)
 /**********************************************************************************************************************
  * init
  **********************************************************************************************************************/
-void Startup_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+void Startup_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     Startup(instance);
 }
 
 /**********************************************************************************************************************
  * step
  **********************************************************************************************************************/
-void DoStep_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+void DoStep_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     DoStep(instance);
 }
 
 /**********************************************************************************************************************
  * recalibrate
  **********************************************************************************************************************/
-void Recalibrate_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
+void Recalibrate_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
     {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     Recalibrate(instance);
 }
 
 /**********************************************************************************************************************
  * reinitialize
  **********************************************************************************************************************/
-void Reinitialize_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
+void Reinitialize_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) \
     {
-    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
+    instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hf39fb1278f8db8ef2babec40d87ee0bead042d46_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
     Reinitialize(instance);
 }
 

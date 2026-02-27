@@ -1,4 +1,4 @@
-/*2026-01-14T20:53:54.748477145Z*/
+/*2026-02-27T16:06:52.528624Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.c
@@ -16,23 +16,23 @@ extern "C" {
 
 #include <stdlib.h>
 
-#define ALGOSTRUCT  BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+#define ALGOSTRUCT  BlockState_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 
-void *mei_Startup_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void) {
+void *mei_Startup_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void) {
     ALGOSTRUCT* self = ((ALGOSTRUCT*) malloc(sizeof(ALGOSTRUCT)));
     if(self != NULL) {
-        Startup_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
+        Startup_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
     }
     return self;
 }
 
-void mei_Terminate_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void *object) {
+void mei_Terminate_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void *object) {
     if(object != NULL) {
         free(object);
     }
 }
 
-MODELICA_Integer mei_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void *object
+MODELICA_Integer mei_DoStep_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void *object
 ,   /* IN */    MODELICA_Real   vSI
 ,   /* OUT */   MODELICA_Real*  vs
 ) {
@@ -40,9 +40,9 @@ MODELICA_Integer mei_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6
     MODELICA_Integer result = -1;
 
     if(self != NULL) {
-        self->vSI = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vSI;
+        self->vSI = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vSI;
 
-        DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
+        DoStep_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
 
         *vs = ((MODELICA_Real) self->vs);
         result = ((MODELICA_Integer) self->ErrorSignals);
@@ -51,7 +51,7 @@ MODELICA_Integer mei_DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6
     return result;
 }
 
-MODELICA_Integer mei_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void \
+MODELICA_Integer mei_Recalibrate_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void \
     *object
 ,   /* TUNEABLE */  MODELICA_Real   Kw
 ,   /* TUNEABLE */  MODELICA_Real   T1
@@ -67,18 +67,18 @@ MODELICA_Integer mei_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e
     MODELICA_Integer result = -1;
 
     if(self != NULL) {
-        self->Kw = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) Kw;
-        self->T1 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T1;
-        self->T2 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T2;
-        self->T3 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T3;
-        self->T4 = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T4;
-        self->Tw = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) Tw;
-        self->vSI_start = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) \
+        self->Kw = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) Kw;
+        self->T1 = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T1;
+        self->T2 = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T2;
+        self->T3 = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T3;
+        self->T4 = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) T4;
+        self->Tw = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) Tw;
+        self->vSI_start = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) \
             vSI_start;
-        self->vsmax = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vsmax;
-        self->vsmin = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vsmin;
+        self->vsmax = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vsmax;
+        self->vsmin = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vsmin;
 
-        Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
+        Recalibrate_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
 
         result = ((MODELICA_Integer) self->ErrorSignals);
     }
@@ -86,7 +86,7 @@ MODELICA_Integer mei_Recalibrate_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e
     return result;
 }
 
-MODELICA_Integer mei_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void \
+MODELICA_Integer mei_Reinitialize_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void \
     *object
 ,   /* IN */    MODELICA_Real   vSI
 ,   /* OUT */   MODELICA_Real*  vs
@@ -95,9 +95,9 @@ MODELICA_Integer mei_Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_fba3
     MODELICA_Integer result = -1;
 
     if(self != NULL) {
-        self->vSI = (SPE_Real_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vSI;
+        self->vSI = (SPE_Real_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) vSI;
 
-        Reinitialize_H525b873079cf7a65f464c408f25344d5bd630cab_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
+        Reinitialize_H9afd54c31629c3b9b38b82c0e527e0842907ae86_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
 
         *vs = ((MODELICA_Real) self->vs);
         result = ((MODELICA_Integer) self->ErrorSignals);

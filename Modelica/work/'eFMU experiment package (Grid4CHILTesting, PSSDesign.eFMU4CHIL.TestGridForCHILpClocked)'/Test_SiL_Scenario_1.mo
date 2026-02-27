@@ -2,11 +2,11 @@ within 'eFMU experiment package (Grid4CHILTesting, PSSDesign.eFMU4CHIL.TestGridF
 model Test_SiL_Scenario_1 "Test scenario defined by component [G4CHIL]."
 
   extends hidden_Test_SiL_Scenario_1(
-    'Pgen|match'(skip_check=.Testing.Utilities.Types.Skip.True),
-    'Qgen|match'(skip_check=.Testing.Utilities.Types.Skip.True),
-    'v|match'(skip_check=.Testing.Utilities.Types.Skip.True),
-    'vf0OUT|match'(skip_check=.Testing.Utilities.Types.Skip.True),
-    'w|match'(skip_check=.Testing.Utilities.Types.Skip.True));
+    'Pgen|match'(skip=.Testing.Base.Choices.Skip.True),
+    'Qgen|match'(skip=.Testing.Base.Choices.Skip.True),
+    'v|match'(skip=.Testing.Base.Choices.Skip.True),
+    'vf0OUT|match'(skip=.Testing.Base.Choices.Skip.True),
+    'w|match'(skip=.Testing.Base.Choices.Skip.True));
 
   annotation (
     preferredView="diagram",

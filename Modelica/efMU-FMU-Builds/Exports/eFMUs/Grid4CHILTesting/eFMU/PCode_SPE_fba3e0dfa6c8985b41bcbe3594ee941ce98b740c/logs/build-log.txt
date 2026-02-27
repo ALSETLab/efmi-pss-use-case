@@ -1,118 +1,159 @@
-****************************************************************************************************************************
-Get Service Info...
-Service Version: 1
-Following operation types are availables:
-- C & C++ Build
-- FMU Checker
-- FMU Middleware Generation
-- FMU Target Build
-- Tester Generator
-- UML to AUTOSAR Runnable Code
-- UML to C
-- UML to C++
-- UML to Java
-- UML to Kotlin
-- Zip
-- eFMU Algorithm To Production Code Generator
-- eFMU Algorithmic Code To Component Generator
-- eFMU Binary Code Generator
-- eFMU Production Code Generator
-Get Service Info... done
-****************************************************************************************************************************
-Create Workspace "CHILTest"...
-Check if Workspace "CHILTest" already exists
-Workspace "CHILTest" already exists
-Create Workspace "CHILTest"... done
-****************************************************************************************************************************
-Synchronize remote workspace path with local file system path...
-Synchronize remote workspace path "\eFMU" with local file system path  "C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU"
-Synchronize remote workspace path with local file system path... done
-****************************************************************************************************************************
-Invoke Operation...
-Lock acquired for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
-Lock released for C:\Users\CBR5.DSONE\Documents\Dymola\DymolaEmbedded\Resources\external-tooling\Software-Production-Engineering\3DEXPERIENCE-credentials.encrypted\..\workspace\properties.json.lck
-Invoke Operation "eFMU Algorithm To Production Code Generator"
-***** Start of eFMU Generator - Algoritmic Code to Production Code *****
-Parameter {-floatPrec:64}
-Parameter {-interfaceName:H283cd02180511b024b59731032fd3290f8675b29_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c}
-Parameter {-outputAsEFMU:false}
-Parameter {-outputEFMUName:eFMU}
-Parameter {-prodCodeName:PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c}
-Arguments:[-srcDir, spo_docker_shared/eFMU/, -dstDir, spo_docker_shared/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -interfaceName, H283cd02180511b024b59731032fd3290f8675b29_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -floatPrec, 64, -interfaceName, H283cd02180511b024b59731032fd3290f8675b29_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c, -outputAsEFMU, false, -outputEFMUName, eFMU, -prodCodeName, PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c]
+
+PRODUCTION CODE GENERATION
+
 Read arguments... 
-Destination eFMU path        : spo_docker_shared/eFMU/
+Destination eFMU path        : C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU
 Production code name         : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 Output As EFMU               : false
 Output EFMU Name             : eFMU
 
-EFMI Version       : 1.0.0
-
-XSD Versions: 
-Container          : 0.10.0
-BehavioralModel    : 0.7.0
-AlgorithmCode      : 0.13.0
-ProductionCode     : 0.17.0
-BinaryCode         : 0.12.0
-
 Read arguments... OK
 
 Read Manifests... 
-Reading manifest: __content.xml
-Reading manifest: manifest.xml
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelProdCode@dc10a7ce
+modelRepresentation: null
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelProdCode@dc10a7ce
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@b5f99e77
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 6c18713de7d5e3c69c96af11dd21f425b0fc36c7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 01b84dac0731c265f1d75a6737ff69279692e278
 Reading ACode_Dymola ModelRepresentation
-Reading manifest: manifest.xml
-File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_0
-File list : .//block.c/FILE_ID_block.c_1
-File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
-File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
-File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
-File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
-File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_6
-File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_7
-File list : .//block.h/FILE_ID_block.h_8
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelProdCode@dc10a7ce
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@fad03268
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: b801b8f39d04fa25e4a415ffb88ec00a1bd66006
+File list : .//block.c/FILE_ID_block.c_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: daf159e708b333c2353661d85a1bc74d02193d2d
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: c4080dc63cd64abf866edcd22ff7b544e1d941a6
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: af04a6b7f80413521fc16b96cd2c598e76d8d294
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: e140aca70ea9edc6786dcf399368d509fefb1edf
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: ad6a8f4f08da2b8f2ac858204580ad283438b04a
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: ae3d27c6703455443751dc086ba64d18dc0cb510
+File list : .//block.h/FILE_ID_block.h_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 68ee00c6f0fc48b92c6877df8d93de4a7219b90e
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: c4e985c1e767b6337223eaaee74a4726e4c8444e
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: d241199d9dc0e023fcd7dbf0e97f97d18b19056a
 Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
 Read Manifests... OK
 
 Write Manifest... 
-add File... mei_block_interface.h
+add File... galec_stl.h
+add File... sii_block_interface.h
+add File... block.c
+add File... galec_stl_configuration.h
+add File... mei_block_interface.c
+add File... galec_stl.c
 add File... block.h
 add File... sii_block_interface.c
-add File... galec_stl.c
-add File... mei_block_interface.c
-add File... galec_stl_configuration.h
-add File... sii_block_interface.h
-add File... galec_stl.h
-add File... block.c
+add File... mei_block_interface.h
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
 Writing: manifest.xml
-File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_0
-File list : .//block.c/FILE_ID_block.c_1
-File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
-File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
-File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
-File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
-File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_6
-File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_7
-File list : .//block.h/FILE_ID_block.h_8
-Writing: manifest.xml
-File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_0
-File list : .//block.h/FILE_ID_block.h_1
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: b801b8f39d04fa25e4a415ffb88ec00a1bd66006
+File list : .//block.c/FILE_ID_block.c_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: daf159e708b333c2353661d85a1bc74d02193d2d
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: c4080dc63cd64abf866edcd22ff7b544e1d941a6
 File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_2
-File list : .//galec_stl.c/FILE_ID_galec_stl.c_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: af04a6b7f80413521fc16b96cd2c598e76d8d294
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: e140aca70ea9edc6786dcf399368d509fefb1edf
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: ad6a8f4f08da2b8f2ac858204580ad283438b04a
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: ae3d27c6703455443751dc086ba64d18dc0cb510
+File list : .//block.h/FILE_ID_block.h_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 68ee00c6f0fc48b92c6877df8d93de4a7219b90e
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: c4e985c1e767b6337223eaaee74a4726e4c8444e
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: d241199d9dc0e023fcd7dbf0e97f97d18b19056a
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+Writing: manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 2fb2411cea571e8601f512475d9e7b2d7022607c
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: cd2dd20c6e13a89b7ad4372feca83b34c353d8e2
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 7c3dec01484319a9c1b2109c3a9b0855931beb96
+File list : .//block.c/FILE_ID_block.c_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: ad9cfc1791353dd0ff9e095c00a04da8204f0668
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: b48bf6412bc38903e481c0daf25006fceea425e5
 File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_4
-File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_5
-File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_6
-File list : .//galec_stl.h/FILE_ID_galec_stl.h_7
-File list : .//block.c/FILE_ID_block.c_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 7823cd4e8f997cd6bfd607c065c52d6b4be7cff5
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
+OK: Manifest file CheckSum valid: c2475db22839783b1e1d3d8d3cb5ce628f82e2c4
+File list : .//block.h/FILE_ID_block.h_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: 1e6338c7e3695dee0ac39a9d12876bc83cab50fa
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: d449ceebaad8ac18c1bd31dd1a66906ccc288a8d
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 3660b521a122de313eeb5b05977d77c6aa847fc7
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\__content.xml
 Writing: __content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 Write Manifest... OK
 
-***** End of eFMU Generator - Algoritmic Code to Production Code *****
-Operation "eFMU Algorithm To Production Code Generator" finished
-eFMU "\eFMU" generated
-Operation returned with code with message Generation is OK (0)
-Exit with code 0
-Invoke Operation... done
-****************************************************************************************************************************
-Synchronize local file system path with remote workspace path...
-Synchronize file system path "C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU" from workspace path "\eFMU"
-Synchronize local file system path with remote workspace path... done
+PRODUCTION CODE GENERATION SUCCESS
+

@@ -3,52 +3,6 @@
 ** Copyright (c) 2022 Microsoft Corporation
 **********************************************************************
 [vcvarsall.bat] Environment initialized for: 'x64'
-Source eFMU path                    : C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU
-Destination eFMU path               : null
-Production code name                : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-Binary code name                    : BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
-Ignore reading Errors               : false
-Ignore writing Errors               : false
-Compiler name                       : VS
-Compiler vendor                     : Microsoft
-Compiler version                    : Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31944 for x64
-Compiler executable name            : cl
-Compiler option sets                : 
-	Name: default
-	Options: 
-		SWT nologo
-Default compiler option set         : default
-Specific compiler option set        : 
-Linker name                         : VS
-Linker vendor                       : Microsoft
-Linker version                      : Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31944 for x64
-Linker executable name              : lib
-linker option set                   : 
-		SWT nologo
-Target name                         : Windows
-Target vendor                       : Software Production Engineering
-Target chip version                 : 1.0
-Target instruction set architecture : x64
-Target endianess                    : big
-Target register width               : 64
-Target address width                : 64
-Object extension                    : obj
-Binary extension                    : lib
-Execute link                        : true
-
- 
-EFMI Version       : 1.0.0
-
-XSD Versions: 
-Container          : 0.10.0
-BehavioralModel    : 0.7.0
-AlgorithmCode      : 0.13.0
-ProductionCode     : 0.17.0
-BinaryCode         : 0.12.0
-
-
-READ MANIFESTS
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\__content.xml
 Import-Module : Illegal characters in path.
 At line:1 char:46
 + ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
@@ -65,259 +19,298 @@ At line:1 char:173
     + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
     + FullyQualifiedErrorId : CommandNotFoundException
  
+
+BINARY CODE GENERATION
+
+Read arguments... 
+Source eFMU path                    : C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+Destination eFMU path               : C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+Production code name                : PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+Binary code name                    : BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+Compiler option sets                : 
+		nologo
+		O2
+		std=c17
+		W4
+linker option set                   : 
+		nologo
+Compiler name                       : VS
+Target name                         : Win64
+Target vendor                       : 
+Target chip version                 : 
+Target instruction set architecture : x86-64
+Target address width                : 64
+Execute link                        : true
+
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+Read arguments... OK
+
+Read Manifests... 
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@d3e694ac
+modelRepresentation: null
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\__content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\efmiContainerManifest.xsd
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
 OK: Model representation manifest exists: BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\ACode_Dymola\manifest.xml
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@d3e694ac
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@d627290a
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\ACode_Dymola\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.13.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\AlgorithmCode\efmiAlgorithmCodeManifest.xsd
-OK: Manifest CheckSum valid: be43d28f95ff13a35b9baf6f245b9d8e64bd790e
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\ACode_Dymola\.\block.alg
-OK: Manifest file CheckSum valid: f068c5f1d32b076327519741fb996c457adeae35
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 6c18713de7d5e3c69c96af11dd21f425b0fc36c7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 01b84dac0731c265f1d75a6737ff69279692e278
+Reading ACode_Dymola ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@d3e694ac
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@ab4a91dc
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 5ab10b0fd39908b3e3acb66a06d9d946002d213b
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: b55e2a43a6f6bf103b3384c9e96ece03990f5bd9
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
-OK: Manifest file CheckSum valid: 307863cfc3291fa57ad7d3a51e8f3d32fd61af38
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 0e0960da6884e06a35d48f451988142a9c538608
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
-OK: Manifest file CheckSum valid: 667d33884e939390a4fc92745849b519a514defc
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 523fe84498aa1b5d8c4a950eedb76103ae77b106
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
-OK: Manifest file CheckSum valid: 801caae58d77eeb1a70a0bc98ab309b1992f6aeb
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: ae2eb83a22751bd5454978b38283d86b63723e02
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: 07d98fcb039402090109fdfeffe4b4d2ec077bf4
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
-OK: Manifest file CheckSum valid: 48201d2b0f9bd821f7541f358f3953cef8bc9ff4
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: b801b8f39d04fa25e4a415ffb88ec00a1bd66006
+File list : .//block.c/FILE_ID_block.c_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: daf159e708b333c2353661d85a1bc74d02193d2d
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: c4080dc63cd64abf866edcd22ff7b544e1d941a6
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: af04a6b7f80413521fc16b96cd2c598e76d8d294
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: e140aca70ea9edc6786dcf399368d509fefb1edf
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: ad6a8f4f08da2b8f2ac858204580ad283438b04a
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: ae3d27c6703455443751dc086ba64d18dc0cb510
+File list : .//block.h/FILE_ID_block.h_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 68ee00c6f0fc48b92c6877df8d93de4a7219b90e
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: c4e985c1e767b6337223eaaee74a4726e4c8444e
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: d241199d9dc0e023fcd7dbf0e97f97d18b19056a
+Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@d3e694ac
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@604623b5
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\ProductionCode\efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 19193550efc9fb22e7f65b5edeee59000aba1084
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 522f8e8c50027a143980525885fa5a6c03823fd4
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
-OK: Manifest file CheckSum valid: 907dddb1d109ba4b58b88075b834ff3835084133
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: 06d069d34f461bd37fcf38a71e3d555df340cf2d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
-OK: Manifest file CheckSum valid: ebdf9e8c48385326fdabc7d7ce2754475302187d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: fc4b9e01008a5f135a133fdd14d72d02ed693fef
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: 3cc66bfcf69ea2bb0bb3f45463c22e6879bb5eea
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: b1d0e94451a26529de9fbffb7375dcddd7e2147c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
-OK: Manifest file CheckSum valid: 8f6876e952a09c390b974ad6798bd7e698222346
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
-OK: Manifest file CheckSum valid: 0c442a3a9600746b48497c5fb5b82391a638422b
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 2fb2411cea571e8601f512475d9e7b2d7022607c
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: cd2dd20c6e13a89b7ad4372feca83b34c353d8e2
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 7c3dec01484319a9c1b2109c3a9b0855931beb96
+File list : .//block.c/FILE_ID_block.c_2
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: ad9cfc1791353dd0ff9e095c00a04da8204f0668
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_3
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: b48bf6412bc38903e481c0daf25006fceea425e5
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 7823cd4e8f997cd6bfd607c065c52d6b4be7cff5
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
+OK: Manifest file CheckSum valid: c2475db22839783b1e1d3d8d3cb5ce628f82e2c4
+File list : .//block.h/FILE_ID_block.h_6
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: 1e6338c7e3695dee0ac39a9d12876bc83cab50fa
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: d449ceebaad8ac18c1bd31dd1a66906ccc288a8d
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_8
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 3660b521a122de313eeb5b05977d77c6aa847fc7
+Reading PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@d3e694ac
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@4602c32f
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 2aa9fa85ef10903623f2a61b188b692fe1ea7925
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 5e0a7eb0d455cbf2e462a790d24f6801586007fb
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: a66524f768698c61d6402cf84b001878306fb3dc
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: ce12bc6565b3280917d2400cbf52c790deef3a37
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: 41cfebc5ecd2f8bcb371cb089fdcbf06eb95ee9e
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: dfc4cb5978ea3863a6ed7bc31b71c6448a5ca159
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 9dbc28d18122f4f10922080be12171416a6b8a7f
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: c04ea8feda18fc2ab0835f2d5bd428e17235fdcc
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 242bf8a3c2bf30ad5c076f59d2a2172b1e48411a
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 0d627e7cb4345ce13d80880ca022af8ba133d172
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: f9611aae5111735d13fb91a820dde5d665e887f0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 99829bf5e16dcba1e85a57c63f83a6f8895e49e7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 5015c6aa1c9fefe01321396370e98f08c5f59ae2
+Reading BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7 ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@d3e694ac
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@bcef3625
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 65d763c1a91ff8e3e59737f182b6cc87c1319796
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 15fe6fa98e169a0128848e719f07a6f43866767d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
-OK: Manifest file CheckSum valid: 31e008d2cf7517663de969565bc37388691c8a2e
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: e643b3cbf80515b2b4e836a7fbbf79bcc9fdc8f6
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: 795b27aaf974f8957d6f264f81996397eb53ef92
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
-OK: Manifest file CheckSum valid: c7123f497727269781821fb2a430019d84b33808
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
-OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Reading: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: f6e215401130af402250a1e6d7be0a8a1a6cd722
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.obj
+OK: Manifest file CheckSum valid: 076b9dc7e50e1b197819ac5751bfe9ea70b0055e
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: c8ed8268e4bd55e55e9a2285f7d96bc92965f3d4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 09cb36f9a493a579e90573a2b5250adcdc7ac193
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\galec_stl.obj
+OK: Manifest file CheckSum valid: fe2215f8be36f15f8ecc3996ef9799126384e866
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: f4d3ed381a6725de55f96c710433c5d8a00705be
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: 5015c6aa1c9fefe01321396370e98f08c5f59ae2
+Reading BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13 ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@d3e694ac
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@a6e637dd
+Reading manifest: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 8b733d6c44b5cb77e9d6ffb09a2f09f98c493d04
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: c62259f970077b16e7c12ef74ca8f3c27a7e2093
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 829e3ed7a8d247b50381ec7c86d5a1dde8f33dd3
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 2dd92fbcd5dc54b153dae66d7d31b4ec33a063be
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: 58a375c2268156a617f2b6d97ddebbae6730fc45
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: 6733febc737a5458f21217cde894d16edfbff988
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: 5ea82760425c4196f69869f1a111c326c6684581
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: cdf14ecda80ce8bf7a9729f53d91a90988dff8c3
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 62f3444424eb8674c5b2d392a42e2537a3520e9f
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: a3a4370fd6aaeef9fa6b72246240bed2d4a36dba
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 6983f7b8ae66bcee8fe42ec3fd71d0d0b5d41e7d
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: 0a60072a40cc6741516db11e822877d06a5ff479
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: bb00ec6518871707be3e7a4fcc6ab7ec046e8007
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 46aa9c387bf4eb1b21e2b6f78fbec27e79c32e88
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 13b07ae8a284fbb4ec02c20079935daace2c4b44
+Reading BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7 ModelRepresentation
+Read Manifests... OK
 
-GENERATE BINARY CODE MAKEFILES
-C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./makefile
-C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./build.bat
-C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./where.bat
+Write BinaryCode Makefile... 
+C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./makefile
+Write BinaryCode Makefile... OK
 
-GENERATE BINARY CODE SOURCES
+Generate BinaryCode files... 
 
 Microsoft (R) Program Maintenance Utility Version 14.34.31944.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c /Fo.\default\sii_block_interface.obj
-sii_block_interface.c
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c /Fo.\default\galec_stl.obj
-galec_stl.c
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c /Fo.\default\mei_block_interface.obj
-mei_block_interface.c
-	cl /nologo /c ..\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c /Fo.\default\block.obj
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c /Fo./block.obj
 block.c
-	lib /nologo .\default\sii_block_interface.obj .\default\galec_stl.obj .\default\mei_block_interface.obj .\default\block.obj /OUT:block.lib
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c /Fo./mei_block_interface.obj
+mei_block_interface.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c /Fo./galec_stl.obj
+galec_stl.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c /Fo./sii_block_interface.obj
+sii_block_interface.c
+	lib /nologo ./block.obj ./mei_block_interface.obj ./galec_stl.obj ./sii_block_interface.obj /OUT:block.lib
+Generate BinaryCode files... OK
 
-
-GENERATE BINARY CODE MANIFEST
+Write Manifest... 
 BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
-
-WRITE MANIFESTS
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 2aa9fa85ef10903623f2a61b188b692fe1ea7925
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 5e0a7eb0d455cbf2e462a790d24f6801586007fb
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: a66524f768698c61d6402cf84b001878306fb3dc
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: ce12bc6565b3280917d2400cbf52c790deef3a37
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: 41cfebc5ecd2f8bcb371cb089fdcbf06eb95ee9e
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: dfc4cb5978ea3863a6ed7bc31b71c6448a5ca159
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 9dbc28d18122f4f10922080be12171416a6b8a7f
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: c04ea8feda18fc2ab0835f2d5bd428e17235fdcc
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 242bf8a3c2bf30ad5c076f59d2a2172b1e48411a
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 0d627e7cb4345ce13d80880ca022af8ba133d172
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: f9611aae5111735d13fb91a820dde5d665e887f0
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 99829bf5e16dcba1e85a57c63f83a6f8895e49e7
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 5015c6aa1c9fefe01321396370e98f08c5f59ae2
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 65d763c1a91ff8e3e59737f182b6cc87c1319796
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 15fe6fa98e169a0128848e719f07a6f43866767d
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
-OK: Manifest file CheckSum valid: 31e008d2cf7517663de969565bc37388691c8a2e
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: e643b3cbf80515b2b4e836a7fbbf79bcc9fdc8f6
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: 795b27aaf974f8957d6f264f81996397eb53ef92
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
-OK: Manifest file CheckSum valid: c7123f497727269781821fb2a430019d84b33808
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
-OK: Manifest file CheckSum valid: ab7373a3ffb0389b4b17efd4b5eb5ab7c91a380c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
-OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
-OK: Manifest file CheckSum valid: 2743a0bd6e45a49f37c84da2e937f94e43f10839
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: f6e215401130af402250a1e6d7be0a8a1a6cd722
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.obj
+OK: Manifest file CheckSum valid: 076b9dc7e50e1b197819ac5751bfe9ea70b0055e
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: c8ed8268e4bd55e55e9a2285f7d96bc92965f3d4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 09cb36f9a493a579e90573a2b5250adcdc7ac193
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\galec_stl.obj
+OK: Manifest file CheckSum valid: fe2215f8be36f15f8ecc3996ef9799126384e866
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: f4d3ed381a6725de55f96c710433c5d8a00705be
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: 5015c6aa1c9fefe01321396370e98f08c5f59ae2
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 8b733d6c44b5cb77e9d6ffb09a2f09f98c493d04
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: c62259f970077b16e7c12ef74ca8f3c27a7e2093
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 829e3ed7a8d247b50381ec7c86d5a1dde8f33dd3
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 2dd92fbcd5dc54b153dae66d7d31b4ec33a063be
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\default\block.obj
-OK: Manifest file CheckSum valid: 58a375c2268156a617f2b6d97ddebbae6730fc45
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: 6733febc737a5458f21217cde894d16edfbff988
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: 5ea82760425c4196f69869f1a111c326c6684581
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\build.bat
-OK: Manifest file CheckSum valid: 88f0b424eda669d0be871d24b7869727dd0bbead
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\buildReport.txt
-OK: Manifest file CheckSum valid: cdf14ecda80ce8bf7a9729f53d91a90988dff8c3
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 62f3444424eb8674c5b2d392a42e2537a3520e9f
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: a3a4370fd6aaeef9fa6b72246240bed2d4a36dba
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 6983f7b8ae66bcee8fe42ec3fd71d0d0b5d41e7d
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: 0a60072a40cc6741516db11e822877d06a5ff479
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: bb00ec6518871707be3e7a4fcc6ab7ec046e8007
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 46aa9c387bf4eb1b21e2b6f78fbec27e79c32e88
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 13b07ae8a284fbb4ec02c20079935daace2c4b44
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\BinaryCode\efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: e9fda2e26c7119a1cb7bdddc173c54a61ab35179
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\sii_block_interface.obj
-OK: Manifest file CheckSum valid: 1f9a03a46f8e6e3656256f1033aa4de84639ebe1
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\galec_stl.obj
-OK: Manifest file CheckSum valid: 3778e3054c236aeb934355ea309284ab67a7fad9
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\mei_block_interface.obj
-OK: Manifest file CheckSum valid: fe4699f728d10431fb4fce8dab46214e7fda4561
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\default\block.obj
-OK: Manifest file CheckSum valid: 7a9a00e82b8a4c0526beffc91dc9c374cea2eb80
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
-OK: Manifest file CheckSum valid: c63dccef03e2dc611591162e493fb1074fdeb32c
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
-OK: Manifest file CheckSum valid: 5ea82760425c4196f69869f1a111c326c6684581
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\build.bat
-OK: Manifest file CheckSum valid: 71b613fa7ce26d9d09916d39697201991ad558e7
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\where.bat
-OK: Manifest file CheckSum valid: 5b46161d488831d2d02c1eeb5f768a38726de443
-OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\buildReport.txt
-OK: Manifest file CheckSum valid: cdf14ecda80ce8bf7a9729f53d91a90988dff8c3
-Writing: C:\Users\CBR5.DSONE\Documents\Dymola\CHILTest\eFMU\__content.xml
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 43b2d969455e7ca127b394a34ef5d8da61fd88d1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.obj
+OK: Manifest file CheckSum valid: a3caaa71c91c6559e70728abea8e9eed13b183fb
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: c5933e2b2f053b7e794f6da21144e143d5117e6b
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\galec_stl.obj
+OK: Manifest file CheckSum valid: da9e853a421dc29a6b3661b0a11481022280aad4
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 57cc4f0df660b7346e07b97ed79ca0ebc615dd68
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: bb0fbb1d0e6b15791dd4f8bb7c7c10b5a47cf9f1
+OK: Manifest file exists: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: 13b07ae8a284fbb4ec02c20079935daace2c4b44
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+Writing: C:\Users\CBR5.DSONE\Documents\Dymola\Grid4CHILTesting\eFMU\__content.xml
+Writing: __content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/CHILTest/eFMU\schemas\efmiContainerManifest.xsd
+getFMUPath: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/
+OK: Manifest respects XSD: C:/Users/CBR5.DSONE/Documents/Dymola/Grid4CHILTesting/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
@@ -325,4 +318,7 @@ OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355
 OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
 OK: Model representation manifest exists: BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7
 OK: Model representation manifest exists: BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
-GENERATION SUCCESS
+Write Manifest... OK
+
+BINARY CODE GENERATION SUCCESS
+

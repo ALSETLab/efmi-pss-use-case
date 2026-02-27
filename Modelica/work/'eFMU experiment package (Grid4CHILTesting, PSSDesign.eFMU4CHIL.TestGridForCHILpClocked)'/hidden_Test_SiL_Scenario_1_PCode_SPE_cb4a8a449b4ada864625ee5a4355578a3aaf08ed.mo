@@ -1,11 +1,11 @@
-within 'eFMU experiment package (CHILTest, PSSDesign.eFMU4CHIL.TestGridForCHILpClocked)';
+within 'eFMU experiment package (Grid4CHILTesting, PSSDesign.eFMU4CHIL.TestGridForCHILpClocked)';
 model
   hidden_Test_SiL_Scenario_1_PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
   "SiL test Production Code container [PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed] in the scenario defined by component [G4CHIL]."
 
   extends hidden_Test_SiL_Scenario_1(eBlock(
-      final __defining_code='CHILTest.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed,
-      final __active_codes={'CHILTest.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed},
+      final __defining_code='Grid4CHILTesting.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed,
+      final __active_codes={'Grid4CHILTesting.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed},
       final __enable_tuning=false,
       final __enable_reinitialization=false,
       final __tuning_configuration));

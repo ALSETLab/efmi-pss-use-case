@@ -38,9 +38,9 @@ equation
   annotation (Icon(graphics={
         Rectangle(
           extent={{-46,-96},{54,-56}},
-          lineColor={95,95,95},
+          lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={100,187,75},
+          fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -200,16 +200,6 @@ equation
           origin={-46,-60},
           rotation=90),
         Rectangle(
-          extent={{-38,-90},{44,-62}},
-          lineColor={95,95,95},
-          pattern=LinePattern.None,
-          fillColor={130,238,94},
-          fillPattern=FillPattern.Solid,
-          radius=10),    Text(
-          extent={{-38,-56},{42,-96}},
-          lineColor={0,140,72},
-          textString="eFMI"),
-        Rectangle(
           extent={{10,-92},{14,-104}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
@@ -229,5 +219,8 @@ equation
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
-          lineColor={0,0,0})}));
+          lineColor={0,0,0}),Text(
+          extent={{-38,-56},{46,-94}},
+          textColor={0,140,72},
+          textString="PSS4eFMI")}));
 end GeneratorPSSDesign4efmi;

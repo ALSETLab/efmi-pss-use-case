@@ -1,7 +1,7 @@
 within PSSDesign.Generator;
 model GeneratorPSSefmuVariant
-  "Plant model that replaces with PSS model refactored for efmi export"
-  extends OpenIPSL.Interfaces.Generator;
+  "Plant model that replaces the PSS model with the PSSTypeII4eFMI variant for eFMI export"
+  extends PSSDesign.Generator.GeneratorTemplate;
   replaceable
   PSSDesign.Components.Machines.Order6 machine(D = 0, M = 7, P_0 = P_0, Q_0 = Q_0,
     Sn=2220000000,                                                                                  T1d0 = 8, T1q0 = 1, T2d0 = 0.03, T2q0 = 0.07, Taa = 0.002, V_b = V_b,
@@ -36,4 +36,13 @@ equation
                                           color = {0, 0, 127}));
   connect(machine.w, pss.vSI) annotation(
     Line(points={{83.1,32.9},{94,32.9},{94,-42},{-94,-42},{-94,10},{-84.9,10}},      color = {0, 0, 127}));
+  annotation (Icon(graphics={Rectangle(
+          extent={{-80,-40},{80,-82}},
+          lineColor={0,140,72},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
+                             Text(
+          extent={{-64,-40},{60,-82}},
+          textColor={0,140,72},
+          textString="PSS4eFMI")}));
 end GeneratorPSSefmuVariant;

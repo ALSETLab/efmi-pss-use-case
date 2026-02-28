@@ -1,7 +1,7 @@
 within PSSDesign.Generator;
 model GeneratorPSSefmuVariantClocked
-  "Plant model that replaces with PSS model refactored for efmi export"
-  extends OpenIPSL.Interfaces.Generator;
+  "Plant model that replaces PSS model with PSSTypeII4eFMI and has a clocked partition"
+  extends PSSDesign.Generator.GeneratorTemplate;
   replaceable
   PSSDesign.Components.Machines.Order6 machine(D = 0, M = 7, P_0 = P_0, Q_0 = Q_0,
     Sn=2220000000,                                                                                  T1d0 = 8, T1q0 = 1, T2d0 = 0.03, T2q0 = 0.07, Taa = 0.002, V_b = V_b,
@@ -57,92 +57,110 @@ equation
     annotation (Line(points={{-44.3333,10},{-47.4,10}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-140,-100},{100,100}}, grid={2,
             2})), Icon(coordinateSystem(grid={2,2}), graphics={
+        Ellipse(extent={{-96,-78},{-56,-38}},
+          lineThickness=1,
+          fillColor={130,238,94},
+          fillPattern=FillPattern.Solid),
+        Line(points={{-76,-38},{-76,-44}},
+          pattern=LinePattern.Dash,
+          thickness=0.5),
+        Line(points={{-56,-58},{-62,-58}},
+          pattern=LinePattern.Dash,
+          thickness=0.5),
+        Line(points={{-76,-58},{-70,-50}}, thickness=1),
+        Line(points={{-76,-58},{-62,-64}}, thickness=1),
+        Line(points={{-76,-72},{-76,-78}},
+          pattern=LinePattern.Dash,
+          thickness=0.5),
+        Line(points={{-90,-58},{-96,-58}},
+          pattern=LinePattern.Dash,
+          thickness=0.5),
         Rectangle(
-          extent={{-94,-92},{6,-52}},
-          lineColor={95,95,95},
+          extent={{-44,-92},{56,-26}},
+          lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={100,187,75},
+          fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
-          extent={{-78,-88},{-74,-100}},
+          extent={{-24,-86},{-20,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-68,-88},{-64,-100}},
+          extent={{-14,-86},{-10,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-58,-88},{-54,-100}},
+          extent={{-4,-86},{0,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-48,-88},{-44,-100}},
+          extent={{6,-86},{10,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-38,-88},{-34,-100}},
+          extent={{16,-86},{20,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-78,-44},{-74,-56}},
+          extent={{-28,-18},{-24,-30}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-68,-44},{-64,-56}},
+          extent={{-18,-18},{-14,-30}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-58,-44},{-54,-56}},
+          extent={{-8,-18},{-4,-30}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-48,-44},{-44,-56}},
+          extent={{2,-18},{6,-30}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-38,-44},{-34,-56}},
+          extent={{12,-18},{16,-30}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-28,-44},{-24,-56}},
+          extent={{22,-18},{26,-30}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-18,-44},{-14,-56}},
+          extent={{32,-18},{36,-30}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
@@ -155,7 +173,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={6,-56},
+          origin={56,-42},
           rotation=90),
         Rectangle(
           extent={{-2,6},{2,-6}},
@@ -164,7 +182,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={6,-66},
+          origin={56,-52},
           rotation=90),
         Rectangle(
           extent={{-2,6},{2,-6}},
@@ -173,7 +191,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={6,-76},
+          origin={56,-62},
           rotation=90),
         Rectangle(
           extent={{-2,6},{2,-6}},
@@ -182,7 +200,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={6,-86},
+          origin={56,-72},
           rotation=90),
         Rectangle(
           extent={{-2,6},{2,-6}},
@@ -191,7 +209,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={-94,-86},
+          origin={-44,-72},
           rotation=90),
         Rectangle(
           extent={{-2,6},{2,-6}},
@@ -200,7 +218,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={-94,-76},
+          origin={-44,-62},
           rotation=90),
         Rectangle(
           extent={{-2,6},{2,-6}},
@@ -209,7 +227,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={-94,-66},
+          origin={-44,-52},
           rotation=90),
         Rectangle(
           extent={{-2,6},{2,-6}},
@@ -218,37 +236,31 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0},
-          origin={-94,-56},
+          origin={-44,-42},
           rotation=90),
         Rectangle(
-          extent={{-86,-86},{-4,-58}},
-          lineColor={95,95,95},
-          pattern=LinePattern.None,
-          fillColor={130,238,94},
-          fillPattern=FillPattern.Solid,
-          radius=10),    Text(
-          extent={{-86,-52},{-6,-92}},
-          lineColor={0,140,72},
-          textString="eFMI"),
-        Rectangle(
-          extent={{-38,-88},{-34,-100}},
+          extent={{16,-86},{20,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-28,-88},{-24,-100}},
+          extent={{26,-86},{30,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),
         Rectangle(
-          extent={{-18,-88},{-14,-100}},
+          extent={{36,-86},{40,-98}},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid,
           radius=10,
           pattern=LinePattern.None,
-          lineColor={0,0,0})}));
+          lineColor={0,0,0}),Text(
+          extent={{-40,-18},{52,-98}},
+          textColor={0,140,72},
+          textString="PSS4eFMI
+Clocked")}));
 end GeneratorPSSefmuVariantClocked;

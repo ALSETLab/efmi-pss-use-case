@@ -1,16 +1,16 @@
-within PSSDesign.eFMU4CHIL;
-model TestGridForCHILwBinStub
-  "Tests the model for CHIL testing with Binary Stub"
+within PSSDesign.VerificationTests.G4CHILFaultTrigger;
+model FaultBinStub
+  "Model to replicate fault triggering test with binary stub"
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Step step(
-    height=0.2,
+    height=0.0,
     offset=0,
-    startTime=5)
+    startTime=10)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub
-                   G4CHIL
+  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub G4CHIL(__defining_code=
+        'Grid4HIL.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-  Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+  Components.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
                                              annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
@@ -35,10 +35,8 @@ equation
     annotation (Line(points={{22,8},{94,8},{94,0},{110,0}}, color={0,0,127}));
   connect(G4CHIL.Qgen, Qgen) annotation (Line(points={{22,4},{90,4},{90,-40},{
           110,-40}}, color={0,0,127}));
-  connect(G4CHIL.vf, step.y)
-    annotation (Line(points={{-24,0},{-79,0}}, color={0,0,127}));
+  connect(step.y, G4CHIL.vf)
+    annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
   annotation (experiment(
-      StopTime=20,
-      __Dymola_NumberOfIntervals=5000,
-      __Dymola_Algorithm="Dassl"));
-end TestGridForCHILwBinStub;
+      StopTime=20));
+end FaultBinStub;

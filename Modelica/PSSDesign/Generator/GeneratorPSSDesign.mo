@@ -26,5 +26,5 @@ equation
     Line(points={{-63.05,10},{-44.3333,10}},
                                           color = {0, 0, 127}));
   connect(machine.w, pss.vSI) annotation(
-    Line(points={{83.1,32.9},{94,32.9},{94,-42},{-94,-42},{-94,10},{-84.9,10}},      color = {0, 0, 127}));
+    Line(points={{83.1,32.9},{94,32.9},{94,-40},{-94,-40},{-94,10},{-84.9,10}},      color = {0, 0, 127}));
 end GeneratorPSSDesign;

@@ -1,45 +1,16 @@
 ﻿// Script to load dependencies
-// Resolve HOME on Windows or Linux/macOS
-home := if Modelica.Utilities.System.getEnvironmentVariable("USERPROFILE") <> "" then
-          Modelica.Utilities.System.getEnvironmentVariable("USERPROFILE")
-        else
-          Modelica.Utilities.System.getEnvironmentVariable("HOME");
-
-// Specifying the location of the repositories, assumes the "./Documents" folder is used
-// Alternatively, a second location can be specified, e.g., "./OneDrive/Documents"
-// Fallback is the user "HOME" directory
-// Prefer Documents (or OneDrive/Documents); fall back to home
-docs1 := home + "/Documents";
-docs2 := home + "/OneDrive/Documents";
-if Modelica.Utilities.Files.exist(docs1) then
-  docs := docs1;
-elseif Modelica.Utilities.Files.exist(docs2) then
-  docs := docs2;
-else
-  docs := home;
+docs := Modelica.Utilities.System.getEnvironmentVariable("EFMI_PSS_ROOT");
+if docs == "" then
+	docs := "C:/dev/efmi-pss-use-case";
 end if;
-
-// Use forward slashes (fine on Windows)
-// Specify the relative path with dependencies
-// "C:\Users\vanfr\Documents\
 // Load Dependencies
-openModel(docs + "/Github/efmi-pss-use-case/dependencies/openipsl/OpenIPSL/package.mo");
-// openModel(docs + "/Github/efmi-pss-use-case/dependencies/Modelica-FMI/FMI/package.mo");
+openModel(docs + "/dependencies/openipsl/OpenIPSL/package.mo");
 // Load Libraries
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/PSSDesign/package.mo");
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/efmiPSSusecase/package.mo");
-// Load eFMU and SIL Integration Tests for the PSS
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/efmuPSS/SiL-integration/eFMU/_package_.mo");
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/H525b873079cf7a65f464c408f25344d5bd630cab.mo");
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/'eFMU experiment package (efmuPSS, efmiPSSusecase.Experiments.Example_3_PSSDesign4PSSVariantClocked)'/package.mo");
-// Load eFMU and SIL Integration Tests for the HIL testing model
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/Grid4HIL/SiL-integration/eFMU/_package_.mo");
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/Hb0cb05f437863e9fece1a90bb931dbfeb4ac00f3.mo");
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/'eFMU experiment package (Grid4HIL, PSSDesign.eFMUs4RTHIL.TestGridForHILClocked)'/package.mo");
-// Load eFMU and SIL Integration Tests for the Controller-HIL testing model
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/CHILTest/SiL-integration/eFMU/_package_.mo");
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/H283cd02180511b024b59731032fd3290f8675b29.mo");
-openModel(docs + "/Github/efmi-pss-use-case/Modelica/work/'eFMU experiment package (CHILTest, PSSDesign.eFMU4CHIL.TestGridForCHILpClocked)'/package.mo");
+openModel(docs + "/Modelica/PSSDesign/package.mo");
+// Load eFMUs
+openModel(docs + "\Modelica\work\PSSTypeII4eFMI\SiL-integration\eFMU\_package_.mo");
+openModel(docs + "\Modelica\work\GridForHILTesting\SiL-integration\eFMU\_package_.mo");
+openModel(docs + "\Modelica\work\Grid4CHILTesting\SiL-integration\eFMU\_package_.mo");
 // Go back to working directory
 // Set working directory to be under the Modelica sub-directory
-cd(docs + "/Github/efmi-pss-use-case/Modelica/work");
+cd(docs + "/Modelica/work");

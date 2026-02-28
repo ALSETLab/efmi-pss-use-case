@@ -3,7 +3,7 @@ model TestRefGenWithPSS4efmiExport
   "Similar to *.TestRefGenWithPSS, configured with plant variant configured to test Components.PSSTypeII4eFMI"
   extends Network.PartialNetwork;
   extends Modelica.Icons.Example;
-  replaceable Generator.GeneratorPSSefmuVariant
+  replaceable Generator.GeneratorPSSDesign4efmi
                                            G1(displayPF=false) constrainedby
     Generator.GeneratorTemplate
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),

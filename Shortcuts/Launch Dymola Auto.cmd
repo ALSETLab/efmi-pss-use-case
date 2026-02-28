@@ -1,6 +1,27 @@
 @echo off
 setlocal
 
+rem -----------------------------------------------------------------------------
+rem Launch Dymola Auto.cmd
+rem
+rem Purpose:
+rem   Portable launcher for the efmi-pss-use-case startup flow.
+rem   This file is meant to be double-clicked and reused on different computers.
+rem
+rem What it does:
+rem   1) Finds Dymola.exe automatically (tries known versions first, then scans
+rem      "C:\Program Files\Dymola *\bin64\Dymola.exe").
+rem   2) Resolves paths relative to THIS .cmd file location:
+rem        - startup-generic.mos is expected in the same folder (Shortcuts)
+rem        - repository root is assumed to be the parent folder of Shortcuts
+rem   3) Exports EFMI_PSS_ROOT for the .mos script to consume as project root.
+rem   4) Starts Dymola with -nosplash and the startup .mos script.
+rem
+rem Assumed structure:
+rem   <repo-root>\Shortcuts\Launch Dymola Auto.cmd
+rem   <repo-root>\Shortcuts\startup-generic.mos
+rem -----------------------------------------------------------------------------
+
 rem 1. Auto-detect Dymola executable
 set "dymolaPath="
 

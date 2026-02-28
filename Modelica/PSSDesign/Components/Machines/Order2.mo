@@ -1,6 +1,6 @@
 within PSSDesign.Components.Machines;
 model Order2
-  "Second Order Synchronous Machine with Inputs and Outputs"
+  "Second Order Synchronous Machine with Inputs and Outputs - with modified base machine for efmi export"
   extends PSSDesign.Components.Machines.Base.baseMachine(vf(start=
           vf00), xq0=x1d);
 protected

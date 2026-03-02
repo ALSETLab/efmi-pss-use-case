@@ -1,6 +1,6 @@
 within PSSDesign;
 package Network
-  extends Modelica.Icons.Package;
+  extends Modelica.Icons.VariantsPackage;
 
 equation
 

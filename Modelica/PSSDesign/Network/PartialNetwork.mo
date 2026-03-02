@@ -1,5 +1,5 @@
 within PSSDesign.Network;
-model PartialNetwork
+partial model PartialNetwork
   OpenIPSL.Electrical.Buses.Bus B1 annotation(
     Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B2 annotation(
@@ -7,7 +7,8 @@ model PartialNetwork
   OpenIPSL.Electrical.Buses.Bus B3 annotation(
     Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   inner OpenIPSL.Electrical.SystemBase SysData(fn = 60) annotation(
-    Placement(visible = true, transformation(origin = {-50, -50}, extent = {{-30, -10}, {30, 10}}, rotation = 0)));
+    Placement(visible = true, transformation(origin={-60,70},     extent={{-20,-10},
+            {20,10}},                                                                              rotation = 0)));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(Sn(displayUnit = "V.A") = 2220000000, V_b = 400000, Vn = 400000, rT = 0, xT = 0.15) annotation(
     Placement(visible = true, transformation(origin = {12, 0}, extent = {{-50, -10}, {-30, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Branches.PwLine pwLine1(B = 0, G = 0, R = 0, S_b(displayUnit = "V.A") = 100000000, X = 0.5*100/2220) annotation(

@@ -33,7 +33,7 @@ equation
           {-10,-8},{-2,-8}}, color={255,0,255}));
   connect(and1.y, y)
     annotation (Line(points={{21,0},{110,0}}, color={255,0,255}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false), graphics={
+  annotation (Icon(                                             graphics={
       Polygon(lineColor={192,192,192},
         fillColor={192,192,192},
         fillPattern=FillPattern.Solid,

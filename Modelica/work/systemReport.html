@@ -1,0 +1,596 @@
+<html>
+<head>
+  <title>Analysis of a state space system from Modelica LinearSystems2</title>
+</head>
+<style type="text/css">
+* { font-size: 10pt; font-family: Arial,sans-serif; }
+</style>
+<h1>System report</h1>
+
+<h2>General information</h2>
+
+<h3>Matrices</h3>
+<p>
+The system described in the state space representation
+</p>
+<table style="font-size:10pt; font-family:Arial; border-collapse:collapse; margin: 20px 0 20px 20px" cellpadding="3" border="0"> 
+<tr><td>der(x) </td> <td>=</td> <td> Ax</td> <td> +</td><td> Bu</td></tr>
+         <tr><td> y </td>     <td>=</td> <td> Cx</td> <td> + </td><td>Du</td></tr>
+</table>
+<p>
+is defined by
+</p>
+<p>&nbsp;&nbsp;&nbsp;uNames&nbsp;=&nbsp;[&nbsp;], empty vector</p>
+
+<p>&nbsp;&nbsp;&nbsp;yNames&nbsp;=&nbsp;[&nbsp;], empty vector</p>
+
+<table border="0">
+<tr>
+  <td valign="middle">&nbsp;&nbsp;&nbsp;xNames</td>
+  <td valign="middle">=</td>
+  <td>
+    <table style="background-color:rgb(100, 100, 100);" cellpadding="3" border="0" cellspacing="1">
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">1</td>
+      <td align="left">G1.machine.delta</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">2</td>
+      <td align="left">G1.machine.w</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">3</td>
+      <td align="left">G1.machine.e1q</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">4</td>
+      <td align="left">G1.machine.e1d</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">5</td>
+      <td align="left">G1.machine.e2q</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">6</td>
+      <td align="left">G1.machine.e2d</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">7</td>
+      <td align="left">G1.avr.vm</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">8</td>
+      <td align="left">G1.avr.vr</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">9</td>
+      <td align="left">G1.avr.vf1</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">10</td>
+      <td align="left">G1.pss.imLeadLag.TF.x_scaled[1]</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">11</td>
+      <td align="left">G1.pss.imLeadLag1.TF.x_scaled[1]</td>
+    </tr>
+    <tr style="background-color:white">
+      <td align="right" style="background-color:rgb(230, 230, 230);">12</td>
+      <td align="left">G1.pss.derivativeLag.TF.x_scaled[1]</td>
+    </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<table border="0">
+<tr>
+  <td valign="middle">&nbsp;&nbsp;&nbsp;A</td>
+  <td valign="middle">=</td>
+  <td>
+    <table style="background-color:rgb(100, 100, 100);" cellpadding="3" border="0" cellspacing="1">
+
+    <tr style="background-color:rgb(230, 230, 230); text-align:center;">
+      <td> </td>
+      <td align="center">1</td>
+      <td align="center">2</td>
+      <td align="center">3</td>
+      <td align="center">4</td>
+      <td align="center">5</td>
+      <td align="center">6</td>
+      <td align="center">7</td>
+      <td align="center">8</td>
+      <td align="center">9</td>
+      <td align="center">10</td>
+      <td align="center">11</td>
+      <td align="center">12</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">1</td>
+      <td align="right">0</td>
+      <td align="right">376.991</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">2</td>
+      <td align="right">-0.15935</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-0.17302</td>
+      <td align="right">0.0600076</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">3</td>
+      <td align="right">-0.225787</td>
+      <td align="right">0</td>
+      <td align="right">-0.125</td>
+      <td align="right">0</td>
+      <td align="right">-0.26689</td>
+      <td align="right">-0.00110411</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0.124969</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">4</td>
+      <td align="right">0.46108</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-1</td>
+      <td align="right">0.00633642</td>
+      <td align="right">-1.48943</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">5</td>
+      <td align="right">-2.97283</td>
+      <td align="right">0</td>
+      <td align="right">33.3333</td>
+      <td align="right">0</td>
+      <td align="right">-36.8474</td>
+      <td align="right">-0.0145373</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0.00833333</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">6</td>
+      <td align="right">2.62156</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">14.2857</td>
+      <td align="right">0.036027</td>
+      <td align="right">-22.7542</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">7</td>
+      <td align="right">-9.194</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">33.3636</td>
+      <td align="right">29.2554</td>
+      <td align="right">-66.6667</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">8</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-1</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">9</td>
+      <td align="right">0</td>
+      <td align="right">5.49694e+08</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-2e+06</td>
+      <td align="right">10000</td>
+      <td align="right">-10000</td>
+      <td align="right">-4.08083e+07</td>
+      <td align="right">-8.08936e+06</td>
+      <td align="right">-5.49694e+08</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">10</td>
+      <td align="right">0</td>
+      <td align="right">195.837</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-18.133</td>
+      <td align="right">0</td>
+      <td align="right">-195.837</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">11</td>
+      <td align="right">0</td>
+      <td align="right">987.934</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-73.3423</td>
+      <td align="right">-18.133</td>
+      <td align="right">-987.934</td>
+    </tr>
+    <tr style="background-color:white">
+
+      <td align="right" style="background-color:rgb(230, 230, 230);">12</td>
+      <td align="right">0</td>
+      <td align="right">0.2</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">0</td>
+      <td align="right">-0.2</td>
+    </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<p>&nbsp;&nbsp;&nbsp;B&nbsp;=&nbsp;[&nbsp;], empty matrix: 12 by 0</p>
+
+<p>&nbsp;&nbsp;&nbsp;C&nbsp;=&nbsp;[&nbsp;], empty matrix: 0 by 12</p>
+
+<p>&nbsp;&nbsp;&nbsp;D&nbsp;=&nbsp;[&nbsp;], empty matrix: 0 by 0</p>
+
+<p>
+<strong>Note</strong>, that the system has neither inputs nor outputs (and therefore matrices B, C, and D are empty matrices)!
+</p>
+
+<h2>Characteristics</h2>
+<p>
+The system
+</p>
+<p> is 
+ stable.
+<br>
+</p>
+
+<h3>Eigenvalues analysis</h3>
+<p>The system has the following real eigenvalues.</p>
+<table style="background-color:rgb(100, 100, 100); margin: 20px 0 20px 20px" cellpadding="3" border="0" cellspacing="1">
+<caption>Real eigenvalues</caption>
+<tr style="background-color:rgb(230, 230, 230); text-align:center;">
+  <td> number </td>
+  <td> eigenvalue </td>
+  <td> T [s] </td>
+  <td> characteristics </td>
+  <td> contribution to states</td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       1 </td>
+  <td style="text-align:left"> &nbsp;    -1.0000e+04 </td>
+  <td style="text-align:left"> &nbsp;    0.0001 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[1] contributes to G1.avr.vf1 with 100 %<br> </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       2 </td>
+  <td style="text-align:left"> &nbsp;    -7.6672e+01 </td>
+  <td style="text-align:left"> &nbsp;    0.0130 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[2] contributes to G1.avr.vf1 with 99.3 %<br> </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       3 </td>
+  <td style="text-align:left"> &nbsp;    -4.6533e+01 </td>
+  <td style="text-align:left"> &nbsp;    0.0215 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[3] contributes to G1.avr.vf1 with 97.4 %<br> </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       4 </td>
+  <td style="text-align:left"> &nbsp;    -2.1720e+01 </td>
+  <td style="text-align:left"> &nbsp;    0.0460 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[4] contributes to G1.avr.vf1 with 91.5 %<br> </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       5 </td>
+  <td style="text-align:left"> &nbsp;    -7.3036e+00 </td>
+  <td style="text-align:left"> &nbsp;    0.1369 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[5] contributes to G1.avr.vf1 with 92.7 %<br> </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       6 </td>
+  <td style="text-align:left"> &nbsp;    -1.7823e+00 </td>
+  <td style="text-align:left"> &nbsp;    0.5611 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[6] contributes to G1.avr.vf1 with 64.9 %<br>&nbsp;  z[6] contributes to G1.machine.e1d with 9.14 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       7 </td>
+  <td style="text-align:left"> &nbsp;    -1.0000e+00 </td>
+  <td style="text-align:left"> &nbsp;    1.0000 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[7] contributes to G1.avr.vr with 88.9 %<br>&nbsp;  z[7] contributes to G1.avr.vf1 with 6.7 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:center">       8 </td>
+  <td style="text-align:left"> &nbsp;    -2.0230e-01 </td>
+  <td style="text-align:left"> &nbsp;    4.9431 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[8] contributes to G1.machine.delta with 19.6 %<br>&nbsp;  z[8] contributes to G1.machine.e2q with 16.5 % </td>
+</tr>
+</table>
+<p>The system has the following complex conjugate pairs of eigenvalues.<br>&nbsp;</p>
+<table style="background-color:rgb(100, 100, 100); margin: 20px 0 20px 20px" cellpadding="3" border="0" cellspacing="1">
+<caption>Complex conjugate pairs of eigenvalues</caption>
+<tr style="background-color:rgb(230, 230, 230); text-align:center;">
+  <td> number </td>
+  <td> eigenvalue </td>
+  <td> freq. [Hz] </td>
+  <td> damping </td>
+  <td> characteristics </td>
+  <td> contribution to states</td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left">    9/10 </td>
+  <td style="text-align:left"> &nbsp;    -7.4339e-01 &plusmn;   4.8257e+00j </td>
+  <td style="text-align:left"> &nbsp;    0.7771 </td>
+  <td style="text-align:left"> &nbsp;    0.1523 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[9/10] contribute to G1.avr.vf1 with 86.7 %<br>&nbsp;  z[9/10] contribute to G1.machine.delta with 4.48 % </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left">   11/12 </td>
+  <td style="text-align:left"> &nbsp;    -4.0728e+00 &plusmn;   3.1783e+01j </td>
+  <td style="text-align:left"> &nbsp;    5.0997 </td>
+  <td style="text-align:left"> &nbsp;    0.1271 </td>
+  <td style="text-align:left"> &nbsp; stable, not controllable, not observable  </td>
+  <td style="text-align:left"> &nbsp;  z[11/12] contribute to G1.avr.vf1 with 99.1 %<br> </td>
+</tr>
+</table>
+<p>
+In the tables above, the column <strong>contribution to states</strong> lists for each eigenvalue the states to which the corresponding modal state z[i] contributes most. This information is based on the two largest absolute values of the corresponding right eigenvector (if the second large value is less than 5&nbsp;% of the largest contribution, it is not shown). Note the <strong>right eigenvector</strong> v<sub>j</sub> and the <strong>left eigenvector</strong> u<sub>j</sub> of A satisfy the following relationships with regards to <strong>eigenvalue</strong> &lambda;<sub>j</sub>, state vector x and modal state vector z (u<sub>j</sub><sup>H</sup> denotes the conjugate transpose of u<sub>j</sub>): </p> <table border="0" cellspacing="0" cellpadding="2"> <tr><td width="50"></td>
+    <td>A * v<sub>j</sub> = &lambda;<sub>j</sub> * v<sub>j</sub>; &nbsp;&nbsp;&nbsp;&nbsp;         u<sub>j</sub><sup>H</sup> * A = &lambda;<sub>j</sub> * u<sub>j</sub><sup>H</sup>; &nbsp;&nbsp;&nbsp;&nbsp;               x = V * z; &nbsp;&nbsp;&nbsp;&nbsp; V = [v<sub>1</sub>, v<sub>2</sub>, ...]</td>           </tr>
+</table>
+<p>
+In the next table, for each state in the column <strong>correlation to modal states</strong>, the modal states z[i] which contribute most to the corresponding state are summarized, that is the state is mostly composed of these modal states.
+This information is based on the two largest absolute values of row i of the eigenvector matrix that is associated with eigenvalue i (if the second large value is less than 5&nbsp;% of the largest contribution, it is not shown). This only holds if the modal states z[i] are in the same order of magnitude. Otherwise, the listed modal states might be not the most relevant ones.</p>
+<table style="background-color:rgb(100, 100, 100); margin: 20px 0 20px 20px" cellpadding="3" border="0" cellspacing="1">
+<tr style="background-color:rgb(230, 230, 230); text-align:center;">
+  <td> state </td>
+  <td> correlation to modal states </td>
+  <td> eigenvalue # </td>
+  <td> freq. [Hz] </td>
+  <td> damping </td>
+  <td> T [s] </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.machine.delta </td>
+  <td style="text-align:left"> &nbsp; is composed of  68.5% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0001
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  14.9% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.5611
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.machine.w </td>
+  <td style="text-align:left"> &nbsp; is composed of  53.0% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.7771</td>
+  <td style="text-align:center"> &nbsp;    0.1523</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  21.9% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.5611
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.machine.e1q </td>
+  <td style="text-align:left"> &nbsp; is composed of  72.8% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0215
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  11.3% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.5611
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.machine.e1d </td>
+  <td style="text-align:left"> &nbsp; is composed of  57.7% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0460
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  36.8% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    4.9431
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.machine.e2q </td>
+  <td style="text-align:left"> &nbsp; is composed of  70.3% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.1369
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  11.8% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.5611
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.machine.e2d </td>
+  <td style="text-align:left"> &nbsp; is composed of  41.9% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.5611
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  38.7% by z[6]</td>
+  <td style="text-align:center"> &nbsp; 6</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.5611
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.avr.vm </td>
+  <td style="text-align:left"> &nbsp; is composed of  68.6% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    1.0000
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  10.1% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.7771</td>
+  <td style="text-align:center"> &nbsp;    0.1523</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; G1.avr.vr </td>
+  <td style="text-align:left"> &nbsp; is composed of 100.0% by z[7]</td>
+  <td style="text-align:center"> &nbsp; 7</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    4.9431
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.avr.vf1 </td>
+  <td style="text-align:left"> &nbsp; is composed of  19.4% by z[11/12]</td>
+  <td style="text-align:center"> &nbsp; 11/12</td>
+  <td style="text-align:center"> &nbsp;    5.0997</td>
+  <td style="text-align:center"> &nbsp;    0.1271</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of  19.3% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.7771</td>
+  <td style="text-align:center"> &nbsp;    0.1523</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.pss.imLeadLag.TF.x_scaled[1] </td>
+  <td style="text-align:left"> &nbsp; is composed of  90.9% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0000
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of   4.8% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.7771</td>
+  <td style="text-align:center"> &nbsp;    0.1523</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td rowspan=2 style="text-align:left"> &nbsp; G1.pss.imLeadLag1.TF.x_scaled[1] </td>
+  <td style="text-align:left"> &nbsp; is composed of  86.0% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0000
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; is composed of   7.5% by z[9/10]</td>
+  <td style="text-align:center"> &nbsp; 9/10</td>
+  <td style="text-align:center"> &nbsp;    0.7771</td>
+  <td style="text-align:center"> &nbsp;    0.1523</td>
+  <td style="text-align:center"> &nbsp; --- </td>
+</tr>
+<tr style="background-color:white">
+  <td style="text-align:left"> &nbsp; G1.pss.derivativeLag.TF.x_scaled[1] </td>
+  <td style="text-align:left"> &nbsp; is composed of  99.4% by z[8]</td>
+  <td style="text-align:center"> &nbsp; 8</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp; ---</td>
+  <td style="text-align:center"> &nbsp;    0.0000
+</table>
+<p>
+The system has no invariant zeros.
+</p>
+</html>

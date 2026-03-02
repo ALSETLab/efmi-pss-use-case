@@ -7,8 +7,14 @@ model Example_3_PSSDesign
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B3 annotation(
     Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Generator.GeneratorPSSDesign G1(P_0 = 1997999999.99364, Q_0 = 967924969.9065781, angle_0 = 0.4946771769891539) annotation(
-    Placement(visible = true, transformation(origin = {-80, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Generator.GenPSSDesign G1(
+    P_0=1997999999.99364,
+    Q_0=967924969.9065781,
+    angle_0=0.4946771769891539) annotation (Placement(visible=true,
+        transformation(
+        origin={-80,0},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
   inner OpenIPSL.Electrical.SystemBase SysData(fn = 60) annotation(
     Placement(visible = true, transformation(origin = {-50, -50}, extent = {{-30, -10}, {30, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(Sn(displayUnit = "V.A") = 2220000000, V_b = 400000, Vn = 400000, rT = 0, xT = 0.15) annotation(

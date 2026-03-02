@@ -3,9 +3,8 @@ model Grid4CHILTesting "System model for CHIL testing"
   extends Modelica.Icons.Example;
   extends Network.PartialNetwork4efmu;
 
-  replaceable Generator.GeneratorAVRIO     G1(displayPF=false, K0=K0)
-                                                               constrainedby
-    Generator.GeneratorTemplate
+  replaceable Generator.GenAVRIO           G1(displayPF=false, K0=K0)
+    constrainedby Generator.GenTemplate
     annotation (Placement(transformation(extent={{-98,-14},{-70,14}})),
       choicesAllMatching=true);
   Modelica.Blocks.Interfaces.RealOutput w "Speed [pu]"

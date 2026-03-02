@@ -1,6 +1,6 @@
 within PSSDesign.Generator;
-model GeneratorPSSDesign "Generator with AVR and designed PSS"
-  extends PSSDesign.Generator.GeneratorTemplate;
+model GenPSSDesign "Generator with AVR and designed PSS"
+  extends PSSDesign.Generator.GenTemplate;
   replaceable
   PSSDesign.Components.Machines.Order6 machine(D = 0, M = 7, P_0 = P_0, Q_0 = Q_0,
     Sn=2220000000,                                                                                      T1d0 = 8, T1q0 = 1, T2d0 = 0.03, T2q0 = 0.07, Taa = 0.002, V_b = V_b,
@@ -27,4 +27,4 @@ equation
                                           color = {0, 0, 127}));
   connect(machine.w, pss.vSI) annotation(
     Line(points={{83.1,32.9},{94,32.9},{94,-40},{-94,-40},{-94,10},{-84.9,10}},      color = {0, 0, 127}));
-end GeneratorPSSDesign;
+end GenPSSDesign;

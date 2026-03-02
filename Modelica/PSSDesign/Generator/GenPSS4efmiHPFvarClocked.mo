@@ -1,7 +1,7 @@
 within PSSDesign.Generator;
-model GeneratorPSSefmuVariantClocked
-  "Plant model that replaces PSS model with PSSTypeII4eFMI and has a clocked partition"
-  extends PSSDesign.Generator.GeneratorTemplate;
+model GenPSS4efmiHPFvarClocked
+  "Plant model that replaces PSS model variant with HPF and has a clocked partition. Uses PSS variant with HP filter instead of a derivative lag."
+  extends PSSDesign.Generator.GenTemplate;
   replaceable
   PSSDesign.Components.Machines.Order6 machine(D = 0, M = 7, P_0 = P_0, Q_0 = Q_0,
     Sn=2220000000,                                                                                  T1d0 = 8, T1q0 = 1, T2d0 = 0.03, T2q0 = 0.07, Taa = 0.002, V_b = V_b,
@@ -10,7 +10,7 @@ model GeneratorPSSefmuVariantClocked
     Placement(visible = true, transformation(origin={51,5},    extent = {{-31, -31}, {31, 31}}, rotation = 0)));
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1, Te = 0.0001, Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  PSSDesign.Components.PSSTypeII4eFMI pss(
+  Components.PSSTypeII4eFMIwHPFilter  pss(
     Kw=10.8,
     T1=0.278203917593164,
     T2=0.0551479681529786,
@@ -59,7 +59,7 @@ equation
             2})), Icon(coordinateSystem(grid={2,2}), graphics={
         Ellipse(extent={{-96,-78},{-56,-38}},
           lineThickness=1,
-          fillColor={130,238,94},
+          fillColor={255,170,213},
           fillPattern=FillPattern.Solid),
         Line(points={{-76,-38},{-76,-44}},
           pattern=LinePattern.Dash,
@@ -79,7 +79,7 @@ equation
           extent={{-44,-92},{56,-26}},
           lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={255,255,255},
+          fillColor={255,170,213},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -259,8 +259,8 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),Text(
-          extent={{-40,-18},{52,-98}},
-          textColor={0,140,72},
-          textString="PSS4eFMI
+          extent={{-42,-16},{50,-96}},
+          textColor={0,0,255},
+          textString="PSS
 Clocked")}));
-end GeneratorPSSefmuVariantClocked;
+end GenPSS4efmiHPFvarClocked;

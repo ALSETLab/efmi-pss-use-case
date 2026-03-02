@@ -4,8 +4,8 @@ package Templates "Template models to be extended and modified in examples"
   model RefSysTemplate "System model extending from partial network"
     extends Network.PartialNetwork;
     extends Modelica.Icons.Example;
-    replaceable Generator.GeneratorPSSDesign G1(displayPF=false) constrainedby
-      Generator.GeneratorTemplate
+    replaceable Generator.GenPSSDesign       G1(displayPF=false) constrainedby
+      Generator.GenTemplate
       annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),
         choicesAllMatching=true);
   equation

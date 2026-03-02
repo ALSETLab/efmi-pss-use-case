@@ -1,7 +1,7 @@
 within PSSDesign.Generator;
-model GeneratorPSSefmu_eBlock
-  "Plant model that replaces PSS model with eFMU binary code"
-  extends PSSDesign.Generator.GeneratorTemplate;
+model GenPSSeFMUeBlockHPFvar
+  "Plant model that replaces PSS model with eFMU binary code.  Uses PSS variant with HP filter instead of a derivative lag."
+  extends PSSDesign.Generator.GenTemplate;
   replaceable
   PSSDesign.Components.Machines.Order6 machine(D = 0, M = 7, P_0 = P_0, Q_0 = Q_0,
     Sn=2220000000,                                                                                  T1d0 = 8, T1q0 = 1, T2d0 = 0.03, T2q0 = 0.07, Taa = 0.002, V_b = V_b,
@@ -28,12 +28,23 @@ equation
   connect(pss.vs, avr.vs)
     annotation (Line(points={{-65,10},{-44.3333,10}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-140,-100},{100,100}}, grid={2,
-            2})), Icon(coordinateSystem(grid={2,2}), graphics={
+            2}), graphics={Text(
+          extent={{-118,-6},{-32,-54}},
+          textColor={238,46,47},
+          textString="Needs to be 
+replaced with 
+corresponding 
+binary stub!"), Rectangle(
+          extent={{-94,6},{-60,-4}},
+          lineColor={28,108,200},
+          fillColor={238,46,47},
+          fillPattern=FillPattern.Solid)}),
+                  Icon(coordinateSystem(grid={2,2}), graphics={
         Rectangle(
           extent={{-48,-92},{52,-52}},
           lineColor={95,95,95},
           pattern=LinePattern.None,
-          fillColor={100,187,75},
+          fillColor={217,67,180},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -196,11 +207,11 @@ equation
           extent={{-40,-86},{42,-58}},
           lineColor={95,95,95},
           pattern=LinePattern.None,
-          fillColor={130,238,94},
+          fillColor={255,170,213},
           fillPattern=FillPattern.Solid,
           radius=10),    Text(
           extent={{-40,-52},{40,-92}},
-          lineColor={0,140,72},
+          lineColor={0,0,255},
           textString="eFMU"),
         Rectangle(
           extent={{8,-88},{12,-100}},
@@ -223,4 +234,4 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0})}));
-end GeneratorPSSefmu_eBlock;
+end GenPSSeFMUeBlockHPFvar;

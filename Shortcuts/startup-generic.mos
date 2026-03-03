@@ -6,11 +6,11 @@ end if;
 // Load Dependencies
 openModel(docs + "/dependencies/openipsl/OpenIPSL/package.mo");
 // Load Libraries
-openModel(docs + "/Modelica/PSSDesign/package.mo");
+openModel(docs + "/Modelica/OpenIPSL_CHIL/package.mo");
 // Load eFMUs
-openModel(docs + "\Modelica\work\PSSTypeII4eFMI\SiL-integration\eFMU\_package_.mo");
-openModel(docs + "\Modelica\work\GridForHILTesting\SiL-integration\eFMU\_package_.mo");
-openModel(docs + "\Modelica\work\Grid4CHILTesting\SiL-integration\eFMU\_package_.mo");
+//openModel(docs + "\Modelica\work\PSSTypeII4eFMI\SiL-integration\eFMU\_package_.mo");
+//openModel(docs + "\Modelica\work\GridForHILTesting\SiL-integration\eFMU\_package_.mo");
+//openModel(docs + "\Modelica\work\Grid4CHILTesting\SiL-integration\eFMU\_package_.mo");
 // Go back to working directory
 // Set working directory to be under the Modelica sub-directory
 cd(docs + "/Modelica/work");

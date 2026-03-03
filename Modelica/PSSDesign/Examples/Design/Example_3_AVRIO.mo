@@ -1,4 +1,4 @@
-within PSSDesign.Examples.Archive;
+within PSSDesign.Examples.Design;
 model Example_3_AVRIO
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation(

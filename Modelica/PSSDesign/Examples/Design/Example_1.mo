@@ -1,5 +1,5 @@
-within PSSDesign.Examples.Archive;
-model Example_3_PSSDesign
+within PSSDesign.Examples.Design;
+model Example_1
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation(
     Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -7,7 +7,7 @@ model Example_3_PSSDesign
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   OpenIPSL.Electrical.Buses.Bus B3 annotation(
     Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Generator.GenPSSDesign G1(
+  PSSDesign.Generator.GenAVR G1(
     P_0=1997999999.99364,
     Q_0=967924969.9065781,
     angle_0=0.4946771769891539) annotation (Placement(visible=true,
@@ -47,5 +47,5 @@ equation
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
   annotation(
-    experiment(StartTime = 0, StopTime = 15, Tolerance = 1e-6, Interval = 0.0001));
-end Example_3_PSSDesign;
+    experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.0001));
+end Example_1;

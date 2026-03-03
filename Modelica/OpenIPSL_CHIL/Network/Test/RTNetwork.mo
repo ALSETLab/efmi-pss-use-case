@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Network.Test;
 model PartNet4efmuVariant "Tests the PartialNetwork4efmuVariant model"
-  extends OpenIPSL_CHIL.Network.PartialNetwork4efmuVariant(L2(opening=1));
+  extends OpenIPSL_CHIL.Network.RTNetwork(L2(opening=1));
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Sine sine(
     amplitude=5,

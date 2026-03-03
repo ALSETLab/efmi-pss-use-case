@@ -2,7 +2,7 @@ within OpenIPSL_CHIL.Components.PSS;
 model PSSTypeIIHPFilter
   "PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a high-pass filter."
 
-  extends PSSTypeIIParametrized(break
+  extends PSSTypeIIParam(       break
       derivativeLag);
 
   // Block icon removes blue background of default model:

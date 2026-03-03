@@ -31,7 +31,7 @@ model GenPSS4efmiDLvar
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  Components.PSS.PSSTypeIIParametrized pss(
+  Components.PSS.PSSTypeIIParam pss(
     Kw=10.8,
     T1=0.278203917593164,
     T2=0.0551479681529786,

@@ -1,13 +1,9 @@
-# Modelica - an object-oriented language for modeling of cyber-physical systems
-# https://modelica.org/
-# Ignore temporary files, build results, simulation files
-
 # Ignore Modelica backup files
 *~
 *.bak
 *.bak-mo
 
-# Ignore content of Modelica work directory, except generated FMUs and eFMUs:
+# Ignore content of Modelica work directory, except generated eFMUs, SiL tests and FMUs:
 Modelica/work/**
 Modelica/work/Grid4CHILTesting
 Modelica/work/GridForHILTesting

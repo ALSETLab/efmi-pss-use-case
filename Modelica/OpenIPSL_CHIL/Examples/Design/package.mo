@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Examples;
 package Design
-  "Old version of example models, do not use partial network or replaceables for plant"
+  "Models used for the PSS design process. Not used for embedded code export."
   extends Modelica.Icons.ExamplesPackage;
 
 end Design;

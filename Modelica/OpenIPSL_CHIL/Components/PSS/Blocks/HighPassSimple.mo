@@ -11,14 +11,15 @@ block HighPassSimple
   parameter Real K = Kw*Tw "Equivalent gain K = Kw*Tw";
   parameter Real T = Tw    "Time constant T = Tw";
 
-  RealInput u annotation(
+  RealInput u "Input voltage (pu)"
+                                  annotation(
     Placement(transformation(extent={{-140,-20},{-100,20}})));
 
-  RealOutput y annotation(
+  RealOutput y "Output voltage (pu)" annotation(
     Placement(transformation(extent={{100,-20},{140,20}})));
 
 protected
-  Real x(start=0) "Low-pass internal state";
+  Real x(start=0) "Filter Internal State";
 
 equation
   der(x) = (u - x)/T;

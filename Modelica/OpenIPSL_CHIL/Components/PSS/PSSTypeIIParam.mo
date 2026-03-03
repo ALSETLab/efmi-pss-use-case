@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Components.PSS;
 model PSSTypeIIParam
-  "PSS Type II of OpenIPSL with parametrization for eFMI use-case."
+  "PSS Type II of OpenIPSL with parametrization for efmi export."
 
   extends OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII(
     vSI(

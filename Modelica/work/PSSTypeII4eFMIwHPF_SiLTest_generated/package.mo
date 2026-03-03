@@ -59,12 +59,12 @@ package PSSTypeII4eFMIwHPF_SiLTest_generated "Test scenarios of original experim
         <html>
         <p>
         eFMU experiment package bundling test scenarios extracted from
-        <a href=\"modelica://PSSDesign.Components.TestComponents.TestPPSVariants.HighPassFilterWOF.TestGenPSS4efmiHPFvarClocked\">PSSDesign.Components.TestComponents.TestPPSVariants.HighPassFilterWOF.TestGenPSS4efmiHPFvarClocked</a>
+        <a href=\"modelica://OpenIPSL_CHIL.Components.Test.PSS.HighPassFilterWOF.TestGenPSS4efmiHPFvarClocked\">PSSDesign.Components.TestComponents.TestPPSVariants.HighPassFilterWOF.TestGenPSS4efmiHPFvarClocked</a>
         (original experiment), with each component of type
-        <a href=\"modelica://PSSDesign.Components.PSSTypeII4eFMIwHPFilter\">PSSDesign.Components.PSSTypeII4eFMIwHPFilter</a>
+        <a href=\"modelica://OpenIPSL_CHIL.Components.PSSTypeII4eFMIwHPFilter\">PSSDesign.Components.PSSTypeII4eFMIwHPFilter</a>
         (eBlock) defining one test scenario according to eFMU generation
         configuration
-        <a href=\"modelica://PSSDesign.Components.PSS.eFMUConfig.PSSTypeII4eFMIwHPFilter_eFMU\">PSSDesign.Components.PSSTypeII4eFMIwHPFilter_eFMU</a>.
+        <a href=\"modelica://OpenIPSL_CHIL.Components.PSS.eFMUConfig.PSSTypeII4eFMIwHPFilter_eFMU\">PSSDesign.Components.PSSTypeII4eFMIwHPFilter_eFMU</a>.
         </p>
         <p>
         The contained test scenarios are used as basis for a Dymola-administered

@@ -1,0 +1,7 @@
+within OpenIPSL_CHIL.Components.PSS.Blocks;
+function bodeDLandHPF
+  "Plots the bode response for the derivative lag and high pass filter parametrized to replace it."
+  extends Modelica.Icons.Function;
+algorithm
+  Modelica_LinearSystems2.ModelAnalysis.TransferFunctions("OpenIPSL_CHIL.Components.PSS.Blocks.DLandHPF(order=1)");
+end bodeDLandHPF;

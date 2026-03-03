@@ -58,12 +58,12 @@ package
         <html>
         <p>
         eFMU experiment package bundling test scenarios extracted from
-        <a href=\"modelica://PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked\">PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked</a>
+        <a href=\"modelica://OpenIPSL_CHIL.Components.Test.Example_3_PSSDesign4PSSVariantClocked\">PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked</a>
         (original experiment), with each component of type
-        <a href=\"modelica://PSSDesign.Components.PSSTypeII4eFMI\">PSSDesign.Components.PSSTypeII4eFMI</a>
+        <a href=\"modelica://OpenIPSL_CHIL.Components.PSSTypeII4eFMI\">PSSDesign.Components.PSSTypeII4eFMI</a>
         (eBlock) defining one test scenario according to eFMU generation
         configuration
-        <a href=\"modelica://PSSDesign.Components.PSS.eFMUConfig.PSSTypeII4eFMI_eFMU\">PSSDesign.Components.PSSTypeII4eFMI_eFMU</a>.
+        <a href=\"modelica://OpenIPSL_CHIL.Components.PSS.eFMUConfig.PSSTypeII4eFMI_eFMU\">PSSDesign.Components.PSSTypeII4eFMI_eFMU</a>.
         </p>
         <p>
         The contained test scenarios are used as basis for a Dymola-administered

@@ -6,7 +6,7 @@ model hidden_Test_ReferenceExperiment "Reference experiment with test scenarios 
   extends .DymolaEmbedded.BuildUtilities.BehavioralModel.Experiment(redeclare
       final package eFMU_configuration = configuration);
 
-  .PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked
+  .OpenIPSL_CHIL.Components.Test.Example_3_PSSDesign4PSSVariantClocked
     experiment
     annotation (Placement(transformation(extent={{-20,60},{20,100}})));
 
@@ -109,7 +109,7 @@ equation
           <p>
           Reference experiment derived from – and used to generate eBlock
           reference results from, or regression-test – the original experiment
-          <a href=\"modelica://PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked\">PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked</a>.
+          <a href=\"modelica://OpenIPSL_CHIL.Components.Test.Example_3_PSSDesign4PSSVariantClocked\">PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked</a>.
           </p>
           </html>"),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),

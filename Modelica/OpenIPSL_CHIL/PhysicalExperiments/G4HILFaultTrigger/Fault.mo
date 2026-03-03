@@ -4,7 +4,7 @@ model Fault "Model to replicate fault triggering test"
   Modelica.Blocks.Sources.Step step(
     height=0.0,
     offset=0,
-    startTime=10)
+    startTime=5.0)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   eFMUs4RTHIL.GridForHILTesting G4HIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));

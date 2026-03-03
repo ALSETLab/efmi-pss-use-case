@@ -5,15 +5,15 @@ function SimAndCompare "Simulates and compares the three cases below"
 algorithm
 
 simulateModel(
-  "PSSDesign.VerificationTests.FaultTrigger.Fault",
+  "OpenIPSL_CHIL.PhysicalExperiments.G4HILFaultTrigger.Fault",
   stopTime=20,
   resultFile="Fault");
 simulateModel(
-  "PSSDesign.VerificationTests.FaultTrigger.FaultClocked",
+  "OpenIPSL_CHIL.PhysicalExperiments.G4HILFaultTrigger.FaultClocked",
   stopTime=20,
   resultFile="FaultClocked");
 simulateModel(
-  "PSSDesign.VerificationTests.FaultTrigger.FaultBinStub",
+  "OpenIPSL_CHIL.PhysicalExperiments.G4HILFaultTrigger.FaultBinStub",
   stopTime=20,
   resultFile="FaultBinStub");
 

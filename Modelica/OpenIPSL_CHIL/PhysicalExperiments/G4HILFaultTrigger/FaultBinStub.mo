@@ -5,7 +5,7 @@ model FaultBinStub
   Modelica.Blocks.Sources.Step step(
     height=0.0,
     offset=0,
-    startTime=10)
+    startTime=5.0)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   'GridForHILTesting.eFMU_SiL_Support'.BinaryStub
                                 G4HIL(__defining_code=

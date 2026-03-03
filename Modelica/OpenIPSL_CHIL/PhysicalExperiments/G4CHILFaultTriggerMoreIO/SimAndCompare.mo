@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTrigger;
+within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTriggerMoreIO;
 function SimAndCompare "Simulates and compares the three cases below"
   extends Modelica.Icons.Function;
 

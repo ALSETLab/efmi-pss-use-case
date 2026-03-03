@@ -1,12 +1,14 @@
-within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTrigger;
-model Fault "Model to replicate fault triggering test"
+within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTriggerMoreIO;
+model FaultBinStub
+  "Model to replicate fault triggering test with binary stub"
   extends Modelica.Icons.Example;
   Modelica.Blocks.Sources.Step step(
     height=0.0,
     offset=0,
     startTime=5.0)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  eFMU4CHIL.Grid4CHILTesting G4CHIL
+  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub G4CHIL(__defining_code=
+        'Grid4HIL.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
     annotation (Placement(transformation(
@@ -21,9 +23,20 @@ model Fault "Model to replicate fault triggering test"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
     annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
+  Modelica.Blocks.Sources.BooleanExpression tripL1(y=false)
+    "Default false = off" annotation (Placement(transformation(
+        extent={{-6,-7},{6,7}},
+        rotation=90,
+        origin={0,-65})));
+  Modelica.Blocks.Sources.BooleanExpression tripL2(y=false)
+    "Default false = off" annotation (Placement(transformation(
+        extent={{-6,-7},{6,7}},
+        rotation=90,
+        origin={12,-65})));
 equation
   connect(faultTimerLogic.y, G4CHIL.fault)
-    annotation (Line(points={{-79,-70},{0,-70},{0,-24}}, color={255,0,255}));
+    annotation (Line(points={{-79,-70},{-10,-70},{-10,-24}},
+                                                         color={255,0,255}));
   connect(G4CHIL.w, w)
     annotation (Line(points={{22,16},{22,60},{110,60}}, color={0,0,127}));
   connect(G4CHIL.v, v) annotation (Line(points={{22,12},{96,12},{96,40},{110,40}},
@@ -36,4 +49,4 @@ equation
     annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
   annotation (experiment(
       StopTime=20));
-end Fault;
+end FaultBinStub;

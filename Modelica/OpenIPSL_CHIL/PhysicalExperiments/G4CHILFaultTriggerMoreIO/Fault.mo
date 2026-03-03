@@ -1,12 +1,12 @@
-within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTrigger;
+within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTriggerMoreIO;
 model Fault "Model to replicate fault triggering test"
   extends Modelica.Icons.Example;
-  Modelica.Blocks.Sources.Step step(
+  Modelica.Blocks.Sources.Step stepVf(
     height=0.0,
     offset=0,
     startTime=5.0)
-    annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  eFMU4CHIL.Grid4CHILTesting G4CHIL
+    annotation (Placement(transformation(extent={{-100,0},{-80,20}})));
+  eFMU4CHIL.G4CHILTestMoreIO G4CHIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
     annotation (Placement(transformation(
@@ -21,9 +21,22 @@ model Fault "Model to replicate fault triggering test"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
     annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
+  Modelica.Blocks.Sources.Constant uPload(k=0)
+    annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
+  Modelica.Blocks.Sources.BooleanExpression tripL2(y=false)
+    "Default false = off" annotation (Placement(transformation(
+        extent={{-6,-7},{6,7}},
+        rotation=90,
+        origin={12,-65})));
+  Modelica.Blocks.Sources.BooleanExpression tripL1(y=false)
+    "Default false = off" annotation (Placement(transformation(
+        extent={{-6,-7},{6,7}},
+        rotation=90,
+        origin={0,-65})));
 equation
   connect(faultTimerLogic.y, G4CHIL.fault)
-    annotation (Line(points={{-79,-70},{0,-70},{0,-24}}, color={255,0,255}));
+    annotation (Line(points={{-79,-70},{-12,-70},{-12,-24}},
+                                                         color={255,0,255}));
   connect(G4CHIL.w, w)
     annotation (Line(points={{22,16},{22,60},{110,60}}, color={0,0,127}));
   connect(G4CHIL.v, v) annotation (Line(points={{22,12},{96,12},{96,40},{110,40}},
@@ -32,8 +45,14 @@ equation
     annotation (Line(points={{22,8},{94,8},{94,0},{110,0}}, color={0,0,127}));
   connect(G4CHIL.Qgen, Qgen) annotation (Line(points={{22,4},{90,4},{90,-40},{
           110,-40}}, color={0,0,127}));
-  connect(step.y, G4CHIL.vf)
-    annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
+  connect(stepVf.y, G4CHIL.vf) annotation (Line(points={{-79,10},{-32,10},{-32,
+          12},{-24,12}}, color={0,0,127}));
+  connect(uPload.y, G4CHIL.uPLoad) annotation (Line(points={{-79,-30},{-40,-30},
+          {-40,-12},{-24,-12}}, color={0,0,127}));
+  connect(tripL1.y, G4CHIL.faultL1)
+    annotation (Line(points={{0,-58.4},{0,-24}}, color={255,0,255}));
+  connect(tripL2.y, G4CHIL.faultL2)
+    annotation (Line(points={{12,-58.4},{12,-24}}, color={255,0,255}));
   annotation (experiment(
       StopTime=20));
 end Fault;

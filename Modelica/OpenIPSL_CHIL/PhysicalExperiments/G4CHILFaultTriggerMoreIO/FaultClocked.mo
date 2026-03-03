@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTrigger;
+within OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTriggerMoreIO;
 model FaultClocked
   "Model to replicate fault triggering test with clocked partitions"
   extends Modelica.Icons.Example;
@@ -7,7 +7,7 @@ model FaultClocked
     offset=0,
     startTime=5)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  eFMU4CHIL.Grid4CHILTesting G4CHIL
+  eFMU4CHIL.G4CHILTestMoreIO G4CHIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10, toff=10.05)
     annotation (Placement(transformation(
@@ -31,9 +31,20 @@ model FaultClocked
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={-52,-34})));
+  Modelica.Blocks.Sources.BooleanExpression tripL1(y=false)
+    "Default false = off" annotation (Placement(transformation(
+        extent={{-6,-7},{6,7}},
+        rotation=90,
+        origin={0,-65})));
+  Modelica.Blocks.Sources.BooleanExpression tripL2(y=false)
+    "Default false = off" annotation (Placement(transformation(
+        extent={{-6,-7},{6,7}},
+        rotation=90,
+        origin={12,-65})));
 equation
   connect(faultTimerLogic.y, G4CHIL.fault)
-    annotation (Line(points={{-79,-70},{0,-70},{0,-24}}, color={255,0,255}));
+    annotation (Line(points={{-79,-70},{-12,-70},{-12,-24}},
+                                                         color={255,0,255}));
   connect(G4CHIL.w, w)
     annotation (Line(points={{22,16},{22,60},{110,60}}, color={0,0,127}));
   connect(G4CHIL.v, v) annotation (Line(points={{22,12},{96,12},{96,40},{110,40}},
@@ -45,12 +56,17 @@ equation
   connect(step.y, sampler.u)
     annotation (Line(points={{-79,0},{-59.2,0}}, color={0,0,127}));
   connect(sampler.y, G4CHIL.vf)
-    annotation (Line(points={{-45.4,0},{-24,0}}, color={0,0,127}));
+    annotation (Line(points={{-45.4,0},{-34,0},{-34,12},{-24,12}},
+                                                 color={0,0,127}));
   connect(sampler.clock, periodicClock.y) annotation (Line(
       points={{-52,-7.2},{-52,-27.4}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
+  connect(tripL1.y, G4CHIL.faultL1)
+    annotation (Line(points={{0,-58.4},{0,-24}}, color={255,0,255}));
+  connect(tripL2.y, G4CHIL.faultL2)
+    annotation (Line(points={{12,-58.4},{12,-24}}, color={255,0,255}));
   annotation (experiment(
       StopTime=20));
 end FaultClocked;

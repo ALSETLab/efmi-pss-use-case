@@ -99,12 +99,21 @@ equation
           lineThickness=1,
           fillColor={170,255,170},
           fillPattern=FillPattern.Solid), Text(
-          extent={{-84,42},{88,-38}},
+          extent={{-72,180},{100,100}},
           textColor={0,0,255},
           textString="%name"),
-        Text(
-          extent={{-100,-60},{100,-98}},
-          textColor={238,46,47},
-          textString="CHIL")}), Diagram(coordinateSystem(extent={{-120,-100},{
+                             Text(
+          extent={{-100,52},{-20,-58}},
+          textColor={0,0,255},
+          textString="C"),   Text(
+          extent={{-38,52},{42,-58}},
+          textColor={0,0,255},
+          textString="H"),   Text(
+          extent={{34,52},{114,-58}},
+          textColor={0,0,255},
+          textString="L"),   Text(
+          extent={{2,52},{82,-58}},
+          textColor={0,0,255},
+          textString="I")}),    Diagram(coordinateSystem(extent={{-120,-100},{
             100,100}}, grid={2,2})));
 end G4CHILTestMoreIO;

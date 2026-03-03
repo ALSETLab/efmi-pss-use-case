@@ -68,11 +68,20 @@ equation
           lineThickness=1,
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid), Text(
-          extent={{-84,42},{88,-38}},
+          extent={{-72,180},{100,100}},
           textColor={0,0,255},
           textString="%name"),
-        Text(
-          extent={{-100,-60},{100,-98}},
-          textColor={238,46,47},
-          textString="CHIL")}));
+                             Text(
+          extent={{-104,54},{-24,-56}},
+          textColor={0,0,255},
+          textString="C"),   Text(
+          extent={{-42,54},{38,-56}},
+          textColor={0,0,255},
+          textString="H"),   Text(
+          extent={{-4,54},{76,-56}},
+          textColor={0,0,255},
+          textString="I"),   Text(
+          extent={{30,54},{110,-56}},
+          textColor={0,0,255},
+          textString="L")}));
 end Grid4CHILTesting;

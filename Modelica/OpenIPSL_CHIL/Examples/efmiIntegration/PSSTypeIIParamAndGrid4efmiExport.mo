@@ -1,10 +1,10 @@
 within OpenIPSL_CHIL.Examples.efmiIntegration;
 model PSSTypeIIParamAndGrid4efmiExport
   "System model extending from partial network with modifications for efmi export and plant with modified PSS for efmi export. Serves as basis for comparison with experiments."
-  extends Modelica.Icons.Example;
   extends Network.RTNetworkMinimal;
+  extends Modelica.Icons.Example;
 
-  replaceable Generator.PSSTypeIIParam.GenPSSTypeIIParam
+  replaceable  Generator.PSSTypeIIParam.GenPSSTypeIIParam
                                            G1(displayPF=false) constrainedby
     Generator.GenTemplate
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),

@@ -40,14 +40,11 @@ annotation (
           fillColor={213,255,170},
           fillPattern=FillPattern.Solid),
         Text(
-          extent={{-84,80},{78,-80}},
-          textColor={0,0,255},
-          textString="der(x) = (u - x)/T
-y = (K/T)*(u - x)"),
-        Text(
           extent={{-100,140},{100,102}},
           textColor={0,0,255},
-          textString="%name")}),
+          textString="%name"),
+        Bitmap(extent={{-84,-92},{90,94}}, fileName=
+              "modelica://OpenIPSL_CHIL/Resources/images/sshpf-cropped.png")}),
   Diagram(
     coordinateSystem(
       preserveAspectRatio=true,

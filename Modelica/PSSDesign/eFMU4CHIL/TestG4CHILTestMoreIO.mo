@@ -80,7 +80,7 @@ package TestG4CHILTestMoreIO
     Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
       annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
     Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
-      period(displayUnit="s") = 0.001,
+      period(displayUnit="s") = 0.0002,
       useSolver=true,
       solverMethod="ExplicitEuler") annotation (Placement(transformation(
           extent={{-6,-6},{6,6}},
@@ -169,7 +169,7 @@ package TestG4CHILTestMoreIO
     Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
       annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
     Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
-      period(displayUnit="s") = 0.001,
+      period(displayUnit="s") = 0.0002,
       useSolver=true,
       solverMethod="ExplicitEuler") annotation (Placement(transformation(
           extent={{-6,-6},{6,6}},

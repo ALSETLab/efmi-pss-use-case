@@ -1,0 +1,89 @@
+
+PRODUCTION CODE GENERATION
+
+Read arguments... 
+Destination eFMU path        : E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU
+Production code name         : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Output As EFMU               : false
+Output EFMU Name             : eFMU
+
+Read arguments... OK
+
+Read Manifests... 
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelProdCode@d5a575ba
+modelRepresentation: null
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelProdCode@d5a575ba
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@dc354c9f
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: e144568397a3657c9c3ba84bccb9351d85c41de0
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 71a8a51c98f2d638c5a24e007ee422c834de9c59
+Reading ACode_Dymola ModelRepresentation
+Read Manifests... OK
+
+Write Manifest... 
+add File... galec_stl.c
+add File... mei_block_interface.c
+add File... sii_block_interface.c
+add File... sii_block_interface.h
+add File... block.c
+add File... mei_block_interface.h
+add File... galec_stl.h
+add File... galec_stl_configuration.h
+add File... block.h
+Writing: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+Writing: manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 4527d898b72700c6026dbac2471a6e7d9ad1e996
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_0
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: d409274d889c437c6761a367870617d188fbb8eb
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_1
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 70fc1a2deb93460bc20038943fb1246a3792c570
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_2
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: ab3029a8d70bd13dc5eaa23a436ccfd7e5fbd200
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_3
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 89d6122aedd38c6ac1673bcdb3544430d05572ee
+File list : .//block.c/FILE_ID_block.c_4
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: c10b31e86fa576cd6b9313d9f3620ed888fcd5ee
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_5
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: a6f7448be8d3512d7d3dd8958c8a2d958862d318
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_6
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: cda241e9f9bc11977160540bf0d45993d94e9cfb
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_7
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: 7690efd1cd264ce4137400cbba6a69d26030e1c5
+File list : .//block.h/FILE_ID_block.h_8
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 9b65d8ff1811415ba012ab0e4ec9b450738877c7
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/
+Writing: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeII4eFMIwHPF\eFMU\__content.xml
+Writing: __content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeII4eFMIwHPF/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Write Manifest... OK
+
+PRODUCTION CODE GENERATION SUCCESS
+

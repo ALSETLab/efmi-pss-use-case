@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{cb650783-f1b0-4d3e-95ed-5d2a14814093}" name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" generationDateAndTime="2026-03-03T11:25:56Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
+    <ManifestReferences>
+        <ManifestReference id="ALG_MAN_ID" manifestRefId="{5e379857-3631-4e14-bae0-e284cd1e6072}" checksum="e144568397a3657c9c3ba84bccb9351d85c41de0" origin="true"/>
+    </ManifestReferences>
+    <Files>
+        <File id="FILE_ID_galec_stl.c_0" name="galec_stl.c" path="./" needsChecksum="true" checksum="d409274d889c437c6761a367870617d188fbb8eb" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.c_1" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="70fc1a2deb93460bc20038943fb1246a3792c570" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.c_2" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="ab3029a8d70bd13dc5eaa23a436ccfd7e5fbd200" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.h_3" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="89d6122aedd38c6ac1673bcdb3544430d05572ee" role="Code"/>
+        <File id="FILE_ID_block.c_4" name="block.c" path="./" needsChecksum="true" checksum="c10b31e86fa576cd6b9313d9f3620ed888fcd5ee" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.h_5" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="a6f7448be8d3512d7d3dd8958c8a2d958862d318" role="Code"/>
+        <File id="FILE_ID_galec_stl.h_6" name="galec_stl.h" path="./" needsChecksum="true" checksum="cda241e9f9bc11977160540bf0d45993d94e9cfb" role="Code"/>
+        <File id="FILE_ID_galec_stl_configuration.h_7" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="7690efd1cd264ce4137400cbba6a69d26030e1c5" role="Code"/>
+        <File id="FILE_ID_block.h_8" name="block.h" path="./" needsChecksum="true" checksum="9b65d8ff1811415ba012ab0e4ec9b450738877c7" role="Code"/>
+    </Files>
+    <CodeContainer language="C" standard="C99" platform="Legacy" floatPrecision="32-bit">
+        <Target>Generic</Target>
+        <TargetTypes>
+            <TargetType id="TGT_ID_efmiInteger8_0" kind="efmiInteger8" codedType="signed char"/>
+            <TargetType id="TGT_ID_efmiUnsignedInteger8_1" kind="efmiUnsignedInteger8" codedType="unsigned char"/>
+            <TargetType id="TGT_ID_efmiInteger16_2" kind="efmiInteger16" codedType="signed short"/>
+            <TargetType id="TGT_ID_efmiUnsignedInteger16_3" kind="efmiUnsignedInteger16" codedType="unsigned short"/>
+            <TargetType id="TGT_ID_efmiInteger32_4" kind="efmiInteger32" codedType="signed int"/>
+            <TargetType id="TGT_ID_efmiUnsignedInteger32_5" kind="efmiUnsignedInteger32" codedType="unsigned int"/>
+            <TargetType id="TGT_ID_efmiFloat32_6" kind="efmiFloat32" codedType="float"/>
+            <TargetType id="TGT_ID_efmiFloat64_7" kind="efmiFloat64" codedType="double"/>
+            <TargetType id="TGT_ID_efmiVoid_8" kind="efmiVoid" codedType="void"/>
+            <TargetType id="TGT_ID_efmiBool_9" kind="efmiBool" codedType="bool"/>
+        </TargetTypes>
+        <CodeFiles>
+            <CodeFile id="CFILE_ID_galec_stl.c_0" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_galec_stl.c_0"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_galec_stl.h_6"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_mei_block_interface.c_1" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_mei_block_interface.c_1"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_mei_block_interface.h_5"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_sii_block_interface.c_2" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.c_2"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_sii_block_interface.h_3"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_sii_block_interface.h_3" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.h_3"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_block.h_8"/>
+                </Includes>
+                <Variables>
+                    <Variable id="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" typeDefRefId="TYPE_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" const="false" volatile="false" static="false"/>
+                </Variables>
+                <Functions>
+                    <Function id="FNC_ID_sii_Startup_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="sii_Startup_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_0" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_sii_DoStep_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_1" name="sii_DoStep_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_1" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_sii_Recalibrate_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_2" name="sii_Recalibrate_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_2" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_sii_Reinitialize_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_3" name="sii_Reinitialize_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_3" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                </Functions>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_block.c_4" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_block.c_4"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_block.h_8"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_mei_block_interface.h_5" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_mei_block_interface.h_5"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_block.h_8"/>
+                </Includes>
+                <Functions>
+                    <Function id="FNC_ID_mei_Startup_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" name="mei_Startup_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_4" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_mei_DoStep_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_5" name="mei_DoStep_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_5" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_mei_Recalibrate_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_6" name="mei_Recalibrate_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_6" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_mei_Reinitialize_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_7" name="mei_Reinitialize_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_7" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                </Functions>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_galec_stl.h_6" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_stl.h_6"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_7"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_galec_stl_configuration.h_7" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_stl_configuration.h_7"/>
+                <Typedefs>
+                    <Typedef id="TYPE_ID_bool_1" name="bool">
+                        <Alias targetTypeRefId="TGT_ID_efmiBool_9"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_SPE_Integer_2" name="SPE_Integer">
+                        <Alias targetTypeRefId="TGT_ID_efmiInteger32_4"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_SPE_Real_3" name="SPE_Real">
+                        <Alias targetTypeRefId="TGT_ID_efmiFloat32_6"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_SPE_ErrorSignal_0" name="SPE_ErrorSignal">
+                        <Alias targetTypeRefId="TGT_ID_efmiUnsignedInteger32_5"/>
+                    </Typedef>
+                </Typedefs>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_block.h_8" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_block.h_8"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_galec_stl.h_6"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_7"/>
+                </Includes>
+                <Typedefs>
+                    <Typedef id="TYPE_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" name="BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <Components>
+                            <Component id="COMP_ID_ErrorSignals_0" name="ErrorSignals" typeDefRefId="TYPE_ID_SPE_ErrorSignal_0" pointer="false"/>
+                            <Component id="COMP_ID_vSI_1" name="vSI" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_vs_2" name="vs" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_Kw_3" name="Kw" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_T1_4" name="T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_T2_5" name="T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_T3_6" name="T3" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_T4_7" name="T4" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_vSI_start_8" name="vSI_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_vsmax_9" name="vsmax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_vsmin_10" name="vsmin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_Kw_11" name="dLHPFreplacement_Kw" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_scaling_factor_12" name="dLHPFreplacement_scaling_factor" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_highPassFilter_y_start_13" name="dLHPFreplacement_highPassFilter_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_matchGain_k_14" name="dLHPFreplacement_matchGain_k" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_T1_15" name="imLeadLag_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_T2_16" name="imLeadLag_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_T2_dummy_17" name="imLeadLag_T2_dummy" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_TF_a_18" name="imLeadLag_TF_a" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="2"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_imLeadLag_TF_b_19" name="imLeadLag_TF_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="2"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_imLeadLag_TF_bb_20" name="imLeadLag_TF_bb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="2"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_imLeadLag_TF_d_21" name="imLeadLag_TF_d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_TF_y_start_22" name="imLeadLag_TF_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_T1_23" name="imLeadLag1_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_T2_24" name="imLeadLag1_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_T2_dummy_25" name="imLeadLag1_T2_dummy" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_TF_a_26" name="imLeadLag1_TF_a" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="2"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_imLeadLag1_TF_b_27" name="imLeadLag1_TF_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="2"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_imLeadLag1_TF_bb_28" name="imLeadLag1_TF_bb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="2"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_imLeadLag1_TF_d_29" name="imLeadLag1_TF_d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_TF_y_start_30" name="imLeadLag1_TF_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_limiter_uMax_31" name="limiter_uMax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_limiter_uMin_32" name="limiter_uMin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_y_start_33" name="dLHPFreplacement_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_highPassFilter_gain_34" name="dLHPFreplacement_highPassFilter_gain" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_highPassFilter_r_35" name="dLHPFreplacement_highPassFilter_r" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="1"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_dLHPFreplacement_highPassFilter_u_nominal_36" name="dLHPFreplacement_highPassFilter_u_nominal" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_K_37" name="imLeadLag_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_y_start_38" name="imLeadLag_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_K_39" name="imLeadLag1_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_y_start_40" name="imLeadLag1_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_discrete_stepSize_41" name="discrete_stepSize" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_dLHPFreplacement_highPassFilter_x_1_42" name="der_dLHPFreplacement_highPassFilter_x_1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_highPassFilter_x_43" name="dLHPFreplacement_highPassFilter_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="1"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_der_imLeadLag_TF_x_scaled_1_44" name="der_imLeadLag_TF_x_scaled_1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_TF_x_scaled_45" name="imLeadLag_TF_x_scaled" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="1"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_der_imLeadLag1_TF_x_scaled_1_46" name="der_imLeadLag1_TF_x_scaled_1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_TF_x_scaled_47" name="imLeadLag1_TF_x_scaled" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+<Dimensions>
+    <Dimension number="0" size="1"/>
+</Dimensions>
+                            </Component>
+                            <Component id="COMP_ID_discrete_stepSize_active_48" name="discrete_stepSize_active" typeDefRefId="TYPE_ID_bool_1" pointer="false"/>
+                        </Components>
+                    </Typedef>
+                </Typedefs>
+                <Functions>
+                    <Function id="FNC_ID_Startup_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_8" name="Startup_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_8" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_DoStep_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_9" name="DoStep_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_9" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_Recalibrate_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_10" name="Recalibrate_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_10" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                    <Function id="FNC_ID_Reinitialize_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_11" name="Reinitialize_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                        <ReturnParameter id="AUX_ID_11" typeDefRefId="TYPE_ID_bool_1"/>
+                    </Function>
+                </Functions>
+            </CodeFile>
+        </CodeFiles>
+        <TechnicalInformationLookUps>
+            <DeclaredTypedefs>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_SPE_ErrorSignal_0"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_bool_1"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_SPE_Integer_2"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_SPE_Real_3"/>
+                <DeclaredTypedef typeDefRefId="TYPE_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiInteger8_0"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiUnsignedInteger8_1"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiInteger16_2"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiUnsignedInteger16_3"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiInteger32_4"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiUnsignedInteger32_5"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiFloat32_6"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiFloat64_7"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiVoid_8"/>
+                <DeclaredTypedef typeDefRefId="TGT_ID_efmiBool_9"/>
+            </DeclaredTypedefs>
+            <GlobalAccessableDataElements>
+                <GlobalAccessableDataElement variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0"/>
+            </GlobalAccessableDataElements>
+        </TechnicalInformationLookUps>
+        <LogicalData>
+            <DataReferences>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="block:fake-signal-variable-anchor"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.ErrorSignals"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="vSI"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.vSI"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="vs"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.vs"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Kw"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.Kw"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="T1"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.T1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="T2"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.T2"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="T3"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.T3"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="T4"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.T4"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="vSI_start"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.vSI_start"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="vsmax"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.vsmax"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="vsmin"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.vsmin"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.Kw'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_Kw"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.scaling_factor'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_scaling_factor"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.highPassFilter.y_start'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_highPassFilter_y_start"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.matchGain.k'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_matchGain_k"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.T1'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_T1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.T2'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_T2"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.T2_dummy'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_T2_dummy"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.TF.a'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_TF_a"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.TF.b'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_TF_b"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.TF.bb'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_TF_bb"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.TF.d'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_TF_d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.TF.y_start'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_TF_y_start"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.T1'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_T1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.T2'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_T2"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.T2_dummy'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_T2_dummy"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.TF.a'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_TF_a"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.TF.b'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_TF_b"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.TF.bb'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_TF_bb"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.TF.d'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_TF_d"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.TF.y_start'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_TF_y_start"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'limiter.uMax'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.limiter_uMax"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'limiter.uMin'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.limiter_uMin"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.y_start'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_y_start"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.highPassFilter.gain'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_highPassFilter_gain"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.highPassFilter.r'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_highPassFilter_r"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.highPassFilter.u_nominal'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_highPassFilter_u_nominal"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.K'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_K"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.y_start'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_y_start"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.K'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_K"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.y_start'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_y_start"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'discrete.stepSize'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.discrete_stepSize"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(dLHPFreplacement.highPassFilter.x[1])'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_dLHPFreplacement_highPassFilter_x_1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.highPassFilter.x'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.dLHPFreplacement_highPassFilter_x"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(imLeadLag.TF.x_scaled[1])'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_imLeadLag_TF_x_scaled_1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.TF.x_scaled'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag_TF_x_scaled"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(imLeadLag1.TF.x_scaled[1])'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_imLeadLag1_TF_x_scaled_1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag1.TF.x_scaled'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_TF_x_scaled"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'discrete.stepSize.active'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.discrete_stepSize_active"/>
+                </DataReference>
+            </DataReferences>
+            <FunctionReferences>
+                <FunctionReference>
+                    <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Startup()"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_Startup_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0"/>
+                </FunctionReference>
+                <FunctionReference>
+                    <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="DoStep()"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_DoStep_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_1"/>
+                </FunctionReference>
+                <FunctionReference>
+                    <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Recalibrate()"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_Recalibrate_H5c7c34ce7712349bc30946c5d92dc9ea8a018198_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_2"/>
+                </FunctionReference>
+            </FunctionReferences>
+        </LogicalData>
+    </CodeContainer>
+</Manifest>

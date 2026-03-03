@@ -1,5 +1,6 @@
 within OpenIPSL_CHIL.Generator.PSSTypeIIHPFilterMSL;
-model GenPSSTypeIIHPFilter_eFMU "Similar to GenPSSTypeIIHPFilter, but"
+model GenPSSTypeIIHPFilter_eFMU
+  "Similar to GenPSSTypeIIHPFilter, but now uses the efmu generated for the PSS."
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,

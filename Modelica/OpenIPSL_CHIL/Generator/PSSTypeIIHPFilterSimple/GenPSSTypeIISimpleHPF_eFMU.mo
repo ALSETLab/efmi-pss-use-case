@@ -1,6 +1,6 @@
-within OpenIPSL_CHIL.Generator.PSSTypeIIParam;
-model GenPSSTypeIIParam_eFMU
-  "Similar to GenPSSTypeIIParam, but now uses the efmu generated for the PSS."
+within OpenIPSL_CHIL.Generator.PSSTypeIIHPFilterSimple;
+model GenPSSTypeIISimpleHPF_eFMU
+  "Similar to GenPSSTypeIIHPFilter, but now uses the efmu generated for the PSS."
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
@@ -31,7 +31,7 @@ model GenPSSTypeIIParam_eFMU
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  'PSSTypeIIParam.eFMU_SiL_Support'.BinaryStub           pss(Kw = 10.8, T1 = 0.278203917593164, T2 = 0.0551479681529786, T3 = 0.278203917593164, T4 = 0.0551479681529786, Tw = 5.0, vsmax = 0.2, vsmin = -0.2) annotation(
+  'PSSTypeIIHPFilter.eFMU_SiL_Support'.BinaryStub pss(Kw = 10.8, T1 = 0.278203917593164, T2 = 0.0551479681529786, T3 = 0.278203917593164, T4 = 0.0551479681529786, vsmax = 0.2, vsmin = -0.2) annotation(
     Placement(transformation(origin={-46,10},    extent={{-40,-10},{-20,10}})));
 equation
   connect(avr.vf, machine.vf) annotation(
@@ -49,12 +49,23 @@ equation
   connect(pss.vs, avr.vs)
     annotation (Line(points={{-65,10},{-44.3333,10}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-140,-100},{100,100}}, grid={2,
-            2})), Icon(coordinateSystem(grid={2,2}), graphics={
+            2}), graphics={Text(
+          extent={{-106,-4},{-20,-52}},
+          textColor={238,46,47},
+          textString="Needs to be 
+replaced with 
+corresponding 
+binary stub!"), Rectangle(
+          extent={{-58,-56},{-24,-66}},
+          lineColor={28,108,200},
+          fillColor={238,46,47},
+          fillPattern=FillPattern.Solid)}),
+                  Icon(coordinateSystem(grid={2,2}), graphics={
         Rectangle(
           extent={{-48,-92},{52,-52}},
           lineColor={95,95,95},
           pattern=LinePattern.None,
-          fillColor={255,255,255},
+          fillColor={0,255,0},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -217,11 +228,11 @@ equation
           extent={{-40,-86},{42,-58}},
           lineColor={95,95,95},
           pattern=LinePattern.None,
-          fillColor={249,249,249},
+          fillColor={170,255,170},
           fillPattern=FillPattern.Solid,
           radius=10),    Text(
           extent={{-40,-52},{40,-92}},
-          lineColor={0,140,72},
+          lineColor={0,0,255},
           textString="eFMU"),
         Rectangle(
           extent={{8,-88},{12,-100}},
@@ -244,4 +255,4 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0})}));
-end GenPSSTypeIIParam_eFMU;
+end GenPSSTypeIISimpleHPF_eFMU;

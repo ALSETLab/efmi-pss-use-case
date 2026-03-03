@@ -11,7 +11,7 @@ model GenPSS4efmiDLvarClocked
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  PSSDesign.Components.PSSTypeII4eFMI pss(
+  PSSDesign.Components.PSS.PSSTypeII4eFMI pss(
     Kw=10.8,
     T1=0.278203917593164,
     T2=0.0551479681529786,
@@ -19,8 +19,8 @@ model GenPSS4efmiDLvarClocked
     T4=0.0551479681529786,
     Tw=5.0,
     vsmax=0.2,
-    vsmin=-0.2) annotation (Placement(transformation(origin={-47,10}, extent={
-            {-38,-10},{-19,10}})));
+    vsmin=-0.2) annotation (Placement(transformation(origin={-47,10}, extent={{
+            -38,-10},{-19,10}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
     period(displayUnit="ms") = 0.001,
     useSolver=true,

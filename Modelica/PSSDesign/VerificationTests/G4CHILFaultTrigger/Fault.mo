@@ -8,9 +8,8 @@ model Fault "Model to replicate fault triggering test"
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   eFMU4CHIL.Grid4CHILTesting G4CHIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-  Components.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
-                                             annotation (Placement(
-        transformation(
+  Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
+    annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-90,-70})));

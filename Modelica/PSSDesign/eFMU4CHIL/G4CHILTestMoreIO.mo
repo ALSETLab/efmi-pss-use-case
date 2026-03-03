@@ -61,7 +61,7 @@ model G4CHILTestMoreIO "System model for CHIL testing with more I/O"
           extent={{-140,-80},{-100,-40}})));
   Modelica.Blocks.Sources.RealExpression uPLoadIn(y=uPLoad)
     "Maps in the input pin uPLoad"
-    annotation (Placement(transformation(extent={{0,66},{20,86}})));
+    annotation (Placement(transformation(extent={{0,74},{20,94}})));
   Modelica.Blocks.Sources.BooleanExpression faultL1In(y=faultL1)
     "Maps the input faultL1"
     annotation (Placement(transformation(extent={{12,-4},{26,16}})));
@@ -85,14 +85,14 @@ equation
   connect(pwFault4efmi.trip, fault) annotation (Line(points={{43.3333,-70},{52,
           -70},{52,-94},{-60,-94},{-60,-120}},
                                            color={255,0,255}));
-  connect(uPLoadIn.y, load_ExtInput.u)
-    annotation (Line(points={{21,76},{24.5,76},{24.5,58.1}}, color={0,0,127}));
   connect(faultL1In.y, L1.trip)
     annotation (Line(points={{26.7,6},{30,6},{30,14}}, color={255,0,255}));
   connect(faultL2In.y, L2.trip) annotation (Line(points={{26.7,-38},{30,-38},{
           30,-26}}, color={255,0,255}));
   connect(G1.u, vf) annotation (Line(points={{-100.8,0},{-110,0},{-110,60},{
           -120,60}}, color={0,0,127}));
+  connect(uPLoadIn.y, iSrcLoad.iMag) annotation (Line(points={{21,84},{52,84},{
+          52,60},{42,60}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},

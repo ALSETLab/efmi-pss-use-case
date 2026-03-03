@@ -12,7 +12,7 @@ partial model PartialNetwork4efmu
             {20,10}},                                                                              rotation = 0)));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(Sn(displayUnit = "V.A") = 2220000000, V_b = 400000, Vn = 400000, rT = 0, xT = 0.15) annotation(
     Placement(visible = true, transformation(origin = {12, 0}, extent = {{-50, -10}, {-30, 10}}, rotation = 0)));
-  Components.PwLine4efmi L1(
+  Components.Auxiliary.PwLine4efmi L1(
     B=0,
     G=0,
     R=0,
@@ -21,7 +21,7 @@ partial model PartialNetwork4efmu
         origin={0,0},
         extent={{20,10},{40,30}},
         rotation=0)));
-  Components.PwLine4efmi L2(
+  Components.Auxiliary.PwLine4efmi L2(
     B=0,
     G=0,
     R=0,
@@ -32,9 +32,11 @@ partial model PartialNetwork4efmu
         rotation=0)));
   OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(P_0 = -1998000000, Q_0 = 87066000, angle_0 = 0, v_0 = 0.90081) annotation(
     Placement(visible = true, transformation(origin = {80, 0}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
-  Components.PwFault4efmi            pwFault4efmi(
-                                             R = 0, X = 0.01*100/2220)                      annotation(
-    Placement(visible = true, transformation(origin={0,-20},  extent = {{20, -60}, {40, -40}}, rotation = 0)));
+  Components.Auxiliary.PwFault4efmi pwFault4efmi(R=0, X=0.01*100/2220)
+    annotation (Placement(visible=true, transformation(
+        origin={0,-20},
+        extent={{20,-60},{40,-40}},
+        rotation=0)));
   Modelica.Blocks.Sources.BooleanExpression tripL2(y=false)
     "Default false = off" annotation (Placement(transformation(
         extent={{-6,-7},{6,7}},

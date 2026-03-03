@@ -11,8 +11,7 @@ model GenPSS4efmiHPFvar
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  Components.PSSTypeII4eFMIwHPFilter
-                            pss(
+  Components.PSS.PSSTypeII4eFMIwHPFilter pss(
     Kw=10.8,
     T1=0.278203917593164,
     T2=0.0551479681529786,
@@ -20,8 +19,8 @@ model GenPSS4efmiHPFvar
     T4=0.0551479681529786,
     Tw=5.0,
     vsmax=0.2,
-    vsmin=-0.2) annotation (Placement(transformation(origin={-40,10}, extent={{-40,-10},
-            {-20,10}})));
+    vsmin=-0.2) annotation (Placement(transformation(origin={-40,10}, extent={{
+            -40,-10},{-20,10}})));
 equation
   connect(avr.vf, machine.vf) annotation(
     Line(points = {{-4.33333, 20}, {4, 20}, {4, 20.5}, {11.8, 20.5}}, color = {0, 0, 127}));

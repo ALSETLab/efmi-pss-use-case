@@ -10,7 +10,7 @@ package Test "Test models for different uses of the GridForHILTesting model."
       annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
     eFMUs4RTHIL.GridForHILTesting G4HIL
       annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-    Components.FaultTimerLogic faultTimerLogic annotation (Placement(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic annotation (Placement(
           transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
@@ -49,7 +49,7 @@ package Test "Test models for different uses of the GridForHILTesting model."
       annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
     eFMUs4RTHIL.GridForHILTesting G4HIL
       annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-    Components.FaultTimerLogic faultTimerLogic annotation (Placement(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic annotation (Placement(
           transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
@@ -105,7 +105,7 @@ package Test "Test models for different uses of the GridForHILTesting model."
     'GridForHILTesting.eFMU_SiL_Support'.BinaryStub
                                   G4HIL
       annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-    Components.FaultTimerLogic faultTimerLogic annotation (Placement(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic annotation (Placement(
           transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,

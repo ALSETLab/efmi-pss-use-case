@@ -35,7 +35,7 @@ package efmiIntegration "Examples for the eFMI Integration Process"
       Generator.GenTemplate
       annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),
         choicesAllMatching=true);
-    Components.FaultTimerLogic faultTimerLogic annotation (Placement(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic annotation (Placement(
           transformation(
           extent={{-10,10},{10,-10}},
           rotation=180,

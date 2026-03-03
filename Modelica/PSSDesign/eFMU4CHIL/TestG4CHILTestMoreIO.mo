@@ -11,9 +11,8 @@ package TestG4CHILTestMoreIO
       annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
     G4CHILTestMoreIO G4CHIL(G1(avr(K0=30)))
       annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-    Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
-                                               annotation (Placement(
-          transformation(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+      annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-50,-50})));
@@ -30,13 +29,13 @@ package TestG4CHILTestMoreIO
       offset=0,
       startTime=20) "Introduce a step at the load input"
       annotation (Placement(transformation(extent={{-100,-30},{-80,-10}})));
-    Components.FaultTimerLogic faultL1(ton=10.5, toff=10.525) annotation (
-        Placement(transformation(
+    Components.Auxiliary.FaultTimerLogic faultL1(ton=10.5, toff=10.525)
+      annotation (Placement(transformation(
           extent={{4,-4},{-4,4}},
           rotation=270,
           origin={0,-44})));
-    Components.FaultTimerLogic faultL2(ton=15.5, toff=15.55) annotation (
-        Placement(transformation(
+    Components.Auxiliary.FaultTimerLogic faultL2(ton=15.5, toff=15.55)
+      annotation (Placement(transformation(
           extent={{4,-4},{-4,4}},
           rotation=270,
           origin={12,-44})));
@@ -100,19 +99,18 @@ package TestG4CHILTestMoreIO
       annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
     Modelica.Clocked.RealSignals.Sampler.SampleClocked samplerPload
       annotation (Placement(transformation(extent={{-58,-14},{-46,-26}})));
-    Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
-                                               annotation (Placement(
-          transformation(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+      annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-50,-50})));
-    Components.FaultTimerLogic faultL1(ton=10.5, toff=10.525) annotation (
-        Placement(transformation(
+    Components.Auxiliary.FaultTimerLogic faultL1(ton=10.5, toff=10.525)
+      annotation (Placement(transformation(
           extent={{4,-4},{-4,4}},
           rotation=270,
           origin={0,-44})));
-    Components.FaultTimerLogic faultL2(ton=15.5, toff=15.55) annotation (
-        Placement(transformation(
+    Components.Auxiliary.FaultTimerLogic faultL2(ton=15.5, toff=15.55)
+      annotation (Placement(transformation(
           extent={{4,-4},{-4,4}},
           rotation=270,
           origin={12,-44})));
@@ -189,19 +187,18 @@ package TestG4CHILTestMoreIO
       annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
     Modelica.Clocked.RealSignals.Sampler.SampleClocked samplerPload
       annotation (Placement(transformation(extent={{-58,-14},{-46,-26}})));
-    Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
-                                               annotation (Placement(
-          transformation(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+      annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-50,-50})));
-    Components.FaultTimerLogic faultL1(ton=10.5, toff=10.525) annotation (
-        Placement(transformation(
+    Components.Auxiliary.FaultTimerLogic faultL1(ton=10.5, toff=10.525)
+      annotation (Placement(transformation(
           extent={{4,-4},{-4,4}},
           rotation=270,
           origin={0,-44})));
-    Components.FaultTimerLogic faultL2(ton=15.5, toff=15.55) annotation (
-        Placement(transformation(
+    Components.Auxiliary.FaultTimerLogic faultL2(ton=15.5, toff=15.55)
+      annotation (Placement(transformation(
           extent={{4,-4},{-4,4}},
           rotation=270,
           origin={12,-44})));

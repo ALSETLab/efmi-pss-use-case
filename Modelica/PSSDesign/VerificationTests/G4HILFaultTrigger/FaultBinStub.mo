@@ -11,9 +11,8 @@ model FaultBinStub
                                 G4HIL(__defining_code=
         'Grid4HIL.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-  Components.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
-                                             annotation (Placement(
-        transformation(
+  Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
+    annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-90,-70})));

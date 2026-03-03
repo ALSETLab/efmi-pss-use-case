@@ -12,7 +12,7 @@ partial model PartialNetwork4efmuVariant
             {20,10}},                                                                              rotation = 0)));
   OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(Sn(displayUnit = "V.A") = 2220000000, V_b = 400000, Vn = 400000, rT = 0, xT = 0.15) annotation(
     Placement(visible = true, transformation(origin = {12, 0}, extent = {{-50, -10}, {-30, 10}}, rotation = 0)));
-  Components.PwLine4efmi L1(
+  Components.Auxiliary.PwLine4efmi L1(
     B=0,
     G=0,
     R=0,
@@ -21,7 +21,7 @@ partial model PartialNetwork4efmuVariant
         origin={0,0},
         extent={{20,10},{40,30}},
         rotation=0)));
-  Components.PwLine4efmi L2(
+  Components.Auxiliary.PwLine4efmi L2(
     B=0,
     G=0,
     R=0,
@@ -34,18 +34,16 @@ partial model PartialNetwork4efmuVariant
     P_0=-1998000000,
     Q_0=87066000,                                                                      angle_0 = 0, v_0 = 0.90081) annotation(
     Placement(visible = true, transformation(origin = {80, 0}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
-  Components.PwFault4efmi            pwFault4efmi(
-                                             R = 0, X = 0.01*100/2220)                      annotation(
-    Placement(visible = true, transformation(origin={0,-20},  extent = {{20, -60}, {40, -40}}, rotation = 0)));
-  OpenIPSL.Electrical.Loads.PSSE.Load_ExtInput load_ExtInput(
-    P_0=0,
-    Q_0=0,
-    d_P=0.0,
-    t1=Modelica.Constants.inf,
-    d_t=0.1)          annotation (Placement(transformation(
+  Components.Auxiliary.PwFault4efmi pwFault4efmi(R=0, X=0.01*100/2220)
+    annotation (Placement(visible=true, transformation(
+        origin={0,-20},
+        extent={{20,-60},{40,-40}},
+        rotation=0)));
+  Components.Auxiliary.iSrcLoad                iSrcLoad
+                      annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=90,
-        origin={30,50})));
+        rotation=0,
+        origin={30,60})));
 equation
   connect(B1.p, transformer.p) annotation(
     Line(points = {{-60, 0}, {-39, 0}}, color = {0, 0, 255}));
@@ -63,8 +61,8 @@ equation
         color={0,0,255}));
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
-  connect(load_ExtInput.p, B2.p)
-    annotation (Line(points={{20,50},{0,50},{0,0}}, color={0,0,255}));
+  connect(iSrcLoad.p, B2.p)
+    annotation (Line(points={{19,60},{0,60},{0,0}}, color={0,0,255}));
   annotation (Icon(graphics={
         Ellipse(lineColor={127,0,127},
                 extent={{-100,-100},{100,100}},

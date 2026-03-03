@@ -9,9 +9,8 @@ model FaultClocked
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
   eFMUs4RTHIL.GridForHILTesting G4HIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-  Components.FaultTimerLogic faultTimerLogic(ton=10, toff=10.05)
-                                             annotation (Placement(
-        transformation(
+  Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10, toff=10.05)
+    annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={-90,-70})));

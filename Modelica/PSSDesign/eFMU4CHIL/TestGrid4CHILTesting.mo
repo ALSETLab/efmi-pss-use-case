@@ -11,9 +11,8 @@ package TestGrid4CHILTesting
       annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
     Grid4CHILTesting G4CHIL(G1(avr(K0=30)))
       annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-    Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
-                                               annotation (Placement(
-          transformation(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+      annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-90,-70})));
@@ -54,9 +53,8 @@ package TestGrid4CHILTesting
       annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
     Grid4CHILTesting G4CHIL(G1(avr(K0=30)))
       annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-    Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
-                                               annotation (Placement(
-          transformation(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+      annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-90,-70})));
@@ -114,9 +112,8 @@ package TestGrid4CHILTesting
     'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub
                      G4CHIL
       annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
-    Components.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
-                                               annotation (Placement(
-          transformation(
+    Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+      annotation (Placement(transformation(
           extent={{-10,-10},{10,10}},
           rotation=0,
           origin={-90,-70})));

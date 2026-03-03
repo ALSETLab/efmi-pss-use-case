@@ -64,7 +64,7 @@ package PSSTypeII4eFMIwHPF_SiLTest_generated "Test scenarios of original experim
         <a href=\"modelica://PSSDesign.Components.PSSTypeII4eFMIwHPFilter\">PSSDesign.Components.PSSTypeII4eFMIwHPFilter</a>
         (eBlock) defining one test scenario according to eFMU generation
         configuration
-        <a href=\"modelica://PSSDesign.Components.PSSTypeII4eFMIwHPFilter_eFMU\">PSSDesign.Components.PSSTypeII4eFMIwHPFilter_eFMU</a>.
+        <a href=\"modelica://PSSDesign.Components.PSS.eFMUConfig.PSSTypeII4eFMIwHPFilter_eFMU\">PSSDesign.Components.PSSTypeII4eFMIwHPFilter_eFMU</a>.
         </p>
         <p>
         The contained test scenarios are used as basis for a Dymola-administered

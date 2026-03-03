@@ -1,4 +1,5 @@
 within ;
+
 package
   'eFMU experiment package (PSSTypeII4eFMI, PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked)'
   "Test scenarios of original experiment
@@ -62,7 +63,7 @@ package
         <a href=\"modelica://PSSDesign.Components.PSSTypeII4eFMI\">PSSDesign.Components.PSSTypeII4eFMI</a>
         (eBlock) defining one test scenario according to eFMU generation
         configuration
-        <a href=\"modelica://PSSDesign.Components.PSSTypeII4eFMI_eFMU\">PSSDesign.Components.PSSTypeII4eFMI_eFMU</a>.
+        <a href=\"modelica://PSSDesign.Components.PSS.eFMUConfig.PSSTypeII4eFMI_eFMU\">PSSDesign.Components.PSSTypeII4eFMI_eFMU</a>.
         </p>
         <p>
         The contained test scenarios are used as basis for a Dymola-administered

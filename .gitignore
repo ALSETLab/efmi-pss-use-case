@@ -2,47 +2,16 @@
 # https://modelica.org/
 # Ignore temporary files, build results, simulation files
 
-## Modelica-specific files
+# Ignore Modelica backup files
 *~
 *.bak
 *.bak-mo
-*.mof
-\#*\#
-*.moe
-*.mol
 
-## Build artefacts
-*.exe
-*.exp
-*.o
-*.pyc
-
-## Simulation files
-*.mat
-
-## Package files
-*.gz
-*.rar
-*.tar
-*.zip
-
-## Dymola-specific files
-buildlog.txt
-dsfinal.txt
-dsin.txt
-dslog.txt
-dsmodel*
-dsres.txt
-dymosim*
-request
-stat
-status
-stop
-success
-*.
-
-## Ignore DymolaEmbedded sub-directory within the ./Modelica/work directory
-Modelica/work/DymolaEmbedded
-
-## Ignore modelDescription.xml generated in the ./Modelica/work directory
-modelDescription.xml
+# Ignore content of Modelica work directory, except generated FMUs and eFMUs:
+Modelica/work/**
+Modelica/work/Grid4CHILTesting
+Modelica/work/GridForHILTesting
+Modelica/work/PSSTypeII4eFMI
+!Modelica/work/'eFMU experiment package (Grid4CHILTesting, PSSDesign.eFMU4CHIL.TestGridForCHILpClocked)'
+!Modelica/work/'eFMU experiment package (GridForHILTesting, PSSDesign.eFMUs4RTHIL.TestGridForHILClocked)'
+!Modelica/work/'eFMU experiment package (PSSTypeII4eFMI, PSSDesign.Components.TestComponents.Example_3_PSSDesign4PSSVariantClocked)'

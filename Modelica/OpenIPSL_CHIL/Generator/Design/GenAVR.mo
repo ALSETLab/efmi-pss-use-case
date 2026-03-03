@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Generator;
+within OpenIPSL_CHIL.Generator.Design;
 model GenAVR "Generator with AVR (no PSS)"
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(

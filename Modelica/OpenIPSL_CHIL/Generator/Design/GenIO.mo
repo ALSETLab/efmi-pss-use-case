@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Generator;
+within OpenIPSL_CHIL.Generator.Design;
 model GenIO
   "Generator, only synchronous machine with IO for linearization (no AVR, no PSS)"
   extends OpenIPSL_CHIL.Generator.GenTemplate;

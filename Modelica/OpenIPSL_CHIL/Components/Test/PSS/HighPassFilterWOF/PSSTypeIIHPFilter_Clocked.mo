@@ -3,7 +3,7 @@ model PSSTypeIIHPFilter_Clocked
   "Similar to ../TestGenPSSDesign, configured to test PSSTypeII4eFMIwHPFilter with a clocked partition"
   extends Network.PartialNetwork;
   extends Modelica.Icons.Example;
-  replaceable Generator.GenPSS4efmiHPFvarClocked
+  replaceable Generator.PSSTypeIIHPFilterMSL.GenPSSTypeIIHPFilter_Clocked
                                            G1(displayPF=false)
     constrainedby Generator.GenTemplate
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),

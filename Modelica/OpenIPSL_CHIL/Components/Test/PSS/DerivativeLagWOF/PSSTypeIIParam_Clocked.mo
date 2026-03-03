@@ -3,7 +3,7 @@ model PSSTypeIIParam_Clocked
   "Similar to ../TestGenPSSDesign, configured the PSSTypeII4eFMI model with a clocked partition."
   extends Network.PartialNetwork;
   extends Modelica.Icons.Example;
-  replaceable Generator.GenPSS4efmiDLvarClocked
+  replaceable Generator.PSSTypeIIParam.GenPSSTypeIIParam_Clocked
                                            G1(displayPF=false)
     constrainedby Generator.GenTemplate
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),

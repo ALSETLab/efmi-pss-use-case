@@ -3,7 +3,8 @@ model PSSTypeIIParam
   "Similar to ../Reference, but with G1.pss configured with PSSTypeII4eFMI model."
   extends Network.PartialNetwork;
   extends Modelica.Icons.Example;
-  replaceable Generator.GenPSS4efmiDLvar   G1(displayPF=false)
+  replaceable Generator.PSSTypeIIParam.GenPSSTypeIIParam
+                                           G1(displayPF=false)
     constrainedby Generator.GenTemplate
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),
       choicesAllMatching=true);

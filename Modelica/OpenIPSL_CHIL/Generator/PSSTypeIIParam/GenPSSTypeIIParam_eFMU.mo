@@ -1,6 +1,6 @@
-within OpenIPSL_CHIL.Generator;
-model GenPSSeFMUeBlockDLvar
-  "Plant model that replaces PSS model with eFMU binary code. Uses derivative lag block for the wahsout filter in PSS."
+within OpenIPSL_CHIL.Generator.PSSTypeIIParam;
+model GenPSSTypeIIParam_eFMU
+  "Similar to GenPSSTypeIIParam, but now uses the efmu generated for the PSS."
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
@@ -54,7 +54,7 @@ equation
           extent={{-48,-92},{52,-52}},
           lineColor={95,95,95},
           pattern=LinePattern.None,
-          fillColor={100,187,75},
+          fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -217,11 +217,11 @@ equation
           extent={{-40,-86},{42,-58}},
           lineColor={95,95,95},
           pattern=LinePattern.None,
-          fillColor={130,238,94},
+          fillColor={215,215,215},
           fillPattern=FillPattern.Solid,
           radius=10),    Text(
           extent={{-40,-52},{40,-92}},
-          lineColor={0,0,255},
+          lineColor={0,140,72},
           textString="eFMU"),
         Rectangle(
           extent={{8,-88},{12,-100}},
@@ -244,4 +244,4 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0})}));
-end GenPSSeFMUeBlockDLvar;
+end GenPSSTypeIIParam_eFMU;

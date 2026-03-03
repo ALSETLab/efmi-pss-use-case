@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Generator;
+within OpenIPSL_CHIL.Generator.Design;
 model GenAVRIO "Generator with AVR and I/O for linearization"
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(

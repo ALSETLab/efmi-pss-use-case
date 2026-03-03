@@ -1,6 +1,5 @@
-within OpenIPSL_CHIL.Generator;
-model GenPSSeFMUeBlockHPFvar
-  "Plant model that replaces PSS model with eFMU binary code.  Uses PSS variant with HP filter instead of a derivative lag."
+within OpenIPSL_CHIL.Generator.PSSTypeIIHPFilterMSL;
+model GenPSSTypeIIHPFilter_eFMU "Similar to GenPSSTypeIIHPFilter, but"
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
@@ -244,4 +243,4 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0})}));
-end GenPSSeFMUeBlockHPFvar;
+end GenPSSTypeIIHPFilter_eFMU;

@@ -4,7 +4,8 @@ model SysWithPSS4eFMIandGrid4efmiExport
   extends Modelica.Icons.Example;
   extends Network.PartialNetwork4efmu;
 
-  replaceable Generator.GenPSS4efmiDLvar   G1(displayPF=false) constrainedby
+  replaceable Generator.PSSTypeIIParam.GenPSSTypeIIParam
+                                           G1(displayPF=false) constrainedby
     Generator.GenTemplate
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),
       choicesAllMatching=true);

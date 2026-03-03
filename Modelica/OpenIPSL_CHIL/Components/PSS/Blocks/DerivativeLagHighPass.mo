@@ -47,6 +47,12 @@ equation
   connect(matchGain.y, y) annotation (Line(points={{41,0},{100,0}}, color={0,0,127}));
 
   annotation (Icon(graphics={
+        Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={28,108,200},
+          lineThickness=1,
+          fillColor={255,170,213},
+          fillPattern=FillPattern.Solid),
       Text(extent={{-60,82},{60,22}}, textColor={0,0,255}, textString="Kw*Tw*s"),
       Line(points={{-62,0},{66,0}}, color={0,0,255}, smooth=Smooth.Bezier, thickness=0.5),
       Text(extent={{-60,-20},{60,-80}}, textColor={0,0,255}, textString="1+sTw")}));

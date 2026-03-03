@@ -3,7 +3,7 @@ model G4CHILTestMoreIO "System model for CHIL testing with more I/O"
   extends Modelica.Icons.Example;
   extends Network.PartialNetwork4efmuVariant;
 
-  replaceable Generator.GenAVRIO           G1(displayPF=false, K0=K0)
+  replaceable Generator.Design.GenAVRIO    G1(displayPF=false, K0=K0)
     constrainedby Generator.GenTemplate
     annotation (Placement(transformation(extent={{-98,-14},{-70,14}})),
       choicesAllMatching=true);

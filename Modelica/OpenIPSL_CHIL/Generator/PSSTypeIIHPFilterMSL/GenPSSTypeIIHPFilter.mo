@@ -1,6 +1,6 @@
-within OpenIPSL_CHIL.Generator;
-model GenPSS4efmiDLvar
-  "Generator with AVR and designed PSS modified for efmi export. Uses derivative lag block for the wahsout filter in PSS."
+within OpenIPSL_CHIL.Generator.PSSTypeIIHPFilterMSL;
+model GenPSSTypeIIHPFilter
+  "Generator with AVR and designed PSS modified for efmi export, PSSTypeIIHPFilter."
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
@@ -31,7 +31,7 @@ model GenPSS4efmiDLvar
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  Components.PSS.PSSTypeIIParam pss(
+  Components.PSS.PSSTypeIIHPFilter pss(
     Kw=10.8,
     T1=0.278203917593164,
     T2=0.0551479681529786,
@@ -61,7 +61,7 @@ equation
           extent={{-46,-96},{54,-56}},
           lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={130,238,94},
+          fillColor={255,170,213},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -241,7 +241,7 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),Text(
-          extent={{-38,-56},{46,-94}},
+          extent={{-38,-58},{46,-96}},
           textColor={0,0,255},
           textString="PSS4eFMI")}));
-end GenPSS4efmiDLvar;
+end GenPSSTypeIIHPFilter;

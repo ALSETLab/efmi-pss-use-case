@@ -3,7 +3,7 @@ model GridForHILTesting "System model for HIL testing"
   extends Modelica.Icons.Example;
   extends Network.PartialNetwork4efmu;
 
-  replaceable Generator.GenIO              G1(displayPF=false) constrainedby
+  replaceable Generator.Design.GenIO       G1(displayPF=false) constrainedby
     Generator.GenTemplate
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})),
       choicesAllMatching=true);

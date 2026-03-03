@@ -17,7 +17,7 @@ model PartNet4efmuVariant "Tests the PartialNetwork4efmuVariant model"
         extent={{10,-10},{-10,10}},
         rotation=0,
         origin={70,-70})));
-  Generator.GenPSSDesign G1
+  Generator.Design.GenPSSDesign G1
     annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
   Modelica.Blocks.Math.Add add annotation (Placement(transformation(
         extent={{-5,-5},{5,5}},

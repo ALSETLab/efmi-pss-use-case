@@ -1,5 +1,6 @@
-within OpenIPSL_CHIL.Generator;
-model GenPSSDesign "Generator with AVR and designed PSS"
+within OpenIPSL_CHIL.Generator.Design;
+model GenPSS
+  "Generator with AVR and PSS with default parameters (to be used as starting point to test the design)"
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
@@ -30,8 +31,8 @@ model GenPSSDesign "Generator with AVR and designed PSS"
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(Kw = 10.8, T1 = 0.278203917593164, T2 = 0.0551479681529786, T3 = 0.278203917593164, T4 = 0.0551479681529786, Tw = 5.0, vsmax = 0.2, vsmin = -0.2) annotation(
-    Placement(transformation(origin={-45,10},    extent={{-38,-10},{-19,10}})));
+  OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(Kw = 9.5, T1 = 0.154, T2 = 0.033, T3 = 1, T4 = 1, Tw = 1.41, vsmax = 0.2, vsmin = -0.2) annotation(
+    Placement(transformation(origin={-40,10},    extent={{-40,-10},{-20,10}})));
 equation
   connect(avr.vf, machine.vf) annotation(
     Line(points = {{-4.33333, 20}, {4, 20}, {4, 20.5}, {11.8, 20.5}}, color = {0, 0, 127}));
@@ -44,8 +45,7 @@ equation
   connect(machine.vf0, avr.vf0) annotation(
     Line(points = {{24.2, 39.1}, {24.2, 60}, {-26, 60}, {-26, 38.3333}}, color = {0, 0, 127}));
   connect(pss.vs, avr.vs) annotation(
-    Line(points={{-63.05,10},{-44.3333,10}},
-                                          color = {0, 0, 127}));
+    Line(points={{-59,10},{-44.3333,10}}, color = {0, 0, 127}));
   connect(machine.w, pss.vSI) annotation(
-    Line(points={{83.1,32.9},{94,32.9},{94,-40},{-94,-40},{-94,10},{-84.9,10}},      color = {0, 0, 127}));
-end GenPSSDesign;
+    Line(points={{83.1,32.9},{94,32.9},{94,-40},{-94,-40},{-94,10},{-82,10}},        color = {0, 0, 127}));
+end GenPSS;

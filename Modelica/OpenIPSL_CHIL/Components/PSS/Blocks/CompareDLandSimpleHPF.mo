@@ -1,8 +1,8 @@
 within OpenIPSL_CHIL.Components.PSS.Blocks;
-model CompareDLandHPF
-  "Compares the derivative filter and the high pass filter responses"
+model CompareDLandSimpleHPF
+  "Compares the derivative filter and the simple high pass filter responses"
   extends Modelica.Icons.Example;
-  DLandHPF TestDLandHPF(order=1)
+  DLandSimpleHPF TestSimpleHPF(order=1)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Interfaces.RealOutput yDL "Derivative lag output"
     annotation (Placement(transformation(extent={{100,10},{120,30}})));
@@ -12,11 +12,11 @@ model CompareDLandHPF
     "Ramps the frequency from smallest to largest value"
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
 equation
-  connect(TestDLandHPF.yDL, yDL) annotation (Line(points={{22,4},{96,4},{96,20},
+  connect(TestSimpleHPF.yDL, yDL) annotation (Line(points={{22,4},{96,4},{96,20},
           {110,20}}, color={0,0,127}));
-  connect(TestDLandHPF.yHPF, yHP) annotation (Line(points={{22,-4},{96,-4},{96,
-          -20},{110,-20}}, color={0,0,127}));
-  connect(step.y, TestDLandHPF.u)
+  connect(TestSimpleHPF.yHPFSimple, yHP) annotation (Line(points={{22,-4},{96,
+          -4},{96,-20},{110,-20}}, color={0,0,127}));
+  connect(step.y, TestSimpleHPF.u)
     annotation (Line(points={{-59,0},{-24,0}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)),
@@ -24,4 +24,4 @@ equation
       StopTime=100,
       __Dymola_NumberOfIntervals=5000,
       __Dymola_Algorithm="Dassl"));
-end CompareDLandHPF;
+end CompareDLandSimpleHPF;

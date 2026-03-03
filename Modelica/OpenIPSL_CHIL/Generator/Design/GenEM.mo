@@ -1,19 +1,28 @@
-within OpenIPSL_CHIL.Generator;
-model GenEMClassical
-  "Generator, simplified synchronous machine (no AVR, no PSS)"
+within OpenIPSL_CHIL.Generator.Design;
+model GenEM "Generator, only synchronous machine (no AVR, no PSS)"
   extends OpenIPSL_CHIL.Generator.GenTemplate;
-  replaceable OpenIPSL_CHIL.Components.Machines.Order2 machine(
+  replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
     M=7,
     P_0=P_0,
     Q_0=Q_0,
     Sn=2220000000,
+    T1d0=8,
+    T1q0=1,
+    T2d0=0.03,
+    T2q0=0.07,
+    Taa=0.002,
     V_b=V_b,
     Vn=400000,
     angle_0=angle_0,
-    ra=0,
+    ra=0.003,
     v_0=v_0,
-    x1d=0.3) constrainedby Components.Machines.Base.baseMachine annotation (
+    x1d=0.3,
+    x1q=0.65,
+    x2d=0.23,
+    x2q=0.25,
+    xd=1.81,
+    xq=1.76) constrainedby Components.Machines.Base.baseMachine annotation (
       Placement(visible=true, transformation(
         origin={49,5},
         extent={{-31,-31},{31,31}},
@@ -25,4 +34,4 @@ equation
     Line(points = {{24.2, -29.1}, {24.2, -32}, {-6, -32}, {-6, -10.5}, {11.8, -10.5}}, color = {0, 0, 127}));
   connect(machine.vf0, machine.vf) annotation(
     Line(points = {{24, 40}, {24, 48}, {-4, 48}, {-4, 20}, {12, 20}}, color = {0, 0, 127}));
-end GenEMClassical;
+end GenEM;

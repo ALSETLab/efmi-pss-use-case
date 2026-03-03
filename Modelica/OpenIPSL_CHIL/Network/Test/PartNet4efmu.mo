@@ -7,7 +7,7 @@ model PartNet4efmu "Tests the PartialNetwork4efmu model"
         extent={{-10,-10},{10,10}},
         rotation=180,
         origin={70,-70})));
-  Generator.GenPSSDesign G1
+  Generator.Design.GenPSSDesign G1
     annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
 equation
   connect(faultTimerLogic.y, pwFault4efmi.trip)

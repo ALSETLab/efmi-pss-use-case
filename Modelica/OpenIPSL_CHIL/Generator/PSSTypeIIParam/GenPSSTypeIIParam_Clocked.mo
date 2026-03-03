@@ -1,6 +1,6 @@
-within OpenIPSL_CHIL.Generator;
-model GenPSS4efmiDLvarClocked
-  "Plant model that replaces PSS model with PSSTypeII4eFMI and has a clocked partition. Uses derivative lag block for the wahsout filter in PSS."
+within OpenIPSL_CHIL.Generator.PSSTypeIIParam;
+model GenPSSTypeIIParam_Clocked
+  "Similar to GenPSSTypeIIParam, but includes a clocked partition."
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
@@ -80,7 +80,7 @@ equation
             2})), Icon(coordinateSystem(grid={2,2}), graphics={
         Ellipse(extent={{-96,-78},{-56,-38}},
           lineThickness=1,
-          fillColor={130,238,94},
+          fillColor={255,255,255},
           fillPattern=FillPattern.Solid),
         Line(points={{-76,-38},{-76,-44}},
           pattern=LinePattern.Dash,
@@ -100,7 +100,7 @@ equation
           extent={{-44,-92},{56,-26}},
           lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={130,238,94},
+          fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -280,8 +280,8 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),Text(
-          extent={{-40,-18},{52,-98}},
-          textColor={0,0,255},
+          extent={{-40,-20},{52,-100}},
+          textColor={0,140,72},
           textString="PSS4eFMI
 Clocked")}));
-end GenPSS4efmiDLvarClocked;
+end GenPSSTypeIIParam_Clocked;

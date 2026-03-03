@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Components.Test.PSS.DerivativeLagWOF;
 model PSSTypeIIParam
-  "Similar to ../Reference, but with G1.pss configured with PSSTypeII4eFMI model."
+  "Similar to ../Reference, but with G1.pss configured with PSSTypeIIParam model."
   extends Network.PartialNetwork;
   extends Modelica.Icons.Example;
   replaceable Generator.PSSTypeIIParam.GenPSSTypeIIParam

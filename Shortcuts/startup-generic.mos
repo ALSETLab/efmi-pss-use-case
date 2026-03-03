@@ -7,10 +7,15 @@ end if;
 openModel(docs + "/dependencies/openipsl/OpenIPSL/package.mo");
 // Load Libraries
 openModel(docs + "/Modelica/OpenIPSL_CHIL/package.mo");
-// Load eFMUs
-//openModel(docs + "\Modelica\work\PSSTypeII4eFMI\SiL-integration\eFMU\_package_.mo");
-//openModel(docs + "\Modelica\work\GridForHILTesting\SiL-integration\eFMU\_package_.mo");
-//openModel(docs + "\Modelica\work\Grid4CHILTesting\SiL-integration\eFMU\_package_.mo");
+// Load eFMUs et al
+openModel(docs + "/Modelica/work/PSSTypeIIParam/SiL-integration/eFMU/_package_.mo");
+openModel(docs + "/Modelica/work/PSSTypeIIParam_SiLTest_generated/package.mo");
+openModel(docs + "/Modelica/work/H67479d7783111b50ee4f84437c325e160da02330.mo");
+openModel(docs + "/Modelica/work/PSSTypeIIHPFilter/SiL-integration/eFMU/_package_.mo");
+openModel(docs + "/Modelica/work/PSSTypeIIHPFilter_SiLTest_generated/package.mo");
+openModel(docs + "/Modelica/work/Ha7cb37a433f18e8802317f9a0017ef7e53a577cd.mo");
 // Go back to working directory
 // Set working directory to be under the Modelica sub-directory
 cd(docs + "/Modelica/work");
+// Set some useful flags that Luigi likes!
+OutputCPUtime = false;

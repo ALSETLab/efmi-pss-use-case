@@ -1,7 +1,7 @@
 within OpenIPSL_CHIL.eFMUs4RTHIL;
 model GridForHILTesting "System model for HIL testing"
   extends Modelica.Icons.Example;
-  extends Network.PartialNetwork4efmu;
+  extends Network.RTNetworkMinimal;
 
   replaceable Generator.Design.GenIO       G1(displayPF=false) constrainedby
     Generator.GenTemplate

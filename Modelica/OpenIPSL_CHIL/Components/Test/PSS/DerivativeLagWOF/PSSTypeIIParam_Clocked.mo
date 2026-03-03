@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Components.Test.PSS.DerivativeLagWOF;
 model PSSTypeIIParam_Clocked
-  "Similar to ../TestGenPSSDesign, configured the PSSTypeII4eFMI model with a clocked partition."
+  "Similar to ../Reference, configured the PSSTypeIIParam model with a clocked partition."
   extends Network.PartialNetwork;
   extends Modelica.Icons.Example;
   replaceable Generator.PSSTypeIIParam.GenPSSTypeIIParam_Clocked

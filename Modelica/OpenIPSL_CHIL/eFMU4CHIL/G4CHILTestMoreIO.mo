@@ -1,7 +1,7 @@
 within OpenIPSL_CHIL.eFMU4CHIL;
 model G4CHILTestMoreIO "System model for CHIL testing with more I/O"
   extends Modelica.Icons.Example;
-  extends Network.PartialNetwork4efmuVariant;
+  extends Network.RTNetwork;
 
   replaceable Generator.Design.GenAVRIO    G1(displayPF=false, K0=K0)
     constrainedby Generator.GenTemplate
@@ -97,10 +97,10 @@ equation
           extent={{-100,100},{100,-100}},
           lineColor={28,108,200},
           lineThickness=1,
-          fillColor={170,255,255},
+          fillColor={170,255,170},
           fillPattern=FillPattern.Solid), Text(
           extent={{-84,42},{88,-38}},
-          textColor={28,108,200},
+          textColor={0,0,255},
           textString="%name"),
         Text(
           extent={{-100,-60},{100,-98}},

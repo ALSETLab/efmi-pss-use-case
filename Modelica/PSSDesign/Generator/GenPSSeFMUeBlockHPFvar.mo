@@ -11,7 +11,7 @@ model GenPSSeFMUeBlockHPFvar
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  'PSSTypeII4eFMI.eFMU_SiL_Support'.BinaryStub           pss(Kw = 10.8, T1 = 0.278203917593164, T2 = 0.0551479681529786, T3 = 0.278203917593164, T4 = 0.0551479681529786, Tw = 5.0, vsmax = 0.2, vsmin = -0.2) annotation(
+  'PSSTypeII4eFMIwHPF.eFMU_SiL_Support'.BinaryStub pss(Kw = 10.8, T1 = 0.278203917593164, T2 = 0.0551479681529786, T3 = 0.278203917593164, T4 = 0.0551479681529786, Tw = 5.0, vsmax = 0.2, vsmin = -0.2) annotation(
     Placement(transformation(origin={-46,10},    extent={{-40,-10},{-20,10}})));
 equation
   connect(avr.vf, machine.vf) annotation(
@@ -29,18 +29,7 @@ equation
   connect(pss.vs, avr.vs)
     annotation (Line(points={{-65,10},{-44.3333,10}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-140,-100},{100,100}}, grid={2,
-            2}), graphics={Text(
-          extent={{-118,-6},{-32,-54}},
-          textColor={238,46,47},
-          textString="Needs to be 
-replaced with 
-corresponding 
-binary stub!"), Rectangle(
-          extent={{-94,6},{-60,-4}},
-          lineColor={28,108,200},
-          fillColor={238,46,47},
-          fillPattern=FillPattern.Solid)}),
-                  Icon(coordinateSystem(grid={2,2}), graphics={
+            2})), Icon(coordinateSystem(grid={2,2}), graphics={
         Rectangle(
           extent={{-48,-92},{52,-52}},
           lineColor={95,95,95},

@@ -80,7 +80,7 @@ equation
           extent={{-44,-92},{56,-26}},
           lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={255,255,255},
+          fillColor={130,238,94},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -261,7 +261,7 @@ equation
           pattern=LinePattern.None,
           lineColor={0,0,0}),Text(
           extent={{-40,-18},{52,-98}},
-          textColor={0,140,72},
+          textColor={0,0,255},
           textString="PSS4eFMI
 Clocked")}));
 end GenPSS4efmiDLvarClocked;

@@ -22,7 +22,10 @@ model PSSTypeII4eFMIwHPFilter
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
-  PSSBlocks.DLHPF dLHPFreplacement "HP Filter replacing the derivative lag."
+  PSSBlocks.DLHPF dLHPFreplacement(
+    Kw = Kw,
+    Tw = Tw)
+    "HP Filter replacing the derivative lag."
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
 equation
   connect(dLHPFreplacement.u, vSI)

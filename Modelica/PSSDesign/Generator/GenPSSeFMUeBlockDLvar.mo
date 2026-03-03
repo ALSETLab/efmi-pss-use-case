@@ -201,7 +201,7 @@ equation
           fillPattern=FillPattern.Solid,
           radius=10),    Text(
           extent={{-40,-52},{40,-92}},
-          lineColor={0,140,72},
+          lineColor={0,0,255},
           textString="eFMU"),
         Rectangle(
           extent={{8,-88},{12,-100}},

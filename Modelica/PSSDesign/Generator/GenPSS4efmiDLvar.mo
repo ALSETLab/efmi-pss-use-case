@@ -41,7 +41,7 @@ equation
           extent={{-46,-96},{54,-56}},
           lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={255,255,255},
+          fillColor={130,238,94},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -222,6 +222,6 @@ equation
           pattern=LinePattern.None,
           lineColor={0,0,0}),Text(
           extent={{-38,-56},{46,-94}},
-          textColor={0,140,72},
+          textColor={0,0,255},
           textString="PSS4eFMI")}));
 end GenPSS4efmiDLvar;

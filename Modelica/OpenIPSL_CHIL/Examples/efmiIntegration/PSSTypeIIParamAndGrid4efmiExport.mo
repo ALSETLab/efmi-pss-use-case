@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Examples.efmiIntegration;
+within OpenIPSL_CHIL.Examples.eFMIIntegration;
 model PSSTypeIIParamAndGrid4efmiExport
   "System model extending from partial network with modifications for efmi export and plant with modified PSS for efmi export. Serves as basis for comparison with experiments."
   extends Network.RTNetworkMinimal;

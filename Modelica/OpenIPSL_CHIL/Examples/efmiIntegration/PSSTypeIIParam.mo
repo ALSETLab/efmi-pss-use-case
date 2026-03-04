@@ -1,5 +1,5 @@
-within OpenIPSL_CHIL.Examples.efmiIntegration;
+within OpenIPSL_CHIL.Examples.eFMIIntegration;
 model PSSTypeIIParam "Reference system with modified PSS for efmi export"
-  extends efmiIntegration.Templates.RefSysTemplate(redeclare
+  extends eFMIIntegration.Templates.RefSysTemplate(redeclare
       Generator.PSSTypeIIParam.GenPSSTypeIIParam G1);
 end PSSTypeIIParam;

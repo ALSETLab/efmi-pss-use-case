@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Examples.efmiIntegration.Templates;
+within OpenIPSL_CHIL.Examples.eFMIIntegration.Templates;
 model RefSysTemplate "System model extending from partial network"
   extends Network.PartialNetwork;
   extends Modelica.Icons.Example;

@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Components.Auxiliary;
-model PwLine4efmi
-  "Model for a transmission Line based on the pi-equivalent circuit with modifications for efmi export"
+model PwLine4eFMI
+  "Model for a transmission Line based on the pi-equivalent circuit with modifications for eFMI export"
   outer OpenIPSL.Electrical.SystemBase SysData;
   import Modelica.ComplexMath.conj;
   import Modelica.ComplexMath.real;
@@ -135,4 +135,4 @@ equation
           extent={{-80,12},{80,-14}},
           lineColor={0,0,0},
           textString="%name")}));
-end PwLine4efmi;
+end PwLine4eFMI;

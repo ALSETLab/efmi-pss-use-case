@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Components.Machines;
 model Order6
-  "6th order machine model - with modified base machine for efmi export"
+  "6th order machine model - with modified base machine for eFMI export"
   extends OpenIPSL_CHIL.Components.Machines.Base.baseMachine(
                                                      vf(start=
           vf00), xq0=xq);

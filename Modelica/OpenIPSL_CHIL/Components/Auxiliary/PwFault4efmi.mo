@@ -1,5 +1,5 @@
 within OpenIPSL_CHIL.Components.Auxiliary;
-model PwFault4efmi
+model PwFault4eFMI
   "Apply a fault at a time specified by the boolean input signal"
   OpenIPSL.Interfaces.PwPin p annotation (Placement(transformation(extent={{-80,
             -10},{-60,10}}), iconTransformation(extent={{-80,-10},{-60,10}})));
@@ -76,4 +76,4 @@ equation
     Diagram(coordinateSystem(
         extent={{-60,-60},{60,60}},
         preserveAspectRatio=true), graphics));
-end PwFault4efmi;
+end PwFault4eFMI;

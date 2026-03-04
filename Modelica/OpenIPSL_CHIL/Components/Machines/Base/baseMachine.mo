@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Components.Machines.Base;
 partial model baseMachine
-  "Base machine for PSAT models - with modifieications for efmi export"
+  "Base machine for PSAT models - with modifications for eFMI export"
   extends OpenIPSL.Electrical.Essentials.pfComponent(
     final enabledisplayPF=false,
     final enablefn=false,
@@ -108,8 +108,9 @@ protected
   // Initialize DQ-quantities (machine base)
   parameter OpenIPSL.Types.PerUnit xq0
     "used for setting the initial rotor angle";
-  /*   Modification to facilitate efmi export, C.arg uses atan3 that 
-       is not supported by the efmi toolchain
+  /*
+    Modification to facilitate eFMI export, C.arg uses atan3 that 
+    is not supported by the eFMI toolchain:
   */
   parameter Complex auxCMval = Vt0 + ((ra + CM.j*xq0)*Z_MBtoSB*
     I0) "Auxiliary variable used to calculate the angle";

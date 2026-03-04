@@ -1,5 +1,5 @@
 within OpenIPSL_CHIL.Examples;
-package efmiIntegration "Examples for the eFMI Integration Process"
+package eFMIIntegration "Examples for the eFMI Integration Process"
   extends Modelica.Icons.ExamplesPackage;
 
-end efmiIntegration;
+end eFMIIntegration;

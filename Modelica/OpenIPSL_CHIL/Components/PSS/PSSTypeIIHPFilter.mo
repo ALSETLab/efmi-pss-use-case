@@ -1,6 +1,6 @@
 within OpenIPSL_CHIL.Components.PSS;
 model PSSTypeIIHPFilter
-  "PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a high-pass filter."
+  "PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a high-pass filter (HPF)."
 
   extends PSSTypeIIParam(       break
       derivativeLag);
@@ -16,12 +16,12 @@ model PSSTypeIIHPFilter
             dLHPFreplacement(
     order=1,                 Kw=Kw, Tw=Tw)
     "HP Filter replacing the derivative lag."
-    annotation (Placement(transformation(extent={{-52,-10},{-32,10}})));
+    annotation (Placement(transformation(extent={{-70,-20},{-30,20}})));
 equation
   connect(dLHPFreplacement.u, vSI)
-    annotation (Line(points={{-54,0},{-120,0}}, color={0,0,127}));
+    annotation (Line(points={{-74,0},{-120,0}}, color={0,0,127}));
   connect(dLHPFreplacement.y, imLeadLag.u)
-    annotation (Line(points={{-31,0},{-12,0}}, color={0,0,127}));
+    annotation (Line(points={{-28,0},{-12,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-98,98},{98,-98}},
           lineColor={28,108,200},

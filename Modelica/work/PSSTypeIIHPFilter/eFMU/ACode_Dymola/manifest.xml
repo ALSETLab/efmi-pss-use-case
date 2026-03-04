@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
+	efmiVersion="1.0.0"
+	xsdVersion="0.13.0"
+	id="{b1253a3b-b5f6-4bf8-a864-4812da6ceded}"
+	kind="AlgorithmCode"
+	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIIHPFilter"
+	generationDateAndTime="2026-03-04T10:50:17Z"
+	generationTool="Dymola Version 2026x Refresh 1 Beta 2, 2026-03-13"
+	description="PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a high-pass filter (HPF)."
+	version="">
+
+	<Files>
+		<File
+			name="block.alg"
+			id="block.alg"
+			path="./"
+			needsChecksum="true"
+			checksum="5270c1b5bd356afa9746ad05dad93f21de3e6b50"
+			role="Code"/>
+	</Files>
+
+	<Clock id="'discrete.clock'" variableRefId="'discrete.stepSize'"/>
+
+	<BlockMethods fileRefId="block.alg" writeOutputs="Undefined">
+		<BlockMethod id="Recalibrate()" kind="Recalibrate">
+			<Signals>
+				<Signal value="NAN"/>
+			</Signals>
+		</BlockMethod>
+		<BlockMethod id="Startup()" kind="Startup">
+			<Signals>
+				<Signal value="NAN"/>
+			</Signals>
+		</BlockMethod>
+		<BlockMethod id="DoStep()" kind="DoStep">
+			<Signals>
+				<Signal value="NAN"/>
+			</Signals>
+		</BlockMethod>
+	</BlockMethods>
+
+	<ErrorSignalStatus id="block:fake-signal-variable-anchor"/>
+
+	<Units>
+		<Unit id="[1]" name="1"/>
+		<Unit id="[s]" name="s">
+			<BaseUnit
+				s="1"/>
+		</Unit>
+	</Units>
+
+	<Variables>
+		<RealVariable
+			id="vSI"
+			name="vSI"
+			description="PSS input signal "
+			blockCausality="input"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="vs"
+			name="vs"
+			description="PSS output signal"
+			blockCausality="output"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="Kw"
+			name="Kw"
+			description="Stabilizer gain [pu/pu]"
+			blockCausality="tunableParameter"
+			start="9.5">
+		</RealVariable>
+		<RealVariable
+			id="T1"
+			name="T1"
+			description="First stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.53999999999999998e-1">
+		</RealVariable>
+		<RealVariable
+			id="T2"
+			name="T2"
+			description="Second stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="3.30000000000000016e-2">
+		</RealVariable>
+		<RealVariable
+			id="T3"
+			name="T3"
+			description="Third stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="T4"
+			name="T4"
+			description="Fourth stabilizer time constant"
+			blockCausality="tunableParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="vSI_start"
+			name="vSI_start"
+			description="Default start value for vSI, the PSS input signal."
+			blockCausality="tunableParameter"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="vsmax"
+			name="vsmax"
+			description="Max stabilizer output signal"
+			blockCausality="tunableParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="2.00000000000000011e-1">
+		</RealVariable>
+		<RealVariable
+			id="vsmin"
+			name="vsmin"
+			description="Min stabilizer output signal"
+			blockCausality="tunableParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="-2.00000000000000011e-1">
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.y_start'"
+			name="'dLHPFreplacement.y_start'"
+			description="Output start value"
+			blockCausality="constant"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.Kw'"
+			name="'dLHPFreplacement.Kw'"
+			description="Proportional gain part"
+			blockCausality="dependentParameter"
+			start="9.5">
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.scaling_factor'"
+			name="'dLHPFreplacement.scaling_factor'"
+			description="Scaling factor to match OpenIPSL DerivativeLag gain"
+			blockCausality="dependentParameter"
+			start="9.5">
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.highPassFilter.gain'"
+			name="'dLHPFreplacement.highPassFilter.gain'"
+			description="Gain (= amplitude of frequency response at zero frequency)"
+			blockCausality="constant"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.highPassFilter.r'"
+			name="'dLHPFreplacement.highPassFilter.r'"
+			blockCausality="constant"
+			start="0.0">
+			<Dimensions>
+				<Dimension number="1" size="1"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.highPassFilter.u_nominal'"
+			name="'dLHPFreplacement.highPassFilter.u_nominal'"
+			description="Nominal value of input (used for scaling the states)"
+			blockCausality="constant"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.highPassFilter.y_start'"
+			name="'dLHPFreplacement.highPassFilter.y_start'"
+			description="Initial value of output"
+			blockCausality="dependentParameter"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(dLHPFreplacement.highPassFilter.x[1])'"
+			name="'derivative(dLHPFreplacement.highPassFilter.x[1])'"
+			description="der(Filter states)"
+			blockCausality="state"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.highPassFilter.x'"
+			name="'dLHPFreplacement.highPassFilter.x'"
+			description="Filter states"
+			blockCausality="state"
+			start="1.0">
+			<Dimensions>
+				<Dimension number="1" size="1"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'dLHPFreplacement.matchGain.k'"
+			name="'dLHPFreplacement.matchGain.k'"
+			description="Gain value multiplied with input signal"
+			blockCausality="dependentParameter"
+			start="9.5">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.K'"
+			name="'imLeadLag.K'"
+			description="Gain"
+			blockCausality="constant"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.y_start'"
+			name="'imLeadLag.y_start'"
+			description="Output start value"
+			blockCausality="constant"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.T1'"
+			name="'imLeadLag.T1'"
+			description="Lead time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.53999999999999998e-1">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.T2'"
+			name="'imLeadLag.T2'"
+			description="Lag time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="3.30000000000000016e-2">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.T2_dummy'"
+			name="'imLeadLag.T2_dummy'"
+			description="Lead time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="3.30000000000000016e-2">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.TF.a'"
+			name="'imLeadLag.TF.a'"
+			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
+			blockCausality="dependentParameter"
+			start="3.30000000000000016e-2 0.0">
+			<Dimensions>
+				<Dimension number="1" size="2"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.TF.b'"
+			name="'imLeadLag.TF.b'"
+			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
+			blockCausality="dependentParameter"
+			start="1.53999999999999998e-1 1.0">
+			<Dimensions>
+				<Dimension number="1" size="2"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.TF.bb'"
+			name="'imLeadLag.TF.bb'"
+			blockCausality="dependentParameter"
+			start="1.53999999999999998e-1 1.0">
+			<Dimensions>
+				<Dimension number="1" size="2"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.TF.d'"
+			name="'imLeadLag.TF.d'"
+			blockCausality="dependentParameter"
+			start="4.66666666666666607">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.TF.y_start'"
+			name="'imLeadLag.TF.y_start'"
+			description="Initial value of output (derivatives of y are zero up to nx-1-th derivative)"
+			blockCausality="dependentParameter"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(imLeadLag.TF.x_scaled[1])'"
+			name="'derivative(imLeadLag.TF.x_scaled[1])'"
+			description="der(Scaled vector x)"
+			blockCausality="state"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag.TF.x_scaled'"
+			name="'imLeadLag.TF.x_scaled'"
+			description="Scaled vector x"
+			blockCausality="state"
+			start="0.0">
+			<Dimensions>
+				<Dimension number="1" size="1"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.K'"
+			name="'imLeadLag1.K'"
+			description="Gain"
+			blockCausality="constant"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.y_start'"
+			name="'imLeadLag1.y_start'"
+			description="Output start value"
+			blockCausality="constant"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.T1'"
+			name="'imLeadLag1.T1'"
+			description="Lead time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.T2'"
+			name="'imLeadLag1.T2'"
+			description="Lag time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.T2_dummy'"
+			name="'imLeadLag1.T2_dummy'"
+			description="Lead time constant"
+			blockCausality="dependentParameter"
+			unitRefId="[s]"
+			relativeQuantity="false"
+			start="1.0e+3">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.TF.a'"
+			name="'imLeadLag1.TF.a'"
+			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
+			blockCausality="dependentParameter"
+			start="1.0e+3 0.0">
+			<Dimensions>
+				<Dimension number="1" size="2"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.TF.b'"
+			name="'imLeadLag1.TF.b'"
+			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
+			blockCausality="dependentParameter"
+			start="1.0 1.0">
+			<Dimensions>
+				<Dimension number="1" size="2"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.TF.bb'"
+			name="'imLeadLag1.TF.bb'"
+			blockCausality="dependentParameter"
+			start="1.0 1.0">
+			<Dimensions>
+				<Dimension number="1" size="2"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.TF.d'"
+			name="'imLeadLag1.TF.d'"
+			blockCausality="dependentParameter"
+			start="1.00000000000000002e-3">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.TF.y_start'"
+			name="'imLeadLag1.TF.y_start'"
+			description="Initial value of output (derivatives of y are zero up to nx-1-th derivative)"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(imLeadLag1.TF.x_scaled[1])'"
+			name="'derivative(imLeadLag1.TF.x_scaled[1])'"
+			description="der(Scaled vector x)"
+			blockCausality="state"
+			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'imLeadLag1.TF.x_scaled'"
+			name="'imLeadLag1.TF.x_scaled'"
+			description="Scaled vector x"
+			blockCausality="state"
+			start="0.0">
+			<Dimensions>
+				<Dimension number="1" size="1"/>
+			</Dimensions>
+		</RealVariable>
+		<RealVariable
+			id="'limiter.uMax'"
+			name="'limiter.uMax'"
+			description="Upper limits of input signals"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="2.00000000000000011e-1">
+		</RealVariable>
+		<RealVariable
+			id="'limiter.uMin'"
+			name="'limiter.uMin'"
+			description="Lower limits of input signals"
+			blockCausality="dependentParameter"
+			unitRefId="[1]"
+			relativeQuantity="false"
+			start="-2.00000000000000011e-1">
+		</RealVariable>
+		<RealVariable
+			id="'discrete.stepSize'"
+			name="'discrete.stepSize'"
+			blockCausality="constant"
+			start="1.00000000000000002e-3">
+		</RealVariable>
+		<BooleanVariable
+			id="'discrete.stepSize.active'"
+			name="'discrete.stepSize.active'"
+			blockCausality="state"
+			start="false">
+		</BooleanVariable>
+	</Variables>
+</Manifest>

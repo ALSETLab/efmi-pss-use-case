@@ -1,0 +1,212 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.4.7
+** Copyright (c) 2022 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x86'
+Import-Module : Illegal characters in path.
+At line:1 char:46
++ ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.ImportModuleCommand
+ 
+Send-VsDevShellTelemetry : The term 'Send-VsDevShellTelemetry' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At line:1 char:173
++ ... icrosoft.VisualStudio.DevShell.dll'; Send-VsDevShellTelemetry -NewIns ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+
+BINARY CODE GENERATION
+
+Read arguments... 
+Source eFMU path                    : E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/
+Destination eFMU path               : E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/
+Production code name                : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Binary code name                    : BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+Compiler option sets                : 
+		nologo
+		O2
+		std=c17
+		W4
+linker option set                   : 
+		nologo
+Compiler name                       : VS
+Target name                         : Win32
+Target vendor                       : 
+Target chip version                 : 
+Target instruction set architecture : i686
+Target address width                : 32
+Execute link                        : true
+
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+Read arguments... OK
+
+Read Manifests... 
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@a545dfd9
+modelRepresentation: null
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@a545dfd9
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@7a790945
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 48d55f090627f005492b8f0881c78c7575b90030
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 676ee68b674bcb973cee764eb34757f88800f77e
+Reading ACode_Dymola ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@a545dfd9
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@c8e1b38a
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 45acb7ba7c45bd284195f6e650660d2b38f583d6
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_0
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: ff0c0220e6e46262c28de182e18b47cd3db4cb45
+File list : .//block.h/FILE_ID_block.h_1
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: b76192580cd4f65895cfd970a1093f0c6b9034d0
+File list : .//block.c/FILE_ID_block.c_2
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 0f480d0e07ebbb40d1818de779377c96ad5bab3b
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_3
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: 5f78d7ddc851f8f06e07af7fc5ea2489158388df
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_4
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: f08ad5d00703d4ee500e7448b74aaba176176bfa
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_5
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: fdb92a155966f7ed01c7fed07565cb4d85fd9fe1
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_6
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: bb0017a290fe2d5f4cccfbce89471e848bec609b
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_7
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: b62854ed80563c84bed105ec0a7ed28e80d62a86
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_8
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 967393453cedd50177fec8acf21f7eb2d6ba6659
+Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@a545dfd9
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@288b05c6
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: df2d7b19296f3ab70cb52cbb4db3f099529c1193
+File list : .//block.c/FILE_ID_block.c_0
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: b687765c869b353ed0f224b3f5203998ddf13444
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_1
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: 4a3be643c4defcda4e54e45cde13eacb2545c29c
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_2
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
+OK: Manifest file CheckSum valid: 0506e7159e8477120228006fe914b972bb2ce921
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_3
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 4869aa4a7bed3c2fa089c72d305a043b2930b0f0
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_4
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: 31e6f448829be15968d562acbd16cc6eb8c68f78
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_5
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: ebe5db356200a49575fa6d25dc3899f0febcf511
+File list : .//block.h/FILE_ID_block.h_6
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: 1df061fb96899b87821d85dd5023d8f862d8b906
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_7
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 5eaca5a52846edfa150fc1ec11ee6d090871f5c7
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_8
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 724cdbe525a645e440b594b4eaf460b64e9d8f35
+Reading PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c ModelRepresentation
+Read Manifests... OK
+
+Write BinaryCode Makefile... 
+E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
+Write BinaryCode Makefile... OK
+
+Generate BinaryCode files... 
+
+Microsoft (R) Program Maintenance Utility Version 14.34.31944.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.c /Fo./galec_stl.obj
+galec_stl.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c /Fo./block.obj
+block.c
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(57): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(79): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(167): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(182): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(186): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(188): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(194): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(196): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/sii_block_interface.c /Fo./sii_block_interface.obj
+sii_block_interface.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c /Fo./mei_block_interface.obj
+mei_block_interface.c
+	lib /nologo ./galec_stl.obj ./block.obj ./sii_block_interface.obj ./mei_block_interface.obj /OUT:block.lib
+Generate BinaryCode files... OK
+
+Write Manifest... 
+BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+Writing: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 9046e92fd4316c9113452e6bc7ed2a8c7b9ab418
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: 3f75c95b4d5430a78b3767c1ef634d7197def5f9
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: d927a7a966ad8f0e7662f172c9c52f6afe69e5c0
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 5fe96c2e26a211b069f6236815c984a49e8eebfe
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 741eab251cc3bb807786b8b28ad3894314d6815a
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: fcde83a62edf86c4b5b4024a089d38c426d1487d
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 1e5d97c3fa77d5415483cf78c7462d1d247244f4
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/
+Writing: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIISimpleHPF\eFMU\__content.xml
+Writing: __content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+Write Manifest... OK
+
+BINARY CODE GENERATION SUCCESS
+

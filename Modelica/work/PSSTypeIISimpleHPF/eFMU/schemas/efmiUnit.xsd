@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified" attributeFormDefault="unqualified" vc:minVersion="1.1">
+	<xs:include schemaLocation="efmiIdentifierType.xsd"/>
+	<xs:complexType name="efmiUnit">
+		<xs:annotation>
+			<xs:documentation>Unit definition (with respect to SI base units) and default display units</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="BaseUnit" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>BaseUnit_value = factor*Unit_value + offset</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="kg" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI base unit "kg"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="m" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI base unit "m"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="s" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI base unit "s"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="A" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI base unit "A"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="K" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI base unit "K"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+                    <xs:attribute name="mol" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI base unit "mol"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+                    <xs:attribute name="cd" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI base unit "cd"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="rad" type="xs:int" default="0">
+						<xs:annotation>
+							<xs:documentation>Exponent of SI derived unit "rad"</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="factor" type="xs:double" default="1"/>
+					<xs:attribute name="offset" type="xs:double" default="0"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="efmiIdentifierType" use="required">
+			<xs:annotation>
+				<xs:documentation>id of unit</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:normalizedString" use="required">
+			<xs:annotation>
+				<xs:documentation>Name of Unit element, e.g. "N.m", "Nm", "N*m", "%/s".
+"name" must be unique with respect to all other elements of the Units list.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

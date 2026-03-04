@@ -6,7 +6,7 @@ model Grid4CHIL_eFMU "Tests the model for CHIL testing with Binary Stub"
     offset=0,
     startTime=5)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub
+  'Grid4CHIL.eFMU_SiL_Support'.BinaryStub
                    G4CHIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)

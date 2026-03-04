@@ -23,14 +23,14 @@ model Fault_Clocked
   Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
     annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
   Modelica.Clocked.RealSignals.Sampler.SampleClocked sampler
-    annotation (Placement(transformation(extent={{-58,-6},{-46,6}})));
+    annotation (Placement(transformation(extent={{-58,6},{-46,-6}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
     period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{6,-6},{-6,6}},
         rotation=90,
-        origin={-52,-34})));
+        origin={-52,48})));
   Modelica.Blocks.Sources.BooleanExpression tripL1(y=false)
     "Default false = off" annotation (Placement(transformation(
         extent={{-6,-7},{6,7}},
@@ -41,6 +41,10 @@ model Fault_Clocked
         extent={{-6,-7},{6,7}},
         rotation=90,
         origin={12,-65})));
+  Modelica.Blocks.Sources.Constant uPload(k=0)
+    annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
+  Modelica.Clocked.RealSignals.Sampler.Sample sampler1
+    annotation (Placement(transformation(extent={{-56,-24},{-44,-36}})));
 equation
   connect(faultTimerLogic.y, G4CHIL.fault)
     annotation (Line(points={{-79,-70},{-12,-70},{-12,-24}},
@@ -59,7 +63,7 @@ equation
     annotation (Line(points={{-45.4,0},{-34,0},{-34,12},{-24,12}},
                                                  color={0,0,127}));
   connect(sampler.clock, periodicClock.y) annotation (Line(
-      points={{-52,-7.2},{-52,-27.4}},
+      points={{-52,7.2},{-52,41.4}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
@@ -67,6 +71,10 @@ equation
     annotation (Line(points={{0,-58.4},{0,-24}}, color={255,0,255}));
   connect(tripL2.y, G4CHIL.faultL2)
     annotation (Line(points={{12,-58.4},{12,-24}}, color={255,0,255}));
+  connect(uPload.y, sampler1.u)
+    annotation (Line(points={{-79,-30},{-57.2,-30}}, color={0,0,127}));
+  connect(sampler1.y, G4CHIL.uPLoad) annotation (Line(points={{-43.4,-30},{-34,
+          -30},{-34,-12},{-24,-12}}, color={0,0,127}));
   annotation (experiment(
       StopTime=20));
 end Fault_Clocked;

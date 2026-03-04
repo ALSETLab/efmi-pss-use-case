@@ -4,27 +4,28 @@ function SimAndCompare "Simulates and compares the three cases below"
 
 algorithm
 
-simulateModel(
-  "OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTrigger.Fault",
+.DymolaCommands.SimulatorAPI.simulateModel(
+  problem="OpenIPSL_CHIL.PhysicalExperiments.Grid4CHIL_FaultTrigger.Fault",
   stopTime=20,
   resultFile="Fault");
-simulateModel(
-  "OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTrigger.FaultClocked",
+.DymolaCommands.SimulatorAPI.simulateModel(
+  problem="OpenIPSL_CHIL.PhysicalExperiments.Grid4CHIL_FaultTrigger.Fault_Clocked",
   stopTime=20,
-  resultFile="FaultClocked");
-simulateModel(
-  "OpenIPSL_CHIL.PhysicalExperiments.G4CHILFaultTrigger.FaultBinStub",
+  resultFile="Fault_Clocked");
+.DymolaCommands.SimulatorAPI.simulateModel(
+  problem="OpenIPSL_CHIL.PhysicalExperiments.Grid4CHIL_FaultTrigger.Fault_eFMU",
   stopTime=20,
-  resultFile="FaultBinStub");
+  resultFile="Fault_eFMU");
 
-removePlots(false);
-Advanced.FilenameInLegend :=true;
-Advanced.FilesToKeep :=10;
-createPlot(id=101, position={-3, 26, 871, 758}, y={"v"}, range={0.0, 20.0, 0.30000000000000004, 1.2000000000000002}, autoscale=false, grid=true, filename="Fault.mat", subPlot=101, colors={{28,108,200}}, timeUnit="s", displayUnits={"1"});
-createPlot(id=101, position={-3, 26, 871, 758}, y={"w"}, range={0.0, 20.0, 0.994, 1.008}, grid=true, subPlot=102, colors={{28,108,200}}, timeUnit="s", displayUnits={"1"});
-createPlot(id=101, position={-3, 26, 871, 758}, y={"v"}, range={0.0, 20.0, 0.30000000000000004, 1.2000000000000002}, erase=false, autoscale=false, grid=true, filename="FaultClocked.mat", subPlot=101, colors={{238,46,47}}, markers={MarkerStyle.SmallSquare}, timeUnit="s", displayUnits={"1"});
-createPlot(id=101, position={-3, 26, 871, 758}, y={"w"}, range={0.0, 20.0, 0.994, 1.008}, erase=false, grid=true, subPlot=102, colors={{238,46,47}}, markers={MarkerStyle.SmallSquare}, timeUnit="s", displayUnits={"1"});
-createPlot(id=101, position={-3, 26, 871, 758}, y={"v"}, range={0.0, 20.0, 0.30000000000000004, 1.2000000000000002}, erase=false, autoscale=false, grid=true, filename="FaultBinStub.mat", subPlot=101, colors={{0,140,72}}, timeUnit="s");
-createPlot(id=101, position={-3, 26, 871, 758}, y={"w"}, range={0.0, 20.0, 0.994, 1.008}, erase=false, grid=true, subPlot=102, colors={{0,140,72}}, timeUnit="s");
+.DymolaCommands.Plot.removePlots(false);
+Advanced.Plot.Legend.Filename := true;
+Advanced.Plot.FilesToKeep := 10;
+.DymolaCommands.Plot.createPlot(id=101, position={-3, 26, 871, 758}, y={"v"}, range={0.0, 20.0, 0.30000000000000004, 1.2000000000000002}, autoscale=false, grid=true, filename="Fault.mat", subPlot=101, colors={{28,108,200}}, timeUnit="s", displayUnits={"1"});
+.DymolaCommands.Plot.createPlot(id=101, position={-3, 26, 871, 758}, y={"w"}, range={0.0, 20.0, 0.994, 1.008}, grid=true, subPlot=102, colors={{28,108,200}}, timeUnit="s", displayUnits={"1"});
+.DymolaCommands.Plot.createPlot(id=101, position={-3, 26, 871, 758}, y={"v"}, range={0.0, 20.0, 0.30000000000000004, 1.2000000000000002}, erase=false, autoscale=false, grid=true, filename="Fault_Clocked.mat", subPlot=101, colors={{238,46,47}}, markers={MarkerStyle.SmallSquare}, timeUnit="s", displayUnits={"1"});
+.DymolaCommands.Plot.createPlot(id=101, position={-3, 26, 871, 758}, y={"w"}, range={0.0, 20.0, 0.994, 1.008}, erase=false, grid=true, subPlot=102, colors={{238,46,47}}, markers={MarkerStyle.SmallSquare}, timeUnit="s", displayUnits={"1"});
+.DymolaCommands.Plot.createPlot(id=101, position={-3, 26, 871, 758}, y={"v"}, range={0.0, 20.0, 0.30000000000000004, 1.2000000000000002}, erase=false, autoscale=false, grid=true, filename="Fault_eFMU.mat", subPlot=101, colors={{0,140,72}}, timeUnit="s");
+.DymolaCommands.Plot.createPlot(id=101, position={-3, 26, 871, 758}, y={"w"}, range={0.0, 20.0, 0.994, 1.008}, erase=false, grid=true, subPlot=102, colors={{0,140,72}}, timeUnit="s");
 
+annotation (__Dymola_interactive=true);
 end SimAndCompare;

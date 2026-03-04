@@ -6,7 +6,7 @@ model Grid4HIL_eFMU "Tests the model for HIL testing with Binary Stub"
     offset=0,
     startTime=5)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  'GridForHIL.eFMU_SiL_Support'.BinaryStub
+  'Grid4HIL.eFMU_SiL_Support'.BinaryStub
                                 G4HIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic annotation (Placement(

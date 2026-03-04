@@ -6,7 +6,7 @@ model Fault "Model to replicate fault triggering test"
     offset=0,
     startTime=5.0)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  RTS.HIL.GridForHILTesting G4HIL
+  RTS.HIL.Grid4HIL G4HIL
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
     annotation (Placement(transformation(

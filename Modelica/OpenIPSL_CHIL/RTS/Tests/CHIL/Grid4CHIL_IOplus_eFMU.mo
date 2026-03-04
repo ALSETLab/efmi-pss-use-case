@@ -1,8 +1,8 @@
 within OpenIPSL_CHIL.RTS.Tests.CHIL;
 model Grid4CHIL_IOplus_eFMU "Tests the model for CHIL testing with Binary Stub"
   extends Modelica.Icons.Example;
-  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub
-                   G4CHIL
+  'Grid4CHIL_IOplus.eFMU_SiL_Support'.BinaryStub
+                   G4CHIL(__embedd_clock=false)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Interfaces.RealOutput w "Speed [pu]"
     annotation (Placement(transformation(extent={{100,50},{120,70}})));
@@ -62,8 +62,8 @@ equation
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
-  connect(samplerVavr.y, G4CHIL.vf) annotation (Line(points={{-45.4,12},{-34,
-          12},{-34,0},{-24,0}}, color={0,0,127}));
+  connect(samplerVavr.y, G4CHIL.vf) annotation (Line(points={{-45.4,12},{-34,12},
+          {-34,12},{-24,12}},   color={0,0,127}));
   connect(stepVavr.y, samplerVavr.u) annotation (Line(points={{-79,30},{-66,
           30},{-66,12},{-59.2,12}}, color={0,0,127}));
   connect(samplerPload.clock, periodicClock.y) annotation (Line(
@@ -74,20 +74,16 @@ equation
   connect(stepPload.y, samplerPload.u) annotation (Line(points={{-79,-30},{
           -66,-30},{-66,-20},{-59.2,-20}}, color={0,0,127}));
   connect(faultTimerLogic.y, G4CHIL.fault)
-    annotation (Line(points={{-39,-50},{0,-50},{0,-24}}, color={255,0,255}));
+    annotation (Line(points={{-39,-50},{-12,-50},{-12,-24}},
+                                                         color={255,0,255}));
+  connect(faultL1.y, G4CHIL.faultL1)
+    annotation (Line(points={{0,-39.6},{0,-24}}, color={255,0,255}));
+  connect(faultL2.y, G4CHIL.faultL2)
+    annotation (Line(points={{12,-39.6},{12,-24}}, color={255,0,255}));
+  connect(samplerPload.y, G4CHIL.uPLoad) annotation (Line(points={{-45.4,-20},{
+          -34,-20},{-34,-12},{-24,-12}}, color={0,0,127}));
   annotation (experiment(
       StopTime=30,
       __Dymola_NumberOfIntervals=5000,
-      __Dymola_Algorithm="Dassl"), Diagram(graphics={
-                           Text(
-          extent={{-68,84},{18,36}},
-          textColor={238,46,47},
-          textString="Needs to be 
-replaced with 
-corresponding 
-binary stub!"), Rectangle(
-          extent={{-20,32},{14,22}},
-          lineColor={28,108,200},
-          fillColor={238,46,47},
-          fillPattern=FillPattern.Solid)}));
+      __Dymola_Algorithm="Dassl"));
 end Grid4CHIL_IOplus_eFMU;

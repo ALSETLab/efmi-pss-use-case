@@ -4,4 +4,6 @@ function bodeDLandSimpleHPF
   extends Modelica.Icons.Function;
 algorithm
   Modelica_LinearSystems2.ModelAnalysis.TransferFunctions("OpenIPSL_CHIL.Components.PSS.Blocks.DLandHPF(order=1)");
+
+  annotation (__Dymola_interactive=true);
 end bodeDLandSimpleHPF;

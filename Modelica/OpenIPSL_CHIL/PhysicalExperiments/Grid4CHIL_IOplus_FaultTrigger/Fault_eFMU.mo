@@ -6,7 +6,7 @@ model Fault_eFMU "Model to replicate fault triggering test with binary stub"
     offset=0,
     startTime=5.0)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  'Grid4CHILTesting.eFMU_SiL_Support'.BinaryStub G4CHIL(__defining_code=
+  'Grid4CHIL_IOplus.eFMU_SiL_Support'.BinaryStub G4CHIL(__defining_code=
         'Grid4HIL.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=10.0, toff=10.05)
@@ -32,6 +32,8 @@ model Fault_eFMU "Model to replicate fault triggering test with binary stub"
         extent={{-6,-7},{6,7}},
         rotation=90,
         origin={12,-65})));
+  Modelica.Blocks.Sources.Constant uPload(k=0)
+    annotation (Placement(transformation(extent={{-100,-40},{-80,-20}})));
 equation
   connect(faultTimerLogic.y, G4CHIL.fault)
     annotation (Line(points={{-79,-70},{-10,-70},{-10,-24}},
@@ -45,7 +47,14 @@ equation
   connect(G4CHIL.Qgen, Qgen) annotation (Line(points={{22,4},{90,4},{90,-40},{
           110,-40}}, color={0,0,127}));
   connect(step.y, G4CHIL.vf)
-    annotation (Line(points={{-79,0},{-24,0}}, color={0,0,127}));
+    annotation (Line(points={{-79,0},{-52,0},{-52,12},{-24,12}},
+                                               color={0,0,127}));
+  connect(uPload.y, G4CHIL.uPLoad) annotation (Line(points={{-79,-30},{-52,-30},
+          {-52,-12},{-24,-12}}, color={0,0,127}));
+  connect(tripL1.y, G4CHIL.faultL1)
+    annotation (Line(points={{0,-58.4},{0,-24}}, color={255,0,255}));
+  connect(tripL2.y, G4CHIL.faultL2)
+    annotation (Line(points={{12,-58.4},{12,-24}}, color={255,0,255}));
   annotation (experiment(
       StopTime=20));
 end Fault_eFMU;

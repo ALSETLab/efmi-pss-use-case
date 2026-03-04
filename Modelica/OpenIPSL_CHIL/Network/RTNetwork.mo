@@ -238,7 +238,7 @@ equation
           fillPattern=FillPattern.Solid,
           radius=10),    Text(
           extent={{-40,18},{40,-22}},
-          lineColor={255,255,255},
+          textColor={255,255,255},
           textString="eFMI"),
         Rectangle(
           extent={{8,-18},{12,-30}},

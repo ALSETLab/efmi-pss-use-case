@@ -71,7 +71,7 @@ equation
           smooth=Smooth.None,
           thickness=1),       Text(
           extent={{-110,110},{110,70}},
-          lineColor={0,0,255},
+          textColor={0,0,255},
           textString="%name")}),
     Diagram(coordinateSystem(
         extent={{-60,-60},{60,60}},

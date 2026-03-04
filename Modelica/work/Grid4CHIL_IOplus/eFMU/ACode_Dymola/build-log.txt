@@ -1,0 +1,80 @@
+﻿Translation of OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL_IOplus
+The DAE has 180 scalar unknowns and 180 scalar equations.
+Warning: The initial conditions are not fully specified.
+Dymola has selected default initial conditions.
+Warning: Assuming fixed start value for the continuous states:
+    G1.machine.delta(start = G1.machine.delta0)
+    G1.machine.w(start = 1)
+ 
+ 
+Statistics
+ 
+Original Model
+  Number of components: 48
+  Variables: 410
+  Parameters: 230 (225 scalars)
+  Unknowns: 180 (180 scalars)
+  Differentiated variables: 9 scalars
+  Equations: 144
+  Nontrivial: 101
+Translated Model
+  Constants: 61 scalars
+  Free parameters: 93 scalars
+  Parameter depending: 83 scalars
+  Inputs: 5 scalars
+  Outputs: 5 scalars
+  Continuous time states: 9 scalars
+  Time-varying variables: 77 scalars
+  Alias variables: 91 scalars
+  Assumed default initial conditions: 2
+  Number of mixed real/discrete systems of equations: 0
+  Sizes of linear systems of equations: {18, 2, 2}
+  Sizes after manipulation of the linear systems: {6, 0, 0}
+  Sizes of nonlinear systems of equations: { }
+  Sizes after manipulation of the nonlinear systems: { }
+  Number of numerical Jacobians: 0
+  Initialization problem
+    Sizes of linear systems of equations: {20}
+    Sizes after manipulation of the linear systems: {6}
+ 
+Settings
+Advanced.Translation.InlineMethod = 1
+Advanced.Simulation.InlineFixedStep = 0.0002
+Selected continuous time states
+Statically selected continuous time states
+G1.avr.vf1
+G1.avr.vm
+G1.avr.vr
+G1.machine.delta
+G1.machine.e1d
+G1.machine.e1q
+G1.machine.e2d
+G1.machine.e2q
+G1.machine.w
+Translation of 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL_IOplus: static initialization'.StartupModel
+The DAE has 142 scalar unknowns and 142 scalar equations.
+ 
+Statistics
+ 
+Original Model
+  Number of components: 2
+  Variables: 142
+  Unknowns: 142 (142 scalars)
+  Equations: 1
+  Nontrivial: 1
+Translated Model
+  Constants: 142 scalars
+  Number of mixed real/discrete systems of equations: 0
+  Sizes of linear systems of equations: { }
+  Sizes after manipulation of the linear systems: { }
+  Sizes of nonlinear systems of equations: { }
+  Sizes after manipulation of the nonlinear systems: { }
+  Number of numerical Jacobians: 0
+ 
+Settings
+Advanced.Simulation.InlineFixedStep = 0.0002
+Selected continuous time states
+Automatic compilation disabled by user.
+Translation aborted.
+Automatic compilation disabled by user.
+Translation aborted.

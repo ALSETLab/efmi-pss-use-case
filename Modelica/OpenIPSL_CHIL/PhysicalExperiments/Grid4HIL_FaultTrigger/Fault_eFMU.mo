@@ -6,7 +6,7 @@ model Fault_eFMU "Model to replicate fault triggering test with binary stub"
     offset=0,
     startTime=5.0)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  'GridForHILTesting.eFMU_SiL_Support'.BinaryStub
+  'Grid4HIL.eFMU_SiL_Support'.BinaryStub
                                 G4HIL(__defining_code=
         'Grid4HIL.eFMU_SiL_Support'.ProductionCodes.PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));

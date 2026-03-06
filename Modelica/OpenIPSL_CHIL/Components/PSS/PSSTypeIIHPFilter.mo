@@ -23,15 +23,21 @@ equation
   connect(dLHPFreplacement.y, imLeadLag.u)
     annotation (Line(points={{-28,0},{-12,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
-          extent={{-98,98},{98,-98}},
-          lineColor={28,108,200},
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,255},
           lineThickness=1,
           fillColor={255,170,213},
           fillPattern=FillPattern.Solid),
-                             Text(
-          extent={{-100,100},{100,-100}},
+        Text(
+          extent={{-90,106},{30,-54}},
           textColor={0,0,255},
-          textString="PSS4eFMI 
-export
-HPF")}));
+          fontName="Geist",
+          textStyle={TextStyle.Bold,TextStyle.Italic},
+          textString="H"),
+        Text(
+          extent={{-22,48},{98,-112}},
+          textColor={0,0,255},
+          fontName="Geist",
+          textStyle={TextStyle.Bold,TextStyle.Italic},
+          textString="P")}));
 end PSSTypeIIHPFilter;

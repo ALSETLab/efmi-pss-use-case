@@ -1,7 +1,6 @@
 within OpenIPSL_CHIL.RTS.CHIL;
 model Grid4CHIL_IOplus
   "System model for CHIL testing with more I/O"
-  extends Modelica.Icons.Example;
   extends Network.RTNetwork;
 
   replaceable Generator.Design.GenAVRIO    G1(displayPF=false, K0=K0)
@@ -94,27 +93,75 @@ equation
           -120,60}}, color={0,0,127}));
   connect(uPLoadIn.y, iSrcLoad.iMag) annotation (Line(points={{21,84},{52,84},{
           52,60},{42,60}}, color={0,0,127}));
-  annotation (Icon(graphics={Rectangle(
+  annotation (Icon(graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
-          lineColor={28,108,200},
+          lineColor={0,0,0},
           lineThickness=1,
-          fillColor={170,255,170},
-          fillPattern=FillPattern.Solid), Text(
+          fillColor={198,198,198},
+          fillPattern=FillPattern.Solid,
+          radius=15),
+        Ellipse(
+          extent={{-82,-56},{-40,-98}},
+          lineThickness=1,
+          fillColor={213,255,170},
+          fillPattern=FillPattern.Solid,
+          lineColor={0,0,0}),
+        Polygon(
+          points={{-58,135},{-64,123},{14,-17},{60,3},{-58,135}},
+          lineColor={0,0,0},
+          lineThickness=1,
+          fillColor={135,135,135},
+          fillPattern=FillPattern.Solid,
+          smooth=Smooth.Bezier,
+          origin={-67,26},
+          rotation=-90),                  Text(
           extent={{-72,180},{100,100}},
           textColor={0,0,255},
           textString="%name"),
-                             Text(
-          extent={{-100,52},{-20,-58}},
+                  Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,0},
+          lineThickness=1,
+          radius=15),
+                  Rectangle(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,0},
+          lineThickness=1,
+          radius=15),
+        Ellipse(
+          extent={{-126,60},{-6,-60}},
+          lineColor={0,0,0},
+          lineThickness=1,
+          fillColor={135,135,135},
+          fillPattern=FillPattern.Solid,
+          startAngle=0,
+          endAngle=360),
+        Polygon(
+          points={{-74,56},{-104,-16},{-76,16},{-64,-56},{-34,16},{-60,-16},{
+              -74,56}},
+          lineColor={215,215,215},
+          fillColor={213,255,170},
+          fillPattern=FillPattern.Solid,
+          lineThickness=2),
+        Polygon(
+          points={{-72,54},{-102,-18},{-74,14},{-62,-58},{-32,14},{-58,-18},{
+              -72,54}},
+          lineColor={0,0,0},
+          fillColor={95,95,95},
+          fillPattern=FillPattern.Solid,
+          lineThickness=1),
+        Ellipse(
+          extent={{34,110},{86,58}},
+          lineThickness=1,
+          fillColor={213,255,170},
+          fillPattern=FillPattern.Solid,
+          lineColor={0,0,0}),
+        Text(
+          extent={{-44,40},{116,-120}},
           textColor={0,0,255},
-          textString="C"),   Text(
-          extent={{-38,52},{42,-58}},
-          textColor={0,0,255},
-          textString="H"),   Text(
-          extent={{34,52},{114,-58}},
-          textColor={0,0,255},
-          textString="L"),   Text(
-          extent={{2,52},{82,-58}},
-          textColor={0,0,255},
-          textString="I")}),    Diagram(coordinateSystem(extent={{-120,-100},{
+          fontName="Geist",
+          textStyle={TextStyle.Bold,TextStyle.Italic},
+          textString="C")}),    Diagram(coordinateSystem(extent={{-120,-100},{
             100,100}}, grid={2,2})));
 end Grid4CHIL_IOplus;

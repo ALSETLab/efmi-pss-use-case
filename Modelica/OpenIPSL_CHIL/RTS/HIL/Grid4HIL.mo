@@ -1,6 +1,5 @@
 within OpenIPSL_CHIL.RTS.HIL;
 model Grid4HIL "System model for HIL testing"
-  extends Modelica.Icons.Example;
   extends Network.RTNetworkMinimal;
 
   replaceable Generator.Design.GenIO       G1(displayPF=false) constrainedby
@@ -57,17 +56,63 @@ equation
     annotation (Line(points={{81,20},{110,20}}, color={0,0,127}));
   connect(pwFault4efmi.trip, fault) annotation (Line(points={{43.3333,-70},{52,
           -70},{52,-94},{0,-94},{0,-120}}, color={255,0,255}));
-  annotation (Icon(graphics={Rectangle(
+  annotation (Icon(graphics={
+        Rectangle(
           extent={{-100,100},{100,-100}},
-          lineColor={28,108,200},
+          lineColor={0,0,0},
           lineThickness=1,
-          fillColor={255,170,213},
-          fillPattern=FillPattern.Solid), Text(
-          extent={{-72,180},{100,100}},
+          fillColor={198,198,198},
+          fillPattern=FillPattern.Solid,
+          radius=15),
+        Polygon(
+          points={{62,66},{62,66},{-36,-18},{-54,38},{62,66}},
+          lineColor={0,0,0},
+          lineThickness=1,
+          fillColor={135,135,135},
+          fillPattern=FillPattern.Solid,
+          smooth=Smooth.Bezier),
+        Polygon(
+          points={{62,-60},{66,-54},{-44,32},{-88,-20},{62,-60}},
+          lineColor={0,0,0},
+          lineThickness=1,
+          fillColor={135,135,135},
+          fillPattern=FillPattern.Solid,
+          smooth=Smooth.Bezier),
+    Text( extent={{-72,180},{100,100}},
           textColor={28,108,200},
-          textString="%name"),
+    textString="%name"),
+        Ellipse(
+          extent={{-100,56},{20,-64}},
+          lineColor={0,0,0},
+          lineThickness=1,
+          fillColor={135,135,135},
+          fillPattern=FillPattern.Solid,
+          startAngle=0,
+          endAngle=360),
+        Polygon(
+          points={{-48,52},{-78,-20},{-50,12},{-38,-60},{-8,12},{-34,-20},{-48,
+              52}},
+          lineColor={215,215,215},
+          fillColor={255,0,128},
+          fillPattern=FillPattern.Solid,
+          lineThickness=2),
+        Ellipse(
+          extent={{42,98},{94,46}},
+          lineThickness=1,
+          fillColor={255,0,128},
+          fillPattern=FillPattern.Solid,
+          lineColor={0,0,0}),
+        Polygon(
+          points={{-46,52},{-76,-20},{-48,12},{-36,-60},{-6,12},{-32,-20},{-46,
+              52}},
+          lineColor={0,0,0},
+          fillColor={95,95,95},
+          fillPattern=FillPattern.Solid,
+          lineThickness=1),
         Text(
-          extent={{-94,100},{94,-100}},
-          textColor={217,67,180},
-          textString="HIL")}));
+          extent={{-28,28},{132,-132}},
+          textColor={255,0,128},
+          fontName="Geist",
+          textStyle={TextStyle.Bold,TextStyle.Italic},
+          textString="H")}));
 end Grid4HIL;

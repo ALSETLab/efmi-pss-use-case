@@ -38,11 +38,7 @@ equation
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.0001), Icon(
-        graphics={Rectangle(
-          extent={{-100,100},{100,-100}},
-          lineColor={0,0,0},
-          lineThickness=1,
-          radius=15), Ellipse(
+        graphics={    Ellipse(
           extent={{-60,60},{60,-60}},
           lineColor={0,140,72},
           lineThickness=1,

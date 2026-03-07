@@ -66,12 +66,7 @@ equation
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.0001),
     Diagram(coordinateSystem(grid={2,2})),
-    Icon(graphics={
-                  Rectangle(
-          extent={{-100,100},{100,-100}},
-          lineColor={0,0,0},
-          lineThickness=1,
-          radius=15), Ellipse(
+    Icon(graphics={   Ellipse(
           extent={{-60,60},{60,-60}},
           lineColor={217,67,180},
           lineThickness=1,

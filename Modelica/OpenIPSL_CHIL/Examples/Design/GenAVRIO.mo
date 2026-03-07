@@ -1,5 +1,6 @@
 within OpenIPSL_CHIL.Examples.Design;
-model Example_3_AVRIO
+model GenAVRIO
+  "Power system with synchronous machine (Order VI) and AVR (Type III), with input/output interfaces for lienar analysis and control design; (GenAVRIO) generator."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation(
     Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
@@ -56,4 +57,4 @@ equation
     Line(points = {{-68, 6}, {-64, 6}, {-64, 40}, {94, 40}, {94, 0}, {110, 0}}, color = {0, 0, 127}));
   annotation(
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-6, Interval = 0.0001));
-end Example_3_AVRIO;
+end GenAVRIO;

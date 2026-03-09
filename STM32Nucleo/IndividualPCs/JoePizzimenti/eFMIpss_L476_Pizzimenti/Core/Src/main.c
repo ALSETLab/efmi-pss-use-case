@@ -23,13 +23,12 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "block.h"
-#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 //Made a readable alias here because the hash is annoyingly long...
-typedef BlockState_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelPSS;
+typedef BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelPSS;
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -51,9 +50,6 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 static ModelPSS pssModel;
 
-double vs;
-double wpre = 1;
-double wnow = 1;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -108,11 +104,8 @@ int main(void)
   MX_TIM1_Init();
 
   /* USER CODE BEGIN 2 */
-    //Initialize the model memory to zero (just in case a state is carried over)
-    memset(&pssModel, 0, sizeof(ModelPSS));
-
     //Call the eFMI Startup function directly (instead of using Hao's eFMI wrapper file)
-    Startup_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&pssModel);
+    Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&pssModel);
 
     HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
     HAL_TIM_Base_Start_IT(&htim1);
@@ -419,25 +412,22 @@ static void MX_GPIO_Init(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (htim->Instance == TIM1) {
+    static SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vSI_pre = 1;
+
     HAL_GPIO_TogglePin(GPIOC, stepSize_Pin);
     HAL_GPIO_WritePin(GPIOC, calTime_Pin,GPIO_PIN_SET);
 
-    //Input Processing/Filtering
-    wnow = 0.002*ADC_CodeToVolts(ADC1_ReadOnce(),3.3) + 0.998*wpre;
-    //wnow = ADC_CodeToVolts(ADC1_ReadOnce(),3.3); //This has the filter disabled
-    //wnow = 1.0;
-    wpre = wnow;
+    //Input Processing/Filtering:
+    pssModel.vSI =
+      ((SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.002) * ADC_CodeToVolts(ADC1_ReadOnce(), 3.3)
+	  + ((SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) 0.998) * vSI_pre;
+    vSI_pre = pssModel.vSI;
 
-    //Directly calling eFMI functions instead of using Hao's wrapper function
-    //Set Input directly into the struct
-    pssModel.vSI = (Real)wnow;
-    //Step the model
-    DoStep_H525b873079cf7a65f464c408f25344d5bd630cab_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&pssModel);
-    //Get Output directly from the struct
-    vs = (double)pssModel.vs;
+    // Compute sampling step:
+    DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&pssModel);
 
-    //Output Processing
-    HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)(4095*(vs+1.5)/3.3));
+    //Output Processing:
+    HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)(4095 * (((double) pssModel.vs) + 1.5) / 3.3));
 
     HAL_GPIO_WritePin(GPIOC, calTime_Pin,GPIO_PIN_RESET);
   }

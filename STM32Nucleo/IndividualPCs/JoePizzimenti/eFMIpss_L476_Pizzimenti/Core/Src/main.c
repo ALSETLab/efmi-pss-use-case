@@ -43,8 +43,11 @@ typedef BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada86462
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc1;
+
 DAC_HandleTypeDef hdac1;
+
 TIM_HandleTypeDef htim1;
+
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
@@ -102,7 +105,6 @@ int main(void)
   MX_ADC1_Init();
   MX_DAC1_Init();
   MX_TIM1_Init();
-
   /* USER CODE BEGIN 2 */
     //Call the eFMI Startup function directly (instead of using Hao's eFMI wrapper file)
     Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&pssModel);

@@ -26,9 +26,7 @@ rem 1. Auto-detect Dymola executable
 set "dymolaPath="
 
 for %%F in (
-	"C:\Program Files\Dymola 2026x Fixpack 1\bin64\Dymola.exe"
-	"C:\Program Files\Dymola 2026x\bin64\Dymola.exe"
-	"C:\Program Files\Dymola 2025x Refresh 1\bin64\Dymola.exe"
+	"C:\Program Files\Dymola 2026x Refresh 1 Beta 1\bin64\Dymola.exe"
 ) do (
 	if not defined dymolaPath if exist "%%~F" set "dymolaPath=%%~F"
 )

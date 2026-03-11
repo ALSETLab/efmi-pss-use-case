@@ -31,7 +31,9 @@ model GenPSS
   OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
-  OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(Kw = 9.5, T1 = 0.154, T2 = 0.033, T3 = 1, T4 = 1, Tw = 1.41, vsmax = 0.2, vsmin = -0.2) annotation(
+  OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(Kw = 9.5, T1 = 0.154, T2 = 0.033, T3 = 1, T4 = 1, Tw = 1.41,
+    vsmax=3.3,
+    vsmin=0.0)                                                                                                                                annotation(
     Placement(transformation(origin={-40,10},    extent={{-40,-10},{-20,10}})));
 equation
   connect(avr.vf, machine.vf) annotation(

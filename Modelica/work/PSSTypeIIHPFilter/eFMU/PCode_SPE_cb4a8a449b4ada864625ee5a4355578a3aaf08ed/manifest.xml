@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{5f06f20d-6b2c-482b-8f60-dc7fb7cf9e45}" name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" generationDateAndTime="2026-03-04T11:50:19Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{581f0392-43af-4106-815e-b837f13d4e46}" name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" generationDateAndTime="2026-03-11T16:21:30Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="ALG_MAN_ID" manifestRefId="{b1253a3b-b5f6-4bf8-a864-4812da6ceded}" checksum="a73c3bea5f64d8f7526d31bb5a268d7b7fbd252e" origin="true"/>
+        <ManifestReference id="ALG_MAN_ID" manifestRefId="{a5c8fdd3-a158-44f2-9b99-9aec1641680b}" checksum="ce7df7fb747fadc24a6925e45fe7dd1ff9743f7e" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_block.c_0" name="block.c" path="./" needsChecksum="true" checksum="29b7e9146256db9b7f62f02a2fc2739b66740d20" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.c_1" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="d22639ebefc50029f488ffa39bc8b2766f125137" role="Code"/>
-        <File id="FILE_ID_galec_stl.c_2" name="galec_stl.c" path="./" needsChecksum="true" checksum="27a57aa5143ca9113776c4b6b3b82398c9f6e59f" role="Code"/>
-        <File id="FILE_ID_galec_stl.h_3" name="galec_stl.h" path="./" needsChecksum="true" checksum="39be6e08f81cd0c83b713b0aafcaa5b3306884f5" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.h_4" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="7fc791f575f687de615773223b98508d6066e32b" role="Code"/>
-        <File id="FILE_ID_block.h_5" name="block.h" path="./" needsChecksum="true" checksum="982685729972c3b8c1b0cc2fd056bf1b660481b0" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.h_6" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="734166fdac2ba83cbdbcf133fdebdaf3273356b0" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.c_7" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="907c7d901b7bc4cd796777031602b8f58e9ae28a" role="Code"/>
-        <File id="FILE_ID_galec_stl_configuration.h_8" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="79c8360ee05d9e6baea93084a0a677c72ad8f9ab" role="Code"/>
+        <File id="FILE_ID_galec_stl.c_0" name="galec_stl.c" path="./" needsChecksum="true" checksum="26e96be86d9d05e2df28c59a159ae7622fd97afa" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.h_1" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="77ec7348e0a5e3ccde667a503a1cea40417e7063" role="Code"/>
+        <File id="FILE_ID_block.h_2" name="block.h" path="./" needsChecksum="true" checksum="21dfd0e3620e880ad014d2622a4ec29939e0d46e" role="Code"/>
+        <File id="FILE_ID_block.c_3" name="block.c" path="./" needsChecksum="true" checksum="ec1a93f1c67980c8e92618dc520ddd76af7a43ac" role="Code"/>
+        <File id="FILE_ID_galec_stl.h_4" name="galec_stl.h" path="./" needsChecksum="true" checksum="c01a0be8004b84dec3efe2082e75094efe673cba" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.h_5" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="a128ac5285c3e658e916b66a768c8df7ac123a29" role="Code"/>
+        <File id="FILE_ID_galec_stl_configuration.h_6" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="62ed1346ea2b1935069b577e742049ff3859908e" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.c_7" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="c3628ad2ab6cc3c5905f3e34623dd3cce002bfeb" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.c_8" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="aced226be20faa413011e043a1e4d52005e82dbf" role="Code"/>
     </Files>
     <CodeContainer language="C" standard="C99" platform="Legacy" floatPrecision="32-bit">
         <Target>Generic</Target>
@@ -29,58 +29,37 @@
             <TargetType id="TGT_ID_efmiBool_9" kind="efmiBool" codedType="bool"/>
         </TargetTypes>
         <CodeFiles>
-            <CodeFile id="CFILE_ID_block.c_0" fileType="ProductionCode" codeType="SourceFile">
-                <FileReference fileRefId="FILE_ID_block.c_0"/>
+            <CodeFile id="CFILE_ID_galec_stl.c_0" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_galec_stl.c_0"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_block.h_5"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl.h_4"/>
                 </Includes>
             </CodeFile>
-            <CodeFile id="CFILE_ID_sii_block_interface.c_1" fileType="ProductionCode" codeType="SourceFile">
-                <FileReference fileRefId="FILE_ID_sii_block_interface.c_1"/>
+            <CodeFile id="CFILE_ID_mei_block_interface.h_1" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_mei_block_interface.h_1"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_sii_block_interface.h_4"/>
+                    <Include codeFileRefId="CFILE_ID_block.h_2"/>
                 </Includes>
-            </CodeFile>
-            <CodeFile id="CFILE_ID_galec_stl.c_2" fileType="ProductionCode" codeType="SourceFile">
-                <FileReference fileRefId="FILE_ID_galec_stl.c_2"/>
-                <Includes>
-                    <Include codeFileRefId="CFILE_ID_galec_stl.h_3"/>
-                </Includes>
-            </CodeFile>
-            <CodeFile id="CFILE_ID_galec_stl.h_3" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_galec_stl.h_3"/>
-                <Includes>
-                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_8"/>
-                </Includes>
-            </CodeFile>
-            <CodeFile id="CFILE_ID_sii_block_interface.h_4" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_sii_block_interface.h_4"/>
-                <Includes>
-                    <Include codeFileRefId="CFILE_ID_block.h_5"/>
-                </Includes>
-                <Variables>
-                    <Variable id="VAR_ID_BlockState_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="block_state_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" typeDefRefId="TYPE_ID_BlockState_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" const="false" volatile="false" static="false"/>
-                </Variables>
                 <Functions>
-                    <Function id="FNC_ID_sii_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="sii_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_mei_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="mei_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_0" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
-                    <Function id="FNC_ID_sii_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_1" name="sii_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_mei_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_1" name="mei_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_1" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
-                    <Function id="FNC_ID_sii_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_2" name="sii_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_mei_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_2" name="mei_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_2" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
-                    <Function id="FNC_ID_sii_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_3" name="sii_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_mei_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_3" name="mei_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_3" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
                 </Functions>
             </CodeFile>
-            <CodeFile id="CFILE_ID_block.h_5" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_block.h_5"/>
+            <CodeFile id="CFILE_ID_block.h_2" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_block.h_2"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_galec_stl.h_3"/>
-                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_8"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl.h_4"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_6"/>
                 </Includes>
                 <Typedefs>
                     <Typedef id="TYPE_ID_BlockState_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" name="BlockState_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
@@ -192,34 +171,43 @@
                     </Function>
                 </Functions>
             </CodeFile>
-            <CodeFile id="CFILE_ID_mei_block_interface.h_6" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_mei_block_interface.h_6"/>
+            <CodeFile id="CFILE_ID_block.c_3" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_block.c_3"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_block.h_5"/>
+                    <Include codeFileRefId="CFILE_ID_block.h_2"/>
                 </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_galec_stl.h_4" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_stl.h_4"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_6"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_sii_block_interface.h_5" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.h_5"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_block.h_2"/>
+                </Includes>
+                <Variables>
+                    <Variable id="VAR_ID_BlockState_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" name="block_state_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" typeDefRefId="TYPE_ID_BlockState_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_4" const="false" volatile="false" static="false"/>
+                </Variables>
                 <Functions>
-                    <Function id="FNC_ID_mei_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_8" name="mei_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_sii_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_8" name="sii_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_8" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
-                    <Function id="FNC_ID_mei_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_9" name="mei_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_sii_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_9" name="sii_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_9" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
-                    <Function id="FNC_ID_mei_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_10" name="mei_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_sii_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_10" name="sii_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_10" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
-                    <Function id="FNC_ID_mei_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_11" name="mei_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
+                    <Function id="FNC_ID_sii_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_11" name="sii_Reinitialize_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed">
                         <ReturnParameter id="AUX_ID_11" typeDefRefId="TYPE_ID_bool_1"/>
                     </Function>
                 </Functions>
             </CodeFile>
-            <CodeFile id="CFILE_ID_mei_block_interface.c_7" fileType="ProductionCode" codeType="SourceFile">
-                <FileReference fileRefId="FILE_ID_mei_block_interface.c_7"/>
-                <Includes>
-                    <Include codeFileRefId="CFILE_ID_mei_block_interface.h_6"/>
-                </Includes>
-            </CodeFile>
-            <CodeFile id="CFILE_ID_galec_stl_configuration.h_8" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_galec_stl_configuration.h_8"/>
+            <CodeFile id="CFILE_ID_galec_stl_configuration.h_6" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_stl_configuration.h_6"/>
                 <Typedefs>
                     <Typedef id="TYPE_ID_bool_1" name="bool">
                         <Alias targetTypeRefId="TGT_ID_efmiBool_9"/>
@@ -234,6 +222,18 @@
                         <Alias targetTypeRefId="TGT_ID_efmiUnsignedInteger32_5"/>
                     </Typedef>
                 </Typedefs>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_sii_block_interface.c_7" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.c_7"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_sii_block_interface.h_5"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_mei_block_interface.c_8" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_mei_block_interface.c_8"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_mei_block_interface.h_1"/>
+                </Includes>
             </CodeFile>
         </CodeFiles>
         <TechnicalInformationLookUps>
@@ -460,15 +460,15 @@
             <FunctionReferences>
                 <FunctionReference>
                     <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Startup()"/>
-                    <GlobalFunction functionRefId="FNC_ID_sii_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_8"/>
                 </FunctionReference>
                 <FunctionReference>
                     <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="DoStep()"/>
-                    <GlobalFunction functionRefId="FNC_ID_sii_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_1"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_DoStep_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_9"/>
                 </FunctionReference>
                 <FunctionReference>
                     <ForeignFunctionReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="Recalibrate()"/>
-                    <GlobalFunction functionRefId="FNC_ID_sii_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_2"/>
+                    <GlobalFunction functionRefId="FNC_ID_sii_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_10"/>
                 </FunctionReference>
             </FunctionReferences>
         </LogicalData>

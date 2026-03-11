@@ -1,4 +1,4 @@
-/*2026-03-04T10:50:21.620929300Z*/
+/*2026-03-11T20:21:32.128904600Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -201,19 +201,19 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->Kw = 9.5;
+    instance->Kw = 1.08000000000000007e+1;
 
-    instance->vsmin = -0.200000000000000011;
+    instance->vsmin = 0.0;
 
-    instance->vsmax = 2.00000000000000011e-1;
+    instance->vsmax = 3.29999999999999982;
 
-    instance->T4 = 1.0;
+    instance->T4 = 5.51479681529786006e-2;
 
-    instance->T3 = 1.0;
+    instance->T3 = 2.78203917593163985e-1;
 
-    instance->T2 = 3.30000000000000016e-2;
+    instance->T2 = 5.51479681529786006e-2;
 
-    instance->T1 = 1.53999999999999998e-1;
+    instance->T1 = 2.78203917593163985e-1;
 
     instance->vSI_start = 1.0;
 

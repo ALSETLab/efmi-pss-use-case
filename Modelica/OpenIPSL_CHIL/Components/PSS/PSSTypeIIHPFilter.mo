@@ -2,6 +2,8 @@ within OpenIPSL_CHIL.Components.PSS;
 model PSSTypeIIHPFilter
   "PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a high-pass filter (HPF)."
 
+
+
   extends PSSTypeIIParam(       break
       derivativeLag);
 

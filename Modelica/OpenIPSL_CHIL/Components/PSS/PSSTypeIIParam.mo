@@ -5,14 +5,14 @@ model PSSTypeIIParam
   extends OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII(
     vSI(
       final start = vSI_start),
-    Kw = 9.5,
-    T1 = 0.154,
-    T2 = 0.033,
-    T3 = 1,
-    T4 = 1,
-    Tw = 1.41,
-    vsmax = 0.2,
-    vsmin = -0.2);
+    Kw = 10.8,
+    T1 = 0.278203917593164,
+    T2 = 0.0551479681529786,
+    T3 = 0.278203917593164,
+    T4 = 0.0551479681529786,
+    Tw = 5.0,
+    vsmax = 3.3,
+    vsmin = 0.0);
 
   // Tunable start values:
   parameter Real vSI_start = 1.0

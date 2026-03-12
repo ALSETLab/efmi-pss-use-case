@@ -4,21 +4,21 @@
 	xsi:noNamespaceSchemaLocation="../schemas/BehavioralModel/efmiBehavioralModelManifest.xsd"
 	kind="BehavioralModel"
 	efmiVersion="1.0.0"
-	id="{01286ddc-233d-ce65-8c29-bba7597cab4c}"
+	id="{cf79c3ee-1569-0a82-819f-9e39a34e931a}"
 	name="OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIIHPFilter.SiLTest"
 	description="Test scenarios of original experiment
 		     [OpenIPSL_CHIL.Components.Tests.PSS.HighPassFilterWOF.PSSTypeIIHPFilter_Clocked]
 		   for eBlock model
 		     [OpenIPSL_CHIL.Components.PSS.PSSTypeIIHPFilter]."
 	version=""
-	generationDateAndTime="2026-03-12T02:13:11Z"
+	generationDateAndTime="2026-03-12T02:59:50Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27">
 
 	<ManifestReferences>
 		<ManifestReference
 			id="ManifestReference:ACode_Dymola"
-			manifestRefId="{c393cb27-b58b-45a9-8d12-8ebc0510c3b9}"
-			checksum="5bd8f49f4fbbd01be8f52074425f68b40919de7f"
+			manifestRefId="{cf25ee9e-aa2f-4a77-a5df-0b5c74b90e17}"
+			checksum="ce737623ba2e21f3fbe91bc4bcde9a6c0b931f60"
 			origin="false"/>
 	</ManifestReferences>
 
@@ -28,7 +28,7 @@
 			name="Scenario_1.csv"
 			path="./"
 			needsChecksum="true"
-			checksum="76a987b6ae2219756e2b1b5be56c4047e2ba7ba6"
+			checksum="121af4396c47785e8d386af25dab9fe5c36d7667"
 			role="ReferenceData"
 			description="Reference trajectories file for Scenario_1."/>
 	</Files>
@@ -94,15 +94,15 @@
 				<TolerancesDefinition
 					variableRefId="vs"
 					unitRefId="TODO"
-					absoluteTolerance="0.002"
-					relativeTolerance="0.0002"/>
+					absoluteTolerance="0.02"
+					relativeTolerance="0.002"/>
 			</TolerancesConfiguration>
 			<TolerancesConfiguration floatingPointPrecision="64-bit">
 				<TolerancesDefinition
 					variableRefId="vs"
 					unitRefId="TODO"
-					absoluteTolerance="2.0e-06"
-					relativeTolerance="2.0e-08"/>
+					absoluteTolerance="0.05"
+					relativeTolerance="0.005"/>
 			</TolerancesConfiguration>
 		</TolerancesSetup>
 	</TolerancesSetups>

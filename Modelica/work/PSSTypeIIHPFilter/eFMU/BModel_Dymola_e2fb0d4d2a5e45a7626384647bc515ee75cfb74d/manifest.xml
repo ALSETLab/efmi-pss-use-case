@@ -4,21 +4,21 @@
 	xsi:noNamespaceSchemaLocation="../schemas/BehavioralModel/efmiBehavioralModelManifest.xsd"
 	kind="BehavioralModel"
 	efmiVersion="1.0.0"
-	id="{8e6082e5-cce1-448e-b44f-19c124e74a27}"
+	id="{01286ddc-233d-ce65-8c29-bba7597cab4c}"
 	name="OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIIHPFilter.SiLTest"
 	description="Test scenarios of original experiment
 		     [OpenIPSL_CHIL.Components.Tests.PSS.HighPassFilterWOF.PSSTypeIIHPFilter_Clocked]
 		   for eBlock model
 		     [OpenIPSL_CHIL.Components.PSS.PSSTypeIIHPFilter]."
 	version=""
-	generationDateAndTime="2026-03-04T10:55:13Z"
-	generationTool="Dymola Version 2026x Refresh 1 Beta 2, 2026-03-13">
+	generationDateAndTime="2026-03-12T02:13:11Z"
+	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27">
 
 	<ManifestReferences>
 		<ManifestReference
 			id="ManifestReference:ACode_Dymola"
-			manifestRefId="{b1253a3b-b5f6-4bf8-a864-4812da6ceded}"
-			checksum="a73c3bea5f64d8f7526d31bb5a268d7b7fbd252e"
+			manifestRefId="{c393cb27-b58b-45a9-8d12-8ebc0510c3b9}"
+			checksum="5bd8f49f4fbbd01be8f52074425f68b40919de7f"
 			origin="false"/>
 	</ManifestReferences>
 
@@ -28,7 +28,7 @@
 			name="Scenario_1.csv"
 			path="./"
 			needsChecksum="true"
-			checksum="3dddad3b079f686636d4fc958314e31511955e14"
+			checksum="76a987b6ae2219756e2b1b5be56c4047e2ba7ba6"
 			role="ReferenceData"
 			description="Reference trajectories file for Scenario_1."/>
 	</Files>
@@ -94,15 +94,15 @@
 				<TolerancesDefinition
 					variableRefId="vs"
 					unitRefId="TODO"
-					absoluteTolerance="0.02"
-					relativeTolerance="0.002"/>
+					absoluteTolerance="0.002"
+					relativeTolerance="0.0002"/>
 			</TolerancesConfiguration>
 			<TolerancesConfiguration floatingPointPrecision="64-bit">
 				<TolerancesDefinition
 					variableRefId="vs"
 					unitRefId="TODO"
-					absoluteTolerance="0.02"
-					relativeTolerance="0.002"/>
+					absoluteTolerance="2.0e-06"
+					relativeTolerance="2.0e-08"/>
 			</TolerancesConfiguration>
 		</TolerancesSetup>
 	</TolerancesSetups>

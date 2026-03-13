@@ -1,8 +1,8 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.DerivativeLagWO;
+within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.HPFfromMSL;
 model CompareDLandHPF
   "Compares the derivative filter and the high pass filter responses"
   extends Modelica.Icons.Example;
-  DerivativeLagWO.DLandHPF TestDLandHPF(order=1)
+  HPFfromMSL.DLandHPF TestDLandHPF(order=1)
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Modelica.Blocks.Interfaces.RealOutput yDL "Derivative lag output"
     annotation (Placement(transformation(extent={{100,10},{120,30}})));

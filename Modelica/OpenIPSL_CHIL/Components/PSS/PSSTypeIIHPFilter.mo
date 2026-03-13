@@ -14,7 +14,7 @@ model PSSTypeIIHPFilter
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
-  Blocks.WashoutFilter.DerivativeLagWO.DerivativeLagHighPass dLHPFreplacement(
+  Blocks.WashoutFilter.HPFfromMSL.DerivativeLagHighPass dLHPFreplacement(
     order=1,
     Kw=Kw,
     Tw=Tw) "HP Filter replacing the derivative lag."

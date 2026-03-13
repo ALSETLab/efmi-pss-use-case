@@ -11,8 +11,8 @@ model PSSTypeIIParam
     T3 = 0.278203917593164,
     T4 = 0.0551479681529786,
     Tw = 5.0,
-    vsmax = 3.3,
-    vsmin = 0.0);
+    vsmax = 1.5,
+    vsmin = -1.5);
 
   // Tunable start values:
   parameter Real vSI_start = 1.0

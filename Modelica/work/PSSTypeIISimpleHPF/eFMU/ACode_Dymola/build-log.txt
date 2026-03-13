@@ -1,25 +1,25 @@
 ﻿Translation of OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF
-The DAE has 23 scalar unknowns and 23 scalar equations.
+The DAE has 28 scalar unknowns and 28 scalar equations.
  
 Statistics
  
 Original Model
-  Number of components: 11
-  Variables: 75
-  Parameters: 52 (57 scalars)
-  Unknowns: 23 (23 scalars)
-  Differentiated variables: 3 scalars
-  Equations: 22
-  Nontrivial: 18
+  Number of components: 12
+  Variables: 85
+  Parameters: 57 (62 scalars)
+  Unknowns: 28 (28 scalars)
+  Differentiated variables: 5 scalars
+  Equations: 27
+  Nontrivial: 23
 Translated Model
   Constants: 14 scalars
-  Free parameters: 15 scalars
-  Parameter depending: 28 scalars
+  Free parameters: 18 scalars
+  Parameter depending: 30 scalars
   Inputs: 1 scalars
   Outputs: 1 scalars
-  Continuous time states: 3 scalars
-  Time-varying variables: 9 scalars
-  Alias variables: 14 scalars
+  Continuous time states: 5 scalars
+  Time-varying variables: 13 scalars
+  Alias variables: 15 scalars
   Number of mixed real/discrete systems of equations: 0
   Sizes of linear systems of equations: { }
   Sizes after manipulation of the linear systems: { }
@@ -31,22 +31,24 @@ Settings
 Advanced.Translation.InlineMethod = 1
 Selected continuous time states
 Statically selected continuous time states
+bandPass1stOrder.xHP
+bandPass1stOrder.xLP
 dLHPFreplacement.x
 imLeadLag.TF.x_scaled[]
 imLeadLag1.TF.x_scaled[]
 Translation of 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static initialization'.StartupModel
-The DAE has 51 scalar unknowns and 51 scalar equations.
+The DAE has 60 scalar unknowns and 60 scalar equations.
  
 Statistics
  
 Original Model
   Number of components: 2
-  Variables: 45
-  Unknowns: 45 (51 scalars)
+  Variables: 54
+  Unknowns: 54 (60 scalars)
   Equations: 1
   Nontrivial: 1
 Translated Model
-  Constants: 51 scalars
+  Constants: 60 scalars
   Number of mixed real/discrete systems of equations: 0
   Sizes of linear systems of equations: { }
   Sizes after manipulation of the linear systems: { }

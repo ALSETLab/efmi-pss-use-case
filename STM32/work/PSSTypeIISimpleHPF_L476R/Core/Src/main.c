@@ -171,8 +171,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     const PSS_Real DAC_CHANNEL_1_maxBit = ((PSS_Real) 4095);
 	const PSS_Real DAC_CHANNEL_1_maxVoltage = ((PSS_Real) 3.3);
 	const PSS_Real magic15 = ((PSS_Real) 1.5);
-	const PSS_Real vSI_newWeight = ((PSS_Real) 0.002);
-	const PSS_Real vSI_preWeight = ((PSS_Real) 1.0) - vSI_newWeight;
+	const PSS_Real vSI_newWeight = ((PSS_Real) 1.0);
+	const PSS_Real vSI_preWeight = ((PSS_Real) 1.00) - vSI_newWeight;
 	const PSS_Real vSI_default = ((PSS_Real) 1.0);
 
     static PSS_Real vSI_pre = vSI_default;
@@ -183,10 +183,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     //Input processing (requires to convert AC to volt):
     HAL_ADC_Start(&hadc1);
     HAL_ADC_PollForConversion(&hadc1, 10 /* in ms */);
-    pss.vSI =
-        (vSI_newWeight * DAC_CHANNEL_1_maxVoltage
-          * (((PSS_Real) HAL_ADC_GetValue(&hadc1)) / DAC_CHANNEL_1_maxBit))
-      + (vSI_preWeight * vSI_pre);
+    pss.vSI =  (vSI_newWeight * DAC_CHANNEL_1_maxVoltage * (((PSS_Real) HAL_ADC_GetValue(&hadc1)) / DAC_CHANNEL_1_maxBit)) + (vSI_preWeight * vSI_pre);
     vSI_pre = pss.vSI;
     HAL_ADC_Stop(&hadc1);
 

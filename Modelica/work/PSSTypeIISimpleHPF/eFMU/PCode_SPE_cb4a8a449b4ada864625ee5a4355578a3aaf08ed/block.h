@@ -1,4 +1,4 @@
-/*2026-03-11T19:05:43.606913200Z*/
+/*2026-03-13T04:51:56.956855800Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -45,6 +45,8 @@ typedef struct {
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vSI_start;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vsmax;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed vsmin;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_Thigh;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_Tlow;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_K;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_Kw;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_T;
@@ -69,6 +71,9 @@ typedef struct {
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed limiter_uMin;
 
     /* Constants */
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_K;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_freqHigh;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_freqLow;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_K;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y_start;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_K;
@@ -76,6 +81,10 @@ typedef struct {
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed discrete_stepSize;
 
     /* States */
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed der_bandPass1stOrder_xHP;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed der_bandPass1stOrder_xLP;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_xHP;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_xLP;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed der_dLHPFreplacement_x;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_x;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed der_imLeadLag_TF_x_scaled_1;

@@ -15,12 +15,21 @@ model PSSTypeIISimpleHPF
   Blocks.HighPassSimple
             dLHPFreplacement(Kw=Kw, Tw=Tw)
     "HP Filter replacing the derivative lag."
-    annotation (Placement(transformation(extent={{-70,-20},{-30,20}})));
+    annotation (Placement(transformation(extent={{-48,-12},{-24,12}})));
+  Blocks.BandPass1stOrder bandPass1stOrder(freqLow=freqLow, freqHigh=freqHigh)
+    annotation (Placement(transformation(extent={{-88,-10},{-68,10}})));
+  parameter Real freqLow=0.5
+    "Low cutoff frequency (Hz) – attenuates frequencies below this value";
+  parameter Real freqHigh=1.25
+    "High cutoff frequency (Hz) – attenuates frequencies above this value";
 equation
-  connect(dLHPFreplacement.u, vSI)
-    annotation (Line(points={{-74,0},{-120,0}}, color={0,0,127}));
   connect(dLHPFreplacement.y, imLeadLag.u)
-    annotation (Line(points={{-26,0},{-12,0}}, color={0,0,127}));
+    annotation (Line(points={{-21.6,0},{-12,0}},
+                                               color={0,0,127}));
+  connect(bandPass1stOrder.u, vSI)
+    annotation (Line(points={{-90,0},{-120,0}}, color={0,0,127}));
+  connect(bandPass1stOrder.y, dLHPFreplacement.u)
+    annotation (Line(points={{-66,0},{-50.4,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},

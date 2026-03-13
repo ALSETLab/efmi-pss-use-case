@@ -1,4 +1,4 @@
-/*2026-03-13T04:51:56.938993Z*/
+/*2026-03-13T16:07:00.291095200Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -100,15 +100,16 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->dLHPFreplacement_T = instance->dLHPFreplacement_Tw;
 
-    instance->bandPass1stOrder_Tlow = 1.0 / (6.28318530717958623 * instance->bandPass1stOrder_freqLow);
+    instance->lowPass1stOrder_freqHz = instance->freqLow;
 
-    instance->bandPass1stOrder_Thigh = 1.0 / (6.28318530717958623 * instance->bandPass1stOrder_freqHigh);
+    instance->lowPass1stOrder_K = instance->kLPF;
+
+    instance->lowPass1stOrder_T = 1.0 / (6.28318530717958623 * instance->lowPass1stOrder_freqHz);
 }
 
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_hpOut;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
@@ -129,19 +130,13 @@ static void Reinitialize(ALGOSTRUCT *instance)
     Initialize variables with start value equation (dependent initializations):
     */
 
-    instance->der_bandPass1stOrder_xHP = 0.0;
-
-    instance->der_bandPass1stOrder_xLP = 0.0;
+    instance->der_lowPass1stOrder_x = 0.0;
 
     instance->der_dLHPFreplacement_x = 0.0;
 
-    instance->bandPass1stOrder_xHP = (instance->vSI * instance->bandPass1stOrder_Tlow) / instance->bandPass1stOrder_Tlow;
+    instance->lowPass1stOrder_x = (instance->vSI * instance->lowPass1stOrder_T) / instance->lowPass1stOrder_T;
 
-    bandPass1stOrder_hpOut = instance->vSI - instance->bandPass1stOrder_xHP;
-
-    instance->bandPass1stOrder_xLP = (bandPass1stOrder_hpOut * instance->bandPass1stOrder_Thigh) / instance->bandPass1stOrder_Thigh;
-
-    dLHPFreplacement_u = instance->bandPass1stOrder_K * instance->bandPass1stOrder_xLP;
+    dLHPFreplacement_u = instance->lowPass1stOrder_K * instance->lowPass1stOrder_x;
 
     instance->dLHPFreplacement_x = (dLHPFreplacement_u * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
 
@@ -184,15 +179,9 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->discrete_stepSize = 1.00000000000000002e-3;
 
-    instance->bandPass1stOrder_K = 1.0;
-
     instance->imLeadLag_K = 1.0;
 
     instance->imLeadLag1_K = 1.0;
-
-    instance->bandPass1stOrder_freqHigh = 1.25;
-
-    instance->bandPass1stOrder_freqLow = 5.0e-1;
 
     instance->imLeadLag1_y_start = 0.0;
 
@@ -203,21 +192,25 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
+    instance->kLPF = 1.0;
+
+    instance->freqLow = 1.5e+1;
+
     instance->Tw = 5.0;
 
-    instance->Kw = 2.08000000000000007e+1;
+    instance->Kw = 1.08000000000000007e+1;
 
     instance->vsmin = -1.5;
 
     instance->vsmax = 1.5;
 
-    instance->T4 = 5.51479681529786006e-2;
+    instance->T4 = 0.0;
 
-    instance->T3 = 2.78203917593163985e-1;
+    instance->T3 = 0.0;
 
-    instance->T2 = 5.51479681529786006e-2;
+    instance->T2 = 0.0;
 
-    instance->T1 = 2.78203917593163985e-1;
+    instance->T1 = 0.0;
 
     instance->vSI_start = 1.0;
 
@@ -240,7 +233,6 @@ static void Startup(ALGOSTRUCT *instance)
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed bandPass1stOrder_hpOut;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
@@ -252,9 +244,7 @@ static void DoStep(ALGOSTRUCT *instance)
     if(instance->discrete_stepSize_active) {
         /* *********************************************************************** Update-equations for inline integration: */
 
-        instance->bandPass1stOrder_xHP += instance->discrete_stepSize * instance->der_bandPass1stOrder_xHP;
-
-        instance->bandPass1stOrder_xLP += instance->discrete_stepSize * instance->der_bandPass1stOrder_xLP;
+        instance->lowPass1stOrder_x += instance->discrete_stepSize * instance->der_lowPass1stOrder_x;
 
         instance->dLHPFreplacement_x += instance->discrete_stepSize * instance->der_dLHPFreplacement_x;
 
@@ -267,13 +257,9 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_bandPass1stOrder_xHP = (instance->vSI - instance->bandPass1stOrder_xHP) / instance->bandPass1stOrder_Tlow;
+    instance->der_lowPass1stOrder_x = (instance->vSI - instance->lowPass1stOrder_x) / instance->lowPass1stOrder_T;
 
-    bandPass1stOrder_hpOut = instance->vSI - instance->bandPass1stOrder_xHP;
-
-    instance->der_bandPass1stOrder_xLP = (bandPass1stOrder_hpOut - instance->bandPass1stOrder_xLP) / instance->bandPass1stOrder_Thigh;
-
-    dLHPFreplacement_u = instance->bandPass1stOrder_K * instance->bandPass1stOrder_xLP;
+    dLHPFreplacement_u = instance->lowPass1stOrder_K * instance->lowPass1stOrder_x;
 
     instance->der_dLHPFreplacement_x = (dLHPFreplacement_u - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
 

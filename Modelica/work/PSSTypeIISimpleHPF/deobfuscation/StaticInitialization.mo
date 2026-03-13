@@ -67,12 +67,12 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 	Real 'limiter.uMax';
 	Real 'limiter.uMin';
 
-	/* lowPass1stOrder: */
-	Real 'lowPass1stOrder.K';
-	Real 'lowPass1stOrder.T';
-	Real 'lowPass1stOrder.freqHz';
-	Real 'derivative(lowPass1stOrder.x)';
-	Real 'lowPass1stOrder.x';
+	/* lpf: */
+	Real 'lpf.K';
+	Real 'lpf.T';
+	Real 'lpf.freqHz';
+	Real 'derivative(lpf.x)';
+	Real 'lpf.x';
 
 	/* Internal sampling time: */
 	Real 'discrete.stepSize';
@@ -164,11 +164,11 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 			  "self.'imLeadLag1.TF.x_scaled'[1]",
 			  "self.'limiter.uMax'",
 			  "self.'limiter.uMin'",
-			  "self.'lowPass1stOrder.K'",
-			  "self.'lowPass1stOrder.T'",
-			  "self.'lowPass1stOrder.freqHz'",
-			  "self.'derivative(lowPass1stOrder.x)'",
-			  "self.'lowPass1stOrder.x'",
+			  "self.'lpf.K'",
+			  "self.'lpf.T'",
+			  "self.'lpf.freqHz'",
+			  "self.'derivative(lpf.x)'",
+			  "self.'lpf.x'",
 			  "self.'discrete.stepSize'",
 			  "self.'discrete.stepSize.active'"});
 			self.vSI := trajectories_buffer[1, 1];
@@ -222,11 +222,11 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 			self.'imLeadLag1.TF.x_scaled'[1] := trajectories_buffer[49, 1];
 			self.'limiter.uMax' := trajectories_buffer[50, 1];
 			self.'limiter.uMin' := trajectories_buffer[51, 1];
-			self.'lowPass1stOrder.K' := trajectories_buffer[52, 1];
-			self.'lowPass1stOrder.T' := trajectories_buffer[53, 1];
-			self.'lowPass1stOrder.freqHz' := trajectories_buffer[54, 1];
-			self.'derivative(lowPass1stOrder.x)' := trajectories_buffer[55, 1];
-			self.'lowPass1stOrder.x' := trajectories_buffer[56, 1];
+			self.'lpf.K' := trajectories_buffer[52, 1];
+			self.'lpf.T' := trajectories_buffer[53, 1];
+			self.'lpf.freqHz' := trajectories_buffer[54, 1];
+			self.'derivative(lpf.x)' := trajectories_buffer[55, 1];
+			self.'lpf.x' := trajectories_buffer[56, 1];
 			self.'discrete.stepSize' := trajectories_buffer[57, 1];
 			self.'discrete.stepSize.active' := trajectories_buffer[58, 1] > 0.0;
 
@@ -285,7 +285,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 			Initialize variables with explicit start value (independent initializations):
 		*/
 		self.kLPF := 1.0;
-		self.freqLow := 1.5e+1;
+		self.freqLow := 2.0e+1;
 		self.Tw := 5.0;
 		self.Kw := 1.08000000000000007e+1;
 		self.vsmin := -1.5;
@@ -350,9 +350,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		self.'dLHPFreplacement.Tw' := self.Tw;
 		self.'dLHPFreplacement.K' := (self.'dLHPFreplacement.Kw' * self.'dLHPFreplacement.Tw');
 		self.'dLHPFreplacement.T' := self.'dLHPFreplacement.Tw';
-		self.'lowPass1stOrder.freqHz' := self.freqLow;
-		self.'lowPass1stOrder.K' := self.kLPF;
-		self.'lowPass1stOrder.T' := (1.0 / (6.28318530717958623 * self.'lowPass1stOrder.freqHz'));
+		self.'lpf.freqHz' := self.freqLow;
+		self.'lpf.K' := self.kLPF;
+		self.'lpf.T' := (1.0 / (6.28318530717958623 * self.'lpf.freqHz'));
 	end Recalibrate;
 
 	function Reinitialize
@@ -386,10 +386,10 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		/*
 			Initialize variables with start value equation (dependent initializations):
 		*/
-		self.'derivative(lowPass1stOrder.x)' := 0.0;
+		self.'derivative(lpf.x)' := 0.0;
 		self.'derivative(dLHPFreplacement.x)' := 0.0;
-		self.'lowPass1stOrder.x' := ((self.vSI * self.'lowPass1stOrder.T') / self.'lowPass1stOrder.T');
-		'dLHPFreplacement.u' := (self.'lowPass1stOrder.K' * self.'lowPass1stOrder.x');
+		self.'lpf.x' := ((self.vSI * self.'lpf.T') / self.'lpf.T');
+		'dLHPFreplacement.u' := (self.'lpf.K' * self.'lpf.x');
 		self.'dLHPFreplacement.x' := (('dLHPFreplacement.u' * self.'dLHPFreplacement.T') / self.'dLHPFreplacement.T');
 		'imLeadLag.u' := ((self.'dLHPFreplacement.K' * ('dLHPFreplacement.u' - self.'dLHPFreplacement.x')) / self.'dLHPFreplacement.T');
 		'imLeadLag.TF.y' := self.'imLeadLag.TF.y_start';

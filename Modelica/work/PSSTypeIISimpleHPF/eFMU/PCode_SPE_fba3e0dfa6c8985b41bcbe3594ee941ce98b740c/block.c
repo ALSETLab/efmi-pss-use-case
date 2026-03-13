@@ -1,4 +1,4 @@
-/*2026-03-13T16:07:01.753576900Z*/
+/*2026-03-13T20:58:46.468824300Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -100,11 +100,11 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->dLHPFreplacement_T = instance->dLHPFreplacement_Tw;
 
-    instance->lowPass1stOrder_freqHz = instance->freqLow;
+    instance->lpf_freqHz = instance->freqLow;
 
-    instance->lowPass1stOrder_K = instance->kLPF;
+    instance->lpf_K = instance->kLPF;
 
-    instance->lowPass1stOrder_T = 1.0 / (6.28318530717958623 * instance->lowPass1stOrder_freqHz);
+    instance->lpf_T = 1.0 / (6.28318530717958623 * instance->lpf_freqHz);
 }
 
 static void Reinitialize(ALGOSTRUCT *instance)
@@ -130,13 +130,13 @@ static void Reinitialize(ALGOSTRUCT *instance)
     Initialize variables with start value equation (dependent initializations):
     */
 
-    instance->der_lowPass1stOrder_x = 0.0;
+    instance->der_lpf_x = 0.0;
 
     instance->der_dLHPFreplacement_x = 0.0;
 
-    instance->lowPass1stOrder_x = (instance->vSI * instance->lowPass1stOrder_T) / instance->lowPass1stOrder_T;
+    instance->lpf_x = (instance->vSI * instance->lpf_T) / instance->lpf_T;
 
-    dLHPFreplacement_u = instance->lowPass1stOrder_K * instance->lowPass1stOrder_x;
+    dLHPFreplacement_u = instance->lpf_K * instance->lpf_x;
 
     instance->dLHPFreplacement_x = (dLHPFreplacement_u * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
 
@@ -194,7 +194,7 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->kLPF = 1.0;
 
-    instance->freqLow = 1.5e+1;
+    instance->freqLow = 2.0e+1;
 
     instance->Tw = 5.0;
 
@@ -244,7 +244,7 @@ static void DoStep(ALGOSTRUCT *instance)
     if(instance->discrete_stepSize_active) {
         /* *********************************************************************** Update-equations for inline integration: */
 
-        instance->lowPass1stOrder_x += instance->discrete_stepSize * instance->der_lowPass1stOrder_x;
+        instance->lpf_x += instance->discrete_stepSize * instance->der_lpf_x;
 
         instance->dLHPFreplacement_x += instance->discrete_stepSize * instance->der_dLHPFreplacement_x;
 
@@ -257,9 +257,9 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_lowPass1stOrder_x = (instance->vSI - instance->lowPass1stOrder_x) / instance->lowPass1stOrder_T;
+    instance->der_lpf_x = (instance->vSI - instance->lpf_x) / instance->lpf_T;
 
-    dLHPFreplacement_u = instance->lowPass1stOrder_K * instance->lowPass1stOrder_x;
+    dLHPFreplacement_u = instance->lpf_K * instance->lpf_x;
 
     instance->der_dLHPFreplacement_x = (dLHPFreplacement_u - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
 

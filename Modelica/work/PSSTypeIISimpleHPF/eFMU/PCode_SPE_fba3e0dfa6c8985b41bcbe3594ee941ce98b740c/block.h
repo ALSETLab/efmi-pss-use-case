@@ -1,4 +1,4 @@
-/*2026-03-13T16:07:01.770936200Z*/
+/*2026-03-13T20:58:46.487154Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -69,9 +69,9 @@ typedef struct {
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y_start;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c limiter_uMax;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c limiter_uMin;
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lowPass1stOrder_K;
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lowPass1stOrder_T;
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lowPass1stOrder_freqHz;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_K;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_T;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_freqHz;
 
     /* Constants */
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_K;
@@ -87,8 +87,8 @@ typedef struct {
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_x_scaled[1];
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_imLeadLag1_TF_x_scaled_1;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_x_scaled[1];
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_lowPass1stOrder_x;
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lowPass1stOrder_x;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_lpf_x;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_x;
     bool     discrete_stepSize_active;
 
     /* Signals */

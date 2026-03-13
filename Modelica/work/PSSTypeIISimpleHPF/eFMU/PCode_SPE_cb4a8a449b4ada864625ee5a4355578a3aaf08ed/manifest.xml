@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{e1e44c99-d653-4049-98d5-47bcd7b71ca3}" name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" generationDateAndTime="2026-03-13T12:07:00Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{57cf751d-ef40-41e1-bfd5-434c4b3662be}" name="PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" generationDateAndTime="2026-03-13T16:58:45Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="ALG_MAN_ID" manifestRefId="{02a31216-4b38-4c90-b90e-c0f00832c5d9}" checksum="7c6f231164719724abc52bdae17f49af29182b14" origin="true"/>
+        <ManifestReference id="ALG_MAN_ID" manifestRefId="{3e1d6b77-b3f2-43bd-b32b-9ecec71e1d85}" checksum="c9b2e01158857cf56ac9502633f7ee91a51a0d62" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_block.c_0" name="block.c" path="./" needsChecksum="true" checksum="2faf10ebbb8ab0657a370a511a9f851e07187aa3" role="Code"/>
-        <File id="FILE_ID_galec_stl.h_1" name="galec_stl.h" path="./" needsChecksum="true" checksum="bbf7046e0f8440aea139fadad8064334196e4b3d" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.c_2" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="1f6d942c1628641352b69fbcd97fa62a74b2e40c" role="Code"/>
-        <File id="FILE_ID_galec_stl_configuration.h_3" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="5f0250ea86c986a3e5646af977b2484c1d1219c7" role="Code"/>
-        <File id="FILE_ID_galec_stl.c_4" name="galec_stl.c" path="./" needsChecksum="true" checksum="46ad7469764acb93efe81c8c283ec710622faebd" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.c_5" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="9a51559db33129de92d0e7c35996601c1890c45a" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.h_6" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="711c7d0b5477613be1bd510dde357995804e7735" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.h_7" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="fb268c7123565dc67b50eab482d2c281232221c3" role="Code"/>
-        <File id="FILE_ID_block.h_8" name="block.h" path="./" needsChecksum="true" checksum="b9c25ec033e3df8d86e67292f1159081b18016ac" role="Code"/>
+        <File id="FILE_ID_block.c_0" name="block.c" path="./" needsChecksum="true" checksum="ced2722f6f031a24363c5359751311b9a9140416" role="Code"/>
+        <File id="FILE_ID_galec_stl.h_1" name="galec_stl.h" path="./" needsChecksum="true" checksum="072e5bc18e960479682738311201e8dbdc45c8fa" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.c_2" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="f5cb9bbb632e8a351dfabcb71c7900a472d439ed" role="Code"/>
+        <File id="FILE_ID_galec_stl_configuration.h_3" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="744ac18a018a736b4c67e04e6335ccc7d1bcd7a4" role="Code"/>
+        <File id="FILE_ID_galec_stl.c_4" name="galec_stl.c" path="./" needsChecksum="true" checksum="ac7adbb7302cd334bab5190ed956bee017692168" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.c_5" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="7ea4a52c0933808d3db88d5ba119338f88bc1e96" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.h_6" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="9c9b8c5e1c66d9e4c0caaa5a9f0e8e9aafed1e27" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.h_7" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="36cd54c420a64610cf0ec1eb28be820605baf632" role="Code"/>
+        <File id="FILE_ID_block.h_8" name="block.h" path="./" needsChecksum="true" checksum="83551adefca2ce480dab071ac963b2a66ff9a4d2" role="Code"/>
     </Files>
     <CodeContainer language="C" standard="C99" platform="Legacy" floatPrecision="32-bit">
         <Target>Generic</Target>
@@ -188,9 +188,9 @@
                             <Component id="COMP_ID_imLeadLag1_TF_y_start_33" name="imLeadLag1_TF_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_limiter_uMax_34" name="limiter_uMax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_limiter_uMin_35" name="limiter_uMin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lowPass1stOrder_K_36" name="lowPass1stOrder_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lowPass1stOrder_T_37" name="lowPass1stOrder_T" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lowPass1stOrder_freqHz_38" name="lowPass1stOrder_freqHz" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_K_36" name="lpf_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_T_37" name="lpf_T" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_freqHz_38" name="lpf_freqHz" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_imLeadLag_K_39" name="imLeadLag_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_imLeadLag_y_start_40" name="imLeadLag_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_imLeadLag1_K_41" name="imLeadLag1_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
@@ -210,8 +210,8 @@
     <Dimension number="0" size="1"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_der_lowPass1stOrder_x_50" name="der_lowPass1stOrder_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lowPass1stOrder_x_51" name="lowPass1stOrder_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_lpf_x_50" name="der_lpf_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_x_51" name="lpf_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_discrete_stepSize_active_52" name="discrete_stepSize_active" typeDefRefId="TYPE_ID_bool_1" pointer="false"/>
                         </Components>
                     </Typedef>
@@ -401,16 +401,16 @@
                     <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.limiter_uMin"/>
                 </DataReference>
                 <DataReference>
-                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lowPass1stOrder.K'"/>
-                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lowPass1stOrder_K"/>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lpf.K'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lpf_K"/>
                 </DataReference>
                 <DataReference>
-                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lowPass1stOrder.T'"/>
-                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lowPass1stOrder_T"/>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lpf.T'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lpf_T"/>
                 </DataReference>
                 <DataReference>
-                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lowPass1stOrder.freqHz'"/>
-                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lowPass1stOrder_freqHz"/>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lpf.freqHz'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lpf_freqHz"/>
                 </DataReference>
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.K'"/>
@@ -457,12 +457,12 @@
                     <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.imLeadLag1_TF_x_scaled"/>
                 </DataReference>
                 <DataReference>
-                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(lowPass1stOrder.x)'"/>
-                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_lowPass1stOrder_x"/>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'derivative(lpf.x)'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.der_lpf_x"/>
                 </DataReference>
                 <DataReference>
-                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lowPass1stOrder.x'"/>
-                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lowPass1stOrder_x"/>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lpf.x'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.lpf_x"/>
                 </DataReference>
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'discrete.stepSize.active'"/>

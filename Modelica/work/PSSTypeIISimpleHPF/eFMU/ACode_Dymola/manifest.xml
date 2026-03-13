@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{02a31216-4b38-4c90-b90e-c0f00832c5d9}"
+	id="{3e1d6b77-b3f2-43bd-b32b-9ecec71e1d85}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF"
-	generationDateAndTime="2026-03-13T16:06:59Z"
+	generationDateAndTime="2026-03-13T20:58:44Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
 	description="PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a simplified HPF implementation."
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="5bcae3e41a692f70ffbb46b149537ce0f7fa21a9"
+			checksum="008fb603b0bce38db04d25f158f6a2442255e46d"
 			role="Code"/>
 	</Files>
 
@@ -46,6 +46,10 @@
 
 	<Units>
 		<Unit id="[1]" name="1"/>
+		<Unit id="[Hz]" name="Hz">
+			<BaseUnit
+				s="-1"/>
+		</Unit>
 		<Unit id="[s]" name="s">
 			<BaseUnit
 				s="1"/>
@@ -126,12 +130,14 @@
 			name="freqLow"
 			description="Low cutoff frequency (Hz) – attenuates frequencies below this value"
 			blockCausality="tunableParameter"
-			start="1.5e+1">
+			unitRefId="[Hz]"
+			relativeQuantity="false"
+			start="2.0e+1">
 		</RealVariable>
 		<RealVariable
 			id="kLPF"
 			name="kLPF"
-			description="Low-pass filter gain - attenuate measurement noise"
+			description="Low-pass filter gain – attenuates measurement noise."
 			blockCausality="tunableParameter"
 			start="1.0">
 		</RealVariable>
@@ -429,36 +435,38 @@
 			start="-1.5">
 		</RealVariable>
 		<RealVariable
-			id="'lowPass1stOrder.K'"
-			name="'lowPass1stOrder.K'"
+			id="'lpf.K'"
+			name="'lpf.K'"
 			description="Filter gain"
 			blockCausality="dependentParameter"
 			start="1.0">
 		</RealVariable>
 		<RealVariable
-			id="'lowPass1stOrder.T'"
-			name="'lowPass1stOrder.T'"
+			id="'lpf.T'"
+			name="'lpf.T'"
 			description="Time constant derived from cutoff frequency"
 			blockCausality="dependentParameter"
-			start="1.06103295394596904e-2">
+			start="7.95774715459476693e-3">
 		</RealVariable>
 		<RealVariable
-			id="'lowPass1stOrder.freqHz'"
-			name="'lowPass1stOrder.freqHz'"
+			id="'lpf.freqHz'"
+			name="'lpf.freqHz'"
 			description="Cutoff frequency in Hz"
 			blockCausality="dependentParameter"
-			start="1.5e+1">
+			unitRefId="[Hz]"
+			relativeQuantity="false"
+			start="2.0e+1">
 		</RealVariable>
 		<RealVariable
-			id="'derivative(lowPass1stOrder.x)'"
-			name="'derivative(lowPass1stOrder.x)'"
+			id="'derivative(lpf.x)'"
+			name="'derivative(lpf.x)'"
 			description="der(Internal filter state)"
 			blockCausality="state"
 			start="0.0">
 		</RealVariable>
 		<RealVariable
-			id="'lowPass1stOrder.x'"
-			name="'lowPass1stOrder.x'"
+			id="'lpf.x'"
+			name="'lpf.x'"
 			description="Internal filter state"
 			blockCausality="state"
 			start="1.0">

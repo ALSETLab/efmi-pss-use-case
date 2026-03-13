@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.DerivativeLagWO;
 function bodeDLandHPF
   "Plots the bode response for the derivative lag and high pass filter parametrized to replace it."
   extends Modelica.Icons.Function;

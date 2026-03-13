@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.DerivativeLagWO;
 block DerivativeLagHighPass
   "High-pass filter replacement for OpenIPSL DerivativeLag"
   extends Modelica.Blocks.Interfaces.SISO;

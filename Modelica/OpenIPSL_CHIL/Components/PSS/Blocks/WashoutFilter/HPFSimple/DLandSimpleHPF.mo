@@ -1,10 +1,10 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.HPFSimple;
 model DLandSimpleHPF
   "Model to compare the frequency domain response of the derivative filter and the simple high pass filter"
   parameter Real Kw = 10.5;
   parameter Real Tw = 5.0;
   parameter Integer order = 1;
-  HighPassSimple HPSimple(Kw=Kw, Tw=Tw)
+  WashoutFilter.HPFSimple.HighPassSimple HPSimple(Kw=Kw, Tw=Tw)
     annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
   OpenIPSL.NonElectrical.Continuous.DerivativeLag
                                          derivativeLag(

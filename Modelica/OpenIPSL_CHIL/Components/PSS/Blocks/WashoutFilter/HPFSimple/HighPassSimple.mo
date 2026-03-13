@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.HPFSimple;
 block HighPassSimple
   "First-order high-pass Butterworth filter (Derivative-Lag replacement)"
 

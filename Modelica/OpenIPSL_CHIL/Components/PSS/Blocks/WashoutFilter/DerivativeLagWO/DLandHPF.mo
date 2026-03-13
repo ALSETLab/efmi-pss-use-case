@@ -1,14 +1,13 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.DerivativeLagWO;
 model DLandHPF
   "Model to compare the frequency domain response of the derivative filter and high pass filter using the MSL"
   parameter Real Kw = 10.5;
   parameter Real Tw = 5.0;
   parameter Integer order = 1;
-  Blocks.DerivativeLagHighPass HPvariant(
+  DerivativeLagWO.DerivativeLagHighPass HPvariant(
     order=order,
     Kw=Kw,
-    Tw=Tw)
-    annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
+    Tw=Tw) annotation (Placement(transformation(extent={{-10,-30},{10,-10}})));
   OpenIPSL.NonElectrical.Continuous.DerivativeLag
                                          derivativeLag(
     K=Kw*Tw,

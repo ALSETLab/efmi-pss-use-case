@@ -4,7 +4,7 @@ model LowPass1stOrder "Simple first-order low-pass filter"
   import Modelica.Blocks.Interfaces.RealInput;
   import Modelica.Blocks.Interfaces.RealOutput;
 
-  parameter Real freqHz = 2.5 "Cutoff frequency in Hz";
+  parameter Real freqHz = 15.0 "Cutoff frequency in Hz";
   parameter Real K = 1 "Filter gain";
   parameter Real T = 1/(2*Modelica.Constants.pi*freqHz)
     "Time constant derived from cutoff frequency";

@@ -12,19 +12,19 @@ model PSSTypeIISimpleHPF
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
-  Blocks.HighPassSimple
-            dLHPFreplacement(Kw=Kw, Tw=Tw)
+  Blocks.WashoutFilter.HPFSimple.HighPassSimple dLHPFreplacement(Kw=Kw, Tw=Tw)
     "HP Filter replacing the derivative lag."
     annotation (Placement(transformation(extent={{-48,-12},{-24,12}})));
   Blocks.NoiseSupressionFilters.LowPass1stOrder lpf(freqHz=freqLow, K=kLPF)
     annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
 
-  parameter Real freqLow=15.0
+
+  parameter Modelica.Units.SI.Frequency freqLow=20.0
     "Low cutoff frequency (Hz) – attenuates frequencies below this value";
 /*  parameter Real freqHigh=60.00
     "High cutoff frequency (Hz) – attenuates frequencies above this value";
 */
-  parameter Real kLPF = 1.00 "Low-pass filter gain - attenuate measurement noise";
+  parameter Real kLPF = 1.00 "Low-pass filter gain – attenuates measurement noise.";
 equation
   connect(dLHPFreplacement.y, imLeadLag.u)
     annotation (Line(points={{-21.6,0},{-12,0}},

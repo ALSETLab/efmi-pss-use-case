@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.WashoutFilter.HPFSimple;
 function bodeDLandSimpleHPF
   "Plots the bode response for the derivative lag and simple high pass filter parametrized to replace it."
   extends Modelica.Icons.Function;

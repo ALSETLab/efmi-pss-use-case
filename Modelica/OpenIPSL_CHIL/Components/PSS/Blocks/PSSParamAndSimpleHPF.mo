@@ -1,5 +1,5 @@
 within OpenIPSL_CHIL.Components.PSS.Blocks;
-model ComparePSSTypes
+model PSSParamAndSimpleHPF
   "Model to compare the PSSTypeIIParam model vs the PSSTypeIISimpleHPF models"
   PSSTypeIISimpleHPF pssHPF
     annotation (Placement(transformation(extent={{-20,-60},{20,-20}})));
@@ -22,4 +22,4 @@ equation
     annotation (Line(points={{22,-40},{110,-40}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)));
-end ComparePSSTypes;
+end PSSParamAndSimpleHPF;

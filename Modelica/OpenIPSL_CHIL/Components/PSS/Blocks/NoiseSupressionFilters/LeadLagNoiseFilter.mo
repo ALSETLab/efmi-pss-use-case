@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.NoiseSupressionFilters;
 model LeadLagNoiseFilter
   "Lead-lag filter providing noise attenuation with reduced phase lag"
 
@@ -54,7 +54,10 @@ annotation (
         textString="Lead-Lag"),
       Text(
         extent={{-90,-16},{90,-56}},
-        textString="(1+sTz)/(1+sTp)")}),
+        textString="(1+sTz)/(1+sTp)"),  Text(
+        extent={{-152,140},{148,100}},
+        textString="%name",
+        textColor={0,0,255})}),
   Documentation(info="
 <html>
 

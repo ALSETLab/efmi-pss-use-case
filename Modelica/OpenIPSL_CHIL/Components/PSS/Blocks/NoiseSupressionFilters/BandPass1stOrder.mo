@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Components.PSS.Blocks;
+within OpenIPSL_CHIL.Components.PSS.Blocks.NoiseSupressionFilters;
 model BandPass1stOrder
   "Simple band-pass filter using cascaded first-order high-pass and low-pass filters"
 
@@ -57,11 +57,33 @@ annotation (
         fillColor={255,255,255},
         fillPattern=FillPattern.Solid),
       Text(
-        extent={{-90,70},{90,30}},
-        textString="Band-Pass"),
+        extent={{-98,100},{100,60}},
+          textString="BPF",
+          textColor={0,0,0}),
       Text(
-        extent={{-92,6},{88,-34}},
-        textString="HP + LP")}),
+        extent={{-98,64},{100,24}},
+        textString="HP + LP"),          Text(
+        extent={{-146,152},{154,112}},
+        textString="%name",
+        textColor={0,0,255}),
+      Line(points={{-76,82},{-76,-86}},
+        color={192,192,192}),
+      Polygon(lineColor={192,192,192},
+        fillColor={192,192,192},
+        fillPattern=FillPattern.Solid,
+        points={{-76,94},{-84,72},{-68,72},{-76,94}}),
+      Line(points={{-86,-76},{86,-76}},
+        color={192,192,192}),
+      Polygon(lineColor={192,192,192},
+        fillColor={192,192,192},
+        fillPattern=FillPattern.Solid,
+        points={{94,-76},{72,-68},{72,-84},{94,-76}}),
+      Rectangle(lineColor={160,160,164},
+        fillColor={255,255,255},
+        fillPattern=FillPattern.Backward,
+        extent={{-58,-76},{36,2}}),
+      Line(origin={7.333,-4.667},   points={{-83.333,-71.333},{-65.333,34.667},
+              {30.667,34.667},{42.667,-71.333}},                                                  color = {0,0,127}, smooth = Smooth.Bezier)}),
   Diagram(
     coordinateSystem(
       preserveAspectRatio=true,

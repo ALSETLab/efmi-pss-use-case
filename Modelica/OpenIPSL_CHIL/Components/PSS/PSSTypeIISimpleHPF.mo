@@ -16,7 +16,7 @@ model PSSTypeIISimpleHPF
             dLHPFreplacement(Kw=Kw, Tw=Tw)
     "HP Filter replacing the derivative lag."
     annotation (Placement(transformation(extent={{-48,-12},{-24,12}})));
-  Blocks.LowPass1stOrder lowPass1stOrder(freqHz=freqLow,  K=kLPF)
+  Blocks.NoiseSupressionFilters.LowPass1stOrder lpf(freqHz=freqLow, K=kLPF)
     annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
 
   parameter Real freqLow=15.0
@@ -29,9 +29,9 @@ equation
   connect(dLHPFreplacement.y, imLeadLag.u)
     annotation (Line(points={{-21.6,0},{-12,0}},
                                                color={0,0,127}));
-  connect(lowPass1stOrder.u, vSI)
+  connect(lpf.u, vSI)
     annotation (Line(points={{-88,0},{-120,0}}, color={0,0,127}));
-  connect(lowPass1stOrder.y, dLHPFreplacement.u)
+  connect(lpf.y, dLHPFreplacement.u)
     annotation (Line(points={{-64,0},{-50.4,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},

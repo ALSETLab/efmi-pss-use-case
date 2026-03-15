@@ -3,7 +3,8 @@ model Grid4CHIL_IOplus
   "System model for CHIL testing with more I/O"
   extends Network.RTNetwork;
 
-  replaceable Generator.Design.GenAVRIO    G1(displayPF=false, K0=K0)
+  replaceable Generator.ReDesign.GenAVRIOReDesign
+                                           G1(displayPF=false, K0=K0)
     constrainedby Generator.GenTemplate
     annotation (Placement(transformation(extent={{-98,-14},{-70,14}})),
       choicesAllMatching=true);

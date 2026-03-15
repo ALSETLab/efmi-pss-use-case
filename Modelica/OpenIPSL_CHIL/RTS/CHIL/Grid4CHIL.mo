@@ -2,7 +2,8 @@ within OpenIPSL_CHIL.RTS.CHIL;
 model Grid4CHIL "System model for CHIL testing"
   extends Network.RTNetworkMinimal;
 
-  replaceable Generator.Design.GenAVRIO    G1(displayPF=false, K0=K0)
+  replaceable Generator.ReDesign.GenAVRIOReDesign
+                                           G1(displayPF=false, K0=K0)
     constrainedby Generator.GenTemplate
     annotation (Placement(transformation(extent={{-98,-14},{-70,14}})),
       choicesAllMatching=true);

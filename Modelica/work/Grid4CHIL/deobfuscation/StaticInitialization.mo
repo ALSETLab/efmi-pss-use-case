@@ -568,7 +568,7 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 		self.'G1.avr.Tr' := 1.49999999999999994e-2;
 		self.'G1.avr.T1' := 1.0;
 		self.'G1.avr.T2' := 1.0;
-		self.'G1.avr.Te' := 1.00000000000000005e-4;
+		self.'G1.avr.Te' := 1.00000000000000006e-1;
 		self.'G1.machine.Vn' := 4.0e+5;
 		self.'G1.machine.Taa' := 2.00000000000000004e-3;
 		self.'G1.machine.T1d0' := 8.0;

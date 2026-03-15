@@ -2,59 +2,31 @@ within OpenIPSL_CHIL.Generator.PSSTypeIIParam;
 model GenPSSTypeIIParam
   "Generator with AVR and designed PSS modified for efmi export, PSSTypeIIParam. PSS uses derivative lag block for the wahsout filter."
   extends OpenIPSL_CHIL.Generator.GenTemplate;
-  replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
-    D=0,
-    M=7,
-    P_0=P_0,
-    Q_0=Q_0,
-    Sn=2220000000,
-    T1d0=8,
-    T1q0=1,
-    T2d0=0.03,
-    T2q0=0.07,
-    Taa=0.002,
-    V_b=V_b,
-    Vn=400000,
-    angle_0=angle_0,
-    ra=0.003,
-    v_0=v_0,
-    x1d=0.3,
-    x1q=0.65,
-    x2d=0.23,
-    x2q=0.25,
-    xd=1.81,
-    xq=1.76) constrainedby Components.Machines.Base.baseMachine annotation (
-      Placement(visible=true, transformation(
-        origin={49,5},
-        extent={{-31,-31},{31,31}},
-        rotation=0)));
-  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(K0 = 200, T1 = 1, T2 = 1,
-    Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
-    Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
   Components.PSS.PSSTypeIIParam pss
-                annotation (Placement(transformation(origin={-40,10}, extent={{
-            -40,-10},{-20,10}})));
+                annotation (Placement(transformation(                 extent={{-50,-10},
+            {-30,10}})));
+
+  ReDesign.GenAVRIOReDesign genAVRIOReDesign
+    annotation (Placement(transformation(extent={{20,-20},{60,20}})));
 equation
-  connect(avr.vf, machine.vf) annotation(
-    Line(points = {{-4.33333, 20}, {4, 20}, {4, 20.5}, {11.8, 20.5}}, color = {0, 0, 127}));
-  connect(machine.p, pwPin) annotation(
-    Line(points = {{80, 5}, {110, 5}, {110, 0}}, color = {0, 0, 255}));
-  connect(machine.v, avr.v) annotation(
-    Line(points={{83.1,14.3},{98,14.3},{98,80},{-70,80},{-70,30},{-44.3333,30}},              color = {0, 0, 127}));
-  connect(machine.pm0, machine.pm) annotation(
-    Line(points = {{24.2, -29.1}, {24.2, -32}, {-6, -32}, {-6, -10.5}, {11.8, -10.5}}, color = {0, 0, 127}));
-  connect(machine.vf0, avr.vf0) annotation(
-    Line(points={{24.2,39.1},{24.2,60},{-26,60},{-26,38.3333}},          color = {0, 0, 127}));
-  connect(pss.vs, avr.vs)
-    annotation (Line(points={{-59,10},{-44.3333,10}},    color={0,0,127}));
-  connect(pss.vSI, machine.w) annotation (Line(points={{-82,10},{-92,10},{-92,
-          -40},{94,-40},{94,32.9},{83.1,32.9}}, color={0,0,127}));
+  connect(pss.vs, genAVRIOReDesign.u)
+    annotation (Line(points={{-29,0},{16,0}}, color={0,0,127}));
+  connect(genAVRIOReDesign.pwPin, pwPin)
+    annotation (Line(points={{62,0},{110,0}}, color={0,0,255}));
+  connect(genAVRIOReDesign.w, pss.vSI) annotation (Line(points={{62,18},{80,18},
+          {80,40},{-80,40},{-80,0},{-52,0}}, color={0,0,127}));
   annotation (Icon(graphics={
+        Ellipse(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,140,72},
+          lineThickness=0.5,
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
         Rectangle(
           extent={{-46,-96},{54,-56}},
           lineColor={255,255,255},
           pattern=LinePattern.None,
-          fillColor={255,255,255},
+          fillColor={215,215,215},
           fillPattern=FillPattern.Solid,
           radius=10),
         Rectangle(
@@ -234,7 +206,13 @@ equation
           radius=10,
           pattern=LinePattern.None,
           lineColor={0,0,0}),Text(
-          extent={{-38,-56},{46,-94}},
+          extent={{-78,62},{82,-58}},
           textColor={0,140,72},
-          textString="PSS4eFMI")}));
+          fontName="Geist",
+          textStyle={TextStyle.Bold,TextStyle.Italic},
+          textString="PSS"),
+        Text(
+          extent={{-48,-50},{48,-98}},
+          textColor={255,255,255},
+          textString="ref")}));
 end GenPSSTypeIIParam;

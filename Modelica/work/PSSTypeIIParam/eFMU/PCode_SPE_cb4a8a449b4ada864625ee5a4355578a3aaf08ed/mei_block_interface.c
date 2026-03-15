@@ -1,4 +1,4 @@
-/*2026-03-12T01:22:42.732374Z*/
+/*2026-03-15T03:50:29.509141800Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.c
@@ -59,6 +59,8 @@ MODELICA_Integer mei_Recalibrate_H67479d7783111b50ee4f84437c325e160da02330_cb4a8
 ,   /* TUNEABLE */  MODELICA_Real   T3
 ,   /* TUNEABLE */  MODELICA_Real   T4
 ,   /* TUNEABLE */  MODELICA_Real   Tw
+,   /* TUNEABLE */  MODELICA_Real   freqLow
+,   /* TUNEABLE */  MODELICA_Real   kLPF
 ,   /* TUNEABLE */  MODELICA_Real   vSI_start
 ,   /* TUNEABLE */  MODELICA_Real   vsmax
 ,   /* TUNEABLE */  MODELICA_Real   vsmin
@@ -73,6 +75,8 @@ MODELICA_Integer mei_Recalibrate_H67479d7783111b50ee4f84437c325e160da02330_cb4a8
         self->T3 = (SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) T3;
         self->T4 = (SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) T4;
         self->Tw = (SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) Tw;
+        self->freqLow = (SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) freqLow;
+        self->kLPF = (SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) kLPF;
         self->vSI_start = (SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) \
             vSI_start;
         self->vsmax = (SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) vsmax;

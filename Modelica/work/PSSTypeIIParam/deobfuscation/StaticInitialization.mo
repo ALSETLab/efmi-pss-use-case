@@ -18,6 +18,8 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 	Real T3;
 	Real T4;
 	Real Tw;
+	Real freqLow;
+	Real kLPF;
 	Real vSI_start;
 	Real vsmax;
 	Real vsmin;
@@ -73,6 +75,13 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 	Real 'limiter.uMax';
 	Real 'limiter.uMin';
 
+	/* lpf: */
+	Real 'lpf.K';
+	Real 'lpf.T';
+	Real 'lpf.freqHz';
+	Real 'derivative(lpf.x)';
+	Real 'lpf.x';
+
 	/* Internal sampling time: */
 	Real 'discrete.stepSize';
 	Boolean 'discrete.stepSize.active';
@@ -108,7 +117,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		  resultFile = result_file);
 		
 		if succeeded then
-			trajectories_buffer[1:60] := .DymolaCommands.Trajectories.readTrajectory(
+			trajectories_buffer := .DymolaCommands.Trajectories.readTrajectory(
 			 fileName = result_file + ".mat",
 			 rows = 1,
 			 signals = {
@@ -120,6 +129,8 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 			  "self.T3",
 			  "self.T4",
 			  "self.Tw",
+			  "self.freqLow",
+			  "self.kLPF",
 			  "self.vSI_start",
 			  "self.vsmax",
 			  "self.vsmin",
@@ -170,8 +181,10 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 			  "self.'imLeadLag1.TF.x_scaled'[1]",
 			  "self.'limiter.uMax'",
 			  "self.'limiter.uMin'",
-			  "self.'discrete.stepSize'",
-			  "self.'discrete.stepSize.active'"});
+			  "self.'lpf.K'",
+			  "self.'lpf.T'",
+			  "self.'lpf.freqHz'",
+			  "self.'derivative(lpf.x)'"});
 			self.vSI := trajectories_buffer[1, 1];
 			self.vs := trajectories_buffer[2, 1];
 			self.Kw := trajectories_buffer[3, 1];
@@ -180,58 +193,73 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 			self.T3 := trajectories_buffer[6, 1];
 			self.T4 := trajectories_buffer[7, 1];
 			self.Tw := trajectories_buffer[8, 1];
-			self.vSI_start := trajectories_buffer[9, 1];
-			self.vsmax := trajectories_buffer[10, 1];
-			self.vsmin := trajectories_buffer[11, 1];
-			self.'derivativeLag.y_start' := trajectories_buffer[12, 1];
-			self.'derivativeLag.K' := trajectories_buffer[13, 1];
-			self.'derivativeLag.K_dummy' := trajectories_buffer[14, 1];
-			self.'derivativeLag.T' := trajectories_buffer[15, 1];
-			self.'derivativeLag.T_dummy' := trajectories_buffer[16, 1];
-			self.'derivativeLag.TF.a'[1] := trajectories_buffer[17, 1];
-			self.'derivativeLag.TF.a'[2] := trajectories_buffer[18, 1];
-			self.'derivativeLag.TF.b'[1] := trajectories_buffer[19, 1];
-			self.'derivativeLag.TF.b'[2] := trajectories_buffer[20, 1];
-			self.'derivativeLag.TF.bb'[1] := trajectories_buffer[21, 1];
-			self.'derivativeLag.TF.bb'[2] := trajectories_buffer[22, 1];
-			self.'derivativeLag.TF.d' := trajectories_buffer[23, 1];
-			self.'derivativeLag.TF.y_start' := trajectories_buffer[24, 1];
-			self.'derivative(derivativeLag.TF.x_scaled[1])' := trajectories_buffer[25, 1];
-			self.'derivativeLag.TF.x_scaled'[1] := trajectories_buffer[26, 1];
-			self.'imLeadLag.K' := trajectories_buffer[27, 1];
-			self.'imLeadLag.y_start' := trajectories_buffer[28, 1];
-			self.'imLeadLag.T1' := trajectories_buffer[29, 1];
-			self.'imLeadLag.T2' := trajectories_buffer[30, 1];
-			self.'imLeadLag.T2_dummy' := trajectories_buffer[31, 1];
-			self.'imLeadLag.TF.a'[1] := trajectories_buffer[32, 1];
-			self.'imLeadLag.TF.a'[2] := trajectories_buffer[33, 1];
-			self.'imLeadLag.TF.b'[1] := trajectories_buffer[34, 1];
-			self.'imLeadLag.TF.b'[2] := trajectories_buffer[35, 1];
-			self.'imLeadLag.TF.bb'[1] := trajectories_buffer[36, 1];
-			self.'imLeadLag.TF.bb'[2] := trajectories_buffer[37, 1];
-			self.'imLeadLag.TF.d' := trajectories_buffer[38, 1];
-			self.'imLeadLag.TF.y_start' := trajectories_buffer[39, 1];
-			self.'derivative(imLeadLag.TF.x_scaled[1])' := trajectories_buffer[40, 1];
-			self.'imLeadLag.TF.x_scaled'[1] := trajectories_buffer[41, 1];
-			self.'imLeadLag1.K' := trajectories_buffer[42, 1];
-			self.'imLeadLag1.y_start' := trajectories_buffer[43, 1];
-			self.'imLeadLag1.T1' := trajectories_buffer[44, 1];
-			self.'imLeadLag1.T2' := trajectories_buffer[45, 1];
-			self.'imLeadLag1.T2_dummy' := trajectories_buffer[46, 1];
-			self.'imLeadLag1.TF.a'[1] := trajectories_buffer[47, 1];
-			self.'imLeadLag1.TF.a'[2] := trajectories_buffer[48, 1];
-			self.'imLeadLag1.TF.b'[1] := trajectories_buffer[49, 1];
-			self.'imLeadLag1.TF.b'[2] := trajectories_buffer[50, 1];
-			self.'imLeadLag1.TF.bb'[1] := trajectories_buffer[51, 1];
-			self.'imLeadLag1.TF.bb'[2] := trajectories_buffer[52, 1];
-			self.'imLeadLag1.TF.d' := trajectories_buffer[53, 1];
-			self.'imLeadLag1.TF.y_start' := trajectories_buffer[54, 1];
-			self.'derivative(imLeadLag1.TF.x_scaled[1])' := trajectories_buffer[55, 1];
-			self.'imLeadLag1.TF.x_scaled'[1] := trajectories_buffer[56, 1];
-			self.'limiter.uMax' := trajectories_buffer[57, 1];
-			self.'limiter.uMin' := trajectories_buffer[58, 1];
-			self.'discrete.stepSize' := trajectories_buffer[59, 1];
-			self.'discrete.stepSize.active' := trajectories_buffer[60, 1] > 0.0;
+			self.freqLow := trajectories_buffer[9, 1];
+			self.kLPF := trajectories_buffer[10, 1];
+			self.vSI_start := trajectories_buffer[11, 1];
+			self.vsmax := trajectories_buffer[12, 1];
+			self.vsmin := trajectories_buffer[13, 1];
+			self.'derivativeLag.y_start' := trajectories_buffer[14, 1];
+			self.'derivativeLag.K' := trajectories_buffer[15, 1];
+			self.'derivativeLag.K_dummy' := trajectories_buffer[16, 1];
+			self.'derivativeLag.T' := trajectories_buffer[17, 1];
+			self.'derivativeLag.T_dummy' := trajectories_buffer[18, 1];
+			self.'derivativeLag.TF.a'[1] := trajectories_buffer[19, 1];
+			self.'derivativeLag.TF.a'[2] := trajectories_buffer[20, 1];
+			self.'derivativeLag.TF.b'[1] := trajectories_buffer[21, 1];
+			self.'derivativeLag.TF.b'[2] := trajectories_buffer[22, 1];
+			self.'derivativeLag.TF.bb'[1] := trajectories_buffer[23, 1];
+			self.'derivativeLag.TF.bb'[2] := trajectories_buffer[24, 1];
+			self.'derivativeLag.TF.d' := trajectories_buffer[25, 1];
+			self.'derivativeLag.TF.y_start' := trajectories_buffer[26, 1];
+			self.'derivative(derivativeLag.TF.x_scaled[1])' := trajectories_buffer[27, 1];
+			self.'derivativeLag.TF.x_scaled'[1] := trajectories_buffer[28, 1];
+			self.'imLeadLag.K' := trajectories_buffer[29, 1];
+			self.'imLeadLag.y_start' := trajectories_buffer[30, 1];
+			self.'imLeadLag.T1' := trajectories_buffer[31, 1];
+			self.'imLeadLag.T2' := trajectories_buffer[32, 1];
+			self.'imLeadLag.T2_dummy' := trajectories_buffer[33, 1];
+			self.'imLeadLag.TF.a'[1] := trajectories_buffer[34, 1];
+			self.'imLeadLag.TF.a'[2] := trajectories_buffer[35, 1];
+			self.'imLeadLag.TF.b'[1] := trajectories_buffer[36, 1];
+			self.'imLeadLag.TF.b'[2] := trajectories_buffer[37, 1];
+			self.'imLeadLag.TF.bb'[1] := trajectories_buffer[38, 1];
+			self.'imLeadLag.TF.bb'[2] := trajectories_buffer[39, 1];
+			self.'imLeadLag.TF.d' := trajectories_buffer[40, 1];
+			self.'imLeadLag.TF.y_start' := trajectories_buffer[41, 1];
+			self.'derivative(imLeadLag.TF.x_scaled[1])' := trajectories_buffer[42, 1];
+			self.'imLeadLag.TF.x_scaled'[1] := trajectories_buffer[43, 1];
+			self.'imLeadLag1.K' := trajectories_buffer[44, 1];
+			self.'imLeadLag1.y_start' := trajectories_buffer[45, 1];
+			self.'imLeadLag1.T1' := trajectories_buffer[46, 1];
+			self.'imLeadLag1.T2' := trajectories_buffer[47, 1];
+			self.'imLeadLag1.T2_dummy' := trajectories_buffer[48, 1];
+			self.'imLeadLag1.TF.a'[1] := trajectories_buffer[49, 1];
+			self.'imLeadLag1.TF.a'[2] := trajectories_buffer[50, 1];
+			self.'imLeadLag1.TF.b'[1] := trajectories_buffer[51, 1];
+			self.'imLeadLag1.TF.b'[2] := trajectories_buffer[52, 1];
+			self.'imLeadLag1.TF.bb'[1] := trajectories_buffer[53, 1];
+			self.'imLeadLag1.TF.bb'[2] := trajectories_buffer[54, 1];
+			self.'imLeadLag1.TF.d' := trajectories_buffer[55, 1];
+			self.'imLeadLag1.TF.y_start' := trajectories_buffer[56, 1];
+			self.'derivative(imLeadLag1.TF.x_scaled[1])' := trajectories_buffer[57, 1];
+			self.'imLeadLag1.TF.x_scaled'[1] := trajectories_buffer[58, 1];
+			self.'limiter.uMax' := trajectories_buffer[59, 1];
+			self.'limiter.uMin' := trajectories_buffer[60, 1];
+			self.'lpf.K' := trajectories_buffer[61, 1];
+			self.'lpf.T' := trajectories_buffer[62, 1];
+			self.'lpf.freqHz' := trajectories_buffer[63, 1];
+			self.'derivative(lpf.x)' := trajectories_buffer[64, 1];
+
+			trajectories_buffer[1:3] := .DymolaCommands.Trajectories.readTrajectory(
+			 fileName = result_file + ".mat",
+			 rows = 1,
+			 signals = {
+			  "self.'lpf.x'",
+			  "self.'discrete.stepSize'",
+			  "self.'discrete.stepSize.active'"});
+			self.'lpf.x' := trajectories_buffer[1, 1];
+			self.'discrete.stepSize' := trajectories_buffer[2, 1];
+			self.'discrete.stepSize.active' := trajectories_buffer[3, 1] > 0.0;
 
 		end if;
 		
@@ -288,14 +316,16 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
+		self.kLPF := 1.0;
+		self.freqLow := 2.0e+1;
 		self.Tw := 5.0;
-		self.Kw := 1.08000000000000007e+1;
-		self.vsmin := 0.0;
-		self.vsmax := 3.29999999999999982;
-		self.T4 := 5.51479681529786006e-2;
-		self.T3 := 2.78203917593163985e-1;
-		self.T2 := 5.51479681529786006e-2;
-		self.T1 := 2.78203917593163985e-1;
+		self.Kw := 1.55e+1;
+		self.vsmin := -1.5;
+		self.vsmax := 1.5;
+		self.T4 := 5.56202789619913984e-2;
+		self.T3 := 3.24178742588019986e-1;
+		self.T2 := 5.56202789619913984e-2;
+		self.T1 := 3.24178742588019986e-1;
 		self.vSI_start := 1.0;
 
 		/* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
@@ -357,6 +387,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		self.'derivativeLag.TF.y_start' := self.'derivativeLag.y_start';
 		self.'derivativeLag.TF.bb'[ 1 ] := self.'derivativeLag.TF.b'[ 1 ];
 		self.'derivativeLag.TF.d' := (self.'derivativeLag.TF.bb'[ 1 ] / self.'derivativeLag.TF.a'[ 1 ]);
+		self.'lpf.freqHz' := self.freqLow;
+		self.'lpf.K' := self.kLPF;
+		self.'lpf.T' := (1.0 / (6.28318530717958623 * self.'lpf.freqHz'));
 	end Recalibrate;
 
 	function Reinitialize
@@ -365,6 +398,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 
 
 	protected
+		/* derivativeLag: */
+		Real 'derivativeLag.u';
+
 		/* derivativeLag.TF: */
 		Real 'derivativeLag.TF.y';
 
@@ -391,9 +427,12 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		/*
 			Initialize variables with start value equation (dependent initializations):
 		*/
+		self.'derivative(lpf.x)' := 0.0;
+		self.'lpf.x' := ((self.vSI * self.'lpf.T') / self.'lpf.T');
+		'derivativeLag.u' := (self.'lpf.K' * self.'lpf.x');
 		'derivativeLag.TF.y' := self.'derivativeLag.TF.y_start';
-		self.'derivativeLag.TF.x_scaled'[ 1 ] := (((self.'derivativeLag.TF.d' * self.vSI) - 'derivativeLag.TF.y') / self.'derivativeLag.TF.d');
-		'imLeadLag.u' := (if (absolute(self.'derivativeLag.T') < 2.22044604925031308e-16) then self.vSI else 'derivativeLag.TF.y');
+		self.'derivativeLag.TF.x_scaled'[ 1 ] := (((self.'derivativeLag.TF.d' * 'derivativeLag.u') - 'derivativeLag.TF.y') / self.'derivativeLag.TF.d');
+		'imLeadLag.u' := (if (absolute(self.'derivativeLag.T') < 2.22044604925031308e-16) then 'derivativeLag.u' else 'derivativeLag.TF.y');
 		'imLeadLag.TF.y' := self.'imLeadLag.TF.y_start';
 		self.'imLeadLag.TF.x_scaled'[ 1 ] := (((self.'imLeadLag.TF.d' * 'imLeadLag.u') - 'imLeadLag.TF.y') / (self.'imLeadLag.TF.d' - self.'imLeadLag.TF.bb'[ 2 ]));
 		'imLeadLag.y' := (if (absolute((self.'imLeadLag.T1' - self.'imLeadLag.T2')) < 2.22044604925031308e-16) then (self.'imLeadLag.K' * 'imLeadLag.u') else 'imLeadLag.TF.y');

@@ -31,8 +31,8 @@ model GenPSSDesign "Generator with AVR and designed PSS"
     Te=0.0001,                                                                                Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
     Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
   OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(Kw = 10.8, T1 = 0.278203917593164, T2 = 0.0551479681529786, T3 = 0.278203917593164, T4 = 0.0551479681529786, Tw = 5.0,
-    vsmax=3.3,
-    vsmin=0.0)                                                                                                                                                                                          annotation(
+    vsmax=1.5,
+    vsmin=-1.5)                                                                                                                                                                                         annotation(
     Placement(transformation(origin={-45,10},    extent={{-38,-10},{-19,10}})));
 equation
   connect(avr.vf, machine.vf) annotation(

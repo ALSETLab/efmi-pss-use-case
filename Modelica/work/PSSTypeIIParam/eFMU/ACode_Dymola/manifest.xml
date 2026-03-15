@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{59fc4836-0180-4863-8081-00b0d67c8995}"
+	id="{6e600d65-9f3c-4929-a46a-f5bfadae4cb5}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam"
-	generationDateAndTime="2026-03-12T01:22:41Z"
+	generationDateAndTime="2026-03-15T03:50:28Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
 	description="PSS Type II of OpenIPSL with parametrization for efmi export."
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="e8b7d269172b3f3b8c28fa2cb9fa5a0ca15b14f0"
+			checksum="d8e5cd0f18bc9bad1f197835358312624a0621ca"
 			role="Code"/>
 	</Files>
 
@@ -46,6 +46,10 @@
 
 	<Units>
 		<Unit id="[1]" name="1"/>
+		<Unit id="[Hz]" name="Hz">
+			<BaseUnit
+				s="-1"/>
+		</Unit>
 		<Unit id="[s]" name="s">
 			<BaseUnit
 				s="1"/>
@@ -76,7 +80,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="1.08000000000000007e+1">
+			start="1.55e+1">
 		</RealVariable>
 		<RealVariable
 			id="T1"
@@ -85,7 +89,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="2.78203917593163985e-1">
+			start="3.24178742588019986e-1">
 		</RealVariable>
 		<RealVariable
 			id="T2"
@@ -94,7 +98,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.51479681529786006e-2">
+			start="5.56202789619913984e-2">
 		</RealVariable>
 		<RealVariable
 			id="T3"
@@ -103,7 +107,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="2.78203917593163985e-1">
+			start="3.24178742588019986e-1">
 		</RealVariable>
 		<RealVariable
 			id="T4"
@@ -112,7 +116,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.51479681529786006e-2">
+			start="5.56202789619913984e-2">
 		</RealVariable>
 		<RealVariable
 			id="Tw"
@@ -122,6 +126,22 @@
 			unitRefId="[s]"
 			relativeQuantity="false"
 			start="5.0">
+		</RealVariable>
+		<RealVariable
+			id="freqLow"
+			name="freqLow"
+			description="Frequency in Hz for noise supression (low-pass filter cutoff frequency) – attenuates noise at frequencies above this value."
+			blockCausality="tunableParameter"
+			unitRefId="[Hz]"
+			relativeQuantity="false"
+			start="2.0e+1">
+		</RealVariable>
+		<RealVariable
+			id="kLPF"
+			name="kLPF"
+			description="Gain for noise supression (low-pass filter gain) – attenuates noise at frequencies above this value."
+			blockCausality="tunableParameter"
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="vSI_start"
@@ -137,7 +157,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="3.29999999999999982">
+			start="1.5">
 		</RealVariable>
 		<RealVariable
 			id="vsmin"
@@ -146,7 +166,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="0.0">
+			start="-1.5">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.y_start'"
@@ -162,7 +182,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.4e+1">
+			start="7.75e+1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.K_dummy'"
@@ -171,7 +191,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.4e+1">
+			start="7.75e+1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.T'"
@@ -206,7 +226,7 @@
 			name="'derivativeLag.TF.b'"
 			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
 			blockCausality="dependentParameter"
-			start="5.4e+1 0.0">
+			start="7.75e+1 0.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -215,7 +235,7 @@
 			id="'derivativeLag.TF.bb'"
 			name="'derivativeLag.TF.bb'"
 			blockCausality="dependentParameter"
-			start="5.4e+1 0.0">
+			start="7.75e+1 0.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -224,7 +244,7 @@
 			id="'derivativeLag.TF.d'"
 			name="'derivativeLag.TF.d'"
 			blockCausality="dependentParameter"
-			start="1.08000000000000007e+1">
+			start="1.55e+1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.TF.y_start'"
@@ -271,7 +291,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="2.78203917593163985e-1">
+			start="3.24178742588019986e-1">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag.T2'"
@@ -280,7 +300,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.51479681529786006e-2">
+			start="5.56202789619913984e-2">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag.T2_dummy'"
@@ -289,14 +309,14 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.51479681529786006e-2">
+			start="5.56202789619913984e-2">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag.TF.a'"
 			name="'imLeadLag.TF.a'"
 			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
 			blockCausality="dependentParameter"
-			start="5.51479681529786006e-2 0.0">
+			start="5.56202789619913984e-2 0.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -306,7 +326,7 @@
 			name="'imLeadLag.TF.b'"
 			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
 			blockCausality="dependentParameter"
-			start="2.78203917593163985e-1 1.0">
+			start="3.24178742588019986e-1 1.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -315,7 +335,7 @@
 			id="'imLeadLag.TF.bb'"
 			name="'imLeadLag.TF.bb'"
 			blockCausality="dependentParameter"
-			start="2.78203917593163985e-1 1.0">
+			start="3.24178742588019986e-1 1.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -324,7 +344,7 @@
 			id="'imLeadLag.TF.d'"
 			name="'imLeadLag.TF.d'"
 			blockCausality="dependentParameter"
-			start="5.04468118973006785">
+			start="5.82842712474618008">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag.TF.y_start'"
@@ -373,7 +393,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="2.78203917593163985e-1">
+			start="3.24178742588019986e-1">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag1.T2'"
@@ -382,7 +402,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.51479681529786006e-2">
+			start="5.56202789619913984e-2">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag1.T2_dummy'"
@@ -391,14 +411,14 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.51479681529786006e-2">
+			start="5.56202789619913984e-2">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag1.TF.a'"
 			name="'imLeadLag1.TF.a'"
 			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
 			blockCausality="dependentParameter"
-			start="5.51479681529786006e-2 0.0">
+			start="5.56202789619913984e-2 0.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -408,7 +428,7 @@
 			name="'imLeadLag1.TF.b'"
 			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
 			blockCausality="dependentParameter"
-			start="2.78203917593163985e-1 1.0">
+			start="3.24178742588019986e-1 1.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -417,7 +437,7 @@
 			id="'imLeadLag1.TF.bb'"
 			name="'imLeadLag1.TF.bb'"
 			blockCausality="dependentParameter"
-			start="2.78203917593163985e-1 1.0">
+			start="3.24178742588019986e-1 1.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -426,7 +446,7 @@
 			id="'imLeadLag1.TF.d'"
 			name="'imLeadLag1.TF.d'"
 			blockCausality="dependentParameter"
-			start="5.04468118973006785">
+			start="5.82842712474618008">
 		</RealVariable>
 		<RealVariable
 			id="'imLeadLag1.TF.y_start'"
@@ -461,7 +481,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="3.29999999999999982">
+			start="1.5">
 		</RealVariable>
 		<RealVariable
 			id="'limiter.uMin'"
@@ -470,7 +490,44 @@
 			blockCausality="dependentParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
+			start="-1.5">
+		</RealVariable>
+		<RealVariable
+			id="'lpf.K'"
+			name="'lpf.K'"
+			description="Filter gain"
+			blockCausality="dependentParameter"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'lpf.T'"
+			name="'lpf.T'"
+			description="Time constant derived from cutoff frequency"
+			blockCausality="dependentParameter"
+			start="7.95774715459476693e-3">
+		</RealVariable>
+		<RealVariable
+			id="'lpf.freqHz'"
+			name="'lpf.freqHz'"
+			description="Cutoff frequency in Hz"
+			blockCausality="dependentParameter"
+			unitRefId="[Hz]"
+			relativeQuantity="false"
+			start="2.0e+1">
+		</RealVariable>
+		<RealVariable
+			id="'derivative(lpf.x)'"
+			name="'derivative(lpf.x)'"
+			description="der(Internal filter state)"
+			blockCausality="state"
 			start="0.0">
+		</RealVariable>
+		<RealVariable
+			id="'lpf.x'"
+			name="'lpf.x'"
+			description="Internal filter state"
+			blockCausality="state"
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"

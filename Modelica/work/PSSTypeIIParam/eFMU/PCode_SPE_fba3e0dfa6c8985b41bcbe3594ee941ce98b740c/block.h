@@ -1,4 +1,4 @@
-/*2026-03-12T01:22:44.097816900Z*/
+/*2026-03-15T03:50:30.916327900Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -42,6 +42,8 @@ typedef struct {
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c T3;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c T4;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c Tw;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c freqLow;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c kLPF;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vSI_start;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vsmax;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vsmin;
@@ -72,6 +74,9 @@ typedef struct {
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y_start;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c limiter_uMax;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c limiter_uMin;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_K;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_T;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_freqHz;
 
     /* Constants */
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_y_start;
@@ -88,6 +93,8 @@ typedef struct {
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_x_scaled[1];
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_imLeadLag1_TF_x_scaled_1;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_x_scaled[1];
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c der_lpf_x;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_x;
     bool     discrete_stepSize_active;
 
     /* Signals */

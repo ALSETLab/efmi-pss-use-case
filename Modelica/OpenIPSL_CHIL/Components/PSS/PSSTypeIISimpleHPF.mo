@@ -5,34 +5,20 @@ model PSSTypeIISimpleHPF
   extends PSSTypeIIParam(       break
       derivativeLag);
 
-  // Block icon removes blue background of default model:
-  extends Modelica.Blocks.Icons.Block;
-
   // Tunable start values:
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
   Blocks.WashoutFilter.HPFSimple.HighPassSimple dLHPFreplacement(Kw=Kw, Tw=Tw)
     "HP Filter replacing the derivative lag."
-    annotation (Placement(transformation(extent={{-48,-12},{-24,12}})));
-  Blocks.NoiseSupressionFilters.LowPass1stOrder lpf(freqHz=freqLow, K=kLPF)
-    annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
+    annotation (Placement(transformation(extent={{-52,-12},{-28,12}})));
 
-
-  parameter Modelica.Units.SI.Frequency freqLow=20.0
-    "Low cutoff frequency (Hz) – attenuates frequencies below this value";
-/*  parameter Real freqHigh=60.00
-    "High cutoff frequency (Hz) – attenuates frequencies above this value";
-*/
-  parameter Real kLPF = 1.00 "Low-pass filter gain – attenuates measurement noise.";
 equation
   connect(dLHPFreplacement.y, imLeadLag.u)
-    annotation (Line(points={{-21.6,0},{-12,0}},
+    annotation (Line(points={{-25.6,0},{-12,0}},
                                                color={0,0,127}));
-  connect(lpf.u, vSI)
-    annotation (Line(points={{-88,0},{-120,0}}, color={0,0,127}));
   connect(lpf.y, dLHPFreplacement.u)
-    annotation (Line(points={{-64,0},{-50.4,0}}, color={0,0,127}));
+    annotation (Line(points={{-68,0},{-54.4,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},

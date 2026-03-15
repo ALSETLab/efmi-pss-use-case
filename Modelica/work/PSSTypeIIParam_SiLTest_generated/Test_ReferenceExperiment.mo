@@ -18,7 +18,7 @@ model Test_ReferenceExperiment "Reference experiment with test scenarios for
           <p>
           Reference experiment derived from – and used to generate eBlock
           reference results from, or regression-test – the original experiment
-          <a href=\"modelica://OpenIPSL_CHIL.Components.Tests.PSS.DerivativeLagWOF.PSSTypeIIParam_Clocked\">OpenIPSL_CHIL.Components.Tests.PSS.DerivativeLagWOF.PSSTypeIIParam_Clocked</a>.
+          <a href=\"modelica://OpenIPSL_CHIL.Components.Tests.PSS.PSSTypeIIParam.PSSTypeIIParam_Clocked\">OpenIPSL_CHIL.Components.Tests.PSS.PSSTypeIIParam.PSSTypeIIParam_Clocked</a>.
           </p>
           </html>"),
     Icon(coordinateSystem(extent={{-100,-100},{100,100}})),

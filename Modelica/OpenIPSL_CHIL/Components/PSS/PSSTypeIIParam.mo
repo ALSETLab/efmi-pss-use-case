@@ -5,19 +5,32 @@ model PSSTypeIIParam
   extends OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII(
     vSI(
       final start = vSI_start),
-    Kw = 10.8,
-    T1 = 0.0,
-    T2 = 0.0,
-    T3 = 0.0,
-    T4 = 0.0,
+    Kw = 15.5,
+    T1 = 0.32417874258802,
+    T2 = 0.0556202789619914,
+    T3 = 0.32417874258802,
+    T4 = 0.0556202789619914,
     Tw = 5.0,
     vsmax = 1.5,
-    vsmin = -1.5);
+    vsmin = -1.5,
+    break connect(vSI, derivativeLag.u)
+                );
+  // Noise Supression filter parameters:
+  parameter Modelica.Units.SI.Frequency freqLow=20.0
+    "Frequency in Hz for noise supression (low-pass filter cutoff frequency) – attenuates noise at frequencies above this value.";
+  parameter Real kLPF = 1.00 "Gain for noise supression (low-pass filter gain) – attenuates noise at frequencies above this value.";
 
   // Tunable start values:
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
+  Blocks.NoiseSupressionFilters.LowPass1stOrder lpf(freqHz=freqLow, K=kLPF)
+    annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
+equation
+  connect(vSI, lpf.u)
+    annotation (Line(points={{-120,0},{-92,0}}, color={0,0,127}));
+  connect(derivativeLag.u, lpf.y)
+    annotation (Line(points={{-62,0},{-68,0}}, color={0,0,127}));
   annotation (Icon(graphics={
           Rectangle(
           extent={{-100,100},{100,-100}},

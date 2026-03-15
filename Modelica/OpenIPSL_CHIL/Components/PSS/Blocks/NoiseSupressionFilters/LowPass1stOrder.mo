@@ -42,11 +42,12 @@ annotation (
         fillPattern=FillPattern.Solid),
       Text(
         extent={{-100,100},{100,60}},
-          textString="LPF",
-          textColor={0,0,0}),
+          textColor={0,0,255},
+          textString="LPF"),
       Text(
         extent={{-88,68},{92,28}},
-        textString="K/(1+T*s)"),        Text(
+          textColor={0,0,255},
+          textString="K/(1+T*s)"),      Text(
         extent={{-148,148},{152,108}},
         textString="%name",
         textColor={0,0,255}),

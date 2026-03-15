@@ -1,4 +1,4 @@
-/*2026-03-12T01:22:44.120995600Z*/
+/*2026-03-15T03:50:30.937624100Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.h
@@ -47,6 +47,8 @@ extern MODELICA_Integer mei_Recalibrate_H67479d7783111b50ee4f84437c325e160da0233
 ,   /* TUNEABLE */  MODELICA_Real   T3
 ,   /* TUNEABLE */  MODELICA_Real   T4
 ,   /* TUNEABLE */  MODELICA_Real   Tw
+,   /* TUNEABLE */  MODELICA_Real   freqLow
+,   /* TUNEABLE */  MODELICA_Real   kLPF
 ,   /* TUNEABLE */  MODELICA_Real   vSI_start
 ,   /* TUNEABLE */  MODELICA_Real   vsmax
 ,   /* TUNEABLE */  MODELICA_Real   vsmin

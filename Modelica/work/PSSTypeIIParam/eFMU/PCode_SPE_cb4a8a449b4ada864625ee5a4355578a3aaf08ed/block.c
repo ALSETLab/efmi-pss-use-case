@@ -1,4 +1,4 @@
-/*2026-03-12T01:22:42.693653800Z*/
+/*2026-03-15T03:50:29.467733500Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -113,11 +113,18 @@ static void Recalibrate(ALGOSTRUCT *instance)
     instance->derivativeLag_TF_bb[0] = instance->derivativeLag_TF_b[0];
 
     instance->derivativeLag_TF_d = instance->derivativeLag_TF_bb[0] / instance->derivativeLag_TF_a[0];
+
+    instance->lpf_freqHz = instance->freqLow;
+
+    instance->lpf_K = instance->kLPF;
+
+    instance->lpf_T = 1.0 / (6.28318530717958623 * instance->lpf_freqHz);
 }
 
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
@@ -140,13 +147,20 @@ static void Reinitialize(ALGOSTRUCT *instance)
     Initialize variables with start value equation (dependent initializations):
     */
 
+    instance->der_lpf_x = 0.0;
+
+    instance->lpf_x = (instance->vSI * instance->lpf_T) / instance->lpf_T;
+
+    derivativeLag_u = instance->lpf_K * instance->lpf_x;
+
     derivativeLag_TF_y = instance->derivativeLag_TF_y_start;
 
-    instance->derivativeLag_TF_x_scaled[0] = ((instance->derivativeLag_TF_d * instance->vSI) - derivativeLag_TF_y) / instance->derivativeLag_TF_d;
+    instance->derivativeLag_TF_x_scaled[0] = ((instance->derivativeLag_TF_d * derivativeLag_u) - derivativeLag_TF_y) / \
+        instance->derivativeLag_TF_d;
 
     imLeadLag_u = SPE_less_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         SPE_absolute_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
-        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
+        2.22044604925031308e-16) ? derivativeLag_u : derivativeLag_TF_y;
 
     imLeadLag_TF_y = instance->imLeadLag_TF_y_start;
 
@@ -200,21 +214,25 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
+    instance->kLPF = 1.0;
+
+    instance->freqLow = 2.0e+1;
+
     instance->Tw = 5.0;
 
-    instance->Kw = 1.08000000000000007e+1;
+    instance->Kw = 1.55e+1;
 
-    instance->vsmin = 0.0;
+    instance->vsmin = -1.5;
 
-    instance->vsmax = 3.29999999999999982;
+    instance->vsmax = 1.5;
 
-    instance->T4 = 5.51479681529786006e-2;
+    instance->T4 = 5.56202789619913984e-2;
 
-    instance->T3 = 2.78203917593163985e-1;
+    instance->T3 = 3.24178742588019986e-1;
 
-    instance->T2 = 5.51479681529786006e-2;
+    instance->T2 = 5.56202789619913984e-2;
 
-    instance->T1 = 2.78203917593163985e-1;
+    instance->T1 = 3.24178742588019986e-1;
 
     instance->vSI_start = 1.0;
 
@@ -237,6 +255,7 @@ static void Startup(ALGOSTRUCT *instance)
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed derivativeLag_TF_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
@@ -247,6 +266,8 @@ static void DoStep(ALGOSTRUCT *instance)
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
         /* *********************************************************************** Update-equations for inline integration: */
+
+        instance->lpf_x += instance->discrete_stepSize * instance->der_lpf_x;
 
         instance->derivativeLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_derivativeLag_TF_x_scaled_1;
 
@@ -259,13 +280,17 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_derivativeLag_TF_x_scaled_1 = (instance->vSI - instance->derivativeLag_TF_x_scaled[0]) / instance->derivativeLag_TF_a[0];
+    instance->der_lpf_x = (instance->vSI - instance->lpf_x) / instance->lpf_T;
 
-    derivativeLag_TF_y = (instance->derivativeLag_TF_d * instance->vSI) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled[0]);
+    derivativeLag_u = instance->lpf_K * instance->lpf_x;
+
+    instance->der_derivativeLag_TF_x_scaled_1 = (derivativeLag_u - instance->derivativeLag_TF_x_scaled[0]) / instance->derivativeLag_TF_a[0];
+
+    derivativeLag_TF_y = (instance->derivativeLag_TF_d * derivativeLag_u) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled[0]);
 
     imLeadLag_u = SPE_less_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         SPE_absolute_H67479d7783111b50ee4f84437c325e160da02330_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->derivativeLag_T), \
-        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
+        2.22044604925031308e-16) ? derivativeLag_u : derivativeLag_TF_y;
 
     instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled[0]) / instance->imLeadLag_TF_a[0];
 

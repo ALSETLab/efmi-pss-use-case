@@ -31,6 +31,23 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+// 1. Define the concatenation macros
+#define CONCAT_INNER(a, b) a##b
+#define CONCAT(a, b) CONCAT_INNER(a, b)
+
+// 2. Define the model's unique hash right here
+#define MODEL_HASH H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+
+// 3. Create the clean type aliases (including PSS_Real which was previously hidden below)
+typedef CONCAT(BlockState_, MODEL_HASH) ModelPSS;
+typedef CONCAT(SPE_Real_, MODEL_HASH)   PSS_Real;
+
+// 4. Create clean aliases for the eFMI functions
+#define PSS_Startup CONCAT(Startup_, MODEL_HASH)
+#define PSS_DoStep CONCAT(DoStep_, MODEL_HASH)
+#define PSS_Recalibrate CONCAT(Recalibrate_, MODEL_HASH)
+#define PSS_Reinitialize CONCAT(Reinitialize_, MODEL_HASH)
+
 
 /* USER CODE END PTD */
 
@@ -47,7 +64,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-static BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed pss;
+static ModelPSS pss;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,7 +112,7 @@ int main(void)
   MX_DAC1_Init();
   MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
-  Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&pss);
+  PSS_Startup(&pss);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   HAL_TIM_Base_Start_IT(&htim1);
   __enable_irq();
@@ -165,39 +182,42 @@ void SystemClock_Config(void)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (htim->Instance == TIM1) {
-    typedef SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-      PSS_Real;
 
-    const PSS_Real DAC_CHANNEL_1_maxBit = ((PSS_Real) 4095);
-	const PSS_Real DAC_CHANNEL_1_maxVoltage = ((PSS_Real) 3.3);
-	const PSS_Real magic15 = ((PSS_Real) 1.5);
-	const PSS_Real vSI_newWeight = ((PSS_Real) 1.0);
-	const PSS_Real vSI_preWeight = ((PSS_Real) 1.00) - vSI_newWeight;
-	const PSS_Real vSI_default = ((PSS_Real) 1.0);
+	// PRE-COMPUTED CONSTANTS (Static means they are only allocated once, not every millisecond)
+	static const PSS_Real ADC_TO_VOLTS = ((PSS_Real)3.3) / ((PSS_Real)4095.0);
+	static const PSS_Real VOLTS_TO_DAC = ((PSS_Real)4095.0) / ((PSS_Real)3.3);
+	static const PSS_Real DAC_MAX = (PSS_Real)4095.0;
+	static const PSS_Real DAC_MIN = (PSS_Real)0.0;
+	static const PSS_Real OFFSET = (PSS_Real)1.5;
 
-    static PSS_Real vSI_pre = vSI_default;
-
-    HAL_GPIO_TogglePin(GPIOC, stepSize_Pin);
-    HAL_GPIO_WritePin(GPIOC, calTime_Pin, GPIO_PIN_SET);
+	HAL_GPIO_TogglePin(GPIOC, stepSize_Pin);
+	HAL_GPIO_WritePin(GPIOC, calTime_Pin, GPIO_PIN_SET);
 
     //Input processing (requires to convert AC to volt):
     HAL_ADC_Start(&hadc1);
-    HAL_ADC_PollForConversion(&hadc1, 10 /* in ms */);
-    pss.vSI =  (vSI_newWeight * DAC_CHANNEL_1_maxVoltage * (((PSS_Real) HAL_ADC_GetValue(&hadc1)) / DAC_CHANNEL_1_maxBit)) + (vSI_preWeight * vSI_pre);
-    vSI_pre = pss.vSI;
+
+    if (HAL_ADC_PollForConversion(&hadc1, 1/* in ms */) == HAL_OK) {
+    	uint32_t adc_raw = HAL_ADC_GetValue(&hadc1); //this is a function that returns uint32, must keep this, then cast in next line
+    	pss.vSI = ((PSS_Real)adc_raw) * ADC_TO_VOLTS;
+    }
     HAL_ADC_Stop(&hadc1);
 
     // Compute sampling step:
-    DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&pss);
+    PSS_DoStep(&pss);
 
     //Output processing (requires to convert volt to AC):
-    HAL_DAC_SetValue(
-      &hdac1,
-	  DAC_CHANNEL_1,
-	  DAC_ALIGN_12B_R,
-	  (uint32_t)(
-	    (double)(
-	      (DAC_CHANNEL_1_maxBit * (pss.vs + magic15)) / DAC_CHANNEL_1_maxVoltage)));
+    PSS_Real dac_val = (pss.vs + OFFSET) * VOLTS_TO_DAC;
+
+    //CLAMPING (to prevent underflow and overflow on DAC, @christoff: is this safe?)
+    if (dac_val < DAC_MIN) {
+        dac_val = DAC_MIN;
+    } else if (dac_val > DAC_MAX) {
+        dac_val = DAC_MAX;
+    }
+
+    // Clean cast & output
+    uint32_t dac_out = (uint32_t)dac_val; //casted to uin32_t at the very end :)
+    HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_out);
 
     HAL_GPIO_WritePin(GPIOC, calTime_Pin, GPIO_PIN_RESET);
   }

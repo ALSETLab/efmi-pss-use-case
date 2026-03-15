@@ -190,12 +190,14 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	static const PSS_Real DAC_MIN = (PSS_Real)0.0;
 	static const PSS_Real OFFSET = (PSS_Real)1.5;
 
+	//neutral constant output when switch is toggled to turn off sim.
+	static const PSS_Real CONSTANT_PU = (PSS_Real)0.0;
+
 	HAL_GPIO_TogglePin(GPIOC, stepSize_Pin);
 	HAL_GPIO_WritePin(GPIOC, calTime_Pin, GPIO_PIN_SET);
 
     //Input processing (requires to convert AC to volt):
     HAL_ADC_Start(&hadc1);
-
     if (HAL_ADC_PollForConversion(&hadc1, 1/* in ms */) == HAL_OK) {
     	uint32_t adc_raw = HAL_ADC_GetValue(&hadc1); //this is a function that returns uint32, must keep this, then cast in next line
     	pss.vSI = ((PSS_Real)adc_raw) * ADC_TO_VOLTS;
@@ -205,8 +207,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     // Compute sampling step:
     PSS_DoStep(&pss);
 
+    //Check if switch is pulling to GND
+	PSS_Real target_pu;
+	if (HAL_GPIO_ReadPin(D6__GPIO_Port, D6__Pin) == GPIO_PIN_RESET) {
+		target_pu = pss.vs;
+	} else {
+		target_pu = CONSTANT_PU;
+	}
+
     //Output processing (requires to convert volt to AC):
-    PSS_Real dac_val = (pss.vs + OFFSET) * VOLTS_TO_DAC;
+    PSS_Real dac_val = (target_pu + OFFSET) * VOLTS_TO_DAC;
 
     //CLAMPING (to prevent underflow and overflow on DAC, @christoff: is this safe?)
     if (dac_val < DAC_MIN) {
@@ -216,8 +226,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
 
     // Clean cast & output
-    uint32_t dac_out = (uint32_t)dac_val; //casted to uin32_t at the very end :)
-    HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, dac_out);
+    HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)dac_val); //casted to uin32_t at the very end :)
 
     HAL_GPIO_WritePin(GPIOC, calTime_Pin, GPIO_PIN_RESET);
   }

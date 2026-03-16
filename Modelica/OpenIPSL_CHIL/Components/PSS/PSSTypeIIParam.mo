@@ -5,18 +5,18 @@ model PSSTypeIIParam
   extends OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII(
     vSI(
       final start = vSI_start),
-    Kw = 15.5,
+    Kw = 4.45,
     T1 = 0.32417874258802,
     T2 = 0.0556202789619914,
     T3 = 0.32417874258802,
     T4 = 0.0556202789619914,
-    Tw = 5.0,
+    Tw = 0.25,
     vsmax = 1.5,
     vsmin = -1.5,
     break connect(vSI, derivativeLag.u)
                 );
   // Noise Supression filter parameters:
-  parameter Modelica.Units.SI.Frequency freqLow=20.0
+  parameter Modelica.Units.SI.Frequency freqLow=5.0
     "Frequency in Hz for noise supression (low-pass filter cutoff frequency) – attenuates noise at frequencies above this value.";
   parameter Real kLPF = 1.00 "Gain for noise supression (low-pass filter gain) – attenuates noise at frequencies above this value.";
 

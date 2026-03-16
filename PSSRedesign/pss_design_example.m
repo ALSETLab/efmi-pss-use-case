@@ -32,7 +32,7 @@ disp(resultsTable);
 % Low-pass filter for measurement noise suppression
 % The low-pass filter is designed to have a cutoff frequency of 20 Hz, which is sufficient to suppress high-frequency noise while 
 % allowing the relevant dynamics of the system to pass through.
-fc = 20; % Cutoff frequency in Hz
+fc = 5.0; % Cutoff frequency in Hz
 w_cutoff = 2 * pi * fc; % Convert cutoff frequency to rad/s
 
 % The Modelica simulation model is implemented as: der(x) = (u-x)/T and y = K*x, where T is the time constant of the low-pass filter
@@ -49,7 +49,7 @@ lpf = tf(K, [T 1], 'InputName', 'u_lpf', ...
                             'OutputName', 'y_lpf', ...
                             'Name', 'lpf');
 % Wash-out filter
-Tw = 5.0; % WO time constant
+Tw = 0.25; % WO time constant
 whasout = tf([Tw 0],[Tw 1],'InputName','u_wof',...
                             'OutputName','y_wof',...
                             'Name','wof');
@@ -61,6 +61,7 @@ PSwo = PS*lpf*whasout % Connects filters to PS model
 figure(101)
 rlp = rlocusplot(-PSwo);
 rlp.FrequencyUnit = "Hz";
+axis([-25 1 -15 15])
 grid on
 
 %% RL Step 3: Analyze the root locus plot
@@ -92,10 +93,10 @@ PSwo_leadlag = PSwo*leadlag*leadlag
 figure(102)
 rlp = rlocusplot(-PSwo_leadlag);
 rlp.FrequencyUnit = "Hz";
-axis([-5 5 -50 50])
+axis([-5 1 -1 15])
 
 % For a damping of ~15%, the gain found is
-Kpss = 15.5
+Kpss = 6.41
 
 %% List your design parameters for the Design:
 % Display the design parameters

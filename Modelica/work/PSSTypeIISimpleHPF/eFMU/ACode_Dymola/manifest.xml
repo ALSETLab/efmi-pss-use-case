@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{e3edde6d-a095-4d24-9686-6686b1b72b71}"
+	id="{9c243cf2-97a0-4e7c-b756-8a6c18e2d703}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF"
-	generationDateAndTime="2026-03-15T04:43:11Z"
+	generationDateAndTime="2026-03-16T02:00:45Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
 	description="PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a simplified HPF implementation."
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="8a0ca2af144ce603fa263a678a58bcc1c2c0d3e4"
+			checksum="f1318b9619eea07081d4e669f89f282d006497cd"
 			role="Code"/>
 	</Files>
 
@@ -78,7 +78,7 @@
 			name="Kw"
 			description="Stabilizer gain [pu/pu]"
 			blockCausality="tunableParameter"
-			start="1.55e+1">
+			start="6.41000000000000014">
 		</RealVariable>
 		<RealVariable
 			id="T1"
@@ -123,7 +123,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.0">
+			start="2.5e-1">
 		</RealVariable>
 		<RealVariable
 			id="freqLow"
@@ -132,7 +132,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[Hz]"
 			relativeQuantity="false"
-			start="2.0e+1">
+			start="5.0">
 		</RealVariable>
 		<RealVariable
 			id="kLPF"
@@ -171,14 +171,14 @@
 			name="'dLHPFreplacement.K'"
 			description="Equivalent gain K = Kw*Tw"
 			blockCausality="dependentParameter"
-			start="7.75e+1">
+			start="1.60250000000000004">
 		</RealVariable>
 		<RealVariable
 			id="'dLHPFreplacement.Kw'"
 			name="'dLHPFreplacement.Kw'"
 			description="High-frequency gain"
 			blockCausality="dependentParameter"
-			start="1.55e+1">
+			start="6.41000000000000014">
 		</RealVariable>
 		<RealVariable
 			id="'dLHPFreplacement.T'"
@@ -187,7 +187,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.0">
+			start="2.5e-1">
 		</RealVariable>
 		<RealVariable
 			id="'dLHPFreplacement.Tw'"
@@ -196,7 +196,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.0">
+			start="2.5e-1">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(dLHPFreplacement.x)'"
@@ -446,7 +446,7 @@
 			name="'lpf.T'"
 			description="Time constant derived from cutoff frequency"
 			blockCausality="dependentParameter"
-			start="7.95774715459476693e-3">
+			start="3.18309886183790677e-2">
 		</RealVariable>
 		<RealVariable
 			id="'lpf.freqHz'"
@@ -455,7 +455,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[Hz]"
 			relativeQuantity="false"
-			start="2.0e+1">
+			start="5.0">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(lpf.x)'"

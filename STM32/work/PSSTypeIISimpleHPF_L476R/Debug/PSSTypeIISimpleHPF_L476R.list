@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00029aa5  00000000  00000000  00028589  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001a285  00000000  00000000  0005202e  2**0
+ 17 .debug_line   0001a236  00000000  00000000  0005202e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00112375  00000000  00000000  0006c2b3  2**0
+ 18 .debug_str    00112327  00000000  00000000  0006c264  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0017e628  2**0
+ 19 .comment      00000043  00000000  00000000  0017e58b  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000067f8  00000000  00000000  0017e66c  2**2
+ 20 .debug_frame  000067f8  00000000  00000000  0017e5d0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000085  00000000  00000000  00184e64  2**0
+ 21 .debug_line_str 0000006b  00000000  00000000  00184dc8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -16857,7 +16857,7 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->discrete_stepSize = 1.00000000000000002e-3;
  8006738:	687b      	ldr	r3, [r7, #4]
- 800673a:	4a24      	ldr	r2, [pc, #144]	@ (80067cc <Startup+0x9c>)
+ 800673a:	4a25      	ldr	r2, [pc, #148]	@ (80067d0 <Startup+0xa0>)
  800673c:	f8c3 20c0 	str.w	r2, [r3, #192]	@ 0xc0
 
     instance->imLeadLag_K = 1.0;
@@ -16884,91 +16884,91 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->Tw = 5.0;
+    instance->Tw = 2.5e-1;
  8006768:	687b      	ldr	r3, [r7, #4]
- 800676a:	4a19      	ldr	r2, [pc, #100]	@ (80067d0 <Startup+0xa0>)
- 800676c:	61da      	str	r2, [r3, #28]
+ 800676a:	f04f 527a 	mov.w	r2, #1048576000	@ 0x3e800000
+ 800676e:	61da      	str	r2, [r3, #28]
 
-    instance->Kw = 1.55e+1;
- 800676e:	687b      	ldr	r3, [r7, #4]
- 8006770:	4a18      	ldr	r2, [pc, #96]	@ (80067d4 <Startup+0xa4>)
- 8006772:	609a      	str	r2, [r3, #8]
+    instance->Kw = 4.45;
+ 8006770:	687b      	ldr	r3, [r7, #4]
+ 8006772:	4a18      	ldr	r2, [pc, #96]	@ (80067d4 <Startup+0xa4>)
+ 8006774:	609a      	str	r2, [r3, #8]
 
     instance->kLPF = 1.0;
- 8006774:	687b      	ldr	r3, [r7, #4]
- 8006776:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
- 800677a:	625a      	str	r2, [r3, #36]	@ 0x24
+ 8006776:	687b      	ldr	r3, [r7, #4]
+ 8006778:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 800677c:	625a      	str	r2, [r3, #36]	@ 0x24
 
-    instance->freqLow = 2.0e+1;
- 800677c:	687b      	ldr	r3, [r7, #4]
- 800677e:	4a16      	ldr	r2, [pc, #88]	@ (80067d8 <Startup+0xa8>)
- 8006780:	621a      	str	r2, [r3, #32]
+    instance->freqLow = 5.0;
+ 800677e:	687b      	ldr	r3, [r7, #4]
+ 8006780:	4a15      	ldr	r2, [pc, #84]	@ (80067d8 <Startup+0xa8>)
+ 8006782:	621a      	str	r2, [r3, #32]
 
     instance->vsmin = -1.5;
- 8006782:	687b      	ldr	r3, [r7, #4]
- 8006784:	4a15      	ldr	r2, [pc, #84]	@ (80067dc <Startup+0xac>)
- 8006786:	631a      	str	r2, [r3, #48]	@ 0x30
+ 8006784:	687b      	ldr	r3, [r7, #4]
+ 8006786:	4a15      	ldr	r2, [pc, #84]	@ (80067dc <Startup+0xac>)
+ 8006788:	631a      	str	r2, [r3, #48]	@ 0x30
 
     instance->vsmax = 1.5;
- 8006788:	687b      	ldr	r3, [r7, #4]
- 800678a:	f04f 527f 	mov.w	r2, #1069547520	@ 0x3fc00000
- 800678e:	62da      	str	r2, [r3, #44]	@ 0x2c
+ 800678a:	687b      	ldr	r3, [r7, #4]
+ 800678c:	f04f 527f 	mov.w	r2, #1069547520	@ 0x3fc00000
+ 8006790:	62da      	str	r2, [r3, #44]	@ 0x2c
 
     instance->T4 = 5.56202789619913984e-2;
- 8006790:	687b      	ldr	r3, [r7, #4]
- 8006792:	4a13      	ldr	r2, [pc, #76]	@ (80067e0 <Startup+0xb0>)
- 8006794:	619a      	str	r2, [r3, #24]
+ 8006792:	687b      	ldr	r3, [r7, #4]
+ 8006794:	4a12      	ldr	r2, [pc, #72]	@ (80067e0 <Startup+0xb0>)
+ 8006796:	619a      	str	r2, [r3, #24]
 
     instance->T3 = 3.24178742588019986e-1;
- 8006796:	687b      	ldr	r3, [r7, #4]
- 8006798:	4a12      	ldr	r2, [pc, #72]	@ (80067e4 <Startup+0xb4>)
- 800679a:	615a      	str	r2, [r3, #20]
+ 8006798:	687b      	ldr	r3, [r7, #4]
+ 800679a:	4a12      	ldr	r2, [pc, #72]	@ (80067e4 <Startup+0xb4>)
+ 800679c:	615a      	str	r2, [r3, #20]
 
     instance->T2 = 5.56202789619913984e-2;
- 800679c:	687b      	ldr	r3, [r7, #4]
- 800679e:	4a10      	ldr	r2, [pc, #64]	@ (80067e0 <Startup+0xb0>)
- 80067a0:	611a      	str	r2, [r3, #16]
+ 800679e:	687b      	ldr	r3, [r7, #4]
+ 80067a0:	4a0f      	ldr	r2, [pc, #60]	@ (80067e0 <Startup+0xb0>)
+ 80067a2:	611a      	str	r2, [r3, #16]
 
     instance->T1 = 3.24178742588019986e-1;
- 80067a2:	687b      	ldr	r3, [r7, #4]
- 80067a4:	4a0f      	ldr	r2, [pc, #60]	@ (80067e4 <Startup+0xb4>)
- 80067a6:	60da      	str	r2, [r3, #12]
+ 80067a4:	687b      	ldr	r3, [r7, #4]
+ 80067a6:	4a0f      	ldr	r2, [pc, #60]	@ (80067e4 <Startup+0xb4>)
+ 80067a8:	60da      	str	r2, [r3, #12]
 
     instance->vSI_start = 1.0;
- 80067a8:	687b      	ldr	r3, [r7, #4]
- 80067aa:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
- 80067ae:	629a      	str	r2, [r3, #40]	@ 0x28
+ 80067aa:	687b      	ldr	r3, [r7, #4]
+ 80067ac:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 80067b0:	629a      	str	r2, [r3, #40]	@ 0x28
 
     /* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
 
     Recalibrate(instance);
- 80067b0:	6878      	ldr	r0, [r7, #4]
- 80067b2:	f7ff fda5 	bl	8006300 <Recalibrate>
+ 80067b2:	6878      	ldr	r0, [r7, #4]
+ 80067b4:	f7ff fda4 	bl	8006300 <Recalibrate>
     /* ***************************************************** Default initialize inputs (based on constants and parameters): */
     /*
     Initialize variables with start value equation (dependent initializations):
     */
 
     instance->vSI = instance->vSI_start;
- 80067b6:	687b      	ldr	r3, [r7, #4]
- 80067b8:	6a9a      	ldr	r2, [r3, #40]	@ 0x28
- 80067ba:	687b      	ldr	r3, [r7, #4]
- 80067bc:	601a      	str	r2, [r3, #0]
+ 80067b8:	687b      	ldr	r3, [r7, #4]
+ 80067ba:	6a9a      	ldr	r2, [r3, #40]	@ 0x28
+ 80067bc:	687b      	ldr	r3, [r7, #4]
+ 80067be:	601a      	str	r2, [r3, #0]
 
     /* ********************************* Default initialize states and outputs (based on constants, parameters and inputs): */
 
     Reinitialize(instance);
- 80067be:	6878      	ldr	r0, [r7, #4]
- 80067c0:	f7ff fea8 	bl	8006514 <Reinitialize>
+ 80067c0:	6878      	ldr	r0, [r7, #4]
+ 80067c2:	f7ff fea7 	bl	8006514 <Reinitialize>
 }
- 80067c4:	bf00      	nop
- 80067c6:	3708      	adds	r7, #8
- 80067c8:	46bd      	mov	sp, r7
- 80067ca:	bd80      	pop	{r7, pc}
- 80067cc:	3a83126f 	.word	0x3a83126f
- 80067d0:	40a00000 	.word	0x40a00000
- 80067d4:	41780000 	.word	0x41780000
- 80067d8:	41a00000 	.word	0x41a00000
+ 80067c6:	bf00      	nop
+ 80067c8:	3708      	adds	r7, #8
+ 80067ca:	46bd      	mov	sp, r7
+ 80067cc:	bd80      	pop	{r7, pc}
+ 80067ce:	bf00      	nop
+ 80067d0:	3a83126f 	.word	0x3a83126f
+ 80067d4:	408e6666 	.word	0x408e6666
+ 80067d8:	40a00000 	.word	0x40a00000
  80067dc:	bfc00000 	.word	0xbfc00000
  80067e0:	3d63d217 	.word	0x3d63d217
  80067e4:	3ea5fac2 	.word	0x3ea5fac2

@@ -16889,7 +16889,7 @@ static void Startup(ALGOSTRUCT *instance)
  800676a:	f04f 527a 	mov.w	r2, #1048576000	@ 0x3e800000
  800676e:	61da      	str	r2, [r3, #28]
 
-    instance->Kw = 4.45;
+    instance->Kw = 6.70000000000000018;
  8006770:	687b      	ldr	r3, [r7, #4]
  8006772:	4a18      	ldr	r2, [pc, #96]	@ (80067d4 <Startup+0xa4>)
  8006774:	609a      	str	r2, [r3, #8]
@@ -16967,7 +16967,7 @@ static void Startup(ALGOSTRUCT *instance)
  80067cc:	bd80      	pop	{r7, pc}
  80067ce:	bf00      	nop
  80067d0:	3a83126f 	.word	0x3a83126f
- 80067d4:	408e6666 	.word	0x408e6666
+ 80067d4:	40d66666 	.word	0x40d66666
  80067d8:	40a00000 	.word	0x40a00000
  80067dc:	bfc00000 	.word	0xbfc00000
  80067e0:	3d63d217 	.word	0x3d63d217

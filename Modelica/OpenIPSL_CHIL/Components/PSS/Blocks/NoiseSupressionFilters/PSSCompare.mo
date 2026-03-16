@@ -12,14 +12,14 @@ model PSSCompare
   Modelica.Blocks.Interfaces.RealOutput vsOUT_pssHPF "PSS output signal"
     annotation (Placement(transformation(extent={{100,-70},{120,-50}})));
   OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII pss(
-    Kw=10.8,
-    T1=0,
-    T2=0,
-    T3=0,
-    T4=0,
-    Tw=5.0,
-    vsmax=1.5,
-    vsmin=-1.5)                                                                                                                                                                                         annotation(
+    Kw=pssDL.Kw,
+    T1=pssDL.T1,
+    T2=pssDL.T2,
+    T3=pssDL.T3,
+    T4=pssDL.T4,
+    Tw=pssDL.Tw,
+    vsmax=pssDL.vsmax,
+    vsmin=pssDL.vsmin)                                                                                                                                                                                    annotation(
     Placement(transformation(origin={60,60},     extent={{-80,-20},{-40,20}})));
   Modelica.Blocks.Interfaces.RealOutput vsOUT_original "PSS output signal"
     annotation (Placement(transformation(extent={{100,50},{120,70}})));

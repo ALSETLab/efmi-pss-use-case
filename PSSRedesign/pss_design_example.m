@@ -96,7 +96,7 @@ rlp.FrequencyUnit = "Hz";
 axis([-5 1 -1 15])
 
 % For a damping of ~15%, the gain found is
-Kpss = 6.41
+Kpss = 6.7
 
 %% List your design parameters for the Design:
 % Display the design parameters

@@ -285,7 +285,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 			Initialize variables with explicit start value (independent initializations):
 		*/
 		self.Tw := 2.5e-1;
-		self.Kw := 6.41000000000000014;
+		self.Kw := 6.70000000000000018;
 		self.kLPF := 1.0;
 		self.freqLow := 5.0;
 		self.vsmin := -1.5;

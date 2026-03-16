@@ -10,7 +10,7 @@ model PSSCompareSimulate "Compares the PSSTypeIIParam model vs the PSSTypeIISimp
   Modelica.Blocks.Sources.SineVariableFrequencyAndAmplitude
                                sine(
     useConstantAmplitude=true,
-    constantAmplitude=0.125,
+    constantAmplitude=0.01,
     useConstantFrequency=false,
     offset=1.0)
     "Ramps the frequency from smallest to largest value"
@@ -18,7 +18,7 @@ model PSSCompareSimulate "Compares the PSSTypeIIParam model vs the PSSTypeIISimp
   Modelica.Blocks.Sources.LogFrequencySweep
                                logSweep(
     wMin=0.01,
-    wMax=50,
+    wMax=20,
     duration=60,
     startTime=0)
     annotation (Placement(transformation(extent={{-94,-26},{-74,-6}})));

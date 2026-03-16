@@ -5,7 +5,7 @@ model PSSTypeIIParam
   extends OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII(
     vSI(
       final start = vSI_start),
-    Kw = 4.45,
+    Kw = 6.7,
     T1 = 0.32417874258802,
     T2 = 0.0556202789619914,
     T3 = 0.32417874258802,
@@ -25,12 +25,12 @@ model PSSTypeIIParam
     "Default start value for vSI, the PSS input signal.";
 
   Blocks.NoiseSupressionFilters.LowPass1stOrder lpf(freqHz=freqLow, K=kLPF)
-    annotation (Placement(transformation(extent={{-90,-10},{-70,10}})));
+    annotation (Placement(transformation(extent={{-92,-10},{-72,10}})));
 equation
   connect(vSI, lpf.u)
-    annotation (Line(points={{-120,0},{-92,0}}, color={0,0,127}));
+    annotation (Line(points={{-120,0},{-94,0}}, color={0,0,127}));
   connect(derivativeLag.u, lpf.y)
-    annotation (Line(points={{-62,0},{-68,0}}, color={0,0,127}));
+    annotation (Line(points={{-62,0},{-70,0}}, color={0,0,127}));
   annotation (Icon(graphics={
           Rectangle(
           extent={{-100,100},{100,-100}},

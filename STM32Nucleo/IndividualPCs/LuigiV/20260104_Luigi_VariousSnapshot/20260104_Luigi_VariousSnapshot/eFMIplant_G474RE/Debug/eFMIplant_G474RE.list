@@ -35,19 +35,19 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_aranges 000017d0  00000000  00000000  000669d8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_rnglists 00003aac  00000000  00000000  000681a8  2**0
+ 16 .debug_rnglists 00003aab  00000000  00000000  000681a8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  0002adc2  00000000  00000000  0006bc54  2**0
+ 17 .debug_macro  0002adc2  00000000  00000000  0006bc53  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   0002e31f  00000000  00000000  00096a16  2**0
+ 18 .debug_line   0002e31e  00000000  00000000  00096a15  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    0012275e  00000000  00000000  000c4d35  2**0
+ 19 .debug_str    0012275e  00000000  00000000  000c4d33  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000043  00000000  00000000  001e7493  2**0
+ 20 .comment      00000043  00000000  00000000  001e7491  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00005824  00000000  00000000  001e74d8  2**2
+ 21 .debug_frame  00005824  00000000  00000000  001e74d4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 22 .debug_line_str 000000b7  00000000  00000000  001eccfc  2**0
+ 22 .debug_line_str 000000b7  00000000  00000000  001eccf8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -18239,244 +18239,240 @@ static void Reinitialize(ALGOSTRUCT *instance)
     */
 
     instance->discrete_stepSize = 2.0000000000000001e-4;
- 80083c0:	494f      	ldr	r1, [pc, #316]	@ (8008500 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x140>)
+ 80083c0:	494e      	ldr	r1, [pc, #312]	@ (80084fc <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x13c>)
 
     instance->G1_avr_T2 = 1.0;
 
     instance->G1_avr_Te = 1.00000000000000006e-1;
 
     instance->G1_machine_Vn = 4.0e+5;
- 80083c2:	4a50      	ldr	r2, [pc, #320]	@ (8008504 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x144>)
+ 80083c2:	4a4f      	ldr	r2, [pc, #316]	@ (8008500 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x140>)
 
     instance->G1_angle_0 = 4.94677176989159972e-1;
 
     instance->G1_v_0 = 1.0;
 
     instance->G1_Q_0 = 9.67924969906579971e+8;
- 80083c4:	ed9f 5a50 	vldr	s10, [pc, #320]	@ 8008508 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x148>
+ 80083c4:	eddf 5a4f 	vldr	s11, [pc, #316]	@ 8008504 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x144>
 
     instance->G1_P_0 = 1.99799999999359989e+9;
- 80083c8:	eddf 5a50 	vldr	s11, [pc, #320]	@ 800850c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x14c>
+ 80083c8:	ed9f 6a4f 	vldr	s12, [pc, #316]	@ 8008508 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x148>
 
     instance->SysData_fn = 6.0e+1;
- 80083cc:	ed9f 6a50 	vldr	s12, [pc, #320]	@ 8008510 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x150>
+ 80083cc:	eddf 6a4f 	vldr	s13, [pc, #316]	@ 800850c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x14c>
 
     instance->G1_V_b = 4.0e+5;
 
     instance->L2_X = 4.18918918918918942e-2;
- 80083d0:	eddf 6a50 	vldr	s13, [pc, #320]	@ 8008514 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x154>
+ 80083d0:	ed9f 7a4f 	vldr	s14, [pc, #316]	@ 8008510 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x150>
 
     instance->L2_B = 0.0;
 
     instance->L2_G = 0.0;
 
     instance->L1_X = 2.25225225225225215e-2;
- 80083d4:	ed9f 7a50 	vldr	s14, [pc, #320]	@ 8008518 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x158>
-
-    instance->L1_B = 0.0;
-
-    instance->L1_G = 0.0;
-
-    instance->transformer_xT = 1.49999999999999994e-1;
- 80083d8:	eddf 7a50 	vldr	s15, [pc, #320]	@ 800851c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x15c>
+ 80083d4:	eddf 7a4f 	vldr	s15, [pc, #316]	@ 8008514 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x154>
+    Initialize variables with explicit start value (independent initializations):
+    */
 
     instance->woffset = 1.5;
 
-    instance->wscale = 1.1;
-
-    instance->K0 = 10e+1;
- 80083dc:	f8df c188 	ldr.w	ip, [pc, #392]	@ 8008568 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a8>
+    instance->wscale = 1.0e+2;
+ 80083d8:	f8df c188 	ldr.w	ip, [pc, #392]	@ 8008564 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a4>
 }
 
 /**********************************************************************************************************************
  * init
  **********************************************************************************************************************/
 void Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
- 80083e0:	b538      	push	{r3, r4, r5, lr}
+ 80083dc:	b538      	push	{r3, r4, r5, lr}
     instance->discrete_stepSize = 2.0000000000000001e-4;
- 80083e2:	f8c0 11cc 	str.w	r1, [r0, #460]	@ 0x1cc
+ 80083de:	f8c0 11cc 	str.w	r1, [r0, #460]	@ 0x1cc
     instance->G1_machine_ra = 3.00000000000000006e-3;
- 80083e6:	494e      	ldr	r1, [pc, #312]	@ (8008520 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x160>)
- 80083e8:	f8c0 1160 	str.w	r1, [r0, #352]	@ 0x160
+ 80083e2:	494d      	ldr	r1, [pc, #308]	@ (8008518 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x158>)
+ 80083e4:	f8c0 1160 	str.w	r1, [r0, #352]	@ 0x160
     instance->G1_machine_x2d = 2.3000000000000001e-1;
- 80083ec:	494d      	ldr	r1, [pc, #308]	@ (8008524 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x164>)
- 80083ee:	f8c0 116c 	str.w	r1, [r0, #364]	@ 0x16c
+ 80083e8:	494c      	ldr	r1, [pc, #304]	@ (800851c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x15c>)
+ 80083ea:	f8c0 116c 	str.w	r1, [r0, #364]	@ 0x16c
     instance->G1_avr_Tr = 1.49999999999999994e-2;
- 80083f2:	494d      	ldr	r1, [pc, #308]	@ (8008528 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x168>)
- 80083f4:	f8c0 1134 	str.w	r1, [r0, #308]	@ 0x134
+ 80083ee:	494c      	ldr	r1, [pc, #304]	@ (8008520 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x160>)
+ 80083f0:	f8c0 1134 	str.w	r1, [r0, #308]	@ 0x134
     instance->G1_avr_Te = 1.00000000000000006e-1;
- 80083f8:	494c      	ldr	r1, [pc, #304]	@ (800852c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x16c>)
- 80083fa:	f8c0 1130 	str.w	r1, [r0, #304]	@ 0x130
+ 80083f4:	494b      	ldr	r1, [pc, #300]	@ (8008524 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x164>)
+ 80083f6:	f8c0 1130 	str.w	r1, [r0, #304]	@ 0x130
     instance->G1_machine_Taa = 2.00000000000000004e-3;
- 80083fe:	494c      	ldr	r1, [pc, #304]	@ (8008530 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x170>)
- 8008400:	f8c0 1158 	str.w	r1, [r0, #344]	@ 0x158
+ 80083fa:	494b      	ldr	r1, [pc, #300]	@ (8008528 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x168>)
+ 80083fc:	f8c0 1158 	str.w	r1, [r0, #344]	@ 0x158
     instance->G1_machine_xd = 1.81000000000000005;
- 8008404:	494b      	ldr	r1, [pc, #300]	@ (8008534 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x174>)
- 8008406:	f8c0 1174 	str.w	r1, [r0, #372]	@ 0x174
+ 8008400:	494a      	ldr	r1, [pc, #296]	@ (800852c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x16c>)
+ 8008402:	f8c0 1174 	str.w	r1, [r0, #372]	@ 0x174
     instance->G1_machine_x1d = 2.99999999999999989e-1;
- 800840a:	494b      	ldr	r1, [pc, #300]	@ (8008538 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x178>)
- 800840c:	f8c0 1164 	str.w	r1, [r0, #356]	@ 0x164
+ 8008406:	494a      	ldr	r1, [pc, #296]	@ (8008530 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x170>)
+ 8008408:	f8c0 1164 	str.w	r1, [r0, #356]	@ 0x164
     instance->G1_machine_T2d0 = 2.99999999999999989e-2;
- 8008410:	494a      	ldr	r1, [pc, #296]	@ (800853c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x17c>)
- 8008412:	f8c0 1150 	str.w	r1, [r0, #336]	@ 0x150
+ 800840c:	4949      	ldr	r1, [pc, #292]	@ (8008534 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x174>)
+ 800840e:	f8c0 1150 	str.w	r1, [r0, #336]	@ 0x150
     instance->G1_machine_xq = 1.76000000000000001;
- 8008416:	494a      	ldr	r1, [pc, #296]	@ (8008540 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x180>)
- 8008418:	f8c0 1178 	str.w	r1, [r0, #376]	@ 0x178
+ 8008412:	4949      	ldr	r1, [pc, #292]	@ (8008538 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x178>)
+ 8008414:	f8c0 1178 	str.w	r1, [r0, #376]	@ 0x178
     instance->G1_machine_x1q = 6.50000000000000022e-1;
- 800841c:	4949      	ldr	r1, [pc, #292]	@ (8008544 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x184>)
- 800841e:	f8c0 1168 	str.w	r1, [r0, #360]	@ 0x168
+ 8008418:	4948      	ldr	r1, [pc, #288]	@ (800853c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x17c>)
+ 800841a:	f8c0 1168 	str.w	r1, [r0, #360]	@ 0x168
     instance->G1_machine_T2q0 = 7.00000000000000067e-2;
- 8008422:	4949      	ldr	r1, [pc, #292]	@ (8008548 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x188>)
- 8008424:	f8c0 1154 	str.w	r1, [r0, #340]	@ 0x154
+ 800841e:	4948      	ldr	r1, [pc, #288]	@ (8008540 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x180>)
+ 8008420:	f8c0 1154 	str.w	r1, [r0, #340]	@ 0x154
     instance->SysData_S_b = 1.0e+8;
- 8008428:	4948      	ldr	r1, [pc, #288]	@ (800854c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x18c>)
- 800842a:	f8c0 119c 	str.w	r1, [r0, #412]	@ 0x19c
+ 8008424:	4947      	ldr	r1, [pc, #284]	@ (8008544 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x184>)
+ 8008426:	f8c0 119c 	str.w	r1, [r0, #412]	@ 0x19c
     instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
- 800842e:	4b48      	ldr	r3, [pc, #288]	@ (8008550 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x190>)
+ 800842a:	4b47      	ldr	r3, [pc, #284]	@ (8008548 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x188>)
     instance->infiniteBus_v_0 = 9.0081e-1;
- 8008430:	4948      	ldr	r1, [pc, #288]	@ (8008554 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x194>)
- 8008432:	f8c0 11a8 	str.w	r1, [r0, #424]	@ 0x1a8
+ 800842c:	4947      	ldr	r1, [pc, #284]	@ (800854c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x18c>)
+ 800842e:	f8c0 11a8 	str.w	r1, [r0, #424]	@ 0x1a8
     instance->G1_avr_vfmin = -6.40000000000000036;
- 8008436:	4948      	ldr	r1, [pc, #288]	@ (8008558 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x198>)
+ 8008432:	4947      	ldr	r1, [pc, #284]	@ (8008550 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x190>)
     instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
- 8008438:	681b      	ldr	r3, [r3, #0]
+ 8008434:	681b      	ldr	r3, [r3, #0]
     instance->G1_avr_vfmin = -6.40000000000000036;
- 800843a:	f8c0 113c 	str.w	r1, [r0, #316]	@ 0x13c
+ 8008436:	f8c0 113c 	str.w	r1, [r0, #316]	@ 0x13c
     instance->G1_angle_0 = 4.94677176989159972e-1;
- 800843e:	4947      	ldr	r1, [pc, #284]	@ (800855c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x19c>)
+ 800843a:	4946      	ldr	r1, [pc, #280]	@ (8008554 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x194>)
     instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
- 8008440:	f8c0 323c 	str.w	r3, [r0, #572]	@ 0x23c
+ 800843c:	f8c0 323c 	str.w	r3, [r0, #572]	@ 0x23c
     instance->G1_angle_0 = 4.94677176989159972e-1;
- 8008444:	f8c0 1120 	str.w	r1, [r0, #288]	@ 0x120
+ 8008440:	f8c0 1120 	str.w	r1, [r0, #288]	@ 0x120
     instance->transformer_m = 1.0;
- 8008448:	f04f 537e 	mov.w	r3, #1065353216	@ 0x3f800000
+ 8008444:	f04f 537e 	mov.w	r3, #1065353216	@ 0x3f800000
     instance->G1_machine_M = 7.0;
- 800844c:	4944      	ldr	r1, [pc, #272]	@ (8008560 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a0>)
+ 8008448:	4943      	ldr	r1, [pc, #268]	@ (8008558 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x198>)
     instance->transformer_m = 1.0;
- 800844e:	f8c0 31b8 	str.w	r3, [r0, #440]	@ 0x1b8
+ 800844a:	f8c0 31b8 	str.w	r3, [r0, #440]	@ 0x1b8
     instance->infiniteBus_angle_0 = 0.0;
- 8008452:	2500      	movs	r5, #0
+ 800844e:	2500      	movs	r5, #0
     instance->G1_avr_T1 = 1.0;
- 8008454:	f8c0 3128 	str.w	r3, [r0, #296]	@ 0x128
+ 8008450:	f8c0 3128 	str.w	r3, [r0, #296]	@ 0x128
     instance->G1_avr_T2 = 1.0;
- 8008458:	f8c0 312c 	str.w	r3, [r0, #300]	@ 0x12c
+ 8008454:	f8c0 312c 	str.w	r3, [r0, #300]	@ 0x12c
     instance->G1_machine_T1q0 = 1.0;
- 800845c:	f8c0 314c 	str.w	r3, [r0, #332]	@ 0x14c
+ 8008458:	f8c0 314c 	str.w	r3, [r0, #332]	@ 0x14c
     instance->wsum_k1 = 1.0;
- 8008460:	f8c0 31c4 	str.w	r3, [r0, #452]	@ 0x1c4
+ 800845c:	f8c0 31c4 	str.w	r3, [r0, #452]	@ 0x1c4
     instance->wsum_k2 = 1.0;
- 8008464:	f8c0 31c8 	str.w	r3, [r0, #456]	@ 0x1c8
+ 8008460:	f8c0 31c8 	str.w	r3, [r0, #456]	@ 0x1c8
     instance->G1_v_0 = 1.0;
- 8008468:	f8c0 3124 	str.w	r3, [r0, #292]	@ 0x124
+ 8008464:	f8c0 3124 	str.w	r3, [r0, #292]	@ 0x124
     instance->G1_machine_M = 7.0;
- 800846c:	f8c0 1140 	str.w	r1, [r0, #320]	@ 0x140
+ 8008468:	f8c0 1140 	str.w	r1, [r0, #320]	@ 0x140
     instance->G1_machine_Sn = 2.22e+9;
- 8008470:	4b3c      	ldr	r3, [pc, #240]	@ (8008564 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a4>)
+ 800846c:	4b3b      	ldr	r3, [pc, #236]	@ (800855c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x19c>)
     instance->G1_avr_vfmax = 7.0;
- 8008472:	f8c0 1138 	str.w	r1, [r0, #312]	@ 0x138
+ 800846e:	f8c0 1138 	str.w	r1, [r0, #312]	@ 0x138
     instance->G1_machine_x2q = 2.5e-1;
- 8008476:	f04f 517a 	mov.w	r1, #1048576000	@ 0x3e800000
-    instance->wscale = 1.1;
- 800847a:	f8df e0f0 	ldr.w	lr, [pc, #240]	@ 800856c <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1ac>
+ 8008472:	f04f 517a 	mov.w	r1, #1048576000	@ 0x3e800000
+    instance->transformer_xT = 1.49999999999999994e-1;
+ 8008476:	f8df e0f0 	ldr.w	lr, [pc, #240]	@ 8008568 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a8>
+    instance->G1_machine_Vn = 4.0e+5;
+ 800847a:	f8c0 215c 	str.w	r2, [r0, #348]	@ 0x15c
     instance->infiniteBus_angle_0 = 0.0;
  800847e:	f8c0 51a4 	str.w	r5, [r0, #420]	@ 0x1a4
     instance->G1_machine_Sn = 2.22e+9;
  8008482:	f8c0 3144 	str.w	r3, [r0, #324]	@ 0x144
-    instance->G1_machine_Vn = 4.0e+5;
- 8008486:	f8c0 215c 	str.w	r2, [r0, #348]	@ 0x15c
     instance->G1_machine_x2q = 2.5e-1;
- 800848a:	f8c0 1170 	str.w	r1, [r0, #368]	@ 0x170
+ 8008486:	f8c0 1170 	str.w	r1, [r0, #368]	@ 0x170
     instance->G1_machine_T1d0 = 8.0;
- 800848e:	f04f 4182 	mov.w	r1, #1090519040	@ 0x41000000
+ 800848a:	f04f 4182 	mov.w	r1, #1090519040	@ 0x41000000
     instance->transformer_Sn = 2.22e+9;
- 8008492:	f8c0 31ac 	str.w	r3, [r0, #428]	@ 0x1ac
-    instance->woffset = 1.5;
- 8008496:	f04f 537f 	mov.w	r3, #1069547520	@ 0x3fc00000
-void Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
- 800849a:	4604      	mov	r4, r0
-    instance->wscale = 1.1;
- 800849c:	f8c0 e024 	str.w	lr, [r0, #36]	@ 0x24
-    instance->L2_R = 0.0;
- 80084a0:	f8c0 5194 	str.w	r5, [r0, #404]	@ 0x194
-    instance->L2_B = 0.0;
- 80084a4:	f8c0 518c 	str.w	r5, [r0, #396]	@ 0x18c
-    instance->L2_G = 0.0;
- 80084a8:	f8c0 5190 	str.w	r5, [r0, #400]	@ 0x190
-    instance->L1_R = 0.0;
- 80084ac:	f8c0 5184 	str.w	r5, [r0, #388]	@ 0x184
-    instance->L1_B = 0.0;
- 80084b0:	f8c0 517c 	str.w	r5, [r0, #380]	@ 0x17c
-    instance->L1_G = 0.0;
- 80084b4:	f8c0 5180 	str.w	r5, [r0, #384]	@ 0x180
-    instance->transformer_rT = 0.0;
- 80084b8:	f8c0 51bc 	str.w	r5, [r0, #444]	@ 0x1bc
-    instance->woffset = 1.5;
- 80084bc:	6203      	str	r3, [r0, #32]
-    instance->G1_machine_T1d0 = 8.0;
- 80084be:	f8c0 1148 	str.w	r1, [r0, #328]	@ 0x148
-    instance->G1_Q_0 = 9.67924969906579971e+8;
- 80084c2:	ed80 5a46 	vstr	s10, [r0, #280]	@ 0x118
-    instance->G1_P_0 = 1.99799999999359989e+9;
- 80084c6:	edc0 5a45 	vstr	s11, [r0, #276]	@ 0x114
-    instance->SysData_fn = 6.0e+1;
- 80084ca:	ed80 6a68 	vstr	s12, [r0, #416]	@ 0x1a0
-    instance->L2_X = 4.18918918918918942e-2;
- 80084ce:	edc0 6a66 	vstr	s13, [r0, #408]	@ 0x198
-    instance->L1_X = 2.25225225225225215e-2;
- 80084d2:	ed80 7a62 	vstr	s14, [r0, #392]	@ 0x188
-    instance->transformer_xT = 1.49999999999999994e-1;
- 80084d6:	edc0 7a70 	vstr	s15, [r0, #448]	@ 0x1c0
+ 800848e:	f8c0 31ac 	str.w	r3, [r0, #428]	@ 0x1ac
     instance->G1_V_b = 4.0e+5;
- 80084da:	f8c0 211c 	str.w	r2, [r0, #284]	@ 0x11c
+ 8008492:	f8c0 211c 	str.w	r2, [r0, #284]	@ 0x11c
+    instance->K0 = 3.0e+1;
+ 8008496:	4b32      	ldr	r3, [pc, #200]	@ (8008560 <Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a0>)
     instance->transformer_V_b = 4.0e+5;
- 80084de:	f8c0 21b0 	str.w	r2, [r0, #432]	@ 0x1b0
+ 8008498:	f8c0 21b0 	str.w	r2, [r0, #432]	@ 0x1b0
     instance->transformer_Vn = 4.0e+5;
- 80084e2:	f8c0 21b4 	str.w	r2, [r0, #436]	@ 0x1b4
-    instance->K0 = 10e+1;
- 80084e6:	f8c0 c01c 	str.w	ip, [r0, #28]
+ 800849c:	f8c0 21b4 	str.w	r2, [r0, #436]	@ 0x1b4
+    instance->woffset = 1.5;
+ 80084a0:	f04f 527f 	mov.w	r2, #1069547520	@ 0x3fc00000
+void Startup_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
+ 80084a4:	4604      	mov	r4, r0
+    instance->transformer_xT = 1.49999999999999994e-1;
+ 80084a6:	f8c0 e1c0 	str.w	lr, [r0, #448]	@ 0x1c0
+    instance->L2_R = 0.0;
+ 80084aa:	f8c0 5194 	str.w	r5, [r0, #404]	@ 0x194
+    instance->L2_B = 0.0;
+ 80084ae:	f8c0 518c 	str.w	r5, [r0, #396]	@ 0x18c
+    instance->L2_G = 0.0;
+ 80084b2:	f8c0 5190 	str.w	r5, [r0, #400]	@ 0x190
+    instance->L1_R = 0.0;
+ 80084b6:	f8c0 5184 	str.w	r5, [r0, #388]	@ 0x184
+    instance->L1_B = 0.0;
+ 80084ba:	f8c0 517c 	str.w	r5, [r0, #380]	@ 0x17c
+    instance->L1_G = 0.0;
+ 80084be:	f8c0 5180 	str.w	r5, [r0, #384]	@ 0x180
+    instance->transformer_rT = 0.0;
+ 80084c2:	f8c0 51bc 	str.w	r5, [r0, #444]	@ 0x1bc
+    instance->K0 = 3.0e+1;
+ 80084c6:	61c3      	str	r3, [r0, #28]
+    instance->G1_machine_T1d0 = 8.0;
+ 80084c8:	f8c0 1148 	str.w	r1, [r0, #328]	@ 0x148
+    instance->G1_Q_0 = 9.67924969906579971e+8;
+ 80084cc:	edc0 5a46 	vstr	s11, [r0, #280]	@ 0x118
+    instance->G1_P_0 = 1.99799999999359989e+9;
+ 80084d0:	ed80 6a45 	vstr	s12, [r0, #276]	@ 0x114
+    instance->SysData_fn = 6.0e+1;
+ 80084d4:	edc0 6a68 	vstr	s13, [r0, #416]	@ 0x1a0
+    instance->L2_X = 4.18918918918918942e-2;
+ 80084d8:	ed80 7a66 	vstr	s14, [r0, #408]	@ 0x198
+    instance->L1_X = 2.25225225225225215e-2;
+ 80084dc:	edc0 7a62 	vstr	s15, [r0, #392]	@ 0x188
+    instance->wscale = 1.0e+2;
+ 80084e0:	f8c0 c024 	str.w	ip, [r0, #36]	@ 0x24
+    instance->woffset = 1.5;
+ 80084e4:	6202      	str	r2, [r0, #32]
     Recalibrate(instance);
- 80084ea:	f7fc fcbd 	bl	8004e68 <Recalibrate>
+ 80084e6:	f7fc fcbf 	bl	8004e68 <Recalibrate>
     instance->fault = false;
- 80084ee:	2300      	movs	r3, #0
- 80084f0:	7023      	strb	r3, [r4, #0]
+ 80084ea:	2300      	movs	r3, #0
+ 80084ec:	7023      	strb	r3, [r4, #0]
     instance->vf = 0.0;
- 80084f2:	6065      	str	r5, [r4, #4]
+ 80084ee:	6065      	str	r5, [r4, #4]
     Reinitialize(instance);
- 80084f4:	4620      	mov	r0, r4
+ 80084f0:	4620      	mov	r0, r4
     Startup(instance);
 }
- 80084f6:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+ 80084f2:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
     Reinitialize(instance);
- 80084fa:	f7fc bf25 	b.w	8005348 <Reinitialize>
- 80084fe:	bf00      	nop
- 8008500:	3951b717 	.word	0x3951b717
- 8008504:	48c35000 	.word	0x48c35000
- 8008508:	4e66c574 	.word	0x4e66c574
- 800850c:	4eee2e1f 	.word	0x4eee2e1f
- 8008510:	42700000 	.word	0x42700000
- 8008514:	3d2b96d5 	.word	0x3d2b96d5
- 8008518:	3cb88127 	.word	0x3cb88127
- 800851c:	3e19999a 	.word	0x3e19999a
- 8008520:	3b449ba6 	.word	0x3b449ba6
- 8008524:	3e6b851f 	.word	0x3e6b851f
- 8008528:	3c75c28f 	.word	0x3c75c28f
- 800852c:	3dcccccd 	.word	0x3dcccccd
- 8008530:	3b03126f 	.word	0x3b03126f
- 8008534:	3fe7ae14 	.word	0x3fe7ae14
- 8008538:	3e99999a 	.word	0x3e99999a
- 800853c:	3cf5c28f 	.word	0x3cf5c28f
- 8008540:	3fe147ae 	.word	0x3fe147ae
- 8008544:	3f266666 	.word	0x3f266666
- 8008548:	3d8f5c29 	.word	0x3d8f5c29
- 800854c:	4cbebc20 	.word	0x4cbebc20
- 8008550:	0800f9a4 	.word	0x0800f9a4
- 8008554:	3f669b7c 	.word	0x3f669b7c
- 8008558:	c0cccccd 	.word	0xc0cccccd
- 800855c:	3efd4654 	.word	0x3efd4654
- 8008560:	40e00000 	.word	0x40e00000
- 8008564:	4f045283 	.word	0x4f045283
- 8008568:	42c80000 	.word	0x42c80000
- 800856c:	3f8ccccd 	.word	0x3f8ccccd
+ 80084f6:	f7fc bf27 	b.w	8005348 <Reinitialize>
+ 80084fa:	bf00      	nop
+ 80084fc:	3951b717 	.word	0x3951b717
+ 8008500:	48c35000 	.word	0x48c35000
+ 8008504:	4e66c574 	.word	0x4e66c574
+ 8008508:	4eee2e1f 	.word	0x4eee2e1f
+ 800850c:	42700000 	.word	0x42700000
+ 8008510:	3d2b96d5 	.word	0x3d2b96d5
+ 8008514:	3cb88127 	.word	0x3cb88127
+ 8008518:	3b449ba6 	.word	0x3b449ba6
+ 800851c:	3e6b851f 	.word	0x3e6b851f
+ 8008520:	3c75c28f 	.word	0x3c75c28f
+ 8008524:	3dcccccd 	.word	0x3dcccccd
+ 8008528:	3b03126f 	.word	0x3b03126f
+ 800852c:	3fe7ae14 	.word	0x3fe7ae14
+ 8008530:	3e99999a 	.word	0x3e99999a
+ 8008534:	3cf5c28f 	.word	0x3cf5c28f
+ 8008538:	3fe147ae 	.word	0x3fe147ae
+ 800853c:	3f266666 	.word	0x3f266666
+ 8008540:	3d8f5c29 	.word	0x3d8f5c29
+ 8008544:	4cbebc20 	.word	0x4cbebc20
+ 8008548:	0800f9a4 	.word	0x0800f9a4
+ 800854c:	3f669b7c 	.word	0x3f669b7c
+ 8008550:	c0cccccd 	.word	0xc0cccccd
+ 8008554:	3efd4654 	.word	0x3efd4654
+ 8008558:	40e00000 	.word	0x40e00000
+ 800855c:	4f045283 	.word	0x4f045283
+ 8008560:	41f00000 	.word	0x41f00000
+ 8008564:	42c80000 	.word	0x42c80000
+ 8008568:	3e19999a 	.word	0x3e19999a
+ 800856c:	00000000 	.word	0x00000000
 
 08008570 <DoStep_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
 

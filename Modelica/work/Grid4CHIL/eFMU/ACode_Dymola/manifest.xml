@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{ef3ae968-ba38-4984-aed4-cd391eecff18}"
+	id="{834844d0-bbc7-4fe8-b599-d2b83ba51816}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL"
-	generationDateAndTime="2026-03-20T22:36:30Z"
+	generationDateAndTime="2026-03-20T22:53:14Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
 	description="System model for CHIL testing"
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="65f3f5cc5b137493c2d9008b2042d2b81a066c66"
+			checksum="43f473b8d480ba8bee14664ac4dc083eab2d07fb"
 			role="Code"/>
 	</Files>
 
@@ -169,14 +169,14 @@
 			name="woffset"
 			description="Speed output offset"
 			blockCausality="tunableParameter"
-			start="1.75">
+			start="1.5">
 		</RealVariable>
 		<RealVariable
 			id="wscale"
 			name="wscale"
 			description="Speed output scaling"
 			blockCausality="tunableParameter"
-			start="5.0e+2">
+			start="1.0e+2">
 		</RealVariable>
 		<RealVariable
 			id="'B3.p.vi'"
@@ -1315,7 +1315,7 @@
 			name="'wOutpt.k'"
 			description="Gain value multiplied with input signal"
 			blockCausality="dependentParameter"
-			start="5.0e+2">
+			start="1.0e+2">
 		</RealVariable>
 		<RealVariable
 			id="'wsum.k1'"

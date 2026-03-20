@@ -1,4 +1,4 @@
-/*2026-03-20T22:20:28.417660300Z*/
+/*2026-03-20T22:53:15.867271400Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -727,9 +727,9 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->woffset = 1.5;
 
-    instance->wscale = 1.1;
+    instance->wscale = 1.0e+2;
 
-    instance->K0 = 10e+1;
+    instance->K0 = 3.0e+1;
 
     /* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
 

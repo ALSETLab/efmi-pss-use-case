@@ -18,6 +18,8 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 
 	/* **************************************************************************************************** Tunable parameters: */
 	Real K0;
+	Real woffset;
+	Real wscale;
 	/* B3.p: */
 	Real 'B3.p.vi';
 	Real 'B3.p.vr';
@@ -190,6 +192,13 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 	Real 'transformer.n.ii';
 	Real 'transformer.n.ir';
 
+	/* wOutpt: */
+	Real 'wOutpt.k';
+
+	/* wsum: */
+	Real 'wsum.k1';
+	Real 'wsum.k2';
+
 	/* Internal sampling time: */
 	Real 'discrete.stepSize';
 	Boolean 'discrete.stepSize.active';
@@ -237,6 +246,8 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 			  "self.vf0OUT",
 			  "self.w",
 			  "self.K0",
+			  "self.woffset",
+			  "self.wscale",
 			  "self.'B3.p.vi'",
 			  "self.'B3.p.vr'",
 			  "self.'G1.P_0'",
@@ -290,9 +301,7 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 			  "self.'G1.machine.Z_MBtoSB'",
 			  "self.'G1.machine.angle_0'",
 			  "self.'G1.machine.delta0'",
-			  "self.'G1.machine.e1q0'",
-			  "self.'G1.machine.e2q0'",
-			  "self.'G1.machine.fn'"});
+			  "self.'G1.machine.e1q0'"});
 			self.fault := trajectories_buffer[1, 1] > 0.0;
 			self.vf := trajectories_buffer[2, 1];
 			self.Pgen := trajectories_buffer[3, 1];
@@ -301,67 +310,69 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 			self.vf0OUT := trajectories_buffer[6, 1];
 			self.w := trajectories_buffer[7, 1];
 			self.K0 := trajectories_buffer[8, 1];
-			self.'B3.p.vi' := trajectories_buffer[9, 1];
-			self.'B3.p.vr' := trajectories_buffer[10, 1];
-			self.'G1.P_0' := trajectories_buffer[11, 1];
-			self.'G1.Q_0' := trajectories_buffer[12, 1];
-			self.'G1.V_b' := trajectories_buffer[13, 1];
-			self.'G1.angle_0' := trajectories_buffer[14, 1];
-			self.'G1.v_0' := trajectories_buffer[15, 1];
-			self.'G1.K0' := trajectories_buffer[16, 1];
-			self.'G1.S_b' := trajectories_buffer[17, 1];
-			self.'G1.avr.T1' := trajectories_buffer[18, 1];
-			self.'G1.avr.T2' := trajectories_buffer[19, 1];
-			self.'G1.avr.Te' := trajectories_buffer[20, 1];
-			self.'G1.avr.Tr' := trajectories_buffer[21, 1];
-			self.'G1.avr.vfmax' := trajectories_buffer[22, 1];
-			self.'G1.avr.vfmin' := trajectories_buffer[23, 1];
-			self.'G1.avr.K0' := trajectories_buffer[24, 1];
-			self.'G1.avr.s0' := trajectories_buffer[25, 1];
-			self.'G1.avr.vref' := trajectories_buffer[26, 1];
-			self.'derivative(G1.avr.vf1)' := trajectories_buffer[27, 1];
-			self.'derivative(G1.avr.vm)' := trajectories_buffer[28, 1];
-			self.'derivative(G1.avr.vr)' := trajectories_buffer[29, 1];
-			self.'G1.avr.vf1' := trajectories_buffer[30, 1];
-			self.'G1.avr.vm' := trajectories_buffer[31, 1];
-			self.'G1.avr.vr' := trajectories_buffer[32, 1];
-			self.'G1.avr.limiter1.uMax' := trajectories_buffer[33, 1];
-			self.'G1.avr.limiter1.uMin' := trajectories_buffer[34, 1];
-			self.'G1.machine.M' := trajectories_buffer[35, 1];
-			self.'G1.machine.Sn' := trajectories_buffer[36, 1];
-			self.'G1.machine.T1d0' := trajectories_buffer[37, 1];
-			self.'G1.machine.T1q0' := trajectories_buffer[38, 1];
-			self.'G1.machine.T2d0' := trajectories_buffer[39, 1];
-			self.'G1.machine.T2q0' := trajectories_buffer[40, 1];
-			self.'G1.machine.Taa' := trajectories_buffer[41, 1];
-			self.'G1.machine.Vn' := trajectories_buffer[42, 1];
-			self.'G1.machine.ra' := trajectories_buffer[43, 1];
-			self.'G1.machine.x1d' := trajectories_buffer[44, 1];
-			self.'G1.machine.x1q' := trajectories_buffer[45, 1];
-			self.'G1.machine.x2d' := trajectories_buffer[46, 1];
-			self.'G1.machine.x2q' := trajectories_buffer[47, 1];
-			self.'G1.machine.xd' := trajectories_buffer[48, 1];
-			self.'G1.machine.xq' := trajectories_buffer[49, 1];
-			self.'G1.machine.I_MBtoSB' := trajectories_buffer[50, 1];
-			self.'G1.machine.K1' := trajectories_buffer[51, 1];
-			self.'G1.machine.K2' := trajectories_buffer[52, 1];
-			self.'G1.machine.P_0' := trajectories_buffer[53, 1];
-			self.'G1.machine.Q_0' := trajectories_buffer[54, 1];
-			self.'G1.machine.S_SBtoMB' := trajectories_buffer[55, 1];
-			self.'G1.machine.S_b' := trajectories_buffer[56, 1];
-			self.'G1.machine.V_MBtoSB' := trajectories_buffer[57, 1];
-			self.'G1.machine.V_b' := trajectories_buffer[58, 1];
-			self.'G1.machine.Z_MBtoSB' := trajectories_buffer[59, 1];
-			self.'G1.machine.angle_0' := trajectories_buffer[60, 1];
-			self.'G1.machine.delta0' := trajectories_buffer[61, 1];
-			self.'G1.machine.e1q0' := trajectories_buffer[62, 1];
-			self.'G1.machine.e2q0' := trajectories_buffer[63, 1];
-			self.'G1.machine.fn' := trajectories_buffer[64, 1];
+			self.woffset := trajectories_buffer[9, 1];
+			self.wscale := trajectories_buffer[10, 1];
+			self.'B3.p.vi' := trajectories_buffer[11, 1];
+			self.'B3.p.vr' := trajectories_buffer[12, 1];
+			self.'G1.P_0' := trajectories_buffer[13, 1];
+			self.'G1.Q_0' := trajectories_buffer[14, 1];
+			self.'G1.V_b' := trajectories_buffer[15, 1];
+			self.'G1.angle_0' := trajectories_buffer[16, 1];
+			self.'G1.v_0' := trajectories_buffer[17, 1];
+			self.'G1.K0' := trajectories_buffer[18, 1];
+			self.'G1.S_b' := trajectories_buffer[19, 1];
+			self.'G1.avr.T1' := trajectories_buffer[20, 1];
+			self.'G1.avr.T2' := trajectories_buffer[21, 1];
+			self.'G1.avr.Te' := trajectories_buffer[22, 1];
+			self.'G1.avr.Tr' := trajectories_buffer[23, 1];
+			self.'G1.avr.vfmax' := trajectories_buffer[24, 1];
+			self.'G1.avr.vfmin' := trajectories_buffer[25, 1];
+			self.'G1.avr.K0' := trajectories_buffer[26, 1];
+			self.'G1.avr.s0' := trajectories_buffer[27, 1];
+			self.'G1.avr.vref' := trajectories_buffer[28, 1];
+			self.'derivative(G1.avr.vf1)' := trajectories_buffer[29, 1];
+			self.'derivative(G1.avr.vm)' := trajectories_buffer[30, 1];
+			self.'derivative(G1.avr.vr)' := trajectories_buffer[31, 1];
+			self.'G1.avr.vf1' := trajectories_buffer[32, 1];
+			self.'G1.avr.vm' := trajectories_buffer[33, 1];
+			self.'G1.avr.vr' := trajectories_buffer[34, 1];
+			self.'G1.avr.limiter1.uMax' := trajectories_buffer[35, 1];
+			self.'G1.avr.limiter1.uMin' := trajectories_buffer[36, 1];
+			self.'G1.machine.M' := trajectories_buffer[37, 1];
+			self.'G1.machine.Sn' := trajectories_buffer[38, 1];
+			self.'G1.machine.T1d0' := trajectories_buffer[39, 1];
+			self.'G1.machine.T1q0' := trajectories_buffer[40, 1];
+			self.'G1.machine.T2d0' := trajectories_buffer[41, 1];
+			self.'G1.machine.T2q0' := trajectories_buffer[42, 1];
+			self.'G1.machine.Taa' := trajectories_buffer[43, 1];
+			self.'G1.machine.Vn' := trajectories_buffer[44, 1];
+			self.'G1.machine.ra' := trajectories_buffer[45, 1];
+			self.'G1.machine.x1d' := trajectories_buffer[46, 1];
+			self.'G1.machine.x1q' := trajectories_buffer[47, 1];
+			self.'G1.machine.x2d' := trajectories_buffer[48, 1];
+			self.'G1.machine.x2q' := trajectories_buffer[49, 1];
+			self.'G1.machine.xd' := trajectories_buffer[50, 1];
+			self.'G1.machine.xq' := trajectories_buffer[51, 1];
+			self.'G1.machine.I_MBtoSB' := trajectories_buffer[52, 1];
+			self.'G1.machine.K1' := trajectories_buffer[53, 1];
+			self.'G1.machine.K2' := trajectories_buffer[54, 1];
+			self.'G1.machine.P_0' := trajectories_buffer[55, 1];
+			self.'G1.machine.Q_0' := trajectories_buffer[56, 1];
+			self.'G1.machine.S_SBtoMB' := trajectories_buffer[57, 1];
+			self.'G1.machine.S_b' := trajectories_buffer[58, 1];
+			self.'G1.machine.V_MBtoSB' := trajectories_buffer[59, 1];
+			self.'G1.machine.V_b' := trajectories_buffer[60, 1];
+			self.'G1.machine.Z_MBtoSB' := trajectories_buffer[61, 1];
+			self.'G1.machine.angle_0' := trajectories_buffer[62, 1];
+			self.'G1.machine.delta0' := trajectories_buffer[63, 1];
+			self.'G1.machine.e1q0' := trajectories_buffer[64, 1];
 
 			trajectories_buffer := .DymolaCommands.Trajectories.readTrajectory(
 			 fileName = result_file + ".mat",
 			 rows = 1,
 			 signals = {
+			  "self.'G1.machine.e2q0'",
+			  "self.'G1.machine.fn'",
 			  "self.'G1.machine.id0'",
 			  "self.'G1.machine.iq0'",
 			  "self.'G1.machine.p0'",
@@ -423,78 +434,78 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 			  "self.'infiniteBus.v_0'",
 			  "self.'transformer.Sn'",
 			  "self.'transformer.V_b'",
-			  "self.'transformer.Vn'",
-			  "self.'transformer.m'",
-			  "self.'transformer.rT'"});
-			self.'G1.machine.id0' := trajectories_buffer[1, 1];
-			self.'G1.machine.iq0' := trajectories_buffer[2, 1];
-			self.'G1.machine.p0' := trajectories_buffer[3, 1];
-			self.'G1.machine.pm00' := trajectories_buffer[4, 1];
-			self.'G1.machine.q0' := trajectories_buffer[5, 1];
-			self.'G1.machine.v_0' := trajectories_buffer[6, 1];
-			self.'G1.machine.vd0' := trajectories_buffer[7, 1];
-			self.'G1.machine.vf00' := trajectories_buffer[8, 1];
-			self.'G1.machine.vq0' := trajectories_buffer[9, 1];
-			self.'G1.machine.w_b' := trajectories_buffer[10, 1];
-			self.'G1.machine.xq0' := trajectories_buffer[11, 1];
-			self.'derivative(G1.machine.delta)' := trajectories_buffer[12, 1];
-			self.'derivative(G1.machine.e1d)' := trajectories_buffer[13, 1];
-			self.'derivative(G1.machine.e1q)' := trajectories_buffer[14, 1];
-			self.'derivative(G1.machine.e2d)' := trajectories_buffer[15, 1];
-			self.'derivative(G1.machine.e2q)' := trajectories_buffer[16, 1];
-			self.'derivative(G1.machine.w)' := trajectories_buffer[17, 1];
-			self.'G1.machine.delta' := trajectories_buffer[18, 1];
-			self.'G1.machine.e1d' := trajectories_buffer[19, 1];
-			self.'G1.machine.e1q' := trajectories_buffer[20, 1];
-			self.'G1.machine.e2d' := trajectories_buffer[21, 1];
-			self.'G1.machine.e2q' := trajectories_buffer[22, 1];
-			self.'G1.machine.id' := trajectories_buffer[23, 1];
-			self.'G1.machine.iq' := trajectories_buffer[24, 1];
-			self.'G1.machine.w' := trajectories_buffer[25, 1];
-			self.'G1.machine.I0.im' := trajectories_buffer[26, 1];
-			self.'G1.machine.I0.re' := trajectories_buffer[27, 1];
-			self.'G1.machine.Idq0.im' := trajectories_buffer[28, 1];
-			self.'G1.machine.Idq0.re' := trajectories_buffer[29, 1];
-			self.'G1.machine.S0.im' := trajectories_buffer[30, 1];
-			self.'G1.machine.S0.re' := trajectories_buffer[31, 1];
-			self.'G1.machine.Vdq0.im' := trajectories_buffer[32, 1];
-			self.'G1.machine.Vdq0.re' := trajectories_buffer[33, 1];
-			self.'G1.machine.Vt0.im' := trajectories_buffer[34, 1];
-			self.'G1.machine.Vt0.re' := trajectories_buffer[35, 1];
-			self.'G1.machine.auxCMval.im' := trajectories_buffer[36, 1];
-			self.'G1.machine.auxCMval.re' := trajectories_buffer[37, 1];
-			self.'L1.B' := trajectories_buffer[38, 1];
-			self.'L1.G' := trajectories_buffer[39, 1];
-			self.'L1.R' := trajectories_buffer[40, 1];
-			self.'L1.X' := trajectories_buffer[41, 1];
-			self.'L1.Y.im' := trajectories_buffer[42, 1];
-			self.'L1.Y.re' := trajectories_buffer[43, 1];
-			self.'L1.Z.im' := trajectories_buffer[44, 1];
-			self.'L1.Z.re' := trajectories_buffer[45, 1];
-			self.'L2.B' := trajectories_buffer[46, 1];
-			self.'L2.G' := trajectories_buffer[47, 1];
-			self.'L2.R' := trajectories_buffer[48, 1];
-			self.'L2.X' := trajectories_buffer[49, 1];
-			self.'L2.Y.im' := trajectories_buffer[50, 1];
-			self.'L2.Y.re' := trajectories_buffer[51, 1];
-			self.'L2.Z.im' := trajectories_buffer[52, 1];
-			self.'L2.Z.re' := trajectories_buffer[53, 1];
-			self.'L2.p.ii' := trajectories_buffer[54, 1];
-			self.'L2.p.ir' := trajectories_buffer[55, 1];
-			self.'SysData.S_b' := trajectories_buffer[56, 1];
-			self.'SysData.fn' := trajectories_buffer[57, 1];
-			self.'infiniteBus.angle_0' := trajectories_buffer[58, 1];
-			self.'infiniteBus.v_0' := trajectories_buffer[59, 1];
-			self.'transformer.Sn' := trajectories_buffer[60, 1];
-			self.'transformer.V_b' := trajectories_buffer[61, 1];
-			self.'transformer.Vn' := trajectories_buffer[62, 1];
-			self.'transformer.m' := trajectories_buffer[63, 1];
-			self.'transformer.rT' := trajectories_buffer[64, 1];
+			  "self.'transformer.Vn'"});
+			self.'G1.machine.e2q0' := trajectories_buffer[1, 1];
+			self.'G1.machine.fn' := trajectories_buffer[2, 1];
+			self.'G1.machine.id0' := trajectories_buffer[3, 1];
+			self.'G1.machine.iq0' := trajectories_buffer[4, 1];
+			self.'G1.machine.p0' := trajectories_buffer[5, 1];
+			self.'G1.machine.pm00' := trajectories_buffer[6, 1];
+			self.'G1.machine.q0' := trajectories_buffer[7, 1];
+			self.'G1.machine.v_0' := trajectories_buffer[8, 1];
+			self.'G1.machine.vd0' := trajectories_buffer[9, 1];
+			self.'G1.machine.vf00' := trajectories_buffer[10, 1];
+			self.'G1.machine.vq0' := trajectories_buffer[11, 1];
+			self.'G1.machine.w_b' := trajectories_buffer[12, 1];
+			self.'G1.machine.xq0' := trajectories_buffer[13, 1];
+			self.'derivative(G1.machine.delta)' := trajectories_buffer[14, 1];
+			self.'derivative(G1.machine.e1d)' := trajectories_buffer[15, 1];
+			self.'derivative(G1.machine.e1q)' := trajectories_buffer[16, 1];
+			self.'derivative(G1.machine.e2d)' := trajectories_buffer[17, 1];
+			self.'derivative(G1.machine.e2q)' := trajectories_buffer[18, 1];
+			self.'derivative(G1.machine.w)' := trajectories_buffer[19, 1];
+			self.'G1.machine.delta' := trajectories_buffer[20, 1];
+			self.'G1.machine.e1d' := trajectories_buffer[21, 1];
+			self.'G1.machine.e1q' := trajectories_buffer[22, 1];
+			self.'G1.machine.e2d' := trajectories_buffer[23, 1];
+			self.'G1.machine.e2q' := trajectories_buffer[24, 1];
+			self.'G1.machine.id' := trajectories_buffer[25, 1];
+			self.'G1.machine.iq' := trajectories_buffer[26, 1];
+			self.'G1.machine.w' := trajectories_buffer[27, 1];
+			self.'G1.machine.I0.im' := trajectories_buffer[28, 1];
+			self.'G1.machine.I0.re' := trajectories_buffer[29, 1];
+			self.'G1.machine.Idq0.im' := trajectories_buffer[30, 1];
+			self.'G1.machine.Idq0.re' := trajectories_buffer[31, 1];
+			self.'G1.machine.S0.im' := trajectories_buffer[32, 1];
+			self.'G1.machine.S0.re' := trajectories_buffer[33, 1];
+			self.'G1.machine.Vdq0.im' := trajectories_buffer[34, 1];
+			self.'G1.machine.Vdq0.re' := trajectories_buffer[35, 1];
+			self.'G1.machine.Vt0.im' := trajectories_buffer[36, 1];
+			self.'G1.machine.Vt0.re' := trajectories_buffer[37, 1];
+			self.'G1.machine.auxCMval.im' := trajectories_buffer[38, 1];
+			self.'G1.machine.auxCMval.re' := trajectories_buffer[39, 1];
+			self.'L1.B' := trajectories_buffer[40, 1];
+			self.'L1.G' := trajectories_buffer[41, 1];
+			self.'L1.R' := trajectories_buffer[42, 1];
+			self.'L1.X' := trajectories_buffer[43, 1];
+			self.'L1.Y.im' := trajectories_buffer[44, 1];
+			self.'L1.Y.re' := trajectories_buffer[45, 1];
+			self.'L1.Z.im' := trajectories_buffer[46, 1];
+			self.'L1.Z.re' := trajectories_buffer[47, 1];
+			self.'L2.B' := trajectories_buffer[48, 1];
+			self.'L2.G' := trajectories_buffer[49, 1];
+			self.'L2.R' := trajectories_buffer[50, 1];
+			self.'L2.X' := trajectories_buffer[51, 1];
+			self.'L2.Y.im' := trajectories_buffer[52, 1];
+			self.'L2.Y.re' := trajectories_buffer[53, 1];
+			self.'L2.Z.im' := trajectories_buffer[54, 1];
+			self.'L2.Z.re' := trajectories_buffer[55, 1];
+			self.'L2.p.ii' := trajectories_buffer[56, 1];
+			self.'L2.p.ir' := trajectories_buffer[57, 1];
+			self.'SysData.S_b' := trajectories_buffer[58, 1];
+			self.'SysData.fn' := trajectories_buffer[59, 1];
+			self.'infiniteBus.angle_0' := trajectories_buffer[60, 1];
+			self.'infiniteBus.v_0' := trajectories_buffer[61, 1];
+			self.'transformer.Sn' := trajectories_buffer[62, 1];
+			self.'transformer.V_b' := trajectories_buffer[63, 1];
+			self.'transformer.Vn' := trajectories_buffer[64, 1];
 
-			trajectories_buffer[1:10] := .DymolaCommands.Trajectories.readTrajectory(
+			trajectories_buffer[1:15] := .DymolaCommands.Trajectories.readTrajectory(
 			 fileName = result_file + ".mat",
 			 rows = 1,
 			 signals = {
+			  "self.'transformer.m'",
+			  "self.'transformer.rT'",
 			  "self.'transformer.xT'",
 			  "self.'transformer.S_b'",
 			  "self.'transformer.Zb'",
@@ -503,18 +514,26 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 			  "self.'transformer.x'",
 			  "self.'transformer.n.ii'",
 			  "self.'transformer.n.ir'",
+			  "self.'wOutpt.k'",
+			  "self.'wsum.k1'",
+			  "self.'wsum.k2'",
 			  "self.'discrete.stepSize'",
 			  "self.'discrete.stepSize.active'"});
-			self.'transformer.xT' := trajectories_buffer[1, 1];
-			self.'transformer.S_b' := trajectories_buffer[2, 1];
-			self.'transformer.Zb' := trajectories_buffer[3, 1];
-			self.'transformer.Zn' := trajectories_buffer[4, 1];
-			self.'transformer.r' := trajectories_buffer[5, 1];
-			self.'transformer.x' := trajectories_buffer[6, 1];
-			self.'transformer.n.ii' := trajectories_buffer[7, 1];
-			self.'transformer.n.ir' := trajectories_buffer[8, 1];
-			self.'discrete.stepSize' := trajectories_buffer[9, 1];
-			self.'discrete.stepSize.active' := trajectories_buffer[10, 1] > 0.0;
+			self.'transformer.m' := trajectories_buffer[1, 1];
+			self.'transformer.rT' := trajectories_buffer[2, 1];
+			self.'transformer.xT' := trajectories_buffer[3, 1];
+			self.'transformer.S_b' := trajectories_buffer[4, 1];
+			self.'transformer.Zb' := trajectories_buffer[5, 1];
+			self.'transformer.Zn' := trajectories_buffer[6, 1];
+			self.'transformer.r' := trajectories_buffer[7, 1];
+			self.'transformer.x' := trajectories_buffer[8, 1];
+			self.'transformer.n.ii' := trajectories_buffer[9, 1];
+			self.'transformer.n.ir' := trajectories_buffer[10, 1];
+			self.'wOutpt.k' := trajectories_buffer[11, 1];
+			self.'wsum.k1' := trajectories_buffer[12, 1];
+			self.'wsum.k2' := trajectories_buffer[13, 1];
+			self.'discrete.stepSize' := trajectories_buffer[14, 1];
+			self.'discrete.stepSize.active' := trajectories_buffer[15, 1] > 0.0;
 
 		end if;
 		
@@ -580,6 +599,8 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 		self.'G1.machine.x1q' := 6.50000000000000022e-1;
 		self.'G1.machine.T2q0' := 7.00000000000000067e-2;
 		self.'G1.machine.T1q0' := 1.0;
+		self.'wsum.k1' := 1.0;
+		self.'wsum.k2' := 1.0;
 		self.'SysData.S_b' := 1.0e+8;
 		self.'infiniteBus.v_0' := 9.0081e-1;
 		self.'infiniteBus.angle_0' := 0.0;
@@ -610,6 +631,8 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
+		self.woffset := 1.75;
+		self.wscale := 5.0e+2;
 		self.K0 := 3.0e+1;
 
 		/* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
@@ -698,6 +721,7 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 		self.'G1.avr.K0' := self.'G1.K0';
 		self.'G1.avr.limiter1.uMax' := self.'G1.avr.vfmax';
 		self.'G1.avr.limiter1.uMin' := self.'G1.avr.vfmin';
+		self.'wOutpt.k' := self.wscale;
 		self.'B3.p.vr' := (self.'infiniteBus.v_0' * cos(self.'infiniteBus.angle_0'));
 		self.'B3.p.vi' := (self.'infiniteBus.v_0' * sin(self.'infiniteBus.angle_0'));
 		self.vf0OUT := self.'G1.machine.vf00';
@@ -715,6 +739,9 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 		/* B1.p: */
 		Real 'B1.p.vi';
 		Real 'B1.p.vr';
+
+		/* G1: */
+		Real 'G1.v';
 
 		/* G1.machine: */
 		Real 'G1.machine.vd';
@@ -734,6 +761,7 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 		self.'derivative(G1.machine.e2q)' := 0.0;
 		self.'derivative(G1.machine.w)' := 0.0;
 		self.'derivative(G1.machine.delta)' := 0.0;
+		self.v := 0.0;
 		self.Pgen := 0.0;
 		self.Qgen := 0.0;
 		/*
@@ -794,11 +822,11 @@ if false then
 		'G1.machine.vd' := ((self.'G1.machine.e2d' - (self.'G1.machine.ra' * self.'G1.machine.id')) + (self.'G1.machine.x2q' * self.'G1.machine.iq'));
 		'B1.p.vi' := (self.'G1.machine.V_MBtoSB' * ((sin(self.'G1.machine.delta') * 'G1.machine.vq') - (cos(self.'G1.machine.delta') * 'G1.machine.vd')));
 		'B1.p.vr' := (self.'G1.machine.V_MBtoSB' * ((sin(self.'G1.machine.delta') * 'G1.machine.vd') + (cos(self.'G1.machine.delta') * 'G1.machine.vq')));
-		self.v := sqrt((('B1.p.vr' ^ 2) + ('B1.p.vi' ^ 2)));
-		self.'G1.avr.vref' := self.v;
+		'G1.v' := sqrt((('B1.p.vr' ^ 2) + ('B1.p.vi' ^ 2)));
+		self.'G1.avr.vref' := 'G1.v';
 		self.'G1.avr.s0' := self.vf;
 		self.'G1.avr.vf1' := self.'G1.machine.vf00';
-		self.'G1.avr.vm' := self.v;
+		self.'G1.avr.vm' := 'G1.v';
 		self.'G1.avr.vr' := ((self.'G1.avr.K0' * (1.0 - (self.'G1.avr.T1' / self.'G1.avr.T2'))) * ((self.'G1.avr.vref' + self.vf) - self.'G1.avr.vm'));
 		/* Conduct delta(t) = 0 super-dense time initialization at next sampling:: */
 		self.'discrete.stepSize.active' := false;

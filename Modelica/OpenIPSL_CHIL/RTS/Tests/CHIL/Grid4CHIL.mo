@@ -6,7 +6,10 @@ model Grid4CHIL "Tests the model for CHIL testing"
     offset=0,
     startTime=5)
     annotation (Placement(transformation(extent={{-100,-10},{-80,10}})));
-  OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL G4CHIL(G1(avr(K0=30)))
+  OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL G4CHIL(
+    wscale=200,
+    woffset=1.5,                          G1(avr(K0=30)),
+    wsum(k1=+1, k2=+1))
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
   Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
     annotation (Placement(transformation(

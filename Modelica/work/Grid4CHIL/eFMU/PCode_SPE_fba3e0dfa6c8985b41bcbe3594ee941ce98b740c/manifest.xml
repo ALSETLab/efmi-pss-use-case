@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{55c79242-1557-4a8e-b4e2-d1aed3fcce23}" name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c" generationDateAndTime="2026-03-15T00:58:38Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{a06e5a2f-1901-4de5-a616-15a2d3fe5a75}" name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c" generationDateAndTime="2026-03-20T18:36:33Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="ALG_MAN_ID" manifestRefId="{4e0da21e-f421-4ca4-8cdb-ee4045ee11ea}" checksum="8de79234b84d4c618a3aae40e69966fa89795baf" origin="true"/>
+        <ManifestReference id="ALG_MAN_ID" manifestRefId="{ef3ae968-ba38-4984-aed4-cd391eecff18}" checksum="a817c4a174514050bc49a1abe4183f7fa52e0192" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_sii_block_interface.c_0" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="5e5d691d70d9b1355a9cf6349bb7b60695764921" role="Code"/>
-        <File id="FILE_ID_galec_stl.c_1" name="galec_stl.c" path="./" needsChecksum="true" checksum="03851ac9a123036ba8b803fac9b370df21a6cc8f" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.h_2" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="0d444b8831d56c7141e76f99e8f250e39e2604cb" role="Code"/>
-        <File id="FILE_ID_block.c_3" name="block.c" path="./" needsChecksum="true" checksum="46bd87ffdeebfb14cb824b4499c888c8ccad954c" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.h_4" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="51f7b5ff46089bbad9e9da939d58a957d0563400" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.c_5" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="074fa5b15a3adf9364f6892b41b9c70ae8abddc2" role="Code"/>
-        <File id="FILE_ID_galec_stl.h_6" name="galec_stl.h" path="./" needsChecksum="true" checksum="4187242f15105bfa7e3c46b5eb136dd4bd078797" role="Code"/>
-        <File id="FILE_ID_galec_stl_configuration.h_7" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="20435aadcd37256f709ec567dd6725f547d77407" role="Code"/>
-        <File id="FILE_ID_block.h_8" name="block.h" path="./" needsChecksum="true" checksum="eba1aad26849ff76cc79f5612b577989356474e2" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.c_0" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="4adf402e63edbb59c409202c29ac87594216bda1" role="Code"/>
+        <File id="FILE_ID_galec_stl.c_1" name="galec_stl.c" path="./" needsChecksum="true" checksum="4a61d03ad24a8493bad88349caff5c1d794159d8" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.h_2" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="ed5485154b48f03edc8edf2d328bd86b466f80ca" role="Code"/>
+        <File id="FILE_ID_block.c_3" name="block.c" path="./" needsChecksum="true" checksum="6678b22f77550ce64a29ba4aa6f822b299c58d6e" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.h_4" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="f2b3857f27f52c21beed155631bf70435bffec04" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.c_5" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="80a40896d1c96b80b1b68b4d5b950209dc63e4eb" role="Code"/>
+        <File id="FILE_ID_galec_stl.h_6" name="galec_stl.h" path="./" needsChecksum="true" checksum="ab75a992ff97eeeed82b48452df52bbfbe5a3286" role="Code"/>
+        <File id="FILE_ID_galec_stl_configuration.h_7" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="ff0e33d873dd37444cb3fd49eabee838293358de" role="Code"/>
+        <File id="FILE_ID_block.h_8" name="block.h" path="./" needsChecksum="true" checksum="b323ecdfec238e18c131b59346233a248308e9b9" role="Code"/>
     </Files>
     <CodeContainer language="C" standard="C99" platform="Legacy" floatPrecision="64-bit">
         <Target>Generic</Target>
@@ -137,136 +137,141 @@
                             <Component id="COMP_ID_vf0OUT_6" name="vf0OUT" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_w_7" name="w" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_K0_8" name="K0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_K0_9" name="G1_K0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_S_b_10" name="G1_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_K0_11" name="G1_avr_K0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_s0_12" name="G1_avr_s0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_vref_13" name="G1_avr_vref" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_limiter1_uMax_14" name="G1_avr_limiter1_uMax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_limiter1_uMin_15" name="G1_avr_limiter1_uMin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_I_MBtoSB_16" name="G1_machine_I_MBtoSB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_K1_17" name="G1_machine_K1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_K2_18" name="G1_machine_K2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_P_0_19" name="G1_machine_P_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Q_0_20" name="G1_machine_Q_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_S_SBtoMB_21" name="G1_machine_S_SBtoMB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_S_b_22" name="G1_machine_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_V_MBtoSB_23" name="G1_machine_V_MBtoSB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_V_b_24" name="G1_machine_V_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Z_MBtoSB_25" name="G1_machine_Z_MBtoSB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_angle_0_26" name="G1_machine_angle_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_delta0_27" name="G1_machine_delta0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_e1q0_28" name="G1_machine_e1q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_e2q0_29" name="G1_machine_e2q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_fn_30" name="G1_machine_fn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_id0_31" name="G1_machine_id0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_iq0_32" name="G1_machine_iq0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_p0_33" name="G1_machine_p0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_pm00_34" name="G1_machine_pm00" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_q0_35" name="G1_machine_q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_v_0_36" name="G1_machine_v_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_vd0_37" name="G1_machine_vd0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_vf00_38" name="G1_machine_vf00" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_vq0_39" name="G1_machine_vq0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_w_b_40" name="G1_machine_w_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_xq0_41" name="G1_machine_xq0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_I0_im_42" name="G1_machine_I0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_I0_re_43" name="G1_machine_I0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Idq0_im_44" name="G1_machine_Idq0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Idq0_re_45" name="G1_machine_Idq0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_S0_im_46" name="G1_machine_S0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_S0_re_47" name="G1_machine_S0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Vdq0_im_48" name="G1_machine_Vdq0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Vdq0_re_49" name="G1_machine_Vdq0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Vt0_im_50" name="G1_machine_Vt0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Vt0_re_51" name="G1_machine_Vt0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_auxCMval_im_52" name="G1_machine_auxCMval_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_auxCMval_re_53" name="G1_machine_auxCMval_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_Y_im_54" name="L1_Y_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_Y_re_55" name="L1_Y_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_Z_im_56" name="L1_Z_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_Z_re_57" name="L1_Z_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_Y_im_58" name="L2_Y_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_Y_re_59" name="L2_Y_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_Z_im_60" name="L2_Z_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_Z_re_61" name="L2_Z_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_S_b_62" name="transformer_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_Zb_63" name="transformer_Zb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_Zn_64" name="transformer_Zn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_r_65" name="transformer_r" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_x_66" name="transformer_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_P_0_67" name="G1_P_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_Q_0_68" name="G1_Q_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_V_b_69" name="G1_V_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_angle_0_70" name="G1_angle_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_v_0_71" name="G1_v_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_T1_72" name="G1_avr_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_T2_73" name="G1_avr_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_Te_74" name="G1_avr_Te" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_Tr_75" name="G1_avr_Tr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_vfmax_76" name="G1_avr_vfmax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_vfmin_77" name="G1_avr_vfmin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_M_78" name="G1_machine_M" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Sn_79" name="G1_machine_Sn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_T1d0_80" name="G1_machine_T1d0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_T1q0_81" name="G1_machine_T1q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_T2d0_82" name="G1_machine_T2d0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_T2q0_83" name="G1_machine_T2q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Taa_84" name="G1_machine_Taa" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_Vn_85" name="G1_machine_Vn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_ra_86" name="G1_machine_ra" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_x1d_87" name="G1_machine_x1d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_x1q_88" name="G1_machine_x1q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_x2d_89" name="G1_machine_x2d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_x2q_90" name="G1_machine_x2q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_xd_91" name="G1_machine_xd" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_xq_92" name="G1_machine_xq" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_B_93" name="L1_B" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_G_94" name="L1_G" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_R_95" name="L1_R" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L1_X_96" name="L1_X" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_B_97" name="L2_B" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_G_98" name="L2_G" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_R_99" name="L2_R" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_X_100" name="L2_X" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_SysData_S_b_101" name="SysData_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_SysData_fn_102" name="SysData_fn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_infiniteBus_angle_0_103" name="infiniteBus_angle_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_infiniteBus_v_0_104" name="infiniteBus_v_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_Sn_105" name="transformer_Sn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_V_b_106" name="transformer_V_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_Vn_107" name="transformer_Vn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_m_108" name="transformer_m" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_rT_109" name="transformer_rT" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_xT_110" name="transformer_xT" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_discrete_stepSize_111" name="discrete_stepSize" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_B3_p_vi_112" name="B3_p_vi" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_B3_p_vr_113" name="B3_p_vr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_avr_vf1_114" name="der_G1_avr_vf1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_avr_vm_115" name="der_G1_avr_vm" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_avr_vr_116" name="der_G1_avr_vr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_vf1_117" name="G1_avr_vf1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_vm_118" name="G1_avr_vm" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_avr_vr_119" name="G1_avr_vr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_machine_delta_120" name="der_G1_machine_delta" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_machine_e1d_121" name="der_G1_machine_e1d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_machine_e1q_122" name="der_G1_machine_e1q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_machine_e2d_123" name="der_G1_machine_e2d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_machine_e2q_124" name="der_G1_machine_e2q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_G1_machine_w_125" name="der_G1_machine_w" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_delta_126" name="G1_machine_delta" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_e1d_127" name="G1_machine_e1d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_e1q_128" name="G1_machine_e1q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_e2d_129" name="G1_machine_e2d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_e2q_130" name="G1_machine_e2q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_id_131" name="G1_machine_id" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_iq_132" name="G1_machine_iq" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_G1_machine_w_133" name="G1_machine_w" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_p_ii_134" name="L2_p_ii" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_L2_p_ir_135" name="L2_p_ir" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_n_ii_136" name="transformer_n_ii" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_transformer_n_ir_137" name="transformer_n_ir" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_discrete_stepSize_active_138" name="discrete_stepSize_active" typeDefRefId="TYPE_ID_bool_1" pointer="false"/>
+                            <Component id="COMP_ID_woffset_9" name="woffset" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_wscale_10" name="wscale" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_K0_11" name="G1_K0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_S_b_12" name="G1_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_K0_13" name="G1_avr_K0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_s0_14" name="G1_avr_s0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vref_15" name="G1_avr_vref" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_limiter1_uMax_16" name="G1_avr_limiter1_uMax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_limiter1_uMin_17" name="G1_avr_limiter1_uMin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_I_MBtoSB_18" name="G1_machine_I_MBtoSB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_K1_19" name="G1_machine_K1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_K2_20" name="G1_machine_K2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_P_0_21" name="G1_machine_P_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Q_0_22" name="G1_machine_Q_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_S_SBtoMB_23" name="G1_machine_S_SBtoMB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_S_b_24" name="G1_machine_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_V_MBtoSB_25" name="G1_machine_V_MBtoSB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_V_b_26" name="G1_machine_V_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Z_MBtoSB_27" name="G1_machine_Z_MBtoSB" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_angle_0_28" name="G1_machine_angle_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_delta0_29" name="G1_machine_delta0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e1q0_30" name="G1_machine_e1q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e2q0_31" name="G1_machine_e2q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_fn_32" name="G1_machine_fn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_id0_33" name="G1_machine_id0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_iq0_34" name="G1_machine_iq0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_p0_35" name="G1_machine_p0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_pm00_36" name="G1_machine_pm00" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_q0_37" name="G1_machine_q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_v_0_38" name="G1_machine_v_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_vd0_39" name="G1_machine_vd0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_vf00_40" name="G1_machine_vf00" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_vq0_41" name="G1_machine_vq0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_w_b_42" name="G1_machine_w_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_xq0_43" name="G1_machine_xq0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_I0_im_44" name="G1_machine_I0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_I0_re_45" name="G1_machine_I0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Idq0_im_46" name="G1_machine_Idq0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Idq0_re_47" name="G1_machine_Idq0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_S0_im_48" name="G1_machine_S0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_S0_re_49" name="G1_machine_S0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vdq0_im_50" name="G1_machine_Vdq0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vdq0_re_51" name="G1_machine_Vdq0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vt0_im_52" name="G1_machine_Vt0_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vt0_re_53" name="G1_machine_Vt0_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_auxCMval_im_54" name="G1_machine_auxCMval_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_auxCMval_re_55" name="G1_machine_auxCMval_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_Y_im_56" name="L1_Y_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_Y_re_57" name="L1_Y_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_Z_im_58" name="L1_Z_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_Z_re_59" name="L1_Z_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_Y_im_60" name="L2_Y_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_Y_re_61" name="L2_Y_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_Z_im_62" name="L2_Z_im" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_Z_re_63" name="L2_Z_re" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_S_b_64" name="transformer_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Zb_65" name="transformer_Zb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Zn_66" name="transformer_Zn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_r_67" name="transformer_r" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_x_68" name="transformer_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_wOutpt_k_69" name="wOutpt_k" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_P_0_70" name="G1_P_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_Q_0_71" name="G1_Q_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_V_b_72" name="G1_V_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_angle_0_73" name="G1_angle_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_v_0_74" name="G1_v_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_T1_75" name="G1_avr_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_T2_76" name="G1_avr_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_Te_77" name="G1_avr_Te" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_Tr_78" name="G1_avr_Tr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vfmax_79" name="G1_avr_vfmax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vfmin_80" name="G1_avr_vfmin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_M_81" name="G1_machine_M" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Sn_82" name="G1_machine_Sn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T1d0_83" name="G1_machine_T1d0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T1q0_84" name="G1_machine_T1q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T2d0_85" name="G1_machine_T2d0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_T2q0_86" name="G1_machine_T2q0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Taa_87" name="G1_machine_Taa" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_Vn_88" name="G1_machine_Vn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_ra_89" name="G1_machine_ra" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x1d_90" name="G1_machine_x1d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x1q_91" name="G1_machine_x1q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x2d_92" name="G1_machine_x2d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_x2q_93" name="G1_machine_x2q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_xd_94" name="G1_machine_xd" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_xq_95" name="G1_machine_xq" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_B_96" name="L1_B" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_G_97" name="L1_G" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_R_98" name="L1_R" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L1_X_99" name="L1_X" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_B_100" name="L2_B" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_G_101" name="L2_G" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_R_102" name="L2_R" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_X_103" name="L2_X" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_SysData_S_b_104" name="SysData_S_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_SysData_fn_105" name="SysData_fn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_infiniteBus_angle_0_106" name="infiniteBus_angle_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_infiniteBus_v_0_107" name="infiniteBus_v_0" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Sn_108" name="transformer_Sn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_V_b_109" name="transformer_V_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_Vn_110" name="transformer_Vn" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_m_111" name="transformer_m" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_rT_112" name="transformer_rT" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_xT_113" name="transformer_xT" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_wsum_k1_114" name="wsum_k1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_wsum_k2_115" name="wsum_k2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_discrete_stepSize_116" name="discrete_stepSize" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_B3_p_vi_117" name="B3_p_vi" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_B3_p_vr_118" name="B3_p_vr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_avr_vf1_119" name="der_G1_avr_vf1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_avr_vm_120" name="der_G1_avr_vm" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_avr_vr_121" name="der_G1_avr_vr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vf1_122" name="G1_avr_vf1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vm_123" name="G1_avr_vm" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_avr_vr_124" name="G1_avr_vr" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_delta_125" name="der_G1_machine_delta" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e1d_126" name="der_G1_machine_e1d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e1q_127" name="der_G1_machine_e1q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e2d_128" name="der_G1_machine_e2d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_e2q_129" name="der_G1_machine_e2q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_G1_machine_w_130" name="der_G1_machine_w" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_delta_131" name="G1_machine_delta" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e1d_132" name="G1_machine_e1d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e1q_133" name="G1_machine_e1q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e2d_134" name="G1_machine_e2d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_e2q_135" name="G1_machine_e2q" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_id_136" name="G1_machine_id" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_iq_137" name="G1_machine_iq" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_G1_machine_w_138" name="G1_machine_w" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_p_ii_139" name="L2_p_ii" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_L2_p_ir_140" name="L2_p_ir" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_n_ii_141" name="transformer_n_ii" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_transformer_n_ir_142" name="transformer_n_ir" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_discrete_stepSize_active_143" name="discrete_stepSize_active" typeDefRefId="TYPE_ID_bool_1" pointer="false"/>
                         </Components>
                     </Typedef>
                 </Typedefs>
@@ -345,6 +350,14 @@
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="K0"/>
                     <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.K0"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="woffset"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.woffset"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="wscale"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.wscale"/>
                 </DataReference>
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.K0'"/>
@@ -579,6 +592,10 @@
                     <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.transformer_x"/>
                 </DataReference>
                 <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'wOutpt.k'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.wOutpt_k"/>
+                </DataReference>
+                <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'G1.P_0'"/>
                     <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.G1_P_0"/>
                 </DataReference>
@@ -753,6 +770,14 @@
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'transformer.xT'"/>
                     <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.transformer_xT"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'wsum.k1'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.wsum_k1"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'wsum.k2'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.wsum_k2"/>
                 </DataReference>
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'discrete.stepSize'"/>

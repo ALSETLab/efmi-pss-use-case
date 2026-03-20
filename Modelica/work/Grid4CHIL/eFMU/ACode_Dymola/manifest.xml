@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{4e0da21e-f421-4ca4-8cdb-ee4045ee11ea}"
+	id="{ef3ae968-ba38-4984-aed4-cd391eecff18}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL"
-	generationDateAndTime="2026-03-15T04:58:35Z"
+	generationDateAndTime="2026-03-20T22:36:30Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
 	description="System model for CHIL testing"
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="f3658dc21a96c794de57c30c0499f3752fca8991"
+			checksum="65f3f5cc5b137493c2d9008b2042d2b81a066c66"
 			role="Code"/>
 	</Files>
 
@@ -135,9 +135,7 @@
 			name="v"
 			description="Generator terminal voltage [pu]"
 			blockCausality="output"
-			unitRefId="[1]"
-			relativeQuantity="false"
-			start="9.99999999997891131e-1">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="vf0OUT"
@@ -165,6 +163,20 @@
 			unitRefId="[1]"
 			relativeQuantity="false"
 			start="3.0e+1">
+		</RealVariable>
+		<RealVariable
+			id="woffset"
+			name="woffset"
+			description="Speed output offset"
+			blockCausality="tunableParameter"
+			start="1.75">
+		</RealVariable>
+		<RealVariable
+			id="wscale"
+			name="wscale"
+			description="Speed output scaling"
+			blockCausality="tunableParameter"
+			start="5.0e+2">
 		</RealVariable>
 		<RealVariable
 			id="'B3.p.vi'"
@@ -1297,6 +1309,27 @@
 			unitRefId="[1]"
 			relativeQuantity="false"
 			start="-2.21800379657138151e+1">
+		</RealVariable>
+		<RealVariable
+			id="'wOutpt.k'"
+			name="'wOutpt.k'"
+			description="Gain value multiplied with input signal"
+			blockCausality="dependentParameter"
+			start="5.0e+2">
+		</RealVariable>
+		<RealVariable
+			id="'wsum.k1'"
+			name="'wsum.k1'"
+			description="Gain of input signal 1"
+			blockCausality="constant"
+			start="1.0">
+		</RealVariable>
+		<RealVariable
+			id="'wsum.k2'"
+			name="'wsum.k2'"
+			description="Gain of input signal 2"
+			blockCausality="constant"
+			start="1.0">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"

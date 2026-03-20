@@ -1,4 +1,4 @@
-/*2026-03-15T04:58:36.686825100Z*/
+/*2026-03-20T22:36:31.906081100Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -183,6 +183,8 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->G1_avr_limiter1_uMin = instance->G1_avr_vfmin;
 
+    instance->wOutpt_k = instance->wscale;
+
     instance->B3_p_vr = instance->infiniteBus_v_0 * SPE_cos_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->infiniteBus_angle_0);
 
     instance->B3_p_vi = instance->infiniteBus_v_0 * SPE_sin_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->infiniteBus_angle_0);
@@ -202,6 +204,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed DymolaConvertInputToReal0;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B1_p_vi;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B1_p_vr;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_v;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vd;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vq;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed solution_buffer_for_x_6[6];
@@ -230,6 +233,8 @@ static void Reinitialize(ALGOSTRUCT *instance)
     instance->der_G1_machine_w = 0.0;
 
     instance->der_G1_machine_delta = 0.0;
+
+    instance->v = 0.0;
 
     instance->Pgen = 0.0;
 
@@ -591,16 +596,16 @@ static void Reinitialize(ALGOSTRUCT *instance)
         * G1_machine_vd) + (SPE_cos_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->G1_machine_delta) \
         * G1_machine_vq));
 
-    instance->v = SPE_sqrt_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((SPE_ipowSquare_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vr)) \
+    G1_v = SPE_sqrt_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((SPE_ipowSquare_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vr)) \
         + (SPE_ipowSquare_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vi)));
 
-    instance->G1_avr_vref = instance->v;
+    instance->G1_avr_vref = G1_v;
 
     instance->G1_avr_s0 = instance->vf;
 
     instance->G1_avr_vf1 = instance->G1_machine_vf00;
 
-    instance->G1_avr_vm = instance->v;
+    instance->G1_avr_vm = G1_v;
 
     instance->G1_avr_vr = instance->G1_avr_K0 * (1.0 - (instance->G1_avr_T1 / instance->G1_avr_T2)) * ((instance->G1_avr_vref \
         + instance->vf) - instance->G1_avr_vm);
@@ -661,6 +666,10 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->G1_machine_T1q0 = 1.0;
 
+    instance->wsum_k1 = 1.0;
+
+    instance->wsum_k2 = 1.0;
+
     instance->SysData_S_b = 1.0e+8;
 
     instance->infiniteBus_v_0 = 9.0081e-1;
@@ -716,6 +725,10 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
+    instance->woffset = 1.75;
+
+    instance->wscale = 5.0e+2;
+
     instance->K0 = 3.0e+1;
 
     /* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
@@ -756,17 +769,20 @@ static void DoStep(ALGOSTRUCT *instance)
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed B2_p_vr;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_P;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_Q;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_v;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_pe;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vd;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vf;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vf_MB;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_machine_vq;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1w1_y;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed L1_p_ii;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed L1_p_ir;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed pwFault4efmi_p_ii;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed pwFault4efmi_p_ir;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_p_ii;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_p_ir;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed wsum_u1;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed solution_buffer_for_x_6[6];
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed _A3[36];
     size_t _pivot5[6];
@@ -1152,17 +1168,17 @@ static void DoStep(ALGOSTRUCT *instance)
 
     L1_p_ii = (-1.0) * (instance->L2_p_ii + pwFault4efmi_p_ii + instance->transformer_n_ii);
 
-    instance->v = SPE_sqrt_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((SPE_ipowSquare_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vr)) \
+    G1_v = SPE_sqrt_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed((SPE_ipowSquare_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vr)) \
         + (SPE_ipowSquare_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(B1_p_vi)));
 
-    instance->der_G1_avr_vm = (instance->v - instance->G1_avr_vm) / instance->G1_avr_Tr;
+    instance->der_G1_avr_vm = (G1_v - instance->G1_avr_vm) / instance->G1_avr_Tr;
 
     instance->der_G1_avr_vr = ((instance->G1_avr_K0 * (1.0 - (instance->G1_avr_T1 / instance->G1_avr_T2)) * ((instance->G1_avr_vref \
         + instance->vf) - instance->G1_avr_vm)) - instance->G1_avr_vr) / instance->G1_avr_T2;
 
     instance->der_G1_avr_vf1 = (((instance->G1_avr_vr + ((instance->G1_avr_K0 * instance->G1_avr_T1 * ((instance->G1_avr_vref \
         + instance->vf) - instance->G1_avr_vm)) / instance->G1_avr_T2) + instance->G1_machine_vf00) * (1.0 + (instance->G1_avr_s0 \
-        * ((instance->v / instance->G1_avr_vm) - 1.0)))) - instance->G1_avr_vf1) / instance->G1_avr_Te;
+        * ((G1_v / instance->G1_avr_vm) - 1.0)))) - instance->G1_avr_vf1) / instance->G1_avr_Te;
 
     G1_machine_vf = SPE_greater_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
         instance->G1_avr_vf1, instance->G1_avr_limiter1_uMax) ? instance->G1_avr_limiter1_uMax : SPE_less_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
@@ -1199,6 +1215,12 @@ static void DoStep(ALGOSTRUCT *instance)
     /* ******************************************************************************** Inline integration post-processing: */
 
     instance->w = instance->G1_machine_w;
+
+    G1w1_y = instance->G1_machine_w - 1.0;
+
+    wsum_u1 = instance->wOutpt_k * G1w1_y;
+
+    instance->v = (instance->wsum_k1 * wsum_u1) + (instance->wsum_k2 * instance->woffset);
 
     G1_P = ((B1_p_vr * transformer_p_ir) + (B1_p_vi * transformer_p_ii)) * instance->G1_S_b;
 

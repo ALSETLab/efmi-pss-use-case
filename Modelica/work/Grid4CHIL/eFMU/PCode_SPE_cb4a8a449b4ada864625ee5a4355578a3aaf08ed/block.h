@@ -1,4 +1,4 @@
-/*2026-03-15T04:58:36.735526900Z*/
+/*2026-03-20T22:36:31.957375400Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -42,6 +42,8 @@ typedef struct {
 
     /* Parameters */
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed K0;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed woffset;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed wscale;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_K0;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_S_b;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_avr_K0;
@@ -100,6 +102,7 @@ typedef struct {
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_Zn;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_r;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_x;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed wOutpt_k;
 
     /* Constants */
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed G1_P_0;
@@ -146,6 +149,8 @@ typedef struct {
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_m;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_rT;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed transformer_xT;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed wsum_k1;
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed wsum_k2;
     SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed discrete_stepSize;
 
     /* States */

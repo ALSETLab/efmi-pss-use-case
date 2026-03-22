@@ -62,8 +62,6 @@ void Error_Handler(void);
 #define B1__EXTI_IRQn EXTI15_10_IRQn
 #define vinAIN_Pin GPIO_PIN_0
 #define vinAIN_GPIO_Port GPIOC
-#define vin2AIN_Pin GPIO_PIN_1
-#define vin2AIN_GPIO_Port GPIOC
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin GPIO_PIN_3
@@ -76,8 +74,6 @@ void Error_Handler(void);
 #define calTime_GPIO_Port GPIOA
 #define stepSize_Pin GPIO_PIN_7
 #define stepSize_GPIO_Port GPIOA
-#define D6__Pin GPIO_PIN_10
-#define D6__GPIO_Port GPIOB
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14

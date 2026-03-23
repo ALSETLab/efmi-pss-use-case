@@ -42,8 +42,8 @@ partial model RTNetwork
   Components.Auxiliary.iSrcLoad                iSrcLoad
                       annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0,
-        origin={30,60})));
+        rotation=180,
+        origin={-18,40})));
 equation
   connect(B1.p, transformer.p) annotation(
     Line(points = {{-60, 0}, {-39, 0}}, color = {0, 0, 255}));
@@ -62,7 +62,7 @@ equation
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
   connect(iSrcLoad.p, B2.p)
-    annotation (Line(points={{19,60},{0,60},{0,0}}, color={0,0,255}));
+    annotation (Line(points={{-7,40},{0,40},{0,0}}, color={0,0,255}));
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.0001),
     Diagram(coordinateSystem(grid={2,2})),

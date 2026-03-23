@@ -1,4 +1,4 @@
-/*2026-03-15T05:01:20.290198500Z*/
+/*2026-03-23T15:14:03.162791Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.c
@@ -70,12 +70,16 @@ MODELICA_Integer mei_DoStep_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_fba3e0dfa6
 MODELICA_Integer mei_Recalibrate_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(void \
     *object
 ,   /* TUNEABLE */  MODELICA_Real   K0
+,   /* TUNEABLE */  MODELICA_Real   woffset
+,   /* TUNEABLE */  MODELICA_Real   wscale
 ) {
     ALGOSTRUCT *self = (ALGOSTRUCT *) object;
     MODELICA_Integer result = -1;
 
     if(self != NULL) {
         self->K0 = (SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) K0;
+        self->woffset = (SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) woffset;
+        self->wscale = (SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) wscale;
 
         Recalibrate_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(self);
 

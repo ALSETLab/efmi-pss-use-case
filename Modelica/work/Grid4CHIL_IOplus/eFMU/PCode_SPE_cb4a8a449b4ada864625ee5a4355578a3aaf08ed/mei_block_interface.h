@@ -1,4 +1,4 @@
-/*2026-03-15T05:01:18.013402800Z*/
+/*2026-03-23T15:14:01.581207500Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.h
@@ -50,6 +50,8 @@ extern MODELICA_Integer mei_DoStep_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4
 extern MODELICA_Integer mei_Recalibrate_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed \
       (void* object
 ,   /* TUNEABLE */  MODELICA_Real   K0
+,   /* TUNEABLE */  MODELICA_Real   woffset
+,   /* TUNEABLE */  MODELICA_Real   wscale
 );
 
 /* reinitialize states and outputs */

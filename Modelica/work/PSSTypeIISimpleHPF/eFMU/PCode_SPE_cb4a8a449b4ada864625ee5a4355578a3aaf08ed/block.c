@@ -1,4 +1,4 @@
-/*2026-03-16T14:14:15.736300Z*/
+/*2026-03-23T15:11:09.972455200Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -115,7 +115,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_y;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_u;
 
     /* Algorithm */
     /*
@@ -130,17 +130,17 @@ static void Reinitialize(ALGOSTRUCT *instance)
     Initialize variables with start value equation (dependent initializations):
     */
 
-    instance->der_lpf_x = 0.0;
-
     instance->der_dLHPFreplacement_x = 0.0;
 
-    instance->lpf_x = (instance->vSI * instance->lpf_T) / instance->lpf_T;
+    instance->der_lpf_x = 0.0;
 
-    lpf_y = instance->lpf_K * instance->lpf_x;
+    instance->dLHPFreplacement_x = (instance->vSI * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
 
-    instance->dLHPFreplacement_x = (lpf_y * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
+    lpf_u = (instance->dLHPFreplacement_K * (instance->vSI - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
 
-    imLeadLag_u = (instance->dLHPFreplacement_K * (lpf_y - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    instance->lpf_x = (lpf_u * instance->lpf_T) / instance->lpf_T;
+
+    imLeadLag_u = instance->lpf_K * instance->lpf_x;
 
     imLeadLag_TF_y = instance->imLeadLag_TF_y_start;
 
@@ -177,7 +177,7 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->discrete_stepSize = 1.00000000000000002e-3;
+    instance->discrete_stepSize = 2.0000000000000001e-4;
 
     instance->imLeadLag_K = 1.0;
 
@@ -194,7 +194,7 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->Tw = 2.5e-1;
 
-    instance->Kw = 6.70000000000000018;
+    instance->Kw = 2.70000000000000018;
 
     instance->kLPF = 1.0;
 
@@ -238,15 +238,15 @@ static void DoStep(ALGOSTRUCT *instance)
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_y;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_u;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
         /* *********************************************************************** Update-equations for inline integration: */
 
-        instance->lpf_x += instance->discrete_stepSize * instance->der_lpf_x;
-
         instance->dLHPFreplacement_x += instance->discrete_stepSize * instance->der_dLHPFreplacement_x;
+
+        instance->lpf_x += instance->discrete_stepSize * instance->der_lpf_x;
 
         instance->imLeadLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag_TF_x_scaled_1;
 
@@ -257,13 +257,13 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_lpf_x = (instance->vSI - instance->lpf_x) / instance->lpf_T;
+    instance->der_dLHPFreplacement_x = (instance->vSI - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
 
-    lpf_y = instance->lpf_K * instance->lpf_x;
+    lpf_u = (instance->dLHPFreplacement_K * (instance->vSI - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
 
-    instance->der_dLHPFreplacement_x = (lpf_y - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
+    instance->der_lpf_x = (lpf_u - instance->lpf_x) / instance->lpf_T;
 
-    imLeadLag_u = (instance->dLHPFreplacement_K * (lpf_y - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    imLeadLag_u = instance->lpf_K * instance->lpf_x;
 
     instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled[0]) / instance->imLeadLag_TF_a[0];
 

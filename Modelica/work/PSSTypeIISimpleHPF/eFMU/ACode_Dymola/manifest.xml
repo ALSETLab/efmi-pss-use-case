@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{b2f4265a-ff37-4e08-9247-e922c32bf610}"
+	id="{3a5b11d4-00b8-472b-8ed7-04ac1956939f}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF"
-	generationDateAndTime="2026-03-16T14:14:14Z"
+	generationDateAndTime="2026-03-23T15:11:08Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
 	description="PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a simplified HPF implementation."
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="d1741a3133325c88a6dc2d2f8cac543a6865dc12"
+			checksum="b72b127347f10788b20b7e53fdee8fe53504eccf"
 			role="Code"/>
 	</Files>
 
@@ -78,7 +78,7 @@
 			name="Kw"
 			description="Stabilizer gain [pu/pu]"
 			blockCausality="tunableParameter"
-			start="6.70000000000000018">
+			start="2.70000000000000018">
 		</RealVariable>
 		<RealVariable
 			id="T1"
@@ -171,14 +171,14 @@
 			name="'dLHPFreplacement.K'"
 			description="Equivalent gain K = Kw*Tw"
 			blockCausality="dependentParameter"
-			start="1.67500000000000004">
+			start="6.75000000000000044e-1">
 		</RealVariable>
 		<RealVariable
 			id="'dLHPFreplacement.Kw'"
 			name="'dLHPFreplacement.Kw'"
 			description="High-frequency gain"
 			blockCausality="dependentParameter"
-			start="6.70000000000000018">
+			start="2.70000000000000018">
 		</RealVariable>
 		<RealVariable
 			id="'dLHPFreplacement.T'"
@@ -469,13 +469,13 @@
 			name="'lpf.x'"
 			description="Internal filter state"
 			blockCausality="state"
-			start="1.0">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"
 			name="'discrete.stepSize'"
 			blockCausality="constant"
-			start="1.00000000000000002e-3">
+			start="2.0000000000000001e-4">
 		</RealVariable>
 		<BooleanVariable
 			id="'discrete.stepSize.active'"

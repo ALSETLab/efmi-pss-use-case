@@ -1,4 +1,4 @@
-/*2026-03-15T03:50:30.896279600Z*/
+/*2026-03-23T15:05:43.527977700Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -92,6 +92,12 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->limiter_uMin = instance->vsmin;
 
+    instance->lpf_freqHz = instance->freqLow;
+
+    instance->lpf_K = instance->kLPF;
+
+    instance->lpf_T = 1.0 / (6.28318530717958623 * instance->lpf_freqHz);
+
     instance->derivativeLag_K = instance->Kw * instance->Tw;
 
     instance->derivativeLag_T = instance->Tw;
@@ -113,24 +119,18 @@ static void Recalibrate(ALGOSTRUCT *instance)
     instance->derivativeLag_TF_bb[0] = instance->derivativeLag_TF_b[0];
 
     instance->derivativeLag_TF_d = instance->derivativeLag_TF_bb[0] / instance->derivativeLag_TF_a[0];
-
-    instance->lpf_freqHz = instance->freqLow;
-
-    instance->lpf_K = instance->kLPF;
-
-    instance->lpf_T = 1.0 / (6.28318530717958623 * instance->lpf_freqHz);
 }
 
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_u;
 
     /* Algorithm */
     /*
@@ -149,18 +149,17 @@ static void Reinitialize(ALGOSTRUCT *instance)
 
     instance->der_lpf_x = 0.0;
 
-    instance->lpf_x = (instance->vSI * instance->lpf_T) / instance->lpf_T;
-
-    derivativeLag_u = instance->lpf_K * instance->lpf_x;
-
     derivativeLag_TF_y = instance->derivativeLag_TF_y_start;
 
-    instance->derivativeLag_TF_x_scaled[0] = ((instance->derivativeLag_TF_d * derivativeLag_u) - derivativeLag_TF_y) / \
-        instance->derivativeLag_TF_d;
+    instance->derivativeLag_TF_x_scaled[0] = ((instance->derivativeLag_TF_d * instance->vSI) - derivativeLag_TF_y) / instance->derivativeLag_TF_d;
 
-    imLeadLag_u = SPE_less_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+    lpf_u = SPE_less_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
         SPE_absolute_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
-        2.22044604925031308e-16) ? derivativeLag_u : derivativeLag_TF_y;
+        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
+
+    instance->lpf_x = (lpf_u * instance->lpf_T) / instance->lpf_T;
+
+    imLeadLag_u = instance->lpf_K * instance->lpf_x;
 
     imLeadLag_TF_y = instance->imLeadLag_TF_y_start;
 
@@ -197,7 +196,7 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->discrete_stepSize = 1.00000000000000002e-3;
+    instance->discrete_stepSize = 2.0000000000000001e-4;
 
     instance->imLeadLag_K = 1.0;
 
@@ -214,13 +213,13 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
+    instance->Tw = 2.5e-1;
+
+    instance->Kw = 2.70000000000000018;
+
     instance->kLPF = 1.0;
 
-    instance->freqLow = 2.0e+1;
-
-    instance->Tw = 5.0;
-
-    instance->Kw = 1.55e+1;
+    instance->freqLow = 5.0;
 
     instance->vsmin = -1.5;
 
@@ -255,21 +254,21 @@ static void Startup(ALGOSTRUCT *instance)
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_TF_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_u;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_TF_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_u;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
         /* *********************************************************************** Update-equations for inline integration: */
 
-        instance->lpf_x += instance->discrete_stepSize * instance->der_lpf_x;
-
         instance->derivativeLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_derivativeLag_TF_x_scaled_1;
+
+        instance->lpf_x += instance->discrete_stepSize * instance->der_lpf_x;
 
         instance->imLeadLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag_TF_x_scaled_1;
 
@@ -280,17 +279,17 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_lpf_x = (instance->vSI - instance->lpf_x) / instance->lpf_T;
+    instance->der_derivativeLag_TF_x_scaled_1 = (instance->vSI - instance->derivativeLag_TF_x_scaled[0]) / instance->derivativeLag_TF_a[0];
 
-    derivativeLag_u = instance->lpf_K * instance->lpf_x;
+    derivativeLag_TF_y = (instance->derivativeLag_TF_d * instance->vSI) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled[0]);
 
-    instance->der_derivativeLag_TF_x_scaled_1 = (derivativeLag_u - instance->derivativeLag_TF_x_scaled[0]) / instance->derivativeLag_TF_a[0];
-
-    derivativeLag_TF_y = (instance->derivativeLag_TF_d * derivativeLag_u) - (instance->derivativeLag_TF_d * instance->derivativeLag_TF_x_scaled[0]);
-
-    imLeadLag_u = SPE_less_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+    lpf_u = SPE_less_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
         SPE_absolute_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(instance->derivativeLag_T), \
-        2.22044604925031308e-16) ? derivativeLag_u : derivativeLag_TF_y;
+        2.22044604925031308e-16) ? instance->vSI : derivativeLag_TF_y;
+
+    instance->der_lpf_x = (lpf_u - instance->lpf_x) / instance->lpf_T;
+
+    imLeadLag_u = instance->lpf_K * instance->lpf_x;
 
     instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled[0]) / instance->imLeadLag_TF_a[0];
 

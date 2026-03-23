@@ -6320,41 +6320,41 @@ Disassembly of section .text:
  800421e:	4770      	bx	lr
 
 08004220 <Reinitialize>:
- 8004220:	edd0 6a2a 	vldr	s13, [r0, #168]	@ 0xa8
+ 8004220:	edd0 5a0f 	vldr	s11, [r0, #60]	@ 0x3c
  8004224:	ed90 7a00 	vldr	s14, [r0]
- 8004228:	edd0 7a29 	vldr	s15, [r0, #164]	@ 0xa4
- 800422c:	ed90 6a0f 	vldr	s12, [r0, #60]	@ 0x3c
- 8004230:	edd0 4a12 	vldr	s9, [r0, #72]	@ 0x48
+ 8004228:	edd0 4a0d 	vldr	s9, [r0, #52]	@ 0x34
+ 800422c:	ed90 5a2a 	vldr	s10, [r0, #168]	@ 0xa8
+ 8004230:	edd0 6a19 	vldr	s13, [r0, #100]	@ 0x64
  8004234:	ed90 0a11 	vldr	s0, [r0, #68]	@ 0x44
- 8004238:	ed90 5a0d 	vldr	s10, [r0, #52]	@ 0x34
- 800423c:	ee26 7a87 	vmul.f32	s14, s13, s14
+ 8004238:	ed90 4a12 	vldr	s8, [r0, #72]	@ 0x48
+ 800423c:	ee67 7a25 	vmul.f32	s15, s14, s11
  8004240:	b538      	push	{r3, r4, r5, lr}
- 8004242:	eec7 5a26 	vdiv.f32	s11, s14, s13
+ 8004242:	ee87 6aa5 	vdiv.f32	s12, s15, s11
  8004246:	2300      	movs	r3, #0
  8004248:	f100 05e8 	add.w	r5, r0, #232	@ 0xe8
  800424c:	4604      	mov	r4, r0
- 800424e:	ee30 0a64 	vsub.f32	s0, s0, s9
- 8004252:	ee65 7aa7 	vmul.f32	s15, s11, s15
- 8004256:	ed2d 8b02 	vpush	{d8}
- 800425a:	ee66 4a27 	vmul.f32	s9, s12, s15
- 800425e:	edc0 5a38 	vstr	s11, [r0, #224]	@ 0xe0
- 8004262:	eec4 5a86 	vdiv.f32	s11, s9, s12
- 8004266:	f8c0 30cc 	str.w	r3, [r0, #204]	@ 0xcc
- 800426a:	f8c0 30d4 	str.w	r3, [r0, #212]	@ 0xd4
- 800426e:	f8c0 30dc 	str.w	r3, [r0, #220]	@ 0xdc
- 8004272:	f8c0 30c4 	str.w	r3, [r0, #196]	@ 0xc4
- 8004276:	ed90 7a1a 	vldr	s14, [r0, #104]	@ 0x68
- 800427a:	edd0 6a19 	vldr	s13, [r0, #100]	@ 0x64
- 800427e:	edd0 8a1b 	vldr	s17, [r0, #108]	@ 0x6c
- 8004282:	edc0 5a32 	vstr	s11, [r0, #200]	@ 0xc8
- 8004286:	ee77 7ae5 	vsub.f32	s15, s15, s11
- 800428a:	ee77 6a66 	vsub.f32	s13, s14, s13
- 800428e:	ee67 7a85 	vmul.f32	s15, s15, s10
- 8004292:	ee87 8a86 	vdiv.f32	s16, s15, s12
- 8004296:	ee27 7a08 	vmul.f32	s14, s14, s16
- 800429a:	ee37 7a68 	vsub.f32	s14, s14, s17
- 800429e:	eec7 7a26 	vdiv.f32	s15, s14, s13
- 80042a2:	edc0 7a34 	vstr	s15, [r0, #208]	@ 0xd0
+ 800424e:	ed2d 8b02 	vpush	{d8}
+ 8004252:	ee37 7a46 	vsub.f32	s14, s14, s12
+ 8004256:	ed80 6a32 	vstr	s12, [r0, #200]	@ 0xc8
+ 800425a:	ee27 7a24 	vmul.f32	s14, s14, s9
+ 800425e:	ed90 8a29 	vldr	s16, [r0, #164]	@ 0xa4
+ 8004262:	edd0 7a1a 	vldr	s15, [r0, #104]	@ 0x68
+ 8004266:	edd0 8a1b 	vldr	s17, [r0, #108]	@ 0x6c
+ 800426a:	f8c0 30cc 	str.w	r3, [r0, #204]	@ 0xcc
+ 800426e:	ee87 6a25 	vdiv.f32	s12, s14, s11
+ 8004272:	f8c0 30d4 	str.w	r3, [r0, #212]	@ 0xd4
+ 8004276:	f8c0 30c4 	str.w	r3, [r0, #196]	@ 0xc4
+ 800427a:	f8c0 30dc 	str.w	r3, [r0, #220]	@ 0xdc
+ 800427e:	ee77 6ae6 	vsub.f32	s13, s15, s13
+ 8004282:	ee26 7a05 	vmul.f32	s14, s12, s10
+ 8004286:	ee30 0a44 	vsub.f32	s0, s0, s8
+ 800428a:	ee87 6a05 	vdiv.f32	s12, s14, s10
+ 800428e:	ee26 8a08 	vmul.f32	s16, s12, s16
+ 8004292:	ed80 6a38 	vstr	s12, [r0, #224]	@ 0xe0
+ 8004296:	ee67 7a88 	vmul.f32	s15, s15, s16
+ 800429a:	ee77 7ae8 	vsub.f32	s15, s15, s17
+ 800429e:	ee87 7aa6 	vdiv.f32	s14, s15, s13
+ 80042a2:	ed80 7a34 	vstr	s14, [r0, #208]	@ 0xd0
  80042a6:	f000 fa13 	bl	80046d0 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
  80042aa:	eddf 0a25 	vldr	s1, [pc, #148]	@ 8004340 <Reinitialize+0x120>
  80042ae:	4628      	mov	r0, r5
@@ -6524,9 +6524,9 @@ Disassembly of section .text:
  80044b8:	54442d18 	.word	0x54442d18
  80044bc:	401921fb 	.word	0x401921fb
  80044c0:	080047a0 	.word	0x080047a0
- 80044c4:	3a83126f 	.word	0x3a83126f
+ 80044c4:	3951b717 	.word	0x3951b717
  80044c8:	3ea5fac2 	.word	0x3ea5fac2
- 80044cc:	40d66666 	.word	0x40d66666
+ 80044cc:	402ccccd 	.word	0x402ccccd
  80044d0:	40a00000 	.word	0x40a00000
  80044d4:	3d63d217 	.word	0x3d63d217
  80044d8:	bfc00000 	.word	0xbfc00000
@@ -6540,16 +6540,16 @@ Disassembly of section .text:
  80044ee:	4a64      	ldr	r2, [pc, #400]	@ (8004680 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x194>)
  80044f0:	f890 30e4 	ldrb.w	r3, [r0, #228]	@ 0xe4
  80044f4:	6812      	ldr	r2, [r2, #0]
- 80044f6:	ed90 7a38 	vldr	s14, [r0, #224]	@ 0xe0
- 80044fa:	edd0 6a32 	vldr	s13, [r0, #200]	@ 0xc8
+ 80044f6:	edd0 6a32 	vldr	s13, [r0, #200]	@ 0xc8
+ 80044fa:	ed90 7a38 	vldr	s14, [r0, #224]	@ 0xe0
  80044fe:	ed2d 8b04 	vpush	{d8-d9}
  8004502:	4604      	mov	r4, r0
  8004504:	edd0 8a34 	vldr	s17, [r0, #208]	@ 0xd0
  8004508:	f8c0 20e8 	str.w	r2, [r0, #232]	@ 0xe8
  800450c:	b31b      	cbz	r3, 8004556 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x6a>
  800450e:	edd0 7a30 	vldr	s15, [r0, #192]	@ 0xc0
- 8004512:	edd0 4a37 	vldr	s9, [r0, #220]	@ 0xdc
- 8004516:	ed90 5a31 	vldr	s10, [r0, #196]	@ 0xc4
+ 8004512:	edd0 4a31 	vldr	s9, [r0, #196]	@ 0xc4
+ 8004516:	ed90 5a37 	vldr	s10, [r0, #220]	@ 0xdc
  800451a:	edd0 5a33 	vldr	s11, [r0, #204]	@ 0xcc
  800451e:	ed90 4a35 	vldr	s8, [r0, #212]	@ 0xd4
  8004522:	ed90 6a36 	vldr	s12, [r0, #216]	@ 0xd8
@@ -6557,38 +6557,38 @@ Disassembly of section .text:
  800452a:	ee27 5a85 	vmul.f32	s10, s15, s10
  800452e:	ee67 5aa5 	vmul.f32	s11, s15, s11
  8004532:	ee67 7a84 	vmul.f32	s15, s15, s8
- 8004536:	ee37 7a24 	vadd.f32	s14, s14, s9
- 800453a:	ee76 6a85 	vadd.f32	s13, s13, s10
+ 8004536:	ee76 6aa4 	vadd.f32	s13, s13, s9
+ 800453a:	ee37 7a05 	vadd.f32	s14, s14, s10
  800453e:	ee78 8aa5 	vadd.f32	s17, s17, s11
  8004542:	ee76 7a27 	vadd.f32	s15, s12, s15
- 8004546:	ed80 7a38 	vstr	s14, [r0, #224]	@ 0xe0
- 800454a:	edc0 6a32 	vstr	s13, [r0, #200]	@ 0xc8
+ 8004546:	edc0 6a32 	vstr	s13, [r0, #200]	@ 0xc8
+ 800454a:	ed80 7a38 	vstr	s14, [r0, #224]	@ 0xe0
  800454e:	edc0 8a34 	vstr	s17, [r0, #208]	@ 0xd0
  8004552:	edc0 7a36 	vstr	s15, [r0, #216]	@ 0xd8
- 8004556:	edd4 7a29 	vldr	s15, [r4, #164]	@ 0xa4
+ 8004556:	edd4 7a00 	vldr	s15, [r4]
  800455a:	ed94 6a0d 	vldr	s12, [r4, #52]	@ 0x34
  800455e:	edd4 5a0f 	vldr	s11, [r4, #60]	@ 0x3c
- 8004562:	ed94 5a2a 	vldr	s10, [r4, #168]	@ 0xa8
- 8004566:	ed94 0a11 	vldr	s0, [r4, #68]	@ 0x44
- 800456a:	ed94 9a19 	vldr	s18, [r4, #100]	@ 0x64
- 800456e:	edd4 9a1a 	vldr	s19, [r4, #104]	@ 0x68
- 8004572:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8004576:	f104 05e8 	add.w	r5, r4, #232	@ 0xe8
+ 8004562:	ed94 8a29 	vldr	s16, [r4, #164]	@ 0xa4
+ 8004566:	edd4 4a2a 	vldr	s9, [r4, #168]	@ 0xa8
+ 800456a:	ed94 4a14 	vldr	s8, [r4, #80]	@ 0x50
+ 800456e:	ed94 0a11 	vldr	s0, [r4, #68]	@ 0x44
+ 8004572:	ed94 9a19 	vldr	s18, [r4, #100]	@ 0x64
+ 8004576:	edd4 9a1a 	vldr	s19, [r4, #104]	@ 0x68
  800457a:	ee77 7ae6 	vsub.f32	s15, s15, s13
- 800457e:	edd4 6a00 	vldr	s13, [r4]
+ 800457e:	ee27 8a08 	vmul.f32	s16, s14, s16
  8004582:	ee27 6a86 	vmul.f32	s12, s15, s12
- 8004586:	ee36 7ac7 	vsub.f32	s14, s13, s14
- 800458a:	ee86 8a25 	vdiv.f32	s16, s12, s11
- 800458e:	eec7 6a05 	vdiv.f32	s13, s14, s10
- 8004592:	ed94 6a14 	vldr	s12, [r4, #80]	@ 0x50
- 8004596:	edc4 6a37 	vstr	s13, [r4, #220]	@ 0xdc
- 800459a:	ee87 7aa5 	vdiv.f32	s14, s15, s11
- 800459e:	edd4 7a12 	vldr	s15, [r4, #72]	@ 0x48
- 80045a2:	ed84 7a31 	vstr	s14, [r4, #196]	@ 0xc4
- 80045a6:	ee78 5a68 	vsub.f32	s11, s16, s17
- 80045aa:	ee30 0a67 	vsub.f32	s0, s0, s15
- 80045ae:	eec5 7a86 	vdiv.f32	s15, s11, s12
- 80045b2:	edc4 7a33 	vstr	s15, [r4, #204]	@ 0xcc
+ 8004586:	ee87 5aa5 	vdiv.f32	s10, s15, s11
+ 800458a:	f104 05e8 	add.w	r5, r4, #232	@ 0xe8
+ 800458e:	eec6 6a25 	vdiv.f32	s13, s12, s11
+ 8004592:	edd4 7a12 	vldr	s15, [r4, #72]	@ 0x48
+ 8004596:	ed84 5a31 	vstr	s10, [r4, #196]	@ 0xc4
+ 800459a:	ee78 3a68 	vsub.f32	s7, s16, s17
+ 800459e:	ee76 6ac7 	vsub.f32	s13, s13, s14
+ 80045a2:	ee83 6a84 	vdiv.f32	s12, s7, s8
+ 80045a6:	ee30 0a67 	vsub.f32	s0, s0, s15
+ 80045aa:	eec6 7aa4 	vdiv.f32	s15, s13, s9
+ 80045ae:	ed84 6a33 	vstr	s12, [r4, #204]	@ 0xcc
+ 80045b2:	edc4 7a37 	vstr	s15, [r4, #220]	@ 0xdc
  80045b6:	f000 f88b 	bl	80046d0 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
  80045ba:	eddf 0a32 	vldr	s1, [pc, #200]	@ 8004684 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x198>
  80045be:	4628      	mov	r0, r5

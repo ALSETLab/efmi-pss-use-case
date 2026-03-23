@@ -2,7 +2,8 @@ within OpenIPSL_CHIL.RTS.CHIL;
 model Grid4CHIL "System model for CHIL testing"
   extends Network.RTNetworkMinimal;
   // output offset and scaling parameter
-  parameter Real wscale=100.0 "Speed output scaling" annotation (Dialog(group="Output Offset and Scaling"));
+  parameter Real wscale=1.5
+                           "Speed output scaling" annotation (Dialog(group="Output Offset and Scaling"));
   parameter Real woffset=1.5 "Speed output offset"
     annotation (Dialog(group="Output Offset and Scaling"));
 
@@ -45,11 +46,11 @@ model Grid4CHIL "System model for CHIL testing"
     annotation (Dialog(group="AVR Parameters"));
 
   Modelica.Blocks.Sources.RealExpression G1w1(y=G1.w - 1.0)
-    annotation (Placement(transformation(extent={{-8,62},{12,84}})));
+    annotation (Placement(transformation(extent={{6,62},{26,84}})));
   Modelica.Blocks.Math.Add wsum
-    annotation (Placement(transformation(extent={{56,54},{66,64}})));
+    annotation (Placement(transformation(extent={{56,56},{64,64}})));
   Modelica.Blocks.Sources.RealExpression wOffst(y=woffset)
-    annotation (Placement(transformation(extent={{-8,44},{12,64}})));
+    annotation (Placement(transformation(extent={{18,44},{38,64}})));
   Modelica.Blocks.Math.Gain wOutpt(k=wscale)
     annotation (Placement(transformation(extent={{32,68},{42,78}})));
   Modelica.Blocks.Sources.RealExpression wout(y=G1.w)
@@ -69,15 +70,17 @@ equation
     annotation (Line(points={{81,20},{110,20}}, color={0,0,127}));
   connect(pwFault4efmi.trip, fault) annotation (Line(points={{43.3333,-70},{52,
           -70},{52,-94},{0,-94},{0,-120}}, color={255,0,255}));
-  connect(wsum.u1, wOutpt.y) annotation (Line(points={{55,62},{50,62},{50,73},{
-          42.5,73}}, color={0,0,127}));
+  connect(wsum.u1, wOutpt.y) annotation (Line(points={{55.2,62.4},{50,62.4},{50,
+          73},{42.5,73}},
+                     color={0,0,127}));
   connect(G1w1.y, wOutpt.u)
-    annotation (Line(points={{13,73},{31,73}}, color={0,0,127}));
-  connect(wOffst.y, wsum.u2) annotation (Line(points={{13,54},{46,54},{46,56},{
-          55,56}}, color={0,0,127}));
+    annotation (Line(points={{27,73},{31,73}}, color={0,0,127}));
+  connect(wOffst.y, wsum.u2) annotation (Line(points={{39,54},{52,54},{52,57.6},
+          {55.2,57.6}},
+                   color={0,0,127}));
   connect(wout.y, w) annotation (Line(points={{87,81},{96,81},{96,80},{110,80}},
         color={0,0,127}));
-  connect(wsum.y, v) annotation (Line(points={{66.5,59},{96,59},{96,60},{110,60}},
+  connect(wsum.y, v) annotation (Line(points={{64.4,60},{110,60}},
         color={0,0,127}));
   annotation (Icon(graphics={             Text(
           extent={{-72,180},{100,100}},

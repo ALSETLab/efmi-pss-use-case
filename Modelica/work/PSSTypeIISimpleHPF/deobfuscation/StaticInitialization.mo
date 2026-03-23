@@ -274,7 +274,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
-		self.'discrete.stepSize' := 1.00000000000000002e-3;
+		self.'discrete.stepSize' := 2.0000000000000001e-4;
 		self.'imLeadLag.K' := 1.0;
 		self.'imLeadLag1.K' := 1.0;
 		self.'imLeadLag1.y_start' := 0.0;
@@ -285,7 +285,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 			Initialize variables with explicit start value (independent initializations):
 		*/
 		self.Tw := 2.5e-1;
-		self.Kw := 6.70000000000000018;
+		self.Kw := 2.70000000000000018;
 		self.kLPF := 1.0;
 		self.freqLow := 5.0;
 		self.vsmin := -1.5;
@@ -375,7 +375,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		Real 'imLeadLag1.TF.y';
 
 		/* lpf: */
-		Real 'lpf.y';
+		Real 'lpf.u';
 
 	algorithm
 		/*
@@ -386,12 +386,12 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		/*
 			Initialize variables with start value equation (dependent initializations):
 		*/
-		self.'derivative(lpf.x)' := 0.0;
 		self.'derivative(dLHPFreplacement.x)' := 0.0;
-		self.'lpf.x' := ((self.vSI * self.'lpf.T') / self.'lpf.T');
-		'lpf.y' := (self.'lpf.K' * self.'lpf.x');
-		self.'dLHPFreplacement.x' := (('lpf.y' * self.'dLHPFreplacement.T') / self.'dLHPFreplacement.T');
-		'imLeadLag.u' := ((self.'dLHPFreplacement.K' * ('lpf.y' - self.'dLHPFreplacement.x')) / self.'dLHPFreplacement.T');
+		self.'derivative(lpf.x)' := 0.0;
+		self.'dLHPFreplacement.x' := ((self.vSI * self.'dLHPFreplacement.T') / self.'dLHPFreplacement.T');
+		'lpf.u' := ((self.'dLHPFreplacement.K' * (self.vSI - self.'dLHPFreplacement.x')) / self.'dLHPFreplacement.T');
+		self.'lpf.x' := (('lpf.u' * self.'lpf.T') / self.'lpf.T');
+		'imLeadLag.u' := (self.'lpf.K' * self.'lpf.x');
 		'imLeadLag.TF.y' := self.'imLeadLag.TF.y_start';
 		self.'imLeadLag.TF.x_scaled'[ 1 ] := (((self.'imLeadLag.TF.d' * 'imLeadLag.u') - 'imLeadLag.TF.y') / (self.'imLeadLag.TF.d' - self.'imLeadLag.TF.bb'[ 2 ]));
 		'imLeadLag.y' := (if (absolute((self.'imLeadLag.T1' - self.'imLeadLag.T2')) < 2.22044604925031308e-16) then (self.'imLeadLag.K' * 'imLeadLag.u') else 'imLeadLag.TF.y');

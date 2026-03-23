@@ -4,10 +4,10 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{6e600d65-9f3c-4929-a46a-f5bfadae4cb5}"
+	id="{20f1e282-d191-4529-800b-2c8ae97ef743}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam"
-	generationDateAndTime="2026-03-15T03:50:28Z"
+	generationDateAndTime="2026-03-23T15:05:40Z"
 	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
 	description="PSS Type II of OpenIPSL with parametrization for efmi export."
 	version="">
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="d8e5cd0f18bc9bad1f197835358312624a0621ca"
+			checksum="066f2f65ef1292ae464f5956d81c589c38d2fa39"
 			role="Code"/>
 	</Files>
 
@@ -80,7 +80,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[1]"
 			relativeQuantity="false"
-			start="1.55e+1">
+			start="2.70000000000000018">
 		</RealVariable>
 		<RealVariable
 			id="T1"
@@ -125,7 +125,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.0">
+			start="2.5e-1">
 		</RealVariable>
 		<RealVariable
 			id="freqLow"
@@ -134,7 +134,7 @@
 			blockCausality="tunableParameter"
 			unitRefId="[Hz]"
 			relativeQuantity="false"
-			start="2.0e+1">
+			start="5.0">
 		</RealVariable>
 		<RealVariable
 			id="kLPF"
@@ -182,7 +182,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="7.75e+1">
+			start="6.75000000000000044e-1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.K_dummy'"
@@ -191,7 +191,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="7.75e+1">
+			start="6.75000000000000044e-1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.T'"
@@ -200,7 +200,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.0">
+			start="2.5e-1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.T_dummy'"
@@ -209,14 +209,14 @@
 			blockCausality="dependentParameter"
 			unitRefId="[s]"
 			relativeQuantity="false"
-			start="5.0">
+			start="2.5e-1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.TF.a'"
 			name="'derivativeLag.TF.a'"
 			description="Denominator coefficients of transfer function (e.g., 5*s+6 is specified as {5,6})"
 			blockCausality="dependentParameter"
-			start="5.0 0.0">
+			start="2.5e-1 0.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -226,7 +226,7 @@
 			name="'derivativeLag.TF.b'"
 			description="Numerator coefficients of transfer function (e.g., 2*s+3 is specified as {2,3})"
 			blockCausality="dependentParameter"
-			start="7.75e+1 0.0">
+			start="6.75000000000000044e-1 0.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -235,7 +235,7 @@
 			id="'derivativeLag.TF.bb'"
 			name="'derivativeLag.TF.bb'"
 			blockCausality="dependentParameter"
-			start="7.75e+1 0.0">
+			start="6.75000000000000044e-1 0.0">
 			<Dimensions>
 				<Dimension number="1" size="2"/>
 			</Dimensions>
@@ -244,7 +244,7 @@
 			id="'derivativeLag.TF.d'"
 			name="'derivativeLag.TF.d'"
 			blockCausality="dependentParameter"
-			start="1.55e+1">
+			start="2.70000000000000018">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.TF.y_start'"
@@ -504,7 +504,7 @@
 			name="'lpf.T'"
 			description="Time constant derived from cutoff frequency"
 			blockCausality="dependentParameter"
-			start="7.95774715459476693e-3">
+			start="3.18309886183790677e-2">
 		</RealVariable>
 		<RealVariable
 			id="'lpf.freqHz'"
@@ -513,7 +513,7 @@
 			blockCausality="dependentParameter"
 			unitRefId="[Hz]"
 			relativeQuantity="false"
-			start="2.0e+1">
+			start="5.0">
 		</RealVariable>
 		<RealVariable
 			id="'derivative(lpf.x)'"
@@ -527,13 +527,13 @@
 			name="'lpf.x'"
 			description="Internal filter state"
 			blockCausality="state"
-			start="1.0">
+			start="0.0">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"
 			name="'discrete.stepSize'"
 			blockCausality="constant"
-			start="1.00000000000000002e-3">
+			start="2.0000000000000001e-4">
 		</RealVariable>
 		<BooleanVariable
 			id="'discrete.stepSize.active'"

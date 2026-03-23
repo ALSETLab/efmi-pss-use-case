@@ -3,6 +3,11 @@ model Grid4CHIL_IOplus
   "System model for CHIL testing with more I/O"
   extends Network.RTNetwork;
 
+  // output offset and scaling parameter
+  parameter Real wscale=1.5 "Speed output scaling" annotation (Dialog(group="Output Offset and Scaling"));
+  parameter Real woffset=1.5 "Speed output offset"
+    annotation (Dialog(group="Output Offset and Scaling"));
+
   replaceable Generator.ReDesign.GenAVRIOReDesign
                                            G1(displayPF=false, K0=K0)
     constrainedby Generator.GenTemplate
@@ -29,7 +34,7 @@ model Grid4CHIL_IOplus
   Modelica.Blocks.Sources.RealExpression G1w(y=G1.w)
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
   Modelica.Blocks.Sources.RealExpression G1v(y=G1.v)
-    annotation (Placement(transformation(extent={{60,50},{80,70}})));
+    annotation (Placement(transformation(extent={{60,-50},{80,-30}})));
   Modelica.Blocks.Sources.RealExpression G1P(y=
         OpenIPSL.NonElectrical.Functions.div0protect(G1.P, SysData.S_b))
     annotation (Placement(transformation(extent={{60,30},{80,50}})));
@@ -62,13 +67,21 @@ model Grid4CHIL_IOplus
           extent={{-140,-80},{-100,-40}})));
   Modelica.Blocks.Sources.RealExpression uPLoadIn(y=uPLoad)
     "Maps in the input pin uPLoad"
-    annotation (Placement(transformation(extent={{0,74},{20,94}})));
+    annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
   Modelica.Blocks.Sources.BooleanExpression faultL1In(y=faultL1)
     "Maps the input faultL1"
     annotation (Placement(transformation(extent={{12,-4},{26,16}})));
   Modelica.Blocks.Sources.BooleanExpression faultL2In(y=faultL2)
     "Maps the input faultL2"
     annotation (Placement(transformation(extent={{12,-48},{26,-28}})));
+  Modelica.Blocks.Sources.RealExpression G1w1(y=G1.w - 1.0)
+    annotation (Placement(transformation(extent={{-2,62},{18,84}})));
+  Modelica.Blocks.Math.Add wsum
+    annotation (Placement(transformation(extent={{48,56},{56,64}})));
+  Modelica.Blocks.Sources.RealExpression wOffst(y=woffset)
+    annotation (Placement(transformation(extent={{10,44},{30,64}})));
+  Modelica.Blocks.Math.Gain wOutpt(k=wscale)
+    annotation (Placement(transformation(extent={{24,68},{34,78}})));
 equation
   connect(G1.pwPin, B1.p)
     annotation (Line(points={{-68.6,0},{-60,0}},
@@ -77,23 +90,30 @@ equation
     annotation (Line(points={{-80,110},{-80,90},{-79,90}}, color={0,0,127}));
   connect(G1w.y, w)
     annotation (Line(points={{81,80},{110,80}}, color={0,0,127}));
-  connect(G1v.y, v)
-    annotation (Line(points={{81,60},{110,60}}, color={0,0,127}));
   connect(G1P.y, Pgen)
     annotation (Line(points={{81,40},{110,40}}, color={0,0,127}));
   connect(G1Q.y, Qgen)
     annotation (Line(points={{81,20},{110,20}}, color={0,0,127}));
-  connect(pwFault4efmi.trip, fault) annotation (Line(points={{43.3333,-70},{52,
-          -70},{52,-94},{-60,-94},{-60,-120}},
-                                           color={255,0,255}));
+  connect(pwFault4efmi.trip, fault) annotation (Line(points={{43.3333,-70},{52,-70},
+          {52,-94},{-60,-94},{-60,-120}},  color={255,0,255}));
   connect(faultL1In.y, L1.trip)
     annotation (Line(points={{26.7,6},{30,6},{30,14}}, color={255,0,255}));
   connect(faultL2In.y, L2.trip) annotation (Line(points={{26.7,-38},{30,-38},{
           30,-26}}, color={255,0,255}));
   connect(G1.u, vf) annotation (Line(points={{-100.8,0},{-110,0},{-110,60},{
           -120,60}}, color={0,0,127}));
-  connect(uPLoadIn.y, iSrcLoad.iMag) annotation (Line(points={{21,84},{52,84},{
-          52,60},{42,60}}, color={0,0,127}));
+  connect(uPLoadIn.y, iSrcLoad.iMag)
+    annotation (Line(points={{-39,40},{-30,40}}, color={0,0,127}));
+  connect(wsum.u1,wOutpt. y) annotation (Line(points={{47.2,62.4},{42,62.4},{42,
+          73},{34.5,73}},
+                     color={0,0,127}));
+  connect(G1w1.y,wOutpt. u)
+    annotation (Line(points={{19,73},{23,73}}, color={0,0,127}));
+  connect(wOffst.y,wsum. u2) annotation (Line(points={{31,54},{44,54},{44,57.6},
+          {47.2,57.6}},
+                   color={0,0,127}));
+  connect(wsum.y, v)
+    annotation (Line(points={{56.4,60},{110,60}}, color={0,0,127}));
   annotation (Icon(graphics={
         Rectangle(
           extent={{-100,100},{100,-100}},

@@ -305,7 +305,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
-		self.'discrete.stepSize' := 1.00000000000000002e-3;
+		self.'discrete.stepSize' := 2.0000000000000001e-4;
 		self.'imLeadLag.K' := 1.0;
 		self.'imLeadLag1.K' := 1.0;
 		self.'derivativeLag.y_start' := 0.0;
@@ -316,10 +316,10 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
+		self.Tw := 2.5e-1;
+		self.Kw := 2.70000000000000018;
 		self.kLPF := 1.0;
-		self.freqLow := 2.0e+1;
-		self.Tw := 5.0;
-		self.Kw := 1.55e+1;
+		self.freqLow := 5.0;
 		self.vsmin := -1.5;
 		self.vsmax := 1.5;
 		self.T4 := 5.56202789619913984e-2;
@@ -378,6 +378,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		self.'imLeadLag1.TF.d' := (self.'imLeadLag1.TF.bb'[ 1 ] / self.'imLeadLag1.TF.a'[ 1 ]);
 		self.'limiter.uMax' := self.vsmax;
 		self.'limiter.uMin' := self.vsmin;
+		self.'lpf.freqHz' := self.freqLow;
+		self.'lpf.K' := self.kLPF;
+		self.'lpf.T' := (1.0 / (6.28318530717958623 * self.'lpf.freqHz'));
 		self.'derivativeLag.K' := (self.Kw * self.Tw);
 		self.'derivativeLag.T' := self.Tw;
 		self.'derivativeLag.K_dummy' := (if (absolute(self.'derivativeLag.K') < 2.22044604925031308e-16) then 1.0 else self.'derivativeLag.K');
@@ -387,9 +390,6 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		self.'derivativeLag.TF.y_start' := self.'derivativeLag.y_start';
 		self.'derivativeLag.TF.bb'[ 1 ] := self.'derivativeLag.TF.b'[ 1 ];
 		self.'derivativeLag.TF.d' := (self.'derivativeLag.TF.bb'[ 1 ] / self.'derivativeLag.TF.a'[ 1 ]);
-		self.'lpf.freqHz' := self.freqLow;
-		self.'lpf.K' := self.kLPF;
-		self.'lpf.T' := (1.0 / (6.28318530717958623 * self.'lpf.freqHz'));
 	end Recalibrate;
 
 	function Reinitialize
@@ -398,9 +398,6 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 
 
 	protected
-		/* derivativeLag: */
-		Real 'derivativeLag.u';
-
 		/* derivativeLag.TF: */
 		Real 'derivativeLag.TF.y';
 
@@ -417,6 +414,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		/* imLeadLag1.TF: */
 		Real 'imLeadLag1.TF.y';
 
+		/* lpf: */
+		Real 'lpf.u';
+
 	algorithm
 		/*
 			Initialize variables without explicit start value or equation (implicit initializations):
@@ -428,11 +428,11 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 			Initialize variables with start value equation (dependent initializations):
 		*/
 		self.'derivative(lpf.x)' := 0.0;
-		self.'lpf.x' := ((self.vSI * self.'lpf.T') / self.'lpf.T');
-		'derivativeLag.u' := (self.'lpf.K' * self.'lpf.x');
 		'derivativeLag.TF.y' := self.'derivativeLag.TF.y_start';
-		self.'derivativeLag.TF.x_scaled'[ 1 ] := (((self.'derivativeLag.TF.d' * 'derivativeLag.u') - 'derivativeLag.TF.y') / self.'derivativeLag.TF.d');
-		'imLeadLag.u' := (if (absolute(self.'derivativeLag.T') < 2.22044604925031308e-16) then 'derivativeLag.u' else 'derivativeLag.TF.y');
+		self.'derivativeLag.TF.x_scaled'[ 1 ] := (((self.'derivativeLag.TF.d' * self.vSI) - 'derivativeLag.TF.y') / self.'derivativeLag.TF.d');
+		'lpf.u' := (if (absolute(self.'derivativeLag.T') < 2.22044604925031308e-16) then self.vSI else 'derivativeLag.TF.y');
+		self.'lpf.x' := (('lpf.u' * self.'lpf.T') / self.'lpf.T');
+		'imLeadLag.u' := (self.'lpf.K' * self.'lpf.x');
 		'imLeadLag.TF.y' := self.'imLeadLag.TF.y_start';
 		self.'imLeadLag.TF.x_scaled'[ 1 ] := (((self.'imLeadLag.TF.d' * 'imLeadLag.u') - 'imLeadLag.TF.y') / (self.'imLeadLag.TF.d' - self.'imLeadLag.TF.bb'[ 2 ]));
 		'imLeadLag.y' := (if (absolute((self.'imLeadLag.T1' - self.'imLeadLag.T2')) < 2.22044604925031308e-16) then (self.'imLeadLag.K' * 'imLeadLag.u') else 'imLeadLag.TF.y');

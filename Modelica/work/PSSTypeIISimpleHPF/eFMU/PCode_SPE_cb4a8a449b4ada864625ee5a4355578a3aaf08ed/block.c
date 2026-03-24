@@ -1,4 +1,4 @@
-/*2026-03-23T15:11:09.972455200Z*/
+/*2026-03-24T01:07:39.647301700Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -105,11 +105,14 @@ static void Recalibrate(ALGOSTRUCT *instance)
     instance->dLHPFreplacement_K = instance->dLHPFreplacement_Kw * instance->dLHPFreplacement_Tw;
 
     instance->dLHPFreplacement_T = instance->dLHPFreplacement_Tw;
+
+    instance->scale_k = 1.0 / instance->wscale;
 }
 
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
@@ -134,9 +137,11 @@ static void Reinitialize(ALGOSTRUCT *instance)
 
     instance->der_lpf_x = 0.0;
 
-    instance->dLHPFreplacement_x = (instance->vSI * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
+    dLHPFreplacement_u = instance->scale_k * instance->vSI;
 
-    lpf_u = (instance->dLHPFreplacement_K * (instance->vSI - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    instance->dLHPFreplacement_x = (dLHPFreplacement_u * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
+
+    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
 
     instance->lpf_x = (lpf_u * instance->lpf_T) / instance->lpf_T;
 
@@ -192,6 +197,8 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
+    instance->wscale = 5.0e+1;
+
     instance->Tw = 2.5e-1;
 
     instance->Kw = 2.70000000000000018;
@@ -233,6 +240,7 @@ static void Startup(ALGOSTRUCT *instance)
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
@@ -257,9 +265,11 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_dLHPFreplacement_x = (instance->vSI - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
+    dLHPFreplacement_u = instance->scale_k * instance->vSI;
 
-    lpf_u = (instance->dLHPFreplacement_K * (instance->vSI - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    instance->der_dLHPFreplacement_x = (dLHPFreplacement_u - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
+
+    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
 
     instance->der_lpf_x = (lpf_u - instance->lpf_x) / instance->lpf_T;
 

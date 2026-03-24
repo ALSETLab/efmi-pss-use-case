@@ -9,15 +9,23 @@ model PSSTypeIISimpleHPF
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
+
+  // input scaling parameter
+  parameter Real wscale=50.0 "Speed input scaling" annotation (Dialog(group="Output Offset and Scaling"));
+
   Blocks.WashoutFilter.HPFSimple.HighPassSimple dLHPFreplacement(Kw=Kw, Tw=Tw)
     "HP Filter replacing the derivative lag."
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
 
+  Modelica.Blocks.Math.Gain scale(k=1/wscale)
+    annotation (Placement(transformation(extent={{-96,-4},{-88,4}})));
 equation
-  connect(vSI, dLHPFreplacement.u)
-    annotation (Line(points={{-120,0},{-82,0}}, color={0,0,127}));
   connect(dLHPFreplacement.y, lpf.u)
     annotation (Line(points={{-58,0},{-48,0}}, color={0,0,127}));
+  connect(vSI, scale.u)
+    annotation (Line(points={{-120,0},{-96.8,0}}, color={0,0,127}));
+  connect(scale.y, dLHPFreplacement.u)
+    annotation (Line(points={{-87.6,0},{-82,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},

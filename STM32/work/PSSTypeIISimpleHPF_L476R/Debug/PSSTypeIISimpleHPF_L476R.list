@@ -5,47 +5,47 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .isr_vector   00000188  08000000  08000000  00001000  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  1 .text         00006acc  08000188  08000188  00001188  2**3
+  1 .text         00006b0c  08000188  08000188  00001188  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       00000064  08006c54  08006c54  00007c54  2**2
+  2 .rodata       00000064  08006c94  08006c94  00007c94  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  08006cb8  08006cb8  0000800c  2**0
+  3 .ARM.extab    00000000  08006cf8  08006cf8  0000800c  2**0
                   CONTENTS, READONLY
-  4 .ARM          00000008  08006cb8  08006cb8  00007cb8  2**2
+  4 .ARM          00000008  08006cf8  08006cf8  00007cf8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  08006cc0  08006cc0  0000800c  2**0
+  5 .preinit_array 00000000  08006d00  08006d00  0000800c  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000004  08006cc0  08006cc0  00007cc0  2**2
+  6 .init_array   00000004  08006d00  08006d00  00007d00  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  08006cc4  08006cc4  00007cc4  2**2
+  7 .fini_array   00000004  08006d04  08006d04  00007d04  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         0000000c  20000000  08006cc8  00008000  2**2
+  8 .data         0000000c  20000000  08006d08  00008000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00000260  2000000c  08006cd4  0000800c  2**2
+  9 .bss          00000268  2000000c  08006d14  0000800c  2**2
                   ALLOC
- 10 ._user_heap_stack 00000604  2000026c  08006cd4  0000826c  2**0
+ 10 ._user_heap_stack 00000604  20000274  08006d14  00008274  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0000800c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0001a62d  00000000  00000000  0000803c  2**0
+ 12 .debug_info   0001a679  00000000  00000000  0000803c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 000032dc  00000000  00000000  00022669  2**0
+ 13 .debug_abbrev 000032dc  00000000  00000000  000226b5  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00001940  00000000  00000000  00025948  2**3
+ 14 .debug_aranges 00001940  00000000  00000000  00025998  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_rnglists 00001387  00000000  00000000  00027288  2**0
+ 15 .debug_rnglists 00001387  00000000  00000000  000272d8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00029a8d  00000000  00000000  0002860f  2**0
+ 16 .debug_macro  00029a8d  00000000  00000000  0002865f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001a25a  00000000  00000000  0005209c  2**0
+ 17 .debug_line   0001a26d  00000000  00000000  000520ec  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    001122ff  00000000  00000000  0006c2f6  2**0
+ 18 .debug_str    00112321  00000000  00000000  0006c359  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0017e5f5  2**0
+ 19 .comment      00000043  00000000  00000000  0017e67a  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000681c  00000000  00000000  0017e638  2**2
+ 20 .debug_frame  0000681c  00000000  00000000  0017e6c0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006b  00000000  00000000  00184e54  2**0
+ 21 .debug_line_str 0000006b  00000000  00000000  00184edc  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -64,7 +64,7 @@ Disassembly of section .text:
  800019e:	bd10      	pop	{r4, pc}
  80001a0:	2000000c 	.word	0x2000000c
  80001a4:	00000000 	.word	0x00000000
- 80001a8:	08006c3c 	.word	0x08006c3c
+ 80001a8:	08006c7c 	.word	0x08006c7c
 
 080001ac <frame_dummy>:
  80001ac:	b508      	push	{r3, lr}
@@ -76,7 +76,7 @@ Disassembly of section .text:
  80001ba:	bd08      	pop	{r3, pc}
  80001bc:	00000000 	.word	0x00000000
  80001c0:	20000010 	.word	0x20000010
- 80001c4:	08006c3c 	.word	0x08006c3c
+ 80001c4:	08006c7c 	.word	0x08006c7c
 
 080001c8 <__aeabi_drsub>:
  80001c8:	f081 4100 	eor.w	r1, r1, #2147483648	@ 0x80000000
@@ -1236,7 +1236,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
  8000e38:	2288      	movs	r2, #136	@ 0x88
  8000e3a:	2100      	movs	r1, #0
  8000e3c:	4618      	mov	r0, r3
- 8000e3e:	f005 fed0 	bl	8006be2 <memset>
+ 8000e3e:	f005 fef0 	bl	8006c22 <memset>
   if(adcHandle->Instance==ADC1)
  8000e42:	687b      	ldr	r3, [r7, #4]
  8000e44:	681b      	ldr	r3, [r3, #0]
@@ -1363,7 +1363,7 @@ void MX_DAC1_Init(void)
  8000ef8:	2224      	movs	r2, #36	@ 0x24
  8000efa:	2100      	movs	r1, #0
  8000efc:	4618      	mov	r0, r3
- 8000efe:	f005 fe70 	bl	8006be2 <memset>
+ 8000efe:	f005 fe90 	bl	8006c22 <memset>
 
   /* USER CODE END DAC1_Init 1 */
 
@@ -1675,7 +1675,7 @@ void MX_GPIO_Init(void)
 	  /* USER CODE BEGIN 2 */
 	  PSS_Startup(&pss);
  80010cc:	4806      	ldr	r0, [pc, #24]	@ (80010e8 <main+0x3c>)
- 80010ce:	f005 fcd9 	bl	8006a84 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 80010ce:	f005 fcf9 	bl	8006ac4 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
 	  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
  80010d2:	2100      	movs	r1, #0
  80010d4:	4805      	ldr	r0, [pc, #20]	@ (80010ec <main+0x40>)
@@ -1702,7 +1702,7 @@ __STATIC_FORCEINLINE void __enable_irq(void)
  80010e6:	e7fd      	b.n	80010e4 <main+0x38>
  80010e8:	200000a0 	.word	0x200000a0
  80010ec:	2000008c 	.word	0x2000008c
- 80010f0:	20000194 	.word	0x20000194
+ 80010f0:	2000019c 	.word	0x2000019c
 
 080010f4 <SystemClock_Config>:
 	/**
@@ -1719,7 +1719,7 @@ __STATIC_FORCEINLINE void __enable_irq(void)
  80010fe:	2244      	movs	r2, #68	@ 0x44
  8001100:	2100      	movs	r1, #0
  8001102:	4618      	mov	r0, r3
- 8001104:	f005 fd6d 	bl	8006be2 <memset>
+ 8001104:	f005 fd8d 	bl	8006c22 <memset>
 	  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
  8001108:	463b      	mov	r3, r7
  800110a:	2200      	movs	r2, #0
@@ -1875,8 +1875,8 @@ __STATIC_FORCEINLINE void __enable_irq(void)
  80011da:	3710      	adds	r7, #16
  80011dc:	46bd      	mov	sp, r7
  80011de:	bd80      	pop	{r7, pc}
- 80011e0:	20000190 	.word	0x20000190
- 80011e4:	2000018c 	.word	0x2000018c
+ 80011e0:	20000198 	.word	0x20000198
+ 80011e4:	20000194 	.word	0x20000194
 
 080011e8 <HAL_TIM_PeriodElapsedCallback>:
 
@@ -1939,7 +1939,7 @@ __STATIC_FORCEINLINE void __enable_irq(void)
 		// Compute sampling step:
 		PSS_DoStep(&pss);
  800124c:	4829      	ldr	r0, [pc, #164]	@ (80012f4 <HAL_TIM_PeriodElapsedCallback+0x10c>)
- 800124e:	f005 fc2b 	bl	8006aa8 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 800124e:	f005 fc4b 	bl	8006ae8 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
 
 		//Check if switch is pulling to GND
 		PSS_Real target_pu;
@@ -2022,14 +2022,14 @@ __STATIC_FORCEINLINE void __enable_irq(void)
  80012e6:	bf00      	nop
  80012e8:	40012c00 	.word	0x40012c00
  80012ec:	20000028 	.word	0x20000028
- 80012f0:	08006c54 	.word	0x08006c54
+ 80012f0:	08006c94 	.word	0x08006c94
  80012f4:	200000a0 	.word	0x200000a0
- 80012f8:	2000018c 	.word	0x2000018c
- 80012fc:	08006c58 	.word	0x08006c58
- 8001300:	08006c5c 	.word	0x08006c5c
- 8001304:	08006c60 	.word	0x08006c60
- 8001308:	08006c64 	.word	0x08006c64
- 800130c:	08006c68 	.word	0x08006c68
+ 80012f8:	20000194 	.word	0x20000194
+ 80012fc:	08006c98 	.word	0x08006c98
+ 8001300:	08006c9c 	.word	0x08006c9c
+ 8001304:	08006ca0 	.word	0x08006ca0
+ 8001308:	08006ca4 	.word	0x08006ca4
+ 800130c:	08006ca8 	.word	0x08006ca8
  8001310:	2000008c 	.word	0x2000008c
 
 08001314 <Error_Handler>:
@@ -2293,7 +2293,7 @@ void TIM1_UP_TIM16_IRQHandler(void)
  80013d2:	bf00      	nop
  80013d4:	bd80      	pop	{r7, pc}
  80013d6:	bf00      	nop
- 80013d8:	20000194 	.word	0x20000194
+ 80013d8:	2000019c 	.word	0x2000019c
 
 080013dc <EXTI15_10_IRQHandler>:
 
@@ -2462,7 +2462,7 @@ void MX_TIM1_Init(void)
  80014aa:	46bd      	mov	sp, r7
  80014ac:	bd80      	pop	{r7, pc}
  80014ae:	bf00      	nop
- 80014b0:	20000194 	.word	0x20000194
+ 80014b0:	2000019c 	.word	0x2000019c
  80014b4:	40012c00 	.word	0x40012c00
 
 080014b8 <HAL_TIM_Base_MspInit>:
@@ -2591,7 +2591,7 @@ void MX_USART2_UART_Init(void)
  8001556:	bf00      	nop
  8001558:	bd80      	pop	{r7, pc}
  800155a:	bf00      	nop
- 800155c:	200001e0 	.word	0x200001e0
+ 800155c:	200001e8 	.word	0x200001e8
  8001560:	40004400 	.word	0x40004400
 
 08001564 <HAL_UART_MspInit>:
@@ -2616,7 +2616,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
  8001580:	2288      	movs	r2, #136	@ 0x88
  8001582:	2100      	movs	r1, #0
  8001584:	4618      	mov	r0, r3
- 8001586:	f005 fb2c 	bl	8006be2 <memset>
+ 8001586:	f005 fb4c 	bl	8006c22 <memset>
   if(uartHandle->Instance==USART2)
  800158a:	687b      	ldr	r3, [r7, #4]
  800158c:	681b      	ldr	r3, [r3, #0]
@@ -2780,7 +2780,7 @@ LoopFillZerobss:
 
 /* Call static constructors */
     bl __libc_init_array
- 800164a:	f005 fad3 	bl	8006bf4 <__libc_init_array>
+ 800164a:	f005 faf3 	bl	8006c34 <__libc_init_array>
 /* Call the application's entry point.*/
 	bl	main
  800164e:	f7ff fd2d 	bl	80010ac <main>
@@ -2797,11 +2797,11 @@ LoopForever:
   ldr r1, =_edata
  800165c:	2000000c 	.word	0x2000000c
   ldr r2, =_sidata
- 8001660:	08006cc8 	.word	0x08006cc8
+ 8001660:	08006d08 	.word	0x08006d08
   ldr r2, =_sbss
  8001664:	2000000c 	.word	0x2000000c
   ldr r4, =_ebss
- 8001668:	2000026c 	.word	0x2000026c
+ 8001668:	20000274 	.word	0x20000274
 
 0800166c <ADC1_2_IRQHandler>:
  * @retval : None
@@ -2990,7 +2990,7 @@ __weak void HAL_IncTick(void)
  8001744:	4770      	bx	lr
  8001746:	bf00      	nop
  8001748:	20000008 	.word	0x20000008
- 800174c:	20000268 	.word	0x20000268
+ 800174c:	20000270 	.word	0x20000270
 
 08001750 <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -3010,7 +3010,7 @@ __weak uint32_t HAL_GetTick(void)
  800175c:	f85d 7b04 	ldr.w	r7, [sp], #4
  8001760:	4770      	bx	lr
  8001762:	bf00      	nop
- 8001764:	20000268 	.word	0x20000268
+ 8001764:	20000270 	.word	0x20000270
 
 08001768 <HAL_Delay>:
   *       implementations in user file.
@@ -9356,7 +9356,7 @@ HAL_StatusTypeDef HAL_RCC_OscConfig(RCC_OscInitTypeDef  *RCC_OscInitStruct)
  8003be4:	e014      	b.n	8003c10 <HAL_RCC_OscConfig+0x298>
  8003be6:	bf00      	nop
  8003be8:	40021000 	.word	0x40021000
- 8003bec:	08006c6c 	.word	0x08006c6c
+ 8003bec:	08006cac 	.word	0x08006cac
  8003bf0:	20000000 	.word	0x20000000
  8003bf4:	20000004 	.word	0x20000004
  8003bf8:	4ba0      	ldr	r3, [pc, #640]	@ (8003e7c <HAL_RCC_OscConfig+0x504>)
@@ -10661,7 +10661,7 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(const RCC_ClkInitTypeDef  *RCC_ClkInitStru
  800431a:	bd80      	pop	{r7, pc}
  800431c:	40022000 	.word	0x40022000
  8004320:	40021000 	.word	0x40021000
- 8004324:	08006c6c 	.word	0x08006c6c
+ 8004324:	08006cac 	.word	0x08006cac
  8004328:	20000000 	.word	0x20000000
  800432c:	20000004 	.word	0x20000004
 
@@ -10866,7 +10866,7 @@ uint32_t HAL_RCC_GetSysClockFreq(void)
  8004434:	4770      	bx	lr
  8004436:	bf00      	nop
  8004438:	40021000 	.word	0x40021000
- 800443c:	08006c84 	.word	0x08006c84
+ 800443c:	08006cc4 	.word	0x08006cc4
  8004440:	00f42400 	.word	0x00f42400
  8004444:	007a1200 	.word	0x007a1200
 
@@ -10915,7 +10915,7 @@ uint32_t HAL_RCC_GetPCLK1Freq(void)
  8004480:	4618      	mov	r0, r3
  8004482:	bd80      	pop	{r7, pc}
  8004484:	40021000 	.word	0x40021000
- 8004488:	08006c7c 	.word	0x08006c7c
+ 8004488:	08006cbc 	.word	0x08006cbc
 
 0800448c <HAL_RCC_GetPCLK2Freq>:
   * @note   Each time PCLK2 changes, this function must be called to update the
@@ -10942,7 +10942,7 @@ uint32_t HAL_RCC_GetPCLK2Freq(void)
  80044ac:	4618      	mov	r0, r3
  80044ae:	bd80      	pop	{r7, pc}
  80044b0:	40021000 	.word	0x40021000
- 80044b4:	08006c7c 	.word	0x08006c7c
+ 80044b4:	08006cbc 	.word	0x08006cbc
 
 080044b8 <RCC_SetFlashLatencyFromMSIRange>:
             voltage range.
@@ -16298,1193 +16298,1218 @@ static void Recalibrate(ALGOSTRUCT *instance)
  80062f0:	687b      	ldr	r3, [r7, #4]
  80062f2:	68da      	ldr	r2, [r3, #12]
  80062f4:	687b      	ldr	r3, [r7, #4]
- 80062f6:	645a      	str	r2, [r3, #68]	@ 0x44
+ 80062f6:	649a      	str	r2, [r3, #72]	@ 0x48
 
     instance->imLeadLag_T2 = instance->T2;
  80062f8:	687b      	ldr	r3, [r7, #4]
  80062fa:	691a      	ldr	r2, [r3, #16]
  80062fc:	687b      	ldr	r3, [r7, #4]
- 80062fe:	649a      	str	r2, [r3, #72]	@ 0x48
+ 80062fe:	64da      	str	r2, [r3, #76]	@ 0x4c
 
     instance->imLeadLag_TF_b[0] = instance->imLeadLag_K * instance->imLeadLag_T1;
  8006300:	687b      	ldr	r3, [r7, #4]
- 8006302:	ed93 7a2c 	vldr	s14, [r3, #176]	@ 0xb0
+ 8006302:	ed93 7a2e 	vldr	s14, [r3, #184]	@ 0xb8
  8006306:	687b      	ldr	r3, [r7, #4]
- 8006308:	edd3 7a11 	vldr	s15, [r3, #68]	@ 0x44
+ 8006308:	edd3 7a12 	vldr	s15, [r3, #72]	@ 0x48
  800630c:	ee67 7a27 	vmul.f32	s15, s14, s15
  8006310:	687b      	ldr	r3, [r7, #4]
- 8006312:	edc3 7a16 	vstr	s15, [r3, #88]	@ 0x58
+ 8006312:	edc3 7a17 	vstr	s15, [r3, #92]	@ 0x5c
 
     instance->imLeadLag_TF_b[1] = instance->imLeadLag_K;
  8006316:	687b      	ldr	r3, [r7, #4]
- 8006318:	f8d3 20b0 	ldr.w	r2, [r3, #176]	@ 0xb0
+ 8006318:	f8d3 20b8 	ldr.w	r2, [r3, #184]	@ 0xb8
  800631c:	687b      	ldr	r3, [r7, #4]
- 800631e:	65da      	str	r2, [r3, #92]	@ 0x5c
+ 800631e:	661a      	str	r2, [r3, #96]	@ 0x60
 
     instance->imLeadLag_T2_dummy = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
  8006320:	687b      	ldr	r3, [r7, #4]
- 8006322:	f103 04e8 	add.w	r4, r3, #232	@ 0xe8
+ 8006322:	f103 04f0 	add.w	r4, r3, #240	@ 0xf0
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
  8006326:	687b      	ldr	r3, [r7, #4]
- 8006328:	ed93 7a11 	vldr	s14, [r3, #68]	@ 0x44
+ 8006328:	ed93 7a12 	vldr	s14, [r3, #72]	@ 0x48
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag_T2;
  800632c:	687b      	ldr	r3, [r7, #4]
- 800632e:	edd3 7a12 	vldr	s15, [r3, #72]	@ 0x48
+ 800632e:	edd3 7a13 	vldr	s15, [r3, #76]	@ 0x4c
  8006332:	ee77 7a67 	vsub.f32	s15, s14, s15
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
  8006336:	eeb0 0a67 	vmov.f32	s0, s15
- 800633a:	f000 fc42 	bl	8006bc2 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 800633a:	f000 fc62 	bl	8006c02 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
  800633e:	eef0 7a40 	vmov.f32	s15, s0
     instance->imLeadLag_T2_dummy = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006342:	eddf 0a6b 	vldr	s1, [pc, #428]	@ 80064f0 <Recalibrate+0x208>
+ 8006342:	eddf 0a71 	vldr	s1, [pc, #452]	@ 8006508 <Recalibrate+0x220>
  8006346:	eeb0 0a67 	vmov.f32	s0, s15
  800634a:	4620      	mov	r0, r4
- 800634c:	f000 fbbe 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 800634c:	f000 fbde 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
  8006350:	4603      	mov	r3, r0
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag_T2;
  8006352:	2b00      	cmp	r3, #0
  8006354:	d102      	bne.n	800635c <Recalibrate+0x74>
  8006356:	687b      	ldr	r3, [r7, #4]
- 8006358:	6c9b      	ldr	r3, [r3, #72]	@ 0x48
+ 8006358:	6cdb      	ldr	r3, [r3, #76]	@ 0x4c
  800635a:	e000      	b.n	800635e <Recalibrate+0x76>
- 800635c:	4b65      	ldr	r3, [pc, #404]	@ (80064f4 <Recalibrate+0x20c>)
+ 800635c:	4b6b      	ldr	r3, [pc, #428]	@ (800650c <Recalibrate+0x224>)
     instance->imLeadLag_T2_dummy = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
  800635e:	687a      	ldr	r2, [r7, #4]
- 8006360:	64d3      	str	r3, [r2, #76]	@ 0x4c
+ 8006360:	6513      	str	r3, [r2, #80]	@ 0x50
 
     instance->imLeadLag_TF_a[0] = instance->imLeadLag_T2_dummy;
  8006362:	687b      	ldr	r3, [r7, #4]
- 8006364:	6cda      	ldr	r2, [r3, #76]	@ 0x4c
+ 8006364:	6d1a      	ldr	r2, [r3, #80]	@ 0x50
  8006366:	687b      	ldr	r3, [r7, #4]
- 8006368:	651a      	str	r2, [r3, #80]	@ 0x50
+ 8006368:	655a      	str	r2, [r3, #84]	@ 0x54
 
     instance->imLeadLag_TF_y_start = instance->imLeadLag_y_start;
  800636a:	687b      	ldr	r3, [r7, #4]
- 800636c:	f8d3 20b4 	ldr.w	r2, [r3, #180]	@ 0xb4
+ 800636c:	f8d3 20bc 	ldr.w	r2, [r3, #188]	@ 0xbc
  8006370:	687b      	ldr	r3, [r7, #4]
- 8006372:	66da      	str	r2, [r3, #108]	@ 0x6c
+ 8006372:	671a      	str	r2, [r3, #112]	@ 0x70
 
     instance->imLeadLag_TF_bb[0] = instance->imLeadLag_TF_b[0];
  8006374:	687b      	ldr	r3, [r7, #4]
- 8006376:	6d9a      	ldr	r2, [r3, #88]	@ 0x58
+ 8006376:	6dda      	ldr	r2, [r3, #92]	@ 0x5c
  8006378:	687b      	ldr	r3, [r7, #4]
- 800637a:	661a      	str	r2, [r3, #96]	@ 0x60
+ 800637a:	665a      	str	r2, [r3, #100]	@ 0x64
 
     instance->imLeadLag_TF_bb[1] = instance->imLeadLag_TF_b[1];
  800637c:	687b      	ldr	r3, [r7, #4]
- 800637e:	6dda      	ldr	r2, [r3, #92]	@ 0x5c
+ 800637e:	6e1a      	ldr	r2, [r3, #96]	@ 0x60
  8006380:	687b      	ldr	r3, [r7, #4]
- 8006382:	665a      	str	r2, [r3, #100]	@ 0x64
+ 8006382:	669a      	str	r2, [r3, #104]	@ 0x68
 
     instance->imLeadLag_TF_d = instance->imLeadLag_TF_bb[0] / instance->imLeadLag_TF_a[0];
  8006384:	687b      	ldr	r3, [r7, #4]
- 8006386:	edd3 6a18 	vldr	s13, [r3, #96]	@ 0x60
+ 8006386:	edd3 6a19 	vldr	s13, [r3, #100]	@ 0x64
  800638a:	687b      	ldr	r3, [r7, #4]
- 800638c:	ed93 7a14 	vldr	s14, [r3, #80]	@ 0x50
+ 800638c:	ed93 7a15 	vldr	s14, [r3, #84]	@ 0x54
  8006390:	eec6 7a87 	vdiv.f32	s15, s13, s14
  8006394:	687b      	ldr	r3, [r7, #4]
- 8006396:	edc3 7a1a 	vstr	s15, [r3, #104]	@ 0x68
+ 8006396:	edc3 7a1b 	vstr	s15, [r3, #108]	@ 0x6c
 
     instance->imLeadLag1_T1 = instance->T3;
  800639a:	687b      	ldr	r3, [r7, #4]
  800639c:	695a      	ldr	r2, [r3, #20]
  800639e:	687b      	ldr	r3, [r7, #4]
- 80063a0:	671a      	str	r2, [r3, #112]	@ 0x70
+ 80063a0:	675a      	str	r2, [r3, #116]	@ 0x74
 
     instance->imLeadLag1_T2 = instance->T4;
  80063a2:	687b      	ldr	r3, [r7, #4]
  80063a4:	699a      	ldr	r2, [r3, #24]
  80063a6:	687b      	ldr	r3, [r7, #4]
- 80063a8:	675a      	str	r2, [r3, #116]	@ 0x74
+ 80063a8:	679a      	str	r2, [r3, #120]	@ 0x78
 
     instance->imLeadLag1_TF_b[0] = instance->imLeadLag1_K * instance->imLeadLag1_T1;
  80063aa:	687b      	ldr	r3, [r7, #4]
- 80063ac:	ed93 7a2e 	vldr	s14, [r3, #184]	@ 0xb8
+ 80063ac:	ed93 7a30 	vldr	s14, [r3, #192]	@ 0xc0
  80063b0:	687b      	ldr	r3, [r7, #4]
- 80063b2:	edd3 7a1c 	vldr	s15, [r3, #112]	@ 0x70
+ 80063b2:	edd3 7a1d 	vldr	s15, [r3, #116]	@ 0x74
  80063b6:	ee67 7a27 	vmul.f32	s15, s14, s15
  80063ba:	687b      	ldr	r3, [r7, #4]
- 80063bc:	edc3 7a21 	vstr	s15, [r3, #132]	@ 0x84
+ 80063bc:	edc3 7a22 	vstr	s15, [r3, #136]	@ 0x88
 
     instance->imLeadLag1_TF_b[1] = instance->imLeadLag1_K;
  80063c0:	687b      	ldr	r3, [r7, #4]
- 80063c2:	f8d3 20b8 	ldr.w	r2, [r3, #184]	@ 0xb8
+ 80063c2:	f8d3 20c0 	ldr.w	r2, [r3, #192]	@ 0xc0
  80063c6:	687b      	ldr	r3, [r7, #4]
- 80063c8:	f8c3 2088 	str.w	r2, [r3, #136]	@ 0x88
+ 80063c8:	f8c3 208c 	str.w	r2, [r3, #140]	@ 0x8c
 
     instance->imLeadLag1_T2_dummy = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
  80063cc:	687b      	ldr	r3, [r7, #4]
- 80063ce:	f103 04e8 	add.w	r4, r3, #232	@ 0xe8
+ 80063ce:	f103 04f0 	add.w	r4, r3, #240	@ 0xf0
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
  80063d2:	687b      	ldr	r3, [r7, #4]
- 80063d4:	ed93 7a1c 	vldr	s14, [r3, #112]	@ 0x70
+ 80063d4:	ed93 7a1d 	vldr	s14, [r3, #116]	@ 0x74
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag1_T2;
  80063d8:	687b      	ldr	r3, [r7, #4]
- 80063da:	edd3 7a1d 	vldr	s15, [r3, #116]	@ 0x74
+ 80063da:	edd3 7a1e 	vldr	s15, [r3, #120]	@ 0x78
  80063de:	ee77 7a67 	vsub.f32	s15, s14, s15
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
  80063e2:	eeb0 0a67 	vmov.f32	s0, s15
- 80063e6:	f000 fbec 	bl	8006bc2 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 80063e6:	f000 fc0c 	bl	8006c02 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
  80063ea:	eef0 7a40 	vmov.f32	s15, s0
     instance->imLeadLag1_T2_dummy = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80063ee:	eddf 0a40 	vldr	s1, [pc, #256]	@ 80064f0 <Recalibrate+0x208>
+ 80063ee:	eddf 0a46 	vldr	s1, [pc, #280]	@ 8006508 <Recalibrate+0x220>
  80063f2:	eeb0 0a67 	vmov.f32	s0, s15
  80063f6:	4620      	mov	r0, r4
- 80063f8:	f000 fb68 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 80063f8:	f000 fb88 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
  80063fc:	4603      	mov	r3, r0
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? 1.0e+3 : instance->imLeadLag1_T2;
  80063fe:	2b00      	cmp	r3, #0
  8006400:	d102      	bne.n	8006408 <Recalibrate+0x120>
  8006402:	687b      	ldr	r3, [r7, #4]
- 8006404:	6f5b      	ldr	r3, [r3, #116]	@ 0x74
+ 8006404:	6f9b      	ldr	r3, [r3, #120]	@ 0x78
  8006406:	e000      	b.n	800640a <Recalibrate+0x122>
- 8006408:	4b3a      	ldr	r3, [pc, #232]	@ (80064f4 <Recalibrate+0x20c>)
+ 8006408:	4b40      	ldr	r3, [pc, #256]	@ (800650c <Recalibrate+0x224>)
     instance->imLeadLag1_T2_dummy = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
  800640a:	687a      	ldr	r2, [r7, #4]
- 800640c:	6793      	str	r3, [r2, #120]	@ 0x78
+ 800640c:	67d3      	str	r3, [r2, #124]	@ 0x7c
 
     instance->imLeadLag1_TF_a[0] = instance->imLeadLag1_T2_dummy;
  800640e:	687b      	ldr	r3, [r7, #4]
- 8006410:	6f9a      	ldr	r2, [r3, #120]	@ 0x78
+ 8006410:	6fda      	ldr	r2, [r3, #124]	@ 0x7c
  8006412:	687b      	ldr	r3, [r7, #4]
- 8006414:	67da      	str	r2, [r3, #124]	@ 0x7c
+ 8006414:	f8c3 2080 	str.w	r2, [r3, #128]	@ 0x80
 
     instance->imLeadLag1_TF_y_start = instance->imLeadLag1_y_start;
- 8006416:	687b      	ldr	r3, [r7, #4]
- 8006418:	f8d3 20bc 	ldr.w	r2, [r3, #188]	@ 0xbc
- 800641c:	687b      	ldr	r3, [r7, #4]
- 800641e:	f8c3 2098 	str.w	r2, [r3, #152]	@ 0x98
+ 8006418:	687b      	ldr	r3, [r7, #4]
+ 800641a:	f8d3 20c4 	ldr.w	r2, [r3, #196]	@ 0xc4
+ 800641e:	687b      	ldr	r3, [r7, #4]
+ 8006420:	f8c3 209c 	str.w	r2, [r3, #156]	@ 0x9c
 
     instance->imLeadLag1_TF_bb[0] = instance->imLeadLag1_TF_b[0];
- 8006422:	687b      	ldr	r3, [r7, #4]
- 8006424:	f8d3 2084 	ldr.w	r2, [r3, #132]	@ 0x84
- 8006428:	687b      	ldr	r3, [r7, #4]
- 800642a:	f8c3 208c 	str.w	r2, [r3, #140]	@ 0x8c
+ 8006424:	687b      	ldr	r3, [r7, #4]
+ 8006426:	f8d3 2088 	ldr.w	r2, [r3, #136]	@ 0x88
+ 800642a:	687b      	ldr	r3, [r7, #4]
+ 800642c:	f8c3 2090 	str.w	r2, [r3, #144]	@ 0x90
 
     instance->imLeadLag1_TF_bb[1] = instance->imLeadLag1_TF_b[1];
- 800642e:	687b      	ldr	r3, [r7, #4]
- 8006430:	f8d3 2088 	ldr.w	r2, [r3, #136]	@ 0x88
- 8006434:	687b      	ldr	r3, [r7, #4]
- 8006436:	f8c3 2090 	str.w	r2, [r3, #144]	@ 0x90
+ 8006430:	687b      	ldr	r3, [r7, #4]
+ 8006432:	f8d3 208c 	ldr.w	r2, [r3, #140]	@ 0x8c
+ 8006436:	687b      	ldr	r3, [r7, #4]
+ 8006438:	f8c3 2094 	str.w	r2, [r3, #148]	@ 0x94
 
     instance->imLeadLag1_TF_d = instance->imLeadLag1_TF_bb[0] / instance->imLeadLag1_TF_a[0];
- 800643a:	687b      	ldr	r3, [r7, #4]
- 800643c:	edd3 6a23 	vldr	s13, [r3, #140]	@ 0x8c
- 8006440:	687b      	ldr	r3, [r7, #4]
- 8006442:	ed93 7a1f 	vldr	s14, [r3, #124]	@ 0x7c
- 8006446:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 800644a:	687b      	ldr	r3, [r7, #4]
- 800644c:	edc3 7a25 	vstr	s15, [r3, #148]	@ 0x94
+ 800643c:	687b      	ldr	r3, [r7, #4]
+ 800643e:	edd3 6a24 	vldr	s13, [r3, #144]	@ 0x90
+ 8006442:	687b      	ldr	r3, [r7, #4]
+ 8006444:	ed93 7a20 	vldr	s14, [r3, #128]	@ 0x80
+ 8006448:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 800644c:	687b      	ldr	r3, [r7, #4]
+ 800644e:	edc3 7a26 	vstr	s15, [r3, #152]	@ 0x98
 
     instance->limiter_uMax = instance->vsmax;
- 8006450:	687b      	ldr	r3, [r7, #4]
- 8006452:	6ada      	ldr	r2, [r3, #44]	@ 0x2c
- 8006454:	687b      	ldr	r3, [r7, #4]
- 8006456:	f8c3 209c 	str.w	r2, [r3, #156]	@ 0x9c
+ 8006452:	687b      	ldr	r3, [r7, #4]
+ 8006454:	6ada      	ldr	r2, [r3, #44]	@ 0x2c
+ 8006456:	687b      	ldr	r3, [r7, #4]
+ 8006458:	f8c3 20a0 	str.w	r2, [r3, #160]	@ 0xa0
 
     instance->limiter_uMin = instance->vsmin;
- 800645a:	687b      	ldr	r3, [r7, #4]
- 800645c:	6b1a      	ldr	r2, [r3, #48]	@ 0x30
- 800645e:	687b      	ldr	r3, [r7, #4]
- 8006460:	f8c3 20a0 	str.w	r2, [r3, #160]	@ 0xa0
+ 800645c:	687b      	ldr	r3, [r7, #4]
+ 800645e:	6b1a      	ldr	r2, [r3, #48]	@ 0x30
+ 8006460:	687b      	ldr	r3, [r7, #4]
+ 8006462:	f8c3 20a4 	str.w	r2, [r3, #164]	@ 0xa4
 
     instance->lpf_freqHz = instance->freqLow;
- 8006464:	687b      	ldr	r3, [r7, #4]
- 8006466:	6a1a      	ldr	r2, [r3, #32]
- 8006468:	687b      	ldr	r3, [r7, #4]
- 800646a:	f8c3 20ac 	str.w	r2, [r3, #172]	@ 0xac
+ 8006466:	687b      	ldr	r3, [r7, #4]
+ 8006468:	6a1a      	ldr	r2, [r3, #32]
+ 800646a:	687b      	ldr	r3, [r7, #4]
+ 800646c:	f8c3 20b0 	str.w	r2, [r3, #176]	@ 0xb0
 
     instance->lpf_K = instance->kLPF;
- 800646e:	687b      	ldr	r3, [r7, #4]
- 8006470:	6a5a      	ldr	r2, [r3, #36]	@ 0x24
- 8006472:	687b      	ldr	r3, [r7, #4]
- 8006474:	f8c3 20a4 	str.w	r2, [r3, #164]	@ 0xa4
+ 8006470:	687b      	ldr	r3, [r7, #4]
+ 8006472:	6a5a      	ldr	r2, [r3, #36]	@ 0x24
+ 8006474:	687b      	ldr	r3, [r7, #4]
+ 8006476:	f8c3 20a8 	str.w	r2, [r3, #168]	@ 0xa8
 
     instance->lpf_T = 1.0 / (6.28318530717958623 * instance->lpf_freqHz);
- 8006478:	687b      	ldr	r3, [r7, #4]
- 800647a:	f8d3 30ac 	ldr.w	r3, [r3, #172]	@ 0xac
- 800647e:	4618      	mov	r0, r3
- 8006480:	f7fa f806 	bl	8000490 <__aeabi_f2d>
- 8006484:	a318      	add	r3, pc, #96	@ (adr r3, 80064e8 <Recalibrate+0x200>)
- 8006486:	e9d3 2300 	ldrd	r2, r3, [r3]
- 800648a:	f7fa f859 	bl	8000540 <__aeabi_dmul>
- 800648e:	4602      	mov	r2, r0
- 8006490:	460b      	mov	r3, r1
- 8006492:	f04f 0000 	mov.w	r0, #0
- 8006496:	4918      	ldr	r1, [pc, #96]	@ (80064f8 <Recalibrate+0x210>)
- 8006498:	f7fa f97c 	bl	8000794 <__aeabi_ddiv>
- 800649c:	4602      	mov	r2, r0
- 800649e:	460b      	mov	r3, r1
- 80064a0:	4610      	mov	r0, r2
- 80064a2:	4619      	mov	r1, r3
- 80064a4:	f7fa fa5e 	bl	8000964 <__aeabi_d2f>
- 80064a8:	4602      	mov	r2, r0
- 80064aa:	687b      	ldr	r3, [r7, #4]
- 80064ac:	f8c3 20a8 	str.w	r2, [r3, #168]	@ 0xa8
+ 800647a:	687b      	ldr	r3, [r7, #4]
+ 800647c:	f8d3 30b0 	ldr.w	r3, [r3, #176]	@ 0xb0
+ 8006480:	4618      	mov	r0, r3
+ 8006482:	f7fa f805 	bl	8000490 <__aeabi_f2d>
+ 8006486:	a31e      	add	r3, pc, #120	@ (adr r3, 8006500 <Recalibrate+0x218>)
+ 8006488:	e9d3 2300 	ldrd	r2, r3, [r3]
+ 800648c:	f7fa f858 	bl	8000540 <__aeabi_dmul>
+ 8006490:	4602      	mov	r2, r0
+ 8006492:	460b      	mov	r3, r1
+ 8006494:	f04f 0000 	mov.w	r0, #0
+ 8006498:	491d      	ldr	r1, [pc, #116]	@ (8006510 <Recalibrate+0x228>)
+ 800649a:	f7fa f97b 	bl	8000794 <__aeabi_ddiv>
+ 800649e:	4602      	mov	r2, r0
+ 80064a0:	460b      	mov	r3, r1
+ 80064a2:	4610      	mov	r0, r2
+ 80064a4:	4619      	mov	r1, r3
+ 80064a6:	f7fa fa5d 	bl	8000964 <__aeabi_d2f>
+ 80064aa:	4602      	mov	r2, r0
+ 80064ac:	687b      	ldr	r3, [r7, #4]
+ 80064ae:	f8c3 20ac 	str.w	r2, [r3, #172]	@ 0xac
 
     instance->dLHPFreplacement_Kw = instance->Kw;
- 80064b0:	687b      	ldr	r3, [r7, #4]
- 80064b2:	689a      	ldr	r2, [r3, #8]
- 80064b4:	687b      	ldr	r3, [r7, #4]
- 80064b6:	639a      	str	r2, [r3, #56]	@ 0x38
+ 80064b2:	687b      	ldr	r3, [r7, #4]
+ 80064b4:	689a      	ldr	r2, [r3, #8]
+ 80064b6:	687b      	ldr	r3, [r7, #4]
+ 80064b8:	63da      	str	r2, [r3, #60]	@ 0x3c
 
     instance->dLHPFreplacement_Tw = instance->Tw;
- 80064b8:	687b      	ldr	r3, [r7, #4]
- 80064ba:	69da      	ldr	r2, [r3, #28]
- 80064bc:	687b      	ldr	r3, [r7, #4]
- 80064be:	641a      	str	r2, [r3, #64]	@ 0x40
+ 80064ba:	687b      	ldr	r3, [r7, #4]
+ 80064bc:	69da      	ldr	r2, [r3, #28]
+ 80064be:	687b      	ldr	r3, [r7, #4]
+ 80064c0:	645a      	str	r2, [r3, #68]	@ 0x44
 
     instance->dLHPFreplacement_K = instance->dLHPFreplacement_Kw * instance->dLHPFreplacement_Tw;
- 80064c0:	687b      	ldr	r3, [r7, #4]
- 80064c2:	ed93 7a0e 	vldr	s14, [r3, #56]	@ 0x38
- 80064c6:	687b      	ldr	r3, [r7, #4]
- 80064c8:	edd3 7a10 	vldr	s15, [r3, #64]	@ 0x40
- 80064cc:	ee67 7a27 	vmul.f32	s15, s14, s15
- 80064d0:	687b      	ldr	r3, [r7, #4]
- 80064d2:	edc3 7a0d 	vstr	s15, [r3, #52]	@ 0x34
+ 80064c2:	687b      	ldr	r3, [r7, #4]
+ 80064c4:	ed93 7a0f 	vldr	s14, [r3, #60]	@ 0x3c
+ 80064c8:	687b      	ldr	r3, [r7, #4]
+ 80064ca:	edd3 7a11 	vldr	s15, [r3, #68]	@ 0x44
+ 80064ce:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 80064d2:	687b      	ldr	r3, [r7, #4]
+ 80064d4:	edc3 7a0e 	vstr	s15, [r3, #56]	@ 0x38
 
     instance->dLHPFreplacement_T = instance->dLHPFreplacement_Tw;
- 80064d6:	687b      	ldr	r3, [r7, #4]
- 80064d8:	6c1a      	ldr	r2, [r3, #64]	@ 0x40
- 80064da:	687b      	ldr	r3, [r7, #4]
- 80064dc:	63da      	str	r2, [r3, #60]	@ 0x3c
-}
- 80064de:	bf00      	nop
- 80064e0:	370c      	adds	r7, #12
- 80064e2:	46bd      	mov	sp, r7
- 80064e4:	bd90      	pop	{r4, r7, pc}
- 80064e6:	bf00      	nop
- 80064e8:	54442d18 	.word	0x54442d18
- 80064ec:	401921fb 	.word	0x401921fb
- 80064f0:	25800000 	.word	0x25800000
- 80064f4:	447a0000 	.word	0x447a0000
- 80064f8:	3ff00000 	.word	0x3ff00000
+ 80064d8:	687b      	ldr	r3, [r7, #4]
+ 80064da:	6c5a      	ldr	r2, [r3, #68]	@ 0x44
+ 80064dc:	687b      	ldr	r3, [r7, #4]
+ 80064de:	641a      	str	r2, [r3, #64]	@ 0x40
 
-080064fc <Reinitialize>:
+    instance->scale_k = 1.0 / instance->wscale;
+ 80064e0:	687b      	ldr	r3, [r7, #4]
+ 80064e2:	ed93 7a0d 	vldr	s14, [r3, #52]	@ 0x34
+ 80064e6:	eef7 6a00 	vmov.f32	s13, #112	@ 0x3f800000  1.0
+ 80064ea:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 80064ee:	687b      	ldr	r3, [r7, #4]
+ 80064f0:	edc3 7a2d 	vstr	s15, [r3, #180]	@ 0xb4
+}
+ 80064f4:	bf00      	nop
+ 80064f6:	370c      	adds	r7, #12
+ 80064f8:	46bd      	mov	sp, r7
+ 80064fa:	bd90      	pop	{r4, r7, pc}
+ 80064fc:	f3af 8000 	nop.w
+ 8006500:	54442d18 	.word	0x54442d18
+ 8006504:	401921fb 	.word	0x401921fb
+ 8006508:	25800000 	.word	0x25800000
+ 800650c:	447a0000 	.word	0x447a0000
+ 8006510:	3ff00000 	.word	0x3ff00000
+
+08006514 <Reinitialize>:
 
 static void Reinitialize(ALGOSTRUCT *instance)
 {
- 80064fc:	b590      	push	{r4, r7, lr}
- 80064fe:	b089      	sub	sp, #36	@ 0x24
- 8006500:	af00      	add	r7, sp, #0
- 8006502:	6078      	str	r0, [r7, #4]
+ 8006514:	b590      	push	{r4, r7, lr}
+ 8006516:	b08b      	sub	sp, #44	@ 0x2c
+ 8006518:	af00      	add	r7, sp, #0
+ 800651a:	6078      	str	r0, [r7, #4]
     /* Algorithm */
     /*
     Initialize variables without explicit start value or equation (implicit initializations):
     */
 
     instance->der_imLeadLag_TF_x_scaled_1 = 0.0;
- 8006504:	687b      	ldr	r3, [r7, #4]
- 8006506:	f04f 0200 	mov.w	r2, #0
- 800650a:	f8c3 20cc 	str.w	r2, [r3, #204]	@ 0xcc
+ 800651c:	687b      	ldr	r3, [r7, #4]
+ 800651e:	f04f 0200 	mov.w	r2, #0
+ 8006522:	f8c3 20d4 	str.w	r2, [r3, #212]	@ 0xd4
 
     instance->der_imLeadLag1_TF_x_scaled_1 = 0.0;
- 800650e:	687b      	ldr	r3, [r7, #4]
- 8006510:	f04f 0200 	mov.w	r2, #0
- 8006514:	f8c3 20d4 	str.w	r2, [r3, #212]	@ 0xd4
+ 8006526:	687b      	ldr	r3, [r7, #4]
+ 8006528:	f04f 0200 	mov.w	r2, #0
+ 800652c:	f8c3 20dc 	str.w	r2, [r3, #220]	@ 0xdc
 
     /*
     Initialize variables with start value equation (dependent initializations):
     */
 
     instance->der_dLHPFreplacement_x = 0.0;
- 8006518:	687b      	ldr	r3, [r7, #4]
- 800651a:	f04f 0200 	mov.w	r2, #0
- 800651e:	f8c3 20c4 	str.w	r2, [r3, #196]	@ 0xc4
+ 8006530:	687b      	ldr	r3, [r7, #4]
+ 8006532:	f04f 0200 	mov.w	r2, #0
+ 8006536:	f8c3 20cc 	str.w	r2, [r3, #204]	@ 0xcc
 
     instance->der_lpf_x = 0.0;
- 8006522:	687b      	ldr	r3, [r7, #4]
- 8006524:	f04f 0200 	mov.w	r2, #0
- 8006528:	f8c3 20dc 	str.w	r2, [r3, #220]	@ 0xdc
+ 800653a:	687b      	ldr	r3, [r7, #4]
+ 800653c:	f04f 0200 	mov.w	r2, #0
+ 8006540:	f8c3 20e4 	str.w	r2, [r3, #228]	@ 0xe4
 
-    instance->dLHPFreplacement_x = (instance->vSI * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
- 800652c:	687b      	ldr	r3, [r7, #4]
- 800652e:	ed93 7a00 	vldr	s14, [r3]
- 8006532:	687b      	ldr	r3, [r7, #4]
- 8006534:	edd3 7a0f 	vldr	s15, [r3, #60]	@ 0x3c
- 8006538:	ee67 6a27 	vmul.f32	s13, s14, s15
- 800653c:	687b      	ldr	r3, [r7, #4]
- 800653e:	ed93 7a0f 	vldr	s14, [r3, #60]	@ 0x3c
- 8006542:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8006546:	687b      	ldr	r3, [r7, #4]
- 8006548:	edc3 7a32 	vstr	s15, [r3, #200]	@ 0xc8
+    dLHPFreplacement_u = instance->scale_k * instance->vSI;
+ 8006544:	687b      	ldr	r3, [r7, #4]
+ 8006546:	ed93 7a2d 	vldr	s14, [r3, #180]	@ 0xb4
+ 800654a:	687b      	ldr	r3, [r7, #4]
+ 800654c:	edd3 7a00 	vldr	s15, [r3]
+ 8006550:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8006554:	edc7 7a09 	vstr	s15, [r7, #36]	@ 0x24
 
-    lpf_u = (instance->dLHPFreplacement_K * (instance->vSI - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
- 800654c:	687b      	ldr	r3, [r7, #4]
- 800654e:	ed93 7a0d 	vldr	s14, [r3, #52]	@ 0x34
- 8006552:	687b      	ldr	r3, [r7, #4]
- 8006554:	edd3 6a00 	vldr	s13, [r3]
+    instance->dLHPFreplacement_x = (dLHPFreplacement_u * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
  8006558:	687b      	ldr	r3, [r7, #4]
- 800655a:	edd3 7a32 	vldr	s15, [r3, #200]	@ 0xc8
- 800655e:	ee76 7ae7 	vsub.f32	s15, s13, s15
+ 800655a:	ed93 7a10 	vldr	s14, [r3, #64]	@ 0x40
+ 800655e:	edd7 7a09 	vldr	s15, [r7, #36]	@ 0x24
  8006562:	ee67 6a27 	vmul.f32	s13, s14, s15
  8006566:	687b      	ldr	r3, [r7, #4]
- 8006568:	ed93 7a0f 	vldr	s14, [r3, #60]	@ 0x3c
+ 8006568:	ed93 7a10 	vldr	s14, [r3, #64]	@ 0x40
  800656c:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8006570:	edc7 7a07 	vstr	s15, [r7, #28]
+ 8006570:	687b      	ldr	r3, [r7, #4]
+ 8006572:	edc3 7a34 	vstr	s15, [r3, #208]	@ 0xd0
+
+    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+ 8006576:	687b      	ldr	r3, [r7, #4]
+ 8006578:	ed93 7a0e 	vldr	s14, [r3, #56]	@ 0x38
+ 800657c:	687b      	ldr	r3, [r7, #4]
+ 800657e:	edd3 7a34 	vldr	s15, [r3, #208]	@ 0xd0
+ 8006582:	edd7 6a09 	vldr	s13, [r7, #36]	@ 0x24
+ 8006586:	ee76 7ae7 	vsub.f32	s15, s13, s15
+ 800658a:	ee67 6a27 	vmul.f32	s13, s14, s15
+ 800658e:	687b      	ldr	r3, [r7, #4]
+ 8006590:	ed93 7a10 	vldr	s14, [r3, #64]	@ 0x40
+ 8006594:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8006598:	edc7 7a08 	vstr	s15, [r7, #32]
 
     instance->lpf_x = (lpf_u * instance->lpf_T) / instance->lpf_T;
- 8006574:	687b      	ldr	r3, [r7, #4]
- 8006576:	ed93 7a2a 	vldr	s14, [r3, #168]	@ 0xa8
- 800657a:	edd7 7a07 	vldr	s15, [r7, #28]
- 800657e:	ee67 6a27 	vmul.f32	s13, s14, s15
- 8006582:	687b      	ldr	r3, [r7, #4]
- 8006584:	ed93 7a2a 	vldr	s14, [r3, #168]	@ 0xa8
- 8006588:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 800658c:	687b      	ldr	r3, [r7, #4]
- 800658e:	edc3 7a38 	vstr	s15, [r3, #224]	@ 0xe0
+ 800659c:	687b      	ldr	r3, [r7, #4]
+ 800659e:	ed93 7a2b 	vldr	s14, [r3, #172]	@ 0xac
+ 80065a2:	edd7 7a08 	vldr	s15, [r7, #32]
+ 80065a6:	ee67 6a27 	vmul.f32	s13, s14, s15
+ 80065aa:	687b      	ldr	r3, [r7, #4]
+ 80065ac:	ed93 7a2b 	vldr	s14, [r3, #172]	@ 0xac
+ 80065b0:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 80065b4:	687b      	ldr	r3, [r7, #4]
+ 80065b6:	edc3 7a3a 	vstr	s15, [r3, #232]	@ 0xe8
 
     imLeadLag_u = instance->lpf_K * instance->lpf_x;
- 8006592:	687b      	ldr	r3, [r7, #4]
- 8006594:	ed93 7a29 	vldr	s14, [r3, #164]	@ 0xa4
- 8006598:	687b      	ldr	r3, [r7, #4]
- 800659a:	edd3 7a38 	vldr	s15, [r3, #224]	@ 0xe0
- 800659e:	ee67 7a27 	vmul.f32	s15, s14, s15
- 80065a2:	edc7 7a06 	vstr	s15, [r7, #24]
+ 80065ba:	687b      	ldr	r3, [r7, #4]
+ 80065bc:	ed93 7a2a 	vldr	s14, [r3, #168]	@ 0xa8
+ 80065c0:	687b      	ldr	r3, [r7, #4]
+ 80065c2:	edd3 7a3a 	vldr	s15, [r3, #232]	@ 0xe8
+ 80065c6:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 80065ca:	edc7 7a07 	vstr	s15, [r7, #28]
 
     imLeadLag_TF_y = instance->imLeadLag_TF_y_start;
- 80065a6:	687b      	ldr	r3, [r7, #4]
- 80065a8:	6edb      	ldr	r3, [r3, #108]	@ 0x6c
- 80065aa:	617b      	str	r3, [r7, #20]
+ 80065ce:	687b      	ldr	r3, [r7, #4]
+ 80065d0:	6f1b      	ldr	r3, [r3, #112]	@ 0x70
+ 80065d2:	61bb      	str	r3, [r7, #24]
 
     instance->imLeadLag_TF_x_scaled[0] = ((instance->imLeadLag_TF_d * imLeadLag_u) - imLeadLag_TF_y) / (instance->imLeadLag_TF_d \
- 80065ac:	687b      	ldr	r3, [r7, #4]
- 80065ae:	ed93 7a1a 	vldr	s14, [r3, #104]	@ 0x68
- 80065b2:	edd7 7a06 	vldr	s15, [r7, #24]
- 80065b6:	ee27 7a27 	vmul.f32	s14, s14, s15
- 80065ba:	edd7 7a05 	vldr	s15, [r7, #20]
- 80065be:	ee77 6a67 	vsub.f32	s13, s14, s15
- 80065c2:	687b      	ldr	r3, [r7, #4]
- 80065c4:	ed93 7a1a 	vldr	s14, [r3, #104]	@ 0x68
+ 80065d4:	687b      	ldr	r3, [r7, #4]
+ 80065d6:	ed93 7a1b 	vldr	s14, [r3, #108]	@ 0x6c
+ 80065da:	edd7 7a07 	vldr	s15, [r7, #28]
+ 80065de:	ee27 7a27 	vmul.f32	s14, s14, s15
+ 80065e2:	edd7 7a06 	vldr	s15, [r7, #24]
+ 80065e6:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 80065ea:	687b      	ldr	r3, [r7, #4]
+ 80065ec:	ed93 7a1b 	vldr	s14, [r3, #108]	@ 0x6c
         - instance->imLeadLag_TF_bb[1]);
- 80065c8:	687b      	ldr	r3, [r7, #4]
- 80065ca:	edd3 7a19 	vldr	s15, [r3, #100]	@ 0x64
- 80065ce:	ee37 7a67 	vsub.f32	s14, s14, s15
+ 80065f0:	687b      	ldr	r3, [r7, #4]
+ 80065f2:	edd3 7a1a 	vldr	s15, [r3, #104]	@ 0x68
+ 80065f6:	ee37 7a67 	vsub.f32	s14, s14, s15
     instance->imLeadLag_TF_x_scaled[0] = ((instance->imLeadLag_TF_d * imLeadLag_u) - imLeadLag_TF_y) / (instance->imLeadLag_TF_d \
- 80065d2:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 80065d6:	687b      	ldr	r3, [r7, #4]
- 80065d8:	edc3 7a34 	vstr	s15, [r3, #208]	@ 0xd0
+ 80065fa:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 80065fe:	687b      	ldr	r3, [r7, #4]
+ 8006600:	edc3 7a36 	vstr	s15, [r3, #216]	@ 0xd8
 
     imLeadLag_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80065dc:	687b      	ldr	r3, [r7, #4]
- 80065de:	f103 04e8 	add.w	r4, r3, #232	@ 0xe8
+ 8006604:	687b      	ldr	r3, [r7, #4]
+ 8006606:	f103 04f0 	add.w	r4, r3, #240	@ 0xf0
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
- 80065e2:	687b      	ldr	r3, [r7, #4]
- 80065e4:	ed93 7a11 	vldr	s14, [r3, #68]	@ 0x44
+ 800660a:	687b      	ldr	r3, [r7, #4]
+ 800660c:	ed93 7a12 	vldr	s14, [r3, #72]	@ 0x48
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
- 80065e8:	687b      	ldr	r3, [r7, #4]
- 80065ea:	edd3 7a12 	vldr	s15, [r3, #72]	@ 0x48
- 80065ee:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8006610:	687b      	ldr	r3, [r7, #4]
+ 8006612:	edd3 7a13 	vldr	s15, [r3, #76]	@ 0x4c
+ 8006616:	ee77 7a67 	vsub.f32	s15, s14, s15
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
- 80065f2:	eeb0 0a67 	vmov.f32	s0, s15
- 80065f6:	f000 fae4 	bl	8006bc2 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 80065fa:	eef0 7a40 	vmov.f32	s15, s0
+ 800661a:	eeb0 0a67 	vmov.f32	s0, s15
+ 800661e:	f000 faf0 	bl	8006c02 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006622:	eef0 7a40 	vmov.f32	s15, s0
     imLeadLag_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80065fe:	eddf 0a46 	vldr	s1, [pc, #280]	@ 8006718 <Reinitialize+0x21c>
- 8006602:	eeb0 0a67 	vmov.f32	s0, s15
- 8006606:	4620      	mov	r0, r4
- 8006608:	f000 fa60 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 800660c:	4603      	mov	r3, r0
+ 8006626:	eddf 0a46 	vldr	s1, [pc, #280]	@ 8006740 <Reinitialize+0x22c>
+ 800662a:	eeb0 0a67 	vmov.f32	s0, s15
+ 800662e:	4620      	mov	r0, r4
+ 8006630:	f000 fa6c 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006634:	4603      	mov	r3, r0
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
- 800660e:	2b00      	cmp	r3, #0
- 8006610:	d007      	beq.n	8006622 <Reinitialize+0x126>
- 8006612:	687b      	ldr	r3, [r7, #4]
- 8006614:	ed93 7a2c 	vldr	s14, [r3, #176]	@ 0xb0
- 8006618:	edd7 7a06 	vldr	s15, [r7, #24]
- 800661c:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8006620:	e001      	b.n	8006626 <Reinitialize+0x12a>
- 8006622:	edd7 7a05 	vldr	s15, [r7, #20]
+ 8006636:	2b00      	cmp	r3, #0
+ 8006638:	d007      	beq.n	800664a <Reinitialize+0x136>
+ 800663a:	687b      	ldr	r3, [r7, #4]
+ 800663c:	ed93 7a2e 	vldr	s14, [r3, #184]	@ 0xb8
+ 8006640:	edd7 7a07 	vldr	s15, [r7, #28]
+ 8006644:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8006648:	e001      	b.n	800664e <Reinitialize+0x13a>
+ 800664a:	edd7 7a06 	vldr	s15, [r7, #24]
     imLeadLag_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006626:	edc7 7a04 	vstr	s15, [r7, #16]
+ 800664e:	edc7 7a05 	vstr	s15, [r7, #20]
 
     imLeadLag1_TF_y = instance->imLeadLag1_TF_y_start;
- 800662a:	687b      	ldr	r3, [r7, #4]
- 800662c:	f8d3 3098 	ldr.w	r3, [r3, #152]	@ 0x98
- 8006630:	60fb      	str	r3, [r7, #12]
+ 8006652:	687b      	ldr	r3, [r7, #4]
+ 8006654:	f8d3 309c 	ldr.w	r3, [r3, #156]	@ 0x9c
+ 8006658:	613b      	str	r3, [r7, #16]
 
     instance->imLeadLag1_TF_x_scaled[0] = ((instance->imLeadLag1_TF_d * imLeadLag_y) - imLeadLag1_TF_y) / (instance->imLeadLag1_TF_d \
- 8006632:	687b      	ldr	r3, [r7, #4]
- 8006634:	ed93 7a25 	vldr	s14, [r3, #148]	@ 0x94
- 8006638:	edd7 7a04 	vldr	s15, [r7, #16]
- 800663c:	ee27 7a27 	vmul.f32	s14, s14, s15
- 8006640:	edd7 7a03 	vldr	s15, [r7, #12]
- 8006644:	ee77 6a67 	vsub.f32	s13, s14, s15
- 8006648:	687b      	ldr	r3, [r7, #4]
- 800664a:	ed93 7a25 	vldr	s14, [r3, #148]	@ 0x94
+ 800665a:	687b      	ldr	r3, [r7, #4]
+ 800665c:	ed93 7a26 	vldr	s14, [r3, #152]	@ 0x98
+ 8006660:	edd7 7a05 	vldr	s15, [r7, #20]
+ 8006664:	ee27 7a27 	vmul.f32	s14, s14, s15
+ 8006668:	edd7 7a04 	vldr	s15, [r7, #16]
+ 800666c:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 8006670:	687b      	ldr	r3, [r7, #4]
+ 8006672:	ed93 7a26 	vldr	s14, [r3, #152]	@ 0x98
         - instance->imLeadLag1_TF_bb[1]);
- 800664e:	687b      	ldr	r3, [r7, #4]
- 8006650:	edd3 7a24 	vldr	s15, [r3, #144]	@ 0x90
- 8006654:	ee37 7a67 	vsub.f32	s14, s14, s15
+ 8006676:	687b      	ldr	r3, [r7, #4]
+ 8006678:	edd3 7a25 	vldr	s15, [r3, #148]	@ 0x94
+ 800667c:	ee37 7a67 	vsub.f32	s14, s14, s15
     instance->imLeadLag1_TF_x_scaled[0] = ((instance->imLeadLag1_TF_d * imLeadLag_y) - imLeadLag1_TF_y) / (instance->imLeadLag1_TF_d \
- 8006658:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 800665c:	687b      	ldr	r3, [r7, #4]
- 800665e:	edc3 7a36 	vstr	s15, [r3, #216]	@ 0xd8
+ 8006680:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8006684:	687b      	ldr	r3, [r7, #4]
+ 8006686:	edc3 7a38 	vstr	s15, [r3, #224]	@ 0xe0
 
     imLeadLag1_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006662:	687b      	ldr	r3, [r7, #4]
- 8006664:	f103 04e8 	add.w	r4, r3, #232	@ 0xe8
+ 800668a:	687b      	ldr	r3, [r7, #4]
+ 800668c:	f103 04f0 	add.w	r4, r3, #240	@ 0xf0
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
- 8006668:	687b      	ldr	r3, [r7, #4]
- 800666a:	ed93 7a1c 	vldr	s14, [r3, #112]	@ 0x70
+ 8006690:	687b      	ldr	r3, [r7, #4]
+ 8006692:	ed93 7a1d 	vldr	s14, [r3, #116]	@ 0x74
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
- 800666e:	687b      	ldr	r3, [r7, #4]
- 8006670:	edd3 7a1d 	vldr	s15, [r3, #116]	@ 0x74
- 8006674:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8006696:	687b      	ldr	r3, [r7, #4]
+ 8006698:	edd3 7a1e 	vldr	s15, [r3, #120]	@ 0x78
+ 800669c:	ee77 7a67 	vsub.f32	s15, s14, s15
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
- 8006678:	eeb0 0a67 	vmov.f32	s0, s15
- 800667c:	f000 faa1 	bl	8006bc2 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006680:	eef0 7a40 	vmov.f32	s15, s0
+ 80066a0:	eeb0 0a67 	vmov.f32	s0, s15
+ 80066a4:	f000 faad 	bl	8006c02 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 80066a8:	eef0 7a40 	vmov.f32	s15, s0
     imLeadLag1_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006684:	eddf 0a24 	vldr	s1, [pc, #144]	@ 8006718 <Reinitialize+0x21c>
- 8006688:	eeb0 0a67 	vmov.f32	s0, s15
- 800668c:	4620      	mov	r0, r4
- 800668e:	f000 fa1d 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006692:	4603      	mov	r3, r0
+ 80066ac:	eddf 0a24 	vldr	s1, [pc, #144]	@ 8006740 <Reinitialize+0x22c>
+ 80066b0:	eeb0 0a67 	vmov.f32	s0, s15
+ 80066b4:	4620      	mov	r0, r4
+ 80066b6:	f000 fa29 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 80066ba:	4603      	mov	r3, r0
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
- 8006694:	2b00      	cmp	r3, #0
- 8006696:	d007      	beq.n	80066a8 <Reinitialize+0x1ac>
- 8006698:	687b      	ldr	r3, [r7, #4]
- 800669a:	ed93 7a2e 	vldr	s14, [r3, #184]	@ 0xb8
- 800669e:	edd7 7a04 	vldr	s15, [r7, #16]
- 80066a2:	ee67 7a27 	vmul.f32	s15, s14, s15
- 80066a6:	e001      	b.n	80066ac <Reinitialize+0x1b0>
- 80066a8:	edd7 7a03 	vldr	s15, [r7, #12]
+ 80066bc:	2b00      	cmp	r3, #0
+ 80066be:	d007      	beq.n	80066d0 <Reinitialize+0x1bc>
+ 80066c0:	687b      	ldr	r3, [r7, #4]
+ 80066c2:	ed93 7a30 	vldr	s14, [r3, #192]	@ 0xc0
+ 80066c6:	edd7 7a05 	vldr	s15, [r7, #20]
+ 80066ca:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 80066ce:	e001      	b.n	80066d4 <Reinitialize+0x1c0>
+ 80066d0:	edd7 7a04 	vldr	s15, [r7, #16]
     imLeadLag1_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80066ac:	edc7 7a02 	vstr	s15, [r7, #8]
+ 80066d4:	edc7 7a03 	vstr	s15, [r7, #12]
 
     instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80066b0:	687b      	ldr	r3, [r7, #4]
- 80066b2:	f103 02e8 	add.w	r2, r3, #232	@ 0xe8
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80066b6:	687b      	ldr	r3, [r7, #4]
- 80066b8:	edd3 7a27 	vldr	s15, [r3, #156]	@ 0x9c
-    instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80066bc:	eef0 0a67 	vmov.f32	s1, s15
- 80066c0:	ed97 0a02 	vldr	s0, [r7, #8]
- 80066c4:	4610      	mov	r0, r2
- 80066c6:	f000 fa33 	bl	8006b30 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 80066ca:	4603      	mov	r3, r0
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80066cc:	2b00      	cmp	r3, #0
- 80066ce:	d003      	beq.n	80066d8 <Reinitialize+0x1dc>
- 80066d0:	687b      	ldr	r3, [r7, #4]
- 80066d2:	f8d3 309c 	ldr.w	r3, [r3, #156]	@ 0x9c
- 80066d6:	e014      	b.n	8006702 <Reinitialize+0x206>
  80066d8:	687b      	ldr	r3, [r7, #4]
- 80066da:	f103 02e8 	add.w	r2, r3, #232	@ 0xe8
-        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+ 80066da:	f103 02f0 	add.w	r2, r3, #240	@ 0xf0
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
  80066de:	687b      	ldr	r3, [r7, #4]
  80066e0:	edd3 7a28 	vldr	s15, [r3, #160]	@ 0xa0
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+    instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
  80066e4:	eef0 0a67 	vmov.f32	s1, s15
- 80066e8:	ed97 0a02 	vldr	s0, [r7, #8]
+ 80066e8:	ed97 0a03 	vldr	s0, [r7, #12]
  80066ec:	4610      	mov	r0, r2
- 80066ee:	f000 f9ed 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 80066ee:	f000 fa3f 	bl	8006b70 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
  80066f2:	4603      	mov	r3, r0
-        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
  80066f4:	2b00      	cmp	r3, #0
- 80066f6:	d003      	beq.n	8006700 <Reinitialize+0x204>
+ 80066f6:	d003      	beq.n	8006700 <Reinitialize+0x1ec>
  80066f8:	687b      	ldr	r3, [r7, #4]
  80066fa:	f8d3 30a0 	ldr.w	r3, [r3, #160]	@ 0xa0
- 80066fe:	e000      	b.n	8006702 <Reinitialize+0x206>
- 8006700:	68bb      	ldr	r3, [r7, #8]
+ 80066fe:	e014      	b.n	800672a <Reinitialize+0x216>
+ 8006700:	687b      	ldr	r3, [r7, #4]
+ 8006702:	f103 02f0 	add.w	r2, r3, #240	@ 0xf0
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+ 8006706:	687b      	ldr	r3, [r7, #4]
+ 8006708:	edd3 7a29 	vldr	s15, [r3, #164]	@ 0xa4
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 800670c:	eef0 0a67 	vmov.f32	s1, s15
+ 8006710:	ed97 0a03 	vldr	s0, [r7, #12]
+ 8006714:	4610      	mov	r0, r2
+ 8006716:	f000 f9f9 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 800671a:	4603      	mov	r3, r0
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+ 800671c:	2b00      	cmp	r3, #0
+ 800671e:	d003      	beq.n	8006728 <Reinitialize+0x214>
+ 8006720:	687b      	ldr	r3, [r7, #4]
+ 8006722:	f8d3 30a4 	ldr.w	r3, [r3, #164]	@ 0xa4
+ 8006726:	e000      	b.n	800672a <Reinitialize+0x216>
+ 8006728:	68fb      	ldr	r3, [r7, #12]
     instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006702:	687a      	ldr	r2, [r7, #4]
- 8006704:	6053      	str	r3, [r2, #4]
+ 800672a:	687a      	ldr	r2, [r7, #4]
+ 800672c:	6053      	str	r3, [r2, #4]
 
     /* Conduct delta(t) = 0 super-dense time initialization at next sampling:: */
 
     instance->discrete_stepSize_active = false;
- 8006706:	687b      	ldr	r3, [r7, #4]
- 8006708:	2200      	movs	r2, #0
- 800670a:	f883 20e4 	strb.w	r2, [r3, #228]	@ 0xe4
+ 800672e:	687b      	ldr	r3, [r7, #4]
+ 8006730:	2200      	movs	r2, #0
+ 8006732:	f883 20ec 	strb.w	r2, [r3, #236]	@ 0xec
 }
- 800670e:	bf00      	nop
- 8006710:	3724      	adds	r7, #36	@ 0x24
- 8006712:	46bd      	mov	sp, r7
- 8006714:	bd90      	pop	{r4, r7, pc}
- 8006716:	bf00      	nop
- 8006718:	25800000 	.word	0x25800000
+ 8006736:	bf00      	nop
+ 8006738:	372c      	adds	r7, #44	@ 0x2c
+ 800673a:	46bd      	mov	sp, r7
+ 800673c:	bd90      	pop	{r4, r7, pc}
+ 800673e:	bf00      	nop
+ 8006740:	25800000 	.word	0x25800000
 
-0800671c <Startup>:
+08006744 <Startup>:
 
 static void Startup(ALGOSTRUCT *instance)
 {
- 800671c:	b580      	push	{r7, lr}
- 800671e:	b082      	sub	sp, #8
- 8006720:	af00      	add	r7, sp, #0
- 8006722:	6078      	str	r0, [r7, #4]
+ 8006744:	b580      	push	{r7, lr}
+ 8006746:	b082      	sub	sp, #8
+ 8006748:	af00      	add	r7, sp, #0
+ 800674a:	6078      	str	r0, [r7, #4]
     /* ********************************************************************************************** Initialize constants: */
     /*
     Initialize variables with explicit start value (independent initializations):
     */
 
     instance->discrete_stepSize = 2.0000000000000001e-4;
- 8006724:	687b      	ldr	r3, [r7, #4]
- 8006726:	4a25      	ldr	r2, [pc, #148]	@ (80067bc <Startup+0xa0>)
- 8006728:	f8c3 20c0 	str.w	r2, [r3, #192]	@ 0xc0
+ 800674c:	687b      	ldr	r3, [r7, #4]
+ 800674e:	4a26      	ldr	r2, [pc, #152]	@ (80067e8 <Startup+0xa4>)
+ 8006750:	f8c3 20c8 	str.w	r2, [r3, #200]	@ 0xc8
 
     instance->imLeadLag_K = 1.0;
- 800672c:	687b      	ldr	r3, [r7, #4]
- 800672e:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
- 8006732:	f8c3 20b0 	str.w	r2, [r3, #176]	@ 0xb0
+ 8006754:	687b      	ldr	r3, [r7, #4]
+ 8006756:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 800675a:	f8c3 20b8 	str.w	r2, [r3, #184]	@ 0xb8
 
     instance->imLeadLag1_K = 1.0;
- 8006736:	687b      	ldr	r3, [r7, #4]
- 8006738:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
- 800673c:	f8c3 20b8 	str.w	r2, [r3, #184]	@ 0xb8
+ 800675e:	687b      	ldr	r3, [r7, #4]
+ 8006760:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 8006764:	f8c3 20c0 	str.w	r2, [r3, #192]	@ 0xc0
 
     instance->imLeadLag1_y_start = 0.0;
- 8006740:	687b      	ldr	r3, [r7, #4]
- 8006742:	f04f 0200 	mov.w	r2, #0
- 8006746:	f8c3 20bc 	str.w	r2, [r3, #188]	@ 0xbc
+ 8006768:	687b      	ldr	r3, [r7, #4]
+ 800676a:	f04f 0200 	mov.w	r2, #0
+ 800676e:	f8c3 20c4 	str.w	r2, [r3, #196]	@ 0xc4
 
     instance->imLeadLag_y_start = 0.0;
- 800674a:	687b      	ldr	r3, [r7, #4]
- 800674c:	f04f 0200 	mov.w	r2, #0
- 8006750:	f8c3 20b4 	str.w	r2, [r3, #180]	@ 0xb4
+ 8006772:	687b      	ldr	r3, [r7, #4]
+ 8006774:	f04f 0200 	mov.w	r2, #0
+ 8006778:	f8c3 20bc 	str.w	r2, [r3, #188]	@ 0xbc
     /* ******************************************************* Default initialize tuneable parameters (based on constants): */
     /*
     Initialize variables with explicit start value (independent initializations):
     */
 
+    instance->wscale = 5.0e+1;
+ 800677c:	687b      	ldr	r3, [r7, #4]
+ 800677e:	4a1b      	ldr	r2, [pc, #108]	@ (80067ec <Startup+0xa8>)
+ 8006780:	635a      	str	r2, [r3, #52]	@ 0x34
+
     instance->Tw = 2.5e-1;
- 8006754:	687b      	ldr	r3, [r7, #4]
- 8006756:	f04f 527a 	mov.w	r2, #1048576000	@ 0x3e800000
- 800675a:	61da      	str	r2, [r3, #28]
+ 8006782:	687b      	ldr	r3, [r7, #4]
+ 8006784:	f04f 527a 	mov.w	r2, #1048576000	@ 0x3e800000
+ 8006788:	61da      	str	r2, [r3, #28]
 
     instance->Kw = 2.70000000000000018;
- 800675c:	687b      	ldr	r3, [r7, #4]
- 800675e:	4a18      	ldr	r2, [pc, #96]	@ (80067c0 <Startup+0xa4>)
- 8006760:	609a      	str	r2, [r3, #8]
+ 800678a:	687b      	ldr	r3, [r7, #4]
+ 800678c:	4a18      	ldr	r2, [pc, #96]	@ (80067f0 <Startup+0xac>)
+ 800678e:	609a      	str	r2, [r3, #8]
 
     instance->kLPF = 1.0;
- 8006762:	687b      	ldr	r3, [r7, #4]
- 8006764:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
- 8006768:	625a      	str	r2, [r3, #36]	@ 0x24
+ 8006790:	687b      	ldr	r3, [r7, #4]
+ 8006792:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 8006796:	625a      	str	r2, [r3, #36]	@ 0x24
 
     instance->freqLow = 5.0;
- 800676a:	687b      	ldr	r3, [r7, #4]
- 800676c:	4a15      	ldr	r2, [pc, #84]	@ (80067c4 <Startup+0xa8>)
- 800676e:	621a      	str	r2, [r3, #32]
+ 8006798:	687b      	ldr	r3, [r7, #4]
+ 800679a:	4a16      	ldr	r2, [pc, #88]	@ (80067f4 <Startup+0xb0>)
+ 800679c:	621a      	str	r2, [r3, #32]
 
     instance->vsmin = -1.5;
- 8006770:	687b      	ldr	r3, [r7, #4]
- 8006772:	4a15      	ldr	r2, [pc, #84]	@ (80067c8 <Startup+0xac>)
- 8006774:	631a      	str	r2, [r3, #48]	@ 0x30
+ 800679e:	687b      	ldr	r3, [r7, #4]
+ 80067a0:	4a15      	ldr	r2, [pc, #84]	@ (80067f8 <Startup+0xb4>)
+ 80067a2:	631a      	str	r2, [r3, #48]	@ 0x30
 
     instance->vsmax = 1.5;
- 8006776:	687b      	ldr	r3, [r7, #4]
- 8006778:	f04f 527f 	mov.w	r2, #1069547520	@ 0x3fc00000
- 800677c:	62da      	str	r2, [r3, #44]	@ 0x2c
+ 80067a4:	687b      	ldr	r3, [r7, #4]
+ 80067a6:	f04f 527f 	mov.w	r2, #1069547520	@ 0x3fc00000
+ 80067aa:	62da      	str	r2, [r3, #44]	@ 0x2c
 
     instance->T4 = 5.56202789619913984e-2;
- 800677e:	687b      	ldr	r3, [r7, #4]
- 8006780:	4a12      	ldr	r2, [pc, #72]	@ (80067cc <Startup+0xb0>)
- 8006782:	619a      	str	r2, [r3, #24]
+ 80067ac:	687b      	ldr	r3, [r7, #4]
+ 80067ae:	4a13      	ldr	r2, [pc, #76]	@ (80067fc <Startup+0xb8>)
+ 80067b0:	619a      	str	r2, [r3, #24]
 
     instance->T3 = 3.24178742588019986e-1;
- 8006784:	687b      	ldr	r3, [r7, #4]
- 8006786:	4a12      	ldr	r2, [pc, #72]	@ (80067d0 <Startup+0xb4>)
- 8006788:	615a      	str	r2, [r3, #20]
+ 80067b2:	687b      	ldr	r3, [r7, #4]
+ 80067b4:	4a12      	ldr	r2, [pc, #72]	@ (8006800 <Startup+0xbc>)
+ 80067b6:	615a      	str	r2, [r3, #20]
 
     instance->T2 = 5.56202789619913984e-2;
- 800678a:	687b      	ldr	r3, [r7, #4]
- 800678c:	4a0f      	ldr	r2, [pc, #60]	@ (80067cc <Startup+0xb0>)
- 800678e:	611a      	str	r2, [r3, #16]
+ 80067b8:	687b      	ldr	r3, [r7, #4]
+ 80067ba:	4a10      	ldr	r2, [pc, #64]	@ (80067fc <Startup+0xb8>)
+ 80067bc:	611a      	str	r2, [r3, #16]
 
     instance->T1 = 3.24178742588019986e-1;
- 8006790:	687b      	ldr	r3, [r7, #4]
- 8006792:	4a0f      	ldr	r2, [pc, #60]	@ (80067d0 <Startup+0xb4>)
- 8006794:	60da      	str	r2, [r3, #12]
+ 80067be:	687b      	ldr	r3, [r7, #4]
+ 80067c0:	4a0f      	ldr	r2, [pc, #60]	@ (8006800 <Startup+0xbc>)
+ 80067c2:	60da      	str	r2, [r3, #12]
 
     instance->vSI_start = 1.0;
- 8006796:	687b      	ldr	r3, [r7, #4]
- 8006798:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
- 800679c:	629a      	str	r2, [r3, #40]	@ 0x28
+ 80067c4:	687b      	ldr	r3, [r7, #4]
+ 80067c6:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
+ 80067ca:	629a      	str	r2, [r3, #40]	@ 0x28
 
     /* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
 
     Recalibrate(instance);
- 800679e:	6878      	ldr	r0, [r7, #4]
- 80067a0:	f7ff fda2 	bl	80062e8 <Recalibrate>
+ 80067cc:	6878      	ldr	r0, [r7, #4]
+ 80067ce:	f7ff fd8b 	bl	80062e8 <Recalibrate>
     /* ***************************************************** Default initialize inputs (based on constants and parameters): */
     /*
     Initialize variables with start value equation (dependent initializations):
     */
 
     instance->vSI = instance->vSI_start;
- 80067a4:	687b      	ldr	r3, [r7, #4]
- 80067a6:	6a9a      	ldr	r2, [r3, #40]	@ 0x28
- 80067a8:	687b      	ldr	r3, [r7, #4]
- 80067aa:	601a      	str	r2, [r3, #0]
+ 80067d2:	687b      	ldr	r3, [r7, #4]
+ 80067d4:	6a9a      	ldr	r2, [r3, #40]	@ 0x28
+ 80067d6:	687b      	ldr	r3, [r7, #4]
+ 80067d8:	601a      	str	r2, [r3, #0]
 
     /* ********************************* Default initialize states and outputs (based on constants, parameters and inputs): */
 
     Reinitialize(instance);
- 80067ac:	6878      	ldr	r0, [r7, #4]
- 80067ae:	f7ff fea5 	bl	80064fc <Reinitialize>
+ 80067da:	6878      	ldr	r0, [r7, #4]
+ 80067dc:	f7ff fe9a 	bl	8006514 <Reinitialize>
 }
- 80067b2:	bf00      	nop
- 80067b4:	3708      	adds	r7, #8
- 80067b6:	46bd      	mov	sp, r7
- 80067b8:	bd80      	pop	{r7, pc}
- 80067ba:	bf00      	nop
- 80067bc:	3951b717 	.word	0x3951b717
- 80067c0:	402ccccd 	.word	0x402ccccd
- 80067c4:	40a00000 	.word	0x40a00000
- 80067c8:	bfc00000 	.word	0xbfc00000
- 80067cc:	3d63d217 	.word	0x3d63d217
- 80067d0:	3ea5fac2 	.word	0x3ea5fac2
+ 80067e0:	bf00      	nop
+ 80067e2:	3708      	adds	r7, #8
+ 80067e4:	46bd      	mov	sp, r7
+ 80067e6:	bd80      	pop	{r7, pc}
+ 80067e8:	3951b717 	.word	0x3951b717
+ 80067ec:	42480000 	.word	0x42480000
+ 80067f0:	402ccccd 	.word	0x402ccccd
+ 80067f4:	40a00000 	.word	0x40a00000
+ 80067f8:	bfc00000 	.word	0xbfc00000
+ 80067fc:	3d63d217 	.word	0x3d63d217
+ 8006800:	3ea5fac2 	.word	0x3ea5fac2
 
-080067d4 <DoStep>:
+08006804 <DoStep>:
 
 static void DoStep(ALGOSTRUCT *instance)
 {
- 80067d4:	b590      	push	{r4, r7, lr}
- 80067d6:	b089      	sub	sp, #36	@ 0x24
- 80067d8:	af00      	add	r7, sp, #0
- 80067da:	6078      	str	r0, [r7, #4]
+ 8006804:	b590      	push	{r4, r7, lr}
+ 8006806:	b08b      	sub	sp, #44	@ 0x2c
+ 8006808:	af00      	add	r7, sp, #0
+ 800680a:	6078      	str	r0, [r7, #4]
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_u;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
- 80067dc:	687b      	ldr	r3, [r7, #4]
- 80067de:	f893 30e4 	ldrb.w	r3, [r3, #228]	@ 0xe4
- 80067e2:	2b00      	cmp	r3, #0
- 80067e4:	d03f      	beq.n	8006866 <DoStep+0x92>
+ 800680c:	687b      	ldr	r3, [r7, #4]
+ 800680e:	f893 30ec 	ldrb.w	r3, [r3, #236]	@ 0xec
+ 8006812:	2b00      	cmp	r3, #0
+ 8006814:	d03f      	beq.n	8006896 <DoStep+0x92>
         /* *********************************************************************** Update-equations for inline integration: */
 
         instance->dLHPFreplacement_x += instance->discrete_stepSize * instance->der_dLHPFreplacement_x;
- 80067e6:	687b      	ldr	r3, [r7, #4]
- 80067e8:	ed93 7a32 	vldr	s14, [r3, #200]	@ 0xc8
- 80067ec:	687b      	ldr	r3, [r7, #4]
- 80067ee:	edd3 6a30 	vldr	s13, [r3, #192]	@ 0xc0
- 80067f2:	687b      	ldr	r3, [r7, #4]
- 80067f4:	edd3 7a31 	vldr	s15, [r3, #196]	@ 0xc4
- 80067f8:	ee66 7aa7 	vmul.f32	s15, s13, s15
- 80067fc:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8006800:	687b      	ldr	r3, [r7, #4]
- 8006802:	edc3 7a32 	vstr	s15, [r3, #200]	@ 0xc8
+ 8006816:	687b      	ldr	r3, [r7, #4]
+ 8006818:	ed93 7a34 	vldr	s14, [r3, #208]	@ 0xd0
+ 800681c:	687b      	ldr	r3, [r7, #4]
+ 800681e:	edd3 6a32 	vldr	s13, [r3, #200]	@ 0xc8
+ 8006822:	687b      	ldr	r3, [r7, #4]
+ 8006824:	edd3 7a33 	vldr	s15, [r3, #204]	@ 0xcc
+ 8006828:	ee66 7aa7 	vmul.f32	s15, s13, s15
+ 800682c:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8006830:	687b      	ldr	r3, [r7, #4]
+ 8006832:	edc3 7a34 	vstr	s15, [r3, #208]	@ 0xd0
 
         instance->lpf_x += instance->discrete_stepSize * instance->der_lpf_x;
- 8006806:	687b      	ldr	r3, [r7, #4]
- 8006808:	ed93 7a38 	vldr	s14, [r3, #224]	@ 0xe0
- 800680c:	687b      	ldr	r3, [r7, #4]
- 800680e:	edd3 6a30 	vldr	s13, [r3, #192]	@ 0xc0
- 8006812:	687b      	ldr	r3, [r7, #4]
- 8006814:	edd3 7a37 	vldr	s15, [r3, #220]	@ 0xdc
- 8006818:	ee66 7aa7 	vmul.f32	s15, s13, s15
- 800681c:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8006820:	687b      	ldr	r3, [r7, #4]
- 8006822:	edc3 7a38 	vstr	s15, [r3, #224]	@ 0xe0
+ 8006836:	687b      	ldr	r3, [r7, #4]
+ 8006838:	ed93 7a3a 	vldr	s14, [r3, #232]	@ 0xe8
+ 800683c:	687b      	ldr	r3, [r7, #4]
+ 800683e:	edd3 6a32 	vldr	s13, [r3, #200]	@ 0xc8
+ 8006842:	687b      	ldr	r3, [r7, #4]
+ 8006844:	edd3 7a39 	vldr	s15, [r3, #228]	@ 0xe4
+ 8006848:	ee66 7aa7 	vmul.f32	s15, s13, s15
+ 800684c:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8006850:	687b      	ldr	r3, [r7, #4]
+ 8006852:	edc3 7a3a 	vstr	s15, [r3, #232]	@ 0xe8
 
         instance->imLeadLag_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag_TF_x_scaled_1;
- 8006826:	687b      	ldr	r3, [r7, #4]
- 8006828:	ed93 7a34 	vldr	s14, [r3, #208]	@ 0xd0
- 800682c:	687b      	ldr	r3, [r7, #4]
- 800682e:	edd3 6a30 	vldr	s13, [r3, #192]	@ 0xc0
- 8006832:	687b      	ldr	r3, [r7, #4]
- 8006834:	edd3 7a33 	vldr	s15, [r3, #204]	@ 0xcc
- 8006838:	ee66 7aa7 	vmul.f32	s15, s13, s15
- 800683c:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8006840:	687b      	ldr	r3, [r7, #4]
- 8006842:	edc3 7a34 	vstr	s15, [r3, #208]	@ 0xd0
+ 8006856:	687b      	ldr	r3, [r7, #4]
+ 8006858:	ed93 7a36 	vldr	s14, [r3, #216]	@ 0xd8
+ 800685c:	687b      	ldr	r3, [r7, #4]
+ 800685e:	edd3 6a32 	vldr	s13, [r3, #200]	@ 0xc8
+ 8006862:	687b      	ldr	r3, [r7, #4]
+ 8006864:	edd3 7a35 	vldr	s15, [r3, #212]	@ 0xd4
+ 8006868:	ee66 7aa7 	vmul.f32	s15, s13, s15
+ 800686c:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8006870:	687b      	ldr	r3, [r7, #4]
+ 8006872:	edc3 7a36 	vstr	s15, [r3, #216]	@ 0xd8
 
         instance->imLeadLag1_TF_x_scaled[0] += instance->discrete_stepSize * instance->der_imLeadLag1_TF_x_scaled_1;
- 8006846:	687b      	ldr	r3, [r7, #4]
- 8006848:	ed93 7a36 	vldr	s14, [r3, #216]	@ 0xd8
- 800684c:	687b      	ldr	r3, [r7, #4]
- 800684e:	edd3 6a30 	vldr	s13, [r3, #192]	@ 0xc0
- 8006852:	687b      	ldr	r3, [r7, #4]
- 8006854:	edd3 7a35 	vldr	s15, [r3, #212]	@ 0xd4
- 8006858:	ee66 7aa7 	vmul.f32	s15, s13, s15
- 800685c:	ee77 7a27 	vadd.f32	s15, s14, s15
- 8006860:	687b      	ldr	r3, [r7, #4]
- 8006862:	edc3 7a36 	vstr	s15, [r3, #216]	@ 0xd8
+ 8006876:	687b      	ldr	r3, [r7, #4]
+ 8006878:	ed93 7a38 	vldr	s14, [r3, #224]	@ 0xe0
+ 800687c:	687b      	ldr	r3, [r7, #4]
+ 800687e:	edd3 6a32 	vldr	s13, [r3, #200]	@ 0xc8
+ 8006882:	687b      	ldr	r3, [r7, #4]
+ 8006884:	edd3 7a37 	vldr	s15, [r3, #220]	@ 0xdc
+ 8006888:	ee66 7aa7 	vmul.f32	s15, s13, s15
+ 800688c:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8006890:	687b      	ldr	r3, [r7, #4]
+ 8006892:	edc3 7a38 	vstr	s15, [r3, #224]	@ 0xe0
         /* no action */;
     }
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    instance->der_dLHPFreplacement_x = (instance->vSI - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
- 8006866:	687b      	ldr	r3, [r7, #4]
- 8006868:	ed93 7a00 	vldr	s14, [r3]
- 800686c:	687b      	ldr	r3, [r7, #4]
- 800686e:	edd3 7a32 	vldr	s15, [r3, #200]	@ 0xc8
- 8006872:	ee77 6a67 	vsub.f32	s13, s14, s15
- 8006876:	687b      	ldr	r3, [r7, #4]
- 8006878:	ed93 7a0f 	vldr	s14, [r3, #60]	@ 0x3c
- 800687c:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8006880:	687b      	ldr	r3, [r7, #4]
- 8006882:	edc3 7a31 	vstr	s15, [r3, #196]	@ 0xc4
+    dLHPFreplacement_u = instance->scale_k * instance->vSI;
+ 8006896:	687b      	ldr	r3, [r7, #4]
+ 8006898:	ed93 7a2d 	vldr	s14, [r3, #180]	@ 0xb4
+ 800689c:	687b      	ldr	r3, [r7, #4]
+ 800689e:	edd3 7a00 	vldr	s15, [r3]
+ 80068a2:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 80068a6:	edc7 7a09 	vstr	s15, [r7, #36]	@ 0x24
 
-    lpf_u = (instance->dLHPFreplacement_K * (instance->vSI - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
- 8006886:	687b      	ldr	r3, [r7, #4]
- 8006888:	ed93 7a0d 	vldr	s14, [r3, #52]	@ 0x34
- 800688c:	687b      	ldr	r3, [r7, #4]
- 800688e:	edd3 6a00 	vldr	s13, [r3]
- 8006892:	687b      	ldr	r3, [r7, #4]
- 8006894:	edd3 7a32 	vldr	s15, [r3, #200]	@ 0xc8
- 8006898:	ee76 7ae7 	vsub.f32	s15, s13, s15
- 800689c:	ee67 6a27 	vmul.f32	s13, s14, s15
- 80068a0:	687b      	ldr	r3, [r7, #4]
- 80068a2:	ed93 7a0f 	vldr	s14, [r3, #60]	@ 0x3c
- 80068a6:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 80068aa:	edc7 7a07 	vstr	s15, [r7, #28]
+    instance->der_dLHPFreplacement_x = (dLHPFreplacement_u - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
+ 80068aa:	687b      	ldr	r3, [r7, #4]
+ 80068ac:	edd3 7a34 	vldr	s15, [r3, #208]	@ 0xd0
+ 80068b0:	ed97 7a09 	vldr	s14, [r7, #36]	@ 0x24
+ 80068b4:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 80068b8:	687b      	ldr	r3, [r7, #4]
+ 80068ba:	ed93 7a10 	vldr	s14, [r3, #64]	@ 0x40
+ 80068be:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 80068c2:	687b      	ldr	r3, [r7, #4]
+ 80068c4:	edc3 7a33 	vstr	s15, [r3, #204]	@ 0xcc
+
+    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+ 80068c8:	687b      	ldr	r3, [r7, #4]
+ 80068ca:	ed93 7a0e 	vldr	s14, [r3, #56]	@ 0x38
+ 80068ce:	687b      	ldr	r3, [r7, #4]
+ 80068d0:	edd3 7a34 	vldr	s15, [r3, #208]	@ 0xd0
+ 80068d4:	edd7 6a09 	vldr	s13, [r7, #36]	@ 0x24
+ 80068d8:	ee76 7ae7 	vsub.f32	s15, s13, s15
+ 80068dc:	ee67 6a27 	vmul.f32	s13, s14, s15
+ 80068e0:	687b      	ldr	r3, [r7, #4]
+ 80068e2:	ed93 7a10 	vldr	s14, [r3, #64]	@ 0x40
+ 80068e6:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 80068ea:	edc7 7a08 	vstr	s15, [r7, #32]
 
     instance->der_lpf_x = (lpf_u - instance->lpf_x) / instance->lpf_T;
- 80068ae:	687b      	ldr	r3, [r7, #4]
- 80068b0:	edd3 7a38 	vldr	s15, [r3, #224]	@ 0xe0
- 80068b4:	ed97 7a07 	vldr	s14, [r7, #28]
- 80068b8:	ee77 6a67 	vsub.f32	s13, s14, s15
- 80068bc:	687b      	ldr	r3, [r7, #4]
- 80068be:	ed93 7a2a 	vldr	s14, [r3, #168]	@ 0xa8
- 80068c2:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 80068c6:	687b      	ldr	r3, [r7, #4]
- 80068c8:	edc3 7a37 	vstr	s15, [r3, #220]	@ 0xdc
+ 80068ee:	687b      	ldr	r3, [r7, #4]
+ 80068f0:	edd3 7a3a 	vldr	s15, [r3, #232]	@ 0xe8
+ 80068f4:	ed97 7a08 	vldr	s14, [r7, #32]
+ 80068f8:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 80068fc:	687b      	ldr	r3, [r7, #4]
+ 80068fe:	ed93 7a2b 	vldr	s14, [r3, #172]	@ 0xac
+ 8006902:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8006906:	687b      	ldr	r3, [r7, #4]
+ 8006908:	edc3 7a39 	vstr	s15, [r3, #228]	@ 0xe4
 
     imLeadLag_u = instance->lpf_K * instance->lpf_x;
- 80068cc:	687b      	ldr	r3, [r7, #4]
- 80068ce:	ed93 7a29 	vldr	s14, [r3, #164]	@ 0xa4
- 80068d2:	687b      	ldr	r3, [r7, #4]
- 80068d4:	edd3 7a38 	vldr	s15, [r3, #224]	@ 0xe0
- 80068d8:	ee67 7a27 	vmul.f32	s15, s14, s15
- 80068dc:	edc7 7a06 	vstr	s15, [r7, #24]
+ 800690c:	687b      	ldr	r3, [r7, #4]
+ 800690e:	ed93 7a2a 	vldr	s14, [r3, #168]	@ 0xa8
+ 8006912:	687b      	ldr	r3, [r7, #4]
+ 8006914:	edd3 7a3a 	vldr	s15, [r3, #232]	@ 0xe8
+ 8006918:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 800691c:	edc7 7a07 	vstr	s15, [r7, #28]
 
     instance->der_imLeadLag_TF_x_scaled_1 = (imLeadLag_u - instance->imLeadLag_TF_x_scaled[0]) / instance->imLeadLag_TF_a[0];
- 80068e0:	687b      	ldr	r3, [r7, #4]
- 80068e2:	edd3 7a34 	vldr	s15, [r3, #208]	@ 0xd0
- 80068e6:	ed97 7a06 	vldr	s14, [r7, #24]
- 80068ea:	ee77 6a67 	vsub.f32	s13, s14, s15
- 80068ee:	687b      	ldr	r3, [r7, #4]
- 80068f0:	ed93 7a14 	vldr	s14, [r3, #80]	@ 0x50
- 80068f4:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 80068f8:	687b      	ldr	r3, [r7, #4]
- 80068fa:	edc3 7a33 	vstr	s15, [r3, #204]	@ 0xcc
-
-    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled[0]) + \
- 80068fe:	687b      	ldr	r3, [r7, #4]
- 8006900:	ed93 7a19 	vldr	s14, [r3, #100]	@ 0x64
- 8006904:	687b      	ldr	r3, [r7, #4]
- 8006906:	edd3 7a1a 	vldr	s15, [r3, #104]	@ 0x68
- 800690a:	ee37 7a67 	vsub.f32	s14, s14, s15
- 800690e:	687b      	ldr	r3, [r7, #4]
- 8006910:	edd3 7a34 	vldr	s15, [r3, #208]	@ 0xd0
- 8006914:	ee27 7a27 	vmul.f32	s14, s14, s15
-        (instance->imLeadLag_TF_d * imLeadLag_u);
- 8006918:	687b      	ldr	r3, [r7, #4]
- 800691a:	edd3 6a1a 	vldr	s13, [r3, #104]	@ 0x68
- 800691e:	edd7 7a06 	vldr	s15, [r7, #24]
- 8006922:	ee66 7aa7 	vmul.f32	s15, s13, s15
-    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled[0]) + \
- 8006926:	ee77 7a27 	vadd.f32	s15, s14, s15
- 800692a:	edc7 7a05 	vstr	s15, [r7, #20]
-
-    imLeadLag_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 8006920:	687b      	ldr	r3, [r7, #4]
+ 8006922:	edd3 7a36 	vldr	s15, [r3, #216]	@ 0xd8
+ 8006926:	ed97 7a07 	vldr	s14, [r7, #28]
+ 800692a:	ee77 6a67 	vsub.f32	s13, s14, s15
  800692e:	687b      	ldr	r3, [r7, #4]
- 8006930:	f103 04e8 	add.w	r4, r3, #232	@ 0xe8
-        SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
- 8006934:	687b      	ldr	r3, [r7, #4]
- 8006936:	ed93 7a11 	vldr	s14, [r3, #68]	@ 0x44
-        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
- 800693a:	687b      	ldr	r3, [r7, #4]
- 800693c:	edd3 7a12 	vldr	s15, [r3, #72]	@ 0x48
- 8006940:	ee77 7a67 	vsub.f32	s15, s14, s15
-        SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
- 8006944:	eeb0 0a67 	vmov.f32	s0, s15
- 8006948:	f000 f93b 	bl	8006bc2 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 800694c:	eef0 7a40 	vmov.f32	s15, s0
+ 8006930:	ed93 7a15 	vldr	s14, [r3, #84]	@ 0x54
+ 8006934:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 8006938:	687b      	ldr	r3, [r7, #4]
+ 800693a:	edc3 7a35 	vstr	s15, [r3, #212]	@ 0xd4
+
+    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled[0]) + \
+ 800693e:	687b      	ldr	r3, [r7, #4]
+ 8006940:	ed93 7a1a 	vldr	s14, [r3, #104]	@ 0x68
+ 8006944:	687b      	ldr	r3, [r7, #4]
+ 8006946:	edd3 7a1b 	vldr	s15, [r3, #108]	@ 0x6c
+ 800694a:	ee37 7a67 	vsub.f32	s14, s14, s15
+ 800694e:	687b      	ldr	r3, [r7, #4]
+ 8006950:	edd3 7a36 	vldr	s15, [r3, #216]	@ 0xd8
+ 8006954:	ee27 7a27 	vmul.f32	s14, s14, s15
+        (instance->imLeadLag_TF_d * imLeadLag_u);
+ 8006958:	687b      	ldr	r3, [r7, #4]
+ 800695a:	edd3 6a1b 	vldr	s13, [r3, #108]	@ 0x6c
+ 800695e:	edd7 7a07 	vldr	s15, [r7, #28]
+ 8006962:	ee66 7aa7 	vmul.f32	s15, s13, s15
+    imLeadLag_TF_y = ((instance->imLeadLag_TF_bb[1] - instance->imLeadLag_TF_d) * instance->imLeadLag_TF_x_scaled[0]) + \
+ 8006966:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 800696a:	edc7 7a06 	vstr	s15, [r7, #24]
+
     imLeadLag_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006950:	eddf 0a4b 	vldr	s1, [pc, #300]	@ 8006a80 <DoStep+0x2ac>
- 8006954:	eeb0 0a67 	vmov.f32	s0, s15
- 8006958:	4620      	mov	r0, r4
- 800695a:	f000 f8b7 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 800695e:	4603      	mov	r3, r0
+ 800696e:	687b      	ldr	r3, [r7, #4]
+ 8006970:	f103 04f0 	add.w	r4, r3, #240	@ 0xf0
+        SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
+ 8006974:	687b      	ldr	r3, [r7, #4]
+ 8006976:	ed93 7a12 	vldr	s14, [r3, #72]	@ 0x48
         - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
- 8006960:	2b00      	cmp	r3, #0
- 8006962:	d007      	beq.n	8006974 <DoStep+0x1a0>
- 8006964:	687b      	ldr	r3, [r7, #4]
- 8006966:	ed93 7a2c 	vldr	s14, [r3, #176]	@ 0xb0
- 800696a:	edd7 7a06 	vldr	s15, [r7, #24]
- 800696e:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8006972:	e001      	b.n	8006978 <DoStep+0x1a4>
- 8006974:	edd7 7a05 	vldr	s15, [r7, #20]
+ 800697a:	687b      	ldr	r3, [r7, #4]
+ 800697c:	edd3 7a13 	vldr	s15, [r3, #76]	@ 0x4c
+ 8006980:	ee77 7a67 	vsub.f32	s15, s14, s15
+        SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag_T1 \
+ 8006984:	eeb0 0a67 	vmov.f32	s0, s15
+ 8006988:	f000 f93b 	bl	8006c02 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 800698c:	eef0 7a40 	vmov.f32	s15, s0
     imLeadLag_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006978:	edc7 7a04 	vstr	s15, [r7, #16]
+ 8006990:	eddf 0a4b 	vldr	s1, [pc, #300]	@ 8006ac0 <DoStep+0x2bc>
+ 8006994:	eeb0 0a67 	vmov.f32	s0, s15
+ 8006998:	4620      	mov	r0, r4
+ 800699a:	f000 f8b7 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 800699e:	4603      	mov	r3, r0
+        - instance->imLeadLag_T2), 2.22044604925031308e-16) ? (instance->imLeadLag_K * imLeadLag_u) : imLeadLag_TF_y;
+ 80069a0:	2b00      	cmp	r3, #0
+ 80069a2:	d007      	beq.n	80069b4 <DoStep+0x1b0>
+ 80069a4:	687b      	ldr	r3, [r7, #4]
+ 80069a6:	ed93 7a2e 	vldr	s14, [r3, #184]	@ 0xb8
+ 80069aa:	edd7 7a07 	vldr	s15, [r7, #28]
+ 80069ae:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 80069b2:	e001      	b.n	80069b8 <DoStep+0x1b4>
+ 80069b4:	edd7 7a06 	vldr	s15, [r7, #24]
+    imLeadLag_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 80069b8:	edc7 7a05 	vstr	s15, [r7, #20]
 
     instance->der_imLeadLag1_TF_x_scaled_1 = (imLeadLag_y - instance->imLeadLag1_TF_x_scaled[0]) / instance->imLeadLag1_TF_a[0];
- 800697c:	687b      	ldr	r3, [r7, #4]
- 800697e:	edd3 7a36 	vldr	s15, [r3, #216]	@ 0xd8
- 8006982:	ed97 7a04 	vldr	s14, [r7, #16]
- 8006986:	ee77 6a67 	vsub.f32	s13, s14, s15
- 800698a:	687b      	ldr	r3, [r7, #4]
- 800698c:	ed93 7a1f 	vldr	s14, [r3, #124]	@ 0x7c
- 8006990:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 8006994:	687b      	ldr	r3, [r7, #4]
- 8006996:	edc3 7a35 	vstr	s15, [r3, #212]	@ 0xd4
+ 80069bc:	687b      	ldr	r3, [r7, #4]
+ 80069be:	edd3 7a38 	vldr	s15, [r3, #224]	@ 0xe0
+ 80069c2:	ed97 7a05 	vldr	s14, [r7, #20]
+ 80069c6:	ee77 6a67 	vsub.f32	s13, s14, s15
+ 80069ca:	687b      	ldr	r3, [r7, #4]
+ 80069cc:	ed93 7a20 	vldr	s14, [r3, #128]	@ 0x80
+ 80069d0:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 80069d4:	687b      	ldr	r3, [r7, #4]
+ 80069d6:	edc3 7a37 	vstr	s15, [r3, #220]	@ 0xdc
 
     /* ******************************************************************************** Inline integration post-processing: */
 
     imLeadLag1_TF_y = ((instance->imLeadLag1_TF_bb[1] - instance->imLeadLag1_TF_d) * instance->imLeadLag1_TF_x_scaled[0]) \
- 800699a:	687b      	ldr	r3, [r7, #4]
- 800699c:	ed93 7a24 	vldr	s14, [r3, #144]	@ 0x90
- 80069a0:	687b      	ldr	r3, [r7, #4]
- 80069a2:	edd3 7a25 	vldr	s15, [r3, #148]	@ 0x94
- 80069a6:	ee37 7a67 	vsub.f32	s14, s14, s15
- 80069aa:	687b      	ldr	r3, [r7, #4]
- 80069ac:	edd3 7a36 	vldr	s15, [r3, #216]	@ 0xd8
- 80069b0:	ee27 7a27 	vmul.f32	s14, s14, s15
+ 80069da:	687b      	ldr	r3, [r7, #4]
+ 80069dc:	ed93 7a25 	vldr	s14, [r3, #148]	@ 0x94
+ 80069e0:	687b      	ldr	r3, [r7, #4]
+ 80069e2:	edd3 7a26 	vldr	s15, [r3, #152]	@ 0x98
+ 80069e6:	ee37 7a67 	vsub.f32	s14, s14, s15
+ 80069ea:	687b      	ldr	r3, [r7, #4]
+ 80069ec:	edd3 7a38 	vldr	s15, [r3, #224]	@ 0xe0
+ 80069f0:	ee27 7a27 	vmul.f32	s14, s14, s15
         + (instance->imLeadLag1_TF_d * imLeadLag_y);
- 80069b4:	687b      	ldr	r3, [r7, #4]
- 80069b6:	edd3 6a25 	vldr	s13, [r3, #148]	@ 0x94
- 80069ba:	edd7 7a04 	vldr	s15, [r7, #16]
- 80069be:	ee66 7aa7 	vmul.f32	s15, s13, s15
+ 80069f4:	687b      	ldr	r3, [r7, #4]
+ 80069f6:	edd3 6a26 	vldr	s13, [r3, #152]	@ 0x98
+ 80069fa:	edd7 7a05 	vldr	s15, [r7, #20]
+ 80069fe:	ee66 7aa7 	vmul.f32	s15, s13, s15
     imLeadLag1_TF_y = ((instance->imLeadLag1_TF_bb[1] - instance->imLeadLag1_TF_d) * instance->imLeadLag1_TF_x_scaled[0]) \
- 80069c2:	ee77 7a27 	vadd.f32	s15, s14, s15
- 80069c6:	edc7 7a03 	vstr	s15, [r7, #12]
+ 8006a02:	ee77 7a27 	vadd.f32	s15, s14, s15
+ 8006a06:	edc7 7a04 	vstr	s15, [r7, #16]
 
     imLeadLag1_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80069ca:	687b      	ldr	r3, [r7, #4]
- 80069cc:	f103 04e8 	add.w	r4, r3, #232	@ 0xe8
+ 8006a0a:	687b      	ldr	r3, [r7, #4]
+ 8006a0c:	f103 04f0 	add.w	r4, r3, #240	@ 0xf0
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
- 80069d0:	687b      	ldr	r3, [r7, #4]
- 80069d2:	ed93 7a1c 	vldr	s14, [r3, #112]	@ 0x70
+ 8006a10:	687b      	ldr	r3, [r7, #4]
+ 8006a12:	ed93 7a1d 	vldr	s14, [r3, #116]	@ 0x74
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
- 80069d6:	687b      	ldr	r3, [r7, #4]
- 80069d8:	edd3 7a1d 	vldr	s15, [r3, #116]	@ 0x74
- 80069dc:	ee77 7a67 	vsub.f32	s15, s14, s15
+ 8006a16:	687b      	ldr	r3, [r7, #4]
+ 8006a18:	edd3 7a1e 	vldr	s15, [r3, #120]	@ 0x78
+ 8006a1c:	ee77 7a67 	vsub.f32	s15, s14, s15
         SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(instance->imLeadLag1_T1 \
- 80069e0:	eeb0 0a67 	vmov.f32	s0, s15
- 80069e4:	f000 f8ed 	bl	8006bc2 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 80069e8:	eef0 7a40 	vmov.f32	s15, s0
+ 8006a20:	eeb0 0a67 	vmov.f32	s0, s15
+ 8006a24:	f000 f8ed 	bl	8006c02 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006a28:	eef0 7a40 	vmov.f32	s15, s0
     imLeadLag1_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 80069ec:	eddf 0a24 	vldr	s1, [pc, #144]	@ 8006a80 <DoStep+0x2ac>
- 80069f0:	eeb0 0a67 	vmov.f32	s0, s15
- 80069f4:	4620      	mov	r0, r4
- 80069f6:	f000 f869 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 80069fa:	4603      	mov	r3, r0
+ 8006a2c:	eddf 0a24 	vldr	s1, [pc, #144]	@ 8006ac0 <DoStep+0x2bc>
+ 8006a30:	eeb0 0a67 	vmov.f32	s0, s15
+ 8006a34:	4620      	mov	r0, r4
+ 8006a36:	f000 f869 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006a3a:	4603      	mov	r3, r0
         - instance->imLeadLag1_T2), 2.22044604925031308e-16) ? (instance->imLeadLag1_K * imLeadLag_y) : imLeadLag1_TF_y;
- 80069fc:	2b00      	cmp	r3, #0
- 80069fe:	d007      	beq.n	8006a10 <DoStep+0x23c>
- 8006a00:	687b      	ldr	r3, [r7, #4]
- 8006a02:	ed93 7a2e 	vldr	s14, [r3, #184]	@ 0xb8
- 8006a06:	edd7 7a04 	vldr	s15, [r7, #16]
- 8006a0a:	ee67 7a27 	vmul.f32	s15, s14, s15
- 8006a0e:	e001      	b.n	8006a14 <DoStep+0x240>
- 8006a10:	edd7 7a03 	vldr	s15, [r7, #12]
-    imLeadLag1_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006a14:	edc7 7a02 	vstr	s15, [r7, #8]
-
-    instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006a18:	687b      	ldr	r3, [r7, #4]
- 8006a1a:	f103 02e8 	add.w	r2, r3, #232	@ 0xe8
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006a1e:	687b      	ldr	r3, [r7, #4]
- 8006a20:	edd3 7a27 	vldr	s15, [r3, #156]	@ 0x9c
-    instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006a24:	eef0 0a67 	vmov.f32	s1, s15
- 8006a28:	ed97 0a02 	vldr	s0, [r7, #8]
- 8006a2c:	4610      	mov	r0, r2
- 8006a2e:	f000 f87f 	bl	8006b30 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006a32:	4603      	mov	r3, r0
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006a34:	2b00      	cmp	r3, #0
- 8006a36:	d003      	beq.n	8006a40 <DoStep+0x26c>
- 8006a38:	687b      	ldr	r3, [r7, #4]
- 8006a3a:	f8d3 309c 	ldr.w	r3, [r3, #156]	@ 0x9c
- 8006a3e:	e014      	b.n	8006a6a <DoStep+0x296>
+ 8006a3c:	2b00      	cmp	r3, #0
+ 8006a3e:	d007      	beq.n	8006a50 <DoStep+0x24c>
  8006a40:	687b      	ldr	r3, [r7, #4]
- 8006a42:	f103 02e8 	add.w	r2, r3, #232	@ 0xe8
-        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
- 8006a46:	687b      	ldr	r3, [r7, #4]
- 8006a48:	edd3 7a28 	vldr	s15, [r3, #160]	@ 0xa0
-        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006a4c:	eef0 0a67 	vmov.f32	s1, s15
- 8006a50:	ed97 0a02 	vldr	s0, [r7, #8]
- 8006a54:	4610      	mov	r0, r2
- 8006a56:	f000 f839 	bl	8006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006a5a:	4603      	mov	r3, r0
-        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
- 8006a5c:	2b00      	cmp	r3, #0
- 8006a5e:	d003      	beq.n	8006a68 <DoStep+0x294>
- 8006a60:	687b      	ldr	r3, [r7, #4]
- 8006a62:	f8d3 30a0 	ldr.w	r3, [r3, #160]	@ 0xa0
- 8006a66:	e000      	b.n	8006a6a <DoStep+0x296>
- 8006a68:	68bb      	ldr	r3, [r7, #8]
+ 8006a42:	ed93 7a30 	vldr	s14, [r3, #192]	@ 0xc0
+ 8006a46:	edd7 7a05 	vldr	s15, [r7, #20]
+ 8006a4a:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 8006a4e:	e001      	b.n	8006a54 <DoStep+0x250>
+ 8006a50:	edd7 7a04 	vldr	s15, [r7, #16]
+    imLeadLag1_y = SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 8006a54:	edc7 7a03 	vstr	s15, [r7, #12]
+
     instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
- 8006a6a:	687a      	ldr	r2, [r7, #4]
- 8006a6c:	6053      	str	r3, [r2, #4]
+ 8006a58:	687b      	ldr	r3, [r7, #4]
+ 8006a5a:	f103 02f0 	add.w	r2, r3, #240	@ 0xf0
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 8006a5e:	687b      	ldr	r3, [r7, #4]
+ 8006a60:	edd3 7a28 	vldr	s15, [r3, #160]	@ 0xa0
+    instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 8006a64:	eef0 0a67 	vmov.f32	s1, s15
+ 8006a68:	ed97 0a03 	vldr	s0, [r7, #12]
+ 8006a6c:	4610      	mov	r0, r2
+ 8006a6e:	f000 f87f 	bl	8006b70 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006a72:	4603      	mov	r3, r0
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 8006a74:	2b00      	cmp	r3, #0
+ 8006a76:	d003      	beq.n	8006a80 <DoStep+0x27c>
+ 8006a78:	687b      	ldr	r3, [r7, #4]
+ 8006a7a:	f8d3 30a0 	ldr.w	r3, [r3, #160]	@ 0xa0
+ 8006a7e:	e014      	b.n	8006aaa <DoStep+0x2a6>
+ 8006a80:	687b      	ldr	r3, [r7, #4]
+ 8006a82:	f103 02f0 	add.w	r2, r3, #240	@ 0xf0
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+ 8006a86:	687b      	ldr	r3, [r7, #4]
+ 8006a88:	edd3 7a29 	vldr	s15, [r3, #164]	@ 0xa4
+        imLeadLag1_y, instance->limiter_uMax) ? instance->limiter_uMax : SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 8006a8c:	eef0 0a67 	vmov.f32	s1, s15
+ 8006a90:	ed97 0a03 	vldr	s0, [r7, #12]
+ 8006a94:	4610      	mov	r0, r2
+ 8006a96:	f000 f839 	bl	8006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006a9a:	4603      	mov	r3, r0
+        imLeadLag1_y, instance->limiter_uMin) ? instance->limiter_uMin : imLeadLag1_y;
+ 8006a9c:	2b00      	cmp	r3, #0
+ 8006a9e:	d003      	beq.n	8006aa8 <DoStep+0x2a4>
+ 8006aa0:	687b      	ldr	r3, [r7, #4]
+ 8006aa2:	f8d3 30a4 	ldr.w	r3, [r3, #164]	@ 0xa4
+ 8006aa6:	e000      	b.n	8006aaa <DoStep+0x2a6>
+ 8006aa8:	68fb      	ldr	r3, [r7, #12]
+    instance->vs = SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(&instance->ErrorSignals, \
+ 8006aaa:	687a      	ldr	r2, [r7, #4]
+ 8006aac:	6053      	str	r3, [r2, #4]
 
     instance->discrete_stepSize_active = true;
- 8006a6e:	687b      	ldr	r3, [r7, #4]
- 8006a70:	2201      	movs	r2, #1
- 8006a72:	f883 20e4 	strb.w	r2, [r3, #228]	@ 0xe4
+ 8006aae:	687b      	ldr	r3, [r7, #4]
+ 8006ab0:	2201      	movs	r2, #1
+ 8006ab2:	f883 20ec 	strb.w	r2, [r3, #236]	@ 0xec
 }
- 8006a76:	bf00      	nop
- 8006a78:	3724      	adds	r7, #36	@ 0x24
- 8006a7a:	46bd      	mov	sp, r7
- 8006a7c:	bd90      	pop	{r4, r7, pc}
- 8006a7e:	bf00      	nop
- 8006a80:	25800000 	.word	0x25800000
+ 8006ab6:	bf00      	nop
+ 8006ab8:	372c      	adds	r7, #44	@ 0x2c
+ 8006aba:	46bd      	mov	sp, r7
+ 8006abc:	bd90      	pop	{r4, r7, pc}
+ 8006abe:	bf00      	nop
+ 8006ac0:	25800000 	.word	0x25800000
 
-08006a84 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
+08006ac4 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
 
 /**********************************************************************************************************************
  * init
  **********************************************************************************************************************/
 void Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
- 8006a84:	b580      	push	{r7, lr}
- 8006a86:	b082      	sub	sp, #8
- 8006a88:	af00      	add	r7, sp, #0
- 8006a8a:	6078      	str	r0, [r7, #4]
+ 8006ac4:	b580      	push	{r7, lr}
+ 8006ac6:	b082      	sub	sp, #8
+ 8006ac8:	af00      	add	r7, sp, #0
+ 8006aca:	6078      	str	r0, [r7, #4]
     instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
- 8006a8c:	4b05      	ldr	r3, [pc, #20]	@ (8006aa4 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x20>)
- 8006a8e:	681a      	ldr	r2, [r3, #0]
- 8006a90:	687b      	ldr	r3, [r7, #4]
- 8006a92:	f8c3 20e8 	str.w	r2, [r3, #232]	@ 0xe8
+ 8006acc:	4b05      	ldr	r3, [pc, #20]	@ (8006ae4 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x20>)
+ 8006ace:	681a      	ldr	r2, [r3, #0]
+ 8006ad0:	687b      	ldr	r3, [r7, #4]
+ 8006ad2:	f8c3 20f0 	str.w	r2, [r3, #240]	@ 0xf0
     Startup(instance);
- 8006a96:	6878      	ldr	r0, [r7, #4]
- 8006a98:	f7ff fe40 	bl	800671c <Startup>
+ 8006ad6:	6878      	ldr	r0, [r7, #4]
+ 8006ad8:	f7ff fe34 	bl	8006744 <Startup>
 }
- 8006a9c:	bf00      	nop
- 8006a9e:	3708      	adds	r7, #8
- 8006aa0:	46bd      	mov	sp, r7
- 8006aa2:	bd80      	pop	{r7, pc}
- 8006aa4:	08006cb4 	.word	0x08006cb4
+ 8006adc:	bf00      	nop
+ 8006ade:	3708      	adds	r7, #8
+ 8006ae0:	46bd      	mov	sp, r7
+ 8006ae2:	bd80      	pop	{r7, pc}
+ 8006ae4:	08006cf4 	.word	0x08006cf4
 
-08006aa8 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
+08006ae8 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
 
 /**********************************************************************************************************************
  * step
  **********************************************************************************************************************/
 void DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(ALGOSTRUCT *instance) {
- 8006aa8:	b580      	push	{r7, lr}
- 8006aaa:	b082      	sub	sp, #8
- 8006aac:	af00      	add	r7, sp, #0
- 8006aae:	6078      	str	r0, [r7, #4]
+ 8006ae8:	b580      	push	{r7, lr}
+ 8006aea:	b082      	sub	sp, #8
+ 8006aec:	af00      	add	r7, sp, #0
+ 8006aee:	6078      	str	r0, [r7, #4]
     instance->ErrorSignals = SPE_ERRORSIGNAL_NONE_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
- 8006ab0:	4b05      	ldr	r3, [pc, #20]	@ (8006ac8 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x20>)
- 8006ab2:	681a      	ldr	r2, [r3, #0]
- 8006ab4:	687b      	ldr	r3, [r7, #4]
- 8006ab6:	f8c3 20e8 	str.w	r2, [r3, #232]	@ 0xe8
+ 8006af0:	4b05      	ldr	r3, [pc, #20]	@ (8006b08 <DoStep_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x20>)
+ 8006af2:	681a      	ldr	r2, [r3, #0]
+ 8006af4:	687b      	ldr	r3, [r7, #4]
+ 8006af6:	f8c3 20f0 	str.w	r2, [r3, #240]	@ 0xf0
     DoStep(instance);
- 8006aba:	6878      	ldr	r0, [r7, #4]
- 8006abc:	f7ff fe8a 	bl	80067d4 <DoStep>
+ 8006afa:	6878      	ldr	r0, [r7, #4]
+ 8006afc:	f7ff fe82 	bl	8006804 <DoStep>
 }
- 8006ac0:	bf00      	nop
- 8006ac2:	3708      	adds	r7, #8
- 8006ac4:	46bd      	mov	sp, r7
- 8006ac6:	bd80      	pop	{r7, pc}
- 8006ac8:	08006cb4 	.word	0x08006cb4
+ 8006b00:	bf00      	nop
+ 8006b02:	3708      	adds	r7, #8
+ 8006b04:	46bd      	mov	sp, r7
+ 8006b06:	bd80      	pop	{r7, pc}
+ 8006b08:	08006cf4 	.word	0x08006cf4
 
-08006acc <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
+08006b0c <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
 #if (!SPE_NO_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 inline bool SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 	  SPE_ErrorSignal_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
 	, const SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
 	, const SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
- 8006acc:	b580      	push	{r7, lr}
- 8006ace:	b084      	sub	sp, #16
- 8006ad0:	af00      	add	r7, sp, #0
- 8006ad2:	60f8      	str	r0, [r7, #12]
- 8006ad4:	ed87 0a02 	vstr	s0, [r7, #8]
- 8006ad8:	edc7 0a01 	vstr	s1, [r7, #4]
+ 8006b0c:	b580      	push	{r7, lr}
+ 8006b0e:	b084      	sub	sp, #16
+ 8006b10:	af00      	add	r7, sp, #0
+ 8006b12:	60f8      	str	r0, [r7, #12]
+ 8006b14:	ed87 0a02 	vstr	s0, [r7, #8]
+ 8006b18:	edc7 0a01 	vstr	s1, [r7, #4]
 	if (SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
- 8006adc:	ed97 0a02 	vldr	s0, [r7, #8]
- 8006ae0:	f000 f858 	bl	8006b94 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006ae4:	4603      	mov	r3, r0
- 8006ae6:	2b00      	cmp	r3, #0
- 8006ae8:	d106      	bne.n	8006af8 <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x2c>
- 8006aea:	ed97 0a01 	vldr	s0, [r7, #4]
- 8006aee:	f000 f851 	bl	8006b94 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006af2:	4603      	mov	r3, r0
- 8006af4:	2b00      	cmp	r3, #0
- 8006af6:	d005      	beq.n	8006b04 <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x38>
+ 8006b1c:	ed97 0a02 	vldr	s0, [r7, #8]
+ 8006b20:	f000 f858 	bl	8006bd4 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006b24:	4603      	mov	r3, r0
+ 8006b26:	2b00      	cmp	r3, #0
+ 8006b28:	d106      	bne.n	8006b38 <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x2c>
+ 8006b2a:	ed97 0a01 	vldr	s0, [r7, #4]
+ 8006b2e:	f000 f851 	bl	8006bd4 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006b32:	4603      	mov	r3, r0
+ 8006b34:	2b00      	cmp	r3, #0
+ 8006b36:	d005      	beq.n	8006b44 <SPE_less_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x38>
 	{
 		*error_signal |= SPE_ERRORSIGNAL_NAN_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
- 8006af8:	68fb      	ldr	r3, [r7, #12]
- 8006afa:	681b      	ldr	r3, [r3, #0]
- 8006afc:	2204      	movs	r2, #4
- 8006afe:	431a      	orrs	r2, r3
- 8006b00:	68fb      	ldr	r3, [r7, #12]
- 8006b02:	601a      	str	r2, [r3, #0]
+ 8006b38:	68fb      	ldr	r3, [r7, #12]
+ 8006b3a:	681b      	ldr	r3, [r3, #0]
+ 8006b3c:	2204      	movs	r2, #4
+ 8006b3e:	431a      	orrs	r2, r3
+ 8006b40:	68fb      	ldr	r3, [r7, #12]
+ 8006b42:	601a      	str	r2, [r3, #0]
 	}
 	return 0 != isless(x1, x2);
- 8006b04:	ed97 7a02 	vldr	s14, [r7, #8]
- 8006b08:	edd7 7a01 	vldr	s15, [r7, #4]
- 8006b0c:	eeb4 7a67 	vcmp.f32	s14, s15
- 8006b10:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8006b14:	bf54      	ite	pl
- 8006b16:	2301      	movpl	r3, #1
- 8006b18:	2300      	movmi	r3, #0
- 8006b1a:	b2db      	uxtb	r3, r3
- 8006b1c:	f083 0301 	eor.w	r3, r3, #1
- 8006b20:	b2db      	uxtb	r3, r3
- 8006b22:	f003 0301 	and.w	r3, r3, #1
- 8006b26:	b2db      	uxtb	r3, r3
+ 8006b44:	ed97 7a02 	vldr	s14, [r7, #8]
+ 8006b48:	edd7 7a01 	vldr	s15, [r7, #4]
+ 8006b4c:	eeb4 7a67 	vcmp.f32	s14, s15
+ 8006b50:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8006b54:	bf54      	ite	pl
+ 8006b56:	2301      	movpl	r3, #1
+ 8006b58:	2300      	movmi	r3, #0
+ 8006b5a:	b2db      	uxtb	r3, r3
+ 8006b5c:	f083 0301 	eor.w	r3, r3, #1
+ 8006b60:	b2db      	uxtb	r3, r3
+ 8006b62:	f003 0301 	and.w	r3, r3, #1
+ 8006b66:	b2db      	uxtb	r3, r3
 }
- 8006b28:	4618      	mov	r0, r3
- 8006b2a:	3710      	adds	r7, #16
- 8006b2c:	46bd      	mov	sp, r7
- 8006b2e:	bd80      	pop	{r7, pc}
+ 8006b68:	4618      	mov	r0, r3
+ 8006b6a:	3710      	adds	r7, #16
+ 8006b6c:	46bd      	mov	sp, r7
+ 8006b6e:	bd80      	pop	{r7, pc}
 
-08006b30 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
+08006b70 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
 #if (!SPE_NO_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 inline bool SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(
 	  SPE_ErrorSignal_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed* const error_signal
 	, const SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x1
 	, const SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x2)
 {
- 8006b30:	b580      	push	{r7, lr}
- 8006b32:	b084      	sub	sp, #16
- 8006b34:	af00      	add	r7, sp, #0
- 8006b36:	60f8      	str	r0, [r7, #12]
- 8006b38:	ed87 0a02 	vstr	s0, [r7, #8]
- 8006b3c:	edc7 0a01 	vstr	s1, [r7, #4]
+ 8006b70:	b580      	push	{r7, lr}
+ 8006b72:	b084      	sub	sp, #16
+ 8006b74:	af00      	add	r7, sp, #0
+ 8006b76:	60f8      	str	r0, [r7, #12]
+ 8006b78:	ed87 0a02 	vstr	s0, [r7, #8]
+ 8006b7c:	edc7 0a01 	vstr	s1, [r7, #4]
 	if (SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x1) || SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(x2))
- 8006b40:	ed97 0a02 	vldr	s0, [r7, #8]
- 8006b44:	f000 f826 	bl	8006b94 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006b48:	4603      	mov	r3, r0
- 8006b4a:	2b00      	cmp	r3, #0
- 8006b4c:	d106      	bne.n	8006b5c <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x2c>
- 8006b4e:	ed97 0a01 	vldr	s0, [r7, #4]
- 8006b52:	f000 f81f 	bl	8006b94 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
- 8006b56:	4603      	mov	r3, r0
- 8006b58:	2b00      	cmp	r3, #0
- 8006b5a:	d005      	beq.n	8006b68 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x38>
+ 8006b80:	ed97 0a02 	vldr	s0, [r7, #8]
+ 8006b84:	f000 f826 	bl	8006bd4 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006b88:	4603      	mov	r3, r0
+ 8006b8a:	2b00      	cmp	r3, #0
+ 8006b8c:	d106      	bne.n	8006b9c <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x2c>
+ 8006b8e:	ed97 0a01 	vldr	s0, [r7, #4]
+ 8006b92:	f000 f81f 	bl	8006bd4 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>
+ 8006b96:	4603      	mov	r3, r0
+ 8006b98:	2b00      	cmp	r3, #0
+ 8006b9a:	d005      	beq.n	8006ba8 <SPE_greater_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x38>
 	{
 		*error_signal |= SPE_ERRORSIGNAL_NAN_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed;
- 8006b5c:	68fb      	ldr	r3, [r7, #12]
- 8006b5e:	681b      	ldr	r3, [r3, #0]
- 8006b60:	2204      	movs	r2, #4
- 8006b62:	431a      	orrs	r2, r3
- 8006b64:	68fb      	ldr	r3, [r7, #12]
- 8006b66:	601a      	str	r2, [r3, #0]
+ 8006b9c:	68fb      	ldr	r3, [r7, #12]
+ 8006b9e:	681b      	ldr	r3, [r3, #0]
+ 8006ba0:	2204      	movs	r2, #4
+ 8006ba2:	431a      	orrs	r2, r3
+ 8006ba4:	68fb      	ldr	r3, [r7, #12]
+ 8006ba6:	601a      	str	r2, [r3, #0]
 	}
 	return 0 != isgreater(x1, x2);
- 8006b68:	ed97 7a02 	vldr	s14, [r7, #8]
- 8006b6c:	edd7 7a01 	vldr	s15, [r7, #4]
- 8006b70:	eeb4 7a67 	vcmp.f32	s14, s15
- 8006b74:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8006b78:	bfd4      	ite	le
- 8006b7a:	2301      	movle	r3, #1
- 8006b7c:	2300      	movgt	r3, #0
- 8006b7e:	b2db      	uxtb	r3, r3
- 8006b80:	f083 0301 	eor.w	r3, r3, #1
- 8006b84:	b2db      	uxtb	r3, r3
- 8006b86:	f003 0301 	and.w	r3, r3, #1
- 8006b8a:	b2db      	uxtb	r3, r3
+ 8006ba8:	ed97 7a02 	vldr	s14, [r7, #8]
+ 8006bac:	edd7 7a01 	vldr	s15, [r7, #4]
+ 8006bb0:	eeb4 7a67 	vcmp.f32	s14, s15
+ 8006bb4:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8006bb8:	bfd4      	ite	le
+ 8006bba:	2301      	movle	r3, #1
+ 8006bbc:	2300      	movgt	r3, #0
+ 8006bbe:	b2db      	uxtb	r3, r3
+ 8006bc0:	f083 0301 	eor.w	r3, r3, #1
+ 8006bc4:	b2db      	uxtb	r3, r3
+ 8006bc6:	f003 0301 	and.w	r3, r3, #1
+ 8006bca:	b2db      	uxtb	r3, r3
 }
- 8006b8c:	4618      	mov	r0, r3
- 8006b8e:	3710      	adds	r7, #16
- 8006b90:	46bd      	mov	sp, r7
- 8006b92:	bd80      	pop	{r7, pc}
+ 8006bcc:	4618      	mov	r0, r3
+ 8006bce:	3710      	adds	r7, #16
+ 8006bd0:	46bd      	mov	sp, r7
+ 8006bd2:	bd80      	pop	{r7, pc}
 
-08006b94 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
+08006bd4 <SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
 }
 #endif
 
 #if (!SPE_NO_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 inline bool SPE_isNan_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed r)
 {
- 8006b94:	b480      	push	{r7}
- 8006b96:	b083      	sub	sp, #12
- 8006b98:	af00      	add	r7, sp, #0
- 8006b9a:	ed87 0a01 	vstr	s0, [r7, #4]
+ 8006bd4:	b480      	push	{r7}
+ 8006bd6:	b083      	sub	sp, #12
+ 8006bd8:	af00      	add	r7, sp, #0
+ 8006bda:	ed87 0a01 	vstr	s0, [r7, #4]
 	return 0 != isnan(r);
- 8006b9e:	ed97 7a01 	vldr	s14, [r7, #4]
- 8006ba2:	edd7 7a01 	vldr	s15, [r7, #4]
- 8006ba6:	eeb4 7a67 	vcmp.f32	s14, s15
- 8006baa:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
- 8006bae:	bf6c      	ite	vs
- 8006bb0:	2301      	movvs	r3, #1
- 8006bb2:	2300      	movvc	r3, #0
- 8006bb4:	b2db      	uxtb	r3, r3
+ 8006bde:	ed97 7a01 	vldr	s14, [r7, #4]
+ 8006be2:	edd7 7a01 	vldr	s15, [r7, #4]
+ 8006be6:	eeb4 7a67 	vcmp.f32	s14, s15
+ 8006bea:	eef1 fa10 	vmrs	APSR_nzcv, fpscr
+ 8006bee:	bf6c      	ite	vs
+ 8006bf0:	2301      	movvs	r3, #1
+ 8006bf2:	2300      	movvc	r3, #0
+ 8006bf4:	b2db      	uxtb	r3, r3
 }
- 8006bb6:	4618      	mov	r0, r3
- 8006bb8:	370c      	adds	r7, #12
- 8006bba:	46bd      	mov	sp, r7
- 8006bbc:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8006bc0:	4770      	bx	lr
+ 8006bf6:	4618      	mov	r0, r3
+ 8006bf8:	370c      	adds	r7, #12
+ 8006bfa:	46bd      	mov	sp, r7
+ 8006bfc:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8006c00:	4770      	bx	lr
 
-08006bc2 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
+08006c02 <SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed>:
 }
 #endif
 
 #if (!SPE_NO_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed)
 inline SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed SPE_absolute_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(const SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed x)
 {
- 8006bc2:	b480      	push	{r7}
- 8006bc4:	b083      	sub	sp, #12
- 8006bc6:	af00      	add	r7, sp, #0
- 8006bc8:	ed87 0a01 	vstr	s0, [r7, #4]
+ 8006c02:	b480      	push	{r7}
+ 8006c04:	b083      	sub	sp, #12
+ 8006c06:	af00      	add	r7, sp, #0
+ 8006c08:	ed87 0a01 	vstr	s0, [r7, #4]
 	return SPE_FLT_SEL_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(fabsf, fabs, fabsl)(x);
- 8006bcc:	edd7 7a01 	vldr	s15, [r7, #4]
- 8006bd0:	eef0 7ae7 	vabs.f32	s15, s15
+ 8006c0c:	edd7 7a01 	vldr	s15, [r7, #4]
+ 8006c10:	eef0 7ae7 	vabs.f32	s15, s15
 }
- 8006bd4:	eeb0 0a67 	vmov.f32	s0, s15
- 8006bd8:	370c      	adds	r7, #12
- 8006bda:	46bd      	mov	sp, r7
- 8006bdc:	f85d 7b04 	ldr.w	r7, [sp], #4
- 8006be0:	4770      	bx	lr
+ 8006c14:	eeb0 0a67 	vmov.f32	s0, s15
+ 8006c18:	370c      	adds	r7, #12
+ 8006c1a:	46bd      	mov	sp, r7
+ 8006c1c:	f85d 7b04 	ldr.w	r7, [sp], #4
+ 8006c20:	4770      	bx	lr
 
-08006be2 <memset>:
- 8006be2:	4402      	add	r2, r0
- 8006be4:	4603      	mov	r3, r0
- 8006be6:	4293      	cmp	r3, r2
- 8006be8:	d100      	bne.n	8006bec <memset+0xa>
- 8006bea:	4770      	bx	lr
- 8006bec:	f803 1b01 	strb.w	r1, [r3], #1
- 8006bf0:	e7f9      	b.n	8006be6 <memset+0x4>
+08006c22 <memset>:
+ 8006c22:	4402      	add	r2, r0
+ 8006c24:	4603      	mov	r3, r0
+ 8006c26:	4293      	cmp	r3, r2
+ 8006c28:	d100      	bne.n	8006c2c <memset+0xa>
+ 8006c2a:	4770      	bx	lr
+ 8006c2c:	f803 1b01 	strb.w	r1, [r3], #1
+ 8006c30:	e7f9      	b.n	8006c26 <memset+0x4>
 	...
 
-08006bf4 <__libc_init_array>:
- 8006bf4:	b570      	push	{r4, r5, r6, lr}
- 8006bf6:	4b0d      	ldr	r3, [pc, #52]	@ (8006c2c <__libc_init_array+0x38>)
- 8006bf8:	4d0d      	ldr	r5, [pc, #52]	@ (8006c30 <__libc_init_array+0x3c>)
- 8006bfa:	1b5b      	subs	r3, r3, r5
- 8006bfc:	109c      	asrs	r4, r3, #2
- 8006bfe:	2600      	movs	r6, #0
- 8006c00:	42a6      	cmp	r6, r4
- 8006c02:	d109      	bne.n	8006c18 <__libc_init_array+0x24>
- 8006c04:	f000 f81a 	bl	8006c3c <_init>
- 8006c08:	4d0a      	ldr	r5, [pc, #40]	@ (8006c34 <__libc_init_array+0x40>)
- 8006c0a:	4b0b      	ldr	r3, [pc, #44]	@ (8006c38 <__libc_init_array+0x44>)
- 8006c0c:	1b5b      	subs	r3, r3, r5
- 8006c0e:	109c      	asrs	r4, r3, #2
- 8006c10:	2600      	movs	r6, #0
- 8006c12:	42a6      	cmp	r6, r4
- 8006c14:	d105      	bne.n	8006c22 <__libc_init_array+0x2e>
- 8006c16:	bd70      	pop	{r4, r5, r6, pc}
- 8006c18:	f855 3b04 	ldr.w	r3, [r5], #4
- 8006c1c:	4798      	blx	r3
- 8006c1e:	3601      	adds	r6, #1
- 8006c20:	e7ee      	b.n	8006c00 <__libc_init_array+0xc>
- 8006c22:	f855 3b04 	ldr.w	r3, [r5], #4
- 8006c26:	4798      	blx	r3
- 8006c28:	3601      	adds	r6, #1
- 8006c2a:	e7f2      	b.n	8006c12 <__libc_init_array+0x1e>
- 8006c2c:	08006cc0 	.word	0x08006cc0
- 8006c30:	08006cc0 	.word	0x08006cc0
- 8006c34:	08006cc0 	.word	0x08006cc0
- 8006c38:	08006cc4 	.word	0x08006cc4
+08006c34 <__libc_init_array>:
+ 8006c34:	b570      	push	{r4, r5, r6, lr}
+ 8006c36:	4b0d      	ldr	r3, [pc, #52]	@ (8006c6c <__libc_init_array+0x38>)
+ 8006c38:	4d0d      	ldr	r5, [pc, #52]	@ (8006c70 <__libc_init_array+0x3c>)
+ 8006c3a:	1b5b      	subs	r3, r3, r5
+ 8006c3c:	109c      	asrs	r4, r3, #2
+ 8006c3e:	2600      	movs	r6, #0
+ 8006c40:	42a6      	cmp	r6, r4
+ 8006c42:	d109      	bne.n	8006c58 <__libc_init_array+0x24>
+ 8006c44:	f000 f81a 	bl	8006c7c <_init>
+ 8006c48:	4d0a      	ldr	r5, [pc, #40]	@ (8006c74 <__libc_init_array+0x40>)
+ 8006c4a:	4b0b      	ldr	r3, [pc, #44]	@ (8006c78 <__libc_init_array+0x44>)
+ 8006c4c:	1b5b      	subs	r3, r3, r5
+ 8006c4e:	109c      	asrs	r4, r3, #2
+ 8006c50:	2600      	movs	r6, #0
+ 8006c52:	42a6      	cmp	r6, r4
+ 8006c54:	d105      	bne.n	8006c62 <__libc_init_array+0x2e>
+ 8006c56:	bd70      	pop	{r4, r5, r6, pc}
+ 8006c58:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8006c5c:	4798      	blx	r3
+ 8006c5e:	3601      	adds	r6, #1
+ 8006c60:	e7ee      	b.n	8006c40 <__libc_init_array+0xc>
+ 8006c62:	f855 3b04 	ldr.w	r3, [r5], #4
+ 8006c66:	4798      	blx	r3
+ 8006c68:	3601      	adds	r6, #1
+ 8006c6a:	e7f2      	b.n	8006c52 <__libc_init_array+0x1e>
+ 8006c6c:	08006d00 	.word	0x08006d00
+ 8006c70:	08006d00 	.word	0x08006d00
+ 8006c74:	08006d00 	.word	0x08006d00
+ 8006c78:	08006d04 	.word	0x08006d04
 
-08006c3c <_init>:
- 8006c3c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8006c3e:	bf00      	nop
- 8006c40:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 8006c42:	bc08      	pop	{r3}
- 8006c44:	469e      	mov	lr, r3
- 8006c46:	4770      	bx	lr
+08006c7c <_init>:
+ 8006c7c:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8006c7e:	bf00      	nop
+ 8006c80:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8006c82:	bc08      	pop	{r3}
+ 8006c84:	469e      	mov	lr, r3
+ 8006c86:	4770      	bx	lr
 
-08006c48 <_fini>:
- 8006c48:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
- 8006c4a:	bf00      	nop
- 8006c4c:	bcf8      	pop	{r3, r4, r5, r6, r7}
- 8006c4e:	bc08      	pop	{r3}
- 8006c50:	469e      	mov	lr, r3
- 8006c52:	4770      	bx	lr
+08006c88 <_fini>:
+ 8006c88:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+ 8006c8a:	bf00      	nop
+ 8006c8c:	bcf8      	pop	{r3, r4, r5, r6, r7}
+ 8006c8e:	bc08      	pop	{r3}
+ 8006c90:	469e      	mov	lr, r3
+ 8006c92:	4770      	bx	lr

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{894e3554-3554-414b-af4d-09ccc1dfa8ba}" name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c" generationDateAndTime="2026-03-23T11:11:11Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{31f82368-3fce-49ab-9a19-4f4ca3e2bea6}" name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c" generationDateAndTime="2026-03-23T21:07:40Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="ALG_MAN_ID" manifestRefId="{3a5b11d4-00b8-472b-8ed7-04ac1956939f}" checksum="6982884f7adcc7d90f7e9e53ccd848322bb4a05f" origin="true"/>
+        <ManifestReference id="ALG_MAN_ID" manifestRefId="{6f0ace7b-6c7e-43a3-9d09-d675266ee9b4}" checksum="7c7ca532ded836f953b0daa3b5a65ef479688b56" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_galec_stl_configuration.h_0" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="21231a6bf967de1c5a3d4b27181a0a0c8d95078b" role="Code"/>
-        <File id="FILE_ID_block.h_1" name="block.h" path="./" needsChecksum="true" checksum="10c4b4b2a7525d336fbae15c65e4eab6e49fa8c5" role="Code"/>
-        <File id="FILE_ID_galec_stl.h_2" name="galec_stl.h" path="./" needsChecksum="true" checksum="7b10da5fe72d2f08d412b7628f696b6c996873d2" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.h_3" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="e1fe5911dadc347cf775ff00bf7487122efdf60f" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.h_4" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="501cdda95b62ecd6417d788069d943525e4aa667" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.c_5" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="0de10d67bb1954ec730786d93c10415b691ed41b" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.c_6" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="d57c67384772578b7a12a7f0f2e94c7e07189e65" role="Code"/>
-        <File id="FILE_ID_galec_stl.c_7" name="galec_stl.c" path="./" needsChecksum="true" checksum="8c97743843cb8d595623ba778797ebf794218a69" role="Code"/>
-        <File id="FILE_ID_block.c_8" name="block.c" path="./" needsChecksum="true" checksum="bc86686b80fac7c220cf7a57ee09bbe9b93a7831" role="Code"/>
+        <File id="FILE_ID_galec_stl_configuration.h_0" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="9cff3d3db316968abfb624957a07d0a83bbadeff" role="Code"/>
+        <File id="FILE_ID_block.h_1" name="block.h" path="./" needsChecksum="true" checksum="bc6c454b4fa659b99a0d21b20cdffb6acac69bf5" role="Code"/>
+        <File id="FILE_ID_galec_stl.h_2" name="galec_stl.h" path="./" needsChecksum="true" checksum="1e449837aa5d7b07cb10aa60aa4a9c2fe9d23998" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.h_3" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="4290d633a1be5791b2d371e575cd8ae2cc3fabb2" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.h_4" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="149136781442f2022ba5bc8a8144814347973866" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.c_5" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="af349dcd2a1874d67b2b7ab94f2fddc9319f5beb" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.c_6" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="6e0d53898aba6ec969e90d71354870ce06a1d91b" role="Code"/>
+        <File id="FILE_ID_galec_stl.c_7" name="galec_stl.c" path="./" needsChecksum="true" checksum="e7e0cff924b8321f731822c83d8eba106bf34213" role="Code"/>
+        <File id="FILE_ID_block.c_8" name="block.c" path="./" needsChecksum="true" checksum="68cde072cdbd2cf1c8f36c6e9e74220bf7099916" role="Code"/>
     </Files>
     <CodeContainer language="C" standard="C99" platform="Legacy" floatPrecision="64-bit">
         <Target>Generic</Target>
@@ -69,77 +69,79 @@
                             <Component id="COMP_ID_vSI_start_11" name="vSI_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_vsmax_12" name="vsmax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
                             <Component id="COMP_ID_vsmin_13" name="vsmin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_dLHPFreplacement_K_14" name="dLHPFreplacement_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_dLHPFreplacement_Kw_15" name="dLHPFreplacement_Kw" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_dLHPFreplacement_T_16" name="dLHPFreplacement_T" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_dLHPFreplacement_Tw_17" name="dLHPFreplacement_Tw" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_T1_18" name="imLeadLag_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_T2_19" name="imLeadLag_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_T2_dummy_20" name="imLeadLag_T2_dummy" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_TF_a_21" name="imLeadLag_TF_a" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_wscale_14" name="wscale" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_K_15" name="dLHPFreplacement_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_Kw_16" name="dLHPFreplacement_Kw" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_T_17" name="dLHPFreplacement_T" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_Tw_18" name="dLHPFreplacement_Tw" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_T1_19" name="imLeadLag_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_T2_20" name="imLeadLag_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_T2_dummy_21" name="imLeadLag_T2_dummy" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_TF_a_22" name="imLeadLag_TF_a" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="2"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_imLeadLag_TF_b_22" name="imLeadLag_TF_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_imLeadLag_TF_b_23" name="imLeadLag_TF_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="2"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_imLeadLag_TF_bb_23" name="imLeadLag_TF_bb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_imLeadLag_TF_bb_24" name="imLeadLag_TF_bb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="2"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_imLeadLag_TF_d_24" name="imLeadLag_TF_d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_TF_y_start_25" name="imLeadLag_TF_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_T1_26" name="imLeadLag1_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_T2_27" name="imLeadLag1_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_T2_dummy_28" name="imLeadLag1_T2_dummy" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_TF_a_29" name="imLeadLag1_TF_a" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_imLeadLag_TF_d_25" name="imLeadLag_TF_d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_TF_y_start_26" name="imLeadLag_TF_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_T1_27" name="imLeadLag1_T1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_T2_28" name="imLeadLag1_T2" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_T2_dummy_29" name="imLeadLag1_T2_dummy" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_TF_a_30" name="imLeadLag1_TF_a" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="2"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_imLeadLag1_TF_b_30" name="imLeadLag1_TF_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_imLeadLag1_TF_b_31" name="imLeadLag1_TF_b" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="2"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_imLeadLag1_TF_bb_31" name="imLeadLag1_TF_bb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_imLeadLag1_TF_bb_32" name="imLeadLag1_TF_bb" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="2"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_imLeadLag1_TF_d_32" name="imLeadLag1_TF_d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_TF_y_start_33" name="imLeadLag1_TF_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_limiter_uMax_34" name="limiter_uMax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_limiter_uMin_35" name="limiter_uMin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lpf_K_36" name="lpf_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lpf_T_37" name="lpf_T" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lpf_freqHz_38" name="lpf_freqHz" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_K_39" name="imLeadLag_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_y_start_40" name="imLeadLag_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_K_41" name="imLeadLag1_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_y_start_42" name="imLeadLag1_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_discrete_stepSize_43" name="discrete_stepSize" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_dLHPFreplacement_x_44" name="der_dLHPFreplacement_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_dLHPFreplacement_x_45" name="dLHPFreplacement_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_der_imLeadLag_TF_x_scaled_1_46" name="der_imLeadLag_TF_x_scaled_1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag_TF_x_scaled_47" name="imLeadLag_TF_x_scaled" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_imLeadLag1_TF_d_33" name="imLeadLag1_TF_d" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_TF_y_start_34" name="imLeadLag1_TF_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_limiter_uMax_35" name="limiter_uMax" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_limiter_uMin_36" name="limiter_uMin" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_K_37" name="lpf_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_T_38" name="lpf_T" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_freqHz_39" name="lpf_freqHz" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_scale_k_40" name="scale_k" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_K_41" name="imLeadLag_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_y_start_42" name="imLeadLag_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_K_43" name="imLeadLag1_K" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_y_start_44" name="imLeadLag1_y_start" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_discrete_stepSize_45" name="discrete_stepSize" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_dLHPFreplacement_x_46" name="der_dLHPFreplacement_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_dLHPFreplacement_x_47" name="dLHPFreplacement_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_der_imLeadLag_TF_x_scaled_1_48" name="der_imLeadLag_TF_x_scaled_1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag_TF_x_scaled_49" name="imLeadLag_TF_x_scaled" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="1"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_der_imLeadLag1_TF_x_scaled_1_48" name="der_imLeadLag1_TF_x_scaled_1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_imLeadLag1_TF_x_scaled_49" name="imLeadLag1_TF_x_scaled" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
+                            <Component id="COMP_ID_der_imLeadLag1_TF_x_scaled_1_50" name="der_imLeadLag1_TF_x_scaled_1" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_imLeadLag1_TF_x_scaled_51" name="imLeadLag1_TF_x_scaled" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false">
 <Dimensions>
     <Dimension number="0" size="1"/>
 </Dimensions>
                             </Component>
-                            <Component id="COMP_ID_der_lpf_x_50" name="der_lpf_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_lpf_x_51" name="lpf_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
-                            <Component id="COMP_ID_discrete_stepSize_active_52" name="discrete_stepSize_active" typeDefRefId="TYPE_ID_bool_1" pointer="false"/>
+                            <Component id="COMP_ID_der_lpf_x_52" name="der_lpf_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_lpf_x_53" name="lpf_x" typeDefRefId="TYPE_ID_SPE_Real_3" pointer="false"/>
+                            <Component id="COMP_ID_discrete_stepSize_active_54" name="discrete_stepSize_active" typeDefRefId="TYPE_ID_bool_1" pointer="false"/>
                         </Components>
                     </Typedef>
                 </Typedefs>
@@ -313,6 +315,10 @@
                     <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.vsmin"/>
                 </DataReference>
                 <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="wscale"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.wscale"/>
+                </DataReference>
+                <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'dLHPFreplacement.K'"/>
                     <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.dLHPFreplacement_K"/>
                 </DataReference>
@@ -411,6 +417,10 @@
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'lpf.freqHz'"/>
                     <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.lpf_freqHz"/>
+                </DataReference>
+                <DataReference>
+                    <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'scale.k'"/>
+                    <GlobalVariable variableRefId="VAR_ID_BlockState_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_0" componentIdentifier="block_state_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.scale_k"/>
                 </DataReference>
                 <DataReference>
                     <ForeignVariableReference manifestReferenceRefId="ALG_MAN_ID" foreignRefId="'imLeadLag.K'"/>

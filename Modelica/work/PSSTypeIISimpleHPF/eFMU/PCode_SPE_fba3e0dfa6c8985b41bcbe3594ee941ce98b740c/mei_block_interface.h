@@ -1,4 +1,4 @@
-/*2026-03-23T15:11:11.336953300Z*/
+/*2026-03-24T01:07:40.903451Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.h
@@ -52,6 +52,7 @@ extern MODELICA_Integer mei_Recalibrate_H225c1baf6cf5a31bc9b0c38998c32298f6f0531
 ,   /* TUNEABLE */  MODELICA_Real   vSI_start
 ,   /* TUNEABLE */  MODELICA_Real   vsmax
 ,   /* TUNEABLE */  MODELICA_Real   vsmin
+,   /* TUNEABLE */  MODELICA_Real   wscale
 );
 
 /* reinitialize states and outputs */

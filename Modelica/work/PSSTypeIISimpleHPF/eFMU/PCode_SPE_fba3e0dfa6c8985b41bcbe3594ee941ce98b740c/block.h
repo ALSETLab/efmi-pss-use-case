@@ -1,4 +1,4 @@
-/*2026-03-23T15:11:11.319096100Z*/
+/*2026-03-24T01:07:40.886146200Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -47,6 +47,7 @@ typedef struct {
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vSI_start;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vsmax;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vsmin;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c wscale;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c dLHPFreplacement_K;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c dLHPFreplacement_Kw;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c dLHPFreplacement_T;
@@ -72,6 +73,7 @@ typedef struct {
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_K;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_T;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_freqHz;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c scale_k;
 
     /* Constants */
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag_K;

@@ -30303,70 +30303,71 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->woffset = 1.5;
+    instance->woffset = 1.0;
  800f590:	687b      	ldr	r3, [r7, #4]
- 800f592:	f04f 527f 	mov.w	r2, #1069547520	@ 0x3fc00000
+ 800f592:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
  800f596:	625a      	str	r2, [r3, #36]	@ 0x24
 
-    instance->wscale = 1.5;
+    instance->wscale = 50.0;
  800f598:	687b      	ldr	r3, [r7, #4]
- 800f59a:	f04f 527f 	mov.w	r2, #1069547520	@ 0x3fc00000
- 800f59e:	629a      	str	r2, [r3, #40]	@ 0x28
+ 800f59a:	4a29      	ldr	r2, [pc, #164]	@ (800f640 <Startup+0x25c>)
+ 800f59c:	629a      	str	r2, [r3, #40]	@ 0x28
 
     instance->K0 = 3.0e+1;
- 800f5a0:	687b      	ldr	r3, [r7, #4]
- 800f5a2:	4a27      	ldr	r2, [pc, #156]	@ (800f640 <Startup+0x25c>)
- 800f5a4:	621a      	str	r2, [r3, #32]
+ 800f59e:	687b      	ldr	r3, [r7, #4]
+ 800f5a0:	4a28      	ldr	r2, [pc, #160]	@ (800f644 <Startup+0x260>)
+ 800f5a2:	621a      	str	r2, [r3, #32]
 
     /* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */
 
     Recalibrate(instance);
- 800f5a6:	6878      	ldr	r0, [r7, #4]
- 800f5a8:	f7f7 fdd6 	bl	8007158 <Recalibrate>
+ 800f5a4:	6878      	ldr	r0, [r7, #4]
+ 800f5a6:	f7f7 fdd7 	bl	8007158 <Recalibrate>
     /* ***************************************************** Default initialize inputs (based on constants and parameters): */
     /*
     Initialize variables without explicit start value or equation (implicit initializations):
     */
 
     instance->faultL1 = false;
- 800f5ac:	687b      	ldr	r3, [r7, #4]
- 800f5ae:	2200      	movs	r2, #0
- 800f5b0:	705a      	strb	r2, [r3, #1]
+ 800f5aa:	687b      	ldr	r3, [r7, #4]
+ 800f5ac:	2200      	movs	r2, #0
+ 800f5ae:	705a      	strb	r2, [r3, #1]
 
     instance->faultL2 = false;
- 800f5b2:	687b      	ldr	r3, [r7, #4]
- 800f5b4:	2200      	movs	r2, #0
- 800f5b6:	709a      	strb	r2, [r3, #2]
+ 800f5b0:	687b      	ldr	r3, [r7, #4]
+ 800f5b2:	2200      	movs	r2, #0
+ 800f5b4:	709a      	strb	r2, [r3, #2]
 
     instance->fault = false;
- 800f5b8:	687b      	ldr	r3, [r7, #4]
- 800f5ba:	2200      	movs	r2, #0
- 800f5bc:	701a      	strb	r2, [r3, #0]
+ 800f5b6:	687b      	ldr	r3, [r7, #4]
+ 800f5b8:	2200      	movs	r2, #0
+ 800f5ba:	701a      	strb	r2, [r3, #0]
 
     /*
     Initialize variables with explicit start value (independent initializations):
     */
 
     instance->uPLoad = 0.0;
- 800f5be:	687b      	ldr	r3, [r7, #4]
- 800f5c0:	f04f 0200 	mov.w	r2, #0
- 800f5c4:	605a      	str	r2, [r3, #4]
+ 800f5bc:	687b      	ldr	r3, [r7, #4]
+ 800f5be:	f04f 0200 	mov.w	r2, #0
+ 800f5c2:	605a      	str	r2, [r3, #4]
 
     instance->vf = 0.0;
- 800f5c6:	687b      	ldr	r3, [r7, #4]
- 800f5c8:	f04f 0200 	mov.w	r2, #0
- 800f5cc:	609a      	str	r2, [r3, #8]
+ 800f5c4:	687b      	ldr	r3, [r7, #4]
+ 800f5c6:	f04f 0200 	mov.w	r2, #0
+ 800f5ca:	609a      	str	r2, [r3, #8]
 
     /* ********************************* Default initialize states and outputs (based on constants, parameters and inputs): */
 
     Reinitialize(instance);
- 800f5ce:	6878      	ldr	r0, [r7, #4]
- 800f5d0:	f7f8 fa56 	bl	8007a80 <Reinitialize>
+ 800f5cc:	6878      	ldr	r0, [r7, #4]
+ 800f5ce:	f7f8 fa57 	bl	8007a80 <Reinitialize>
 }
- 800f5d4:	bf00      	nop
- 800f5d6:	3708      	adds	r7, #8
- 800f5d8:	46bd      	mov	sp, r7
- 800f5da:	bd80      	pop	{r7, pc}
+ 800f5d2:	bf00      	nop
+ 800f5d4:	3708      	adds	r7, #8
+ 800f5d6:	46bd      	mov	sp, r7
+ 800f5d8:	bd80      	pop	{r7, pc}
+ 800f5da:	bf00      	nop
  800f5dc:	3951b717 	.word	0x3951b717
  800f5e0:	3b449ba6 	.word	0x3b449ba6
  800f5e4:	3e6b851f 	.word	0x3e6b851f
@@ -30392,8 +30393,8 @@ static void Startup(ALGOSTRUCT *instance)
  800f634:	3d2b96d5 	.word	0x3d2b96d5
  800f638:	3cb88127 	.word	0x3cb88127
  800f63c:	3e19999a 	.word	0x3e19999a
- 800f640:	41f00000 	.word	0x41f00000
- 800f644:	00000000 	.word	0x00000000
+ 800f640:	42480000 	.word	0x42480000
+ 800f644:	41f00000 	.word	0x41f00000
 
 0800f648 <DoStep>:
 

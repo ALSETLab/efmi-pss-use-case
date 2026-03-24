@@ -799,9 +799,9 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->woffset = 1.5;
+    instance->woffset = 1.0;
 
-    instance->wscale = 1.5;
+    instance->wscale = 50.0;
 
     instance->K0 = 3.0e+1;
 

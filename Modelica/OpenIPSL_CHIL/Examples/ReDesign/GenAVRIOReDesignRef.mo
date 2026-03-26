@@ -12,7 +12,7 @@ model GenAVRIOReDesignRef
     P_0=1997999999.9936,
     Q_0=967924969.90658,
     angle_0=0.49467717698916,
-    K0=20) annotation (Placement(visible=true, transformation(
+    K0=30) annotation (Placement(visible=true, transformation(
         origin={-80,0},
         extent={{-10,-10},{10,10}},
         rotation=0)));

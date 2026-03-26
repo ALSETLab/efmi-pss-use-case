@@ -54,19 +54,23 @@ whasout = tf([Tw 0],[Tw 1],'InputName','u_wof',...
                             'OutputName','y_wof',...
                             'Name','wof');
 
-                            % Connect the filters to the PS model                         
-PSwo = PS*lpf*whasout % Connects filters to PS model
+% Take into account the scaling of the input signal as done in the PSS
+% model developed for eFMI export
+wscale = 10;
+
+% Connect the filters to the PS model                         
+PSwo = (1/wscale)*lpf*whasout*PS % Connects filters to PS model
 
 %% RL Step 2: Obtain the root locus plot
 figure(101)
 rlp = rlocusplot(-PSwo);
 rlp.FrequencyUnit = "Hz";
-axis([-25 1 -15 15])
+axis([-5 1 -2 10])
 grid on
 
 %% RL Step 3: Analyze the root locus plot
 % Looking at the plot, the angle of departure is around:
-theta_dep = 3;
+theta_dep = 33;
 fprintf('Looking at the root locus plot, the angle of departure is around: %d degrees\n', theta_dep);
 
 %% RL Step 4: Calculate Theta Peak
@@ -95,8 +99,8 @@ rlp = rlocusplot(-PSwo_leadlag);
 rlp.FrequencyUnit = "Hz";
 axis([-5 1 -1 15])
 
-% For a damping of ~15%, the gain found is
-Kpss = 6.7
+% For maximum damping, the gain found is
+Kpss = 7.4
 
 %% List your design parameters for the Design:
 % Display the design parameters
@@ -108,5 +112,5 @@ disp('Enter the parameters above in your PSS in OpenModelica, and verify in simu
 % After Obtaining the new Linear Model with the PSS from the Dymola model, you can also verify the new damping of the local mode.
 % The new linear model can be obtained by linearizing the Dymola model with the PSS implemented, and 
 % then analyzing the eigenvalues of the new linear model to determine the damping of the local mode.
-% To verify what is the new damping with the design, look at the separte file.
+% To verify what is the new damping of ~27% with the design, look at the separte file.
 % eof

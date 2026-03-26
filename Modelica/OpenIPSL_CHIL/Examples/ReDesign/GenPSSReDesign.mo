@@ -9,9 +9,15 @@ model GenPSSReDesign
   OpenIPSL.Electrical.Buses.Bus B3 annotation(
     Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Generator.ReDesign.GenPSSReDesign G1(
-    P_0=1997999999.99364,
-    Q_0=967924969.9065781,
-    angle_0=0.4946771769891539) annotation (Placement(visible=true,
+    P_0=1997999999.9936,
+    Q_0=967924969.90658,
+    angle_0=0.49467717698916,
+    pss(
+      Kw=7.4,
+      T1=0.339913009676242,
+      T2=0.0583198524063289,
+      T3=0.339913009676242,
+      T4=0.0583198524063289))   annotation (Placement(visible=true,
         transformation(
         origin={-80,0},
         extent={{-10,-10},{10,10}},

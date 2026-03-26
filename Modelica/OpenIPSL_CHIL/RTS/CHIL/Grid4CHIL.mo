@@ -2,7 +2,7 @@ within OpenIPSL_CHIL.RTS.CHIL;
 model Grid4CHIL "System model for CHIL testing"
   extends Network.RTNetworkMinimal;
   // output offset and scaling parameter
-  parameter Real wscale=50.00
+  parameter Real wscale=10.00
                            "Speed output scaling" annotation (Dialog(group="Output Offset and Scaling"));
   parameter Real woffset=1.0 "Speed output offset"
     annotation (Dialog(group="Output Offset and Scaling"));

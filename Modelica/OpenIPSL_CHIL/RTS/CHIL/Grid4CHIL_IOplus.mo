@@ -4,7 +4,7 @@ model Grid4CHIL_IOplus
   extends Network.RTNetwork;
 
   // output offset and scaling parameter
-  parameter Real wscale=50.00 "Speed output scaling" annotation (Dialog(group="Output Offset and Scaling"));
+  parameter Real wscale=10.00 "Speed output scaling" annotation (Dialog(group="Output Offset and Scaling"));
   parameter Real woffset=1.00 "Speed output offset"
     annotation (Dialog(group="Output Offset and Scaling"));
 

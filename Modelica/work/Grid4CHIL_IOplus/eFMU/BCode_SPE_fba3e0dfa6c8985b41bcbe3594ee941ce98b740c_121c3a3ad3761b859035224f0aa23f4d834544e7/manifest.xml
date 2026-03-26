@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.12.0" kind="BinaryCode" efmiVersion="1.0.0" id="{8bdd60c1-cdae-4da5-a62d-21883b41dfdf}" name="BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7" generationDateAndTime="2026-03-26T03:11:33Z" generationTool="ESP" xsi:noNamespaceSchemaLocation="../schemas/BinaryCode/efmiBinaryCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.12.0" kind="BinaryCode" efmiVersion="1.0.0" id="{afe9c7cd-26c1-4659-8b8c-6b890de1e1da}" name="BCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_121c3a3ad3761b859035224f0aa23f4d834544e7" generationDateAndTime="2026-03-26T03:53:18Z" generationTool="ESP" xsi:noNamespaceSchemaLocation="../schemas/BinaryCode/efmiBinaryCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="PROD_MAN_ID" manifestRefId="{3e0c37fc-3dac-49b4-9bba-535c91c506fc}" checksum="0364983b27969c4ed4be0fb485e5d250df61ca85" origin="true"/>
+        <ManifestReference id="PROD_MAN_ID" manifestRefId="{1d2a990a-5fe3-4f0f-9435-bf1ac945515d}" checksum="5df44c583a249986007a9d022f5cc117cc4427e0" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_sii_block_interface.obj_0" name="sii_block_interface.obj" path="./" needsChecksum="true" checksum="6bedff4fdda14c9d3055461a28ae4493de0dd244" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.obj_1" name="mei_block_interface.obj" path="./" needsChecksum="true" checksum="07aa2b32e7c19de0576fa6429d066a7f051a3eed" role="Code"/>
-        <File id="FILE_ID_galec_stl.obj_2" name="galec_stl.obj" path="./" needsChecksum="true" checksum="fe76a3656b8ff61ce8b8ade98843bc7583855741" role="Code"/>
-        <File id="FILE_ID_block.obj_3" name="block.obj" path="./" needsChecksum="true" checksum="44515b9bcf3d80bdb92720641193e730b2221dc5" role="Code"/>
-        <File id="FILE_ID_block.lib_4" name="block.lib" path="./" needsChecksum="true" checksum="5f5175f0ff7461874ea4ac1da84f80bedc4d5a2b" role="other"/>
+        <File id="FILE_ID_sii_block_interface.obj_0" name="sii_block_interface.obj" path="./" needsChecksum="true" checksum="ca97ec5472185afd0aac7d2a8cd7c1ad76d17a42" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.obj_1" name="mei_block_interface.obj" path="./" needsChecksum="true" checksum="ef140222e48bfb7dd0f4d06ef5c40cf5c90294a4" role="Code"/>
+        <File id="FILE_ID_galec_stl.obj_2" name="galec_stl.obj" path="./" needsChecksum="true" checksum="59c337b8c05593213b1fc6080cfc4b01c6ae2016" role="Code"/>
+        <File id="FILE_ID_block.obj_3" name="block.obj" path="./" needsChecksum="true" checksum="a1e24a82921fcd885c44c40d650d4355d19950b3" role="Code"/>
+        <File id="FILE_ID_block.lib_4" name="block.lib" path="./" needsChecksum="true" checksum="685b4b5fd5e8a71f7e3f5472d08ac6d0cf9962dd" role="other"/>
         <File id="FILE_ID_makefile_5" name="makefile" path="./" needsChecksum="true" checksum="92388616dad832915af5fb313da91ca91b1b6fa5" role="other"/>
     </Files>
     <BinaryContainer>
@@ -34,25 +34,25 @@
             <CompileTarget vendor="" targetName="Win32" chipVersion="" instructionSetArchitecture="i686" endianess="little" registerWidth="32" addressWidth="32"/>
         </BuildConfiguration>
         <Modules>
-            <BinaryModule id="BINMOD_ID_0" generationTool="ESP" generationDateAndTime="2026-03-26T03:11:33Z" compilerOptionSetRefId="default">
+            <BinaryModule id="BINMOD_ID_0" generationTool="ESP" generationDateAndTime="2026-03-26T03:53:18Z" compilerOptionSetRefId="default">
                 <ObjectFile id="OBJFILE_ID_0">
                     <FileReference fileRefId="FILE_ID_sii_block_interface.obj_0"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_sii_block_interface.c_5"/>
                 </ObjectFile>
             </BinaryModule>
-            <BinaryModule id="BINMOD_ID_1" generationTool="ESP" generationDateAndTime="2026-03-26T03:11:33Z" compilerOptionSetRefId="default">
+            <BinaryModule id="BINMOD_ID_1" generationTool="ESP" generationDateAndTime="2026-03-26T03:53:18Z" compilerOptionSetRefId="default">
                 <ObjectFile id="OBJFILE_ID_1">
                     <FileReference fileRefId="FILE_ID_mei_block_interface.obj_1"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_mei_block_interface.c_6"/>
                 </ObjectFile>
             </BinaryModule>
-            <BinaryModule id="BINMOD_ID_2" generationTool="ESP" generationDateAndTime="2026-03-26T03:11:33Z" compilerOptionSetRefId="default">
+            <BinaryModule id="BINMOD_ID_2" generationTool="ESP" generationDateAndTime="2026-03-26T03:53:18Z" compilerOptionSetRefId="default">
                 <ObjectFile id="OBJFILE_ID_2">
                     <FileReference fileRefId="FILE_ID_galec_stl.obj_2"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_galec_stl.c_7"/>
                 </ObjectFile>
             </BinaryModule>
-            <BinaryModule id="BINMOD_ID_3" generationTool="ESP" generationDateAndTime="2026-03-26T03:11:33Z" compilerOptionSetRefId="default">
+            <BinaryModule id="BINMOD_ID_3" generationTool="ESP" generationDateAndTime="2026-03-26T03:53:18Z" compilerOptionSetRefId="default">
                 <ObjectFile id="OBJFILE_ID_3">
                     <FileReference fileRefId="FILE_ID_block.obj_3"/>
                     <ForeignSourceFileReference manifestReferenceRefId="PROD_MAN_ID" foreignRefId="FILE_ID_block.c_8"/>

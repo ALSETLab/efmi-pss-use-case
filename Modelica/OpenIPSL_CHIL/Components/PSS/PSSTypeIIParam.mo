@@ -17,7 +17,7 @@ model PSSTypeIIParam
                 );
 
   // input scaling parameter
-  parameter Real wscale=50.0 "Speed input scaling" annotation (Dialog(group="Output Offset and Scaling"));
+  parameter Real wscale=50.0 "Speed input scaling" annotation (Dialog(group="Input Scaling"));
 
   // Noise Supression filter parameters:
   parameter Modelica.Units.SI.Frequency freqLow=5.0

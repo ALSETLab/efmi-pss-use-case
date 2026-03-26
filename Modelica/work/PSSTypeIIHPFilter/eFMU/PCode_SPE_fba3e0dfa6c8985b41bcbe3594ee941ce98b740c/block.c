@@ -1,4 +1,4 @@
-/*2026-03-23T15:06:50.340364700Z*/
+/*2026-03-26T02:15:24.019495Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -98,6 +98,8 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->lpf_T = 1.0 / (6.28318530717958623 * instance->lpf_freqHz);
 
+    instance->scale_k = 1.0 / instance->wscale;
+
     instance->dLHPFreplacement_Kw = instance->Kw;
 
     instance->dLHPFreplacement_scaling_factor = instance->dLHPFreplacement_Kw;
@@ -119,6 +121,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
     SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y;
     SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
     SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_u;
+    SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c scale_y;
 
     /* Algorithm */
     /*
@@ -137,7 +140,9 @@ static void Reinitialize(ALGOSTRUCT *instance)
 
     instance->der_lpf_x = 0.0;
 
-    dLHPFreplacement_highPassFilter_uu[0] = instance->vSI / instance->dLHPFreplacement_highPassFilter_u_nominal;
+    scale_y = instance->scale_k * instance->vSI;
+
+    dLHPFreplacement_highPassFilter_uu[0] = scale_y / instance->dLHPFreplacement_highPassFilter_u_nominal;
 
     dLHPFreplacement_highPassFilter_y = instance->dLHPFreplacement_highPassFilter_y_start;
 
@@ -216,6 +221,8 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->Kw = 2.70000000000000018;
 
+    instance->wscale = 5.0e+1;
+
     instance->kLPF = 1.0;
 
     instance->freqLow = 5.0;
@@ -261,6 +268,7 @@ static void DoStep(ALGOSTRUCT *instance)
     SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_y;
     SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c imLeadLag1_TF_y;
     SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_u;
+    SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c scale_y;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
@@ -279,7 +287,9 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    dLHPFreplacement_highPassFilter_uu[0] = instance->vSI / instance->dLHPFreplacement_highPassFilter_u_nominal;
+    scale_y = instance->scale_k * instance->vSI;
+
+    dLHPFreplacement_highPassFilter_uu[0] = scale_y / instance->dLHPFreplacement_highPassFilter_u_nominal;
 
     instance->der_dLHPFreplacement_highPassFilter_x_1 = instance->dLHPFreplacement_highPassFilter_r[0] * (instance->dLHPFreplacement_highPassFilter_x[0] \
         - dLHPFreplacement_highPassFilter_uu[0]);

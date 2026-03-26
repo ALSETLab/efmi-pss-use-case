@@ -3,18 +3,22 @@ model GenPSSTypeIIParam
   "Generator with AVR and designed PSS modified for efmi export, PSSTypeIIParam. PSS uses derivative lag block for the wahsout filter."
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   Components.PSS.PSSTypeIIParam pss
-                annotation (Placement(transformation(                 extent={{-50,-10},
-            {-30,10}})));
+                annotation (Placement(transformation(                 extent={{-10,-10},
+            {10,10}})));
 
   ReDesign.GenAVRIOReDesign genAVRIOReDesign
-    annotation (Placement(transformation(extent={{20,-20},{60,20}})));
+    annotation (Placement(transformation(extent={{40,-20},{80,20}})));
+  Modelica.Blocks.Math.Gain wscale(k=pss.wscale)
+    annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
 equation
   connect(pss.vs, genAVRIOReDesign.u)
-    annotation (Line(points={{-29,0},{16,0}}, color={0,0,127}));
+    annotation (Line(points={{11,0},{36,0}},  color={0,0,127}));
   connect(genAVRIOReDesign.pwPin, pwPin)
-    annotation (Line(points={{62,0},{110,0}}, color={0,0,255}));
-  connect(genAVRIOReDesign.w, pss.vSI) annotation (Line(points={{62,18},{80,18},
-          {80,40},{-80,40},{-80,0},{-52,0}}, color={0,0,127}));
+    annotation (Line(points={{82,0},{110,0}}, color={0,0,255}));
+  connect(wscale.y, pss.vSI)
+    annotation (Line(points={{-19,0},{-12,0}}, color={0,0,127}));
+  connect(wscale.u, genAVRIOReDesign.w) annotation (Line(points={{-42,0},{-90,0},
+          {-90,40},{82,40},{82,18}}, color={0,0,127}));
   annotation (Icon(graphics={
         Ellipse(
           extent={{-100,100},{100,-100}},

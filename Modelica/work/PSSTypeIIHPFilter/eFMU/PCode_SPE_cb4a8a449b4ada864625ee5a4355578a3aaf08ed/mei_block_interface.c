@@ -1,4 +1,4 @@
-/*2026-03-23T15:06:49.095694Z*/
+/*2026-03-26T02:15:22.778563600Z*/
 
 /**********************************************************************************************************************
  * mei_block_interface.c
@@ -63,6 +63,7 @@ MODELICA_Integer mei_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8
 ,   /* TUNEABLE */  MODELICA_Real   vSI_start
 ,   /* TUNEABLE */  MODELICA_Real   vsmax
 ,   /* TUNEABLE */  MODELICA_Real   vsmin
+,   /* TUNEABLE */  MODELICA_Real   wscale
 ) {
     ALGOSTRUCT *self = (ALGOSTRUCT *) object;
     MODELICA_Integer result = -1;
@@ -79,6 +80,7 @@ MODELICA_Integer mei_Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8
             vSI_start;
         self->vsmax = (SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) vsmax;
         self->vsmin = (SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) vsmin;
+        self->wscale = (SPE_Real_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed) wscale;
 
         Recalibrate_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed(self);
 

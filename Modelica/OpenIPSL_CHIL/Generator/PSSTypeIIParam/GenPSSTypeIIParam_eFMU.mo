@@ -1,15 +1,15 @@
 within OpenIPSL_CHIL.Generator.PSSTypeIIParam;
 model GenPSSTypeIIParam_eFMU
   "Similar to GenPSSTypeIIParam, but now uses the efmu generated for the PSS."
-  extends OpenIPSL_CHIL.Generator.PSSTypeIIParam.GenPSSTypeIIParam(break pss
-                         );
+  extends OpenIPSL_CHIL.Generator.PSSTypeIIParam.GenPSSTypeIIParam(break pss, wscale(k
+        =pss.wscale)     );
   'PSSTypeIIParam.eFMU_SiL_Support'.BinaryStub pss
-    annotation (Placement(transformation(extent={{-48,-10},{-28,10}})));
+    annotation (Placement(transformation(extent={{0,-10},{20,10}})));
 equation
+  connect(wscale.y, pss.vSI)
+    annotation (Line(points={{-19,0},{-2,0}}, color={0,0,127}));
   connect(pss.vs, genAVRIOReDesign.u)
-    annotation (Line(points={{-27,0},{16,0}}, color={0,0,127}));
-  connect(genAVRIOReDesign.w, pss.vSI) annotation (Line(points={{62,18},{82,18},
-          {82,40},{-70,40},{-70,0},{-50,0}}, color={0,0,127}));
+    annotation (Line(points={{21,0},{36,0}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(                                grid={2,2})),
                   Icon(coordinateSystem(grid={2,2}), graphics={
         Rectangle(

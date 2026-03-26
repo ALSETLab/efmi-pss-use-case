@@ -292,9 +292,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
-		self.wscale := 5.0e+1;
 		self.Tw := 2.5e-1;
 		self.Kw := 2.70000000000000018;
+		self.wscale := 5.0e+1;
 		self.kLPF := 1.0;
 		self.freqLow := 5.0;
 		self.vsmin := -1.5;
@@ -358,11 +358,11 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		self.'lpf.freqHz' := self.freqLow;
 		self.'lpf.K' := self.kLPF;
 		self.'lpf.T' := (1.0 / (6.28318530717958623 * self.'lpf.freqHz'));
+		self.'scale.k' := (1.0 / self.wscale);
 		self.'dLHPFreplacement.Kw' := self.Kw;
 		self.'dLHPFreplacement.Tw' := self.Tw;
 		self.'dLHPFreplacement.K' := (self.'dLHPFreplacement.Kw' * self.'dLHPFreplacement.Tw');
 		self.'dLHPFreplacement.T' := self.'dLHPFreplacement.Tw';
-		self.'scale.k' := (1.0 / self.wscale);
 	end Recalibrate;
 
 	function Reinitialize
@@ -371,9 +371,6 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 
 
 	protected
-		/* dLHPFreplacement: */
-		Real 'dLHPFreplacement.u';
-
 		/* imLeadLag: */
 		Real 'imLeadLag.u';
 		Real 'imLeadLag.y';
@@ -390,6 +387,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		/* lpf: */
 		Real 'lpf.u';
 
+		/* scale: */
+		Real 'scale.y';
+
 	algorithm
 		/*
 			Initialize variables without explicit start value or equation (implicit initializations):
@@ -401,9 +401,9 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		*/
 		self.'derivative(dLHPFreplacement.x)' := 0.0;
 		self.'derivative(lpf.x)' := 0.0;
-		'dLHPFreplacement.u' := (self.'scale.k' * self.vSI);
-		self.'dLHPFreplacement.x' := (('dLHPFreplacement.u' * self.'dLHPFreplacement.T') / self.'dLHPFreplacement.T');
-		'lpf.u' := ((self.'dLHPFreplacement.K' * ('dLHPFreplacement.u' - self.'dLHPFreplacement.x')) / self.'dLHPFreplacement.T');
+		'scale.y' := (self.'scale.k' * self.vSI);
+		self.'dLHPFreplacement.x' := (('scale.y' * self.'dLHPFreplacement.T') / self.'dLHPFreplacement.T');
+		'lpf.u' := ((self.'dLHPFreplacement.K' * ('scale.y' - self.'dLHPFreplacement.x')) / self.'dLHPFreplacement.T');
 		self.'lpf.x' := (('lpf.u' * self.'lpf.T') / self.'lpf.T');
 		'imLeadLag.u' := (self.'lpf.K' * self.'lpf.x');
 		'imLeadLag.TF.y' := self.'imLeadLag.TF.y_start';

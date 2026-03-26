@@ -41,9 +41,9 @@ partial model RTNetwork
         rotation=0)));
   Components.Auxiliary.iSrcLoad                iSrcLoad
                       annotation (Placement(transformation(
-        extent={{10,-10},{-10,10}},
+        extent={{8,-8},{-8,8}},
         rotation=180,
-        origin={-18,40})));
+        origin={-8,50})));
 equation
   connect(B1.p, transformer.p) annotation(
     Line(points = {{-60, 0}, {-39, 0}}, color = {0, 0, 255}));
@@ -54,7 +54,8 @@ equation
   connect(L2.p, B2.p) annotation (Line(points={{21,-20},{10,-20},{10,0},{0,0}},
         color={0,0,255}));
   connect(pwFault4efmi.p, B2.p)
-    annotation (Line(points={{18.3333,-70},{0,-70},{0,0}}, color={0,0,255}));
+    annotation (Line(points={{18.3333,-70},{4,-70},{4,0},{0,0}},
+                                                           color={0,0,255}));
   connect(B3.p, L1.n)
     annotation (Line(points={{60,0},{50,0},{50,20},{39,20}}, color={0,0,255}));
   connect(L2.n, B3.p) annotation (Line(points={{39,-20},{50,-20},{50,0},{60,0}},
@@ -62,7 +63,8 @@ equation
   connect(infiniteBus.p, B3.p) annotation(
     Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
   connect(iSrcLoad.p, B2.p)
-    annotation (Line(points={{-7,40},{0,40},{0,0}}, color={0,0,255}));
+    annotation (Line(points={{0.8,50},{4,50},{4,0},{0,0}},
+                                                    color={0,0,255}));
   annotation (
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.0001),
     Diagram(coordinateSystem(grid={2,2})),

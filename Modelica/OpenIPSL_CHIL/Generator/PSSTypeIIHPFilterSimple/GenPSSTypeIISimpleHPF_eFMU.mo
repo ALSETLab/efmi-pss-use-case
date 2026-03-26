@@ -1,15 +1,16 @@
 within OpenIPSL_CHIL.Generator.PSSTypeIIHPFilterSimple;
 model GenPSSTypeIISimpleHPF_eFMU
   "Similar to GenPSSTypeIIHPFilter, but now uses the efmu generated for the PSS."
-  extends OpenIPSL_CHIL.Generator.PSSTypeIIHPFilterSimple.GenPSSTypeIISimpleHPF(break pss
+  extends OpenIPSL_CHIL.Generator.PSSTypeIIHPFilterSimple.GenPSSTypeIISimpleHPF(break pss, wscale(k
+        =pss.wscale)
               );
   'PSSTypeIISimpleHPF.eFMU_SiL_Support'.BinaryStub pss                                                                                                                                         annotation(
-    Placement(transformation(origin={-14,0},     extent={{-40,-10},{-20,10}})));
+    Placement(transformation(origin={30,0},      extent={{-40,-10},{-20,10}})));
 equation
   connect(pss.vs, genAVRIOReDesign.u)
-    annotation (Line(points={{-33,0},{16,0}}, color={0,0,127}));
-  connect(pss.vSI, genAVRIOReDesign.w) annotation (Line(points={{-56,0},{-80,0},
-          {-80,40},{80,40},{80,18},{62,18}}, color={0,0,127}));
+    annotation (Line(points={{11,0},{36,0}},  color={0,0,127}));
+  connect(wscale.y, pss.vSI)
+    annotation (Line(points={{-19,0},{-12,0}}, color={0,0,127}));
   annotation (Diagram(coordinateSystem(                                grid={2,2})),
                   Icon(coordinateSystem(grid={2,2}), graphics={
         Rectangle(

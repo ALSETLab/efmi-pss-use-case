@@ -1,4 +1,4 @@
-/*2026-03-23T15:05:43.545494100Z*/
+/*2026-03-26T02:04:40.036383500Z*/
 
 /**********************************************************************************************************************
  * block.h
@@ -47,6 +47,7 @@ typedef struct {
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vSI_start;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vsmax;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c vsmin;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c wscale;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_K;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_K_dummy;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_T;
@@ -77,6 +78,7 @@ typedef struct {
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_K;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_T;
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c lpf_freqHz;
+    SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c scale_k;
 
     /* Constants */
     SPE_Real_H67479d7783111b50ee4f84437c325e160da02330_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c derivativeLag_y_start;

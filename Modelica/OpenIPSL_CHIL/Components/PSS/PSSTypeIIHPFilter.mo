@@ -19,8 +19,8 @@ model PSSTypeIIHPFilter
 equation
   connect(dLHPFreplacement.y, lpf.u)
     annotation (Line(points={{-59,0},{-48,0}}, color={0,0,127}));
-  connect(dLHPFreplacement.u, vSI)
-    annotation (Line(points={{-82,0},{-120,0}}, color={0,0,127}));
+  connect(scale.y, dLHPFreplacement.u)
+    annotation (Line(points={{-85.6,0},{-82,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,255},

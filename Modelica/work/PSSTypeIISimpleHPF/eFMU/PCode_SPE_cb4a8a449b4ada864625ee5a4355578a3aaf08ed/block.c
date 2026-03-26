@@ -1,4 +1,4 @@
-/*2026-03-24T01:07:39.647301700Z*/
+/*2026-03-26T02:10:04.207223900Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -98,6 +98,8 @@ static void Recalibrate(ALGOSTRUCT *instance)
 
     instance->lpf_T = 1.0 / (6.28318530717958623 * instance->lpf_freqHz);
 
+    instance->scale_k = 1.0 / instance->wscale;
+
     instance->dLHPFreplacement_Kw = instance->Kw;
 
     instance->dLHPFreplacement_Tw = instance->Tw;
@@ -105,20 +107,18 @@ static void Recalibrate(ALGOSTRUCT *instance)
     instance->dLHPFreplacement_K = instance->dLHPFreplacement_Kw * instance->dLHPFreplacement_Tw;
 
     instance->dLHPFreplacement_T = instance->dLHPFreplacement_Tw;
-
-    instance->scale_k = 1.0 / instance->wscale;
 }
 
 static void Reinitialize(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_u;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed scale_y;
 
     /* Algorithm */
     /*
@@ -137,11 +137,11 @@ static void Reinitialize(ALGOSTRUCT *instance)
 
     instance->der_lpf_x = 0.0;
 
-    dLHPFreplacement_u = instance->scale_k * instance->vSI;
+    scale_y = instance->scale_k * instance->vSI;
 
-    instance->dLHPFreplacement_x = (dLHPFreplacement_u * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
+    instance->dLHPFreplacement_x = (scale_y * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
 
-    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    lpf_u = (instance->dLHPFreplacement_K * (scale_y - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
 
     instance->lpf_x = (lpf_u * instance->lpf_T) / instance->lpf_T;
 
@@ -197,11 +197,11 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->wscale = 5.0e+1;
-
     instance->Tw = 2.5e-1;
 
     instance->Kw = 2.70000000000000018;
+
+    instance->wscale = 5.0e+1;
 
     instance->kLPF = 1.0;
 
@@ -240,13 +240,13 @@ static void Startup(ALGOSTRUCT *instance)
 static void DoStep(ALGOSTRUCT *instance)
 {
     /* Local variable(s) */
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed dLHPFreplacement_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_u;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_u;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed scale_y;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
@@ -265,11 +265,11 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    dLHPFreplacement_u = instance->scale_k * instance->vSI;
+    scale_y = instance->scale_k * instance->vSI;
 
-    instance->der_dLHPFreplacement_x = (dLHPFreplacement_u - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
+    instance->der_dLHPFreplacement_x = (scale_y - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
 
-    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    lpf_u = (instance->dLHPFreplacement_K * (scale_y - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
 
     instance->der_lpf_x = (lpf_u - instance->lpf_x) / instance->lpf_T;
 

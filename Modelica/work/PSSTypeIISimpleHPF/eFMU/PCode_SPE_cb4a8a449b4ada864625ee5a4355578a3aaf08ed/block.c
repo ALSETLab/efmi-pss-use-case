@@ -199,9 +199,9 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->Tw = 2.5e-1;
 
-    instance->Kw = 2.70000000000000018;
+    instance->Kw = 7.70000000000000018;
 
-    instance->wscale = 5.0e+1;
+    instance->wscale = 10.0e+1;
 
     instance->kLPF = 1.0;
 

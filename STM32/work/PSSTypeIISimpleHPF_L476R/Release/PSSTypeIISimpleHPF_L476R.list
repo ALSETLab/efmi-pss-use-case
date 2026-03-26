@@ -6425,7 +6425,7 @@ Disassembly of section .text:
  8004378:	6360      	str	r0, [r4, #52]	@ 0x34
  800437a:	f04f 557a 	mov.w	r5, #1048576000	@ 0x3e800000
  800437e:	485d      	ldr	r0, [pc, #372]	@ (80044f4 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a4>)
- 8004380:	6321      	str	r1, [r4, #48]	@ 0x30
+ 8004380:	6221      	str	r1, [r4, #32]
  8004382:	6163      	str	r3, [r4, #20]
  8004384:	f04f 517f 	mov.w	r1, #1069547520	@ 0x3fc00000
  8004388:	60e3      	str	r3, [r4, #12]
@@ -6433,7 +6433,7 @@ Disassembly of section .text:
  800438c:	65e3      	str	r3, [r4, #92]	@ 0x5c
  800438e:	f04f 537e 	mov.w	r3, #1065353216	@ 0x3f800000
  8004392:	61e5      	str	r5, [r4, #28]
- 8004394:	6220      	str	r0, [r4, #32]
+ 8004394:	6320      	str	r0, [r4, #48]	@ 0x30
  8004396:	ed9f 0a58 	vldr	s0, [pc, #352]	@ 80044f8 <Startup_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed+0x1a8>
  800439a:	62e1      	str	r1, [r4, #44]	@ 0x2c
  800439c:	61a2      	str	r2, [r4, #24]
@@ -6532,12 +6532,12 @@ Disassembly of section .text:
  80044d4:	401921fb 	.word	0x401921fb
  80044d8:	080047c4 	.word	0x080047c4
  80044dc:	3951b717 	.word	0x3951b717
- 80044e0:	40d66666 	.word	0x40d66666
+ 80044e0:	40f66666 	.word	0x40f66666
  80044e4:	3ea5fac2 	.word	0x3ea5fac2
- 80044e8:	42480000 	.word	0x42480000
- 80044ec:	bfc00000 	.word	0xbfc00000
+ 80044e8:	42c80000 	.word	0x42c80000
+ 80044ec:	40a00000 	.word	0x40a00000
  80044f0:	3d63d217 	.word	0x3d63d217
- 80044f4:	40a00000 	.word	0x40a00000
+ 80044f4:	bfc00000 	.word	0xbfc00000
  80044f8:	3e89807f 	.word	0x3e89807f
  80044fc:	25800000 	.word	0x25800000
  8004500:	3ff00000 	.word	0x3ff00000

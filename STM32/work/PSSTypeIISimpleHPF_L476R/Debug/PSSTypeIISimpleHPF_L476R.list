@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0001a26d  00000000  00000000  000520ec  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00112321  00000000  00000000  0006c359  2**0
+ 18 .debug_str    00112316  00000000  00000000  0006c359  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0017e67a  2**0
+ 19 .comment      00000043  00000000  00000000  0017e66f  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  0000681c  00000000  00000000  0017e6c0  2**2
+ 20 .debug_frame  0000681c  00000000  00000000  0017e6b4  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006b  00000000  00000000  00184edc  2**0
+ 21 .debug_line_str 0000006b  00000000  00000000  00184ed0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -16522,40 +16522,40 @@ static void Recalibrate(ALGOSTRUCT *instance)
  80064ac:	687b      	ldr	r3, [r7, #4]
  80064ae:	f8c3 20ac 	str.w	r2, [r3, #172]	@ 0xac
 
-    instance->dLHPFreplacement_Kw = instance->Kw;
+    instance->scale_k = 1.0 / instance->wscale;
  80064b2:	687b      	ldr	r3, [r7, #4]
- 80064b4:	689a      	ldr	r2, [r3, #8]
- 80064b6:	687b      	ldr	r3, [r7, #4]
- 80064b8:	63da      	str	r2, [r3, #60]	@ 0x3c
+ 80064b4:	ed93 7a0d 	vldr	s14, [r3, #52]	@ 0x34
+ 80064b8:	eef7 6a00 	vmov.f32	s13, #112	@ 0x3f800000  1.0
+ 80064bc:	eec6 7a87 	vdiv.f32	s15, s13, s14
+ 80064c0:	687b      	ldr	r3, [r7, #4]
+ 80064c2:	edc3 7a2d 	vstr	s15, [r3, #180]	@ 0xb4
+
+    instance->dLHPFreplacement_Kw = instance->Kw;
+ 80064c6:	687b      	ldr	r3, [r7, #4]
+ 80064c8:	689a      	ldr	r2, [r3, #8]
+ 80064ca:	687b      	ldr	r3, [r7, #4]
+ 80064cc:	63da      	str	r2, [r3, #60]	@ 0x3c
 
     instance->dLHPFreplacement_Tw = instance->Tw;
- 80064ba:	687b      	ldr	r3, [r7, #4]
- 80064bc:	69da      	ldr	r2, [r3, #28]
- 80064be:	687b      	ldr	r3, [r7, #4]
- 80064c0:	645a      	str	r2, [r3, #68]	@ 0x44
+ 80064ce:	687b      	ldr	r3, [r7, #4]
+ 80064d0:	69da      	ldr	r2, [r3, #28]
+ 80064d2:	687b      	ldr	r3, [r7, #4]
+ 80064d4:	645a      	str	r2, [r3, #68]	@ 0x44
 
     instance->dLHPFreplacement_K = instance->dLHPFreplacement_Kw * instance->dLHPFreplacement_Tw;
- 80064c2:	687b      	ldr	r3, [r7, #4]
- 80064c4:	ed93 7a0f 	vldr	s14, [r3, #60]	@ 0x3c
- 80064c8:	687b      	ldr	r3, [r7, #4]
- 80064ca:	edd3 7a11 	vldr	s15, [r3, #68]	@ 0x44
- 80064ce:	ee67 7a27 	vmul.f32	s15, s14, s15
- 80064d2:	687b      	ldr	r3, [r7, #4]
- 80064d4:	edc3 7a0e 	vstr	s15, [r3, #56]	@ 0x38
+ 80064d6:	687b      	ldr	r3, [r7, #4]
+ 80064d8:	ed93 7a0f 	vldr	s14, [r3, #60]	@ 0x3c
+ 80064dc:	687b      	ldr	r3, [r7, #4]
+ 80064de:	edd3 7a11 	vldr	s15, [r3, #68]	@ 0x44
+ 80064e2:	ee67 7a27 	vmul.f32	s15, s14, s15
+ 80064e6:	687b      	ldr	r3, [r7, #4]
+ 80064e8:	edc3 7a0e 	vstr	s15, [r3, #56]	@ 0x38
 
     instance->dLHPFreplacement_T = instance->dLHPFreplacement_Tw;
- 80064d8:	687b      	ldr	r3, [r7, #4]
- 80064da:	6c5a      	ldr	r2, [r3, #68]	@ 0x44
- 80064dc:	687b      	ldr	r3, [r7, #4]
- 80064de:	641a      	str	r2, [r3, #64]	@ 0x40
-
-    instance->scale_k = 1.0 / instance->wscale;
- 80064e0:	687b      	ldr	r3, [r7, #4]
- 80064e2:	ed93 7a0d 	vldr	s14, [r3, #52]	@ 0x34
- 80064e6:	eef7 6a00 	vmov.f32	s13, #112	@ 0x3f800000  1.0
- 80064ea:	eec6 7a87 	vdiv.f32	s15, s13, s14
- 80064ee:	687b      	ldr	r3, [r7, #4]
- 80064f0:	edc3 7a2d 	vstr	s15, [r3, #180]	@ 0xb4
+ 80064ec:	687b      	ldr	r3, [r7, #4]
+ 80064ee:	6c5a      	ldr	r2, [r3, #68]	@ 0x44
+ 80064f0:	687b      	ldr	r3, [r7, #4]
+ 80064f2:	641a      	str	r2, [r3, #64]	@ 0x40
 }
  80064f4:	bf00      	nop
  80064f6:	370c      	adds	r7, #12
@@ -16605,7 +16605,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
  800653c:	f04f 0200 	mov.w	r2, #0
  8006540:	f8c3 20e4 	str.w	r2, [r3, #228]	@ 0xe4
 
-    dLHPFreplacement_u = instance->scale_k * instance->vSI;
+    scale_y = instance->scale_k * instance->vSI;
  8006544:	687b      	ldr	r3, [r7, #4]
  8006546:	ed93 7a2d 	vldr	s14, [r3, #180]	@ 0xb4
  800654a:	687b      	ldr	r3, [r7, #4]
@@ -16613,7 +16613,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
  8006550:	ee67 7a27 	vmul.f32	s15, s14, s15
  8006554:	edc7 7a09 	vstr	s15, [r7, #36]	@ 0x24
 
-    instance->dLHPFreplacement_x = (dLHPFreplacement_u * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
+    instance->dLHPFreplacement_x = (scale_y * instance->dLHPFreplacement_T) / instance->dLHPFreplacement_T;
  8006558:	687b      	ldr	r3, [r7, #4]
  800655a:	ed93 7a10 	vldr	s14, [r3, #64]	@ 0x40
  800655e:	edd7 7a09 	vldr	s15, [r7, #36]	@ 0x24
@@ -16624,7 +16624,7 @@ static void Reinitialize(ALGOSTRUCT *instance)
  8006570:	687b      	ldr	r3, [r7, #4]
  8006572:	edc3 7a34 	vstr	s15, [r3, #208]	@ 0xd0
 
-    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    lpf_u = (instance->dLHPFreplacement_K * (scale_y - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
  8006576:	687b      	ldr	r3, [r7, #4]
  8006578:	ed93 7a0e 	vldr	s14, [r3, #56]	@ 0x38
  800657c:	687b      	ldr	r3, [r7, #4]
@@ -16862,20 +16862,20 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->wscale = 5.0e+1;
- 800677c:	687b      	ldr	r3, [r7, #4]
- 800677e:	4a1b      	ldr	r2, [pc, #108]	@ (80067ec <Startup+0xa8>)
- 8006780:	635a      	str	r2, [r3, #52]	@ 0x34
-
     instance->Tw = 2.5e-1;
- 8006782:	687b      	ldr	r3, [r7, #4]
- 8006784:	f04f 527a 	mov.w	r2, #1048576000	@ 0x3e800000
- 8006788:	61da      	str	r2, [r3, #28]
+ 800677c:	687b      	ldr	r3, [r7, #4]
+ 800677e:	f04f 527a 	mov.w	r2, #1048576000	@ 0x3e800000
+ 8006782:	61da      	str	r2, [r3, #28]
 
-    instance->Kw = 6.70000000000000018;
+    instance->Kw = 7.70000000000000018;
+ 8006784:	687b      	ldr	r3, [r7, #4]
+ 8006786:	4a19      	ldr	r2, [pc, #100]	@ (80067ec <Startup+0xa8>)
+ 8006788:	609a      	str	r2, [r3, #8]
+
+    instance->wscale = 10.0e+1;
  800678a:	687b      	ldr	r3, [r7, #4]
  800678c:	4a18      	ldr	r2, [pc, #96]	@ (80067f0 <Startup+0xac>)
- 800678e:	609a      	str	r2, [r3, #8]
+ 800678e:	635a      	str	r2, [r3, #52]	@ 0x34
 
     instance->kLPF = 1.0;
  8006790:	687b      	ldr	r3, [r7, #4]
@@ -16949,8 +16949,8 @@ static void Startup(ALGOSTRUCT *instance)
  80067e4:	46bd      	mov	sp, r7
  80067e6:	bd80      	pop	{r7, pc}
  80067e8:	3951b717 	.word	0x3951b717
- 80067ec:	42480000 	.word	0x42480000
- 80067f0:	40d66666 	.word	0x40d66666
+ 80067ec:	40f66666 	.word	0x40f66666
+ 80067f0:	42c80000 	.word	0x42c80000
  80067f4:	40a00000 	.word	0x40a00000
  80067f8:	bfc00000 	.word	0xbfc00000
  80067fc:	3d63d217 	.word	0x3d63d217
@@ -16964,9 +16964,9 @@ static void DoStep(ALGOSTRUCT *instance)
  8006806:	b08b      	sub	sp, #44	@ 0x2c
  8006808:	af00      	add	r7, sp, #0
  800680a:	6078      	str	r0, [r7, #4]
-    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed imLeadLag1_TF_y;
     SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed lpf_u;
+    SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed scale_y;
 
     /* Algorithm */
     if(instance->discrete_stepSize_active) {
@@ -17028,7 +17028,7 @@ static void DoStep(ALGOSTRUCT *instance)
 
     /* ******************************************************************************************* Inline integration loop: */
 
-    dLHPFreplacement_u = instance->scale_k * instance->vSI;
+    scale_y = instance->scale_k * instance->vSI;
  8006896:	687b      	ldr	r3, [r7, #4]
  8006898:	ed93 7a2d 	vldr	s14, [r3, #180]	@ 0xb4
  800689c:	687b      	ldr	r3, [r7, #4]
@@ -17036,7 +17036,7 @@ static void DoStep(ALGOSTRUCT *instance)
  80068a2:	ee67 7a27 	vmul.f32	s15, s14, s15
  80068a6:	edc7 7a09 	vstr	s15, [r7, #36]	@ 0x24
 
-    instance->der_dLHPFreplacement_x = (dLHPFreplacement_u - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
+    instance->der_dLHPFreplacement_x = (scale_y - instance->dLHPFreplacement_x) / instance->dLHPFreplacement_T;
  80068aa:	687b      	ldr	r3, [r7, #4]
  80068ac:	edd3 7a34 	vldr	s15, [r3, #208]	@ 0xd0
  80068b0:	ed97 7a09 	vldr	s14, [r7, #36]	@ 0x24
@@ -17047,7 +17047,7 @@ static void DoStep(ALGOSTRUCT *instance)
  80068c2:	687b      	ldr	r3, [r7, #4]
  80068c4:	edc3 7a33 	vstr	s15, [r3, #204]	@ 0xcc
 
-    lpf_u = (instance->dLHPFreplacement_K * (dLHPFreplacement_u - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
+    lpf_u = (instance->dLHPFreplacement_K * (scale_y - instance->dLHPFreplacement_x)) / instance->dLHPFreplacement_T;
  80068c8:	687b      	ldr	r3, [r7, #4]
  80068ca:	ed93 7a0e 	vldr	s14, [r3, #56]	@ 0x38
  80068ce:	687b      	ldr	r3, [r7, #4]

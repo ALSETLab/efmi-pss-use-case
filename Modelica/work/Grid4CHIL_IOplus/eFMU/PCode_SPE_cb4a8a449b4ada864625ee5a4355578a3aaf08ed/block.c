@@ -798,7 +798,7 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->woffset = 1.0;
 
-    instance->wscale = 5.0e+1;
+    instance->wscale = 10.0e+1;
 
     instance->K0 = 3.0e+1;
 

@@ -4,7 +4,7 @@ model GenPSSReDesign
   extends OpenIPSL_CHIL.Generator.GenTemplate;
   Components.PSS.PSSTypeIISimpleHPF               pss                                                                                                                                                   annotation(
     Placement(transformation(origin={-13,0},     extent={{-38,-10},{-19,10}})));
-  GenAVRIOReDesign          genAVRIOReDesign
+  GenAVRIOReDesign          genAVRIOReDesign(K0=30)
     annotation (Placement(transformation(extent={{20,-20},{60,20}})));
   Modelica.Blocks.Math.Gain wscale(k=pss.wscale)
     annotation (Placement(transformation(extent={{-74,-6},{-62,6}})));

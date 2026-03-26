@@ -1,5 +1,6 @@
 within OpenIPSL_CHIL.Examples.ReDesign;
-model GenAVRIOReDesignWithScaling
+model IOModelforReDesign
+  "Power system with synchronous machine (Order VI) and AVR (Type II), with input/output interfaces for linear analysis and control design considering signal scaling."
   extends Modelica.Icons.Example;
   RTS.CHIL.Grid4CHIL_IOplus               G4CHIL(G1(avr(K0=30)))
     annotation (Placement(transformation(extent={{-20,-20},{20,20}})));
@@ -10,7 +11,7 @@ model GenAVRIOReDesignWithScaling
     annotation (Placement(transformation(extent={{-10,-10},{10,10}},
         rotation=90,
         origin={-50,-70})));
-  Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=1.5, toff=1.55)
+  Components.Auxiliary.FaultTimerLogic faultTimerLogic(ton=0.5, toff=0.57)
     annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -42,4 +43,8 @@ equation
         color={0,0,127}));
   connect(G4CHIL.vf, vf) annotation (Line(points={{-28,12},{-90,12},{-90,0},{
           -120,0}}, color={0,0,127}));
-end GenAVRIOReDesignWithScaling;
+  annotation (experiment(
+      StopTime=10,
+      __Dymola_NumberOfIntervals=5000,
+      __Dymola_Algorithm="Dassl"));
+end IOModelforReDesign;

@@ -16,9 +16,12 @@ eig_a = diag(E);
 % Calculate natural frequencies (fn) in Hz from wn
 fn = wn / (2 * pi);
 
+% Define indices of local mode for table
+lmindx = 5:6;
+
 % Create a table with eigenvalues, natural frequencies, damping ratios, and poles
 fprintf('Dominant mode before the design of the PSS:\n');
-resultsTable = table(eig_a(4:5), wn(4:5), fn(4:5), Z(4:5)*100, ...
+resultsTable = table(eig_a(lmindx), wn(lmindx), fn(lmindx), Z(lmindx)*100, ...
     'VariableNames', {'Eigenvalues', 'NaturalFrequency_rad_s', 'NaturalFrequency_Hz', 'DampingRatio'});
 % Display the results table
 format bank
@@ -50,7 +53,19 @@ format bank
 disp(resultsTable);
 
 % Recall from the RL of the designed PSS, that we selected a gain
-% that will give us a mode with damping about 15% and freq ~0.78 Hz
-% Looking at the table that corresponds to the 4.88 rad/s mode with a 
-% damping of ~15.23
+% that will give us a mode with damping about ~27% and freq ~1.45 Hz
+
+% Looking at the table define closed loop local mode indixes 
+lmindxCL = 7:8;
+
+%% Display table only for the targeted mode
+
+% Filter the results table for the closed loop local modes
+targetedResultsTable = resultsTable(lmindxCL, :);
+disp(targetedResultsTable);
+% Display the damping ratio and natural frequency of the targeted mode
+fprintf('Targeted mode frequency: %.2f Hz with damping: %.2f%%\n', ...
+    targetedResultsTable.NaturalFrequency_Hz(1), targetedResultsTable.DampingRatio(1));
+% The frequency we observe in the table is 1.45 Hz with a 
+% damping of 26.77%
 % eof

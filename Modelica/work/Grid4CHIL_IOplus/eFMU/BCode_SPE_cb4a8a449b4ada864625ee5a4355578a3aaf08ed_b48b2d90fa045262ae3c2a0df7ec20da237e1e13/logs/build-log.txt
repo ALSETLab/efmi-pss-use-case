@@ -1,0 +1,360 @@
+**********************************************************************
+** Visual Studio 2022 Developer Command Prompt v17.14.28
+** Copyright (c) 2025 Microsoft Corporation
+**********************************************************************
+[vcvarsall.bat] Environment initialized for: 'x64'
+
+BINARY CODE GENERATION
+
+Read arguments... 
+Source eFMU path                    : C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Destination eFMU path               : C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Production code name                : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+Binary code name                    : BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+Compiler option sets                : 
+		nologo
+		O2
+		std=c17
+		W4
+linker option set                   : 
+		nologo
+Compiler name                       : VS
+Target name                         : Win64
+Target vendor                       : 
+Target chip version                 : 
+Target instruction set architecture : x86-64
+Target address width                : 64
+Execute link                        : true
+
+EFMI Version       : 1.0.0
+
+XSD Versions: 
+Container          : 0.10.0
+BehavioralModel    : 0.7.0
+AlgorithmCode      : 0.13.0
+ProductionCode     : 0.17.0
+BinaryCode         : 0.12.0
+
+Read arguments... OK
+
+Read Manifests... 
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
+modelRepresentation: null
+getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\__content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@7219ec67
+Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\ACode_Dymola\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.13.0
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: cd3a9a85a1561b71e7545f7cda9cfd2f6be30727
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 462614c8b862ed33a3792680707682265fc2e280
+Reading ACode_Dymola ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@36bc55de
+Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+Import-Module : Illegal characters in path.
+At line:1 char:46
++ ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.ImportModuleCommand
+ 
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 38138eceec8223dd6e1d530ba2cfff3bb83150a4
+File list : .//block.h/FILE_ID_block.h_0
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 0a9d3c98ad82ae148c87023273c2e2839d24e5dc
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_1
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: d603dd602f88b68ebe36df78f3708ed205410301
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_2
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: cd93be3785acb305b83071b161b69061d33888f9
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_3
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 4e2aded13917db2793f69f57c27778703ba83f64
+File list : .//block.c/FILE_ID_block.c_4
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 4d0d6541186730de4907f725cd1afdb3cb74c651
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_5
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 8eb3a36bd0474ec581e7905c221be080ff559124
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_6
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: d8e08b40ad116420ed808ea1c326c8b109d2cd43
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_7
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: dfd73adea77f142a7ef413ac953a11edaa0a4e57
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_8
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 9e2719d0e44a3058b12a366c3de3615ed1a85ec1
+Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@236e3f4e
+Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.17.0
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 0364983b27969c4ed4be0fb485e5d250df61ca85
+File list : .//block.h/FILE_ID_block.h_0
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: b5f3ef88835c08e0582e75da5155ddae463f0940
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_1
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: bbe47f2a3b0f972ed54c61b5ae0e8ac080ac5cbb
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: a94e7a06eccfeaa2845ed601ce0bd3bb74ca49e3
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: 4ad0311ea609320f58b18db1d67ddd67ea16f028
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: c6528a75cc1c39005e5b39b6a06135b2fc70c658
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_5
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 38f661f12610315e5569136f51fe1fcfeee1563d
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_6
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: 4a52272a99c481e022474b937d469f45534fb880
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_7
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
+OK: Manifest file CheckSum valid: 2a89490d099bded66df7dac8e6387465c54719f3
+File list : .//block.c/FILE_ID_block.c_8
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: cfddff50de195b62ef7311cec26ccccb4429ef13
+Reading PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c ModelRepresentation
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@62e7f11d
+Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 18b8e557016bb166e8660e4f8bcf999277f5542d
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 0aa4c168af411c6bb389a4ba7260235e042dbddd
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: 5f0dc6fb72915c39a22f6cc328308e79ee5357c7
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: bbc9b6e654c7693ae235c1bba83a2862ab60108d
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 3e4c203240d25f6197cbff2d360da963b82c949c
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 17fcb44768f6e86e5c28ba10c73249d18c646e8b
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 4a846459cccc7f05f973ddb908965fdf3c7e690b
+Reading BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7 ModelRepresentation
+Read Manifests... OK
+
+Write BinaryCode Makefile... 
+C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\./makefile
+Write BinaryCode Makefile... OK
+
+Generate BinaryCode files... 
+
+Microsoft (R) Program Maintenance Utility Version 14.44.35224.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/sii_block_interface.c /Fo./sii_block_interface.obj
+sii_block_interface.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c /Fo./block.obj
+block.c
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(91): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(113): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(135): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(136): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(139): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(140): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(143): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(144): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(147): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(148): warning C4244: 'function': conversion from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(176): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(268): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(273): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(280): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(291): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(298): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(312): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(322): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(336): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(337): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(338): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(345): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(352): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(353): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(398): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(407): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(408): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(415): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(422): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(423): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(468): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(477): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(478): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(480): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(483): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(485): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(513): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(518): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(519): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(521): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(524): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(526): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(554): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(559): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(562): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(565): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(576): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(587): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(593): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(679): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(698): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(706): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(708): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(710): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(716): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(720): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(724): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(726): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(728): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(732): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(734): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(736): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(746): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(750): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(756): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(760): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(762): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(768): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(776): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(784): warning C4305: '=': truncation from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(903): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(908): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(915): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(924): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(932): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(939): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(950): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(957): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(960): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(961): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(962): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(963): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(987): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(996): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1028): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1029): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1030): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1031): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1055): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1064): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1098): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1099): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1113): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1118): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1138): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1139): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1153): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1158): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1176): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1183): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1186): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1206): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1226): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1237): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1304): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1314): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1317): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1319): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1327): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1331): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1342): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1354): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1367): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1376): warning C4305: 'function': truncation from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1378): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
+../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1381): warning C4305: 'function': truncation from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
+Send-VsDevShellTelemetry : The term 'Send-VsDevShellTelemetry' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At line:1 char:170
++ ... icrosoft.VisualStudio.DevShell.dll'; Send-VsDevShellTelemetry -NewIns ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.c /Fo./galec_stl.obj
+galec_stl.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c /Fo./mei_block_interface.obj
+mei_block_interface.c
+	lib /nologo ./sii_block_interface.obj ./block.obj ./galec_stl.obj ./mei_block_interface.obj /OUT:block.lib
+Generate BinaryCode files... OK
+
+Write Manifest... 
+BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+Writing: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 18b8e557016bb166e8660e4f8bcf999277f5542d
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 0aa4c168af411c6bb389a4ba7260235e042dbddd
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: 5f0dc6fb72915c39a22f6cc328308e79ee5357c7
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: bbc9b6e654c7693ae235c1bba83a2862ab60108d
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 3e4c203240d25f6197cbff2d360da963b82c949c
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 17fcb44768f6e86e5c28ba10c73249d18c646e8b
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 4a846459cccc7f05f973ddb908965fdf3c7e690b
+Writing: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\manifest.xml
+Writing: manifest.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.12.0
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: f23b1e702c68229c8a2b2cb17c775ecfb7278b60
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: fc9128d6b3ec663b2f648b0eb0eda6ab459cb704
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.obj
+OK: Manifest file CheckSum valid: 8fa0582ac5b8691789485e13f2699a156b8cac87
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\galec_stl.obj
+OK: Manifest file CheckSum valid: 6f549785e4f42ea5d1d2d0839aa9e5ce781bc318
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 44ea11822c8c31311b8dc682726a5cd09f62f8fd
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\block.lib
+OK: Manifest file CheckSum valid: 0b1963334616f86ffcf16b0c70e504a2be8b5928
+OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13\.\makefile
+OK: Manifest file CheckSum valid: 4a846459cccc7f05f973ddb908965fdf3c7e690b
+getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Writing: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\__content.xml
+Writing: __content.xml
+OK: Manifest EFMI version: 1.0.0
+OK: Manifest XSD version: 0.10.0
+getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/efmiContainerManifest.xsd
+OK: Model representation manifest exists: ACode_Dymola
+OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
+OK: Model representation manifest exists: BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_b48b2d90fa045262ae3c2a0df7ec20da237e1e13
+Write Manifest... OK
+
+BINARY CODE GENERATION SUCCESS
+

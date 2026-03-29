@@ -67,6 +67,11 @@
 	// Button toggle state and debounce tracking
 	volatile uint8_t override_active = 0;    // 0 = Live Model, 1 = Constant Output
 	volatile uint32_t last_button_press = 0;
+
+	// PROFILING & OVERRUN VARS
+	volatile uint32_t pss_cycles = 0;
+	volatile uint8_t overrun_flag = 0;
+	volatile uint32_t last_overrun_tick = 0;
 	/* USER CODE END PV */
 
 	/* Private function prototypes -----------------------------------------------*/
@@ -113,7 +118,14 @@
 	  MX_ADC1_Init();
 	  MX_DAC1_Init();
 	  MX_TIM1_Init();
+
+
 	  /* USER CODE BEGIN 2 */
+	  // Enable the DWT (Data Watchpoint and Trigger) Cycle Counter
+	  CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+	  DWT->CYCCNT = 0;
+	  DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+
 	  PSS_Startup(&pss);
 	  HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
 	  HAL_TIM_Base_Start_IT(&htim1);
@@ -126,9 +138,17 @@
 	  {
 		/* USER CODE END WHILE */
 
-		/* USER CODE BEGIN 3 */
-	  }
-	  /* USER CODE END 3 */
+		/* USER CODE BEGIN 3 */// If the LED is currently ON due to an overrun...
+		  if (overrun_flag == 1) {
+				// Check if 5000ms have passed since the last overrun occurred
+				if ((HAL_GetTick() - last_overrun_tick) > 5000) {
+					// Turn off the LED after 5 sec and reset the flag.
+					HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_RESET);
+					overrun_flag = 0;
+				}
+			}
+		  }
+		  /* USER CODE END 3 */
 	}
 
 	/**
@@ -199,6 +219,9 @@
 	{
 	  if (htim->Instance == TIM1) {
 
+		// --- START PROFILING ---
+		uint32_t start_cycles = DWT->CYCCNT;
+
 		// PRE-COMPUTED CONSTANTS (Static means they are only allocated once, not every millisecond)
 		static const PSS_Real ADC_TO_VOLTS = ((PSS_Real)3.3) / ((PSS_Real)4095.0);
 		static const PSS_Real VOLTS_TO_DAC = ((PSS_Real)4095.0) / ((PSS_Real)3.3);
@@ -245,6 +268,20 @@
 		HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)dac_val); //casted to uin32_t at the very end :)
 
 		HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_RESET);
+
+		//END PROFILING
+		uint32_t end_cycles = DWT->CYCCNT;
+		pss_cycles = end_cycles - start_cycles;
+
+		// OVERRUN CHECK
+		// 80 MHz Clock = 80,000 cycles per 1.0 ms.
+		if (pss_cycles > 80000) {
+		    overrun_flag = 1;
+		    last_overrun_tick = HAL_GetTick(); // Reset the 5-second countdown
+
+		    // Turn the LED ON immediately
+		    HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_SET);
+		}
 	  }
 	}
 	/* USER CODE END 4 */

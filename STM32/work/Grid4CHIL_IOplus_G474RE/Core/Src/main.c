@@ -188,12 +188,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 		HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_SET);
 
-		// READ DIGITAL INPUT (Fault Trigger - Active High for Nucleo Blue Button)
-		if (HAL_GPIO_ReadPin(fault_blue_button_GPIO_Port, fault_blue_button_Pin) == GPIO_PIN_SET) {
-			grid.fault = true;
-		} else {
-			grid.fault = false;
-		}
+		// READ DIGITAL INPUT(s) - Fault Trigger(s)
+		grid.fault = (HAL_GPIO_ReadPin(fault_blue_button_GPIO_Port, fault_blue_button_Pin) == GPIO_PIN_SET);
+		grid.faultL1 = (HAL_GPIO_ReadPin(fault1_D7_GPIO_Port, fault1_D7_Pin) == GPIO_PIN_SET);
+		grid.faultL2 = (HAL_GPIO_ReadPin(fault2_D0_GPIO_Port, fault2_D0_Pin) == GPIO_PIN_SET);
 
 		// READ ANALOG INPUT (vf from PSS Board)
 		HAL_ADC_Start(&hadc1);
@@ -203,6 +201,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 			grid.vf = (((Grid_Real)adc_raw) * ADC_TO_VOLTS) - VF_OFFSET;
 		}
 		HAL_ADC_Stop(&hadc1);
+
+		// READ ANALOG INPUT (uPLoad from AD2)
+		HAL_ADC_Start(&hadc2);
+		if (HAL_ADC_PollForConversion(&hadc2, 1) == HAL_OK) {
+			uint32_t adc2_raw = HAL_ADC_GetValue(&hadc2);
+			// @Luigi, do we need an offset here? Or is it 0 to 3.3 pu?
+			grid.uPLoad = ((Grid_Real)adc2_raw) * ADC_TO_VOLTS;
+		}
+		HAL_ADC_Stop(&hadc2);
 
 		Grid_DoStep(&grid);
 
@@ -220,9 +227,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     	if (dac_w_val < DAC_MIN) dac_w_val = DAC_MIN;
     	else if (dac_w_val > DAC_MAX) dac_w_val = DAC_MAX;
 
-        // Output v to DAC1
+        // Output v to DAC1 (A2)
     	HAL_DAC_SetValue(&hdac1, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)dac_v_val);
-        // Output w to DAC2
+        // Output w to DAC2 (D12)
         HAL_DAC_SetValue(&hdac2, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)dac_w_val);
 
         HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_RESET);

@@ -57,9 +57,9 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define faultDIN_Pin GPIO_PIN_13
-#define faultDIN_GPIO_Port GPIOC
-#define faultDIN_EXTI_IRQn EXTI15_10_IRQn
+#define fault_blue_button_Pin GPIO_PIN_13
+#define fault_blue_button_GPIO_Port GPIOC
+#define fault_blue_button_EXTI_IRQn EXTI15_10_IRQn
 #define RCC_OSC32_IN_Pin GPIO_PIN_14
 #define RCC_OSC32_IN_GPIO_Port GPIOC
 #define RCC_OSC32_OUT_Pin GPIO_PIN_15
@@ -68,24 +68,30 @@ void Error_Handler(void);
 #define RCC_OSC_IN_GPIO_Port GPIOF
 #define RCC_OSC_OUT_Pin GPIO_PIN_1
 #define RCC_OSC_OUT_GPIO_Port GPIOF
-#define vfAIN_Pin GPIO_PIN_1
-#define vfAIN_GPIO_Port GPIOC
+#define vf_A4_Pin GPIO_PIN_1
+#define vf_A4_GPIO_Port GPIOC
 #define LPUART1_RX_Pin GPIO_PIN_3
 #define LPUART1_RX_GPIO_Port GPIOA
-#define voutAOUT_Pin GPIO_PIN_4
-#define voutAOUT_GPIO_Port GPIOA
-#define LD2_Pin GPIO_PIN_5
-#define LD2_GPIO_Port GPIOA
-#define woutAOUT_Pin GPIO_PIN_6
-#define woutAOUT_GPIO_Port GPIOA
+#define v_A2_Pin GPIO_PIN_4
+#define v_A2_GPIO_Port GPIOA
+#define LD2_green_LED_Pin GPIO_PIN_5
+#define LD2_green_LED_GPIO_Port GPIOA
+#define w_D12_Pin GPIO_PIN_6
+#define w_D12_GPIO_Port GPIOA
+#define uPLoad_D1_Pin GPIO_PIN_4
+#define uPLoad_D1_GPIO_Port GPIOC
+#define fault2_D0_Pin GPIO_PIN_5
+#define fault2_D0_GPIO_Port GPIOC
+#define fault1_D7_Pin GPIO_PIN_8
+#define fault1_D7_GPIO_Port GPIOA
 #define T_SWDIO_Pin GPIO_PIN_13
 #define T_SWDIO_GPIO_Port GPIOA
 #define T_SWCLK_Pin GPIO_PIN_14
 #define T_SWCLK_GPIO_Port GPIOA
-#define calTime_Pin GPIO_PIN_3
-#define calTime_GPIO_Port GPIOB
-#define stepSize_Pin GPIO_PIN_4
-#define stepSize_GPIO_Port GPIOB
+#define calTime_D3_Pin GPIO_PIN_3
+#define calTime_D3_GPIO_Port GPIOB
+#define stepSize_D5_Pin GPIO_PIN_4
+#define stepSize_D5_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

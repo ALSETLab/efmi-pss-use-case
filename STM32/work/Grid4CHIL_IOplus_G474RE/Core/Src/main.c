@@ -108,6 +108,7 @@ int main(void)
   MX_DAC1_Init();
   MX_DAC2_Init();
   MX_ADC1_Init();
+  MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
   Grid_Startup(&grid);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);

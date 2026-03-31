@@ -1,7 +1,23 @@
-% Perform PSS design for the linear model of the SMIB
-% obtained from OpenIPSL_CHIL.Examples.ReDesign.GenAVRIOReDesign 
-% model using Root-Locus Method
+%% Perform PSS design for the linear model of the SMIB
+% This script uses the linear model obtained using Dymola from 
+% OpenIPSL_CHIL.Examples.ReDesign.IOModelforReDesign, and performs the design of the PSS using the Root-Locus method.
+% The design parameters obtained from the Root-Locus method are then used to implement the PSS in the following Dymola model:
+% OpenIPSL_CHIL.Examples.ReDesign.PSSReDesignVerification, which is used to verify the design of the PSS in the file "pss_design_verification.m".
+%
+% Author: Luigi Vanfretti
+% Date: April 2026
+%
 clear; clc;
+% Always write diary next to this script (independent of MATLAB current folder).
+thisFile = mfilename('fullpath');
+if isempty(thisFile)
+    thisFile = which('pss_design_example.m');
+end
+scriptDir = fileparts(thisFile);
+diaryFile = fullfile(scriptDir, 'pss_design_example_diary.txt');
+diary(diaryFile);
+cleanupDiary = onCleanup(@() diary('off')); % Ensure diary is closed even if an error occurs
+fprintf('Diary logging to: %s\n', diaryFile);
 %% RL Step 1 - Obtain linear model and analyze modes
 % Load the linearized model obtained with Dymola, which is stored in a .mat file. 
 % The linearized model is represented in state-space form, where A, B, C, and D are the state-space matrices, and stateVars, inputVars, and outputVars are the names of the states, inputs, and outputs respectively.
@@ -108,9 +124,11 @@ Kpss = 7.4
 format long g
 designParameters = table(T1, T2, Kpss, 'VariableNames', {'T1', 'T2', 'Kpss'});
 disp(designParameters);
-disp('Enter the parameters above in your PSS in OpenModelica, and verify in simulation.')
+disp('Enter the parameters above in your PSS in Dymola, and verify in simulation.')
 % After Obtaining the new Linear Model with the PSS from the Dymola model, you can also verify the new damping of the local mode.
 % The new linear model can be obtained by linearizing the Dymola model with the PSS implemented, and 
 % then analyzing the eigenvalues of the new linear model to determine the damping of the local mode.
 % To verify what is the new damping of ~27% with the design, look at the separte file.
+diary off % Stop recording the command window output in the diary file
+clear cleanupDiary
 % eof

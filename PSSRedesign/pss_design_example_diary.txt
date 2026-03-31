@@ -1,0 +1,218 @@
+Diary logging to: C:\dev\efmi-pss-use-case\PSSRedesign\pss_design_example_diary.txt
+
+PS =
+ 
+  A = 
+                 G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.av  G4CHIL.G1.av  G4CHIL.G1.av
+   G4CHIL.G1.ma             0           377             0             0             0             0             0             0             0
+   G4CHIL.G1.ma       -0.1594             0             0             0        -0.173       0.06001             0             0             0
+   G4CHIL.G1.ma       -0.2258             0        -0.125             0       -0.2669     -0.001104             0             0         0.125
+   G4CHIL.G1.ma        0.4611             0             0            -1      0.006336        -1.489             0             0             0
+   G4CHIL.G1.ma        -2.973             0         33.33             0        -36.85      -0.01454             0             0      0.008333
+   G4CHIL.G1.ma         2.622             0             0         14.29       0.03603        -22.75             0             0             0
+   G4CHIL.G1.av        -9.194             0             0             0         33.36         29.26        -66.67             0             0
+   G4CHIL.G1.av             0             0             0             0             0             0             0            -1             0
+   G4CHIL.G1.av             0             0             0             0             0             0          -300            10           -10
+ 
+  B = 
+                  vf
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.av    0
+   G4CHIL.G1.av    0
+   G4CHIL.G1.av  300
+ 
+  C = 
+      G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.av  G4CHIL.G1.av  G4CHIL.G1.av
+   w             0            10             0             0             0             0             0             0             0
+ 
+  D = 
+      vf
+   w   0
+ 
+Continuous-time state-space model.
+    Eigenvalues     NaturalFrequency_rad_s    NaturalFrequency_Hz    DampingRatio
+    ____________    ______________________    ___________________    ____________
+
+    -66.34+0.00i             1.00                     0.16              100.00   
+    -37.79+0.00i             1.64                     0.26              100.00   
+    -21.58+0.00i             5.17                     0.82               95.69   
+     -0.08+7.10i             5.17                     0.82               95.69   
+     -0.08-7.10i             7.10                     1.13                1.07   
+     -4.95+1.50i             7.10                     1.13                1.07   
+     -4.95-1.50i            21.58                     3.43              100.00   
+     -1.64+0.00i            37.79                     6.01              100.00   
+     -1.00+0.00i            66.34                    10.56              100.00   
+
+
+PSwo =
+ 
+  A = 
+                            ?             ?  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.av  G4CHIL.G1.av  G4CHIL.G1.av
+   ?                   -35.42        -15.71             0            20             0             0             0             0             0             0             0
+   ?                        8             0             0             0             0             0             0             0             0             0             0
+   G4CHIL.G1.ma             0             0             0           377             0             0             0             0             0             0             0
+   G4CHIL.G1.ma             0             0       -0.1594             0             0             0        -0.173       0.06001             0             0             0
+   G4CHIL.G1.ma             0             0       -0.2258             0        -0.125             0       -0.2669     -0.001104             0             0         0.125
+   G4CHIL.G1.ma             0             0        0.4611             0             0            -1      0.006336        -1.489             0             0             0
+   G4CHIL.G1.ma             0             0        -2.973             0         33.33             0        -36.85      -0.01454             0             0      0.008333
+   G4CHIL.G1.ma             0             0         2.622             0             0         14.29       0.03603        -22.75             0             0             0
+   G4CHIL.G1.av             0             0        -9.194             0             0             0         33.36         29.26        -66.67             0             0
+   G4CHIL.G1.av             0             0             0             0             0             0             0             0             0            -1             0
+   G4CHIL.G1.av             0             0             0             0             0             0             0             0          -300            10           -10
+ 
+  B = 
+                  vf
+   ?               0
+   ?               0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.ma    0
+   G4CHIL.G1.av    0
+   G4CHIL.G1.av    0
+   G4CHIL.G1.av  300
+ 
+  C = 
+                  ?             ?  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.av  G4CHIL.G1.av  G4CHIL.G1.av
+   y1         1.571             0             0             0             0             0             0             0             0             0             0
+ 
+  D = 
+       vf
+   y1   0
+ 
+Continuous-time state-space model.
+Looking at the root locus plot, the angle of departure is around: 33 degrees
+
+theta_peak =
+
+         73.50
+
+
+lead_angle =
+
+         36.75
+
+
+lead_angle =
+
+         45.00
+
+The lead angle is set to: 45 degrees
+
+wlm =
+
+          7.10
+
+
+alpha =
+
+          5.83
+
+
+z_pss =
+
+          2.94
+
+
+p_pss =
+
+         17.15
+
+
+T1 =
+
+          0.34
+
+
+T2 =
+
+          0.06
+
+
+leadlag =
+ 
+  0.3399 s + 1
+  -------------
+  0.05832 s + 1
+ 
+Continuous-time transfer function.
+
+PSwo_leadlag =
+ 
+  A = 
+                            ?             ?  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.av  G4CHIL.G1.av  G4CHIL.G1.av
+   ?                   -35.42        -15.71             0            20             0             0             0             0             0             0             0
+   ?                        8             0             0             0             0             0             0             0             0             0             0
+   G4CHIL.G1.ma             0             0             0           377             0             0             0             0             0             0             0
+   G4CHIL.G1.ma             0             0       -0.1594             0             0             0        -0.173       0.06001             0             0             0
+   G4CHIL.G1.ma             0             0       -0.2258             0        -0.125             0       -0.2669     -0.001104             0             0         0.125
+   G4CHIL.G1.ma             0             0        0.4611             0             0            -1      0.006336        -1.489             0             0             0
+   G4CHIL.G1.ma             0             0        -2.973             0         33.33             0        -36.85      -0.01454             0             0      0.008333
+   G4CHIL.G1.ma             0             0         2.622             0             0         14.29       0.03603        -22.75             0             0             0
+   G4CHIL.G1.av             0             0        -9.194             0             0             0         33.36         29.26        -66.67             0             0
+   G4CHIL.G1.av             0             0             0             0             0             0             0             0             0            -1             0
+   G4CHIL.G1.av             0             0             0             0             0             0             0             0          -300            10           -10
+   ?                        0             0             0             0             0             0             0             0             0             0             0
+   ?                        0             0             0             0             0             0             0             0             0             0             0
+ 
+                            ?             ?
+   ?                        0             0
+   ?                        0             0
+   G4CHIL.G1.ma             0             0
+   G4CHIL.G1.ma             0             0
+   G4CHIL.G1.ma             0             0
+   G4CHIL.G1.ma             0             0
+   G4CHIL.G1.ma             0             0
+   G4CHIL.G1.ma             0             0
+   G4CHIL.G1.av             0             0
+   G4CHIL.G1.av             0             0
+   G4CHIL.G1.av         -3105     -1.81e+04
+   ?                   -17.15        -82.79
+   ?                        0        -17.15
+ 
+  B = 
+                        u1
+   ?                     0
+   ?                     0
+   G4CHIL.G1.ma          0
+   G4CHIL.G1.ma          0
+   G4CHIL.G1.ma          0
+   G4CHIL.G1.ma          0
+   G4CHIL.G1.ma          0
+   G4CHIL.G1.ma          0
+   G4CHIL.G1.av          0
+   G4CHIL.G1.av          0
+   G4CHIL.G1.av  1.019e+04
+   ?                 46.63
+   ?                     8
+ 
+  C = 
+                  ?             ?  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.ma  G4CHIL.G1.av  G4CHIL.G1.av  G4CHIL.G1.av
+   y1         1.571             0             0             0             0             0             0             0             0             0             0
+ 
+                  ?             ?
+   y1             0             0
+ 
+  D = 
+       u1
+   y1   0
+ 
+Continuous-time state-space model.
+
+Kpss =
+
+          7.40
+
+           T1                    T2            Kpss
+    _________________    __________________    ____
+
+    0.339913009676242    0.0583198524063289    7.4 
+
+Enter the parameters above in your PSS in Dymola, and verify in simulation.

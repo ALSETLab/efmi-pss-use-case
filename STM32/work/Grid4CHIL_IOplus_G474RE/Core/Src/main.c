@@ -186,11 +186,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		static const Grid_Real DAC_MIN      = (Grid_Real)0.0;
 		static const Grid_Real VF_OFFSET    = (Grid_Real)1.5;
 
-        // FIXED: Use the correct Port macro instead of GPIOC
-		HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_SET);
 
-		// READ DIGITAL INPUT (Fault Trigger - Active High (I think?) for Nucleo Blue Button)
-		if (HAL_GPIO_ReadPin(faultDIN_GPIO_Port, faultDIN_Pin) == GPIO_PIN_SET) {
+		// READ DIGITAL INPUT (Fault Trigger - Active High for Nucleo Blue Button)
+		if (HAL_GPIO_ReadPin(fault_blue_button_GPIO_Port, fault_blue_button_Pin) == GPIO_PIN_SET) {
 			grid.fault = true;
 		} else {
 			grid.fault = false;
@@ -226,7 +225,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
         // Output w to DAC2
         HAL_DAC_SetValue(&hdac2, DAC_CHANNEL_1, DAC_ALIGN_12B_R, (uint32_t)dac_w_val);
 
-        HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_RESET);
 	}
 }
 /* USER CODE END 4 */

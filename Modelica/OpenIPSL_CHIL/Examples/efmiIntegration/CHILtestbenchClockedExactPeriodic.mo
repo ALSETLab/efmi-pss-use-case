@@ -1,13 +1,11 @@
 within OpenIPSL_CHIL.Examples.eFMIIntegration;
-model CHILExperimentUsingBinaryStub
-  "Model demonstrating how the PSS is to be interfaced to the plant using the eFMUs generated."
+model CHILtestbenchClockedExactPeriodic
+  "Clocked variant of CHILtestbenchRefSim."
   extends Modelica.Icons.Example;
-  'Grid4CHIL_IOplus.eFMU_SiL_Support'.BinaryStub
-                                          G4CHIL(
-    __embedd_clock=false, wscale=10.00)
+  RTS.CHIL.Grid4CHIL_IOplus               G4CHIL(G1(avr(K0=30)))
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
-  Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
-    period(displayUnit="ms") = 0.0002,
+  Modelica.Clocked.ClockSignals.Clocks.PeriodicExactClock periodicClock(
+    factor=5,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
@@ -39,18 +37,17 @@ model CHILExperimentUsingBinaryStub
         extent={{10,10},{-10,-10}},
         rotation=270,
         origin={150,-90})));
-  Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock1(
-    period(displayUnit="ms") = 0.0002,
+  Components.PSS.PSSTypeIISimpleHPF
+                                pss
+                annotation (Placement(transformation(                 extent={{-100,
+            -10},{-80,10}})));
+  Modelica.Clocked.ClockSignals.Clocks.PeriodicExactClock periodicClock1(
+    factor=5,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
         rotation=90,
         origin={-120,-30})));
-  'PSSTypeIISimpleHPF.eFMU_SiL_Support'.BinaryStub
-                                pss(
-    __embedd_clock=false, wscale=10.00)
-                annotation (Placement(transformation(                 extent={{-100,
-            -17},{-66,17}})));
   Modelica.Clocked.RealSignals.Sampler.SampleClocked sampler
     annotation (Placement(transformation(extent={{-126,-6},{-114,6}})));
   Modelica.Clocked.RealSignals.Sampler.Hold holdPSSout(y_start=pss.vSI_start)
@@ -89,11 +86,11 @@ equation
       pattern=LinePattern.Dot,
       thickness=0.5));
   connect(pss.vs, holdPSSout.u)
-    annotation (Line(points={{-64.3,0},{-53.2,0}}, color={0,0,127}));
+    annotation (Line(points={{-79,0},{-53.2,0}}, color={0,0,127}));
   connect(holdPSSout.y, samplerVavr.u) annotation (Line(points={{-39.4,0},{32,0},
           {32,12},{60.8,12}}, color={0,0,127}));
   connect(sampler.y, pss.vSI)
-    annotation (Line(points={{-113.4,0},{-103.4,0}}, color={0,0,127}));
+    annotation (Line(points={{-113.4,0},{-102,0}}, color={0,0,127}));
   connect(G4CHIL.w, hold_wscaled.u)
     annotation (Line(points={{142,16},{148.8,16}}, color={0,0,127}));
   connect(hold_wscaled.y, sampler.u) annotation (Line(points={{162.6,16},{172,16},
@@ -123,4 +120,4 @@ experiment(
       StopTime=30,
       __Dymola_NumberOfIntervals=5000,
       __Dymola_Algorithm="Dassl"));
-end CHILExperimentUsingBinaryStub;
+end CHILtestbenchClockedExactPeriodic;

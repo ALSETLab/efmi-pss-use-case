@@ -282,6 +282,8 @@
 		    // Turn the LED ON immediately
 		    HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_SET);
 		}
+
+		// printf("", pss_cycles)
 	  }
 	}
 	/* USER CODE END 4 */

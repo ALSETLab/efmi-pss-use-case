@@ -206,7 +206,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		HAL_ADC_Start(&hadc2);
 		if (HAL_ADC_PollForConversion(&hadc2, 1) == HAL_OK) {
 			uint32_t adc2_raw = HAL_ADC_GetValue(&hadc2);
-			// @Luigi, do we need an offset here? Or is it 0 to 3.3 pu?
+			// @Luigi, do we need an offset here? have 0 at center and represent negative load left, positive load right
 			grid.uPLoad = ((Grid_Real)adc2_raw) * ADC_TO_VOLTS;
 		}
 		HAL_ADC_Stop(&hadc2);

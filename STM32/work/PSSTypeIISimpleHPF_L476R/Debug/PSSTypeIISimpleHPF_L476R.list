@@ -2106,6 +2106,8 @@ __STATIC_FORCEINLINE void __enable_irq(void)
  8001370:	f04f 4090 	mov.w	r0, #1207959552	@ 0x48000000
  8001374:	f002 faa8 	bl	80038c8 <HAL_GPIO_WritePin>
 		}
+
+		// printf("", pss_cycles)
 	  }
 	}
  8001378:	bf00      	nop

@@ -186,6 +186,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		static const Grid_Real DAC_MIN      = (Grid_Real)0.0;
 		static const Grid_Real VF_OFFSET    = (Grid_Real)1.5;
 
+		// Constraints for uPLoad potentiometer (-20 to +20)
+		static const Grid_Real LOAD_SCALE = ((Grid_Real)40.0) / ((Grid_Real)4095.0);
+		static const Grid_Real LOAD_OFFSET = (Grid_Real)20.0;
+
 		HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_SET);
 
 		// READ DIGITAL INPUT(s) - Fault Trigger(s)
@@ -202,12 +206,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		}
 		HAL_ADC_Stop(&hadc1);
 
-		// READ ANALOG INPUT (uPLoad from AD2)
+		// READ ANALOG INPUT (uPLoad from Potentiometer)
 		HAL_ADC_Start(&hadc2);
 		if (HAL_ADC_PollForConversion(&hadc2, 1) == HAL_OK) {
 			uint32_t adc2_raw = HAL_ADC_GetValue(&hadc2);
-			// @Luigi, do we need an offset here? have 0 at center and represent negative load left, positive load right
-			grid.uPLoad = ((Grid_Real)adc2_raw) * ADC_TO_VOLTS;
+
+			// Transform 0-4095 to -20.0 to +20.0
+			grid.uPLoad = (((Grid_Real)adc2_raw) * LOAD_SCALE) - LOAD_OFFSET;
 		}
 		HAL_ADC_Stop(&hadc2);
 

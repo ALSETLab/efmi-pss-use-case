@@ -6,7 +6,7 @@ model CHILExperimentUsingBinaryStub
                                           G4CHIL(
     __embedd_clock=false, wscale=10.00)
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
-  Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
+  Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock_G4CHIL(
     period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
@@ -39,7 +39,7 @@ model CHILExperimentUsingBinaryStub
         extent={{10,10},{-10,-10}},
         rotation=270,
         origin={150,-90})));
-  Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock1(
+  Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock_pss(
     period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
@@ -58,14 +58,14 @@ model CHILExperimentUsingBinaryStub
   Modelica.Clocked.RealSignals.Sampler.Hold hold_wscaled(y_start=G4CHIL.woffset)
     annotation (Placement(transformation(extent={{150,10},{162,22}})));
 equation
-  connect(periodicClock.y,samplerVavr. clock) annotation (Line(
+  connect(periodicClock_G4CHIL.y, samplerVavr.clock) annotation (Line(
       points={{50.6,0},{68,0},{68,4.8}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
   connect(samplerVavr.y,G4CHIL. vf)
     annotation (Line(points={{74.6,12},{92,12}},   color={0,0,127}));
-  connect(samplerPload.clock,periodicClock. y) annotation (Line(
+  connect(samplerPload.clock, periodicClock_G4CHIL.y) annotation (Line(
       points={{68,-12.8},{68,0},{50.6,0}},
       color={175,175,175},
       pattern=LinePattern.Dot,
@@ -83,21 +83,22 @@ equation
   connect(faultL2.y,G4CHIL. faultL2)
     annotation (Line(points={{150,-79},{150,-34},{132,-34},{132,-24}},
                                                    color={255,0,255}));
-  connect(sampler.clock, periodicClock1.y) annotation (Line(
+  connect(sampler.clock, periodicClock_pss.y) annotation (Line(
       points={{-120,-7.2},{-120,-23.4}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
   connect(pss.vs, holdPSSout.u)
     annotation (Line(points={{-64.3,0},{-53.2,0}}, color={0,0,127}));
-  connect(holdPSSout.y, samplerVavr.u) annotation (Line(points={{-39.4,0},{32,0},
-          {32,12},{60.8,12}}, color={0,0,127}));
+  connect(holdPSSout.y, samplerVavr.u) annotation (Line(points={{-39.4,0},{30,0},
+          {30,12},{60.8,12}}, color={0,0,127}));
   connect(sampler.y, pss.vSI)
     annotation (Line(points={{-113.4,0},{-103.4,0}}, color={0,0,127}));
   connect(G4CHIL.w, hold_wscaled.u)
     annotation (Line(points={{142,16},{148.8,16}}, color={0,0,127}));
-  connect(hold_wscaled.y, sampler.u) annotation (Line(points={{162.6,16},{172,16},
-          {172,40},{-160,40},{-160,0},{-127.2,0}}, color={0,0,127}));
+  connect(hold_wscaled.y, sampler.u) annotation (Line(points={{162.6,16},{170,
+          16},{170,40},{-140,40},{-140,0},{-127.2,0}},
+                                                   color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-200,-100},{200,100}}, grid={2,2}),
         graphics={
         Text(

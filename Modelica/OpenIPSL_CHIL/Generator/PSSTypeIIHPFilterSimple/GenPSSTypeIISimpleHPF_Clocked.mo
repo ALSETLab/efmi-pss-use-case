@@ -5,7 +5,7 @@ model GenPSSTypeIISimpleHPF_Clocked
       connect(wscale.u, genAVRIOReDesign.w), break connect(pss.vs,
       genAVRIOReDesign.u));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
-    period(displayUnit="ms") = 0.001,
+    period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},

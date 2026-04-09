@@ -42,12 +42,13 @@ equation
   connect(faultL2.y,G4CHIL. faultL2)
     annotation (Line(points={{150,-79},{150,-34},{132,-34},{132,-24}},
                                                    color={255,0,255}));
-  connect(G4CHIL.w, pss.vSI) annotation (Line(points={{142,16},{170,16},{170,44},
-          {-138,44},{-138,0},{-103.4,0}}, color={0,0,127}));
-  connect(pss.vs, G4CHIL.vf) annotation (Line(points={{-64.3,0},{82,0},{82,12},
+  connect(G4CHIL.w, pss.vSI) annotation (Line(points={{142,16},{170,16},{170,40},
+          {-140,40},{-140,0},{-103.4,0}}, color={0,0,127}));
+  connect(pss.vs, G4CHIL.vf) annotation (Line(points={{-64.3,0},{30,0},{30,12},
           {92,12}}, color={0,0,127}));
   connect(G4CHIL.uPLoad, stepPload.y)
-    annotation (Line(points={{92,-12},{30,-12},{30,-79}}, color={0,0,127}));
+    annotation (Line(points={{92,-12},{80,-12},{80,-20},{30,-20},{30,-79}},
+                                                          color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-200,-100},{200,100}}, grid={2,2}),
         graphics={
         Text(

@@ -41,11 +41,12 @@ equation
     annotation (Line(points={{150,-79},{150,-34},{132,-34},{132,-24}},
                                                    color={255,0,255}));
   connect(G4CHIL.w, pss.vSI) annotation (Line(points={{142,16},{170,16},{170,40},
-          {-160,40},{-160,0},{-102,0}}, color={0,0,127}));
-  connect(pss.vs, G4CHIL.vf) annotation (Line(points={{-79,0},{60,0},{60,12},{
+          {-140,40},{-140,0},{-102,0}}, color={0,0,127}));
+  connect(pss.vs, G4CHIL.vf) annotation (Line(points={{-79,0},{30,0},{30,12},{
           92,12}}, color={0,0,127}));
-  connect(stepPload.y, G4CHIL.uPLoad) annotation (Line(points={{30,-79},{32,-79},
-          {32,-12},{92,-12}}, color={0,0,127}));
+  connect(stepPload.y, G4CHIL.uPLoad) annotation (Line(points={{30,-79},{30,-20},
+          {80,-20},{80,-12},{92,-12}},
+                              color={0,0,127}));
   annotation (Diagram(coordinateSystem(extent={{-200,-100},{200,100}}, grid={2,
             2}), graphics={
         Rectangle(extent={{-180,80},{-20,-60}}, lineColor={0,140,72}),

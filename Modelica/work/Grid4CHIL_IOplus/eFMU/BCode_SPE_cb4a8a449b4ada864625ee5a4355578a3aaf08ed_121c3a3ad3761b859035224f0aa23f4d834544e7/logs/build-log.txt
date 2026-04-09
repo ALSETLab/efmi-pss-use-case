@@ -1,14 +1,30 @@
 **********************************************************************
-** Visual Studio 2022 Developer Command Prompt v17.14.28
-** Copyright (c) 2025 Microsoft Corporation
+** Visual Studio 2022 Developer Command Prompt v17.4.7
+** Copyright (c) 2022 Microsoft Corporation
 **********************************************************************
 [vcvarsall.bat] Environment initialized for: 'x86'
+Import-Module : Illegal characters in path.
+At line:1 char:46
++ ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [Import-Module], ArgumentException
+    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.ImportModuleCommand
+ 
+Send-VsDevShellTelemetry : The term 'Send-VsDevShellTelemetry' is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
+correct and try again.
+At line:1 char:173
++ ... icrosoft.VisualStudio.DevShell.dll'; Send-VsDevShellTelemetry -NewIns ...
++                                          ~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
 
 BINARY CODE GENERATION
 
 Read arguments... 
-Source eFMU path                    : C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
-Destination eFMU path               : C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Source eFMU path                    : E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Destination eFMU path               : E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
 Production code name                : PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 Binary code name                    : BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
 Compiler option sets                : 
@@ -38,117 +54,108 @@ BinaryCode         : 0.12.0
 Read arguments... OK
 
 Read Manifests... 
-eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@2383f822
 modelRepresentation: null
-getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
-Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\__content.xml
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\__content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
-OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/efmiContainerManifest.xsd
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
-eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
-modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@7219ec67
-Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\ACode_Dymola\manifest.xml
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@2383f822
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@ab96af33
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\ACode_Dymola\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.13.0
-OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
-Import-Module : Illegal characters in path.
-At line:1 char:46
-+ ... ajor -ge 3){Import-Module 'C:\Program Files\Microsoft Visual Studio"2 ...
-+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (:) [Import-Module], ArgumentException
-    + FullyQualifiedErrorId : System.ArgumentException,Microsoft.PowerShell.Commands.ImportModuleCommand
- 
-OK: Manifest CheckSum valid: b737e1c8377190e1e0e899001c2d3de702f2ad02
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\ACode_Dymola\.\block.alg
-OK: Manifest file CheckSum valid: 941b511140ad2ac5e3b3c0b6d56d5bfe4f47cc61
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd
+OK: Manifest CheckSum valid: 959bccf3df7289d1b45c290a6615a1a161a2b8f1
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\ACode_Dymola\.\block.alg
+OK: Manifest file CheckSum valid: 7a19a168b6fe856eac655ec458dd719b46d3c682
 Reading ACode_Dymola ModelRepresentation
-eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
-modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@36bc55de
-Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@2383f822
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@980fbe5f
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 78209ff8f34b1a935ef200be2449123c2f21d62c
-File list : .//block.h/FILE_ID_block.h_0
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
-OK: Manifest file CheckSum valid: c3fda82027d71bc4efab54d1867d8dd92e63a6d5
-File list : .//galec_stl.h/FILE_ID_galec_stl.h_1
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
-OK: Manifest file CheckSum valid: 7e523e54b3c3d0a243af65be359e2f78969af2e5
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 5642bf4a4c06deb8dd66ef9c7312751e745812d2
+File list : .//block.c/FILE_ID_block.c_0
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
+OK: Manifest file CheckSum valid: 22cc99facfb497152b8d728386967764ff0447f3
+File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_1
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 7cda63cba8c1453cc6c24d1f4ca2dcfa91f4feaf
 File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_2
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: 71ed3899a97a2a292d4742a754640955840fe0e4
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: 9c1602c064d9b1a4020f08b110e3963529476389
 File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_3
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: aa955701101f61f3de43a3c94363cb6ee8bc6860
-File list : .//block.c/FILE_ID_block.c_4
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.c
-OK: Manifest file CheckSum valid: e027164905e10ab6f1e861130d45b487d4033c6c
-File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_5
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 566cd9aae5cd371f3a84810bddd3e38cef80f556
-File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_6
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: 2b767db8166a4ff7c82b175441b8a0e9777efc72
-File list : .//galec_stl.c/FILE_ID_galec_stl.c_7
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
-OK: Manifest file CheckSum valid: b77b44b7b3cef9ef220bd6e465cd0113c96a52a2
-File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_8
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: 361ad0211fd7238731573c75d6589ea0d1bfa340
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: 29888ab4b37dc6d8beab1111a5d8163c9163729e
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_4
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: e3fa96240a10bb251db72b07608da32abad32885
+File list : .//block.h/FILE_ID_block.h_5
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\block.h
+OK: Manifest file CheckSum valid: 29ea7cb6e347ec204f3e2c82b0af8bd928baedb4
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_6
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.c
+OK: Manifest file CheckSum valid: 6bbee2851939c0ba161451aaeb1199d8bdb02a78
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_7
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: 78282a72950ace439de08b91f07cfb45ed64406a
+File list : .//galec_stl.h/FILE_ID_galec_stl.h_8
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\.\galec_stl.h
+OK: Manifest file CheckSum valid: 8060f453a4e4f7edd73fcd76cc6414cbe958ca89
 Reading PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed ModelRepresentation
-eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@b4c966a
-modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@236e3f4e
-Reading manifest: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
+eFMUManifestModel: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.EFMUManifestModelBinaryCode@2383f822
+modelRepresentation: com.dassault_systemes.esp.efmu.manifestGen.eFmuModels.Container.Content$ModelRepresentation@b7b6a8ce
+Reading manifest: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.17.0
-OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
-OK: Manifest CheckSum valid: 5df44c583a249986007a9d022f5cc117cc4427e0
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/ProductionCode/efmiProductionCodeManifest.xsd
+OK: Manifest CheckSum valid: 5c6fac34a37e69c0e079b71e1b5691020b591142
 File list : .//block.h/FILE_ID_block.h_0
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
-OK: Manifest file CheckSum valid: 502c73d2302933bf1b7b3f9f6ff0ea44b525a12b
-File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_1
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
-OK: Manifest file CheckSum valid: 24cc1cf8020fed3ea066caa6e30671bb03256bd6
-File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_2
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
-OK: Manifest file CheckSum valid: 34d600b6fe68e2cd013e9925d92bf495bb1a0fb6
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.h
+OK: Manifest file CheckSum valid: f0f70a452de064fda84c4b6f0400a31dc7c46894
+File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_1
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
+OK: Manifest file CheckSum valid: a5d0a4bd6cdbc5b2254ba49b6e1d6d731590fef8
+File list : .//block.c/FILE_ID_block.c_2
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
+OK: Manifest file CheckSum valid: 93d279932e5b77ce0a57e922ced74257b54e84ae
 File list : .//galec_stl.h/FILE_ID_galec_stl.h_3
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
-OK: Manifest file CheckSum valid: e5a46429c86c4ed3a512919139875b5cd6b85c32
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.h
+OK: Manifest file CheckSum valid: 110215dd7e9d2f7df4f7f2551f28f938981be34c
 File list : .//sii_block_interface.h/FILE_ID_sii_block_interface.h_4
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
-OK: Manifest file CheckSum valid: ce07a5401db35bf7e927043951d6ec683e5909fe
-File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_5
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
-OK: Manifest file CheckSum valid: 292f09c93d819123d25dd1c1d495a8e7e91dd2be
-File list : .//mei_block_interface.c/FILE_ID_mei_block_interface.c_6
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.c
-OK: Manifest file CheckSum valid: fc78cc69cd1667f0e87c874c02d29728c909a554
-File list : .//galec_stl.c/FILE_ID_galec_stl.c_7
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
-OK: Manifest file CheckSum valid: 9a4ab6173169b034ce81b53743980824fe4cd572
-File list : .//block.c/FILE_ID_block.c_8
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\block.c
-OK: Manifest file CheckSum valid: 3783bade4eef867151f50f3bd1c617ba13343c40
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.h
+OK: Manifest file CheckSum valid: 983c8ff394ee228885155fe80faba285cb9b4a3e
+File list : .//galec_stl.c/FILE_ID_galec_stl.c_5
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl.c
+OK: Manifest file CheckSum valid: e8bfa5251aac64a00a7bb5c36fc67a7184689820
+File list : .//galec_stl_configuration.h/FILE_ID_galec_stl_configuration.h_6
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\galec_stl_configuration.h
+OK: Manifest file CheckSum valid: 6c469ddea037053721c2016e0d93790c1d437aee
+File list : .//sii_block_interface.c/FILE_ID_sii_block_interface.c_7
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\sii_block_interface.c
+OK: Manifest file CheckSum valid: b7196b177d7f753934baf80d945109c567a6c72f
+File list : .//mei_block_interface.h/FILE_ID_mei_block_interface.h_8
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\.\mei_block_interface.h
+OK: Manifest file CheckSum valid: aa27d43a99934fd2e868c2756bac1b833d303621
 Reading PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c ModelRepresentation
 Read Manifests... OK
 
 Write BinaryCode Makefile... 
-C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
+E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\./makefile
 Write BinaryCode Makefile... OK
 
 Generate BinaryCode files... 
 
-Microsoft (R) Program Maintenance Utility Version 14.44.35224.0
+Microsoft (R) Program Maintenance Utility Version 14.34.31944.0
 Copyright (C) Microsoft Corporation.  All rights reserved.
 
-	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/sii_block_interface.c /Fo./sii_block_interface.obj
-sii_block_interface.c
 	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c /Fo./block.obj
 block.c
 ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(91): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
@@ -267,49 +274,42 @@ block.c
 ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1376): warning C4305: 'function': truncation from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
 ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1378): warning C4244: '=': conversion from 'double' to 'SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data
 ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c(1381): warning C4305: 'function': truncation from 'double' to 'const SPE_Real_H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed'
-Send-VsDevShellTelemetry : The term 'Send-VsDevShellTelemetry' is not recognized as the name of a cmdlet, function, 
-script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is 
-correct and try again.
-At line:1 char:170
-+ ... icrosoft.VisualStudio.DevShell.dll'; Send-VsDevShellTelemetry -NewIns ...
-+                                          ~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (Send-VsDevShellTelemetry:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
- 
-	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.c /Fo./galec_stl.obj
-galec_stl.c
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/sii_block_interface.c /Fo./sii_block_interface.obj
+sii_block_interface.c
 	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c /Fo./mei_block_interface.obj
 mei_block_interface.c
-	lib /nologo ./sii_block_interface.obj ./block.obj ./galec_stl.obj ./mei_block_interface.obj /OUT:block.lib
+	cl /nologo /O2 /std:c17 /W4 /c ../PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.c /Fo./galec_stl.obj
+galec_stl.c
+	lib /nologo ./block.obj ./sii_block_interface.obj ./mei_block_interface.obj ./galec_stl.obj /OUT:block.lib
 Generate BinaryCode files... OK
 
 Write Manifest... 
 BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7
-Writing: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
+Writing: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\manifest.xml
 Writing: manifest.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.12.0
-OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
-OK: Manifest CheckSum valid: 1a63c4e8c592311670e9266d645b8ab99c659961
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
-OK: Manifest file CheckSum valid: ef18325f76d0f996e8018ce7b9cc4131fe16a675
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
-OK: Manifest file CheckSum valid: 41b9c5dc4471159586e456cab80ce043043211dc
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
-OK: Manifest file CheckSum valid: b202e0425b67cf42af54087269ea75d2a9e8684a
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
-OK: Manifest file CheckSum valid: 96daea4e6d4d0a0adf11a9abf493b9594aef5478
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
-OK: Manifest file CheckSum valid: 7a5a1698402fa6e79c85fdbe0bebbb8d6e9d011b
-OK: Manifest file exists: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
-OK: Manifest file CheckSum valid: 4a846459cccc7f05f973ddb908965fdf3c7e690b
-getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
-Writing: C:\dev\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\__content.xml
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/BinaryCode/efmiBinaryCodeManifest.xsd
+OK: Manifest CheckSum valid: 8564e82de2dbf6e98a17ac3a40fe4c2de99fdfc3
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.obj
+OK: Manifest file CheckSum valid: 989c48f4e62a5f4c214d35764a7c06305004a39a
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\sii_block_interface.obj
+OK: Manifest file CheckSum valid: 93401bd4bb18e6b3cfd403dcf336b166545f9c50
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\mei_block_interface.obj
+OK: Manifest file CheckSum valid: 9860ba894a686637fe66a621520834b1de212df5
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\galec_stl.obj
+OK: Manifest file CheckSum valid: 874220d135bf8f6a6ff2d2e94047c07ac0d97258
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\block.lib
+OK: Manifest file CheckSum valid: 40e796ae12392bf15f4202da52a2c0c2844a6fec
+OK: Manifest file exists: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\BCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed_121c3a3ad3761b859035224f0aa23f4d834544e7\.\makefile
+OK: Manifest file CheckSum valid: 5015c6aa1c9fefe01321396370e98f08c5f59ae2
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+Writing: E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL_IOplus\eFMU\__content.xml
 Writing: __content.xml
 OK: Manifest EFMI version: 1.0.0
 OK: Manifest XSD version: 0.10.0
-getFMUPath: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
-OK: Manifest respects XSD: C:/dev/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/efmiContainerManifest.xsd
+getFMUPath: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/
+OK: Manifest respects XSD: E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL_IOplus/eFMU/schemas/efmiContainerManifest.xsd
 OK: Model representation manifest exists: ACode_Dymola
 OK: Model representation manifest exists: PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 OK: Model representation manifest exists: PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c

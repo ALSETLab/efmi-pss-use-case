@@ -8,9 +8,9 @@ model CHILtestbenchClockedOnePeriodicClock
     period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
-        extent={{-6,-6},{6,6}},
+        extent={{-8,-8},{8,8}},
         rotation=0,
-        origin={44,0})));
+        origin={0,-20})));
   Modelica.Clocked.RealSignals.Sampler.SampleClocked samplerVavr
     annotation (Placement(transformation(extent={{62,6},{74,18}})));
   Modelica.Blocks.Sources.Step stepPload(
@@ -49,14 +49,14 @@ model CHILtestbenchClockedOnePeriodicClock
     annotation (Placement(transformation(extent={{150,10},{162,22}})));
 equation
   connect(periodicClock.y,samplerVavr. clock) annotation (Line(
-      points={{50.6,0},{68,0},{68,4.8}},
+      points={{8.8,-20},{24,-20},{24,-6},{68,-6},{68,4.8}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
   connect(samplerVavr.y,G4CHIL. vf)
     annotation (Line(points={{74.6,12},{92,12}},   color={0,0,127}));
   connect(samplerPload.clock,periodicClock. y) annotation (Line(
-      points={{68,-12.8},{68,0},{50.6,0}},
+      points={{68,-12.8},{68,-6},{24,-6},{24,-20},{8.8,-20}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
@@ -75,16 +75,17 @@ equation
                                                    color={255,0,255}));
   connect(pss.vs, holdPSSout.u)
     annotation (Line(points={{-79,0},{-53.2,0}}, color={0,0,127}));
-  connect(holdPSSout.y, samplerVavr.u) annotation (Line(points={{-39.4,0},{32,0},
-          {32,12},{60.8,12}}, color={0,0,127}));
+  connect(holdPSSout.y, samplerVavr.u) annotation (Line(points={{-39.4,0},{30,0},
+          {30,12},{60.8,12}}, color={0,0,127}));
   connect(sampler.y, pss.vSI)
     annotation (Line(points={{-113.4,0},{-102,0}}, color={0,0,127}));
   connect(G4CHIL.w, hold_wscaled.u)
     annotation (Line(points={{142,16},{148.8,16}}, color={0,0,127}));
-  connect(hold_wscaled.y, sampler.u) annotation (Line(points={{162.6,16},{172,16},
-          {172,40},{-160,40},{-160,0},{-127.2,0}}, color={0,0,127}));
+  connect(hold_wscaled.y, sampler.u) annotation (Line(points={{162.6,16},{172,
+          16},{172,40},{-140,40},{-140,0},{-127.2,0}},
+                                                   color={0,0,127}));
   connect(sampler.clock, periodicClock.y) annotation (Line(
-      points={{-120,-7.2},{-120,-20},{24,-20},{24,-2},{68,-2},{68,0},{50.6,0}},
+      points={{-120,-7.2},{-120,-40},{14,-40},{14,-20},{8.8,-20}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));

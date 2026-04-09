@@ -294,7 +294,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF: static in
 		*/
 		self.Tw := 2.5e-1;
 		self.Kw := 2.70000000000000018;
-		self.wscale := 5.0e+1;
+		self.wscale := 1.0e+1;
 		self.kLPF := 1.0;
 		self.freqLow := 5.0;
 		self.vsmin := -1.5;

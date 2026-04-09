@@ -5,7 +5,8 @@ model CHILtestbenchClockedExactPeriodic
   RTS.CHIL.Grid4CHIL_IOplus               G4CHIL(G1(avr(K0=30)))
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicExactClock periodicClock_G4CHIL(
-    factor=5,
+    factor=200,
+    resolution=Modelica.Clocked.Types.Resolution.us,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},
@@ -42,7 +43,8 @@ model CHILtestbenchClockedExactPeriodic
                 annotation (Placement(transformation(                 extent={{-100,
             -10},{-80,10}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicExactClock periodicClock_pss(
-    factor=5,
+    factor=200,
+    resolution=Modelica.Clocked.Types.Resolution.us,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},

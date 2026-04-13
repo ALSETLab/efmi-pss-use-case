@@ -16,7 +16,7 @@ S_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/Startup/%.o: ../Core/Startup/%.s Core/Startup/subdir.mk
-	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I"E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -nostdinc -I"E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIISimpleHPF/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
 
 clean: clean-Core-2f-Startup
 

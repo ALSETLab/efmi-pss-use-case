@@ -62,7 +62,7 @@ main-build: PSSTypeIISimpleHPF_L476R.elf secondary-outputs
 
 # Tool invocations
 PSSTypeIISimpleHPF_L476R.elf PSSTypeIISimpleHPF_L476R.map: $(OBJS) $(USER_OBJS) E:\modelica-libraries\efmi-pss-use-case\STM32\work\PSSTypeIISimpleHPF_L476R\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "PSSTypeIISimpleHPF_L476R.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\modelica-libraries\efmi-pss-use-case\STM32\work\PSSTypeIISimpleHPF_L476R\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PSSTypeIISimpleHPF_L476R.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+	arm-none-eabi-gcc -o "PSSTypeIISimpleHPF_L476R.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\modelica-libraries\efmi-pss-use-case\STM32\work\PSSTypeIISimpleHPF_L476R\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PSSTypeIISimpleHPF_L476R.map" -Wl,--gc-sections -nodefaultlibs -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

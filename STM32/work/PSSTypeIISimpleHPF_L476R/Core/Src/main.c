@@ -243,24 +243,24 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 	// Pre-computed static constants:
 	static const PSS_Real ADC_TO_VOLTS =
-		((PSS_Real)3.3) / ((PSS_Real)4095.0);
+		((PSS_Real) 3.3) / ((PSS_Real) 4095.0);
 	static const PSS_Real VOLTS_TO_DAC =
-		((PSS_Real)4095.0) / ((PSS_Real)3.3);
+		((PSS_Real) 4095.0) / ((PSS_Real) 3.3);
 	static const PSS_Real DAC_MAX =
-		(PSS_Real)4095.0;
+		((PSS_Real) 4095.0);
 	static const PSS_Real DAC_MIN =
-		(PSS_Real)0.0;
+		((PSS_Real) 0.0);
 	static const PSS_Real OFFSET =
-		(PSS_Real)1.5;
+		((PSS_Real) 1.5);
 	static const PSS_Real CONSTANT_PU =
-		(PSS_Real)0.0;
+		((PSS_Real) 0.0);
 
 	HAL_GPIO_TogglePin(stepSize_GPIO_Port, stepSize_Pin);
 	HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_SET);
 
 	// Input processing (convert AC to volt):
 	HAL_ADC_Start(&hadc1);
-	if (HAL_ADC_PollForConversion(&hadc1, 1/* in ms */) == HAL_OK) {
+	if (HAL_ADC_PollForConversion(&hadc1, 1 /* ms */) == HAL_OK) {
 		uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
 		pss.vSI = ((PSS_Real)adc_raw) * ADC_TO_VOLTS;
 	}
@@ -295,7 +295,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	pss_cycles = end_cycles - start_cycles;
 	if (// eFMU error signal check:
 		(PSS_NONE_ERRORSIGNAL != error_signals)
-		// Overrun check -- 80 MHz clock = 80,000 cycles per 1.0 ms:
+		// Overrun check. 80 MHz clock = 80,000 cycles per 1 ms:
 		|| (pss_cycles > 80000))
 	{
 		error_flag = 1;

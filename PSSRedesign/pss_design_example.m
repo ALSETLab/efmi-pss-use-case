@@ -30,15 +30,15 @@ fprintf('Diary logging to: %s\n', diaryFile);
 PS = ss(A,B,C,D,'StateName',stateVars,'InputName',inputVars,'OutputName',outputVars)
 
 %% Extract Eigenvalues, 
-[M,E] = eig(A);
-eig_a = diag(E);
+% [M,E] = eig(A);
+% eig_a = diag(E); Used P from damp(PS) isntead of eig() - joe pizzimenti
 [wn,Z,P] = damp(PS);
 
 % Calculate natural frequencies (fn) in Hz from wn
 fn = wn / (2 * pi);
 
 % Create a table with eigenvalues, natural frequencies, damping ratios, and poles
-resultsTable = table(eig_a, wn, fn, Z*100, ...
+resultsTable = table(P, wn, fn, Z*100, ...
     'VariableNames', {'Eigenvalues', 'NaturalFrequency_rad_s', 'NaturalFrequency_Hz', 'DampingRatio'});
 % Display the results table
 format bank
@@ -65,8 +65,8 @@ lpf = tf(K, [T 1], 'InputName', 'u_lpf', ...
                             'OutputName', 'y_lpf', ...
                             'Name', 'lpf');
 % Wash-out filter
-Tw = 0.25; % WO time constant
-whasout = tf([Tw 0],[Tw 1],'InputName','u_wof',...
+Tw = 2; % WO time constant
+washout = tf([Tw 0],[Tw 1],'InputName','u_wof',...
                             'OutputName','y_wof',...
                             'Name','wof');
 
@@ -75,14 +75,18 @@ whasout = tf([Tw 0],[Tw 1],'InputName','u_wof',...
 wscale = 10;
 
 % Connect the filters to the PS model                         
-PSwo = (1/wscale)*lpf*whasout*PS % Connects filters to PS model
+PSwo = (1/wscale)*lpf*washout*PS % Connects filters to PS model
 
 %% RL Step 2: Obtain the root locus plot
 figure(101)
 rlp = rlocusplot(-PSwo);
 rlp.FrequencyUnit = "Hz";
-axis([-5 1 -2 10])
-grid on
+grid on;
+
+xlim([-25, 5]); 
+ylim([-15, 15]);
+
+axis equal;
 
 %% RL Step 3: Analyze the root locus plot
 % Looking at the plot, the angle of departure is around:
@@ -113,10 +117,15 @@ PSwo_leadlag = PSwo*leadlag*leadlag
 figure(102)
 rlp = rlocusplot(-PSwo_leadlag);
 rlp.FrequencyUnit = "Hz";
-axis([-5 1 -1 15])
+grid on;
+
+xlim([-25, 5]); 
+ylim([-15, 15]);
+
+axis equal;
 
 % For maximum damping, the gain found is
-Kpss = 7.4
+Kpss = 7.04
 
 %% List your design parameters for the Design:
 % Display the design parameters

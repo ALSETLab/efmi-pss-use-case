@@ -35,17 +35,17 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  15 .debug_rnglists 000014d7  00000000  00000000  0003f720  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  0002960b  00000000  00000000  00040bf7  2**0
+ 16 .debug_macro  00029500  00000000  00000000  00040bf7  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000226e9  00000000  00000000  0006a202  2**0
+ 17 .debug_line   00022550  00000000  00000000  0006a0f7  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    0011f2b9  00000000  00000000  0008c8eb  2**0
+ 18 .debug_str    0011eeb3  00000000  00000000  0008c647  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  001abba4  2**0
+ 19 .comment      00000043  00000000  00000000  001ab4fa  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000073ec  00000000  00000000  001abbe8  2**2
+ 20 .debug_frame  0000726c  00000000  00000000  001ab540  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 00000084  00000000  00000000  001b2fd4  2**0
+ 21 .debug_line_str 00000079  00000000  00000000  001b27ac  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -30629,7 +30629,7 @@ static void Startup(ALGOSTRUCT *instance)
  800f7c2:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
  800f7c6:	625a      	str	r2, [r3, #36]	@ 0x24
 
-    instance->wscale = 10.0e+1;
+    instance->wscale = 1.0e+1;
  800f7c8:	687b      	ldr	r3, [r7, #4]
  800f7ca:	4a29      	ldr	r2, [pc, #164]	@ (800f870 <Startup+0x25c>)
  800f7cc:	629a      	str	r2, [r3, #40]	@ 0x28
@@ -30714,7 +30714,7 @@ static void Startup(ALGOSTRUCT *instance)
  800f864:	3d2b96d5 	.word	0x3d2b96d5
  800f868:	3cb88127 	.word	0x3cb88127
  800f86c:	3e19999a 	.word	0x3e19999a
- 800f870:	42c80000 	.word	0x42c80000
+ 800f870:	41200000 	.word	0x41200000
  800f874:	41f00000 	.word	0x41f00000
 
 0800f878 <DoStep>:

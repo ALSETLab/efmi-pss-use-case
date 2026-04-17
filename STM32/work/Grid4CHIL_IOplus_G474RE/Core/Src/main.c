@@ -158,7 +158,7 @@ int main(void)
     if (error_flag
       && (((uint32_t) 5000) < (HAL_GetTick() - last_error_tick)))
     {
-      /* TODO: HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_RESET);*/
+      HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_RESET);
       error_flag = false;
     }
   }
@@ -322,7 +322,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     {
       error_flag = true;
       last_error_tick = HAL_GetTick();
-      /*TODO: HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_SET);*/
+      HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_SET);
     }
   }
 }

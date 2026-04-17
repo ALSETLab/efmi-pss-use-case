@@ -36,26 +36,26 @@
 
 /* Define shortcut names for unique, hash-based eFMU API: */
 #define MODEL_HASH \
-	H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+  H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 
 typedef CONCAT(BlockState_, MODEL_HASH) \
-	ModelPSS;
+  ModelPSS;
 typedef CONCAT(SPE_Real_, MODEL_HASH) \
-	PSS_Real;
+  PSS_Real;
 typedef CONCAT(SPE_ErrorSignal_, MODEL_HASH) \
-	PSS_ErrorSignal;
+  PSS_ErrorSignal;
 
 #define PSS_NONE_ERRORSIGNAL \
-	CONCAT(SPE_ERRORSIGNAL_NONE_, MODEL_HASH)
+  CONCAT(SPE_ERRORSIGNAL_NONE_, MODEL_HASH)
 
 #define PSS_Startup \
-	CONCAT(Startup_, MODEL_HASH)
+  CONCAT(Startup_, MODEL_HASH)
 #define PSS_DoStep \
-	CONCAT(DoStep_, MODEL_HASH)
+  CONCAT(DoStep_, MODEL_HASH)
 #define PSS_Recalibrate \
-	CONCAT(Recalibrate_, MODEL_HASH)
+  CONCAT(Recalibrate_, MODEL_HASH)
 #define PSS_Reinitialize \
-	CONCAT(Reinitialize_, MODEL_HASH)
+  CONCAT(Reinitialize_, MODEL_HASH)
 
 /* USER CODE END PTD */
 
@@ -128,7 +128,6 @@ int main(void)
   MX_ADC1_Init();
   MX_DAC1_Init();
   MX_TIM1_Init();
-
 
   /* USER CODE BEGIN 2 */
   /* Enable the DWT (data watchpoint and trigger) cycle counter: */
@@ -283,7 +282,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       ? pss.vs
       : CONSTANT_PU;
 
-    /* Output processing, including clamping (convert volt to AC): */
+    /* Output processing, including scaling and clamping (convert volt to AC): */
     PSS_Real dac_val = (target_pu + OFFSET) * VOLTS_TO_DAC;
     if (DAC_MIN > dac_val)
     {
@@ -307,7 +306,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       || (CYCLES_PER_MS < pss_cycles))
     {
       error_flag = true;
-      last_error_tick = HAL_GetTick(); /* Reset 5 s cooldown. */
+      last_error_tick = HAL_GetTick();
       HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_SET);
     }
   }

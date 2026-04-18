@@ -74,7 +74,6 @@ typedef CONCAT(SPE_ErrorSignal_, MODEL_HASH) \
 static ModelGrid grid;
 
 /* Profiling and errors: */
-volatile uint32_t grid_cycles = ((uint32_t) 0);
 volatile bool error_flag = false;
 volatile uint32_t last_error_tick = ((uint32_t) 0);
 /* USER CODE END PV */
@@ -216,10 +215,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (TIM1 == htim->Instance)
   {
-	/* Initialize profiling (check for errors and overruns): */
-	uint32_t start_cycles = DWT->CYCCNT;
-	Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
-
     /* Pre-computed static constants: */
     static const uint32_t CYCLES_PER_MS =
       ((uint32_t) 170000); /* 170 MHz clock = 170,000 cycles/ms. */
@@ -240,6 +235,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       ((Grid_Real) 40.0) / ((Grid_Real) 4095.0);
     static const Grid_Real LOAD_OFFSET =
       ((Grid_Real) 20.0);
+
+    /* Initialize profiling (check for errors and overruns): */
+    DWT->CYCCNT = ((uint32_t) 0);
+    bool io_overrun = false;
+    Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
 
     HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_SET);
 
@@ -263,7 +263,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     else
     { /* Failed to get input in time => trigger later overrun error: */
-      start_cycles = ((uint32_t) 0);
+      io_overrun = true;
     }
     HAL_ADC_Stop(&hadc1);
     HAL_ADC_Start(&hadc2);
@@ -274,7 +274,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     else
     { /* Failed to get input in time => trigger later overrun error: */
-      start_cycles = ((uint32_t) 0);
+      io_overrun = true;
     }
     HAL_ADC_Stop(&hadc2);
 
@@ -294,9 +294,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     HAL_DAC_SetValue(
       &hdac1,
-	  DAC_CHANNEL_1,
-	  DAC_ALIGN_12B_R,
-	  ((uint32_t) dac_v_val));
+      DAC_CHANNEL_1,
+      DAC_ALIGN_12B_R,
+      ((uint32_t) dac_v_val));
 
     Grid_Real dac_w_val = grid.w * VOLTS_TO_DAC;
     if (DAC_MIN > dac_w_val)
@@ -309,16 +309,19 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     HAL_DAC_SetValue(
       &hdac2,
-	  DAC_CHANNEL_1,
-	  DAC_ALIGN_12B_R,
-	  ((uint32_t) dac_w_val));
+      DAC_CHANNEL_1,
+      DAC_ALIGN_12B_R,
+      ((uint32_t) dac_w_val));
 
     HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_RESET);
 
     /* End profiling (check for errors and overruns): */
-    grid_cycles = (DWT->CYCCNT - start_cycles);
+    const uint32_t sampling_period_in_cycles =
+      ((uint32_t) ((((Grid_Real) 1000.0) * grid.discrete_stepSize)
+        * ((Grid_Real) CYCLES_PER_MS)));
     if ((Grid_NONE_ERRORSIGNAL != error_signals)
-      || (CYCLES_PER_MS < grid_cycles))
+      || io_overrun
+      || (sampling_period_in_cycles < DWT->CYCCNT))
     {
       error_flag = true;
       last_error_tick = HAL_GetTick();

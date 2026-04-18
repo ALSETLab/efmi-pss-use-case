@@ -35,34 +35,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := PSSTypeIISimpleHPF_L476R
+BUILD_ARTIFACT_NAME := PSSTypeIISimpleHPF_L476RG
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-PSSTypeIISimpleHPF_L476R.elf \
+PSSTypeIISimpleHPF_L476RG.elf \
 
 MAP_FILES += \
-PSSTypeIISimpleHPF_L476R.map \
+PSSTypeIISimpleHPF_L476RG.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-PSSTypeIISimpleHPF_L476R.list \
+PSSTypeIISimpleHPF_L476RG.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: PSSTypeIISimpleHPF_L476R.elf secondary-outputs
+main-build: PSSTypeIISimpleHPF_L476RG.elf secondary-outputs
 
 # Tool invocations
-PSSTypeIISimpleHPF_L476R.elf PSSTypeIISimpleHPF_L476R.map: $(OBJS) $(USER_OBJS) E:\modelica-libraries\efmi-pss-use-case\STM32\work\PSSTypeIISimpleHPF_L476R\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "PSSTypeIISimpleHPF_L476R.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\modelica-libraries\efmi-pss-use-case\STM32\work\PSSTypeIISimpleHPF_L476R\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PSSTypeIISimpleHPF_L476R.map" -Wl,--gc-sections -nodefaultlibs -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+PSSTypeIISimpleHPF_L476RG.elf PSSTypeIISimpleHPF_L476RG.map: $(OBJS) $(USER_OBJS) E:\modelica-libraries\efmi-pss-use-case\STM32\work\PSSTypeIISimpleHPF_L476RG\STM32L476RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "PSSTypeIISimpleHPF_L476RG.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\modelica-libraries\efmi-pss-use-case\STM32\work\PSSTypeIISimpleHPF_L476RG\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PSSTypeIISimpleHPF_L476RG.map" -Wl,--gc-sections -Wl,--verbose -nodefaultlibs -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -71,14 +71,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-PSSTypeIISimpleHPF_L476R.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "PSSTypeIISimpleHPF_L476R.list"
+PSSTypeIISimpleHPF_L476RG.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "PSSTypeIISimpleHPF_L476RG.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) PSSTypeIISimpleHPF_L476R.elf PSSTypeIISimpleHPF_L476R.list PSSTypeIISimpleHPF_L476R.map default.size.stdout
+	-$(RM) PSSTypeIISimpleHPF_L476RG.elf PSSTypeIISimpleHPF_L476RG.list PSSTypeIISimpleHPF_L476RG.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

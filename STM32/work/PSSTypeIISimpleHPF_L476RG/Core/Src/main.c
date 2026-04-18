@@ -79,7 +79,6 @@ volatile bool override_active = false;
 volatile uint32_t last_override_button_press = ((uint32_t) 0);
 
 /* Profiling and errors: */
-volatile uint32_t pss_cycles = ((uint32_t) 0);
 volatile bool error_flag = false;
 volatile uint32_t last_error_tick = ((uint32_t) 0);
 /* USER CODE END PV */
@@ -235,10 +234,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (TIM1 == htim->Instance)
   {
-    /* Initialize profiling (check for errors and overruns): */
-    uint32_t start_cycles = DWT->CYCCNT;
-    PSS_ErrorSignal error_signals = PSS_NONE_ERRORSIGNAL;
-
     /* Pre-computed static constants: */
     static const uint32_t CYCLES_PER_MS =
       ((uint32_t) 80000); /* 80 MHz clock = 80,000 cycles/ms. */
@@ -257,6 +252,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     static const PSS_Real CONSTANT_PU =
       ((PSS_Real) 0.0);
 
+    /* Initialize profiling (check for errors and overruns): */
+    DWT->CYCCNT = ((uint32_t) 0);
+    bool io_overrun = false;
+    PSS_ErrorSignal error_signals = PSS_NONE_ERRORSIGNAL;
+
     HAL_GPIO_TogglePin(stepSize_GPIO_Port, stepSize_Pin);
     HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_SET);
 
@@ -269,7 +269,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     else
     { /* Failed to get input in time => trigger later overrun error: */
-    	start_cycles = ((uint32_t) 0);
+      io_overrun = true;
     }
     HAL_ADC_Stop(&hadc1);
 
@@ -301,9 +301,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_RESET);
 
     /* End profiling (check for errors and overruns): */
-    pss_cycles = (DWT->CYCCNT - start_cycles);
+    const uint32_t sampling_period_in_cycles =
+      ((uint32_t) ((((PSS_Real) 1000.0) * pss.discrete_stepSize)
+        * ((PSS_Real) CYCLES_PER_MS)));
     if ((PSS_NONE_ERRORSIGNAL != error_signals)
-      || (CYCLES_PER_MS < pss_cycles))
+      || io_overrun
+      || (sampling_period_in_cycles < DWT->CYCCNT))
     {
       error_flag = true;
       last_error_tick = HAL_GetTick();

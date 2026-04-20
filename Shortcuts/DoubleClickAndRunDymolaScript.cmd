@@ -1,58 +1,70 @@
 @echo off
 setlocal
-
 rem -----------------------------------------------------------------------------
 rem Launch Dymola Auto.cmd
 rem
-rem Purpose:
-rem   Portable launcher for the efmi-pss-use-case startup flow.
-rem   This file is meant to be double-clicked and reused on different computers.
-rem
-rem What it does:
-rem   1) Finds Dymola.exe automatically (tries known versions first, then scans
-rem      "C:\Program Files\Dymola *\bin64\Dymola.exe").
-rem   2) Resolves paths relative to THIS .cmd file location:
-rem        - startup-generic.mos is expected in the same folder (Shortcuts)
-rem        - repository root is assumed to be the parent folder of Shortcuts
-rem   3) Exports EFMI_PSS_ROOT for the .mos script to consume as project root.
-rem   4) Starts Dymola with -nosplash and the startup .mos script.
-rem
-rem Assumed structure:
-rem   <repo-root>\Shortcuts\Launch Dymola Auto.cmd
-rem   <repo-root>\Shortcuts\startup-generic.mos
+rem Overview of the Launcher Script:
+rem This batch script acts as a portable, automated launcher for the Dymola 
+rem simulation environment. It begins by auto-detecting the Dymola executable 
+rem on the host machine, prioritizing the predefined default installation path. 
+rem To maintain portability across different workstations, it resolves all 
+rem necessary paths relative to the script's own location. Rather than relying 
+rem on hardcoded file hashes, the script dynamically parses the project's 
+rem .gitignore file to identify the latest generated eFMU directories and .mo 
+rem testing artifacts. It automatically compiles these paths into a temporary 
+rem Modelica helper script (load_artifacts.mos). Finally, it launches Dymola 
+rem without the splash screen and executes the primary startup script, 
+rem seamlessly loading all required dependencies and generated models.
 rem -----------------------------------------------------------------------------
 
 rem 1. Auto-detect Dymola executable
-set "dymolaPath="
+rem Updated to prioritize your default Dymola 2026x Refresh 1 path
+set "dymolaPath=C:\Program Files\Dymola 2026x Refresh 1\bin64\Dymola.exe"
 
-for %%F in (
-	"C:\Program Files\Dymola 2026x Refresh 1 Beta 1\bin64\Dymola.exe"
-) do (
-	if not defined dymolaPath if exist "%%~F" set "dymolaPath=%%~F"
-)
-
-if not defined dymolaPath (
+if not exist "%dymolaPath%" (
 	for /f "delims=" %%D in ('dir /b /ad /o-n "C:\Program Files\Dymola *" 2^>nul') do (
 		if not defined dymolaPath if exist "C:\Program Files\%%D\bin64\Dymola.exe" set "dymolaPath=C:\Program Files\%%D\bin64\Dymola.exe"
 	)
 )
 
-if not defined dymolaPath (
+if not exist "%dymolaPath%" (
 	echo Could not find Dymola.exe under C:\Program Files\Dymola *\bin64\
 	pause
 	exit /b 1
 )
 
-rem 2. Resolve paths from this .cmd location (portable across computers)
+rem 2. Resolve paths from this .cmd location (portable across computers) [cite: 5]
 set "shortcutDir=%~dp0"
 set "mosScript=%shortcutDir%startup-generic.mos"
 for %%I in ("%shortcutDir%..") do set "repoRoot=%%~fI"
-set "repoRoot=%repoRoot:\=/%"
 
-rem 3. Pass repo root to Dymola startup script via environment variable
-set "EFMI_PSS_ROOT=%repoRoot%"
+rem Convert backslashes to forward slashes for Modelica compatibility [cite: 7]
+set "repoRootFwd=%repoRoot:\=/%"
 
-rem 4. Launch Dymola with -nosplash and the script path
+rem Fallback to explicit repo root if relative resolution fails
+if "%repoRootFwd%"=="" set "repoRootFwd=C:/dev/efmi-pss-use-case"
+
+rem 3. Generate load_artifacts.mos dynamically from .gitignore
+set "loadScript=%shortcutDir%load_artifacts.mos"
+echo // Auto-generated script to load artifacts from .gitignore > "%loadScript%"
+
+rem Parse .gitignore for exceptions and write the respective openModel commands [cite: 1]
+for /f "tokens=* delims=!" %%F in ('findstr /b "!Modelica/work/" "%repoRoot%\.gitignore"') do (
+	rem Check if the line ends with .mo
+	echo %%F| findstr /i /e ".mo" >nul
+	if errorlevel 1 (
+		rem If no .mo extension, it's an eFMU directory. Point to the package.
+		echo openModel^("%repoRootFwd%/%%F/SiL-integration/eFMU/_package_.mo"^); >> "%loadScript%"
+	) else (
+		rem It's a specific generated .mo file
+		echo openModel^("%repoRootFwd%/%%F"^); >> "%loadScript%"
+	)
+)
+
+rem 4. Pass repo root to Dymola startup script via environment variable [cite: 8]
+set "EFMI_PSS_ROOT=%repoRootFwd%"
+
+rem 5. Launch Dymola with -nosplash and the script path [cite: 6]
 start "" "%dymolaPath%" -nosplash "%mosScript%"
 
 endlocal

@@ -2114,7 +2114,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     /* End profiling (check for errors and overruns): */
     const uint32_t sampling_period_in_cycles =
-      ((uint32_t) ((((PSS_Real) 1000.0) * pss.discrete_stepSize)
+      ((uint32_t) (
+          (((PSS_Real) 1050.0 /* s to ms and 5% safety */) * pss.discrete_stepSize)
  800138e:	4b1f      	ldr	r3, [pc, #124]	@ (800140c <HAL_TIM_PeriodElapsedCallback+0x1a0>)
  8001390:	edd3 7a32 	vldr	s15, [r3, #200]	@ 0xc8
  8001394:	ed9f 7a25 	vldr	s14, [pc, #148]	@ 800142c <HAL_TIM_PeriodElapsedCallback+0x1c0>
@@ -2181,7 +2182,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  8001420:	08006dd0 	.word	0x08006dd0
  8001424:	08006dd4 	.word	0x08006dd4
  8001428:	2000008c 	.word	0x2000008c
- 800142c:	447a0000 	.word	0x447a0000
+ 800142c:	44834000 	.word	0x44834000
  8001430:	08006dd8 	.word	0x08006dd8
  8001434:	2000019c 	.word	0x2000019c
  8001438:	200001a0 	.word	0x200001a0

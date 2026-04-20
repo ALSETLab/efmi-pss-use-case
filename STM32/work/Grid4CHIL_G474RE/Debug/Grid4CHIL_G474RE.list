@@ -2257,7 +2257,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     /* End profiling (check for errors and overruns): */
     const uint32_t sampling_period_in_cycles =
-      ((uint32_t) ((((Grid_Real) 1000.0) * grid.discrete_stepSize)
+      ((uint32_t) (
+          (((Grid_Real) 1050.0 /* s to ms and 5% safety */) * grid.discrete_stepSize)
  80014bc:	4b1e      	ldr	r3, [pc, #120]	@ (8001538 <HAL_TIM_PeriodElapsedCallback+0x1f0>)
  80014be:	edd3 7a73 	vldr	s15, [r3, #460]	@ 0x1cc
  80014c2:	ed9f 7a27 	vldr	s14, [pc, #156]	@ 8001560 <HAL_TIM_PeriodElapsedCallback+0x218>
@@ -2326,7 +2327,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  8001554:	08016040 	.word	0x08016040
  8001558:	200000e8 	.word	0x200000e8
  800155c:	200000fc 	.word	0x200000fc
- 8001560:	447a0000 	.word	0x447a0000
+ 8001560:	44834000 	.word	0x44834000
  8001564:	08016044 	.word	0x08016044
  8001568:	20000350 	.word	0x20000350
  800156c:	20000354 	.word	0x20000354
@@ -27230,7 +27231,7 @@ static void Startup(ALGOSTRUCT *instance)
  800cb90:	f04f 527e 	mov.w	r2, #1065353216	@ 0x3f800000
  800cb94:	621a      	str	r2, [r3, #32]
 
-    instance->wscale = 5.0e+1;
+    instance->wscale = 1.0e+1;
  800cb96:	687b      	ldr	r3, [r7, #4]
  800cb98:	4a23      	ldr	r2, [pc, #140]	@ (800cc28 <Startup+0x23c>)
  800cb9a:	625a      	str	r2, [r3, #36]	@ 0x24
@@ -27299,7 +27300,7 @@ static void Startup(ALGOSTRUCT *instance)
  800cc1c:	3d2b96d5 	.word	0x3d2b96d5
  800cc20:	3cb88127 	.word	0x3cb88127
  800cc24:	3e19999a 	.word	0x3e19999a
- 800cc28:	42480000 	.word	0x42480000
+ 800cc28:	41200000 	.word	0x41200000
  800cc2c:	41f00000 	.word	0x41f00000
 
 0800cc30 <DoStep>:

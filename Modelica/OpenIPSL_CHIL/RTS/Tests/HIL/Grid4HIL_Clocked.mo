@@ -25,7 +25,7 @@ model Grid4HIL_Clocked
   Modelica.Clocked.RealSignals.Sampler.SampleClocked sampler
     annotation (Placement(transformation(extent={{-58,-6},{-46,6}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
-    period(displayUnit="ms") = 0.001,
+    period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},

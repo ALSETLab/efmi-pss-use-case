@@ -128,12 +128,16 @@ int main(void)
   /* USER CODE BEGIN 2 */
   /* Enable the DWT (data watchpoint and trigger) cycle counter: */
   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  if (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk)
+  { /* Processor does not support cycle counter: */
+    return 1;
+  }
   DWT->CYCCNT = ((uint32_t) 0);
   DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 
   /* Initialize the eFMU: */
   Grid_Startup(&grid);
-  error_flag = (Grid_NONE_ERRORSIGNAL == grid.ErrorSignals);
+  error_flag = (Grid_NONE_ERRORSIGNAL != grid.ErrorSignals);
 
   /* Start the sampling timer: */
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);

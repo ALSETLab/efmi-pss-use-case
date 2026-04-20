@@ -131,6 +131,10 @@ int main(void)
   /* USER CODE BEGIN 2 */
   /* Enable the DWT (data watchpoint and trigger) cycle counter: */
   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
+  if (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk)
+  { /* Processor does not support cycle counter: */
+    return 1;
+  }
   DWT->CYCCNT = ((uint32_t) 0);
   DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
 

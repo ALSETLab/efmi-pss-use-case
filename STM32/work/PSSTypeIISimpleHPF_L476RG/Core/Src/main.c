@@ -140,7 +140,14 @@ int main(void)
 
   /* Initialize the eFMU: */
   PSS_Startup(&pss);
-  error_flag = (PSS_NONE_ERRORSIGNAL == pss.ErrorSignals);
+  error_flag = (PSS_NONE_ERRORSIGNAL != pss.ErrorSignals);
+  pss.Kw = ((PSS_Real) 7.4);
+  pss.T1 = ((PSS_Real) 0.339913009676242);
+  pss.T2 = ((PSS_Real) 0.0583198524063289);
+  pss.T3 = ((PSS_Real) 0.339913009676242);
+  pss.T4 = ((PSS_Real) 0.0583198524063289);
+  PSS_Recalibrate(&pss);
+  error_flag = error_flag || (PSS_NONE_ERRORSIGNAL != pss.ErrorSignals);
 
   /* Start the sampling timer: */
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);

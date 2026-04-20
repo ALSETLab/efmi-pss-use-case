@@ -47,6 +47,8 @@ typedef CONCAT(SPE_ErrorSignal_, MODEL_HASH) \
 
 #define Grid_NONE_ERRORSIGNAL \
   CONCAT(SPE_ERRORSIGNAL_NONE_, MODEL_HASH)
+#define Grid_UNSPECIFIED_ERRORSIGNAL \
+  CONCAT(SPE_ERRORSIGNAL_UNSPECIFIED_ERROR_, MODEL_HASH)
 
 #define Grid_Startup \
   CONCAT(Startup_, MODEL_HASH)
@@ -74,8 +76,8 @@ typedef CONCAT(SPE_ErrorSignal_, MODEL_HASH) \
 static ModelGrid grid;
 
 /* Profiling and errors: */
-volatile bool error_flag = false;
-volatile uint32_t last_error_tick = ((uint32_t) 0);
+static Grid_ErrorSignal error_signals;
+static uint32_t last_error_tick;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -126,7 +128,9 @@ int main(void)
   MX_ADC2_Init();
 
   /* USER CODE BEGIN 2 */
-  /* Enable the DWT (data watchpoint and trigger) cycle counter: */
+  /* Initialize profiling and errors: */
+  error_signals = Grid_NONE_ERRORSIGNAL;
+  last_error_tick = ((uint32_t) 0);
   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
   if (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk)
   { /* Processor does not support cycle counter: */
@@ -137,7 +141,7 @@ int main(void)
 
   /* Initialize the eFMU: */
   Grid_Startup(&grid);
-  error_flag = (Grid_NONE_ERRORSIGNAL != grid.ErrorSignals);
+  error_signals |= grid.ErrorSignals;
 
   /* Start the sampling timer: */
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
@@ -158,11 +162,11 @@ int main(void)
       passed since the last error occurred. If so, turn off the LED and
       reset the flag:
     */
-    if (error_flag
+    if ((Grid_NONE_ERRORSIGNAL != error_signals)
       && (((uint32_t) 5000) < (HAL_GetTick() - last_error_tick)))
     {
+      error_signals = Grid_NONE_ERRORSIGNAL;
       HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_RESET);
-      error_flag = false;
     }
   }
   /* USER CODE END 3 */
@@ -242,8 +246,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     /* Initialize profiling (check for errors and overruns): */
     DWT->CYCCNT = ((uint32_t) 0);
-    bool io_overrun = false;
-    Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
+    const uint32_t sampling_period_in_cycles =
+      ((uint32_t) (
+          (((Grid_Real) 1050.0 /* s to ms and 5% safety */) * grid.discrete_stepSize)
+        * ((Grid_Real) CYCLES_PER_MS)));
+    Grid_ErrorSignal error_signals_local = Grid_NONE_ERRORSIGNAL;
 
     HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_SET);
 
@@ -267,7 +274,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     else
     { /* Failed to get input in time => trigger later overrun error: */
-      io_overrun = true;
+      error_signals_local |= Grid_UNSPECIFIED_ERRORSIGNAL;
     }
     HAL_ADC_Stop(&hadc1);
     HAL_ADC_Start(&hadc2);
@@ -278,13 +285,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     }
     else
     { /* Failed to get input in time => trigger later overrun error: */
-      io_overrun = true;
+      error_signals_local |= Grid_UNSPECIFIED_ERRORSIGNAL;
     }
     HAL_ADC_Stop(&hadc2);
 
     /* Compute sampling step: */
     Grid_DoStep(&grid);
-    error_signals |= grid.ErrorSignals;
+    error_signals_local |= grid.ErrorSignals;
 
     /* Output processing, including scaling and clamping: */
     Grid_Real dac_v_val = grid.v * VOLTS_TO_DAC;
@@ -320,15 +327,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_RESET);
 
     /* End profiling (check for errors and overruns): */
-    const uint32_t sampling_period_in_cycles =
-      ((uint32_t) (
-          (((Grid_Real) 1050.0 /* s to ms and 5% safety */) * grid.discrete_stepSize)
-        * ((Grid_Real) CYCLES_PER_MS)));
-    if ((Grid_NONE_ERRORSIGNAL != error_signals)
-      || io_overrun
-      || (sampling_period_in_cycles < DWT->CYCCNT))
+    error_signals_local |= ((sampling_period_in_cycles < DWT->CYCCNT)
+      ? Grid_UNSPECIFIED_ERRORSIGNAL
+      : Grid_NONE_ERRORSIGNAL);
+    if (Grid_NONE_ERRORSIGNAL != error_signals_local)
     {
-      error_flag = true;
+      error_signals = error_signals_local;
       last_error_tick = HAL_GetTick();
       HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_SET);
     }

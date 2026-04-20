@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../schemas/BehavioralModel/efmiBehavioralModelManifest.xsd"
+	kind="BehavioralModel"
+	efmiVersion="1.0.0"
+	id="{1d89b2ab-83e9-766b-b44a-2d931a917fd1}"
+	name="OpenIPSL_CHIL.Examples.CHIL_Configuration.SiL_Tests.Grid4CHIL_IOplus"
+	description="Test scenarios of original experiment
+		     [OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked]
+		   for eBlock model
+		     [OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL_IOplus]."
+	version=""
+	generationDateAndTime="2026-04-20T14:00:25Z"
+	generationTool="Dymola Version 2026x Refresh 1, 2026-04-08">
+
+	<ManifestReferences>
+		<ManifestReference
+			id="ManifestReference:ACode_Dymola"
+			manifestRefId="{15818fc0-e25c-4f55-8ddc-1ea301776896}"
+			checksum="a988cc8429ea5a811c64d52d44c64cafce41a1f5"
+			origin="false"/>
+	</ManifestReferences>
+
+	<Files>
+		<File
+			id="File:Scenario_1.csv"
+			name="Scenario_1.csv"
+			path="./"
+			needsChecksum="true"
+			checksum="0d8f543b6da4685c02ce67a21d9975f69ee70948"
+			role="ReferenceData"
+			description="Reference trajectories file for Scenario_1."/>
+	</Files>
+
+	<Units>
+		<Unit id="[s]" name="s">
+			<BaseUnit
+				s="1"/>
+		</Unit>
+	</Units>
+
+	<Clocks>
+	</Clocks>
+
+	<Variables>
+		<Variable id="fault">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="fault"/>
+		</Variable>
+		<Variable id="faultL1">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="faultL1"/>
+		</Variable>
+		<Variable id="faultL2">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="faultL2"/>
+		</Variable>
+		<Variable id="uPLoad">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="uPLoad"/>
+		</Variable>
+		<Variable id="vf">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="vf"/>
+		</Variable>
+		<Variable id="Pgen">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="Pgen"/>
+		</Variable>
+		<Variable id="Qgen">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="Qgen"/>
+		</Variable>
+		<Variable id="v">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="v"/>
+		</Variable>
+		<Variable id="vf0OUT">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="vf0OUT"/>
+		</Variable>
+		<Variable id="w">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="w"/>
+		</Variable>
+	</Variables>
+
+	<Scenarios>
+		<Scenario
+			name="Scenario_1"
+			description="Test scenario defined by component [G4CHIL_IOplus]."
+			id="Scenario:Scenario_1"
+			timeGrid="variable"
+			fileRefId="File:Scenario_1.csv"
+			csvMappingRefId="CsvMapping:Scenario_X"
+			tolerancesSetupRefId="TolerancesSetup:Scenario_1"/>
+	</Scenarios>
+
+	<CsvMappings>
+		<CsvMapping
+			id="CsvMapping:Scenario_X">
+			<TimeData
+				columnName="time"
+				unitRefId="[s]"/>
+			<ReferenceData
+				variableRefId="fault">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="fault"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="faultL1">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="faultL1"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="faultL2">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="faultL2"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="uPLoad">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="uPLoad"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="vf">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="vf"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="Pgen">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="Pgen"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="Qgen">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="Qgen"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="v">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="v"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="vf0OUT">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="vf0OUT"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="w">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="w"/>
+			</ReferenceData>
+		</CsvMapping>
+	</CsvMappings>
+
+	<TolerancesSetups>
+		<TolerancesSetup id="TolerancesSetup:Scenario_1">
+			<TolerancesConfiguration floatingPointPrecision="32-bit">
+				<TolerancesDefinition
+					variableRefId="Pgen"
+					unitRefId="TODO"
+					absoluteTolerance="0.02"
+					relativeTolerance="0.0001"/>
+				<TolerancesDefinition
+					variableRefId="Qgen"
+					unitRefId="TODO"
+					absoluteTolerance="0.005"
+					relativeTolerance="0.0001"/>
+				<TolerancesDefinition
+					variableRefId="v"
+					unitRefId="TODO"
+					absoluteTolerance="0.001"
+					relativeTolerance="0.0001"/>
+				<TolerancesDefinition
+					variableRefId="vf0OUT"
+					unitRefId="TODO"
+					absoluteTolerance="0.001"
+					relativeTolerance="0.0001"/>
+				<TolerancesDefinition
+					variableRefId="w"
+					unitRefId="TODO"
+					absoluteTolerance="0.001"
+					relativeTolerance="0.0001"/>
+			</TolerancesConfiguration>
+			<TolerancesConfiguration floatingPointPrecision="64-bit">
+				<TolerancesDefinition
+					variableRefId="Pgen"
+					unitRefId="TODO"
+					absoluteTolerance="1.0e-06"
+					relativeTolerance="1.0e-08"/>
+				<TolerancesDefinition
+					variableRefId="Qgen"
+					unitRefId="TODO"
+					absoluteTolerance="1.0e-06"
+					relativeTolerance="1.0e-08"/>
+				<TolerancesDefinition
+					variableRefId="v"
+					unitRefId="TODO"
+					absoluteTolerance="1.0e-06"
+					relativeTolerance="1.0e-08"/>
+				<TolerancesDefinition
+					variableRefId="vf0OUT"
+					unitRefId="TODO"
+					absoluteTolerance="1.0e-06"
+					relativeTolerance="1.0e-08"/>
+				<TolerancesDefinition
+					variableRefId="w"
+					unitRefId="TODO"
+					absoluteTolerance="1.0e-06"
+					relativeTolerance="1.0e-08"/>
+			</TolerancesConfiguration>
+		</TolerancesSetup>
+	</TolerancesSetups>
+</Manifest>

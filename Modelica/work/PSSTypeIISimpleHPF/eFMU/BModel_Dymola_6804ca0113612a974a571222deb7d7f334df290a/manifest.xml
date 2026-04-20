@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="../schemas/BehavioralModel/efmiBehavioralModelManifest.xsd"
+	kind="BehavioralModel"
+	efmiVersion="1.0.0"
+	id="{4b7055a5-4e69-17b2-8c90-5b3864013e27}"
+	name="OpenIPSL_CHIL.Examples.CHIL_Configuration.SiL_Tests.PSSTypeIISimpleHPF"
+	description="Test scenarios of original experiment
+		     [OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked]
+		   for eBlock model
+		     [OpenIPSL_CHIL.Components.PSS.PSSTypeIISimpleHPF]."
+	version=""
+	generationDateAndTime="2026-04-20T14:11:32Z"
+	generationTool="Dymola Version 2026x Refresh 1, 2026-04-08">
+
+	<ManifestReferences>
+		<ManifestReference
+			id="ManifestReference:ACode_Dymola"
+			manifestRefId="{a670a5ff-d216-4025-857a-c7c4b29aed42}"
+			checksum="de874e8c42d47fefc30f20462398664eb5943d7a"
+			origin="false"/>
+	</ManifestReferences>
+
+	<Files>
+		<File
+			id="File:Scenario_1.csv"
+			name="Scenario_1.csv"
+			path="./"
+			needsChecksum="true"
+			checksum="23afca84e459a91353a5ae568e998752fa0c20d0"
+			role="ReferenceData"
+			description="Reference trajectories file for Scenario_1."/>
+	</Files>
+
+	<Units>
+		<Unit id="[s]" name="s">
+			<BaseUnit
+				s="1"/>
+		</Unit>
+	</Units>
+
+	<Clocks>
+	</Clocks>
+
+	<Variables>
+		<Variable id="vSI">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="vSI"/>
+		</Variable>
+		<Variable id="vs">
+			<ForeignVariableReference
+				manifestReferenceRefId="ManifestReference:ACode_Dymola"
+				foreignRefId="vs"/>
+		</Variable>
+	</Variables>
+
+	<Scenarios>
+		<Scenario
+			name="Scenario_1"
+			description="Test scenario defined by component [pss]."
+			id="Scenario:Scenario_1"
+			timeGrid="variable"
+			fileRefId="File:Scenario_1.csv"
+			csvMappingRefId="CsvMapping:Scenario_X"
+			tolerancesSetupRefId="TolerancesSetup:Scenario_1"/>
+	</Scenarios>
+
+	<CsvMappings>
+		<CsvMapping
+			id="CsvMapping:Scenario_X">
+			<TimeData
+				columnName="time"
+				unitRefId="[s]"/>
+			<ReferenceData
+				variableRefId="vSI">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="vSI"/>
+			</ReferenceData>
+			<ReferenceData
+				variableRefId="vs">
+				<ColumnMapping
+					unitRefId="TODO"
+					columnName="vs"/>
+			</ReferenceData>
+		</CsvMapping>
+	</CsvMappings>
+
+	<TolerancesSetups>
+		<TolerancesSetup id="TolerancesSetup:Scenario_1">
+			<TolerancesConfiguration floatingPointPrecision="32-bit">
+				<TolerancesDefinition
+					variableRefId="vs"
+					unitRefId="TODO"
+					absoluteTolerance="0.03"
+					relativeTolerance="0.003"/>
+			</TolerancesConfiguration>
+			<TolerancesConfiguration floatingPointPrecision="64-bit">
+				<TolerancesDefinition
+					variableRefId="vs"
+					unitRefId="TODO"
+					absoluteTolerance="0.03"
+					relativeTolerance="0.003"/>
+			</TolerancesConfiguration>
+		</TolerancesSetup>
+	</TolerancesSetups>
+</Manifest>

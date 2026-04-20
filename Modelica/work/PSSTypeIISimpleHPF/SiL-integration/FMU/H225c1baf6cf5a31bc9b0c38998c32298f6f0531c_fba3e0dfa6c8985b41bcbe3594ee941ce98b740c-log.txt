@@ -1,76 +1,76 @@
 -- Building for: Visual Studio 17 2022
--- Selecting Windows SDK version 10.0.22000.0 to target Windows 10.0.22631.
--- The C compiler identification is MSVC 19.34.31944.0
--- The CXX compiler identification is MSVC 19.34.31944.0
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- The C compiler identification is MSVC 19.44.35225.0
+-- The CXX compiler identification is MSVC 19.44.35225.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x86/cl.exe - skipped
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x86/cl.exe - skipped
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (6.1s)
+-- Configuring done (4.0s)
 -- Generating done (0.1s)
--- Build files have been written to: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpaomdx1lx
-MSBuild version 17.4.3+7e646be43 for .NET Framework
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\ZERO_CHECK.vcxproj]
+-- Build files have been written to: C:/Users/vanfr/AppData/Local/Temp/tmphmt_vrkh
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphmt_vrkh\ZERO_CHECK.vcxproj]
   1>Checking Build System
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\fmi_wrapper.vcxproj]
-  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphmt_vrkh\fmi_wrapper.vcxproj]
+  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
   fmi3Functions.c
   block.c
   galec_stl.c
   mei_block_interface.c
   sii_block_interface.c
   Generating Code...
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1374,5): warning MSB8012: TargetPath(C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\Release\fmi_wrapper.dll) does not match the Linker's OutputFile property value (C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\Release\fmi_wrapper.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\fmi_wrapper.vcxproj]
-     Creating library C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpaomdx1lx/Release/fmi_wrapper.lib and object C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpaomdx1lx/Release/fmi_wrapper.exp
-  fmi_wrapper.vcxproj -> C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\Release\fmi_wrapper.dll
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\ALL_BUILD.vcxproj]
-  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpaomdx1lx\install.vcxproj]
+     Creating library C:/Users/vanfr/AppData/Local/Temp/tmphmt_vrkh/Release/fmi_wrapper.lib and object C:/Users/vanfr/AppData/Local/Temp/tmphmt_vrkh/Release/fmi_wrapper.exp
+  fmi_wrapper.vcxproj -> C:\Users\vanfr\AppData\Local\Temp\tmphmt_vrkh\Release\fmi_wrapper.dll
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphmt_vrkh\ALL_BUILD.vcxproj]
+  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphmt_vrkh\install.vcxproj]
   1>
   -- Install configuration: "Release"
-  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpbtg8uhqo/binaries/x86-windows/fmi_wrapper.lib
-  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpbtg8uhqo/binaries/x86-windows/fmi_wrapper.dll
+  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmpf28cvo73/binaries/x86-windows/fmi_wrapper.lib
+  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmpf28cvo73/binaries/x86-windows/fmi_wrapper.dll
 -- Building for: Visual Studio 17 2022
--- Selecting Windows SDK version 10.0.22000.0 to target Windows 10.0.22631.
--- The C compiler identification is MSVC 19.34.31944.0
--- The CXX compiler identification is MSVC 19.34.31944.0
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- The C compiler identification is MSVC 19.44.35225.0
+-- The CXX compiler identification is MSVC 19.44.35225.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x64/cl.exe - skipped
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x64/cl.exe - skipped
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (6.0s)
+-- Configuring done (4.5s)
 -- Generating done (0.1s)
--- Build files have been written to: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpuhg7e84v
-MSBuild version 17.4.3+7e646be43 for .NET Framework
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\ZERO_CHECK.vcxproj]
+-- Build files have been written to: C:/Users/vanfr/AppData/Local/Temp/tmphngrop9v
+MSBuild version 17.14.40+3e7442088 for .NET Framework
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphngrop9v\ZERO_CHECK.vcxproj]
   1>Checking Build System
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\fmi_wrapper.vcxproj]
-  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphngrop9v\fmi_wrapper.vcxproj]
+  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
   fmi3Functions.c
   block.c
   galec_stl.c
   mei_block_interface.c
   sii_block_interface.c
   Generating Code...
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1374,5): warning MSB8012: TargetPath(C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\Release\fmi_wrapper.dll) does not match the Linker's OutputFile property value (C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\Release\fmi_wrapper.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\fmi_wrapper.vcxproj]
-     Creating library C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpuhg7e84v/Release/fmi_wrapper.lib and object C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpuhg7e84v/Release/fmi_wrapper.exp
-  fmi_wrapper.vcxproj -> C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\Release\fmi_wrapper.dll
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\ALL_BUILD.vcxproj]
-  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
-C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpuhg7e84v\install.vcxproj]
+     Creating library C:/Users/vanfr/AppData/Local/Temp/tmphngrop9v/Release/fmi_wrapper.lib and object C:/Users/vanfr/AppData/Local/Temp/tmphngrop9v/Release/fmi_wrapper.exp
+  fmi_wrapper.vcxproj -> C:\Users\vanfr\AppData\Local\Temp\tmphngrop9v\Release\fmi_wrapper.dll
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphngrop9v\ALL_BUILD.vcxproj]
+  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmphngrop9v\install.vcxproj]
   1>
   -- Install configuration: "Release"
-  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpk95xxlmg/binaries/x86_64-windows/fmi_wrapper.lib
-  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpk95xxlmg/binaries/x86_64-windows/fmi_wrapper.dll
+  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmpsmio7mi6/binaries/x86_64-windows/fmi_wrapper.lib
+  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmpsmio7mi6/binaries/x86_64-windows/fmi_wrapper.dll

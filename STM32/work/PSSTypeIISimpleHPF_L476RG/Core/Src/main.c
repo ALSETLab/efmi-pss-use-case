@@ -302,7 +302,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     /* End profiling (check for errors and overruns): */
     const uint32_t sampling_period_in_cycles =
-      ((uint32_t) ((((PSS_Real) 1000.0) * pss.discrete_stepSize)
+      ((uint32_t) (
+          (((PSS_Real) 1050.0 /* s to ms and 5% safety */) * pss.discrete_stepSize)
         * ((PSS_Real) CYCLES_PER_MS)));
     if ((PSS_NONE_ERRORSIGNAL != error_signals)
       || io_overrun

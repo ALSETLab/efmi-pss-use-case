@@ -317,7 +317,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
     /* End profiling (check for errors and overruns): */
     const uint32_t sampling_period_in_cycles =
-      ((uint32_t) ((((Grid_Real) 1000.0) * grid.discrete_stepSize)
+      ((uint32_t) (
+          (((Grid_Real) 1050.0 /* s to ms and 5% safety */) * grid.discrete_stepSize)
         * ((Grid_Real) CYCLES_PER_MS)));
     if ((Grid_NONE_ERRORSIGNAL != error_signals)
       || io_overrun

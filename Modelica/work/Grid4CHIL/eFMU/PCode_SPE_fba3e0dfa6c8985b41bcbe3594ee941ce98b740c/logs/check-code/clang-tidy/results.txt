@@ -1,0 +1,640 @@
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:195:13: warning: function 'Reinitialize' has cognitive complexity of 111 (threshold 25) [readability-function-cognitive-complexity]
+static void Reinitialize(ALGOSTRUCT *instance)
+            ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:262:49: note: +1, including nesting penalty of 0, nesting level increased to 1
+    DymolaConvertInputToReal0 = instance->fault ? 2.0 : 0.0;
+                                                ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:317:56: note: +1, including nesting penalty of 0, nesting level increased to 1
+    _A0[12] = (((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                       ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:317:100: note: +2, including nesting penalty of 1, nesting level increased to 2
+    _A0[12] = (((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                                   ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:320:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))) * instance->transformer_r) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:320:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))) * instance->transformer_r) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:322:56: note: +1, including nesting penalty of 0, nesting level increased to 1
+    _A0[13] = (((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                       ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:322:100: note: +2, including nesting penalty of 1, nesting level increased to 2
+    _A0[13] = (((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                                   ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:325:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))) * instance->transformer_x) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:325:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))) * instance->transformer_x) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:330:51: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:330:95: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:334:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_x2d) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:334:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_x2d) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:337:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:337:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:339:51: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:339:95: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:344:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:344:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:346:51: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:346:95: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:351:51: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:351:95: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:355:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_ra) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:355:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_ra) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:358:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:358:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:360:51: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:360:95: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:366:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:366:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:368:51: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:368:95: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:372:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))) * instance->transformer_x) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:372:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))) * instance->transformer_x) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:374:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)) * instance->transformer_r) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:374:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)) * instance->transformer_r) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:377:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))) * instance->transformer_r) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:377:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))) * instance->transformer_r) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:379:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)) * instance->transformer_x)) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:379:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)) * instance->transformer_x)) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:385:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:385:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:388:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) * instance->G1_machine_x2d) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:388:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) * instance->G1_machine_x2d) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:391:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:391:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:394:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_ra)) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:394:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_ra)) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:398:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:398:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:401:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_T1q0 \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:401:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_T1q0 \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:406:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:406:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:409:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) * instance->G1_machine_ra) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:409:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) * instance->G1_machine_ra) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:412:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:412:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:415:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_T2q0 \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:415:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_T2q0 \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:420:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:420:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) - (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:423:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_x2q) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:423:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_x2q) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:504:51: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:504:95: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) \
+                                                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:508:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_e2q) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:508:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) * instance->G1_machine_e2q) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:512:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:512:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))) + (instance->G1_machine_V_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:515:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) * instance->G1_machine_e2q) \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:515:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) * instance->G1_machine_e2q) \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:540:5: note: +1, including nesting penalty of 0, nesting level increased to 1
+    if(SPE_tmp_signals != SPE_ERRORSIGNAL_NONE_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) \
+    ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:558:7: note: +1, nesting level increased to 1
+    } else {
+      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:200:104: warning: variable 'SPE_tmp_signals' is not initialized [cppcoreguidelines-init-variables]
+    SPE_ErrorSignal_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c SPE_tmp_signals;
+                                                                                                       ^
+                                                                                                                       = 0
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:203:10: warning: variable 'DymolaConvertInputToREAL0' is not initialized [cppcoreguidelines-init-variables]
+    bool DymolaConvertInputToREAL0;
+         ^
+                                   = false
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:204:97: warning: variable 'DymolaConvertInputToReal0' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c DymolaConvertInputToReal0;
+                                                                                                ^
+                                                                                                                          = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:205:97: warning: variable 'B1_p_vi' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c B1_p_vi;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:206:97: warning: variable 'B1_p_vr' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c B1_p_vr;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:207:97: warning: variable 'G1_machine_vd' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_machine_vd;
+                                                                                                ^
+                                                                                                              = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:208:97: warning: variable 'G1_machine_vq' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_machine_vq;
+                                                                                                ^
+                                                                                                              = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:210:97: warning: declaration uses identifier '_A0', which is a reserved identifier [bugprone-reserved-identifier,cert-dcl37-c,cert-dcl51-cpp]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c _A0[36];
+                                                                                                ^~~
+                                                                                                A0
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:753:13: warning: function 'DoStep' has cognitive complexity of 134 (threshold 25) [readability-function-cognitive-complexity]
+static void DoStep(ALGOSTRUCT *instance)
+            ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:791:5: note: +1, including nesting penalty of 0, nesting level increased to 1
+    if(instance->discrete_stepSize_active) {
+    ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:811:7: note: +1, nesting level increased to 1
+    } else {
+      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:817:49: note: +1, including nesting penalty of 0, nesting level increased to 1
+    DymolaConvertInputToReal0 = instance->fault ? 2.0 : 0.0;
+                                                ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:865:92: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 \
+                                                                                           ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:866:18: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) - (instance->transformer_m * instance->transformer_r * ((((DymolaConvertInputToREAL0 \
+                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:867:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:867:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:870:71: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:870:115: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:872:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:872:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:876:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:876:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:878:78: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
+                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:879:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+        ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
+        ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:883:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:883:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:885:78: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
+                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:886:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+        ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
+        ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:889:92: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (instance->L1_Z_im * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 \
+                                                                                           ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:890:18: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im)))) + (instance->transformer_m * instance->transformer_x * ((((DymolaConvertInputToREAL0 \
+                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:891:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:891:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:894:71: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:894:115: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * instance->L1_Y_im) - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:896:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:896:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:900:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:900:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:902:78: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
+                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:903:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+        ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
+        ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:907:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:907:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:909:78: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
+                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:910:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+        ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
+        ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:917:71: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:917:115: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:919:114: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 == false) ? 0.0 \
+                                                                                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:920:47: note: +2, including nesting penalty of 1, nesting level increased to 2
+        : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
+                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:923:71: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:923:115: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:925:114: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 == false) ? 0.0 \
+                                                                                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:926:47: note: +2, including nesting penalty of 1, nesting level increased to 2
+        : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
+                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:930:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:930:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:933:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:933:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:937:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:937:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:940:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:940:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:943:92: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (instance->L1_Z_im * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 \
+                                                                                           ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:944:18: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re))) + (instance->transformer_m * instance->transformer_x * (1.0 \
+                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:946:19: note: +1, including nesting penalty of 0, nesting level increased to 1
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
+                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:946:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:949:71: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:949:115: note: +2, including nesting penalty of 1, nesting level increased to 2
+        * instance->L1_Y_re) + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) \
+                                                                                                                  ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:951:114: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * instance->L1_Y_re) - (instance->L1_Z_im * instance->L1_Y_im)) + (((DymolaConvertInputToREAL0 == false) ? 0.0 \
+                                                                                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:952:47: note: +2, including nesting penalty of 1, nesting level increased to 2
+        : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im))))) * (instance->G1_machine_I_MBtoSB \
+                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:956:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:956:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:959:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:959:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:963:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:963:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:966:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:966:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1052:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1052:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1054:78: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
+                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1055:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+        ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
+        ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1058:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1058:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        - (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_im))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1060:78: note: +1, including nesting penalty of 0, nesting level increased to 1
+        * (instance->transformer_m * ((((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) \
+                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1061:9: note: +2, including nesting penalty of 1, nesting level increased to 2
+        ? 2.22e+3 : 0.0) * instance->L1_Z_re) - ((instance->L1_Z_re * instance->L1_Y_im) + (instance->L1_Z_im * instance->L1_Y_re)))))) \
+        ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1065:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1065:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1068:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1068:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1071:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1071:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (-2.22E+3) : 0.0) * instance->L1_Z_re)))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1074:50: note: +1, including nesting penalty of 0, nesting level increased to 1
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                 ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1074:94: note: +2, including nesting penalty of 1, nesting level increased to 2
+        + (((DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? 2.22e+3 : 0.0) * instance->L1_Z_im)))))) \
+                                                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1107:5: note: +1, including nesting penalty of 0, nesting level increased to 1
+    if(SPE_tmp_signals != SPE_ERRORSIGNAL_NONE_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c) \
+    ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1113:7: note: +1, nesting level increased to 1
+    } else {
+      ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1150:62: note: +1, including nesting penalty of 0, nesting level increased to 1
+    pwFault4efmi_p_ii = (DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? ((-2.22E+3) \
+                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1150:106: note: +2, including nesting penalty of 1, nesting level increased to 2
+    pwFault4efmi_p_ii = (DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? ((-2.22E+3) \
+                                                                                                         ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1160:62: note: +1, including nesting penalty of 0, nesting level increased to 1
+    pwFault4efmi_p_ir = (DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (2.22e+3 * B2_p_vi) \
+                                                             ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1160:106: note: +2, including nesting penalty of 1, nesting level increased to 2
+    pwFault4efmi_p_ir = (DymolaConvertInputToREAL0 == false) ? 0.0 : (DymolaConvertInputToREAL0 == true) ? (2.22e+3 * B2_p_vi) \
+                                                                                                         ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1180:63: note: +1, including nesting penalty of 0, nesting level increased to 1
+        instance->G1_avr_vf1, instance->G1_avr_limiter1_uMax) ? instance->G1_avr_limiter1_uMax : SPE_less_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c(&instance->ErrorSignals, \
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1181:63: note: +2, including nesting penalty of 1, nesting level increased to 2
+        instance->G1_avr_vf1, instance->G1_avr_limiter1_uMin) ? instance->G1_avr_limiter1_uMin : instance->G1_avr_vf1;
+                                                              ^
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:758:104: warning: variable 'SPE_tmp_signals' is not initialized [cppcoreguidelines-init-variables]
+    SPE_ErrorSignal_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c SPE_tmp_signals;
+                                                                                                       ^
+                                                                                                                       = 0
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:761:10: warning: variable 'DymolaConvertInputToREAL0' is not initialized [cppcoreguidelines-init-variables]
+    bool DymolaConvertInputToREAL0;
+         ^
+                                   = false
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:762:97: warning: variable 'DymolaConvertInputToReal0' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c DymolaConvertInputToReal0;
+                                                                                                ^
+                                                                                                                          = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:763:97: warning: variable 'B1_p_vi' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c B1_p_vi;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:764:97: warning: variable 'B1_p_vr' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c B1_p_vr;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:765:97: warning: variable 'B2_p_vi' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c B2_p_vi;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:766:97: warning: variable 'B2_p_vr' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c B2_p_vr;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:767:97: warning: variable 'G1_P' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_P;
+                                                                                                ^
+                                                                                                     = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:768:97: warning: variable 'G1_Q' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_Q;
+                                                                                                ^
+                                                                                                     = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:769:97: warning: variable 'G1_machine_pe' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_machine_pe;
+                                                                                                ^
+                                                                                                              = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:770:97: warning: variable 'G1_machine_vd' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_machine_vd;
+                                                                                                ^
+                                                                                                              = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:771:97: warning: variable 'G1_machine_vf' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_machine_vf;
+                                                                                                ^
+                                                                                                              = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:772:97: warning: variable 'G1_machine_vf_MB' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_machine_vf_MB;
+                                                                                                ^
+                                                                                                                 = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:773:97: warning: variable 'G1_machine_vq' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1_machine_vq;
+                                                                                                ^
+                                                                                                              = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:774:97: warning: variable 'G1w1_y' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c G1w1_y;
+                                                                                                ^
+                                                                                                       = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:775:97: warning: variable 'L1_p_ii' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c L1_p_ii;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:776:97: warning: variable 'L1_p_ir' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c L1_p_ir;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:777:97: warning: variable 'pwFault4efmi_p_ii' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c pwFault4efmi_p_ii;
+                                                                                                ^
+                                                                                                                  = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:778:97: warning: variable 'pwFault4efmi_p_ir' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c pwFault4efmi_p_ir;
+                                                                                                ^
+                                                                                                                  = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:779:97: warning: variable 'transformer_p_ii' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c transformer_p_ii;
+                                                                                                ^
+                                                                                                                 = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:780:97: warning: variable 'transformer_p_ir' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c transformer_p_ir;
+                                                                                                ^
+                                                                                                                 = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:781:97: warning: variable 'wsum_u1' is not initialized [cppcoreguidelines-init-variables]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c wsum_u1;
+                                                                                                ^
+                                                                                                        = NAN
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:783:97: warning: declaration uses identifier '_A3', which is a reserved identifier [bugprone-reserved-identifier,cert-dcl37-c,cert-dcl51-cpp]
+    SPE_Real_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c _A3[36];
+                                                                                                ^~~
+                                                                                                A3
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1163:5: warning: Value stored to 'L1_p_ir' is never read [clang-analyzer-deadcode.DeadStores]
+    L1_p_ir = (-1.0) * (instance->L2_p_ir + pwFault4efmi_p_ir + instance->transformer_n_ir);
+    ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1163:5: note: Value stored to 'L1_p_ir' is never read
+    L1_p_ir = (-1.0) * (instance->L2_p_ir + pwFault4efmi_p_ir + instance->transformer_n_ir);
+    ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1165:5: warning: Value stored to 'L1_p_ii' is never read [clang-analyzer-deadcode.DeadStores]
+    L1_p_ii = (-1.0) * (instance->L2_p_ii + pwFault4efmi_p_ii + instance->transformer_n_ii);
+    ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+E:\modelica-libraries\efmi-pss-use-case\Modelica\work\Grid4CHIL\eFMU\PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c\Cppcheck\..\block.c:1165:5: note: Value stored to 'L1_p_ii' is never read
+    L1_p_ii = (-1.0) * (instance->L2_p_ii + pwFault4efmi_p_ii + instance->transformer_n_ii);
+    ^         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

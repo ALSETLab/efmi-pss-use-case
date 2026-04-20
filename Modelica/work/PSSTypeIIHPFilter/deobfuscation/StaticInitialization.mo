@@ -299,7 +299,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIHPFilter: static ini
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
-		self.'discrete.stepSize' := 1.00000000000000002e-3;
+		self.'discrete.stepSize' := 2.0000000000000001e-4;
 		self.'dLHPFreplacement.highPassFilter.u_nominal' := 1.0;
 		self.'dLHPFreplacement.highPassFilter.gain' := 1.0;
 		self.'imLeadLag.K' := 1.0;
@@ -313,7 +313,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIHPFilter: static ini
 			Initialize variables with explicit start value (independent initializations):
 		*/
 		self.Kw := 2.70000000000000018;
-		self.wscale := 5.0e+1;
+		self.wscale := 1.0e+1;
 		self.kLPF := 1.0;
 		self.freqLow := 5.0;
 		self.vsmin := -1.5;

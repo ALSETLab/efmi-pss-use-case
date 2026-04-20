@@ -632,7 +632,7 @@ encapsulated package 'OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL: static initialization'
 			Initialize variables with explicit start value (independent initializations):
 		*/
 		self.woffset := 1.0;
-		self.wscale := 5.0e+1;
+		self.wscale := 1.0e+1;
 		self.K0 := 3.0e+1;
 
 		/* ****************************** Default initialize dependend parameters (based on constants and tuneable parameters): */

@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="7963437737171541316">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h" line="25" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h" line="29" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdlib.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;stdlib.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="17" column="2"/>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h:104:6" call-funcname="Startup_Ha7cb37a433f18e8802317f9a0017ef7e53a577cd_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="1" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="24" col="99" call-argexpr="self" call-argvaluetype="7" call-argvalue="256" call-argvalue-ufr="0">
+  <path file="E:\modelica-libraries\efmi-pss-use-case\Modelica\work\PSSTypeIIHPFilter\eFMU\PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed\mei_block_interface.c" line="22" col="22" info="Assign self, buffer with size 256"/>
+</function-call>  </FileInfo>
+        <error id="premium-cert-pre08-c" severity="style" msg="Guarantee that header file names are unique" verbose="Guarantee that header file names are unique" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="24" column="10" info="Second appearance."/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="23" column="10" info="First appearance."/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="47" column="9"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="106" column="9"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="22" column="25"/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.12" severity="style" msg="Dynamic memory allocation shall not be used. Standard library function malloc() is used" verbose="Dynamic memory allocation shall not be used. Standard library function malloc() is used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="22" column="39"/>
+        </error>
+        <error id="premium-misra-c-2023-21.3" severity="style" msg="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" verbose="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="22" column="39"/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.12" severity="style" msg="Dynamic memory allocation shall not be used. Standard library function free() is used" verbose="Dynamic memory allocation shall not be used. Standard library function free() is used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="31" column="9"/>
+        </error>
+        <error id="premium-misra-c-2023-21.3" severity="style" msg="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" verbose="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="31" column="9"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="39" column="24"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="68" column="24"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c" line="98" column="24"/>
+        </error>
+</analyzerinfo>

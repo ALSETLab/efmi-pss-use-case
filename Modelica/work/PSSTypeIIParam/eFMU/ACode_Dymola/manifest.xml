@@ -4,11 +4,11 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{2e6a4843-38ab-4722-b4b9-8b131fba9e03}"
+	id="{583434ee-ef06-4dff-9a83-18c4c39d55e2}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam"
-	generationDateAndTime="2026-03-26T03:04:04Z"
-	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
+	generationDateAndTime="2026-04-20T11:26:39Z"
+	generationTool="Dymola Version 2026x Refresh 1, 2026-04-08"
 	description="PSS Type II of OpenIPSL with parametrization for efmi export."
 	version="">
 
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="ba22a54dc714e865bc9ec1141b318abe3e24a9e0"
+			checksum="e103ff1cee685bd24a7111230555e7301c113a17"
 			role="Code"/>
 	</Files>
 
@@ -173,7 +173,7 @@
 			name="wscale"
 			description="Speed input scaling"
 			blockCausality="tunableParameter"
-			start="5.0e+1">
+			start="1.0e+1">
 		</RealVariable>
 		<RealVariable
 			id="'derivativeLag.y_start'"
@@ -272,7 +272,7 @@
 			name="'derivativeLag.TF.x_scaled'"
 			description="Scaled vector x"
 			blockCausality="state"
-			start="2.00000000000000004e-2">
+			start="1.00000000000000006e-1">
 			<Dimensions>
 				<Dimension number="1" size="1"/>
 			</Dimensions>
@@ -541,7 +541,7 @@
 			name="'scale.k'"
 			description="Gain value multiplied with input signal"
 			blockCausality="dependentParameter"
-			start="2.00000000000000004e-2">
+			start="1.00000000000000006e-1">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"

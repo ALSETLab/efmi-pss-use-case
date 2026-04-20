@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{2b41aa75-1f45-4126-b971-2961f7b509fa}" name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c" generationDateAndTime="2026-03-25T23:10:24Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
+<Manifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsdVersion="0.17.0" kind="ProductionCode" efmiVersion="1.0.0" id="{82c207d4-687b-45f5-816e-84918ab731f0}" name="PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c" generationDateAndTime="2026-04-20T13:57:48Z" generationTool="dymola-embedded/MEI_SII_CodeGen 1.0.0" xsi:noNamespaceSchemaLocation="../schemas/ProductionCode/efmiProductionCodeManifest.xsd">
     <ManifestReferences>
-        <ManifestReference id="ALG_MAN_ID" manifestRefId="{3393bab5-066a-4516-96bc-c5dddb23445c}" checksum="44cdf25ef3df8b7305a5a63c7b51cc710c3965f6" origin="true"/>
+        <ManifestReference id="ALG_MAN_ID" manifestRefId="{e62c5aaf-556e-4a22-81f7-57e5d3fc1277}" checksum="a4c710a526c24e4a027760f95671dd4e3576f371" origin="true"/>
     </ManifestReferences>
     <Files>
-        <File id="FILE_ID_sii_block_interface.c_0" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="b277ff0304f4e79cc3e558195be9999ffbd798cf" role="Code"/>
-        <File id="FILE_ID_galec_stl.c_1" name="galec_stl.c" path="./" needsChecksum="true" checksum="231068cd886dd80100278fea3d5a0ab22e84fbc1" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.h_2" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="4abe8cae2ab508afe5a8a192a9483984713eb0a5" role="Code"/>
-        <File id="FILE_ID_block.c_3" name="block.c" path="./" needsChecksum="true" checksum="355b33cb55bac22cdaf5a421ac45332c540d82ad" role="Code"/>
-        <File id="FILE_ID_sii_block_interface.h_4" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="4ad9086ba911d3581ba510b21cef1e13d26a76a6" role="Code"/>
-        <File id="FILE_ID_mei_block_interface.c_5" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="d29d2b94be8f6da5269f4d941feee29cc6d39fb3" role="Code"/>
-        <File id="FILE_ID_galec_stl.h_6" name="galec_stl.h" path="./" needsChecksum="true" checksum="1d27286f19e0d0a51383a5ad509156788f223ab9" role="Code"/>
-        <File id="FILE_ID_galec_stl_configuration.h_7" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="47874b3033d75b00b8b77d65c5c953bf287519d6" role="Code"/>
-        <File id="FILE_ID_block.h_8" name="block.h" path="./" needsChecksum="true" checksum="47ac1c68a2ebb441cdf90d62a36eb55dc08725ad" role="Code"/>
+        <File id="FILE_ID_galec_stl.c_0" name="galec_stl.c" path="./" needsChecksum="true" checksum="69d205e067190371cf19dc7036518fd21cd50e8b" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.c_1" name="sii_block_interface.c" path="./" needsChecksum="true" checksum="56e90a2563821a85e3190dadaf03bc30583e7f7c" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.h_2" name="mei_block_interface.h" path="./" needsChecksum="true" checksum="4d8d8a43afd071ba3e08884ddb9f3def3cd6bfdc" role="Code"/>
+        <File id="FILE_ID_block.c_3" name="block.c" path="./" needsChecksum="true" checksum="47f25f80ced7365d658a23662d49a9bd63f0ecb3" role="Code"/>
+        <File id="FILE_ID_galec_stl_configuration.h_4" name="galec_stl_configuration.h" path="./" needsChecksum="true" checksum="b0e6a61741f97bd263aada7247171ddb43df06e9" role="Code"/>
+        <File id="FILE_ID_mei_block_interface.c_5" name="mei_block_interface.c" path="./" needsChecksum="true" checksum="5364705883ccdaaecf4080ba91358a23e5da1e40" role="Code"/>
+        <File id="FILE_ID_sii_block_interface.h_6" name="sii_block_interface.h" path="./" needsChecksum="true" checksum="2c4f688790e944ff9e064ba390e115e40b1c7d64" role="Code"/>
+        <File id="FILE_ID_galec_stl.h_7" name="galec_stl.h" path="./" needsChecksum="true" checksum="54c3914152974749dfbdbe7dbed5dafb03d872d3" role="Code"/>
+        <File id="FILE_ID_block.h_8" name="block.h" path="./" needsChecksum="true" checksum="eaf4e2680c255c412ee330decedde78747bb2178" role="Code"/>
     </Files>
     <CodeContainer language="C" standard="C99" platform="Legacy" floatPrecision="64-bit">
         <Target>Generic</Target>
@@ -29,16 +29,16 @@
             <TargetType id="TGT_ID_efmiBool_9" kind="efmiBool" codedType="bool"/>
         </TargetTypes>
         <CodeFiles>
-            <CodeFile id="CFILE_ID_sii_block_interface.c_0" fileType="ProductionCode" codeType="SourceFile">
-                <FileReference fileRefId="FILE_ID_sii_block_interface.c_0"/>
+            <CodeFile id="CFILE_ID_galec_stl.c_0" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_galec_stl.c_0"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_sii_block_interface.h_4"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl.h_7"/>
                 </Includes>
             </CodeFile>
-            <CodeFile id="CFILE_ID_galec_stl.c_1" fileType="ProductionCode" codeType="SourceFile">
-                <FileReference fileRefId="FILE_ID_galec_stl.c_1"/>
+            <CodeFile id="CFILE_ID_sii_block_interface.c_1" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.c_1"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_galec_stl.h_6"/>
+                    <Include codeFileRefId="CFILE_ID_sii_block_interface.h_6"/>
                 </Includes>
             </CodeFile>
             <CodeFile id="CFILE_ID_mei_block_interface.h_2" fileType="ProductionCode" codeType="HeaderFile">
@@ -67,8 +67,31 @@
                     <Include codeFileRefId="CFILE_ID_block.h_8"/>
                 </Includes>
             </CodeFile>
-            <CodeFile id="CFILE_ID_sii_block_interface.h_4" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_sii_block_interface.h_4"/>
+            <CodeFile id="CFILE_ID_galec_stl_configuration.h_4" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_stl_configuration.h_4"/>
+                <Typedefs>
+                    <Typedef id="TYPE_ID_bool_1" name="bool">
+                        <Alias targetTypeRefId="TGT_ID_efmiBool_9"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_SPE_Integer_2" name="SPE_Integer">
+                        <Alias targetTypeRefId="TGT_ID_efmiInteger32_4"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_SPE_Real_3" name="SPE_Real">
+                        <Alias targetTypeRefId="TGT_ID_efmiFloat64_7"/>
+                    </Typedef>
+                    <Typedef id="TYPE_ID_SPE_ErrorSignal_0" name="SPE_ErrorSignal">
+                        <Alias targetTypeRefId="TGT_ID_efmiUnsignedInteger32_5"/>
+                    </Typedef>
+                </Typedefs>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_mei_block_interface.c_5" fileType="ProductionCode" codeType="SourceFile">
+                <FileReference fileRefId="FILE_ID_mei_block_interface.c_5"/>
+                <Includes>
+                    <Include codeFileRefId="CFILE_ID_mei_block_interface.h_2"/>
+                </Includes>
+            </CodeFile>
+            <CodeFile id="CFILE_ID_sii_block_interface.h_6" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_sii_block_interface.h_6"/>
                 <Includes>
                     <Include codeFileRefId="CFILE_ID_block.h_8"/>
                 </Includes>
@@ -90,40 +113,17 @@
                     </Function>
                 </Functions>
             </CodeFile>
-            <CodeFile id="CFILE_ID_mei_block_interface.c_5" fileType="ProductionCode" codeType="SourceFile">
-                <FileReference fileRefId="FILE_ID_mei_block_interface.c_5"/>
+            <CodeFile id="CFILE_ID_galec_stl.h_7" fileType="ProductionCode" codeType="HeaderFile">
+                <FileReference fileRefId="FILE_ID_galec_stl.h_7"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_mei_block_interface.h_2"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_4"/>
                 </Includes>
-            </CodeFile>
-            <CodeFile id="CFILE_ID_galec_stl.h_6" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_galec_stl.h_6"/>
-                <Includes>
-                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_7"/>
-                </Includes>
-            </CodeFile>
-            <CodeFile id="CFILE_ID_galec_stl_configuration.h_7" fileType="ProductionCode" codeType="HeaderFile">
-                <FileReference fileRefId="FILE_ID_galec_stl_configuration.h_7"/>
-                <Typedefs>
-                    <Typedef id="TYPE_ID_bool_1" name="bool">
-                        <Alias targetTypeRefId="TGT_ID_efmiBool_9"/>
-                    </Typedef>
-                    <Typedef id="TYPE_ID_SPE_Integer_2" name="SPE_Integer">
-                        <Alias targetTypeRefId="TGT_ID_efmiInteger32_4"/>
-                    </Typedef>
-                    <Typedef id="TYPE_ID_SPE_Real_3" name="SPE_Real">
-                        <Alias targetTypeRefId="TGT_ID_efmiFloat64_7"/>
-                    </Typedef>
-                    <Typedef id="TYPE_ID_SPE_ErrorSignal_0" name="SPE_ErrorSignal">
-                        <Alias targetTypeRefId="TGT_ID_efmiUnsignedInteger32_5"/>
-                    </Typedef>
-                </Typedefs>
             </CodeFile>
             <CodeFile id="CFILE_ID_block.h_8" fileType="ProductionCode" codeType="HeaderFile">
                 <FileReference fileRefId="FILE_ID_block.h_8"/>
                 <Includes>
-                    <Include codeFileRefId="CFILE_ID_galec_stl.h_6"/>
-                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_7"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl_configuration.h_4"/>
+                    <Include codeFileRefId="CFILE_ID_galec_stl.h_7"/>
                 </Includes>
                 <Typedefs>
                     <Typedef id="TYPE_ID_BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c_4" name="BlockState_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c">

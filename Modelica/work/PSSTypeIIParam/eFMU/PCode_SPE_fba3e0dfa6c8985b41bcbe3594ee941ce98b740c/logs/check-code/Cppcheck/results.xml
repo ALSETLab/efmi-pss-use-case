@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck product-name="Cppcheck Premium" version="26.3.0"/>
+    <errors>
+        <error id="premium-cert-pre08-c" severity="style" msg="Guarantee that header file names are unique" verbose="Guarantee that header file names are unique" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.h" line="24" column="10" info="Second appearance."/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.h" line="23" column="10" info="First appearance."/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="47" column="9"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="108" column="9"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="22" column="25"/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.12" severity="style" msg="Dynamic memory allocation shall not be used. Standard library function malloc() is used" verbose="Dynamic memory allocation shall not be used. Standard library function malloc() is used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="22" column="39"/>
+        </error>
+        <error id="premium-misra-c-2023-21.3" severity="style" msg="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" verbose="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="22" column="39"/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.12" severity="style" msg="Dynamic memory allocation shall not be used. Standard library function free() is used" verbose="Dynamic memory allocation shall not be used. Standard library function free() is used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="31" column="9"/>
+        </error>
+        <error id="premium-misra-c-2023-21.3" severity="style" msg="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" verbose="The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="31" column="9"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="39" column="24"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="69" column="24"/>
+        </error>
+        <error id="premium-misra-c-2023-11.5" severity="style" msg="A conversion should not be performed from pointer to void into pointer to object" verbose="A conversion should not be performed from pointer to void into pointer to object" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="100" column="24"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="55" column="318"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="77" column="321"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="99" column="31"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="105" column="299"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="111" column="299"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="162" column="273"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="175" column="301"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="184" column="304"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="205" column="36"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="222" column="25"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="224" column="21"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="226" column="21"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="230" column="26"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="232" column="25"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="236" column="21"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="238" column="21"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="240" column="21"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="242" column="21"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="297" column="273"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="310" column="301"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="321" column="304"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="336" column="13"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="344" column="13"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="353" column="13"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/block.c" line="362" column="13"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1110" column="106"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1110" column="309"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1134" column="106"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1134" column="309"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1991" column="222"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1993" column="215"/>
+        </error>
+        <error id="premium-cert-int30-c" severity="warning" msg="Ensure that unsigned integer operations do not wrap" verbose="Ensure that unsigned integer operations do not wrap" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2556" column="37"/>
+        </error>
+        <error id="premium-cert-int30-c" severity="warning" msg="Ensure that unsigned integer operations do not wrap" verbose="Ensure that unsigned integer operations do not wrap" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2691" column="31"/>
+        </error>
+        <error id="premium-cert-int30-c" severity="warning" msg="Ensure that unsigned integer operations do not wrap" verbose="Ensure that unsigned integer operations do not wrap" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2870" column="31"/>
+        </error>
+        <error id="premium-misra-c-2023-8.9" severity="style" msg="An object should be declared at block scope if its identifier only appears in a single function" verbose="An object should be declared at block scope if its identifier only appears in a single function" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="725" column="106"/>
+        </error>
+        <error id="premium-misra-c-2023-14.1" severity="style" msg="A loop counter shall not have essentially floating type" verbose="A loop counter shall not have essentially floating type" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2384" column="8"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="268" column="15"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="279" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="290" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="304" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="315" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="336" column="20"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="343" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="355" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="369" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="395" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="407" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="421" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="433" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="447" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="459" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="473" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="485" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="499" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="513" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="527" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="541" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="564" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="578" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="592" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="615" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="629" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="643" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="657" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="664" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="674" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="681" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="691" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="702" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="739" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="746" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="757" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="771" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="783" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="816" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="830" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="837" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="848" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="862" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="876" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="894" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="901" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="911" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="926" column="21"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="938" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="953" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="960" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="970" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="977" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1001" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1011" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1020" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1034" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1041" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1051" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1058" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1068" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1077" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1094" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1104" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1118" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1128" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1142" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1178" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1192" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1206" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1220" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1234" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1248" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1262" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1276" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1290" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1304" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1352" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1366" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1380" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1394" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1408" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1422" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1436" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1450" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1464" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1478" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1496" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1505" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1516" column="103"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1525" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1551" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1573" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1588" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1598" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1606" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1616" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1629" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1646" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1656" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1663" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1673" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1680" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1690" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1697" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1707" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1714" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1724" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1743" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1752" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1762" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1771" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1781" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1790" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1804" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1814" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1821" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1831" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1838" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1848" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1855" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1865" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1872" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1882" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1889" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1899" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1906" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1916" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1927" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1938" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1945" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1955" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1962" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1972" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1979" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="1989" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2000" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2010" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2022" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2032" column="100"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2044" column="13"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2058" column="93"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2182" column="20"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2329" column="6"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2404" column="6"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2512" column="93"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2623" column="19"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2632" column="93"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/galec_stl.c" line="2808" column="93"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="21" column="7"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="29" column="6"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="35" column="18"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="54" column="18"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.c" line="95" column="18"/>
+        </error>
+        <error id="premium-misra-c-2023-2.3" severity="style" msg="A project should not contain unused type declarations" verbose="A project should not contain unused type declarations">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/mei_block_interface.h" line="23" column="1"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c" line="29" column="6"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c" line="30" column="97"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c" line="35" column="6"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c" line="41" column="6"/>
+        </error>
+        <error id="premium-misra-c-2023-8.7" severity="style" msg="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit" verbose="Functions and objects should not be defined with external linkage if they are referenced in only one translation unit">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIParam/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c/sii_block_interface.c" line="47" column="6"/>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 422/980" verbose="Active checkers: 422/980"/>
+    </errors>
+</results>

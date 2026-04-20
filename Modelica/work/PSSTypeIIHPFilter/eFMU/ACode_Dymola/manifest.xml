@@ -4,11 +4,11 @@
 	xsi:noNamespaceSchemaLocation="../schemas/AlgorithmCode/efmiAlgorithmCodeManifest.xsd"
 	efmiVersion="1.0.0"
 	xsdVersion="0.13.0"
-	id="{93298ecb-5779-4d9a-bda7-5aba7ed170c5}"
+	id="{fe63c258-79dd-410d-b921-1ddc32a95383}"
 	kind="AlgorithmCode"
 	name="OpenIPSL_CHIL.Components.PSS.PSSTypeIIHPFilter"
-	generationDateAndTime="2026-03-26T03:05:58Z"
-	generationTool="Dymola Version 2026x Refresh 1 Beta 1, 2026-02-27"
+	generationDateAndTime="2026-04-20T11:41:20Z"
+	generationTool="Dymola Version 2026x Refresh 1, 2026-04-08"
 	description="PSS Type II of OpenIPSL with parametrization for eFMI use-case, replacing the derivative filter with a high-pass filter (HPF)."
 	version="">
 
@@ -18,7 +18,7 @@
 			id="block.alg"
 			path="./"
 			needsChecksum="true"
-			checksum="f57f000a373542146fbf08d029833fc6da94efd3"
+			checksum="f2174d82d73b81b6450935b054d2d3eacef777a7"
 			role="Code"/>
 	</Files>
 
@@ -162,7 +162,7 @@
 			name="wscale"
 			description="Speed input scaling"
 			blockCausality="tunableParameter"
-			start="5.0e+1">
+			start="1.0e+1">
 		</RealVariable>
 		<RealVariable
 			id="'dLHPFreplacement.y_start'"
@@ -227,7 +227,7 @@
 			name="'dLHPFreplacement.highPassFilter.x'"
 			description="Filter states"
 			blockCausality="state"
-			start="2.00000000000000004e-2">
+			start="1.00000000000000006e-1">
 			<Dimensions>
 				<Dimension number="1" size="1"/>
 			</Dimensions>
@@ -503,13 +503,13 @@
 			name="'scale.k'"
 			description="Gain value multiplied with input signal"
 			blockCausality="dependentParameter"
-			start="2.00000000000000004e-2">
+			start="1.00000000000000006e-1">
 		</RealVariable>
 		<RealVariable
 			id="'discrete.stepSize'"
 			name="'discrete.stepSize'"
 			blockCausality="constant"
-			start="1.00000000000000002e-3">
+			start="2.0000000000000001e-4">
 		</RealVariable>
 		<BooleanVariable
 			id="'discrete.stepSize.active'"

@@ -324,7 +324,7 @@ encapsulated package 'OpenIPSL_CHIL.Components.PSS.PSSTypeIIParam: static initia
 		/*
 			Initialize variables with explicit start value (independent initializations):
 		*/
-		self.wscale := 5.0e+1;
+		self.wscale := 1.0e+1;
 		self.Tw := 2.5e-1;
 		self.Kw := 2.70000000000000018;
 		self.kLPF := 1.0;

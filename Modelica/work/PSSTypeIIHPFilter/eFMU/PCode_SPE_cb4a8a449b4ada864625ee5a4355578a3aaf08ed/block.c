@@ -1,4 +1,4 @@
-/*2026-03-26T03:05:59.102188500Z*/
+/*2026-04-20T11:41:22.886026Z*/
 
 /**********************************************************************************************************************
  * block.c
@@ -198,7 +198,7 @@ static void Startup(ALGOSTRUCT *instance)
     Initialize variables with explicit start value (independent initializations):
     */
 
-    instance->discrete_stepSize = 1.00000000000000002e-3;
+    instance->discrete_stepSize = 2.0000000000000001e-4;
 
     instance->dLHPFreplacement_highPassFilter_u_nominal = 1.0;
 
@@ -221,7 +221,7 @@ static void Startup(ALGOSTRUCT *instance)
 
     instance->Kw = 2.70000000000000018;
 
-    instance->wscale = 5.0e+1;
+    instance->wscale = 1.0e+1;
 
     instance->kLPF = 1.0;
 

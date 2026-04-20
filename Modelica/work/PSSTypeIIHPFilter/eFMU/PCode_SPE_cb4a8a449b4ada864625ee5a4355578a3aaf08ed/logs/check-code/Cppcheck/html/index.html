@@ -1,0 +1,474 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [project name]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+      
+      function toggleClassification(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".class_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("classification-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+    
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.classification-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      function reapplyFilters() {
+        // Reapply ID filters
+        var idToggles = document.querySelectorAll(".idToggle");
+        for (var i = 1; i < idToggles.length; i++) {
+          var cb = idToggles[i];
+          var elements = document.querySelectorAll("." + cb.id);
+          for (var j = 0; j < elements.length; j++) {
+            elements[j].classList.toggle("id-filtered", !cb.checked);
+          }
+        }
+
+        // Reapply severity filters
+        var sevToggles = document.querySelectorAll(".sev_toggle");
+        for (var i = 0; i < sevToggles.length; i++) {
+          var cb = sevToggles[i];
+            var elements = document.querySelectorAll(".sev_" + cb.id);
+          for (var j = 0; j < elements.length; j++) {
+            elements[j].classList.toggle("severity-filtered", !cb.checked);
+          }
+        }
+
+        // Reapply classification filters
+        var classToggles = document.querySelectorAll(".class_toggle");
+        for (var i = 0; i < classToggles.length; i++) {
+          var cb = classToggles[i];
+          var elements = document.querySelectorAll(".class_" + cb.id);
+          for (var j = 0; j < elements.length; j++) {
+            elements[j].classList.toggle("classification-filtered", !cb.checked);
+          }
+        }
+
+        // Reapply tool filters
+        var toolToggles = document.querySelectorAll(".tool_toggle");
+        for (var i = 0; i < toolToggles.length; i++) {
+          var cb = toolToggles[i];
+          var elements;
+          if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+          else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+          for (var j = 0; j < elements.length; j++) {
+            elements[j].classList.toggle("tool-filtered", !cb.checked);
+          }
+        }
+
+        // Update file rows
+        updateFileRows();
+      }
+
+      window.addEventListener("pageshow", reapplyFilters);
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - [project name]</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck" checked>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy" disabled>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="search" oninput="filterFile(this.value)"></label>
+        <label class="severityHeader">Filter: <input type="search" oninput="filterText(this.value)"></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-misra-c-2023-8-7" name="premium-misra-c-2023-8-7" checked></td><td>159</td><td>premium-misra-c-2023-8.7</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-cert-dcl06-c" name="premium-cert-dcl06-c" checked></td><td>23</td><td>premium-cert-dcl06-c</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-cert-exp34-c" name="premium-cert-exp34-c" checked></td><td>6</td><td>premium-cert-exp34-c</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-misra-c-2023-11-5" name="premium-misra-c-2023-11-5" checked></td><td>4</td><td>premium-misra-c-2023-11.5</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-cert-int30-c" name="premium-cert-int30-c" checked></td><td>3</td><td>premium-cert-int30-c</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-misra-c-2023-21-3" name="premium-misra-c-2023-21-3" checked></td><td>2</td><td>premium-misra-c-2023-21.3</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-misra-c-2023-dir-4-12" name="premium-misra-c-2023-dir-4-12" checked></td><td>2</td><td>premium-misra-c-2023-dir-4.12</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="checkersReport" name="checkersReport" checked></td><td>1</td><td>checkersReport</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-cert-pre08-c" name="premium-cert-pre08-c" checked></td><td>1</td><td>premium-cert-pre08-c</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-misra-c-2023-14-1" name="premium-misra-c-2023-14-1" checked></td><td>1</td><td>premium-misra-c-2023-14.1</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-misra-c-2023-2-3" name="premium-misra-c-2023-2-3" checked></td><td>1</td><td>premium-misra-c-2023-2.3</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="premium-misra-c-2023-8-9" name="premium-misra-c-2023-8-9" checked></td><td>1</td><td>premium-misra-c-2023-8.9</td></tr>
+           <tr><td></td><td>204</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th><th>Timestamp</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="6"><a href="6.html"></a></td></tr>
+         <tr class="checkersReport sev_information class_ issue"><td></td><td>checkersReport</td><td></td><td>information</td><td>Active checkers: 422/980</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="6"><a href="2.html">E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c</a></td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-55">55</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-77">77</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-99">99</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-107">107</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-165">165</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-174">174</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-201">201</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-222">222</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-224">224</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-228">228</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-230">230</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-234">234</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-236">236</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-238">238</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-240">240</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-313">313</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="2.html#line-324">324</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-exp34-c sev_style class_ issue"><td><a href="2.html#line-339">339</a></td><td>premium-cert-exp34-c</td><td></td><td>style</td><td>Do not dereference null pointers</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-exp34-c sev_style class_ issue"><td><a href="2.html#line-347">347</a></td><td>premium-cert-exp34-c</td><td></td><td>style</td><td>Do not dereference null pointers</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-exp34-c sev_style class_ issue"><td><a href="2.html#line-356">356</a></td><td>premium-cert-exp34-c</td><td></td><td>style</td><td>Do not dereference null pointers</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-exp34-c sev_style class_ issue"><td><a href="2.html#line-365">365</a></td><td>premium-cert-exp34-c</td><td></td><td>style</td><td>Do not dereference null pointers</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="6"><a href="0.html">E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h</a></td></tr>
+         <tr class="premium-cert-pre08-c sev_style class_ issue"><td><a href="0.html#line-24">24</a></td><td>premium-cert-pre08-c</td><td></td><td>style</td><td>Guarantee that header file names are unique</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="6"><a href="3.html">E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.c</a></td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-268">268</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-279">279</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-290">290</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-304">304</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-315">315</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-336">336</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-343">343</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-355">355</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-369">369</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-395">395</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-407">407</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-421">421</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-433">433</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-447">447</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-459">459</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-473">473</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-485">485</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-499">499</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-513">513</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-527">527</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-541">541</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-564">564</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-578">578</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-592">592</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-615">615</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-629">629</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-643">643</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-657">657</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-664">664</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-674">674</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-681">681</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-691">691</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-702">702</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-9 sev_style class_ issue"><td><a href="3.html#line-725">725</a></td><td>premium-misra-c-2023-8.9</td><td></td><td>style</td><td>An object should be declared at block scope if its identifier only appears in a single function</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-739">739</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-746">746</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-757">757</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-771">771</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-783">783</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-816">816</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-830">830</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-837">837</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-848">848</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-862">862</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-876">876</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-894">894</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-901">901</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-911">911</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-926">926</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-938">938</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-953">953</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-960">960</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-970">970</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-977">977</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1001">1001</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1011">1011</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1020">1020</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1034">1034</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1041">1041</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1051">1051</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1058">1058</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1068">1068</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1077">1077</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1094">1094</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1104">1104</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="3.html#line-1110">1110</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="3.html#line-1110">1110</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1118">1118</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1128">1128</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="3.html#line-1134">1134</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="3.html#line-1134">1134</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1142">1142</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1178">1178</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1192">1192</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1206">1206</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1220">1220</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1234">1234</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1248">1248</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1262">1262</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1276">1276</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1290">1290</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1304">1304</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1352">1352</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1366">1366</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1380">1380</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1394">1394</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1408">1408</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1422">1422</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1436">1436</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1450">1450</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1464">1464</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1478">1478</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1496">1496</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1505">1505</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1516">1516</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1525">1525</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1551">1551</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1573">1573</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1588">1588</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1598">1598</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1606">1606</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1616">1616</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1629">1629</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1646">1646</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1656">1656</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1663">1663</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1673">1673</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1680">1680</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1690">1690</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1697">1697</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1707">1707</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1714">1714</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1724">1724</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1743">1743</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1752">1752</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1762">1762</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1771">1771</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1781">1781</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1790">1790</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1804">1804</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1814">1814</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1821">1821</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1831">1831</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1838">1838</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1848">1848</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1855">1855</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1865">1865</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1872">1872</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1882">1882</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1889">1889</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1899">1899</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1906">1906</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1916">1916</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1927">1927</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1938">1938</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1945">1945</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1955">1955</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1962">1962</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1972">1972</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1979">1979</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-1989">1989</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="3.html#line-1991">1991</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-dcl06-c sev_style class_ issue"><td><a href="3.html#line-1993">1993</a></td><td>premium-cert-dcl06-c</td><td></td><td>style</td><td>Use meaningful symbolic constants to represent literal values.</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2000">2000</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2010">2010</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2022">2022</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2032">2032</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2044">2044</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2058">2058</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2182">2182</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2329">2329</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-14-1 sev_style class_ issue"><td><a href="3.html#line-2384">2384</a></td><td>premium-misra-c-2023-14.1</td><td></td><td>style</td><td>A loop counter shall not have essentially floating type</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2404">2404</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2512">2512</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-int30-c sev_warning class_ issue"><td><a href="3.html#line-2556">2556</a></td><td>premium-cert-int30-c</td><td></td><td>warning</td><td class="warning">Ensure that unsigned integer operations do not wrap</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2623">2623</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2632">2632</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-int30-c sev_warning class_ issue"><td><a href="3.html#line-2691">2691</a></td><td>premium-cert-int30-c</td><td></td><td>warning</td><td class="warning">Ensure that unsigned integer operations do not wrap</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="3.html#line-2808">2808</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-int30-c sev_warning class_ issue"><td><a href="3.html#line-2870">2870</a></td><td>premium-cert-int30-c</td><td></td><td>warning</td><td class="warning">Ensure that unsigned integer operations do not wrap</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="6"><a href="1.html">E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.c</a></td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="1.html#line-21">21</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-11-5 sev_style class_ issue"><td><a href="1.html#line-22">22</a></td><td>premium-misra-c-2023-11.5</td><td></td><td>style</td><td>A conversion should not be performed from pointer to void into pointer to object</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-dir-4-12 sev_style class_ issue"><td><a href="1.html#line-22">22</a></td><td>premium-misra-c-2023-dir-4.12</td><td></td><td>style</td><td>Dynamic memory allocation shall not be used. Standard library function malloc() is used</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-21-3 sev_style class_ issue"><td><a href="1.html#line-22">22</a></td><td>premium-misra-c-2023-21.3</td><td></td><td>style</td><td>The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="1.html#line-29">29</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-dir-4-12 sev_style class_ issue"><td><a href="1.html#line-31">31</a></td><td>premium-misra-c-2023-dir-4.12</td><td></td><td>style</td><td>Dynamic memory allocation shall not be used. Standard library function free() is used</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-21-3 sev_style class_ issue"><td><a href="1.html#line-31">31</a></td><td>premium-misra-c-2023-21.3</td><td></td><td>style</td><td>The memory allocation and deallocation functions of &lt;stdlib.h&gt; shall not be used</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="1.html#line-35">35</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-11-5 sev_style class_ issue"><td><a href="1.html#line-39">39</a></td><td>premium-misra-c-2023-11.5</td><td></td><td>style</td><td>A conversion should not be performed from pointer to void into pointer to object</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-exp34-c sev_style class_ issue"><td><a href="1.html#line-47">47</a></td><td>premium-cert-exp34-c</td><td></td><td>style</td><td>Do not dereference null pointers</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="1.html#line-54">54</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-11-5 sev_style class_ issue"><td><a href="1.html#line-68">68</a></td><td>premium-misra-c-2023-11.5</td><td></td><td>style</td><td>A conversion should not be performed from pointer to void into pointer to object</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="1.html#line-93">93</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-11-5 sev_style class_ issue"><td><a href="1.html#line-98">98</a></td><td>premium-misra-c-2023-11.5</td><td></td><td>style</td><td>A conversion should not be performed from pointer to void into pointer to object</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-cert-exp34-c sev_style class_ issue"><td><a href="1.html#line-106">106</a></td><td>premium-cert-exp34-c</td><td></td><td>style</td><td>Do not dereference null pointers</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="6"><a href="4.html">E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/mei_block_interface.h</a></td></tr>
+         <tr class="premium-misra-c-2023-2-3 sev_style class_ issue"><td><a href="4.html#line-23">23</a></td><td>premium-misra-c-2023-2.3</td><td></td><td>style</td><td>A project should not contain unused type declarations</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="6"><a href="5.html">E:/modelica-libraries/efmi-pss-use-case/Modelica/work/PSSTypeIIHPFilter/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/sii_block_interface.c</a></td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="5.html#line-29">29</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="5.html#line-30">30</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="5.html#line-35">35</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="5.html#line-41">41</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+         <tr class="premium-misra-c-2023-8-7 sev_style class_ issue"><td><a href="5.html#line-47">47</a></td><td>premium-misra-c-2023-8.7</td><td></td><td>style</td><td>Functions and objects should not be defined with external linkage if they are referenced in only one translation unit</td><td>Mon Apr 20 13:41:46 2026</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 26.3.0 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.libera.chat/#cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>

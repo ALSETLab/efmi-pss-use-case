@@ -1,0 +1,378 @@
+<?xml version="1.0"?>
+<analyzerinfo hash="1893169027995832453">
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stdbool.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;stdbool.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h" line="25" column="2"/>
+        </error>
+        <error id="missingIncludeSystem" severity="information" msg="Include file: &lt;stddef.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results." verbose="Include file: &lt;stddef.h&gt; not found. Please note: Standard library headers do not need to be provided to get proper results.">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h" line="29" column="2"/>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;L1_p_ir&apos; is assigned a value that is never used." verbose="Variable &apos;L1_p_ir&apos; is assigned a value that is never used." cwe="563" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1163" column="13"/>
+            <symbol>L1_p_ir</symbol>
+        </error>
+        <error id="unreadVariable" severity="style" msg="Variable &apos;L1_p_ii&apos; is assigned a value that is never used." verbose="Variable &apos;L1_p_ii&apos; is assigned a value that is never used." cwe="563" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1165" column="13"/>
+            <symbol>L1_p_ii</symbol>
+        </error>
+  <FileInfo check="ctu">
+<function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="2" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="527" col="112" call-argexpr="_A0" call-argvaluetype="7" call-argvalue="144" call-argvalue-ufr="0"/><function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="3" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="527" col="112" call-argexpr="solution_buffer_for_x_6" call-argvaluetype="7" call-argvalue="24" call-argvalue-ufr="0"/><function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="4" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="527" col="112" call-argexpr="_pivot2" call-argvaluetype="7" call-argvalue="48" call-argvalue-ufr="0"/><function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="5" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="527" col="112" call-argexpr="_work1" call-argvaluetype="7" call-argvalue="24" call-argvalue-ufr="0"/><function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="2" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1094" col="112" call-argexpr="_A3" call-argvaluetype="7" call-argvalue="144" call-argvalue-ufr="0"/><function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="3" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1094" col="112" call-argexpr="solution_buffer_for_x_6" call-argvaluetype="7" call-argvalue="24" call-argvalue-ufr="0"/><function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="4" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1094" col="112" call-argexpr="_pivot5" call-argvaluetype="7" call-argvalue="48" call-argvalue-ufr="0"/><function-call call-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h:1066:13" call-funcname="SPE_solveLinearEquations_Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed" call-argnr="5" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1094" col="112" call-argexpr="_work4" call-argvaluetype="7" call-argvalue="24" call-argvalue-ufr="0"/>  </FileInfo>
+  <FileInfo check="Null pointer">
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c:32:13" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="47" col="5" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c:33:13" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="198" col="143" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c:34:13" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="626" col="5" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c:35:13" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="756" col="143" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h:190:6" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1239" col="5" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h:192:6" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1247" col="5" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h:194:6" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1256" col="5" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h:196:6" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1265" col="5" value="0"/>
+  </FileInfo>
+  <FileInfo check="Uninitialized variables">
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c:33:13" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="198" col="143" value="0"/>
+    <unsafe-usage my-id="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c:35:13" my-argnr="1" my-argname="instance" file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="756" col="143" value="0"/>
+  </FileInfo>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="91" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="113" column="37"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="134" column="160"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="134" column="345"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="138" column="160"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="138" column="345"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="142" column="159"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="142" column="343"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="146" column="159"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="146" column="343"/>
+        </error>
+        <error id="premium-cert-dcl37-c" severity="style" msg="Declaring reserved identifier &apos;_A0&apos;" verbose="Declaring reserved identifier &apos;_A0&apos;" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="210" column="97"/>
+        </error>
+        <error id="premium-cert-dcl37-c" severity="style" msg="Declaring reserved identifier &apos;_pivot2&apos;" verbose="Declaring reserved identifier &apos;_pivot2&apos;" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="211" column="12"/>
+        </error>
+        <error id="premium-cert-dcl37-c" severity="style" msg="Declaring reserved identifier &apos;_work1&apos;" verbose="Declaring reserved identifier &apos;_work1&apos;" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="212" column="97"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="270" column="17"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="327" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="329" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="383" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="427" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="430" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="431" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="465" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="466" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="467" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="497" column="37"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="500" column="37"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="545" column="39"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="547" column="39"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="549" column="30"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="551" column="30"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="626" column="36"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="630" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="632" column="32"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="634" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="636" column="28"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="642" column="28"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="644" column="32"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="646" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="648" column="34"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="650" column="32"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="652" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="654" column="34"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="656" column="31"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="658" column="32"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="660" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="662" column="34"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="670" column="30"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="672" column="34"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="676" column="32"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="678" column="31"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="680" column="32"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="682" column="29"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="686" column="25"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="688" column="25"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="690" column="29"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="692" column="25"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="694" column="23"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="702" column="23"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="710" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="714" column="34"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="716" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="718" column="33"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="727" column="25"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="729" column="21"/>
+        </error>
+        <error id="premium-cert-dcl37-c" severity="style" msg="Declaring reserved identifier &apos;_A3&apos;" verbose="Declaring reserved identifier &apos;_A3&apos;" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="783" column="97"/>
+        </error>
+        <error id="premium-cert-dcl37-c" severity="style" msg="Declaring reserved identifier &apos;_pivot5&apos;" verbose="Declaring reserved identifier &apos;_pivot5&apos;" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="784" column="12"/>
+        </error>
+        <error id="premium-cert-dcl37-c" severity="style" msg="Declaring reserved identifier &apos;_work4&apos;" verbose="Declaring reserved identifier &apos;_work4&apos;" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="785" column="97"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="824" column="17"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="828" column="656"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="828" column="1059"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="835" column="655"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="835" column="1056"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="846" column="656"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="846" column="1058"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="853" column="657"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="853" column="1059"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="860" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="863" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="888" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="942" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="970" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1006" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1007" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1024" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1040" column="37"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1040" column="247"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1040" column="649"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1045" column="237"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1045" column="639"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1163" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1165" column="18"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1221" column="154"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1224" column="15"/>
+        </error>
+        <error id="premium-cert-dcl06-c" severity="style" msg="Use meaningful symbolic constants to represent literal values." verbose="Use meaningful symbolic constants to represent literal values." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1226" column="154"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1239" column="13"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1247" column="13"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1256" column="13"/>
+        </error>
+        <error id="premium-cert-exp34-c" severity="style" msg="Do not dereference null pointers" verbose="Do not dereference null pointers" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1265" column="13"/>
+        </error>
+        <error id="premium-cert-pre08-c" severity="style" msg="Guarantee that header file names are unique" verbose="Guarantee that header file names are unique" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="24" column="10" info="Second appearance."/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="23" column="10" info="First appearance."/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.5" severity="style" msg="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" verbose="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="203" column="10" info="Identifier DymolaConvertInputToREAL0"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="204" column="97" info="Identifier DymolaConvertInputToReal0"/>
+        </error>
+        <error id="premium-misra-c-2023-21.2" severity="style" msg="A reserved identifier or reserved macro name shall not be declared" verbose="A reserved identifier or reserved macro name shall not be declared" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="210" column="97"/>
+        </error>
+        <error id="premium-misra-c-2023-21.2" severity="style" msg="A reserved identifier or reserved macro name shall not be declared" verbose="A reserved identifier or reserved macro name shall not be declared" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="211" column="12"/>
+        </error>
+        <error id="premium-misra-c-2023-21.2" severity="style" msg="A reserved identifier or reserved macro name shall not be declared" verbose="A reserved identifier or reserved macro name shall not be declared" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="212" column="97"/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.5" severity="style" msg="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" verbose="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="761" column="10" info="Identifier DymolaConvertInputToREAL0"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="762" column="97" info="Identifier DymolaConvertInputToReal0"/>
+        </error>
+        <error id="premium-misra-c-2023-21.2" severity="style" msg="A reserved identifier or reserved macro name shall not be declared" verbose="A reserved identifier or reserved macro name shall not be declared" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="783" column="97"/>
+        </error>
+        <error id="premium-misra-c-2023-21.2" severity="style" msg="A reserved identifier or reserved macro name shall not be declared" verbose="A reserved identifier or reserved macro name shall not be declared" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="784" column="12"/>
+        </error>
+        <error id="premium-misra-c-2023-21.2" severity="style" msg="A reserved identifier or reserved macro name shall not be declared" verbose="A reserved identifier or reserved macro name shall not be declared" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="785" column="97"/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.5" severity="style" msg="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" verbose="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="57" column="97" info="Identifier G1_machine_P_0"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="71" column="97" info="Identifier G1_machine_p0"/>
+        </error>
+        <error id="premium-misra-c-2023-dir-4.5" severity="style" msg="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" verbose="Identifiers in the same name space with overlapping visibility should be typographically unambiguous" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="58" column="97" info="Identifier G1_machine_Q_0"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.h" line="73" column="97" info="Identifier G1_machine_q0"/>
+        </error>
+        <error id="premium-misra-c-2023-10.3" severity="style" msg="The value of an expression shall not be assigned to an object with a narrower essential type or of a different essential type category" verbose="The value of an expression shall not be assigned to an object with a narrower essential type or of a different essential type category" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="264" column="33" info="The value of an expression shall not be assigned to an object with a narrower essential type or of a different essential type category"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="264" column="189" info="Essential type category of 1 is signed"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h" line="138" column="102" info="Essential type category of x2 is float"/>
+        </error>
+        <error id="premium-misra-c-2023-10.3" severity="style" msg="The value of an expression shall not be assigned to an object with a narrower essential type or of a different essential type category" verbose="The value of an expression shall not be assigned to an object with a narrower essential type or of a different essential type category" file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="819" column="33" info="The value of an expression shall not be assigned to an object with a narrower essential type or of a different essential type category"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="819" column="189" info="Essential type category of 1 is signed"/>
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/galec_stl.h" line="138" column="102" info="Essential type category of x2 is float"/>
+        </error>
+        <error id="premium-unreadVariable" severity="style" msg="Variable &apos;L1_p_ir&apos; is assigned a value that is never used." verbose="Variable &apos;L1_p_ir&apos; is assigned a value that is never used." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1163" column="13"/>
+        </error>
+        <error id="premium-unreadVariable" severity="style" msg="Variable &apos;L1_p_ii&apos; is assigned a value that is never used." verbose="Variable &apos;L1_p_ii&apos; is assigned a value that is never used." file0="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c">
+            <location file="E:/modelica-libraries/efmi-pss-use-case/Modelica/work/Grid4CHIL/eFMU/PCode_SPE_cb4a8a449b4ada864625ee5a4355578a3aaf08ed/block.c" line="1165" column="13"/>
+        </error>
+</analyzerinfo>

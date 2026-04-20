@@ -13,7 +13,7 @@ model Grid4CHIL_IOplus_Clocked
   Modelica.Blocks.Interfaces.RealOutput Qgen "Reactive power [pu]"
     annotation (Placement(transformation(extent={{100,-50},{120,-30}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
-    period(displayUnit="s") = 0.0002,
+    period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},

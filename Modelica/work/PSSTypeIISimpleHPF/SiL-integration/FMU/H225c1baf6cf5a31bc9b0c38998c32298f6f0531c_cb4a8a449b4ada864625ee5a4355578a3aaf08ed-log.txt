@@ -1,96 +1,96 @@
 -- Building for: Visual Studio 17 2022
--- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
--- The C compiler identification is MSVC 19.44.35225.0
--- The CXX compiler identification is MSVC 19.44.35225.0
+-- Selecting Windows SDK version 10.0.22000.0 to target Windows 10.0.22631.
+-- The C compiler identification is MSVC 19.34.31944.0
+-- The CXX compiler identification is MSVC 19.34.31944.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe - skipped
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x86/cl.exe - skipped
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x86/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (4.0s)
+-- Configuring done (5.8s)
 -- Generating done (0.1s)
--- Build files have been written to: C:/Users/vanfr/AppData/Local/Temp/tmp3gl28g5h
-MSBuild version 17.14.40+3e7442088 for .NET Framework
-
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\ZERO_CHECK.vcxproj]
+-- Build files have been written to: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpl8mjyr8j
+MSBuild version 17.4.3+7e646be43 for .NET Framework
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\ZERO_CHECK.vcxproj]
   1>Checking Build System
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
   fmi3Functions.c
   block.c
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(57,61): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(79,62): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(99,27): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(101,29): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(185,56): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(202,39): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(214,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(216,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(218,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpg_6y87d4\sources\block.c(220,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
   galec_stl.c
   mei_block_interface.c
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(57,61): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(79,62): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(99,27): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(101,29): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(185,35): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(202,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(214,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(216,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(218,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmplq0c_abo\sources\block.c(220,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\fmi_wrapper.vcxproj]
   sii_block_interface.c
   Generating Code...
-     Creating library C:/Users/vanfr/AppData/Local/Temp/tmp3gl28g5h/Release/fmi_wrapper.lib and object C:/Users/vanfr/AppData/Local/Temp/tmp3gl28g5h/Release/fmi_wrapper.exp
-  fmi_wrapper.vcxproj -> C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\Release\fmi_wrapper.dll
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\ALL_BUILD.vcxproj]
-  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmp3gl28g5h\install.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1374,5): warning MSB8012: TargetPath(C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\Release\fmi_wrapper.dll) does not match the Linker's OutputFile property value (C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\Release\fmi_wrapper.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\fmi_wrapper.vcxproj]
+     Creating library C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpl8mjyr8j/Release/fmi_wrapper.lib and object C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpl8mjyr8j/Release/fmi_wrapper.exp
+  fmi_wrapper.vcxproj -> C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\Release\fmi_wrapper.dll
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\ALL_BUILD.vcxproj]
+  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmpl8mjyr8j\install.vcxproj]
   1>
   -- Install configuration: "Release"
-  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmplq0c_abo/binaries/x86-windows/fmi_wrapper.lib
-  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmplq0c_abo/binaries/x86-windows/fmi_wrapper.dll
+  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpg_6y87d4/binaries/x86-windows/fmi_wrapper.lib
+  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmpg_6y87d4/binaries/x86-windows/fmi_wrapper.dll
 -- Building for: Visual Studio 17 2022
--- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
--- The C compiler identification is MSVC 19.44.35225.0
--- The CXX compiler identification is MSVC 19.44.35225.0
+-- Selecting Windows SDK version 10.0.22000.0 to target Windows 10.0.22631.
+-- The C compiler identification is MSVC 19.34.31944.0
+-- The CXX compiler identification is MSVC 19.34.31944.0
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x64/cl.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
--- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/bin/Hostx64/x64/cl.exe - skipped
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x64/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring done (4.0s)
+-- Configuring done (5.7s)
 -- Generating done (0.1s)
--- Build files have been written to: C:/Users/vanfr/AppData/Local/Temp/tmpq31cskvq
-MSBuild version 17.14.40+3e7442088 for .NET Framework
-
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\ZERO_CHECK.vcxproj]
+-- Build files have been written to: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmppp7d736c
+MSBuild version 17.4.3+7e646be43 for .NET Framework
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\ZERO_CHECK.vcxproj]
   1>Checking Build System
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
   fmi3Functions.c
   block.c
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(57,61): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(79,62): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(99,27): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(101,29): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(185,56): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(202,39): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(214,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(216,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(218,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmp7joeyhff\sources\block.c(220,42): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
   galec_stl.c
   mei_block_interface.c
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(57,61): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(79,62): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(99,27): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(101,29): warning C4244: '=': conversion from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed', possible loss of data [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(185,35): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(202,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(214,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(216,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(218,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
-C:\Users\vanfr\AppData\Local\Temp\tmpiianey3f\sources\block.c(220,20): warning C4305: '=': truncation from 'double' to 'SPE_Real_H225c1baf6cf5a31bc9b0c38998c32298f6f0531c_cb4a8a449b4ada864625ee5a4355578a3aaf08ed' [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\fmi_wrapper.vcxproj]
   sii_block_interface.c
   Generating Code...
-     Creating library C:/Users/vanfr/AppData/Local/Temp/tmpq31cskvq/Release/fmi_wrapper.lib and object C:/Users/vanfr/AppData/Local/Temp/tmpq31cskvq/Release/fmi_wrapper.exp
-  fmi_wrapper.vcxproj -> C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\Release\fmi_wrapper.dll
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\ALL_BUILD.vcxproj]
-  Building Custom Rule C:/Users/vanfr/AppData/Local/Python/pythoncore-3.14-64/Lib/site-packages/fmpy/c-code/CMakeLists.txt
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(548,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\vanfr\AppData\Local\Temp\tmpq31cskvq\install.vcxproj]
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(1374,5): warning MSB8012: TargetPath(C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\Release\fmi_wrapper.dll) does not match the Linker's OutputFile property value (C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\Release\fmi_wrapper.dll). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile). [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\fmi_wrapper.vcxproj]
+     Creating library C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmppp7d736c/Release/fmi_wrapper.lib and object C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmppp7d736c/Release/fmi_wrapper.exp
+  fmi_wrapper.vcxproj -> C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\Release\fmi_wrapper.dll
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\ALL_BUILD.vcxproj]
+  Building Custom Rule C:/Users/CBR5.DSONE/AppData/Local/Programs/Python/Python313/Lib/site-packages/fmpy/c-code/CMakeLists.txt
+C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(527,5): warning MSB8029: The Intermediate directory or Output directory cannot reside under the Temporary directory as it could lead to issues with incremental build. [C:\Users\CBR5~1.DSO\AppData\Local\Temp\tmppp7d736c\install.vcxproj]
   1>
   -- Install configuration: "Release"
-  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmpiianey3f/binaries/x86_64-windows/fmi_wrapper.lib
-  -- Installing: C:/Users/vanfr/AppData/Local/Temp/tmpiianey3f/binaries/x86_64-windows/fmi_wrapper.dll
+  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmp7joeyhff/binaries/x86_64-windows/fmi_wrapper.lib
+  -- Installing: C:/Users/CBR5~1.DSO/AppData/Local/Temp/tmp7joeyhff/binaries/x86_64-windows/fmi_wrapper.dll

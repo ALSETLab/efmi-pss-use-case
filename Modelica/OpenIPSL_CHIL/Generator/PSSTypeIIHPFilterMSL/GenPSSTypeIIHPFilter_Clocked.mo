@@ -35,7 +35,7 @@ model GenPSSTypeIIHPFilter_Clocked
                 annotation (Placement(transformation(origin={-47,10}, extent={{
             -38,-10},{-19,10}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock(
-    period(displayUnit="ms") = 0.001,
+    period(displayUnit="ms") = 0.0002,
     useSolver=true,
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-6,-6},{6,6}},

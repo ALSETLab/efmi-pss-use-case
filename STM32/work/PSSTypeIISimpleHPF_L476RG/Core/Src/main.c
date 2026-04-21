@@ -74,15 +74,9 @@ typedef CONCAT(SPE_ErrorSignal_, MODEL_HASH) \
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-static ModelPSS pss;
-
-/* Button toggle state and debounce tracking: */
-volatile bool override_active = false;
-volatile uint32_t last_override_button_press = ((uint32_t) 0);
-
-/* Profiling and errors: */
-static PSS_ErrorSignal error_signals;
-static uint32_t last_error_tick;
+/* Sampling activation counter and override button: */
+static volatile uint8_t pending_samplings;
+static volatile bool override_active = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -131,18 +125,29 @@ int main(void)
   MX_TIM1_Init();
 
   /* USER CODE BEGIN 2 */
-  /* Initialize profiling and errors: */
-  error_signals = PSS_NONE_ERRORSIGNAL;
-  last_error_tick = ((uint32_t) 0);
+  /* Initialize error signaling: */
+  PSS_ErrorSignal error_signals = PSS_NONE_ERRORSIGNAL;
+  uint32_t error_timestamp = ((uint32_t) 0);
   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
-  if (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk)
-  { /* Processor does not support cycle counter: */
-    return 1;
-  }
-  DWT->CYCCNT = ((uint32_t) 0);
-  DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+
+  /* Pre-compute constants: */
+  const uint32_t POLL_TIMEOUT =
+    ((uint32_t) 1); /* in ms */
+  const PSS_Real ADC_TO_VOLTS =
+    ((PSS_Real) 3.3) / ((PSS_Real) 4095.0);
+  const PSS_Real VOLTS_TO_DAC =
+    ((PSS_Real) 4095.0) / ((PSS_Real) 3.3);
+  const PSS_Real DAC_MAX =
+    ((PSS_Real) 4095.0);
+  const PSS_Real DAC_MIN =
+    ((PSS_Real) 0.0);
+  const PSS_Real OFFSET =
+    ((PSS_Real) 1.5);
+  const PSS_Real CONSTANT_PU =
+    ((PSS_Real) 0.0);
 
   /* Initialize the eFMU: */
+  ModelPSS pss;
   PSS_Startup(&pss);
   error_signals |= pss.ErrorSignals;
   pss.Kw = ((PSS_Real) 7.4);
@@ -152,8 +157,18 @@ int main(void)
   pss.T4 = ((PSS_Real) 0.0583198524063289);
   PSS_Recalibrate(&pss);
   error_signals |= pss.ErrorSignals;
+  PSS_Reinitialize(&pss);
+  error_signals |= pss.ErrorSignals;
+  if (PSS_NONE_ERRORSIGNAL != error_signals)
+  { /* Just turn on the error LED and block if initialization failed: */
+    HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_SET);
+    while (true)
+    {
+    }
+  }
 
-  /* Start the sampling timer: */
+  /* Start the sampling timer and DAC channels: */
+  pending_samplings = ((uint8_t) 0);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   HAL_TIM_Base_Start_IT(&htim1);
   __enable_irq();
@@ -167,15 +182,80 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     /*
-      If the LED is currently ON due to an error, check if 5000 ms have
-      passed since the last error occurred. If so, turn off the LED and
-      reset the flag:
+      Conduct sampling if the sampling timer ticked:
+    */
+    if (pending_samplings > ((uint8_t) 0))
+    {
+      /* Always reset the error signals: */
+      error_signals = PSS_NONE_ERRORSIGNAL;
+
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_SET);
+
+      /* Input processing (convert AC to volt): */
+      HAL_ADC_Start(&hadc1);
+      if (HAL_OK == HAL_ADC_PollForConversion(&hadc1, POLL_TIMEOUT))
+      {
+        const uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
+        pss.vSI = ((PSS_Real) adc_raw) * ADC_TO_VOLTS;
+      }
+      else
+      {
+        error_signals |= PSS_UNSPECIFIED_ERRORSIGNAL;
+      }
+      HAL_ADC_Stop(&hadc1);
+
+      /* Compute sampling step: */
+      PSS_DoStep(&pss);
+      error_signals |= pss.ErrorSignals;
+
+      /* Check if switch is pulling to GND: */
+      const PSS_Real target_pu = !override_active
+        ? pss.vs
+        : CONSTANT_PU;
+
+      /* Output processing (scaling, clamping, converting volt to AC): */
+      PSS_Real dac_val = (target_pu + OFFSET) * VOLTS_TO_DAC;
+      if (DAC_MIN > dac_val)
+      {
+        dac_val = DAC_MIN;
+      }
+      else if (DAC_MAX < dac_val)
+      {
+        dac_val = DAC_MAX;
+      }
+      HAL_DAC_SetValue(
+        &hdac1,
+        DAC_CHANNEL_1,
+        DAC_ALIGN_12B_R,
+        ((uint32_t) dac_val));
+
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_RESET);
+
+      --pending_samplings;
+    }
+
+    /*
+      Check if any errors are signaled from the last sampling, or an overrun
+      occurred. If so, set the error LED on:
     */
     if ((PSS_NONE_ERRORSIGNAL != error_signals)
-      && (((uint32_t) 5000) < (HAL_GetTick() - last_error_tick)))
+      || (pending_samplings > ((uint8_t) 1)))
     {
-      error_signals = PSS_NONE_ERRORSIGNAL;
+      error_timestamp = HAL_GetTick();
+      HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_SET);
+    }
+
+    /*
+      If the error LED is currently on due to a past error, check if 30000 ms
+      have passed since the last error occurred. If so, turn off the LED:
+    */
+    if ((((uint32_t) 0) != error_timestamp)
+      && (((uint32_t) 30000) < (HAL_GetTick() - error_timestamp)))
+    {
       HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_RESET);
+      error_timestamp = ((uint32_t) 0);
     }
   }
   /* USER CODE END 3 */
@@ -233,14 +313,16 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
+  static uint32_t last_override = ((uint32_t) 0);
+
   /* Check if interrupt triggered by blue button (PC13): */
   if (B1__Pin == GPIO_Pin)
   {
-    uint32_t current_time = HAL_GetTick();
-    if (((uint32_t) 250) < (current_time - last_override_button_press))
+    const uint32_t current_time = HAL_GetTick();
+    if (((uint32_t) 250) < (current_time - last_override))
     { /* Debounce: Only accept press if 250 ms passed since last: */
       override_active = !override_active;
-      last_override_button_press = current_time;
+      last_override = current_time;
     }
   }
 }
@@ -249,85 +331,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (TIM1 == htim->Instance)
   {
-    /* Pre-computed static constants: */
-    static const uint32_t CYCLES_PER_MS =
-      ((uint32_t) 80000); /* 80 MHz clock = 80,000 cycles/ms. */
-    static const uint32_t POLL_TIMEOUT =
-      ((uint32_t) 1); /* in ms */
-    static const PSS_Real ADC_TO_VOLTS =
-      ((PSS_Real) 3.3) / ((PSS_Real) 4095.0);
-    static const PSS_Real VOLTS_TO_DAC =
-      ((PSS_Real) 4095.0) / ((PSS_Real) 3.3);
-    static const PSS_Real DAC_MAX =
-      ((PSS_Real) 4095.0);
-    static const PSS_Real DAC_MIN =
-      ((PSS_Real) 0.0);
-    static const PSS_Real OFFSET =
-      ((PSS_Real) 1.5);
-    static const PSS_Real CONSTANT_PU =
-      ((PSS_Real) 0.0);
-
-    /* Initialize profiling (check for errors and overruns): */
-    DWT->CYCCNT = ((uint32_t) 0);
-    const uint32_t sampling_period_in_cycles =
-      ((uint32_t) (
-          (((PSS_Real) 1050.0 /* s to ms and 5% safety */) * pss.discrete_stepSize)
-        * ((PSS_Real) CYCLES_PER_MS)));
-    PSS_ErrorSignal error_signals_local = PSS_NONE_ERRORSIGNAL;
-
+    if (pending_samplings < ((uint8_t) 255))
+    {
+      ++pending_samplings;
+    }
     HAL_GPIO_TogglePin(stepSize_GPIO_Port, stepSize_Pin);
-    HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_SET);
-
-    /* Input processing (convert AC to volt): */
-    HAL_ADC_Start(&hadc1);
-    if (HAL_OK == HAL_ADC_PollForConversion(&hadc1, POLL_TIMEOUT))
-    {
-      const uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
-      pss.vSI = ((PSS_Real) adc_raw) * ADC_TO_VOLTS;
-    }
-    else
-    { /* Failed to get input in time => trigger later overrun error: */
-    	error_signals_local |= PSS_UNSPECIFIED_ERRORSIGNAL;
-    }
-    HAL_ADC_Stop(&hadc1);
-
-    /* Compute sampling step: */
-    PSS_DoStep(&pss);
-    error_signals_local |= pss.ErrorSignals;
-
-    /* Check if switch is pulling to GND: */
-    const PSS_Real target_pu = !override_active
-      ? pss.vs
-      : CONSTANT_PU;
-
-    /* Output processing, including scaling and clamping (convert volt to AC): */
-    PSS_Real dac_val = (target_pu + OFFSET) * VOLTS_TO_DAC;
-    if (DAC_MIN > dac_val)
-    {
-      dac_val = DAC_MIN;
-    }
-    else if (DAC_MAX < dac_val)
-    {
-      dac_val = DAC_MAX;
-    }
-    HAL_DAC_SetValue(
-      &hdac1,
-      DAC_CHANNEL_1,
-      DAC_ALIGN_12B_R,
-      ((uint32_t) dac_val));
-
-    HAL_GPIO_WritePin(calTime_GPIO_Port, calTime_Pin, GPIO_PIN_RESET);
-
-    /* End profiling (check for errors and overruns): */
-    error_signals_local |= ((sampling_period_in_cycles < DWT->CYCCNT)
-      ? PSS_UNSPECIFIED_ERRORSIGNAL
-      : PSS_NONE_ERRORSIGNAL);
-    if (PSS_NONE_ERRORSIGNAL != error_signals_local)
-    {
-      error_signals = error_signals_local;
-      last_error_tick = HAL_GetTick();
-      HAL_GPIO_WritePin(LD2__GPIO_Port, LD2__Pin, GPIO_PIN_SET);
-    }
   }
 }
 /* USER CODE END 4 */

@@ -73,11 +73,8 @@ typedef CONCAT(SPE_ErrorSignal_, MODEL_HASH) \
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-static ModelGrid grid;
-
-/* Profiling and errors: */
-static Grid_ErrorSignal error_signals;
-static uint32_t last_error_tick;
+/* Sampling activation counter: */
+static volatile uint8_t pending_samplings;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -128,22 +125,44 @@ int main(void)
   MX_ADC2_Init();
 
   /* USER CODE BEGIN 2 */
-  /* Initialize profiling and errors: */
-  error_signals = Grid_NONE_ERRORSIGNAL;
-  last_error_tick = ((uint32_t) 0);
+  /* Initialize error signaling: */
+  Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
+  uint32_t error_timestamp = ((uint32_t) 0);
   CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
-  if (DWT->CTRL & DWT_CTRL_NOCYCCNT_Msk)
-  { /* Processor does not support cycle counter: */
-    return 1;
-  }
-  DWT->CYCCNT = ((uint32_t) 0);
-  DWT->CTRL |= DWT_CTRL_CYCCNTENA_Msk;
+
+  /* Pre-compute constants: */
+  const uint32_t POLL_TIMEOUT =
+    ((uint32_t) 1); /* in ms */
+  const Grid_Real ADC_TO_VOLTS =
+    ((Grid_Real) 3.3) / ((Grid_Real) 4095.0);
+  const Grid_Real VOLTS_TO_DAC =
+    ((Grid_Real) 4095.0) / ((Grid_Real) 3.3);
+  const Grid_Real DAC_MAX =
+    ((Grid_Real) 4095.0);
+  const Grid_Real DAC_MIN =
+    ((Grid_Real) 0.0);
+  const Grid_Real VF_OFFSET =
+    ((Grid_Real) 1.5);
+  /* Constraints for uPLoad potentiometer (-20 to +20): */
+  const Grid_Real LOAD_SCALE =
+    ((Grid_Real) 40.0) / ((Grid_Real) 4095.0);
+  const Grid_Real LOAD_OFFSET =
+    ((Grid_Real) 20.0);
 
   /* Initialize the eFMU: */
+  ModelGrid grid;
   Grid_Startup(&grid);
   error_signals |= grid.ErrorSignals;
+  if (Grid_NONE_ERRORSIGNAL != error_signals)
+  { /* Just turn on the error LED and block if initialization failed: */
+    HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_SET);
+    while (true)
+    {
+    }
+  }
 
-  /* Start the sampling timer: */
+  /* Start the sampling timer and DAC channels: */
+  pending_samplings = ((uint8_t) 0);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
   HAL_DAC_Start(&hdac2, DAC_CHANNEL_1);
   HAL_TIM_Base_Start_IT(&htim1);
@@ -158,15 +177,111 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     /*
-      If the LED is currently ON due to an error, check if 5000 ms have
-      passed since the last error occurred. If so, turn off the LED and
-      reset the flag:
+      Conduct sampling if the sampling timer ticked:
+    */
+    if (pending_samplings > ((uint8_t) 0))
+    {
+      /* Always reset the error signals: */
+      error_signals = Grid_NONE_ERRORSIGNAL;
+
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_SET);
+
+      /* Digital input processing: */
+      grid.fault = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
+        fault_blue_button_GPIO_Port,
+        fault_blue_button_Pin));
+      grid.faultL1 = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
+        fault1_D7_GPIO_Port,
+        fault1_D7_Pin));
+      grid.faultL2 = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
+        fault2_D0_GPIO_Port,
+        fault2_D0_Pin));
+
+      /* Analog input processing: */
+      HAL_ADC_Start(&hadc1);
+      if (HAL_OK == HAL_ADC_PollForConversion(&hadc1, POLL_TIMEOUT))
+      {
+        const uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
+        grid.vf = (((Grid_Real) adc_raw) * ADC_TO_VOLTS) - VF_OFFSET;
+      }
+      else
+      {
+        error_signals |= Grid_UNSPECIFIED_ERRORSIGNAL;
+      }
+      HAL_ADC_Stop(&hadc1);
+      HAL_ADC_Start(&hadc2);
+      if (HAL_OK == HAL_ADC_PollForConversion(&hadc2, POLL_TIMEOUT))
+      {
+        const uint32_t adc2_raw = HAL_ADC_GetValue(&hadc2);
+        grid.uPLoad = (((Grid_Real) adc2_raw) * LOAD_SCALE) - LOAD_OFFSET;
+      }
+      else
+      {
+        error_signals |= Grid_UNSPECIFIED_ERRORSIGNAL;
+      }
+      HAL_ADC_Stop(&hadc2);
+
+      /* Compute sampling step: */
+      Grid_DoStep(&grid);
+      error_signals |= grid.ErrorSignals;
+
+      /* Output processing (scaling, clamping, converting volt to AC): */
+      Grid_Real dac_v_val = grid.v * VOLTS_TO_DAC;
+      if (DAC_MIN > dac_v_val)
+      {
+        dac_v_val = DAC_MIN;
+      }
+      else if (DAC_MAX < dac_v_val)
+      {
+        dac_v_val = DAC_MAX;
+      }
+      HAL_DAC_SetValue(
+        &hdac1,
+        DAC_CHANNEL_1,
+        DAC_ALIGN_12B_R,
+        ((uint32_t) dac_v_val));
+      Grid_Real dac_w_val = grid.w * VOLTS_TO_DAC;
+      if (DAC_MIN > dac_w_val)
+      {
+        dac_w_val = DAC_MIN;
+      }
+      else if (DAC_MAX < dac_w_val)
+      {
+        dac_w_val = DAC_MAX;
+      }
+      HAL_DAC_SetValue(
+        &hdac2,
+        DAC_CHANNEL_1,
+        DAC_ALIGN_12B_R,
+        ((uint32_t) dac_w_val));
+
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_RESET);
+
+      --pending_samplings;
+    }
+
+    /*
+      Check if any errors are signaled from the last sampling, or an overrun
+      occurred. If so, set the error LED on:
     */
     if ((Grid_NONE_ERRORSIGNAL != error_signals)
-      && (((uint32_t) 5000) < (HAL_GetTick() - last_error_tick)))
+      || (pending_samplings > ((uint8_t) 1)))
     {
-      error_signals = Grid_NONE_ERRORSIGNAL;
+      error_timestamp = HAL_GetTick();
+      HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_SET);
+    }
+
+    /*
+      If the error LED is currently on due to a past error, check if 30000 ms
+      have passed since the last error occurred. If so, turn off the LED:
+    */
+    if ((((uint32_t) 0) != error_timestamp)
+      && (((uint32_t) 30000) < (HAL_GetTick() - error_timestamp)))
+    {
       HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_RESET);
+      error_timestamp = ((uint32_t) 0);
     }
   }
   /* USER CODE END 3 */
@@ -223,119 +338,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if (TIM1 == htim->Instance)
   {
-    /* Pre-computed static constants: */
-    static const uint32_t CYCLES_PER_MS =
-      ((uint32_t) 170000); /* 170 MHz clock = 170,000 cycles/ms. */
-    static const uint32_t POLL_TIMEOUT =
-      ((uint32_t) 1); /* in ms */
-    static const Grid_Real ADC_TO_VOLTS =
-      ((Grid_Real) 3.3) / ((Grid_Real) 4095.0);
-    static const Grid_Real VOLTS_TO_DAC =
-      ((Grid_Real) 4095.0) / ((Grid_Real) 3.3);
-    static const Grid_Real DAC_MAX =
-      ((Grid_Real) 4095.0);
-    static const Grid_Real DAC_MIN =
-      ((Grid_Real) 0.0);
-    static const Grid_Real VF_OFFSET =
-      ((Grid_Real) 1.5);
-    /* Constraints for uPLoad potentiometer (-20 to +20): */
-    static const Grid_Real LOAD_SCALE =
-      ((Grid_Real) 40.0) / ((Grid_Real) 4095.0);
-    static const Grid_Real LOAD_OFFSET =
-      ((Grid_Real) 20.0);
-
-    /* Initialize profiling (check for errors and overruns): */
-    DWT->CYCCNT = ((uint32_t) 0);
-    const uint32_t sampling_period_in_cycles =
-      ((uint32_t) (
-          (((Grid_Real) 1050.0 /* s to ms and 5% safety */) * grid.discrete_stepSize)
-        * ((Grid_Real) CYCLES_PER_MS)));
-    Grid_ErrorSignal error_signals_local = Grid_NONE_ERRORSIGNAL;
-
-    HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_SET);
-
-    /* Digital input processing: */
-    grid.fault = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
-      fault_blue_button_GPIO_Port,
-      fault_blue_button_Pin));
-    grid.faultL1 = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
-      fault1_D7_GPIO_Port,
-      fault1_D7_Pin));
-    grid.faultL2 = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
-      fault2_D0_GPIO_Port,
-      fault2_D0_Pin));
-
-    /* Analog input processing: */
-    HAL_ADC_Start(&hadc1);
-    if (HAL_OK == HAL_ADC_PollForConversion(&hadc1, POLL_TIMEOUT))
+    if (pending_samplings < ((uint8_t) 255))
     {
-      const uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
-      grid.vf = (((Grid_Real) adc_raw) * ADC_TO_VOLTS) - VF_OFFSET;
+      ++pending_samplings;
     }
-    else
-    { /* Failed to get input in time => trigger later overrun error: */
-      error_signals_local |= Grid_UNSPECIFIED_ERRORSIGNAL;
-    }
-    HAL_ADC_Stop(&hadc1);
-    HAL_ADC_Start(&hadc2);
-    if (HAL_OK == HAL_ADC_PollForConversion(&hadc2, POLL_TIMEOUT))
-    {
-      const uint32_t adc2_raw = HAL_ADC_GetValue(&hadc2);
-      grid.uPLoad = (((Grid_Real) adc2_raw) * LOAD_SCALE) - LOAD_OFFSET;
-    }
-    else
-    { /* Failed to get input in time => trigger later overrun error: */
-      error_signals_local |= Grid_UNSPECIFIED_ERRORSIGNAL;
-    }
-    HAL_ADC_Stop(&hadc2);
-
-    /* Compute sampling step: */
-    Grid_DoStep(&grid);
-    error_signals_local |= grid.ErrorSignals;
-
-    /* Output processing, including scaling and clamping: */
-    Grid_Real dac_v_val = grid.v * VOLTS_TO_DAC;
-    if (DAC_MIN > dac_v_val)
-    {
-      dac_v_val = DAC_MIN;
-    }
-    else if (DAC_MAX < dac_v_val)
-    {
-      dac_v_val = DAC_MAX;
-    }
-    HAL_DAC_SetValue(
-      &hdac1,
-      DAC_CHANNEL_1,
-      DAC_ALIGN_12B_R,
-      ((uint32_t) dac_v_val));
-
-    Grid_Real dac_w_val = grid.w * VOLTS_TO_DAC;
-    if (DAC_MIN > dac_w_val)
-    {
-      dac_w_val = DAC_MIN;
-    }
-    else if (DAC_MAX < dac_w_val)
-    {
-      dac_w_val = DAC_MAX;
-    }
-    HAL_DAC_SetValue(
-      &hdac2,
-      DAC_CHANNEL_1,
-      DAC_ALIGN_12B_R,
-      ((uint32_t) dac_w_val));
-
-    HAL_GPIO_WritePin(calTime_D3_GPIO_Port, calTime_D3_Pin, GPIO_PIN_RESET);
-
-    /* End profiling (check for errors and overruns): */
-    error_signals_local |= ((sampling_period_in_cycles < DWT->CYCCNT)
-      ? Grid_UNSPECIFIED_ERRORSIGNAL
-      : Grid_NONE_ERRORSIGNAL);
-    if (Grid_NONE_ERRORSIGNAL != error_signals_local)
-    {
-      error_signals = error_signals_local;
-      last_error_tick = HAL_GetTick();
-      HAL_GPIO_WritePin(LD2_green_LED_GPIO_Port, LD2_green_LED_Pin, GPIO_PIN_SET);
-    }
+    HAL_GPIO_TogglePin(stepSize_D5_GPIO_Port, stepSize_D5_Pin);
   }
 }
 /* USER CODE END 4 */

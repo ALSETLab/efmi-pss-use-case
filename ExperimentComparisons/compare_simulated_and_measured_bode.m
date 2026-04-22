@@ -1,15 +1,10 @@
 %% Compare Simulated vs. Measured Bode Plots
 % Joe Pizzimenti
 % Date: April 2026
-% This script compares AD2 hardware measurements with theoretical Dymola
-% simulations across three test cases: Plant, PSS, and Full System.
 
 clc; clear all; close all;
 
-%% ========================================================================
-%  FIGURE 1: THE UNCOMPENSATED PLANT
-%  ========================================================================
-% Load Data
+%% Plant
 meas_plant = readmatrix('measured_Plant_network.csv');
 sim_plant  = readmatrix('simulated_plant_dymola.csv');
 
@@ -42,10 +37,8 @@ xlim([0.15, 15]);
 
 linkaxes(findobj(fig1, 'Type', 'axes'), 'x');
 
-%% ========================================================================
-%  FIGURE 2: THE POWER SYSTEM STABILIZER (PSS)
-%  ========================================================================
-% Load Data
+
+%% PSS
 meas_pss = readmatrix('measured_PSS_network.csv');
 sim_pss  = readmatrix('simulated_pss_dymola.csv');
 
@@ -78,10 +71,7 @@ xlim([0.15, 15]);
 
 linkaxes(findobj(fig2, 'Type', 'axes'), 'x');
 
-%% ========================================================================
-%  FIGURE 3: THE FULL CLOSED-LOOP SYSTEM
-%  ========================================================================
-% Load Data
+%% Full Closed-Loop System
 meas_full = readmatrix('measured_full_system_network.csv');
 sim_full  = readmatrix('simulated_full_system_dymola.csv');
 

@@ -1,8 +1,6 @@
 %% Transfer Function Estimation from Bode CSV Data
 % Joe Pizzimenti
 % Date: April 2026
-% This script takes Frequency, Magnitude (dB), and Phase (deg) from CSVs
-% and estimates a mathematical continuous-time transfer function G(s).
 
 clc; clear all; close all;
 

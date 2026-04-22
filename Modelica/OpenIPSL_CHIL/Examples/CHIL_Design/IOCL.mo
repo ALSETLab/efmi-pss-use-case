@@ -5,7 +5,8 @@ model IOCL "I/O Model for Closed Loop Analysis]"
     annotation (Placement(transformation(extent={{20,-10},{40,10}})));
   Components.PSS.PSSTypeIISimpleHPF
                                 pss(
-    Kw=7.4,
+    Kw=7.04,
+    Tw=2.0,
     T1=0.339913009676242,
     T2=0.0583198524063289,
     T3=0.339913009676242,

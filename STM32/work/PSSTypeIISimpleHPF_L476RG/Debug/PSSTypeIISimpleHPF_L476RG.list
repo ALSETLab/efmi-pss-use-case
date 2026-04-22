@@ -1760,14 +1760,14 @@ int main(void)
  800116a:	f5a3 7392 	sub.w	r3, r3, #292	@ 0x124
  800116e:	4a8c      	ldr	r2, [pc, #560]	@ (80013a0 <main+0x2f4>)
  8001170:	619a      	str	r2, [r3, #24]
-  pss.Tw = ((PSS_Real) 0.5);
+  pss.Tw = ((PSS_Real) 2.0);
  8001172:	f507 7394 	add.w	r3, r7, #296	@ 0x128
  8001176:	f5a3 7392 	sub.w	r3, r3, #292	@ 0x124
- 800117a:	f04f 527c 	mov.w	r2, #1056964608	@ 0x3f000000
+ 800117a:	f04f 4280 	mov.w	r2, #1073741824	@ 0x40000000
  800117e:	61da      	str	r2, [r3, #28]
-//  pss.T3 = ((PSS_Real) 1);
-//  pss.T4 = ((PSS_Real) 1);
-//  pss.Tw = ((PSS_Real) 2.0);
+//  pss.T3 = ((PSS_Real) 3.24178742588019986e-1);
+//  pss.T4 = ((PSS_Real) 5.56202789619913984e-2);
+//  pss.Tw = ((PSS_Real) 0.25);
 
   // RECAL/REINIT
   PSS_Recalibrate(&pss);

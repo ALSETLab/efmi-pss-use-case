@@ -4,7 +4,7 @@
 % The design parameters obtained from the Root-Locus method are then used to implement the PSS in the following Dymola model:
 % OpenIPSL_CHIL.Examples.ReDesign.PSSReDesignVerification, which is used to verify the design of the PSS in the file "pss_design_verification.m".
 %
-% Author: Luigi Vanfretti
+% Author: Luigi Vanfretti + Joe Pizzimenti
 % Date: April 2026
 %
 clear; clc;
@@ -137,7 +137,7 @@ disp('Enter the parameters above in your PSS in Dymola, and verify in simulation
 % After Obtaining the new Linear Model with the PSS from the Dymola model, you can also verify the new damping of the local mode.
 % The new linear model can be obtained by linearizing the Dymola model with the PSS implemented, and 
 % then analyzing the eigenvalues of the new linear model to determine the damping of the local mode.
-% To verify what is the new damping of ~27% with the design, look at the separte file.
+% To verify what is the new damping of ~15% with the design, look at the separte file.
 diary off % Stop recording the command window output in the diary file
 clear cleanupDiary
 % eof

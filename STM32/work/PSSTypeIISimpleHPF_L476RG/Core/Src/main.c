@@ -157,15 +157,15 @@ int main(void)
   pss.T2 = ((PSS_Real) 0.0583198524063289);
   pss.T3 = ((PSS_Real) 0.339913009676242);
   pss.T4 = ((PSS_Real) 0.0583198524063289);
-  pss.Tw = ((PSS_Real) 0.5);
+  pss.Tw = ((PSS_Real) 2.0);
 
-  //openIPSL defualts for testing:
+  // Luigi's previous values for testing/comparison:
 //  pss.Kw = ((PSS_Real) 2.7);
-//  pss.T1 = ((PSS_Real) 1);
-//  pss.T2 = ((PSS_Real) 1);
-//  pss.T3 = ((PSS_Real) 1);
-//  pss.T4 = ((PSS_Real) 1);
-//  pss.Tw = ((PSS_Real) 2.0);
+//  pss.T1 = ((PSS_Real) 3.24178742588019986e-1);
+//  pss.T2 = ((PSS_Real) 5.56202789619913984e-2);
+//  pss.T3 = ((PSS_Real) 3.24178742588019986e-1);
+//  pss.T4 = ((PSS_Real) 5.56202789619913984e-2);
+//  pss.Tw = ((PSS_Real) 0.25);
 
   // RECAL/REINIT
   PSS_Recalibrate(&pss);

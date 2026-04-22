@@ -4,7 +4,7 @@
 % The design parameters obtained from the Root-Locus method are then used to implement the PSS in the following Dymola model:
 % OpenIPSL_CHIL.Examples.ReDesign.PSSReDesignVerification, which is used to verify the design of the PSS in the file "pss_design_verification.m".
 %
-% Author: Luigi Vanfretti
+% Author: Luigi Vanfretti + Joe Pizzimenti
 % Date: April 2026
 %
 clear; clc;
@@ -46,7 +46,7 @@ disp(resultsTable);
 
 %% Connect the power system to the filters
 % Low-pass filter for measurement noise suppression
-% The low-pass filter is designed to have a cutoff frequency of 20 Hz, which is sufficient to suppress high-frequency noise while 
+% The low-pass filter is designed to have a cutoff frequency of 5 Hz, which is sufficient to suppress high-frequency noise while 
 % allowing the relevant dynamics of the system to pass through.
 fc = 5.0; % Cutoff frequency in Hz
 w_cutoff = 2 * pi * fc; % Convert cutoff frequency to rad/s
@@ -75,7 +75,7 @@ washout = tf([Tw 0],[Tw 1],'InputName','u_wof',...
 wscale = 10;
 
 % Connect the filters to the PS model                         
-PSwo = (1/wscale)*lpf*washout*PS % Connects filters to PS model
+PSwo = (1/wscale)*washout*lpf*PS % Connects filters to PS model
 
 %% RL Step 2: Obtain the root locus plot
 figure(101)
@@ -137,7 +137,7 @@ disp('Enter the parameters above in your PSS in Dymola, and verify in simulation
 % After Obtaining the new Linear Model with the PSS from the Dymola model, you can also verify the new damping of the local mode.
 % The new linear model can be obtained by linearizing the Dymola model with the PSS implemented, and 
 % then analyzing the eigenvalues of the new linear model to determine the damping of the local mode.
-% To verify what is the new damping of ~27% with the design, look at the separte file.
+% To verify what is the new damping of ~15% with the design, look at the separte file.
 diary off % Stop recording the command window output in the diary file
 clear cleanupDiary
 % eof

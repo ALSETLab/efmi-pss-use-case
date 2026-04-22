@@ -126,7 +126,6 @@ int main(void)
   /* Initialize error signaling: */
   Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
   uint32_t error_timestamp = ((uint32_t) 0);
-  CoreDebug->DEMCR |= CoreDebug_DEMCR_TRCENA_Msk;
 
   /* Pre-compute constants: */
   const uint32_t POLL_TIMEOUT =
@@ -147,10 +146,19 @@ int main(void)
   Grid_Startup(&grid);
   error_signals |= grid.ErrorSignals;
   if (Grid_NONE_ERRORSIGNAL != error_signals)
-  { /* Just turn on the error LED and block if initialization failed: */
-    HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+  { /* Block and blink the error LED if initialization failed: */
     while (true)
     {
+      HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+      uint32_t start = HAL_GetTick();
+      while ((HAL_GetTick() - start) < ((uint32_t) 2000))
+      {
+      }
+      HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+      start = HAL_GetTick();
+      while ((HAL_GetTick() - start) < ((uint32_t) 2000))
+      {
+      }
     }
   }
 

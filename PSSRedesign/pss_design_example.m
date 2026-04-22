@@ -46,7 +46,7 @@ disp(resultsTable);
 
 %% Connect the power system to the filters
 % Low-pass filter for measurement noise suppression
-% The low-pass filter is designed to have a cutoff frequency of 20 Hz, which is sufficient to suppress high-frequency noise while 
+% The low-pass filter is designed to have a cutoff frequency of 5 Hz, which is sufficient to suppress high-frequency noise while 
 % allowing the relevant dynamics of the system to pass through.
 fc = 5.0; % Cutoff frequency in Hz
 w_cutoff = 2 * pi * fc; % Convert cutoff frequency to rad/s
@@ -75,7 +75,7 @@ washout = tf([Tw 0],[Tw 1],'InputName','u_wof',...
 wscale = 10;
 
 % Connect the filters to the PS model                         
-PSwo = (1/wscale)*lpf*washout*PS % Connects filters to PS model
+PSwo = (1/wscale)*washout*lpf*PS % Connects filters to PS model
 
 %% RL Step 2: Obtain the root locus plot
 figure(101)

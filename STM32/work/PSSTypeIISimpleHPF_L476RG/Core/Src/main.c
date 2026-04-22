@@ -150,11 +150,24 @@ int main(void)
   ModelPSS pss;
   PSS_Startup(&pss);
   error_signals |= pss.ErrorSignals;
-  pss.Kw = ((PSS_Real) 7.4);
+
+  // TUNABLE PARAMETERS
+  pss.Kw = ((PSS_Real) 7.04);
   pss.T1 = ((PSS_Real) 0.339913009676242);
   pss.T2 = ((PSS_Real) 0.0583198524063289);
   pss.T3 = ((PSS_Real) 0.339913009676242);
   pss.T4 = ((PSS_Real) 0.0583198524063289);
+  pss.Tw = ((PSS_Real) 0.5);
+
+  //openIPSL defualts for testing:
+//  pss.Kw = ((PSS_Real) 2.7);
+//  pss.T1 = ((PSS_Real) 1);
+//  pss.T2 = ((PSS_Real) 1);
+//  pss.T3 = ((PSS_Real) 1);
+//  pss.T4 = ((PSS_Real) 1);
+//  pss.Tw = ((PSS_Real) 2.0);
+
+  // RECAL/REINIT
   PSS_Recalibrate(&pss);
   error_signals |= pss.ErrorSignals;
   PSS_Reinitialize(&pss);

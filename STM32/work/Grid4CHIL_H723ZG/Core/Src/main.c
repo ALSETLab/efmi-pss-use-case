@@ -35,7 +35,7 @@
 
 /* Define shortcut names for unique, hash-based eFMU API: */
 #define MODEL_HASH \
-  Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
+  Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
 typedef CONCAT(BlockState_, MODEL_HASH) \
   ModelGrid;
 typedef CONCAT(SPE_Real_, MODEL_HASH) \
@@ -122,6 +122,7 @@ int main(void)
   MX_ADC1_Init();
   MX_DAC1_Init();
   MX_TIM2_Init();
+
   /* USER CODE BEGIN 2 */
   /* Initialize error signaling: */
   Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
@@ -176,83 +177,83 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	    /*
-	      Conduct sampling if the sampling timer ticked:
-	    */
-	    if (pending_samplings > ((uint8_t) 0))
-	    {
-	      /* Always reset the error signals: */
-	      error_signals = Grid_NONE_ERRORSIGNAL;
+    /*
+      Conduct sampling if the sampling timer ticked:
+    */
+    if (pending_samplings > ((uint8_t) 0))
+    {
+      /* Always reset the error signals: */
+      error_signals = Grid_NONE_ERRORSIGNAL;
 
-	      /* Provide computation time feedback for external profiling: */
-	      HAL_GPIO_WritePin(calcTime_D2_GPIO_Port, calcTime_D2_Pin, GPIO_PIN_SET);
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calcTime_D2_GPIO_Port, calcTime_D2_Pin, GPIO_PIN_SET);
 
-	      /* Digital input processing: */
-	      grid.fault = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
-	    	BlueButtonB1_GPIO_Port,
-			BlueButtonB1_Pin));
+      /* Digital input processing: */
+      grid.fault = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
+    	BlueButtonB1_GPIO_Port,
+	BlueButtonB1_Pin));
 
-	      /* Analog input processing: */
-	      HAL_ADC_Start(&hadc1);
-	      if (HAL_OK == HAL_ADC_PollForConversion(&hadc1, POLL_TIMEOUT))
-	      {
-	        const uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
-	        grid.vf = (((Grid_Real) adc_raw) * ADC_TO_VOLTS) - VF_OFFSET;
-	      }
-	      else
-	      {
-	        error_signals |= Grid_UNSPECIFIED_ERRORSIGNAL;
-	      }
-	      HAL_ADC_Stop(&hadc1);
+      /* Analog input processing: */
+      HAL_ADC_Start(&hadc1);
+      if (HAL_OK == HAL_ADC_PollForConversion(&hadc1, POLL_TIMEOUT))
+      {
+        const uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
+        grid.vf = (((Grid_Real) adc_raw) * ADC_TO_VOLTS) - VF_OFFSET;
+      }
+      else
+      {
+        error_signals |= Grid_UNSPECIFIED_ERRORSIGNAL;
+      }
+      HAL_ADC_Stop(&hadc1);
 
-	      /* Compute sampling step: */
-	      Grid_DoStep(&grid);
-	      error_signals |= grid.ErrorSignals;
+      /* Compute sampling step: */
+      Grid_DoStep(&grid);
+      error_signals |= grid.ErrorSignals;
 
-	      /* Output processing (scaling, clamping, converting volt to AC): */
-	      Grid_Real dac_w_val = grid.w * VOLTS_TO_DAC;
-	      if (DAC_MIN > dac_w_val)
-	      {
-	        dac_w_val = DAC_MIN;
-	      }
-	      else if (DAC_MAX < dac_w_val)
-	      {
-	        dac_w_val = DAC_MAX;
-	      }
-	      HAL_DAC_SetValue(
-	        &hdac1,
-	        DAC_CHANNEL_2,
-	        DAC_ALIGN_12B_R,
-	        ((uint32_t) dac_w_val));
+      /* Output processing (scaling, clamping, converting volt to AC): */
+      Grid_Real dac_w_val = grid.w * VOLTS_TO_DAC;
+      if (DAC_MIN > dac_w_val)
+      {
+        dac_w_val = DAC_MIN;
+      }
+      else if (DAC_MAX < dac_w_val)
+      {
+        dac_w_val = DAC_MAX;
+      }
+      HAL_DAC_SetValue(
+        &hdac1,
+        DAC_CHANNEL_2,
+        DAC_ALIGN_12B_R,
+        ((uint32_t) dac_w_val));
 
-	      /* Provide computation time feedback for external profiling: */
-	      HAL_GPIO_WritePin(calcTime_D2_GPIO_Port, calcTime_D2_Pin, GPIO_PIN_RESET);
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calcTime_D2_GPIO_Port, calcTime_D2_Pin, GPIO_PIN_RESET);
 
-	      --pending_samplings;
-	    }
+      --pending_samplings;
+    }
 
-	    /*
-	      Check if any errors are signaled from the last sampling, or an overrun
-	      occurred. If so, set the error LED on:
-	    */
-	    if ((Grid_NONE_ERRORSIGNAL != error_signals)
-	      || (pending_samplings > ((uint8_t) 1)))
-	    {
-	      error_timestamp = HAL_GetTick();
-	      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_SET);
-	    }
+    /*
+      Check if any errors are signaled from the last sampling, or an overrun
+      occurred. If so, set the error LED on:
+    */
+    if ((Grid_NONE_ERRORSIGNAL != error_signals)
+      || (pending_samplings > ((uint8_t) 1)))
+    {
+      error_timestamp = HAL_GetTick();
+      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_SET);
+    }
 
-	    /*
-	      If the error LED is currently on due to a past error, check if 30000 ms
-	      have passed since the last error occurred. If so, turn off the LED:
-	    */
-	    if ((((uint32_t) 0) != error_timestamp)
-	      && (((uint32_t) 30000) < (HAL_GetTick() - error_timestamp)))
-	    {
-	      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_RESET);
-	      error_timestamp = ((uint32_t) 0);
-	    }
-	  }
+    /*
+      If the error LED is currently on due to a past error, check if 30000 ms
+      have passed since the last error occurred. If so, turn off the LED:
+    */
+    if ((((uint32_t) 0) != error_timestamp)
+      && (((uint32_t) 30000) < (HAL_GetTick() - error_timestamp)))
+    {
+      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_RESET);
+      error_timestamp = ((uint32_t) 0);
+    }
+  }
   /* USER CODE END 3 */
 }
 

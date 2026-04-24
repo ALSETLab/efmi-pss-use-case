@@ -61,8 +61,8 @@ all: main-build
 main-build: Grid4CHIL_G474RE.elf secondary-outputs
 
 # Tool invocations
-Grid4CHIL_G474RE.elf Grid4CHIL_G474RE.map: $(OBJS) $(USER_OBJS) C:\Users\jpizz\Documents\eFMUDev\efmi-pss-use-case\STM32\work\Grid4CHIL_G474RE\STM32G474RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Grid4CHIL_G474RE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\jpizz\Documents\eFMUDev\efmi-pss-use-case\STM32\work\Grid4CHIL_G474RE\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Grid4CHIL_G474RE.map" -Wl,--gc-sections -Wl,--verbose -nodefaultlibs -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Grid4CHIL_G474RE.elf Grid4CHIL_G474RE.map: $(OBJS) $(USER_OBJS) E:\modelica-libraries\efmi-pss-use-case\STM32\work\Grid4CHIL_G474RE\STM32G474RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Grid4CHIL_G474RE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\modelica-libraries\efmi-pss-use-case\STM32\work\Grid4CHIL_G474RE\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Grid4CHIL_G474RE.map" -Wl,--gc-sections -Wl,--verbose -nodefaultlibs -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -35,7 +35,7 @@
 
 /* Define shortcut names for unique, hash-based eFMU API: */
 #define MODEL_HASH \
-  Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+  Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
 typedef CONCAT(BlockState_, MODEL_HASH) \
   ModelGrid;
 typedef CONCAT(SPE_Real_, MODEL_HASH) \

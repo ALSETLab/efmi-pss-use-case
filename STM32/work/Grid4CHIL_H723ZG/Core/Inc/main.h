@@ -63,8 +63,6 @@ void Error_Handler(void);
 #define vf_A0_GPIO_Port GPIOA
 #define wOut_D13_Pin GPIO_PIN_5
 #define wOut_D13_GPIO_Port GPIOA
-#define calcTime_D2_Pin GPIO_PIN_15
-#define calcTime_D2_GPIO_Port GPIOF
 #define stepSize_D3_Pin GPIO_PIN_13
 #define stepSize_D3_GPIO_Port GPIOE
 #define RedLD3_Pin GPIO_PIN_14
@@ -73,6 +71,10 @@ void Error_Handler(void);
 #define SWDIO_GPIO_Port GPIOA
 #define SWCLK_Pin GPIO_PIN_14
 #define SWCLK_GPIO_Port GPIOA
+#define calcTime_D2_Pin GPIO_PIN_14
+#define calcTime_D2_GPIO_Port GPIOG
+#define YellowLD2_Pin GPIO_PIN_1
+#define YellowLD2_GPIO_Port GPIOE
 
 /* USER CODE BEGIN Private defines */
 

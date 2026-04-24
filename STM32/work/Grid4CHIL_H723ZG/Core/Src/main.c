@@ -122,7 +122,6 @@ int main(void)
   MX_ADC1_Init();
   MX_DAC1_Init();
   MX_TIM2_Init();
-
   /* USER CODE BEGIN 2 */
   /* Initialize error signaling: */
   Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;

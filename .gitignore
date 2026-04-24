@@ -1,9 +1,12 @@
-# Ignore Modelica backup files
+# Dymola (ignore Modelica backup files):
 *~
 *.bak
 *.bak-mo
 
-# Ignore content of Modelica work directory, except generated eFMUs, SiL tests and FMUs:
+# Dymola (ignore auto-generated script used to load artifacts):
+Shortcuts/load_artifacts.mos
+
+# Dymola (ignore content of Modelica work directory, except generated eFMUs, SiL tests and FMUs):
 Modelica/work/*
 
 !Modelica/work/PSSTypeIIParam
@@ -38,8 +41,9 @@ Modelica/work/*
 !Modelica/work/H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_cb4a8a449b4ada864625ee5a4355578a3aaf08ed.mo
 !Modelica/work/H96e4298bd9675fbbcb46b0c1f68b039a5627ebc5_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c.mo
 
-# Ignore individual CubeIDE settings:
+# STM32CubeIDE (ignore individual IDE settings):
 STM32/work/*/.settings/
 
-# Ignore auto-generated script used to load artifacts:
-Shortcuts/load_artifacts.mos
+# STM32CubeIDE (ignore generated binaries):
+STM32/work/*/Debug/**
+STM32/work/*/Release/**

@@ -5,8 +5,8 @@
 clc; clear all; close all;
 
 %% Load the CSV Data (Full Closed-Loop System)
-meas_data = readmatrix('measured_full_system_network.csv');
-sim_data  = readmatrix('simulated_full_system_dymola.csv');
+meas_data = readmatrix('measured_closed_loop_network.csv');
+sim_data  = readmatrix('simulated_closed_loop_dymola.csv');
 
 %poles and zeros chosen to make it accurate enough without an ugly equation
 num_poles = 5; 

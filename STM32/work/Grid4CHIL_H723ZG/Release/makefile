@@ -61,8 +61,8 @@ all: main-build
 main-build: Grid4CHIL_H723ZG.elf secondary-outputs
 
 # Tool invocations
-Grid4CHIL_H723ZG.elf Grid4CHIL_H723ZG.map: $(OBJS) $(USER_OBJS) E:\modelica-libraries\efmi-pss-use-case\STM32\work\Grid4CHIL_H723ZG\STM32H723ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Grid4CHIL_H723ZG.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"E:\modelica-libraries\efmi-pss-use-case\STM32\work\Grid4CHIL_H723ZG\STM32H723ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Grid4CHIL_H723ZG.map" -Wl,--gc-sections -Wl,--verbose -nodefaultlibs -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Grid4CHIL_H723ZG.elf Grid4CHIL_H723ZG.map: $(OBJS) $(USER_OBJS) C:\dev\efmi-pss-use-case\STM32\work\Grid4CHIL_H723ZG\STM32H723ZGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Grid4CHIL_H723ZG.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\dev\efmi-pss-use-case\STM32\work\Grid4CHIL_H723ZG\STM32H723ZGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Grid4CHIL_H723ZG.map" -Wl,--gc-sections -Wl,--verbose -nodefaultlibs -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

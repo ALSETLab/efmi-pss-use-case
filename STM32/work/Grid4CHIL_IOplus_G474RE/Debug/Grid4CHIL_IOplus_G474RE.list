@@ -2114,7 +2114,7 @@ int main(void)
   const Grid_Real ADC_TO_VOLTS =
  80013c0:	4baf      	ldr	r3, [pc, #700]	@ (8001680 <main+0x300>)
  80013c2:	f8c7 3270 	str.w	r3, [r7, #624]	@ 0x270
-    ((Grid_Real) 3.3) / ((Grid_Real) 4095.0);
+    ((Grid_Real) 3.3) / ((Grid_Real) 4095.0 /* 12-bit ADC */);
   const Grid_Real VOLTS_TO_DAC =
  80013c6:	4baf      	ldr	r3, [pc, #700]	@ (8001684 <main+0x304>)
  80013c8:	f8c7 326c 	str.w	r3, [r7, #620]	@ 0x26c

@@ -132,7 +132,7 @@ int main(void)
   const uint32_t POLL_TIMEOUT =
     ((uint32_t) 1); /* in ms */
   const PSS_Real ADC_TO_VOLTS =
-    ((PSS_Real) 3.3) / ((PSS_Real) 4095.0);
+    ((PSS_Real) 3.3) / ((PSS_Real) 4095.0 /* 12-bit ADC */);
   const PSS_Real VOLTS_TO_DAC =
     ((PSS_Real) 4095.0) / ((PSS_Real) 3.3);
   const PSS_Real DAC_MAX =

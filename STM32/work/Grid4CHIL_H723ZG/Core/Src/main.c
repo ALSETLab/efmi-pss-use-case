@@ -125,13 +125,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
   /* Initialize error signaling: */
   Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
-  uint32_t error_timestamp = ((uint32_t) 0);
+  uint32_t error_signal_timestamp = ((uint32_t) 0);
+  uint32_t error_overrun_timestamp = ((uint32_t) 0);
 
   /* Pre-compute constants: */
   const uint32_t POLL_TIMEOUT =
    ((uint32_t) 1); /* in ms */
   const Grid_Real ADC_TO_VOLTS =
-    ((Grid_Real) 3.3) / ((Grid_Real) 65535.0); //The H723 has a 16-bit ADC, NOT a 12-bit like the other boards
+    ((Grid_Real) 3.3) / ((Grid_Real) 65535.0 /* 16-bit ADC */);
   const Grid_Real VOLTS_TO_DAC =
     ((Grid_Real) 4095.0) / ((Grid_Real) 3.3);
   const Grid_Real DAC_MAX =
@@ -233,24 +234,33 @@ int main(void)
 
     /*
       Check if any errors are signaled from the last sampling, or an overrun
-      occurred. If so, set the error LED on:
+      occurred; if so, set the error LED on. Also check if enough time has
+      passed since the last error occurred; if so, turn off the LED:
     */
-    if ((Grid_NONE_ERRORSIGNAL != error_signals)
-      || (pending_samplings > ((uint8_t) 1)))
+    const uint8_t tick = HAL_GetTick();
+
+    if (Grid_NONE_ERRORSIGNAL != error_signals)
     {
-      error_timestamp = HAL_GetTick();
+      error_signal_timestamp = tick;
       HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_SET);
     }
+    if (pending_samplings > ((uint8_t) 1))
+    {
+      error_overrun_timestamp = tick;
+      HAL_GPIO_WritePin(YellowLD2_GPIO_Port, YellowLD2_Pin, GPIO_PIN_SET);
+    }
 
-    /*
-      If the error LED is currently on due to a past error, check if 30000 ms
-      have passed since the last error occurred. If so, turn off the LED:
-    */
-    if ((((uint32_t) 0) != error_timestamp)
-      && (((uint32_t) 30000) < (HAL_GetTick() - error_timestamp)))
+    if ((((uint32_t) 0) != error_signal_timestamp)
+      && (((uint32_t) 30000) < (tick - error_signal_timestamp)))
     {
       HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_RESET);
-      error_timestamp = ((uint32_t) 0);
+      error_signal_timestamp = ((uint32_t) 0);
+    }
+    if ((((uint32_t) 0) != error_overrun_timestamp)
+      && (((uint32_t) 5000) < (tick - error_overrun_timestamp)))
+    {
+      HAL_GPIO_WritePin(YellowLD2_GPIO_Port, YellowLD2_Pin, GPIO_PIN_RESET);
+      error_overrun_timestamp = ((uint32_t) 0);
     }
   }
   /* USER CODE END 3 */

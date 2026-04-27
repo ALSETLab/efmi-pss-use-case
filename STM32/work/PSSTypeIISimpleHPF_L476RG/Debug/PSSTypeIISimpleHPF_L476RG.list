@@ -37,15 +37,15 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00029a99  00000000  00000000  0002871f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001a333  00000000  00000000  000521b8  2**0
+ 17 .debug_line   0001a1fa  00000000  00000000  000521b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    001123f2  00000000  00000000  0006c4eb  2**0
+ 18 .debug_str    0011241f  00000000  00000000  0006c3b2  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0017e8dd  2**0
+ 19 .comment      00000043  00000000  00000000  0017e7d1  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000066a0  00000000  00000000  0017e920  2**2
+ 20 .debug_frame  000066a0  00000000  00000000  0017e814  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 21 .debug_line_str 0000006c  00000000  00000000  00184fc0  2**0
+ 21 .debug_line_str 0000007b  00000000  00000000  00184eb4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1691,7 +1691,7 @@ int main(void)
   const PSS_Real ADC_TO_VOLTS =
  80010e2:	4bb7      	ldr	r3, [pc, #732]	@ (80013c0 <main+0x314>)
  80010e4:	f8c7 3114 	str.w	r3, [r7, #276]	@ 0x114
-    ((PSS_Real) 3.3) / ((PSS_Real) 4095.0);
+    ((PSS_Real) 3.3) / ((PSS_Real) 4095.0 /* 12-bit ADC */);
   const PSS_Real VOLTS_TO_DAC =
  80010e8:	4bb6      	ldr	r3, [pc, #728]	@ (80013c4 <main+0x318>)
  80010ea:	f8c7 3110 	str.w	r3, [r7, #272]	@ 0x110
@@ -1727,6 +1727,7 @@ int main(void)
  8001124:	4313      	orrs	r3, r2
  8001126:	f8c7 3124 	str.w	r3, [r7, #292]	@ 0x124
 
+
   // TUNABLE PARAMETERS
   pss.Kw = ((PSS_Real) 7.04);
  800112a:	f507 7394 	add.w	r3, r7, #296	@ 0x128
@@ -1758,9 +1759,9 @@ int main(void)
  800116a:	f5a3 7394 	sub.w	r3, r3, #296	@ 0x128
  800116e:	f04f 4280 	mov.w	r2, #1073741824	@ 0x40000000
  8001172:	61da      	str	r2, [r3, #28]
-//  pss.T3 = ((PSS_Real) 3.24178742588019986e-1);
 //  pss.T4 = ((PSS_Real) 5.56202789619913984e-2);
 //  pss.Tw = ((PSS_Real) 0.25);
+//*/
 
   // RECAL/REINIT
   PSS_Recalibrate(&pss);

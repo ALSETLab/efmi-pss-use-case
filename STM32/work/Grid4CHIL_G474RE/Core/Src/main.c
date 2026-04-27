@@ -131,7 +131,7 @@ int main(void)
   const uint32_t POLL_TIMEOUT =
    ((uint32_t) 1); /* in ms */
   const Grid_Real ADC_TO_VOLTS =
-    ((Grid_Real) 3.3) / ((Grid_Real) 4095.0);
+    ((Grid_Real) 3.3) / ((Grid_Real) 4095.0 /* 12-bit ADC */);
   const Grid_Real VOLTS_TO_DAC =
     ((Grid_Real) 4095.0) / ((Grid_Real) 3.3);
   const Grid_Real DAC_MAX =

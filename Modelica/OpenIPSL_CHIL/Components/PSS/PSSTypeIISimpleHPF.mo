@@ -9,14 +9,14 @@ model PSSTypeIISimpleHPF
   parameter Real vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
-  Blocks.WashoutFilter.HPFSimple.HighPassSimple dLHPFreplacement(Kw=Kw, Tw=Tw)
+  Blocks.WashoutFilter.HPFSimple.HighPassSimple dLHPF(Kw=Kw, Tw=Tw)
     "HP Filter replacing the derivative lag."
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
 
 equation
-  connect(dLHPFreplacement.y, lpf.u)
+  connect(dLHPF.y, lpf.u)
     annotation (Line(points={{-58,0},{-48,0}}, color={0,0,127}));
-  connect(scale.y, dLHPFreplacement.u)
+  connect(scale.y, dLHPF.u)
     annotation (Line(points={{-85.6,0},{-82,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},

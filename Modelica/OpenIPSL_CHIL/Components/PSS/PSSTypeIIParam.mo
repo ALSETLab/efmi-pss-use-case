@@ -47,27 +47,7 @@ equation
     annotation (Line(points={{-120,0},{-94.8,0}}, color={0,0,127}));
   connect(derivativeLag.u, scale.y)
     annotation (Line(points={{-82,0},{-85.6,0}}, color={0,0,127}));
-  annotation (Icon(graphics={
-          Rectangle(
-          extent={{-100,100},{100,-100}},
-          lineColor={28,108,200},
-          fillColor={85,170,255},
-          fillPattern=FillPattern.Solid),
-                                Rectangle(
-        extent={{-100,-100},{100,100}},
-        lineColor={0,0,127},
-        fillColor={255,255,255},
-        fillPattern=FillPattern.Solid),
-                             Text(
-          extent={{-100,100},{100,-100}},
-          textColor={0,140,72},
-          textString="PSS for\neFMI export"),
-                                Rectangle(
-        extent={{-100,-100},{100,100}},
-        lineColor={0,0,127},
-        fillColor={255,255,255},
-        fillPattern=FillPattern.Solid),
-                             Rectangle(
+  annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,140,72},
           lineThickness=1,
@@ -75,13 +55,13 @@ equation
           fillPattern=FillPattern.Solid,
           radius=0),
         Text(
-          extent={{-128,128},{72,-72}},
+          extent={{-132,130},{68,-70}},
           textColor={0,140,72},
           fontName="Geist",
           textStyle={TextStyle.Bold,TextStyle.Italic},
           textString="D"),
         Text(
-          extent={{-46,80},{154,-120}},
+          extent={{-60,64},{140,-136}},
           textColor={0,140,72},
           fontName="Geist",
           textStyle={TextStyle.Bold,TextStyle.Italic},

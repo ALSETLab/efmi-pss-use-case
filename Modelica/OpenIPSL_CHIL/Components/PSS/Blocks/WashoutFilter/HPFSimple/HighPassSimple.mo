@@ -55,14 +55,15 @@ annotation (
         fillPattern=FillPattern.Solid,
         points={{-84,90},{-76,68},{-92,68},{-84,90}},
           lineThickness=1),
-      Line(origin={-26.667,-6.667}, points={{83.333,34.667},{-24.667,34.667},{
+      Line(origin={-20.667,-4.667}, points={{83.333,34.667},{-24.667,34.667},{
               -42.667,-71.333}},                                                                  color={0,0,255},   smooth = Smooth.Bezier,
           thickness=1),
         Rectangle(
           extent={{-34,16},{64,-76}},
           lineColor={0,0,255},
           fillColor={210,252,168},
-          fillPattern=FillPattern.Backward),
+          fillPattern=FillPattern.Backward,
+          lineThickness=0),
       Polygon(lineColor={0,0,255},
         fillColor={192,192,192},
         fillPattern=FillPattern.Solid,
@@ -75,7 +76,7 @@ annotation (
           textStyle={TextStyle.Bold,TextStyle.Italic},
           textString="H"),
         Text(
-          extent={{-26,46},{74,-94}},
+          extent={{-12,120},{88,-20}},
           textColor={0,0,255},
           fontName="Geist",
           textStyle={TextStyle.Bold,TextStyle.Italic},

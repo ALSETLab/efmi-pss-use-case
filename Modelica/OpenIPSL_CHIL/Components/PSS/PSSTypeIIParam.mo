@@ -37,16 +37,16 @@ model PSSTypeIIParam
     x_start=0)
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   Modelica.Blocks.Math.Gain scale(k=1/wscale)
-    annotation (Placement(transformation(extent={{-94,-4},{-86,4}})));
+    annotation (Placement(transformation(extent={{-98,-6},{-86,6}})));
 equation
   connect(imLeadLag.u, lpf.y)
     annotation (Line(points={{-12,0},{-24,0}}, color={0,0,127}));
   connect(derivativeLag.y, lpf.u)
     annotation (Line(points={{-59,0},{-48,0}}, color={0,0,127}));
   connect(vSI, scale.u)
-    annotation (Line(points={{-120,0},{-94.8,0}}, color={0,0,127}));
+    annotation (Line(points={{-120,0},{-99.2,0}}, color={0,0,127}));
   connect(derivativeLag.u, scale.y)
-    annotation (Line(points={{-82,0},{-85.6,0}}, color={0,0,127}));
+    annotation (Line(points={{-82,0},{-85.4,0}}, color={0,0,127}));
   annotation (Icon(graphics={Rectangle(
           extent={{-100,100},{100,-100}},
           lineColor={0,140,72},

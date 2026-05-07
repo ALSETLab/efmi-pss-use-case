@@ -1,5 +1,5 @@
-within OpenIPSL_CHIL.Examples.CHIL_Configuration;
-model ReferenceSetup_Clocked "Clocked variant of RefSim."
+within OpenIPSL_CHIL.UnderDevelopment.CHIL_Configuration_Grid4CHIL_IOpLUS;
+model ReferenceSetup_Clocked "Clocked variant of ReferenceSetup."
   extends Modelica.Icons.Example;
   RTS.CHIL.Grid4CHIL_IOplus G4CHIL_IOplus(G1(avr(K0=30)))
     annotation (Placement(transformation(extent={{100,-20},{140,20}})));

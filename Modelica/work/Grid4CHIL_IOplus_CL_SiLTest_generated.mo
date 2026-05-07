@@ -1,4 +1,5 @@
 within ;
+
 package
   Grid4CHIL_IOplus_CL_SiLTest_generated
   "Test scenarios of original experiment
@@ -204,7 +205,7 @@ package
     extends .DymolaEmbedded.BuildUtilities.BehavioralModel.Experiment(
         redeclare final package eFMU_configuration = configuration);
 
-    .OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked
+    .OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL_IOplus.ReferenceSetup_Clocked
       experiment
       annotation (Placement(transformation(extent={{-20,60},{20,100}})));
 
@@ -472,7 +473,7 @@ package
           <p>
           Reference experiment derived from – and used to generate eBlock
           reference results from, or regression-test – the original experiment
-          <a href=\"modelica://OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked\">OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked</a>.
+          <a href=\"modelica://OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL_IOplus.ReferenceSetup_Clocked\">OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked</a>.
           </p>
           </html>"),
       Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
@@ -506,7 +507,7 @@ package
           <p>
           Reference experiment derived from – and used to generate eBlock
           reference results from, or regression-test – the original experiment
-          <a href=\"modelica://OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked\">OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked</a>.
+          <a href=\"modelica://OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL_IOplus.ReferenceSetup_Clocked\">OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked</a>.
           </p>
           </html>"),
       Icon(coordinateSystem(extent={{-100,-100},{100,100}})),
@@ -987,7 +988,7 @@ package
         <html>
         <p>
         eFMU experiment package bundling test scenarios extracted from
-        <a href=\"modelica://OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked\">OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked</a>
+        <a href=\"modelica://OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL_IOplus.ReferenceSetup_Clocked\">OpenIPSL_CHIL.Examples.CHIL_Configuration.ReferenceSetup_Clocked</a>
         (original experiment), with each component of type
         <a href=\"modelica://OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL_IOplus\">OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL_IOplus</a>
         (eBlock) defining one test scenario according to eFMU generation

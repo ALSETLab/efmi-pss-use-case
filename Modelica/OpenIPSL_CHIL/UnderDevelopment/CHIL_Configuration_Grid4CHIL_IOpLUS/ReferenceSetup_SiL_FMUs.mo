@@ -1,4 +1,4 @@
-within OpenIPSL_CHIL.Examples.CHIL_Configuration;
+within OpenIPSL_CHIL.UnderDevelopment.CHIL_Configuration_Grid4CHIL_IOpLUS;
 model ReferenceSetup_SiL_FMUs
   "Model demonstrating how the PSS is to be interfaced to the plant using source code FMUs exported from eFMU production code."
   extends Modelica.Icons.Example;

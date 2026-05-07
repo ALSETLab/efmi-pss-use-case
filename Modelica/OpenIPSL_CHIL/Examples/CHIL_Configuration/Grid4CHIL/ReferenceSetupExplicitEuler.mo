@@ -1,5 +1,5 @@
 within OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL;
-model ReferenceSetup
+model ReferenceSetupExplicitEuler
   "Model demonstrating how the controller is to be interfaced with the plant sub-system. Uses the models from where the eFMUs are generated."
   extends Modelica.Icons.Example;
   RTS.CHIL.Grid4CHIL G4CHIL(G1(avr(K0=30)))
@@ -41,7 +41,11 @@ equation
           fontName="Geist",
           textStyle={TextStyle.Bold,TextStyle.Italic},
           textString="Plant")}),
-    experiment(
+experiment(
       StopTime=15,
-      Interval=0.0002));
-end ReferenceSetup;
+      Interval=0.0002,
+      __Dymola_fixedstepsize=0.0002,
+      __Dymola_Algorithm="Dassl"), __Dymola_experimentFlags(Advanced(
+          Translation(InlineMethod=1, InlineOrder=2), Simulation(
+            InlineFixedStep=0.0002))));
+end ReferenceSetupExplicitEuler;

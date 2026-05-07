@@ -32,7 +32,7 @@ model ReferenceClockedPSSContdPlant
     Placement(visible = true, transformation(origin = {80, 0}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
   OpenIPSL.Electrical.Events.PwFault pwFault(R = 0, X = 0.01*100/2220,
     t1=1.5,
-    t2=1.57)                                                                                annotation(
+    t2=1.55)                                                                                annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, -60}, {40, -40}}, rotation = 0)));
 equation
   connect(G1.pwPin, B1.p) annotation(
@@ -56,6 +56,7 @@ equation
   annotation(
 experiment(
       StopTime=15,
-      __Dymola_NumberOfIntervals=5000,
+      Interval=0.0002,
+      __Dymola_fixedstepsize=0.0002,
       __Dymola_Algorithm="Dassl"));
 end ReferenceClockedPSSContdPlant;

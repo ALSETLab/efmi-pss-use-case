@@ -1,0 +1,32 @@
+Log-file of program ./dymosim
+(generated: Sun May 10 15:03:44 2026)
+
+dymosim started
+... "OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL.ReferenceSetup_ExpEuler" simulating
+... "dsin.txt" loading (dymosim input file)
+... "dsres.mat" creating (simulation result file)
+
+Integration started at T = 0 using INLINE integration method
+Explicit Euler, optimized for step size 0.0002
+
+Integration terminated successfully at T = 15
+   CPU-time for integration                : 0.255 seconds
+   CPU-time for one grid interval          : 0.51 milliseconds
+   CPU-time for initialization             : 0.001 seconds
+   Number of result points                 : 506
+   Number of grid points                   : 501
+   Number of accepted steps                : 75000
+   Number of f-evaluations (dynamics)      : 75000
+   Number of crossing function evaluations : 75003
+   Number of Jacobian-evaluations          : 0
+   Number of model time events             : 0
+   Number of input time events             : 0
+   Number of state events                  : 2
+   Number of step events                   : 0
+   Minimum integration stepsize            : 0.0002
+   Maximum integration stepsize            : 0.0002
+   Maximum integration order               : 1
+Calling terminal section
+... "dsfinal.txt" creating (final states)
+
+SUCCESSFUL simulation of OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL.ReferenceSetup_ExpEuler

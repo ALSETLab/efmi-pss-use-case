@@ -1,0 +1,34 @@
+Log-file of program ./dymosim
+(generated: Sun May 10 15:02:43 2026)
+
+dymosim started
+... "OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL.RefSim_ClockedPSS_CT_Plant" simulating
+... "dsin.txt" loading (dymosim input file)
+... "dsres.mat" creating (simulation result file)
+
+Integration started at T = 0 using integration method DASSL
+(DAE multi-step solver (dassl/dasslrt of Petzold modified by Dassault Systemes))
+
+Integration terminated successfully at T = 15
+  WARNING: You have many time events. This is probably due to fast sampling.
+  Enable logging of event in Simulation/Setup/Debug/Events during simulation
+   CPU-time for integration                : 17.5 seconds
+   CPU-time for one grid interval          : 35 milliseconds
+   CPU-time for initialization             : 0.001 seconds
+   Number of result points                 : 150001
+   Number of grid points                   : 501
+   Number of accepted steps                : 749982
+   Number of f-evaluations (dynamics)      : 749982
+   Number of crossing function evaluations : 824984
+   Number of Jacobian-evaluations          : 674984
+   Number of model time events             : 75000
+   Number of input time events             : 0
+   Number of state events                  : 0
+   Number of step events                   : 0
+   Minimum integration stepsize            : 2e-07
+   Maximum integration stepsize            : 0.000391
+   Maximum integration order               : 2
+Calling terminal section
+... "dsfinal.txt" creating (final states)
+
+SUCCESSFUL simulation of OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL.RefSim_ClockedPSS_CT_Plant

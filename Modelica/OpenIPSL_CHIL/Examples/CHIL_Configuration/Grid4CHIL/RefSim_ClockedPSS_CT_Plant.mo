@@ -57,6 +57,5 @@ equation
 experiment(
       StopTime=15,
       Interval=0.0002,
-      __Dymola_fixedstepsize=0.0002,
       __Dymola_Algorithm="Dassl"));
 end RefSim_ClockedPSS_CT_Plant;

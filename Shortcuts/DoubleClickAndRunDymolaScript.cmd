@@ -65,6 +65,6 @@ rem 4. Pass repo root to Dymola startup script via environment variable [cite: 8
 set "EFMI_PSS_ROOT=%repoRootFwd%"
 
 rem 5. Launch Dymola with -nosplash and the script path [cite: 6]
-start "" "%dymolaPath%" -nosplash "%mosScript%"
+start "" /high "%dymolaPath%" -nosplash "%mosScript%"
 
 endlocal

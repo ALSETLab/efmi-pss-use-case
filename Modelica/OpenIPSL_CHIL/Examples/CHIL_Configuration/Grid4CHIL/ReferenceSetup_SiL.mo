@@ -8,7 +8,7 @@ model ReferenceSetup_SiL
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={60,-46})));
+        origin={60,-32})));
   Modelica.Clocked.RealSignals.Sampler.SampleClocked samplerVf
     annotation (Placement(transformation(extent={{50,-10},{70,10}})));
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock_pss(
@@ -17,7 +17,7 @@ model ReferenceSetup_SiL
     solverMethod="ExplicitEuler") annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
-        origin={-130,-46})));
+        origin={-130,-32})));
   Modelica.Clocked.RealSignals.Sampler.SampleClocked sampler
     annotation (Placement(transformation(extent={{-136,-6},{-124,6}})));
   Modelica.Clocked.RealSignals.Sampler.Hold holdPSSout(y_start=pss.vSI_start)
@@ -30,12 +30,12 @@ model ReferenceSetup_SiL
     annotation (Placement(transformation(extent={{92,-22},{136,22}})));
 equation
   connect(periodicClock_G4CHIL.y, samplerVf.clock) annotation (Line(
-      points={{60,-35},{60,-12}},
+      points={{60,-21},{60,-12}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
   connect(sampler.clock, periodicClock_pss.y) annotation (Line(
-      points={{-130,-7.2},{-130,-35}},
+      points={{-130,-7.2},{-130,-21}},
       color={175,175,175},
       pattern=LinePattern.Dot,
       thickness=0.5));
@@ -51,6 +51,7 @@ equation
     annotation (Line(points={{87.6,0},{71,0}}, color={0,0,127}));
   connect(G4CHIL.w, hold_wscaled.u) annotation (Line(points={{138.2,17.6},{144,17.6},
           {144,16},{150.8,16}}, color={0,0,127}));
-  connect(faultTimerLogic.y, G4CHIL.fault) annotation (Line(points={{114,-71},{114,
-          -48},{114,-48},{114,-26.4}}, color={255,0,255}));
+  connect(faultTimerLogic.y, G4CHIL.fault) annotation (Line(points={{114,-59},{
+          114,-48},{114,-48},{114,-26.4}},
+                                       color={255,0,255}));
 end ReferenceSetup_SiL;

@@ -1,7 +1,7 @@
 within OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL;
-model ReferenceClockedPSSContdPlantExplicitEuler
+model RefSim_ClockedPSS_CT_Plant_ExpEuler
   "Clocked version of GenPSSReDesign with default PSS parameters, clocked PSS and continious-time plant."
-  extends ReferenceClockedPSSContdPlant;
+  extends RefSim_ClockedPSS_CT_Plant;
   annotation (experiment(
       StopTime=15,
       Interval=0.0002,
@@ -9,4 +9,4 @@ model ReferenceClockedPSSContdPlantExplicitEuler
       __Dymola_Algorithm="Euler"), __Dymola_experimentFlags(Advanced(
           Translation(InlineMethod=1, InlineOrder=2), Simulation(
             InlineFixedStep=0.0002))));
-end ReferenceClockedPSSContdPlantExplicitEuler;
+end RefSim_ClockedPSS_CT_Plant_ExpEuler;

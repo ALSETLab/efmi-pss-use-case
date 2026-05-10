@@ -1,0 +1,61 @@
+within OpenIPSL_CHIL.UnderDevelopment.Figures;
+model RefSim_ClockedPSS_CT_Plant
+  "Clocked version of GenPSSReDesign with default PSS parameters, clocked PSS and continious-time plant."
+  extends Modelica.Icons.Example;
+  OpenIPSL.Electrical.Buses.Bus B1 annotation(
+    Placement(visible = true, transformation(origin = {-60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  OpenIPSL.Electrical.Buses.Bus B2 annotation(
+    Placement(visible = true, transformation(origin = {0, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  OpenIPSL.Electrical.Buses.Bus B3 annotation(
+    Placement(visible = true, transformation(origin = {60, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  Generator.PSSTypeIIHPFilterSimple.GenPSSTypeIISimpleHPF_Clocked
+                                    G1(
+    P_0=1997999999.9936,
+    Q_0=967924969.90658,
+    angle_0=0.49467717698916,
+    genAVRIOReDesign(K0=30))    annotation (Placement(visible=true,
+        transformation(
+        origin={-80,0},
+        extent={{-10,-10},{10,10}},
+        rotation=0)));
+  OpenIPSL.Electrical.Branches.PSAT.TwoWindingTransformer transformer(Sn(displayUnit = "V.A") = 2220000000, V_b = 400000, Vn = 400000, rT = 0, xT = 0.15) annotation(
+    Placement(visible = true, transformation(origin = {12, 0}, extent = {{-50, -10}, {-30, 10}}, rotation = 0)));
+  OpenIPSL.Electrical.Branches.PwLine pwLine1(B = 0, G = 0, R = 0,
+    S_b=100000000,                                                            X = 0.5*100/2220) annotation(
+    Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, 10}, {40, 30}}, rotation = 0)));
+  OpenIPSL.Electrical.Branches.PwLine pwLine2(B = 0, G = 0, R = 0,
+    S_b=100000000,                                                            X = 0.93*100/2220) annotation(
+    Placement(visible = true, transformation(origin = {0, 0}, extent = {{20, -30}, {40, -10}}, rotation = 0)));
+  OpenIPSL.Electrical.Buses.InfiniteBus infiniteBus(P_0 = -1998000000, Q_0 = 87066000, angle_0 = 0, v_0 = 0.90081) annotation(
+    Placement(visible = true, transformation(origin = {80, 0}, extent = {{-10, 10}, {10, -10}}, rotation = 180)));
+  OpenIPSL.Electrical.Events.PwFault pwFault(R = 0, X = 0.01*100/2220,
+    t1=1.5,
+    t2=1.55)                                                                                annotation(
+    Placement(visible = true, transformation(origin={-50,6},  extent={{-16,-48},
+            {-32,-32}},                                                                        rotation=90)));
+equation
+  connect(G1.pwPin, B1.p) annotation(
+    Line(points = {{-69, 0}, {-60, 0}}, color = {0, 0, 255}));
+  connect(B1.p, transformer.p) annotation(
+    Line(points = {{-60, 0}, {-39, 0}}, color = {0, 0, 255}));
+  connect(transformer.n, B2.p) annotation(
+    Line(points = {{-17, 0}, {0, 0}}, color = {0, 0, 255}));
+  connect(B2.p, pwLine1.p) annotation(
+    Line(points = {{0, 0}, {10, 0}, {10, 20}, {21, 20}}, color = {0, 0, 255}));
+  connect(pwLine2.p, B2.p) annotation(
+    Line(points = {{21, -20}, {10, -20}, {10, 0}, {0, 0}}, color = {0, 0, 255}));
+  connect(pwFault.p, B2.p) annotation(
+    Line(points={{-10,-8.66667},{-10,0},{0,0}},                 color = {0, 0, 255}));
+  connect(B3.p, pwLine1.n) annotation(
+    Line(points = {{60, 0}, {50, 0}, {50, 20}, {39, 20}}, color = {0, 0, 255}));
+  connect(pwLine2.n, B3.p) annotation(
+    Line(points = {{39, -20}, {50, -20}, {50, 0}, {60, 0}}, color = {0, 0, 255}));
+  connect(infiniteBus.p, B3.p) annotation(
+    Line(points = {{70, 0}, {60, 0}}, color = {0, 0, 255}));
+  annotation(
+experiment(
+      StopTime=15,
+      Interval=0.0002,
+      __Dymola_fixedstepsize=0.0002,
+      __Dymola_Algorithm="Dassl"));
+end RefSim_ClockedPSS_CT_Plant;

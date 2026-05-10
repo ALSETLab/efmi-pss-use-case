@@ -1,5 +1,5 @@
 within OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL;
-model ReferenceClockedPSSContdPlant
+model RefSim_ClockedPSS_CT_Plant
   "Clocked version of GenPSSReDesign with default PSS parameters, clocked PSS and continious-time plant."
   extends Modelica.Icons.Example;
   OpenIPSL.Electrical.Buses.Bus B1 annotation(
@@ -59,4 +59,4 @@ experiment(
       Interval=0.0002,
       __Dymola_fixedstepsize=0.0002,
       __Dymola_Algorithm="Dassl"));
-end ReferenceClockedPSSContdPlant;
+end RefSim_ClockedPSS_CT_Plant;

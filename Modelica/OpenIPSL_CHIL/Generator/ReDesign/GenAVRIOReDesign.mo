@@ -1,6 +1,10 @@
 within OpenIPSL_CHIL.Generator.ReDesign;
 model GenAVRIOReDesign "Generator with AVR and I/O for linearization"
   extends OpenIPSL_CHIL.Generator.GenTemplate;
+  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
+    K0=K0,                                                       T1 = 1, T2 = 1,
+    Te=0.1,                                                                                   Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
+    Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
   replaceable OpenIPSL_CHIL.Components.Machines.Order6 machine(
     D=0,
     M=7,
@@ -27,10 +31,6 @@ model GenAVRIOReDesign "Generator with AVR and I/O for linearization"
         origin={49,5},
         extent={{-31,-31},{31,31}},
         rotation=0)));
-  OpenIPSL.Electrical.Controls.PSAT.AVR.AVRtypeIII avr(
-    K0=K0,                                                       T1 = 1, T2 = 1,
-    Te=0.1,                                                                                   Tr = 0.015, vfmax = 7, vfmin = -6.40) annotation(
-    Placement(visible = true, transformation(origin = {8, 46}, extent = {{-54, -46}, {-14, -6}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput u(start=0.0)
                                          annotation(
     Placement(transformation(origin = {-120, 10}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}})));

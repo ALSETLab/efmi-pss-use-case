@@ -1,7 +1,7 @@
-within OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL;
+within OpenIPSL_CHIL.UnderDevelopment.Figures.Examples_Grid4CHIL;
 model ReferenceSetup_SiL_FMUs
   "Model demonstrating how the PSS is to be interfaced to the plant using source code FMUs exported from eFMU production code."
-  extends Grid4CHIL.ReferenceSetup(break pss, break G4CHIL);
+  extends Examples_Grid4CHIL.ReferenceSetup(break pss, break G4CHIL);
   Modelica.Clocked.ClockSignals.Clocks.PeriodicRealClock periodicClock_G4CHIL(
     period(displayUnit="ms") = 0.0002,
     useSolver=true,
@@ -28,7 +28,7 @@ model ReferenceSetup_SiL_FMUs
     pss(wscale=10.00)
     annotation (Placement(transformation(extent={{-110,-17},{-76,17}})));
   Hcbd8c48e05b139646178cc6f7987b8955b6ce985_cb4a8a449b4ada864625ee5a4355578a3aaf08ed
-    G4CHIL annotation (Placement(transformation(extent={{88,28},{130,-14}})));
+    G4CHIL annotation (Placement(transformation(extent={{88,-14},{130,28}})));
 equation
   connect(periodicClock_G4CHIL.y, samplerVf.clock) annotation (Line(
       points={{60,-21},{60,-12}},
@@ -48,13 +48,11 @@ equation
     annotation (Line(points={{-123.4,0},{-110.68,0}}, color={0,0,127}));
   connect(pss.vs, holdPSSout.u)
     annotation (Line(points={{-76,0},{-57.2,0}}, color={0,0,127}));
-  connect(G4CHIL.w, hold_wscaled.u) annotation (Line(points={{130,20.86},{144,
-          20.86},{144,16},{150.8,16}},
-                                color={0,0,127}));
+  connect(G4CHIL.w, hold_wscaled.u) annotation (Line(points={{130,-6.86},{142,-6.86},
+          {142,16},{150.8,16}}, color={0,0,127}));
   connect(samplerVf.y, G4CHIL.vf)
-    annotation (Line(points={{71,0},{78,0},{78,13.93},{87.16,13.93}},
-                                                             color={0,0,127}));
-  connect(faultTimerLogic.y, G4CHIL.fault) annotation (Line(points={{114,-59},{
-          114,-38},{88,-38},{88,-16},{80,-16},{80,-0.14},{87.16,-0.14}},
-                                                   color={255,0,255}));
+    annotation (Line(points={{71,0},{78,0.07},{87.16,0.07}}, color={0,0,127}));
+  connect(faultTimer.y, G4CHIL.fault) annotation (Line(points={{50,-19},{50,-36},
+          {84,-36},{84,-12},{78,-12},{78,14.14},{87.16,14.14}}, color={255,0,
+          255}));
 end ReferenceSetup_SiL_FMUs;

@@ -1,0 +1,30 @@
+Grid4CHIL analysis diagnostics
+=============================
+
+Figure 2
+  max|err| = 3.01599502563e-05 pu
+  RMS err  = 9.23020136927e-06 pu
+  t_max    = 3.215600 s
+  zoom     = [3.100000, 3.350000] s
+
+Figure 3
+  max|err| = 0.000169494127172 pu
+  RMS err  = 3.06623492945e-05 pu
+  t_max    = 2.056400 s
+  zoom     = [2.006400, 2.106400] s
+
+Figure 4
+  baseline = Ref.Sim.DASSL
+  zoom     = [2.006400, 2.106400] s
+  Ref.Sim.ExpEuler: max|err|=3.015995e-05 pu, RMS=9.230201e-06 pu, t_max=3.215600 s
+  Ref.Setup: max|err|=1.694941e-04 pu, RMS=3.066235e-05 pu, t_max=2.056400 s
+  Ref.Setup.ExpEuler: max|err|=1.535264e-04 pu, RMS=2.745645e-05 pu, t_max=2.056400 s
+  Ref.Setup.Clocked: max|err|=6.198883e-05 pu, RMS=1.646557e-05 pu, t_max=2.031000 s
+
+Figure 5
+  baseline = Ref.Sim.ExpEuler
+  zoom     = [2.006200, 2.106200] s
+  Ref.Sim.DASSL: max|err|=3.015995e-05 pu, RMS=9.230201e-06 pu, t_max=3.215600 s
+  Ref.Setup: max|err|=1.848064e-04 pu, RMS=3.546056e-05 pu, t_max=2.056200 s
+  Ref.Setup.ExpEuler: max|err|=1.688335e-04 pu, RMS=2.959895e-05 pu, t_max=2.056200 s
+  Ref.Setup.Clocked: max|err|=4.571676e-05 pu, RMS=9.085055e-06 pu, t_max=2.037400 s

@@ -1,0 +1,35 @@
+% ---- Figure 4 error summary (copy-paste into LaTeX) ----
+\\begin{table}[ht]
+\\centering
+\caption{Generator speed error relative to \\texttt{Ref.Sim.DASSL} (case~1).}
+\label{tab:speed_error_summary}
+\\begin{tabular}{lSSS}
+\\toprule
+Case & {$\\max|\\epsilon|$ (pu)} & {RMS $\\epsilon$ (pu)} & {$t_{\\max}$ (s)} \\\\
+\\midrule
+\texttt{Ref.Sim.ExpEuler} & 3.0160e-05 & 9.2302e-06 & 3.2156 \\
+\texttt{Ref.Setup} & 1.6949e-04 & 3.0662e-05 & 2.0564 \\
+\texttt{Ref.Setup.ExpEuler} & 1.5353e-04 & 2.7456e-05 & 2.0564 \\
+\texttt{Ref.Setup.Clocked} & 6.1989e-05 & 1.6466e-05 & 2.0310 \\
+\\bottomrule
+\\end{tabular}
+\\end{table}
+% ----------------------------------------------------
+
+% ---- Figure 5 error summary (copy-paste into LaTeX) ----
+\\begin{table}[ht]
+\\centering
+\caption{Generator speed error relative to \\texttt{Ref.Sim.ExpEuler} (case~2).}
+\label{tab:speed_error_summary_fig5}
+\\begin{tabular}{lSSS}
+\\toprule
+Case & {$\\max|\\epsilon|$ (pu)} & {RMS $\\epsilon$ (pu)} & {$t_{\\max}$ (s)} \\\\
+\\midrule
+\texttt{Ref.Sim.DASSL} & 3.0160e-05 & 9.2302e-06 & 3.2156 \\
+\texttt{Ref.Setup} & 1.8481e-04 & 3.5461e-05 & 2.0562 \\
+\texttt{Ref.Setup.ExpEuler} & 1.6883e-04 & 2.9599e-05 & 2.0562 \\
+\texttt{Ref.Setup.Clocked} & 4.5717e-05 & 9.0851e-06 & 2.0374 \\
+\\bottomrule
+\\end{tabular}
+\\end{table}
+% ----------------------------------------------------

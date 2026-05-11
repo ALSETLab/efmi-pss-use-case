@@ -164,7 +164,9 @@ for k = 1:numel(analysis.comparisons)
     if ~comp.ok, continue; end
     hErr(k) = plot(axMid, analysis.t, abs(comp.err), comp.lineStyle, ...
         'Color', comp.color, 'LineWidth', 1.5, 'DisplayName', ...
-        sprintf('| %s - %s |', analysis.baseline.shortLabel, comp.shortLabel));
+        sprintf('$\\left|\\,\\mathrm{%s}\\,-\\,\\mathrm{%s}\\,\\right|$', ...
+            strrep(analysis.baseline.shortLabel, ' ', '~'), ...
+            strrep(comp.shortLabel, ' ', '~')));
 end
 addZoomGuides(axMid, analysis.zoomWindow);
 xlabel(axMid, 'Time (s)');
@@ -322,6 +324,8 @@ if usejava('desktop')
     set(fig, 'MenuBar', 'figure');
 end
 
+applyPaperFigureDefaults(fig);
+
 if nargin < 2 || isempty(figurePositionPx)
     return;
 end
@@ -339,8 +343,60 @@ set(fig, 'Position', [figLeft, figBottom, figWidth, figHeight]);
 end
 
 function exportFigure(fig, pdfPath, figPath, interactiveOnly)
+applyPaperStyleToExistingObjects(fig);
 savefig(fig, figPath);
 if ~interactiveOnly
     exportgraphics(fig, pdfPath, 'ContentType', 'vector');
+end
+end
+
+function applyPaperFigureDefaults(fig)
+% Configure figure-level defaults so all newly created objects use
+% publication-friendly typography and LaTeX interpreters.
+set(fig, 'Color', 'w');
+set(fig, 'DefaultAxesFontName', 'Times New Roman');
+set(fig, 'DefaultTextFontName', 'Times New Roman');
+set(fig, 'DefaultLegendFontName', 'Times New Roman');
+
+set(fig, 'DefaultAxesFontSize', 11);
+set(fig, 'DefaultTextFontSize', 11);
+set(fig, 'DefaultLegendFontSize', 10);
+
+set(fig, 'DefaultAxesTickLabelInterpreter', 'latex');
+set(fig, 'DefaultTextInterpreter', 'latex');
+set(fig, 'DefaultLegendInterpreter', 'latex');
+end
+
+function applyPaperStyleToExistingObjects(fig)
+% Apply style to existing objects before export in case any plotting call
+% overrode defaults while creating axes, labels, legends, or annotations.
+ax = findall(fig, 'Type', 'axes');
+for k = 1:numel(ax)
+    set(ax(k), 'FontName', 'Times New Roman', 'FontSize', 11, ...
+        'TickLabelInterpreter', 'latex');
+    set(ax(k).Title, 'Interpreter', 'latex', 'FontName', 'Times New Roman');
+    set(ax(k).XLabel, 'Interpreter', 'latex', 'FontName', 'Times New Roman');
+    set(ax(k).YLabel, 'Interpreter', 'latex', 'FontName', 'Times New Roman');
+    if ~isempty(ax(k).ZLabel)
+        set(ax(k).ZLabel, 'Interpreter', 'latex', 'FontName', 'Times New Roman');
+    end
+end
+
+lgd = findall(fig, 'Type', 'legend');
+for k = 1:numel(lgd)
+    set(lgd(k), 'Interpreter', 'latex', 'FontName', 'Times New Roman', ...
+        'FontSize', 10);
+end
+
+txt = findall(fig, 'Type', 'text');
+for k = 1:numel(txt)
+    set(txt(k), 'Interpreter', 'latex', 'FontName', 'Times New Roman', ...
+        'FontSize', 11);
+end
+
+cbar = findall(fig, 'Type', 'colorbar');
+for k = 1:numel(cbar)
+    set(cbar(k), 'FontName', 'Times New Roman', 'FontSize', 10, ...
+        'TickLabelInterpreter', 'latex');
 end
 end

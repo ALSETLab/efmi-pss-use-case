@@ -70,3 +70,9 @@ Set-Content -Path $latestPath -Value $Version -Encoding UTF8
 Write-Host "Snapshot created: $destSkillPath"
 Write-Host "Manifest: $manifestPath"
 Write-Host "LATEST pointer: $latestPath"
+
+$destForMessage = $destSkillPath.Replace('\', '/')
+$manifestForMessage = $manifestPath.Replace('\', '/')
+$commitSnippet = "[repro-skill] $SkillName snapshot=$destForMessage manifest=$manifestForMessage"
+Write-Host "Commit snippet:"
+Write-Host $commitSnippet

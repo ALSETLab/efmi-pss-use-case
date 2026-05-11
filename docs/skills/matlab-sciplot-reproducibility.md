@@ -57,6 +57,14 @@ snapshot: docs/skills/snapshots/matlab-sciplot/v1.0.0
 manifest: <snapshot>/manifest.json
 ```
 
+### One-line commit message snippet
+
+Use this one-liner in commits that add/update figures:
+
+```text
+[repro-skill] matlab-sciplot snapshot=docs/skills/snapshots/matlab-sciplot/<version> manifest=docs/skills/snapshots/matlab-sciplot/<version>/manifest.json
+```
+
 ## Optional hardening
 
 - Create a git tag for important snapshot milestones (for example, `plots-2026-05-10`).

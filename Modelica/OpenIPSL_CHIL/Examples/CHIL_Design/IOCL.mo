@@ -1,8 +1,8 @@
 within OpenIPSL_CHIL.Examples.CHIL_Design;
 model IOCL "I/O Model for Closed Loop Analysis]"
   extends Modelica.Icons.Example;
-  IOModelforReDesign iOModelforReDesign
-    annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+  IOModelforReDesign G4CHIL
+    annotation (Placement(transformation(extent={{18,-10},{38,10}})));
   Components.PSS.PSSTypeIISimpleHPF
                                 pss(
     Kw=7.04,
@@ -26,18 +26,24 @@ model IOCL "I/O Model for Closed Loop Analysis]"
         rotation=90,
         origin={-70,-30})));
 equation
-  connect(pss.vs, iOModelforReDesign.vf)
-    annotation (Line(points={{1,0},{18,0}}, color={0,0,127}));
-  connect(iOModelforReDesign.w, w)
-    annotation (Line(points={{41,0},{110,0}}, color={0,0,127}));
+  connect(pss.vs, G4CHIL.vf)
+    annotation (Line(points={{1,0},{16,0}}, color={0,0,127}));
+  connect(G4CHIL.w, w)
+    annotation (Line(points={{39,0},{110,0}}, color={0,0,127}));
   connect(feedback.u1, u)
     annotation (Line(points={{-78,0},{-120,0}}, color={0,0,127}));
   connect(kFdbk.y, feedback.u2)
     annotation (Line(points={{-70,-19},{-70,-8}}, color={0,0,127}));
-  connect(kFdbk.u, iOModelforReDesign.w) annotation (Line(points={{-70,-42},{-70,
-          -52},{80,-52},{80,0},{41,0}}, color={0,0,127}));
+  connect(kFdbk.u, G4CHIL.w) annotation (Line(points={{-70,-42},{-70,-52},{80,
+          -52},{80,0},{39,0}}, color={0,0,127}));
   connect(feedback.y, pss.vSI)
     annotation (Line(points={{-61,0},{-22,0}}, color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
+        coordinateSystem(preserveAspectRatio=false), graphics={
+        Text(
+          extent={{8,-8},{48,-32}},
+          textColor={0,0,255},
+          fontName="Geist",
+          textString="SISO Model 
+for Re-Design")}));
 end IOCL;

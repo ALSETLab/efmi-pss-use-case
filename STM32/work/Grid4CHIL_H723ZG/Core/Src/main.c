@@ -191,7 +191,7 @@ int main(void)
       /* Digital input processing: */
       grid.fault = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
     	BlueButtonB1_GPIO_Port,
-	BlueButtonB1_Pin));
+        BlueButtonB1_Pin));
 
       /* Analog input processing: */
       HAL_ADC_Start(&hadc1);

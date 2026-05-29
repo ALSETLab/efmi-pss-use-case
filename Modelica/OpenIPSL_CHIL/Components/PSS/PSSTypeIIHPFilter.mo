@@ -7,10 +7,6 @@ model PSSTypeIIHPFilter
   extends PSSTypeIIParam(       break
       derivativeLag);
 
-  // Tunable start values:
-  parameter Real vSI_start = 1.0
-    "Default start value for vSI, the PSS input signal.";
-
   Blocks.WashoutFilter.HPFfromMSL.DerivativeLagHighPass dLHPF(
     order=1,
     Kw=Kw,

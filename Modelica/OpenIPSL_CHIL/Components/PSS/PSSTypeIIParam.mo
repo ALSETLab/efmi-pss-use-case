@@ -3,8 +3,7 @@ model PSSTypeIIParam
   "PSS Type II of OpenIPSL with parametrization for efmi export."
 
   extends OpenIPSL.Electrical.Controls.PSAT.PSS.PSSTypeII(
-    vSI(
-      final start = vSI_start),
+    vSI(final start = vSI_start, fixed = true),
     Kw = 2.7,
     T1 = 0.32417874258802,
     T2 = 0.0556202789619914,
@@ -13,8 +12,7 @@ model PSSTypeIIParam
     Tw = 0.25,
     vsmax = 1.5,
     vsmin = -1.5,
-    break derivativeLag
-                );
+    break derivativeLag);
 
   // input scaling parameter
   parameter Real wscale=10.0 "Speed input scaling" annotation (Dialog(group="Input Scaling"));
@@ -25,7 +23,7 @@ model PSSTypeIIParam
   parameter Real kLPF = 1.00 "Gain for noise supression (low-pass filter gain) – attenuates noise at frequencies above this value.";
 
   // Tunable start values:
-  parameter Real vSI_start = 1.0
+  parameter OpenIPSL.Types.PerUnit vSI_start = 1.0
     "Default start value for vSI, the PSS input signal.";
 
   Blocks.NoiseSupressionFilters.LowPass1stOrder lpf(freqHz=freqLow, K=kLPF)

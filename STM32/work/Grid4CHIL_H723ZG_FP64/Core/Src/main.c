@@ -25,12 +25,37 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "block.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+#define CONCAT_INNER(a, b) a##b
+#define CONCAT(a, b) CONCAT_INNER(a, b)
 
+/* Define shortcut names for unique, hash-based eFMU API: */
+#define MODEL_HASH \
+  Hcbd8c48e05b139646178cc6f7987b8955b6ce985_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c
+typedef CONCAT(BlockState_, MODEL_HASH) \
+  ModelGrid;
+typedef CONCAT(SPE_Real_, MODEL_HASH) \
+  Grid_Real;
+typedef CONCAT(SPE_ErrorSignal_, MODEL_HASH) \
+  Grid_ErrorSignal;
+
+#define Grid_NONE_ERRORSIGNAL \
+  CONCAT(SPE_ERRORSIGNAL_NONE_, MODEL_HASH)
+#define Grid_UNSPECIFIED_ERRORSIGNAL \
+  CONCAT(SPE_ERRORSIGNAL_UNSPECIFIED_ERROR_, MODEL_HASH)
+
+#define Grid_Startup \
+  CONCAT(Startup_, MODEL_HASH)
+#define Grid_DoStep \
+  CONCAT(DoStep_, MODEL_HASH)
+#define Grid_Recalibrate \
+  CONCAT(Recalibrate_, MODEL_HASH)
+#define Grid_Reinitialize \
+  CONCAT(Reinitialize_, MODEL_HASH)
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -46,7 +71,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+/* Sampling activation counter: */
+static volatile uint8_t pending_samplings;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -97,7 +123,51 @@ int main(void)
   MX_DAC1_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
+  /* Initialize error signaling: */
+  Grid_ErrorSignal error_signals = Grid_NONE_ERRORSIGNAL;
+  uint32_t error_signal_timestamp = ((uint32_t) 0);
+  uint32_t error_overrun_timestamp = ((uint32_t) 0);
 
+  /* Pre-compute constants: */
+  const uint32_t POLL_TIMEOUT =
+   ((uint32_t) 1); /* in ms */
+  const Grid_Real ADC_TO_VOLTS =
+    ((Grid_Real) 3.3) / ((Grid_Real) 65535.0 /* 16-bit ADC */);
+  const Grid_Real VOLTS_TO_DAC =
+    ((Grid_Real) 4095.0) / ((Grid_Real) 3.3);
+  const Grid_Real DAC_MAX =
+    ((Grid_Real) 4095.0);
+  const Grid_Real DAC_MIN =
+    ((Grid_Real) 0.0);
+  const Grid_Real VF_OFFSET =
+    ((Grid_Real) 1.5);
+
+  /* Initialize the eFMU: */
+  ModelGrid grid;
+  Grid_Startup(&grid);
+  error_signals |= grid.ErrorSignals;
+  if (Grid_NONE_ERRORSIGNAL != error_signals)
+  { /* Block and blink the error LED if initialization failed: */
+    while (true)
+    {
+      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_SET);
+      uint32_t start = HAL_GetTick();
+      while ((HAL_GetTick() - start) < ((uint32_t) 2000))
+      {
+      }
+      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_RESET);
+      start = HAL_GetTick();
+      while ((HAL_GetTick() - start) < ((uint32_t) 2000))
+      {
+      }
+    }
+  }
+
+  /* Start the sampling timer and DAC channels: */
+  pending_samplings = ((uint8_t) 0);
+  HAL_DAC_Start(&hdac1, DAC_CHANNEL_2);
+  HAL_TIM_Base_Start_IT(&htim2);
+  __enable_irq();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,6 +177,91 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+    /*
+      Conduct sampling if the sampling timer ticked:
+    */
+    if (pending_samplings > ((uint8_t) 0))
+    {
+      /* Always reset the error signals: */
+      error_signals = Grid_NONE_ERRORSIGNAL;
+
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calcTime_D2_GPIO_Port, calcTime_D2_Pin, GPIO_PIN_SET);
+
+      /* Digital input processing: */
+      grid.fault = (GPIO_PIN_SET == HAL_GPIO_ReadPin(
+    	BlueButtonB1_GPIO_Port,
+        BlueButtonB1_Pin));
+
+      /* Analog input processing: */
+      HAL_ADC_Start(&hadc1);
+      if (HAL_OK == HAL_ADC_PollForConversion(&hadc1, POLL_TIMEOUT))
+      {
+        const uint32_t adc_raw = HAL_ADC_GetValue(&hadc1);
+        grid.vf = (((Grid_Real) adc_raw) * ADC_TO_VOLTS) - VF_OFFSET;
+      }
+      else
+      {
+        error_signals |= Grid_UNSPECIFIED_ERRORSIGNAL;
+      }
+      HAL_ADC_Stop(&hadc1);
+
+      /* Compute sampling step: */
+      Grid_DoStep(&grid);
+      error_signals |= grid.ErrorSignals;
+
+      /* Output processing (scaling, clamping, converting volt to AC): */
+      Grid_Real dac_w_val = grid.w * VOLTS_TO_DAC;
+      if (DAC_MIN > dac_w_val)
+      {
+        dac_w_val = DAC_MIN;
+      }
+      else if (DAC_MAX < dac_w_val)
+      {
+        dac_w_val = DAC_MAX;
+      }
+      HAL_DAC_SetValue(
+        &hdac1,
+        DAC_CHANNEL_2,
+        DAC_ALIGN_12B_R,
+        ((uint32_t) dac_w_val));
+
+      /* Provide computation time feedback for external profiling: */
+      HAL_GPIO_WritePin(calcTime_D2_GPIO_Port, calcTime_D2_Pin, GPIO_PIN_RESET);
+
+      --pending_samplings;
+    }
+
+    /*
+      Check if any errors are signaled from the last sampling, or an overrun
+      occurred; if so, set the error LED on. Also check if enough time has
+      passed since the last error occurred; if so, turn off the LED:
+    */
+    const uint8_t tick = HAL_GetTick();
+
+    if (Grid_NONE_ERRORSIGNAL != error_signals)
+    {
+      error_signal_timestamp = tick;
+      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_SET);
+    }
+    if (pending_samplings > ((uint8_t) 1))
+    {
+      error_overrun_timestamp = tick;
+      HAL_GPIO_WritePin(YellowLD2_GPIO_Port, YellowLD2_Pin, GPIO_PIN_SET);
+    }
+
+    if ((((uint32_t) 0) != error_signal_timestamp)
+      && (((uint32_t) 30000) < (tick - error_signal_timestamp)))
+    {
+      HAL_GPIO_WritePin(RedLD3_GPIO_Port, RedLD3_Pin, GPIO_PIN_RESET);
+      error_signal_timestamp = ((uint32_t) 0);
+    }
+    if ((((uint32_t) 0) != error_overrun_timestamp)
+      && (((uint32_t) 5000) < (tick - error_overrun_timestamp)))
+    {
+      HAL_GPIO_WritePin(YellowLD2_GPIO_Port, YellowLD2_Pin, GPIO_PIN_RESET);
+      error_overrun_timestamp = ((uint32_t) 0);
+    }
   }
   /* USER CODE END 3 */
 }
@@ -171,7 +326,17 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  if (TIM2 == htim->Instance)
+  {
+    if (pending_samplings < ((uint8_t) 255))
+    {
+      ++pending_samplings;
+    }
+    HAL_GPIO_TogglePin(stepSize_D3_GPIO_Port, stepSize_D3_Pin);
+  }
+}
 /* USER CODE END 4 */
 
  /* MPU Configuration */

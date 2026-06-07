@@ -1,58 +1,139 @@
 # efmi-pss-use-case
-Models and resources for the application of eFMI to the use case of a power system stabilizer (i.e., damping control system).
 
-## QuickStart
-### A. Setup the environment and load the project files
-1. Launch Dymola and connect to the 3DEXPERIENCE platform: ``Dymola > Tools > 3DEXPERIENCE > Connection``
-    - If successful, your user name and information will be displayed in a new pop-up, similar to the one shown below: 
-    <img src="./docs/images/3dexconinf.png" width=300>
-2. Load the OpenIPSL library from the linked dependency as described below.
-3. Load the `PSSDesign` package, described below.
-4. Load the `efmiPSSusecase` package, described below, this is the main package to be used.
-5. Set the working directory. 
-  - Note: the directory path should not be long, else, an error ``eFMU generation path exceeds max. path length limit`` can appear which requires to change the working directory. The default Dymola working directory is recommended.
+**Real-time simulation and Controller-Hardware-in-the-Loop (CHiL) testing of a Power System Stabilizer on low-cost microcontrollers, using Modelica and eFMI.**
 
-### B. Build the eFMU
-- Build the complete eFMU by executing the function ``efmiPSSusecase.eBlockDymolaEmbedded.build()``
-    <img src="./docs/images/efmubuildcmd.png" width=200>
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE)
 
-- The generated files will be in the working directory. Within this repository, the files have been copied to ``./Modelica/eFMUs``
+This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"* (American Modelica & FMI Conference, 2026). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
+---
 
-## Packages and Dependencies
-### A. Linked Dependencies
-- The latest version of OpenIPSL is already linked via sub-modules and can be found under ``./dependencies/OpenIPSL``
-### B. Packages Required
-Under ``./Modelica/`` the two required packages can be found:
-- `PSSDesign` contains the power system models with different plant architectures that are extended to create the new model to test the `eBlock` with the generated `eFMU`.
-- `efmiPSSusecase` contains the package with the modified PSS model to generate the `eBlock` and the `eBlock` inheriting from `DymolaEmbedded.EmbeddedConfiguration`.
+## Overview
 
-### C. Shortcuts
-Several shortcuts that call Modelica scripts to open the dependencies have been configured for different PCs and can be found under ``./Shortcuts``. You can copy and edit them to reuse them for your own machine.
+Modern grids increasingly suffer from poorly damped oscillations (e.g., the 2025 Iberian grid incident), which demand controllers that can be re-tuned and re-deployed throughout their lifecycle. Today, the path from a control design to a hardware test is slow and error-prone: offline tools like PSS®E or PSCAD® cannot run in real time, forcing manual re-implementation and breaking traceability between design and deployment.
 
-## Requirements and TroubleShooting
-The following should be available and adequately configurated 
-- Ensure that that the 3DExperience account has been linked:
-    - To verify call the function ``DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account``
-    - If not linked, call the function: ``DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account``
-    - The platform URL used for testing is: ``https://r1132102445656-eu1-ifwe.3dexperience.3ds.com/``
+This project demonstrates an automated alternative built on the [Modelica](https://modelica.org/language/) language and the [eFMI](https://www.efmi-standard.org/) (FMI for embedded systems) standard. Using Dymola's eFMI tooling, both the **controller** (the PSS) and the **plant** (a synchronous generator with its excitation control system, interconnected to a grid) are synthesized into MISRA C:2023 / SEI CERT C–compliant embedded code and deployed onto low-cost STM32 boards. The result is validated through a full suite of **Model-in-the-Loop (MiL)**, **Software-in-the-Loop (SiL)**, and **CHiL** tests, providing an open, traceable, and inexpensive alternative to proprietary real-time platforms.
 
-- Ensure that Java has been installed:
-  - To install Java the OpenJDK JDK 24.0.2 was used:
-    - Link to download: [https://jdk.java.net/24/](https://jdk.java.net/24/)
-    - The contents of the .zip file, e.g., ``openjdk-24.0.2_windows-x64_bin.zip``, are uncompressed and pasted into the following Java installation directory:
-    ``` C:\Program Files\Java\ ```
-    - Verify that the path is now as follows:
-    ```C:\Program Files\Java\jdk-24.0.2```
-  - The following environment variables need have been configured and point to the Java installation root directory: ``DYMOLA_JAVA_HOME`` and ``JAVA_HOME``
-  - Verify that the ``DYMOLA_JAVA_HOME`` variable has been set up propertly by going to: ``Dymola > Tools> Options> General``, under "Java runtime" the folder pointing to the Java installation directory should be listed.
-  - The ``PATH`` environment variable needs to also point to the `./bin` directory within the Java installation folder:
-  <img src="./docs/images/javaenvvars.png" width=400>
+The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, which extends the [Open-Instance Power System Library (OpenIPSL)](https://github.com/OpenIPSL/OpenIPSL) for embedded real-time applications.
 
-### Build Issues
-When attempting to build the eFMU, several issues were faced.
-- Although Java appears to be properly installed and configured, the following error might appear when attempting to build the eFMU: see [here](./docs/excerpts/dymjavaerror01.md)
-- While this is pointed as a Java error, testing in a different computer shows the following error: see [here](./docs/excerpts/dymbuilderror02.md).
+> [!WARNING]
+> **This is a large repository (~750 MB of Git history, ~800 MB checked out).** By design, it ships generated reproducibility artifacts — the SiL FMUs and the MiL/CHiL simulation results behind the paper's figures — so the models *and* the evidence for the paper's claims travel together. If you only want to read and run the models, clone a **shallow snapshot** to skip the history and avoid the large download:
+>
+> ```bash
+> git clone --depth 1 --recurse-submodules --shallow-submodules \
+>   https://github.com/ALSETLab/efmi-pss-use-case.git C:/dev/efmi-pss-use-case
+> ```
+>
+> A full clone (with complete history) is only needed if you intend to contribute changes.
+>
+> **Windows users:** clone into a short root path such as `C:\dev\` (as above). The eFMI build generates deeply nested file paths, and cloning under a long location (e.g. `C:\Users\<you>\Documents\...`) will hit the Windows 260-character `MAX_PATH` limit and cause build failures.
 
-### Resources
-- 3DExperience SPE documentation: [here](https://help.3ds.com/2025x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433)
+## Repository structure
+
+| Path | Contents |
+| --- | --- |
+| [`Modelica/OpenIPSL_CHIL/`](./Modelica/OpenIPSL_CHIL) | The `OpenIPSL_CHIL` Modelica library — the heart of the project (see below). |
+| [`dependencies/openipsl/`](./dependencies) | [OpenIPSL](https://github.com/OpenIPSL/OpenIPSL) library, linked as a git submodule. |
+| [`STM32/`](./STM32) | STM32CubeIDE firmware projects that integrate the generated eFMI code for the plant and controller boards. |
+| [`MATLAB-Analysis/`](./MATLAB-Analysis) | MATLAB scripts for PSS redesign, CHiL-setup simulations, and experiment comparisons. |
+| [`Waveforms/`](./Waveforms) | Recorded waveform data from the experiments. |
+| [`Shortcuts/`](./Shortcuts) | One-click Dymola launcher (`DoubleClickAndRunDymolaScript.cmd`) and startup script (`startup-generic.mos`) that load OpenIPSL, the library, and the generated artifacts. |
+| [`docs/`](./docs) | Images and troubleshooting notes referenced from this README. |
+
+### The `OpenIPSL_CHIL` library
+
+`OpenIPSL_CHIL` ("Extensions of OpenIPSL for embedded real-time applications") is organized into:
+
+- **`Components`** — OpenIPSL components modified for embedded deployment, plus new ones. The `PSS` sub-package holds the controller variants, their building blocks, and the eFMU generation configurations; `Auxiliary` and `Machines` hold the modified line, fault, and machine models; `Tests` provides unit tests for the continuous, clocked, and eFMU variants.
+- **`Generator`** — variants of the generator unit (machine + excitation control system) for the successive stages of control design, redesign, and embedded integration.
+- **`Network`** — variants of the grid *without* the generator unit, used to assemble simulation and eFMU-export models.
+- **`RTS`** — plant models targeted at real-time simulation (HiL and CHiL), including their eFMU generation configurations.
+- **`Examples`** — the MiL experiments, e.g. under `Examples.CHIL_Configuration.Grid4CHIL`.
+
+## Requirements
+
+**Software**
+
+- **Dymola 2026x Refresh 1** (the version tested; also the launcher's default) with the **eFMI / Embedded** toolchain and a **Source Code Generation** license. With this license, eFMI code generation runs **fully locally** — this is the recommended setup. Running the generation against the **3DEXPERIENCE / SOP** platform is supported but **no longer required**.
+- **OpenIPSL 3.1.0** — included as a submodule under `dependencies/openipsl`.
+- **Modelica Standard Library 4.0.0**, **Complex 4.0.0**, **Modelica_LinearSystems2 3.0.1**, **DymolaEmbedded 1.0.5** (shipped with / installed alongside Dymola).
+- **Java** — OpenJDK **24.0.2** ([download](https://jdk.java.net/24/)), with `JAVA_HOME` and `DYMOLA_JAVA_HOME` set to the JDK root and the JDK `bin` on `PATH` (required by the eFMI toolchain).
+- **STM32CubeMX** (tested with 6.17.0) and **STM32CubeIDE** (tested with 2.1.0) for building and flashing the embedded firmware.
+- **MATLAB** for the PSS redesign and analysis scripts.
+
+**Hardware (for CHiL)**
+
+- **NUCLEO-H723ZG** — runs the *plant* model (12-bit DAC, 0–3.3 V).
+- **NUCLEO-L476RG** — runs the *controller* (PSS).
+- A breadboard and patch wires to interconnect the analog I/O of the two boards.
+
+## Getting started
+
+### 1. Clone with submodules
+
+OpenIPSL is linked as a submodule, so clone recursively (or use the lighter shallow clone shown in the note above):
+
+```bash
+git clone --recurse-submodules https://github.com/ALSETLab/efmi-pss-use-case.git
+```
+
+If you already cloned without `--recurse-submodules`, run:
+
+```bash
+git submodule update --init --recursive
+```
+
+### 2. Load the models in Dymola
+
+**Option A — automated launcher (recommended).** Just double-click `Shortcuts/DoubleClickAndRunDymolaScript.cmd`. It resolves the repository root from its own location, auto-detects your Dymola installation, regenerates `load_artifacts.mos` from `.gitignore`, launches Dymola, and runs `startup-generic.mos` — loading OpenIPSL, the `OpenIPSL_CHIL` library, and the generated artifacts, then setting the working directory to `Modelica/work`. No paths to configure.
+
+**Option B — manual.**
+
+1. Open `dependencies/openipsl/OpenIPSL/package.mo` to load OpenIPSL.
+2. Open `Modelica/OpenIPSL_CHIL/package.mo` to load the library.
+3. Set the repository's [`Modelica/work`](./Modelica/work) folder as the Dymola working directory (Option A's launcher does this for you). Keeping the working directory inside the repo also keeps paths short, avoiding the `eFMU generation path exceeds max. path length limit` error.
+
+> [!NOTE]
+> `Modelica/work` already contains the generated eFMUs, SiL tests, and FMUs that ship with the repository. If you regenerate artifacts there, your build may overwrite or damage these committed files — that's expected. You can always discard your local changes (`git checkout -- Modelica/work` / `git restore Modelica/work`) and pull our artifacts again.
+
+### 3. Generate an eFMU
+
+The eFMU generation configurations live next to the models they target — for example, the controller configuration `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF`, which extends `DymolaEmbedded.EmbeddedConfiguration` (model `PSSTypeIISimpleHPF`, 0.2 ms sample period, Explicit Euler solver). Open the desired configuration and build it with Dymola's eFMI tooling.
+
+> [!NOTE]
+> Generating eFMUs requires the Dymola **Source Code Generation** license. If you don't have it, you don't need to generate anything — the eFMUs and their production code that we generated are already included in the repository under [`Modelica/work`](./Modelica/work) (loaded automatically by the launcher), so you can inspect and run the artifacts directly.
+
+### 4. Run the tests
+
+- **MiL** — open the experiments under `OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL` and simulate.
+- **SiL** — use the `SiLTest` models under `Components/PSS/eFMUs/*` (and the corresponding plant configurations) to verify the generated eFMI production code against the offline simulations.
+- **CHiL** — flash the firmware from `STM32/` to the two NUCLEO boards, wire them together, and reproduce the experiments; analyze the captured `Waveforms/` with the scripts in `MATLAB-Analysis/`.
+
+## Troubleshooting
+
+*Only if you use the optional 3DEXPERIENCE / SOP path:* if the account is not linked, call `DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account`; see also the [3DEXPERIENCE SPE documentation](https://help.3ds.com/2025x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433).
+
+## How to cite
+
+If you use these models or the workflow, please cite:
+
+> L. Vanfretti, C. Bürger, J. Pizzimenti, K. R. Wilt, and H. Chang, "Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI," *American Modelica & FMI Conference*, 2026.
+
+```bibtex
+@inproceedings{Vanfretti2026_eFMI_PSS,
+  author    = {Vanfretti, Luigi and B{\"u}rger, Christoff and Pizzimenti, Joseph and Wilt, Kyle R. and Chang, Hao},
+  title     = {Real-time Simulation and {CHiL} Testing of Power System Stabilizers on Microcontrollers with {Modelica} and {eFMI}},
+  booktitle = {American Modelica \& FMI Conference},
+  year      = {2026}
+  % TODO: add pages / DOI once available
+}
+```
+
+## License
+
+Released under the 3-Clause BSD License. Copyright © 2025–2026, ALSETLab and Dassault Systèmes. See [`LICENSE`](./LICENSE).
+
+## Authors and acknowledgments
+
+Developed by [ALSETLab](https://github.com/ALSETLab), Rensselaer Polytechnic Institute, in collaboration with Dassault Systèmes:
+Luigi Vanfretti, Christoff Bürger (Dassault Systèmes), Joseph Pizzimenti, Kyle R. Wilt, and Hao Chang.

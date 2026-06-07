@@ -16,6 +16,17 @@ This project demonstrates an automated alternative built on the [Modelica](https
 
 The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, which extends the [Open-Instance Power System Library (OpenIPSL)](https://github.com/OpenIPSL/OpenIPSL) for embedded real-time applications.
 
+### Workflow at a glance
+
+```mermaid
+flowchart LR
+  A["Modelica models<br/>OpenIPSL_CHIL:<br/>plant + PSS controller"] --> B["eFMI synthesis<br/>Dymola eFMI tooling<br/>MISRA-C / CERT-C code"]
+  B --> C["MiL and SiL tests<br/>verify vs. offline simulation"]
+  C --> D["STM32 integration<br/>CubeMX / CubeIDE"]
+  D --> E["Deploy to NUCLEO boards<br/>H723ZG = plant<br/>L476RG = controller"]
+  E --> F["CHiL test<br/>real-time validation"]
+```
+
 > [!WARNING]
 > **This is a large repository (~750 MB of Git history, ~800 MB checked out).** By design, it ships generated reproducibility artifacts — the SiL FMUs and the MiL/CHiL simulation results behind the paper's figures — so the models *and* the evidence for the paper's claims travel together. If you only want to read and run the models, clone a **shallow snapshot** to skip the history and avoid the large download:
 >
@@ -36,7 +47,7 @@ The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, wh
 | [`dependencies/openipsl/`](./dependencies) | [OpenIPSL](https://github.com/OpenIPSL/OpenIPSL) library, linked as a git submodule. |
 | [`STM32/`](./STM32) | STM32CubeIDE firmware projects that integrate the generated eFMI code for the plant and controller boards. |
 | [`MATLAB-Analysis/`](./MATLAB-Analysis) | MATLAB scripts for PSS redesign, CHiL-setup simulations, and experiment comparisons. |
-| [`Waveforms/`](./Waveforms) | Recorded waveform data from the experiments. |
+| [`Waveforms/`](./Waveforms) | Digilent WaveForms capture projects and recorded data (Analog Discovery 3) from the experiments, including the figures reproduced in the paper. |
 | [`Shortcuts/`](./Shortcuts) | One-click Dymola launcher (`DoubleClickAndRunDymolaScript.cmd`) and startup script (`startup-generic.mos`) that load OpenIPSL, the library, and the generated artifacts. |
 | [`docs/`](./docs) | Images and troubleshooting notes referenced from this README. |
 
@@ -66,6 +77,11 @@ The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, wh
 - **NUCLEO-H723ZG** — runs the *plant* model (12-bit DAC, 0–3.3 V).
 - **NUCLEO-L476RG** — runs the *controller* (PSS).
 - A breadboard and patch wires to interconnect the analog I/O of the two boards.
+- **A data-recording instrument** to capture the closed-loop signals during the experiments. We suggest the **Digilent Analog Discovery 3** (used in the paper), but any oscilloscope or data-acquisition device with comparable bandwidth and resolution works. The corresponding [Digilent WaveForms](https://digilent.com/reference/software/waveforms/waveforms-3/start) capture projects are provided under [`Waveforms/`](./Waveforms).
+
+The CHiL experimental setup and signal path used in the paper — the controller and plant NUCLEO boards interconnected, with the Analog Discovery 3 recording the signals:
+
+![CHiL experimental setup and signal path: the NUCLEO-L476RG controller (PSS) and NUCLEO-H723ZG plant interconnected, with a Digilent Analog Discovery 3 capturing the signals.](./docs/images/setup-path.svg)
 
 ## Getting started
 
@@ -111,7 +127,7 @@ The eFMU generation configurations live next to the models they target — for e
 
 ## Troubleshooting
 
-*Only if you use the optional 3DEXPERIENCE / SOP path:* if the account is not linked, call `DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account`; see also the [3DEXPERIENCE SPE documentation](https://help.3ds.com/2025x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433).
+*Only if you use the optional 3DEXPERIENCE / SOP path:* if the account is not linked, call `DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account`; see also the [3DEXPERIENCE SPE documentation](https://help.3ds.com/2026x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433).
 
 ## How to cite
 
@@ -137,3 +153,8 @@ Released under the 3-Clause BSD License. Copyright © 2025–2026, ALSETLab and 
 
 Developed by [ALSETLab](https://github.com/ALSETLab), Rensselaer Polytechnic Institute, in collaboration with Dassault Systèmes:
 Luigi Vanfretti, Christoff Bürger (Dassault Systèmes), Joseph Pizzimenti, Kyle R. Wilt, and Hao Chang.
+
+This work was made possible by the generous support of:
+
+- The **CATIA Champions** program at Dassault Systèmes — and in particular **Fabio Ballari** (CATIA Champions Program Manager) — for providing complimentary access to the 3DEXPERIENCE platform and its Software Production Engineering (SPE/SOP) service, which enabled the early development of this work.
+- **Dr. Christopher R. Laughman** (Senior Team Leader, Multiphysical Systems, Mitsubishi Electric Research Laboratories — MERL) for an unrestricted gift grant to Rensselaer Polytechnic Institute that funded the embedded hardware behind this project, including the STM32 NUCLEO boards (both those used in the paper and others evaluated along the way) and the Analog Discovery 3 instrumentation.

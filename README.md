@@ -2,7 +2,7 @@
 
 **Real-time simulation and Controller-Hardware-in-the-Loop (CHiL) testing of a Power System Stabilizer on low-cost microcontrollers, using Modelica and eFMI.**
 
-[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE) [![DOI](https://zenodo.org/badge/1036137031.svg)](https://doi.org/10.5281/zenodo.20583549)
 
 This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"* (American Modelica & FMI Conference, 2026). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 

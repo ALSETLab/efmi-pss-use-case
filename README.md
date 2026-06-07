@@ -1,8 +1,10 @@
 # efmi-pss-use-case
 
-**Real-time simulation and Controller-Hardware-in-the-Loop (CHiL) testing of a Power System Stabilizer on low-cost microcontrollers, using Modelica and eFMI.**
+**Real-time simulation and Controller-Hardware-in-the-Loop (CHiL) testing of Power System Stabilizers on low-cost microcontrollers, using Modelica and eFMI.**
 
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20583549-blue)](https://doi.org/10.5281/zenodo.20583549)
+
+*Repository archived on Zenodo — DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549)*
 
 This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, submitted for review to the American Modelica & FMI Conference 2026 (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
@@ -20,7 +22,7 @@ The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, wh
 
 ```mermaid
 flowchart LR
-  A["Modelica models<br/>OpenIPSL_CHIL:<br/>plant + PSS controller"] --> B["eFMI synthesis<br/>Dymola eFMI tooling<br/>MISRA-C / CERT-C code"]
+  A["Modelica models<br/>OpenIPSL_CHIL:<br/>plant + PSS controller"] --> B["eFMI synthesis<br/>Dymola eFMI tooling<br/>MISRA C:2023 / SEI CERT C code"]
   B --> C["MiL and SiL tests<br/>verify vs. offline simulation"]
   C --> D["STM32 integration<br/>CubeMX / CubeIDE"]
   D --> E["Deploy to NUCLEO boards<br/>H723ZG = plant<br/>L476RG = controller"]
@@ -135,7 +137,9 @@ The eFMU generation configurations live next to the models they target — for e
 
 ## Troubleshooting
 
-*Only if you use the optional 3DEXPERIENCE / SOP path:* if the account is not linked, call `DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account`; see also the [3DEXPERIENCE SPE documentation](https://help.3ds.com/2026x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433).
+The full, authoritative requirements are documented inside the library itself — open `DymolaEmbedded.UsersGuide.Requirements` in Dymola.
+
+*Only if you use the optional 3DEXPERIENCE / SOP path:* if the account is not linked, call `DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account`. (Dassault's online [3DEXPERIENCE SPE documentation](https://help.3ds.com/2026x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433) is also available, but requires a 3DEXPERIENCE login.)
 
 ## How to cite
 

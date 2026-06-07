@@ -2,9 +2,9 @@
 
 **Real-time simulation and Controller-Hardware-in-the-Loop (CHiL) testing of a Power System Stabilizer on low-cost microcontrollers, using Modelica and eFMI.**
 
-[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE) [![DOI](https://zenodo.org/badge/1036137031.svg)](https://doi.org/10.5281/zenodo.20583549)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20583549-blue)](https://doi.org/10.5281/zenodo.20583549)
 
-This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"* (American Modelica & FMI Conference, 2026). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
+This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, submitted for review to the American Modelica & FMI Conference 2026 (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
 ---
 
@@ -49,7 +49,7 @@ flowchart LR
 | [`MATLAB-Analysis/`](./MATLAB-Analysis) | MATLAB scripts for PSS redesign, CHiL-setup simulations, and experiment comparisons. |
 | [`Waveforms/`](./Waveforms) | Digilent WaveForms capture projects and recorded data (Analog Discovery 3) from the experiments, including the figures reproduced in the paper. |
 | [`Shortcuts/`](./Shortcuts) | One-click Dymola launcher (`DoubleClickAndRunDymolaScript.cmd`) and startup script (`startup-generic.mos`) that load OpenIPSL, the library, and the generated artifacts. |
-| [`docs/`](./docs) | Images and troubleshooting notes referenced from this README. |
+| [`docs/`](./docs) | Diagrams, figures, and pin-configuration references used by this documentation. |
 
 ### The `OpenIPSL_CHIL` library
 
@@ -68,7 +68,7 @@ flowchart LR
 - **Dymola 2026x Refresh 1** (the version tested; also the launcher's default) with the **eFMI / Embedded** toolchain and a **Source Code Generation** license. With this license, eFMI code generation runs **fully locally** — this is the recommended setup. Running the generation against the **3DEXPERIENCE / SOP** platform is supported but **no longer required**.
 - **OpenIPSL 3.1.0** — included as a submodule under `dependencies/openipsl`.
 - **Modelica Standard Library 4.0.0**, **Complex 4.0.0**, **Modelica_LinearSystems2 3.0.1**, **DymolaEmbedded 1.0.5** (shipped with / installed alongside Dymola).
-- **Java** — OpenJDK **24.0.2** ([download](https://jdk.java.net/24/)), with `JAVA_HOME` and `DYMOLA_JAVA_HOME` set to the JDK root and the JDK `bin` on `PATH` (required by the eFMI toolchain).
+- **Java** — a JDK **21 or newer** is required by Dymola's *Software Production Engineering*, which performs the eFMI production-code generation in both the local (offline, default) and 3DEXPERIENCE modes. **All results in the paper were produced and tested locally with [OpenJDK](https://openjdk.org/) 24.0.2.** Install it in its default location, set `JAVA_HOME` and `DYMOLA_JAVA_HOME` to the JDK root, and put the JDK `bin` on `PATH`. *(Needed only if you generate eFMUs — not if you only inspect the shipped artifacts.)*
 - **STM32CubeMX** (tested with 6.17.0) and **STM32CubeIDE** (tested with 2.1.0) for building and flashing the embedded firmware.
 - **MATLAB** for the PSS redesign and analysis scripts.
 
@@ -82,6 +82,14 @@ flowchart LR
 The CHiL experimental setup and signal path used in the paper — the controller and plant NUCLEO boards interconnected, with the Analog Discovery 3 recording the signals:
 
 ![CHiL experimental setup and signal path: the NUCLEO-L476RG controller (PSS) and NUCLEO-H723ZG plant interconnected, with a Digilent Analog Discovery 3 capturing the signals.](./docs/images/setup-path.svg)
+
+**Optional — reproducing the code-quality checks**
+
+The paper's MISRA C:2023 / SEI CERT C compliance and static-analysis results require extra tooling (not needed to build or run the models). These checks are invoked from the eFMU generation configurations via their `check_codes()` and `check_eFMU()` functions.
+
+- **Cppcheck** for the MISRA / CERT-C analyses — use **Cppcheck Premium** for MISRA C:2023, since the open-source Cppcheck only covers MISRA C:2012. (MISRA is a proprietary standard you must license to use the rule-cited reports.)
+- **Python 3** (3.13+ recommended) plus the **eFMPy** wheel shipped under `DymolaEmbedded/Resources/external-tooling/eFMPy` (install with `pip install <wheel>`) — used by the eFMU compliance checks and the optional MATLAB/Simulink import. Python with the **Pygments** package is also needed for Cppcheck's HTML reports.
+- **Microsoft .NET 4.8** runtime — only for the eFMI Container Manager checks.
 
 ## Getting started
 
@@ -131,19 +139,22 @@ The eFMU generation configurations live next to the models they target — for e
 
 ## How to cite
 
-If you use these models or the workflow, please cite:
+The paper is currently **under review**; a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI) (DOI: [10.13140/RG.2.2.32454.84808](https://doi.org/10.13140/RG.2.2.32454.84808)). If you use these models or the workflow, please cite it as submitted:
 
-> L. Vanfretti, C. Bürger, J. Pizzimenti, K. R. Wilt, and H. Chang, "Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI," *American Modelica & FMI Conference*, 2026.
+> L. Vanfretti, C. Bürger, J. Pizzimenti, K. R. Wilt, and H. Chang, "Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI," submitted for review to the *American Modelica & FMI Conference*, 2026.
 
 ```bibtex
 @inproceedings{Vanfretti2026_eFMI_PSS,
   author    = {Vanfretti, Luigi and B{\"u}rger, Christoff and Pizzimenti, Joseph and Wilt, Kyle R. and Chang, Hao},
   title     = {Real-time Simulation and {CHiL} Testing of Power System Stabilizers on Microcontrollers with {Modelica} and {eFMI}},
   booktitle = {American Modelica \& FMI Conference},
-  year      = {2026}
-  % TODO: add pages / DOI once available
+  year      = {2026},
+  note      = {Under review. Pre-print: https://doi.org/10.13140/RG.2.2.32454.84808}
+  % TODO: add pages / DOI once published
 }
 ```
+
+You can also cite this repository directly via its Zenodo DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549).
 
 ## License
 

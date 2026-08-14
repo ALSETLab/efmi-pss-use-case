@@ -7,14 +7,17 @@
 This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, accepted at the [American Modelica & FMI Conference 2026](https://modelica.org/events/american2026/) (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a power system stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
 > [!WARNING]
-> **This is a large repository.** It ships generated, reproducibility artifacts — the eFMUs, and SiL/MiL/CHiL simulation results — so the models *and* the evidence for the paper's claims travel together. If you only want to read and run the models, clone a **shallow snapshot** via:
+> **Microsoft Windows users should clone into a short root path.** Generated artefacts have deeply nested file paths; cloning under a long location will hit the `MAX_PATH` limit and cause build failures.
+
+> [!WARNING]
+> **This is a large repository.** It ships generated, reproducibility artifacts — the eFMUs, and SiL/MiL/CHiL simulation results — so the models *and* the evidence for the paper's claims travel together.
+
+> [!TIP]
+> If you only want to read and run the models, clone a **shallow snapshot** via:
 > ```bash
 > git clone --depth 1 --recurse-submodules --shallow-submodules \
 >   https://github.com/ALSETLab/efmi-pss-use-case.git C:/dev/efmi-pss-use-case
 > ```
-
-> [!WARNING]
-> **Microsoft Windows users should clone into a short root path.** Generated artefacts have deeply nested file paths; cloning under a long location will hit the `MAX_PATH` limit and cause build failures.
 
 ---
 
@@ -97,7 +100,7 @@ The following step-wise workflow generates all involved artefacts for the paper'
 
 ## 1. Clone repository with submodules
 
-OpenIPSL is linked as a submodule, so clone recursively (or use the lighter shallow clone shown in the note above):
+OpenIPSL is linked as a submodule, so clone recursively (or use a lighter shallow clone as explained in the tip at the beginning):
 
 ```bash
 git clone --recurse-submodules https://github.com/ALSETLab/efmi-pss-use-case.git

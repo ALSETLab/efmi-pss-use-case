@@ -1,0 +1,28 @@
+﻿/*
+  Script to load dependencies (Modelica libraries, eFMU SiL-stubs, source code co-simulation FMUs
+  based on eFMU production codes, etc).
+  
+  IMPORTANT: Environment variable EFMI_PSS_ROOT must be set by start-Dymola.bat.
+*/
+
+(EFMI_PSS_ROOT, EFMI_PSS_ROOT_EXISTS) := .Modelica.Utilities.System.getEnvironmentVariable(
+  name = "EFMI_PSS_ROOT",
+  convertToSlash = true);
+if EFMI_PSS_ROOT_EXISTS and cd(EFMI_PSS_ROOT + "/models/working-directory") then
+  if openModel(
+      path = EFMI_PSS_ROOT + "/models/OpenIPSL-submodule/OpenIPSL/package.mo",
+	  mustRead = true,
+	  changeDirectory = false)
+    and openModel(
+      path = EFMI_PSS_ROOT + "/models/OpenIPSL_CHIL/package.mo",
+	  mustRead = true,
+	  changeDirectory = false)
+  then
+    .DymolaEmbedded_menu.load_all("OpenIPSL_CHIL");
+  else
+    .Modelica.Utilities.Streams.error("ERROR: Failed to load libraries.");
+  end if;
+else
+  EFMI_PSS_ROOT_EXISTS := false;
+  .Modelica.Utilities.Streams.error("ERROR: EFMI_PSS_ROOT does not exist or is not a directory.");
+end if;

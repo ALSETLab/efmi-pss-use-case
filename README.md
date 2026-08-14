@@ -1,101 +1,101 @@
-# efmi-pss-use-case
-
 **Real-time simulation and Controller-Hardware-in-the-Loop (CHiL) testing of Power System Stabilizers on low-cost microcontrollers, using Modelica and eFMI.**
 
-[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20583549-blue)](https://doi.org/10.5281/zenodo.20583549)
+[![License: 3-Clause BSD](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20583549-blue)](https://doi.org/10.5281/zenodo.20583549)
 
 *Repository archived on Zenodo — DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549)*
 
-This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, submitted for review to the American Modelica & FMI Conference 2026 (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
-
----
-
-## Overview
-
-Modern grids increasingly suffer from poorly damped oscillations (e.g., the 2025 Iberian grid incident), which demand controllers that can be re-tuned and re-deployed throughout their lifecycle. Today, the path from a control design to a hardware test is slow and error-prone: offline tools like PSS®E or PSCAD® cannot run in real time, forcing manual re-implementation and breaking traceability between design and deployment.
-
-This project demonstrates an automated alternative built on the [Modelica](https://modelica.org/language/) language and the [eFMI](https://www.efmi-standard.org/) (FMI for embedded systems) standard. Using Dymola's eFMI tooling, both the **controller** (the PSS) and the **plant** (a synchronous generator with its excitation control system, interconnected to a grid) are synthesized into MISRA C:2023 / SEI CERT C–compliant embedded code and deployed onto low-cost STM32 boards. The result is validated through a full suite of **Model-in-the-Loop (MiL)**, **Software-in-the-Loop (SiL)**, and **CHiL** tests, providing an open, traceable, and inexpensive alternative to proprietary real-time platforms.
-
-The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, which extends the [Open-Instance Power System Library (OpenIPSL)](https://github.com/OpenIPSL/OpenIPSL) for embedded real-time applications.
-
-### Workflow at a glance
-
-```mermaid
-flowchart LR
-  A["Modelica models<br/>OpenIPSL_CHIL:<br/>plant + PSS controller"] --> B["eFMI synthesis<br/>Dymola eFMI tooling<br/>MISRA C:2023 / SEI CERT C code"]
-  B --> C["MiL and SiL tests<br/>verify vs. offline simulation"]
-  C --> D["STM32 integration<br/>CubeMX / CubeIDE"]
-  D --> E["Deploy to NUCLEO boards<br/>H723ZG = plant<br/>L476RG = controller"]
-  E --> F["CHiL test<br/>real-time validation"]
-```
+This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, accepted at the [American Modelica & FMI Conference 2026](https://modelica.org/events/american2026/) (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
 > [!WARNING]
-> **This is a large repository (~750 MB of Git history, ~800 MB checked out).** By design, it ships generated reproducibility artifacts — the SiL FMUs and the MiL/CHiL simulation results behind the paper's figures — so the models *and* the evidence for the paper's claims travel together. If you only want to read and run the models, clone a **shallow snapshot** to skip the history and avoid the large download:
->
+> **This is a large repository.** It ships generated, reproducibility artifacts — the eFMUs, and SiL/MiL/CHiL simulation results — so the models *and* the evidence for the paper's claims travel together. If you only want to read and run the models, clone a **shallow snapshot** via:
 > ```bash
 > git clone --depth 1 --recurse-submodules --shallow-submodules \
 >   https://github.com/ALSETLab/efmi-pss-use-case.git C:/dev/efmi-pss-use-case
 > ```
->
-> A full clone (with complete history) is only needed if you intend to contribute changes.
->
-> **Windows users:** clone into a short root path such as `C:\dev\` (as above). The eFMI build generates deeply nested file paths, and cloning under a long location (e.g. `C:\Users\<you>\Documents\...`) will hit the Windows 260-character `MAX_PATH` limit and cause build failures.
 
-## Repository structure
+> [!WARNING]
+> **Microsoft Windows users should clone into a short root path.** Generated artefacts have deeply nested file paths; cloning under a long location will hit the `MAX_PATH` limit and cause build failures.
+
+---
+
+# Overview
+
+Modern grids increasingly suffer from poorly damped oscillations (e.g., the [2025 Iberian grid incident](https://www.entsoe.eu/publications/blackout/28-april-2025-iberian-blackout/)), which demand controllers that can be re-tuned and re-deployed throughout their lifecycle. Today, the path from a control design to a hardware test is slow and error-prone: offline tools like [PSS/E](https://www.siemens.com/en-us/products/pss-software/gridscale-x-pss-e/) or [PSCAD](https://www.pscad.com/) cannot run in real time, forcing manual re-implementation and breaking traceability between design and deployment.
+
+This project demonstrates an automated alternative built on the [Modelica](https://modelica.org/) language and the [eFMI](https://www.efmi-standard.org/) (FMI for embedded systems) standards. Using the eFMI tooling of [Dymola](https://www.dymola.com), both the **controller** (the PSS) and the **plant** (a synchronous generator with its excitation control system, interconnected to a grid) are synthesized into [MISRA C:2023](https://misra.org.uk/) and [SEI CERT C Coding Standard](https://cmu-sei.github.io/secure-coding-standards/sei-cert-c-coding-standard/) compliant, safety-critical and hard-real time suited, embedded code, deployable onto low-cost [STM32](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) boards. The result is validated through a full suite of **Model-in-the-Loop (MiL)**, **Software-in-the-Loop (SiL)**, and **Controller-Hardware-in-the-Loop (CHiL)** experiments, providing an open, traceable, and inexpensive alternative to proprietary real-time platforms.
+
+The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, which extends the [Open-Instance Power System Library (OpenIPSL)](https://github.com/OpenIPSL/OpenIPSL) for embedded real-time applications.
+
+# Tooling and workflow
+
+The following diagram sketches the general model based software engineering (MBSE) workflow:
+
+```mermaid
+flowchart LR
+  A["Modelica models<br/>OpenIPSL_CHIL<br/>plant + PSS controller"] --> B["eFMI synthesis<br/>Dymola eFMI tooling<br/>MISRA C:2023 / SEI CERT C code"]
+  B --> C["MiL and SiL experiments<br/>verify vs. offline simulation"]
+  C --> D["STM32 integration<br/>STM32CubeMX and STM32CubeIDE"]
+  D --> E["Deploy to NUCLEO boards<br/>H723ZG = plant<br/>L476RG = controller"]
+  E --> F["CHiL experiments<br/>control and real-time validation"]
+```
+
+# Repository structure
 
 | Path | Contents |
 | --- | --- |
-| [`Modelica/OpenIPSL_CHIL/`](./Modelica/OpenIPSL_CHIL) | The `OpenIPSL_CHIL` Modelica library — the heart of the project (see below). |
-| [`dependencies/openipsl/`](./dependencies) | [OpenIPSL](https://github.com/OpenIPSL/OpenIPSL) library, linked as a git submodule. |
-| [`STM32/`](./STM32) | STM32CubeIDE firmware projects that integrate the generated eFMI code for the plant and controller boards. |
-| [`MATLAB-Analysis/`](./MATLAB-Analysis) | MATLAB scripts for PSS redesign, CHiL-setup simulations, and experiment comparisons. |
-| [`Waveforms/`](./Waveforms) | Digilent WaveForms capture projects and recorded data (Analog Discovery 3) from the experiments, including the figures reproduced in the paper. |
-| [`Shortcuts/`](./Shortcuts) | One-click Dymola launcher (`DoubleClickAndRunDymolaScript.cmd`) and startup script (`startup-generic.mos`) that load OpenIPSL, the library, and the generated artifacts. |
-| [`docs/`](./docs) | Diagrams, figures, and pin-configuration references used by this documentation. |
+| [`models`](./models) | The `OpenIPSL_CHIL` Modelica library — the heart of the project (see below); and a git submodule for the `OpenIPSL` library. `./models/start-Dymola.bat` is a one-click Windows script that launches Dymola, preconfigures its working directory and loads all required Modelica libraries -- like `OpenIPSL` and `OpenIPSL_CHIL` -- and the generated artifacts like eFMUs, eFMU SiL-stubs, eFMU production code based source code FMUs, etc. |
+| [`firmware/`](./firmware) | STM32CubeIDE and STM32CubeMX projects for developing the STM32 microcontroller firmware for PSS and plant based on generated eFMI production codes. |
+| [`measurements/`](./measurements) | Digilent WaveForms capture projects and recorded data of CHiL experiments; includes predefined setups to conduct the measurements required for the paper figures using the Analog Discovery 3 oscilloscope (i.e., to reproduce the CHiL experiments like computation time analyses). |
+| [`postprocessing/`](./postprocessing) | MATLAB scripts for analyses of MiL, SiL and CHiL experiments, for example, analyses of PSS redesign simulations, CHiL-setup simulations, and actual CHiL measurements. |
+| [`documentation/`](./documentation) | Accompanying documentation of used hardware and tooling, the pin-configuration of the CHiL setup, etc. |
 
-### The `OpenIPSL_CHIL` library
+## The `OpenIPSL_CHIL` library
 
-`OpenIPSL_CHIL` ("Extensions of OpenIPSL for embedded real-time applications") is organized into:
+`OpenIPSL_CHIL` (OpenIPSL for CHiL: Extensions of OpenIPSL for embedded real-time applications) is organized into:
 
-- **`Components`** — OpenIPSL components modified for embedded deployment, plus new ones. The `PSS` sub-package holds the controller variants, their building blocks, and the eFMU generation configurations; `Auxiliary` and `Machines` hold the modified line, fault, and machine models; `Tests` provides unit tests for the continuous, clocked, and eFMU variants.
-- **`Generator`** — variants of the generator unit (machine + excitation control system) for the successive stages of control design, redesign, and embedded integration.
-- **`Network`** — variants of the grid *without* the generator unit, used to assemble simulation and eFMU-export models.
-- **`RTS`** — plant models targeted at real-time simulation (HiL and CHiL), including their eFMU generation configurations.
-- **`Examples`** — the MiL experiments, e.g. under `Examples.CHIL_Configuration.Grid4CHIL`.
+- **`Components`:** OpenIPSL components modified for embedded deployment, alongside new components stemming from additional embeeded domain requirements. The `PSS` sub-package holds the controller variants, their building blocks, and the eFMU generation configurations; `Auxiliary` and `Machines` encapsulate modified variants of OpenIPSL transmission line, fault, and machine models that required adaptations to be suited for the embedded, hard real-time domain; `Tests` provides unit tests for component models, including continuous, clocked, and eFMU PSS variants.
+- **`Generator`:** Variants of the generator unit (machine + excitation control system) for the successive stages of control design, redesign, and embedded integration.
+- **`Network`:** Variants of the grid *without* the generator unit, used to assemble simulation and eFMU export models.
+- **`RTS`:** Plant models targeted at real-time simulation (HiL and CHiL), including their eFMU generation configurations.
+- **`Examples`:** Whole system experiments with closed-loop PSS controller and plant for offline simulations from continuous, toward sampled system and eventually expected final CHiL setup behavior (MiL and SiL).
 
-## Requirements
+# Requirements
 
-**Software**
+## Software
 
-- **Dymola 2026x Refresh 1** (the version tested; also the launcher's default) with the **eFMI / Embedded** toolchain and a **Source Code Generation** license. With this license, eFMI code generation runs **fully locally** — this is the recommended setup. Running the generation against the **3DEXPERIENCE / SOP** platform is supported but **no longer required**.
-- **OpenIPSL 3.1.0** — included as a submodule under `dependencies/openipsl`.
-- **Modelica Standard Library 4.0.0**, **Complex 4.0.0**, **Modelica_LinearSystems2 3.0.1**, **DymolaEmbedded 1.0.5** (shipped with / installed alongside Dymola).
-- **Java** — a JDK **21 or newer** is required by Dymola's *Software Production Engineering*, which performs the eFMI production-code generation in both the local (offline, default) and 3DEXPERIENCE modes. **All results in the paper were produced and tested locally with [OpenJDK](https://openjdk.org/) 24.0.2.** Install it in its default location, set `JAVA_HOME` and `DYMOLA_JAVA_HOME` to the JDK root, and put the JDK `bin` on `PATH`. *(Needed only if you generate eFMUs — not if you only inspect the shipped artifacts.)*
-- **STM32CubeMX** (tested with 6.17.0) and **STM32CubeIDE** (tested with 2.1.0) for building and flashing the embedded firmware.
-- **MATLAB** for the PSS redesign and analysis scripts.
+- **[Dymola](https://www.dymola.com) 2026x Refresh 1** with **Dymola Source Code Generation License**: Required for eFMI code generation (GALEC code of Algorithm Code container and derived C11 code of Production Code container). For requirement details, please consult the documentation of `DymolaEmbedded.UsersGuide.Requirements` of the `DymolaEmbedded` library shipped with Dymola.
+- **[Java](https://www.java.com/en/) 21**: Required by Dymola's eFMI tooling. For the paper we used the portable (i.e., zip, not MSI installer) [Eclipse Temurin JDK 21.0.11+10](https://adoptium.net/temurin/releases/) unpacked in its default installation directory (`C:\Program Files\Java\jdk-21.0.11+10` in Windows).
+- **[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) 6.17.0** and **[STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) 2.1.0**: Required for pin and timer configuration, generation of STM32 hardware abstraction layer (HAL) integration code, firmware development and final flashing on SMT32 boards.
+- **[Digilent WaveForms](https://digilent.com/shop/waveforms/) 3.25.1** (if the Analog Discovery 3 oscilloscope is used, cf. hardware below): Required to visualize and store measurements of the CHiL experiments.
+- **[MATLAB](https://www.mathworks.com/products/matlab.html)**: Required to postprocess experiment results.
 
-**Hardware (for CHiL)**
+Optional for production code analyses based on the strict configuration profiles provided by Dymola (cf. `DymolaEmbedded.EmbeddedConfiguration.ProductionCode.check_codes()`):
 
-- **NUCLEO-H723ZG** — runs the *plant* model (12-bit DAC, 0–3.3 V).
-- **NUCLEO-L476RG** — runs the *controller* (PSS).
-- A breadboard and patch wires to interconnect the analog I/O of the two boards.
-- **A data-recording instrument** to capture the closed-loop signals during the experiments. We suggest the **Digilent Analog Discovery 3** (used in the paper), but any oscilloscope or data-acquisition device with comparable bandwidth and resolution works. The corresponding [Digilent WaveForms](https://digilent.com/reference/software/waveforms/waveforms-3/start) capture projects are provided under [`Waveforms/`](./Waveforms).
+- **[Cppcheck Premium](https://www.cppcheck.com/) 26.3.0**: To check MISRA C:2023 and SEI CERT C Coding Standard compliance, and for general bugs, undefined behavior and dangerous coding constructs.
+- **[Python](https://www.python.org/) 3.14** and **[Pygments](https://pygments.org/)**: Required by Cppcheck Premium for HTML reports. Python needs to be in its default installation directory (e.g., `C:\Users\<<your user name>>\AppData\Local\Programs\Python\Python314` in Windows).
+- **[clang-tidy](https://clang.llvm.org/extra/clang-tidy/) (Clang Tools 19.1.5)**: To check general code quality.
 
-The CHiL experimental setup and signal path used in the paper — the controller and plant NUCLEO boards interconnected, with the Analog Discovery 3 recording the signals:
+## Hardware (for CHiL experiments)
 
-![CHiL experimental setup and signal path: the NUCLEO-L476RG controller (PSS) and NUCLEO-H723ZG plant interconnected, with a Digilent Analog Discovery 3 capturing the signals.](./docs/images/setup-path.svg)
+- **[NUCLEO-H723ZG](https://www.st.com/en/evaluation-tools/nucleo-h723zg.html)**: Runs the *plant* model.
+- **[NUCLEO-L476RG](https://www.st.com/en/evaluation-tools/nucleo-l476rg.html)**: Runs the *controller* (PSS).
+- **Breadboard and patch wires**: To interconnect the analog I/O of the two boards.
+- **A data-recording instrument**: To capture the closed-loop signals during the CHiL experiments. We suggest the [Analog Discovery 3](https://digilent.com/shop/analog-discovery-3/) used in the paper, but any oscilloscope or data-acquisition device with comparable bandwidth and resolution works.
 
-**Optional — reproducing the code-quality checks**
+# Getting started
 
-The paper's MISRA C:2023 / SEI CERT C compliance and static-analysis results require extra tooling (not needed to build or run the models). These checks are invoked from the eFMU generation configurations via their `check_codes()` and `check_eFMU()` functions.
+The following step-wise workflow generates all involved artefacts for the paper's controller and plant setup from scratch, accompanied by respective MiL, SiL, and CHiL experiments.
 
-- **Cppcheck** for the MISRA / CERT-C analyses — use **Cppcheck Premium** for MISRA C:2023, since the open-source Cppcheck only covers MISRA C:2012. (MISRA is a proprietary standard you must license to use the rule-cited reports.)
-- **Python 3** (3.13+ recommended) plus the **eFMPy** wheel shipped under `DymolaEmbedded/Resources/external-tooling/eFMPy` (install with `pip install <wheel>`) — used by the eFMU compliance checks and the optional MATLAB/Simulink import. Python with the **Pygments** package is also needed for Cppcheck's HTML reports.
-- **Microsoft .NET 4.8** runtime — only for the eFMI Container Manager checks.
+> [!INFO]
+> The repository already ships with generated eFMUs, eFMU SiL-stubs, SiL experiments, and eFMU production code based source code FMUs; all under `./models/working-directory`. Likwise, the respository already provides generated STM32 HAL integration code for the board configurations; all under `./firmware/`.
 
-## Getting started
+> [!WARNING]
+> If artifacts are (re)generated, the existing ones are overwritten! If anything goes wrong, you can always discard your local changes; if you do not intend to commit new versions, just build on a local git branch.
 
-### 1. Clone with submodules
+> [!INFO]
+> Steps 1-5 can be skipped if one just wants to conduct the CHiL experiments with the models as they are. But compilation and flashing of binaries with SMT32CubeIDE as described from step 6 is still required since binaries are not shipped with the repository.
+
+## 1. Clone repository with submodules
 
 OpenIPSL is linked as a submodule, so clone recursively (or use the lighter shallow clone shown in the note above):
 
@@ -109,43 +109,59 @@ If you already cloned without `--recurse-submodules`, run:
 git submodule update --init --recursive
 ```
 
-### 2. Load the models in Dymola
+## 2. Load models in Dymola
 
-**Option A — automated launcher (recommended).** Just double-click `Shortcuts/DoubleClickAndRunDymolaScript.cmd`. It resolves the repository root from its own location, auto-detects your Dymola installation, regenerates `load_artifacts.mos` from `.gitignore`, launches Dymola, and runs `startup-generic.mos` — loading OpenIPSL, the `OpenIPSL_CHIL` library, and the generated artifacts, then setting the working directory to `Modelica/work`. No paths to configure.
+**Option A — automated launcher (recommended):** Just double-click `./models/start-Dymola.bat`.
 
-**Option B — manual.**
+**Option B — manual:**
 
-1. Open `dependencies/openipsl/OpenIPSL/package.mo` to load OpenIPSL.
-2. Open `Modelica/OpenIPSL_CHIL/package.mo` to load the library.
-3. Set the repository's [`Modelica/work`](./Modelica/work) folder as the Dymola working directory (Option A's launcher does this for you). Keeping the working directory inside the repo also keeps paths short, avoiding the `eFMU generation path exceeds max. path length limit` error.
+1. Start Dymola.
+2. Set Dymola's working directory to `./models/working-directory`.
+3. Load the `OpenIPSL` library from `./models/OpenIPSL-submodule/OpenIPSL/`.
+4. Load the `OpenIPSL_CHIL` library from `./models/OpenIPSL_CHIL/`.
+5. Load eFMU SiL-stubs by executing `.DymolaEmbedded_menu.load_all("OpenIPSL_CHIL")` (can also be done via: _Tools_ ribbon -> eFMI® button -> Load eFMU Co-simulation Stubs... -> select the library as `package_name` using the selection dialog opened via the directory-tree button).
 
-> [!NOTE]
-> `Modelica/work` already contains the generated eFMUs, SiL tests, and FMUs that ship with the repository. If you regenerate artifacts there, your build may overwrite or damage these committed files — that's expected. You can always discard your local changes (`git checkout -- Modelica/work` / `git restore Modelica/work`) and pull our artifacts again.
+## 3. Generate eFMUs in Dymola
 
-### 3. Generate an eFMU
+> [!INFO]
+> This step can be skipped if only interested in offline design and MiL experiments.
 
-The eFMU generation configurations live next to the models they target — for example, the controller configuration `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF`, which extends `DymolaEmbedded.EmbeddedConfiguration` (model `PSSTypeIISimpleHPF`, 0.2 ms sample period, Explicit Euler solver). Open the desired configuration and build it with Dymola's eFMI tooling.
+The eFMU generation configurations live next to the models they target — for example, the configuration for the controller is `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF` and for the plant it is `OpenIPSL_CHIL.RTS.CHIL.eFMUs.Grid4CHIL`. To build a configuration's eFMU from scratch, just call its `build()` function with `update=false` and `build_binary_stub=true`.
 
-> [!NOTE]
-> Generating eFMUs requires the Dymola **Source Code Generation** license. If you don't have it, you don't need to generate anything — the eFMUs and their production code that we generated are already included in the repository under [`Modelica/work`](./Modelica/work) (loaded automatically by the launcher), so you can inspect and run the artifacts directly.
+## 4. Conduct Mil and SiL experiments in Dymola
 
-### 4. Run the tests
+TODO
 
-- **MiL** — open the experiments under `OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL` and simulate.
-- **SiL** — use the `SiLTest` models under `Components/PSS/eFMUs/*` (and the corresponding plant configurations) to verify the generated eFMI production code against the offline simulations.
-- **CHiL** — flash the firmware from `STM32/` to the two NUCLEO boards, wire them together, and reproduce the experiments; analyze the captured `Waveforms/` with the scripts in `MATLAB-Analysis/`.
+## 5. Generate STM32 HAL integration code in STM32CubeMX
 
-## Troubleshooting
+TODO
 
-The full, authoritative requirements are documented inside the library itself — open `DymolaEmbedded.UsersGuide.Requirements` in Dymola.
+## 6. Load embedded code projects in STM32CubeIDE
 
-*Only if you use the optional 3DEXPERIENCE / SOP path:* if the account is not linked, call `DymolaEmbedded.UsersGuide.Requirements.link_3DEXPERIENCE_account`. (Dassault's online [3DEXPERIENCE SPE documentation](https://help.3ds.com/2026x/English/DSDoc/CatEspUserMap/catesp-c-ov.htm?contextscope=cloud&id=27ed9a2adbe54e61aa477c3d4a7d8433) is also available, but requires a 3DEXPERIENCE login.)
+TODO
 
-## How to cite
+## 7. Compile and flash binary code in STM32CubeIDE
 
-The paper is currently **under review**; a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI) (DOI: [10.13140/RG.2.2.32454.84808](https://doi.org/10.13140/RG.2.2.32454.84808)). If you use these models or the workflow, please cite it as submitted:
+TODO
 
-> L. Vanfretti, C. Bürger, J. Pizzimenti, K. R. Wilt, and H. Chang, "Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI," submitted for review to the *American Modelica & FMI Conference*, 2026.
+## 8. Conduct CHiL experiments in WaveForms
+
+The signal path of the CHiL experimental setup of the paper is (_C_ is the controller board, _P_ the plant board):
+
+![CHiL experimental setup and signal path: the NUCLEO-L476RG controller (PSS) and NUCLEO-H723ZG plant interconnected with a Digilent Analog Discovery 3 capturing the signals.](./documentation/images/chil-setup.svg)
+
+1. Wire the boards and Analog Discovery 3 as shown in the picture above (signal path).
+3. Flash the controller firmware in `./firmware/PSSTypeIISimpleHPF_L476RG/Release/PSSTypeIISimpleHPF_L476RG.elf` on the NUCLEO-L476RG.
+2. Flash the plant firmware in `./firmware/Grid4CHIL_H723ZG/Release/Grid4CHIL_H723ZG.elf` on the NUCLEO-H723ZG.
+4. Reset both boards via the reset button.
+5. Conduct measurements in Diligent WaveForms using the capture projects in `./measurements/*`. Remember that sustained fault injection via the _B1_ button will cause the plant to destabilize beyond recovery; if that happens, plant _and_ controller need to be reset via their _B2_ buttons. Likewise, with the PSS controller disengaged the plant cannot compensate injected faults (the _B1_ button disengages/enagages the controller). See the paper for details.
+6. Analyze captured results using the MATLAB scripts in `./postprocessing/*`.
+
+# How to cite
+
+The paper is accepted, **but not yet published**; a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI) (DOI: [10.13140/RG.2.2.32454.84808](https://doi.org/10.13140/RG.2.2.32454.84808)). If you use these models or the workflow, please cite our work:
+
+> L. Vanfretti, C. Bürger, J. Pizzimenti, K. R. Wilt, and H. Chang, "Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI," *American Modelica & FMI Conference*, 2026.
 
 ```bibtex
 @inproceedings{Vanfretti2026_eFMI_PSS,
@@ -153,23 +169,21 @@ The paper is currently **under review**; a [pre-print is available on ResearchGa
   title     = {Real-time Simulation and {CHiL} Testing of Power System Stabilizers on Microcontrollers with {Modelica} and {eFMI}},
   booktitle = {American Modelica \& FMI Conference},
   year      = {2026},
-  note      = {Under review. Pre-print: https://doi.org/10.13140/RG.2.2.32454.84808}
-  % TODO: add pages / DOI once published
+  note      = {Accepted, but not published yet -- add pages and DOI once published.}
 }
 ```
 
 You can also cite this repository directly via its Zenodo DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549).
 
-## License
+# License
 
 Released under the 3-Clause BSD License. Copyright © 2025–2026, ALSETLab and Dassault Systèmes. See [`LICENSE`](./LICENSE).
 
-## Authors and acknowledgments
+# Authors and acknowledgments
 
-Developed by [ALSETLab](https://github.com/ALSETLab), Rensselaer Polytechnic Institute, in collaboration with Dassault Systèmes:
-Luigi Vanfretti, Christoff Bürger (Dassault Systèmes), Joseph Pizzimenti, Kyle R. Wilt, and Hao Chang.
+Developed by [ALSETLab](https://github.com/ALSETLab), [Rensselaer Polytechnic Institute](https://www.rpi.edu/), in collaboration with [Dassault Systèmes](https://www.3ds.com/): Luigi Vanfretti, Christoff Bürger, Joseph Pizzimenti, Kyle R. Wilt, and Hao Chang.
 
 This work was made possible by the generous support of:
 
-- The **CATIA Champions** program at Dassault Systèmes — and in particular **Fabio Ballari** (CATIA Champions Program Manager) — for providing complimentary access to the 3DEXPERIENCE platform and its Software Production Engineering (SPE/SOP) service, which enabled the early development of this work.
-- **Dr. Christopher R. Laughman** (Senior Team Leader, Multiphysical Systems, Mitsubishi Electric Research Laboratories — MERL) for an unrestricted gift grant to Rensselaer Polytechnic Institute that funded the embedded hardware behind this project, including the STM32 NUCLEO boards (both those used in the paper and others evaluated along the way) and the Analog Discovery 3 instrumentation.
+- The **CATIA Champions** program at [Dassault Systèmes](https://www.3ds.com/) — and in particular **Fabio Ballari** (CATIA Champions Program Manager) — for providing complimentary access to the [**3D**EXPERIENCE platform](https://www.3ds.com/3dexperience-platform) and its Systems Software Production Engineer (SOP-OC) capabilities, which enabled the early development of this work.
+- **Dr. Christopher R. Laughman** (Senior Team Leader, Multiphysical Systems, [Mitsubishi Electric Research Laboratories (MERL)](https://www.merl.com/)) for an unrestricted gift grant to Rensselaer Polytechnic Institute that funded the embedded hardware behind this project, including the STM32 NUCLEO boards (those used in the paper and others evaluated along the way) and the Analog Discovery 3 oscilloscope.

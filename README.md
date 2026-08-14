@@ -1,4 +1,4 @@
-**Real-time simulation and Controller-Hardware-in-the-Loop (CHiL) testing of Power System Stabilizers on low-cost microcontrollers, using Modelica and eFMI.**
+**Real-time simulation and controller-hardware-in-the-loop (CHiL) testing of power system stabilizers (PSS) on low-cost microcontrollers with Modelica and eFMI.**
 
 [![License: 3-Clause BSD](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](./LICENSE) [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.20583549-blue)](https://doi.org/10.5281/zenodo.20583549)
 

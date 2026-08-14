@@ -4,7 +4,7 @@
 
 *Repository archived on Zenodo — DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549)*
 
-This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, accepted at the [American Modelica & FMI Conference 2026](https://modelica.org/events/american2026/) (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a Power System Stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
+This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, accepted at the [American Modelica & FMI Conference 2026](https://modelica.org/events/american2026/) (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a power system stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
 > [!WARNING]
 > **This is a large repository.** It ships generated, reproducibility artifacts — the eFMUs, and SiL/MiL/CHiL simulation results — so the models *and* the evidence for the paper's claims travel together. If you only want to read and run the models, clone a **shallow snapshot** via:
@@ -86,13 +86,13 @@ Optional for production code analyses based on the strict configuration profiles
 
 The following step-wise workflow generates all involved artefacts for the paper's controller and plant setup from scratch, accompanied by respective MiL, SiL, and CHiL experiments.
 
-> [!INFO]
+> [!NOTE]
 > The repository already ships with generated eFMUs, eFMU SiL-stubs, SiL experiments, and eFMU production code based source code FMUs; all under `./models/working-directory`. Likwise, the respository already provides generated STM32 HAL integration code for the board configurations; all under `./firmware/`.
 
 > [!WARNING]
 > If artifacts are (re)generated, the existing ones are overwritten! If anything goes wrong, you can always discard your local changes; if you do not intend to commit new versions, just build on a local git branch.
 
-> [!INFO]
+> [!NOTE]
 > Steps 1-5 can be skipped if one just wants to conduct the CHiL experiments with the models as they are. But compilation and flashing of binaries with SMT32CubeIDE as described from step 6 is still required since binaries are not shipped with the repository.
 
 ## 1. Clone repository with submodules
@@ -123,7 +123,7 @@ git submodule update --init --recursive
 
 ## 3. Generate eFMUs in Dymola
 
-> [!INFO]
+> [!NOTE]
 > This step can be skipped if only interested in offline design and MiL experiments.
 
 The eFMU generation configurations live next to the models they target — for example, the configuration for the controller is `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF` and for the plant it is `OpenIPSL_CHIL.RTS.CHIL.eFMUs.Grid4CHIL`. To build a configuration's eFMU from scratch, just call its `build()` function with `update=false` and `build_binary_stub=true`.

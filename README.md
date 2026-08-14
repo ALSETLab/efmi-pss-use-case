@@ -4,7 +4,8 @@
 
 *Repository archived on Zenodo — DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549)*
 
-![eFMI-based PSS design with Dymola and STM32CubeIDE for STM32 microcontrollers.](./documentation/images/eFMI-based-PSS-design-with-Dymola-and-SMT32CubeIDE.png)
+![eFMI-based PSS design with Dymola and STM32CubeIDE for STM32 microcontrollers (Top left & Bottom right: Modelica Model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; Bottom down & top right: MiL simulation of CHiL setup & actual measurements in WaveForms).](./documentation/images/eFMI-based-PSS-design-with-Dymola-and-SMT32CubeIDE-for-SMT32-microcontrollers.png)
+_**Top left & Bottom right:** Modelica Model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; **Bottom down & top right:** MiL simulation of CHiL setup & actual measurements in Diligent WaveForms._
 
 This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, accepted at the [American Modelica & FMI Conference 2026](https://modelica.org/events/american2026/) (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a power system stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 

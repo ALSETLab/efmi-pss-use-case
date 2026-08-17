@@ -5,7 +5,7 @@
 *Repository archived on Zenodo — DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549)*
 
 ![eFMI-based PSS design with Dymola and STM32CubeIDE for STM32 microcontrollers (Top left & Bottom right: Modelica Model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; Bottom down & top right: MiL simulation of CHiL setup & actual measurements in WaveForms).](./documentation/images/eFMI-based-PSS-design-with-Dymola-and-SMT32CubeIDE-for-SMT32-microcontrollers.png)
-_**Top left & Bottom right:** Modelica Model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; **Bottom down & top right:** MiL simulation of CHiL setup & actual measurements in Diligent WaveForms._
+_**Top left & bottom right:** Modelica Model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; **Bottom down & top right:** MiL simulation of CHiL setup & actual measurements in Diligent WaveForms._
 
 This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, accepted at the [American Modelica & FMI Conference 2026](https://modelica.org/events/american2026/) (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a power system stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
@@ -163,9 +163,11 @@ The signal path of the CHiL experimental setup of the paper is (_C_ is the contr
 5. Conduct measurements in Diligent WaveForms using the capture projects in `./measurements/*`. Remember that sustained fault injection via the _B1_ button will cause the plant to destabilize beyond recovery; if that happens, plant _and_ controller need to be reset via their _B2_ buttons. Likewise, with the PSS controller disengaged the plant cannot compensate injected faults (the _B1_ button disengages/enagages the controller). See the paper for details.
 6. Analyze captured results using the MATLAB scripts in `./postprocessing/*`.
 
-# How to cite
+# Original authors and how to cite
 
-The paper is accepted, **but not yet published**; a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI) (DOI: [10.13140/RG.2.2.32454.84808](https://doi.org/10.13140/RG.2.2.32454.84808)). If you use these models or the workflow, please cite our work:
+Originally developed by [ALSETLab](https://github.com/ALSETLab), [Rensselaer Polytechnic Institute](https://www.rpi.edu/), in collaboration with [Dassault Systèmes](https://www.3ds.com/) by Luigi Vanfretti, Christoff Bürger, Joseph Pizzimenti, Kyle R. Wilt, and Hao Chang, and released under the [3-Clause BSD License](https://opensource.org/license/BSD-3-clause) with _Copyright © 2025–2026, ALSETLab and Dassault Systèmes_.
+
+If you use these models or the workflow, please cite our original paper ([DOI: 10.13140/RG.2.2.32454.84808](https://doi.org/10.13140/RG.2.2.32454.84808); [ResearchGate link](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)):
 
 > L. Vanfretti, C. Bürger, J. Pizzimenti, K. R. Wilt, and H. Chang, "Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI," *American Modelica & FMI Conference*, 2026.
 
@@ -180,16 +182,3 @@ The paper is accepted, **but not yet published**; a [pre-print is available on R
 ```
 
 You can also cite this repository directly via its Zenodo DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549).
-
-# License
-
-Released under the 3-Clause BSD License. Copyright © 2025–2026, ALSETLab and Dassault Systèmes. See [`LICENSE`](./LICENSE).
-
-# Authors and acknowledgments
-
-Developed by [ALSETLab](https://github.com/ALSETLab), [Rensselaer Polytechnic Institute](https://www.rpi.edu/), in collaboration with [Dassault Systèmes](https://www.3ds.com/): Luigi Vanfretti, Christoff Bürger, Joseph Pizzimenti, Kyle R. Wilt, and Hao Chang.
-
-This work was made possible by the generous support of:
-
-- The **CATIA Champions** program at [Dassault Systèmes](https://www.3ds.com/) — and in particular **Fabio Ballari** (CATIA Champions Program Manager) — for providing complimentary access to the [**3D**EXPERIENCE platform](https://www.3ds.com/3dexperience-platform) and its Systems Software Production Engineer (SOP-OC) capabilities, which enabled the early development of this work.
-- **Dr. Christopher R. Laughman** (Senior Team Leader, Multiphysical Systems, [Mitsubishi Electric Research Laboratories (MERL)](https://www.merl.com/)) for an unrestricted gift grant to Rensselaer Polytechnic Institute that funded the embedded hardware behind this project, including the STM32 NUCLEO boards (those used in the paper and others evaluated along the way) and the Analog Discovery 3 oscilloscope.

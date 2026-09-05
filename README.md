@@ -4,8 +4,8 @@
 
 *Repository archived on Zenodo — DOI: [10.5281/zenodo.20583549](https://doi.org/10.5281/zenodo.20583549)*
 
-![eFMI-based PSS design with Dymola and STM32CubeIDE for STM32 microcontrollers (Top left & Bottom right: Modelica Model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; Bottom down & top right: MiL simulation of CHiL setup & actual measurements in WaveForms).](./documentation/images/eFMI-based-PSS-design-with-Dymola-and-SMT32CubeIDE-for-SMT32-microcontrollers.png)
-_**Top left & bottom right:** Modelica Model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; **Bottom left & top right:** MiL simulation of CHiL setup & actual measurements in Digilent WaveForms._
+![eFMI-based PSS design with Dymola and STM32CubeIDE for STM32 microcontrollers (Top left & bottom right: Modelica model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; Bottom down & top right: MiL simulation of CHiL setup & actual measurements in Digilent WaveForms).](./documentation/images/eFMI-based-PSS-design-with-Dymola-and-SMT32CubeIDE-for-SMT32-microcontrollers.png)
+_**Top left & bottom right:** Modelica model & derived eFMI STM32 firmware in Dymola & STM32CubeIDE; **Bottom left & top right:** MiL simulation of CHiL setup & actual measurements in Digilent WaveForms._
 
 This repository is the open-source companion to the paper *"Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI"*, accepted at the [American Modelica & FMI Conference 2026](https://modelica.org/events/american2026/) (a [pre-print is available on ResearchGate](https://www.researchgate.net/publication/406308854_Real-time_Simulation_and_CHiL_Testing_of_Power_System_Stabilizers_on_Microcontrollers_with_Modelica_and_eFMI)). It provides an end-to-end, traceable workbench that takes a power system stabilizer (PSS) — a damping controller — and the power plant it regulates from physics-based Modelica models all the way to production code running on ARM Cortex-M microcontrollers, validated at every step.
 
@@ -38,11 +38,11 @@ The following diagram sketches the general model based software engineering (MBS
 
 ```mermaid
 flowchart LR
-  A["Modelica models<br/>OpenIPSL_CHIL<br/>plant + PSS controller"] --> B["eFMI synthesis<br/>Dymola eFMI tooling<br/>MISRA C:2023 / SEI CERT C code"]
-  B --> C["MiL and SiL experiments<br/>verify vs. offline simulation"]
-  C --> D["STM32 integration<br/>STM32CubeMX and STM32CubeIDE"]
-  D --> E["Deploy to NUCLEO boards<br/>H723ZG = plant<br/>L476RG = controller"]
-  E --> F["CHiL experiments<br/>control and real-time validation"]
+  A["Modelica models (OpenIPSL_CHIL library)<br/>design plant + PSS controller"] --> B["MiL experiments<br/>validate from continuous towards sampled setups"]
+  B --> C["eFMU<br/>generate MISRA C:2023 and SEI CERT C Coding Standard compliant C17 production code"]
+  C --> D["SiL experiments<br/>validate production code vs. MiL experiments"]
+  D --> E["STM32 firmware<br/>Configure boards in STM32CubeMX and system-integrate eFMU production codes in STM32CubeIDE"]
+  E --> F["CHiL experiments (NUCLEO-H723ZG = plant; NUCLEO-L476RG = controller)<br/>validate control-logic and real-time capabilities"]
 ```
 
 # Repository structure
@@ -160,7 +160,7 @@ The signal path of the CHiL experimental setup of the paper is (_C_ is the contr
 3. Flash the controller firmware in `./firmware/PSSTypeIISimpleHPF_L476RG/Release/PSSTypeIISimpleHPF_L476RG.elf` on the NUCLEO-L476RG.
 2. Flash the plant firmware in `./firmware/Grid4CHIL_H723ZG/Release/Grid4CHIL_H723ZG.elf` on the NUCLEO-H723ZG.
 4. Reset both boards via the reset button.
-5. Conduct measurements in Diligent WaveForms using the capture projects in `./measurements/*`. Remember that sustained fault injection via the _B1_ button will cause the plant to destabilize beyond recovery; if that happens, plant _and_ controller need to be reset via their _B2_ buttons. Likewise, with the PSS controller disengaged the plant cannot compensate injected faults (the _B1_ button disengages/enagages the controller). See the paper for details.
+5. Conduct measurements in Digilent WaveForms using the capture projects in `./measurements/*`. Remember that sustained fault injection via the _B1_ button will cause the plant to destabilize beyond recovery; if that happens, plant _and_ controller need to be reset via their _B2_ buttons. Likewise, with the PSS controller disengaged the plant cannot compensate injected faults (the _B1_ button disengages/enagages the controller). See the paper for details.
 6. Analyze captured results using the MATLAB scripts in `./postprocessing/*`.
 
 # Original authors and how to cite

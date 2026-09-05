@@ -40,7 +40,7 @@ The following diagram sketches the general model based software engineering (MBS
 flowchart LR
   A["Modelica models (OpenIPSL_CHIL library):<br/>Design plant + PSS controller."] --> B["MiL experiments:<br/>Validate from continuous towards sampled setups."]
   B --> C["eFMU:<br/>Generate MISRA C:2023 and SEI CERT C Coding Standard compliant C17 production code."]
-  C --> D["SiL experiments:<br/>Validate 32 and 64-Bit floating-point precision production code vs. MiL experiments"]
+  C --> D["SiL experiments:<br/>Validate 32 and 64-Bit floating-point precision production code vs. MiL experiments."]
   D --> E["STM32 firmware:<br/>Configure boards in STM32CubeMX and system-integrate eFMU production codes in STM32CubeIDE."]
   E --> F["CHiL experiments (NUCLEO-H723ZG = plant; NUCLEO-L476RG = controller):<br/>Validate control-logic and real-time capabilities."]
 ```

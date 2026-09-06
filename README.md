@@ -69,7 +69,7 @@ flowchart LR
 
 ## Software
 
-- **[Dymola](https://www.dymola.com) 2026x Refresh 1** with **Dymola Source Code Generation License**: Required for eFMI code generation (GALEC code of Algorithm Code container and derived C11 code of Production Code container). For requirement details, please consult the documentation of `DymolaEmbedded.UsersGuide.Requirements` of the `DymolaEmbedded` library shipped with Dymola.
+- **[Dymola](https://www.dymola.com) 2026x Refresh 1** with **Dymola Source Code Generation License**: Required for eFMI code generation (GALEC code of Algorithm Code container and derived C17 code of Production Code container). For requirement details, please consult the documentation of `DymolaEmbedded.UsersGuide.Requirements` of the `DymolaEmbedded` library shipped with Dymola.
 - **[Java](https://www.java.com/en/) 21**: Required by Dymola's eFMI tooling. For the paper we used the portable (i.e., zip, not MSI installer) [Eclipse Temurin JDK 21.0.11+10](https://adoptium.net/temurin/releases/) unpacked in its default installation directory (`C:\Program Files\Java\jdk-21.0.11+10` in Windows).
 - **[STM32CubeMX](https://www.st.com/en/development-tools/stm32cubemx.html) 6.17.0** and **[STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) 2.1.0**: Required for pin and timer configuration, generation of STM32 hardware abstraction layer (HAL) integration code, firmware development and final flashing on SMT32 boards.
 - **[Digilent WaveForms](https://digilent.com/shop/waveforms/) 3.25.1** (if the Analog Discovery 3 oscilloscope is used, cf. hardware below): Required to visualize and store measurements of the CHiL experiments.

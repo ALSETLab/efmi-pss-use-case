@@ -34,7 +34,7 @@ The design of PSS and plant models is organized in a new Modelica library, **`Op
 
 ```mermaid
 flowchart TD
-  A["`**Modelica models (`OpenIPSL_CHIL` library):** Design plant and PSS controller.`"] --> B["`**MiL experiments:** Validate from continuous towards sampled system simulation.`"]
+  A["`**Modelica models (_OpenIPSL_CHIL_ library):** Design plant and PSS controller.`"] --> B["`**MiL experiments:** Validate from continuous towards sampled system simulation.`"]
   B -- redesign (functional quality, sampling artefacts, etc) --> A
   B --> C["`**eFMU:** Generate MISRA C:2023 and SEI CERT C Coding Standard compliant C17 production code.`"]
   C --> D["`**SiL experiments:** Validate 32 and 64-Bit floating-point precision production code vs. MiL experiments.`"]

@@ -28,21 +28,20 @@ This repository is the open-source companion to the paper *"Real-time Simulation
 
 Modern grids increasingly suffer from poorly damped oscillations (e.g., the [2025 Iberian grid incident](https://www.entsoe.eu/publications/blackout/28-april-2025-iberian-blackout/)), which demand controllers that can be re-tuned and re-deployed throughout their lifecycle. Today, the path from a control design to a hardware test is slow and error-prone: offline tools like [PSS/E](https://www.siemens.com/en-us/products/pss-software/gridscale-x-pss-e/) or [PSCAD](https://www.pscad.com/) cannot run in real time, forcing manual re-implementation and breaking traceability between design and deployment.
 
-This project demonstrates an automated alternative built on the [Modelica](https://modelica.org/) language and the [eFMI](https://www.efmi-standard.org/) (FMI for embedded systems) standards. Using the eFMI tooling of [Dymola](https://www.dymola.com), both the **controller** (the PSS) and the **plant** (a synchronous generator with its excitation control system, interconnected to a grid) are synthesized into [MISRA C:2023](https://misra.org.uk/) and [SEI CERT C Coding Standard](https://cmu-sei.github.io/secure-coding-standards/sei-cert-c-coding-standard/) compliant, safety-critical and hard-real time suited, embedded code, deployable onto low-cost [STM32](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) boards. The result is validated through a full suite of **Model-in-the-Loop (MiL)**, **Software-in-the-Loop (SiL)**, and **Controller-Hardware-in-the-Loop (CHiL)** experiments, providing an open, traceable, and inexpensive alternative to proprietary real-time platforms.
+This project demonstrates an automated alternative built on the [Modelica](https://modelica.org/) language and the [eFMI](https://www.efmi-standard.org/) (FMI for embedded systems) standards. Using the eFMI tooling of [Dymola](https://www.dymola.com), both the **controller** (a power system stabilizer (PSS)) and the **plant** (a synchronous generator with its excitation control system, interconnected to a grid) are synthesized into [MISRA C:2023](https://misra.org.uk/) and [SEI CERT C Coding Standard](https://cmu-sei.github.io/secure-coding-standards/sei-cert-c-coding-standard/) compliant, safety-critical and hard-real time suited, embedded code, deployable onto low-cost [STM32](https://www.st.com/en/microcontrollers-microprocessors/stm32-32-bit-arm-cortex-mcus.html) boards. The result is validated through a full suite of **Model-in-the-Loop (MiL)**, **Software-in-the-Loop (SiL)**, and **Controller-Hardware-in-the-Loop (CHiL)** experiments, providing an open, traceable, and inexpensive alternative to proprietary real-time platforms.
 
-The workflow is realized through a new Modelica library, **`OpenIPSL_CHIL`**, which extends the [Open-Instance Power System Library (OpenIPSL)](https://github.com/OpenIPSL/OpenIPSL) for embedded real-time applications.
-
-# Tooling and workflow
-
-The following diagram sketches the general model based software engineering (MBSE) workflow:
+The design of PSS and plant models is organized in a new Modelica library, **`OpenIPSL_CHIL`**, which extends the well-established [Open-Instance Power System Library (OpenIPSL)](https://github.com/OpenIPSL/OpenIPSL) to be suited for embedded real-time applications. Starting from the physics-equations based PSS and plant models of `OpenIPSL_CHIL`, eFMI and STM32Cube tooling enable a more or less automatic model based software engineering (MBSE) from Modelica models to microcontroller firmware, as shown in the following workflow diagram:
 
 ```mermaid
-flowchart LR
-  A["Modelica models (OpenIPSL_CHIL library):<br/>Design plant + PSS controller."] --> B["MiL experiments:<br/>Validate from continuous towards sampled setups."]
+flowchart TD
+  A["Modelica models (OpenIPSL_CHIL library):<br/>Design plant + PSS controller."] --> B["MiL experiments:<br/>Validate from continuous towards sampled system simulation."]
+  B -- redesign --> A
   B --> C["eFMU:<br/>Generate MISRA C:2023 and SEI CERT C Coding Standard compliant C17 production code."]
   C --> D["SiL experiments:<br/>Validate 32 and 64-Bit floating-point precision production code vs. MiL experiments."]
+  D -- redesign --> A
   D --> E["STM32 firmware:<br/>Configure boards in STM32CubeMX and system-integrate eFMU production codes in STM32CubeIDE."]
-  E --> F["CHiL experiments (NUCLEO-H723ZG = plant; NUCLEO-L476RG = controller):<br/>Validate control-logic and real-time capabilities."]
+  E --> F["CHiL experiments:<br/>Validate control-logic and real-time capabilities."]
+  F -- redesign --> A
 ```
 
 # Repository structure

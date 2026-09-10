@@ -135,7 +135,16 @@ The eFMU generation configurations live next to the models they target — for e
 
 ## 4. Conduct Mil and SiL experiments in Dymola
 
-TODO
+Designing PSS controllers for microcontroller deployment, and real-time capable power system plant models that can be used to CHiL test PSS designs, is a step-wise refinement process from continuous towards hybrid continuous-sampled simulations, from open-loop unit tests towards closed-loop whole system simulations. The `OpenIPSL_CHIL` library contains experiments covering the whole design process:
+
+ - Unit tests for different PSS designs (subpackages of `OpenIPSL_CHIL.Tests.PSS`).
+ - For each PSS design, a continuous, sampled, and eFMU SiL-stub based unit test (e.g., `PSSTypeIISimpleHPF`, `PSSTypeIISimpleHPF_Clocked`, and `PSSTypeIISimpleHPF_eFMU` experiments).
+ - Likwise, open-loop plant tests from continuous towards eFMU SiL-stub based (`OpenIPSL_CHIL.RTS.Tests.CHIL` package, `Grid4CHIL`, `Grid4CHIL_Clocked` and `Grid4CHIL_eFMU` experiments).
+ - Whole system tests, from continuous towards sampled CHiL setup (`OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL` package, `ReferenceSetup*` experiments), and actual system behavior tests with sampled controller and continuous plant (`RefSim_ClockedPSS_CT_Plant` experiment).
+ - SiL PSS tests derived from MiL tests (aligned with their respective eFMU generation configuration, e.g., `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF.SiLTest`).
+
+> [!NOTE]
+> It is important to be aware that refined experiments -- for example to introduce PSS sampling -- typically caused redesigns of components and/or design iterations -- for example unacceptable sampling artefacts can be compensated by decreasing sampling periods, requiring in turn parameter adjustments of input signal filters. Of course, each redesign requires another revalidation of previous experiments. Although the experiments of the `OpenIPSL_CHIL` library reflect the different development steps towards embedded application, the actual iterative development is not; the PSS and plant model designs are final, and the history justifying the contribution of accompanying MiL to SiL experiments for the design process is lost.
 
 ## 5. Generate STM32 HAL integration code in STM32CubeMX
 

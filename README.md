@@ -41,7 +41,7 @@ flowchart TD
   D -- redesign (tolerances, etc) --> A
   D --> E["`**STM32 firmware:** Configure boards in STM32CubeMX and system-integrate eFMU production codes in STM32CubeIDE.`"]
   E --> F["`**CHiL experiments:** Validate control-logic and real-time capabilities.`"]
-  F -- redesign (noise, overruns, program size, etc) --> A
+  F -- redesign (signal noise and scaling, overruns, program size, etc) --> A
 ```
 
 # Repository structure
@@ -87,18 +87,21 @@ Optional for production code analyses based on the strict configuration profiles
 - **Breadboard and patch wires**: To interconnect the analog I/O of the two boards.
 - **A data-recording instrument**: To capture the closed-loop signals during the CHiL experiments. We suggest the [Analog Discovery 3](https://digilent.com/shop/analog-discovery-3/) used in the paper, but any oscilloscope or data-acquisition device with comparable bandwidth and resolution works.
 
-# Getting started
+# Workflow
 
-The following step-wise workflow generates all involved artefacts for the paper's controller and plant setup from scratch, accompanied by respective MiL, SiL, and CHiL experiments.
+The following step-wise workflow generates all artefacts of the paper's (cf. next section) controller and plant CHiL setup from scratch, accompanied by respective MiL, SiL, and CHiL experiments. It sketches the general tasks and artefacts involved when using the workbench to design new damping controllers and plant models for microcontroller deployment. For a better general introduction of the workflow and involved tooling, please consult our paper.
 
 > [!NOTE]
-> The repository already ships with generated eFMUs, eFMU SiL-stubs, SiL experiments, and eFMU production code based source code FMUs; all under `./models/working-directory`. Likwise, the respository already provides generated STM32 HAL integration code for the board configurations; all under `./firmware/`.
+> The repository already ships with generated eFMUs, eFMU SiL-stubs, SiL experiments, and eFMU production code based source code FMUs; all under `./models/working-directory`. Likwise, the respository already provides firmware projects with the eFMU production code system integrated into the STM32 HAL for the board configurations of the paper; all under `./firmware/`.
 
 > [!WARNING]
 > If artifacts are (re)generated, the existing ones are overwritten! If anything goes wrong, you can always discard your local changes; if you do not intend to commit new versions, just build on a local git branch.
 
 > [!NOTE]
-> Steps 1-5 can be skipped if one just wants to conduct the CHiL experiments with the models as they are. But compilation and flashing of binaries with SMT32CubeIDE as described from step 6 is still required since binaries are not shipped with the repository.
+> Steps 2-5 can be skipped if one just wants to conduct the CHiL experiments with the models as they are. But building and flashing of the firmware as described from step 6 is still required since binaries are not shipped with the repository.
+
+> [!NOTE]
+> Only setps 1-4 are relevant if only interested in offline design and MiL experiments.
 
 ## 1. Clone repository with submodules
 
@@ -128,37 +131,32 @@ git submodule update --init --recursive
 
 ## 3. Generate eFMUs in Dymola
 
-> [!NOTE]
-> This step can be skipped if only interested in offline design and MiL experiments.
-
 The eFMU generation configurations live next to the models they target — for example, the configuration for the controller is `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF` and for the plant it is `OpenIPSL_CHIL.RTS.CHIL.eFMUs.Grid4CHIL`. To build a configuration's eFMU from scratch, just call its `build()` function with `update=false` and `build_binary_stub=true`.
 
-## 4. Conduct Mil and SiL experiments in Dymola
+## 4. Mil and SiL experiments in Dymola
 
 Designing PSS controllers for microcontroller deployment, and real-time capable power system plant models that can be used to CHiL test PSS designs, is a step-wise refinement process from continuous towards hybrid continuous-sampled simulations, from open-loop unit tests towards closed-loop whole system simulations. The `OpenIPSL_CHIL` library contains experiments covering the whole design process:
 
  - Unit tests for different PSS designs (subpackages of `OpenIPSL_CHIL.Tests.PSS`).
  - For each PSS design, a continuous, sampled, and eFMU SiL-stub based unit test (e.g., `PSSTypeIISimpleHPF`, `PSSTypeIISimpleHPF_Clocked`, and `PSSTypeIISimpleHPF_eFMU` experiments).
  - Likwise, open-loop plant tests from continuous towards eFMU SiL-stub based (`OpenIPSL_CHIL.RTS.Tests.CHIL` package, `Grid4CHIL`, `Grid4CHIL_Clocked` and `Grid4CHIL_eFMU` experiments).
- - Whole system tests, from continuous towards sampled CHiL setup (`OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL` package, `ReferenceSetup*` experiments), and actual system behavior tests with sampled controller and continuous plant (`RefSim_ClockedPSS_CT_Plant` experiment).
+ - Whole system tests, from continuous towards sampled CHiL setup (`OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL` package, `ReferenceSetup*` experiments), and actual cyber-physical system behavior simulation with sampled controller and continuous plant (`RefSim_ClockedPSS_CT_Plant` experiment).
  - SiL PSS tests derived from MiL tests (aligned with their respective eFMU generation configuration, e.g., `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF.SiLTest`).
 
 > [!NOTE]
-> It is important to be aware that refined experiments -- for example to introduce PSS sampling -- typically caused redesigns of components and/or design iterations -- for example unacceptable sampling artefacts can be compensated by decreasing sampling periods, requiring in turn parameter adjustments of input signal filters. Of course, each redesign requires another revalidation of previous experiments. Although the experiments of the `OpenIPSL_CHIL` library reflect the different development steps towards embedded application, the actual iterative development is not; the PSS and plant model designs are final, and the history justifying the contribution of accompanying MiL to SiL experiments for the design process is lost.
+> It is important to be aware that refined experiments -- for example to introduce PSS sampling -- typically caused redesigns of components and/or design iterations -- for example unacceptable sampling artefacts can be compensated by decreasing sampling periods, requiring in turn parameter adjustments of input signal filters. Of course, each redesign requires another revalidation of previous experiments. Although the experiments of the `OpenIPSL_CHIL` library reflect the different development steps towards embedded application, the actual iterative development is not; the PSS and plant model designs of `OpenIPSL_CHIL` are final, and the history of intermediate designs -- and therefore the contribution of accompanying MiL to SiL experiments for the design process, justifying their need -- is lost.
 
-## 5. Generate STM32 HAL integration code in STM32CubeMX
+## 5. Firmware development in STM32CubeMX and STM32CubeIDE
 
-TODO
+Actual firmware, running the eFMU production code generated for a certain `OpenIPSL_CHIL` model on a certain STM32 board, is developed in subdirectories of `./firmware/`. Each subdirectory is named after the `OpenIPSL_CHIL` model its firmware is based on and the development board it targets; and suffixed `_FP64` if the 64-Bit floating-point precision production code is used instead of the default 32-Bit. For example, `./firmware/Grid4CHIL_H723ZG_FP64/` denotes the 64-Bit floating-point precision production code of the `OpenIPSL_CHIL.RTS.CHIL.eFMUs.Grid4CHIL` eFMU generated for the `OpenIPSL_CHIL.RTS.CHIL.Grid4CHIL` plant model targeting a NUCLEO-H723ZG.
 
-## 6. Load embedded code projects in STM32CubeIDE
+Each `./firmware/` subdirectory is a STM32CubeIDE project for developing the respective firmware; the project itself has been initially created by the STM32CubeMX configuration at its root (`*.ioc` files named like the targetted microcontroller). STM32CubeMX generated the initial STM32 hardware abstraction layer (HAL) integration code configuring the clock tree, pins, timers, etc. The eFMU production code simply is symbolically linked as source and include directories (e.g., `../../models/working-directory/Grid4CHIL/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c` for the `Grid4CHIL_H723ZG_FP64` firmware project); its integration within the STM32CubeMX-generated control-loop of the `main()` execution routin is handwritten as described in the paper.
 
-TODO
-
-## 7. Compile and flash binary code in STM32CubeIDE
+## 6. Load, build, and deploy firmware projects in STM32CubeIDE
 
 TODO
 
-## 8. Conduct CHiL experiments in WaveForms
+## 7. Conduct CHiL experiments in WaveForms
 
 The signal path of the CHiL experimental setup of the paper is (_C_ is the controller board, _P_ the plant board):
 

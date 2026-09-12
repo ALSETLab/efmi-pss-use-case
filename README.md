@@ -89,7 +89,7 @@ Optional for production code analyses based on the strict configuration profiles
 
 # Workflow
 
-The following step-wise workflow generates all artefacts of the paper's (cf. next section) controller and plant CHiL setup from scratch, accompanied by respective MiL, SiL, and CHiL experiments. It sketches the general tasks and artefacts involved when using the workbench to design new damping controllers and plant models for microcontroller deployment. For a better general introduction of the workflow and involved tooling, please consult our paper.
+The following step-wise workflow generates all artifacts of the paper's (cf. next section) controller and plant CHiL setup from scratch, accompanied by respective MiL, SiL, and CHiL experiments. It sketches the general tasks and artifacts involved when using the workbench to design new damping controllers and plant models for microcontroller deployment. For a better general introduction of the workflow and involved tooling, please consult our paper.
 
 > [!NOTE]
 > The repository already ships with generated eFMUs, eFMU SiL-stubs, SiL experiments, and eFMU production code based source code FMUs; all under `./models/working-directory`. Likwise, the respository already provides firmware projects with the eFMU production code system integrated into the STM32 HAL for the board configurations of the paper; all under `./firmware/`.
@@ -101,7 +101,7 @@ The following step-wise workflow generates all artefacts of the paper's (cf. nex
 > Steps 2-5 can be skipped if one just wants to conduct the CHiL experiments with the models as they are. But building and flashing of the firmware as described from step 6 is still required since binaries are not shipped with the repository.
 
 > [!NOTE]
-> Only setps 1-4 are relevant if only interested in offline design and MiL experiments.
+> If only interested in offline design and MiL experiments, only Steps 1-4 are relevant.
 
 ## 1. Clone repository with submodules
 
@@ -131,7 +131,7 @@ git submodule update --init --recursive
 
 ## 3. Generate eFMUs in Dymola
 
-The eFMU generation configurations live next to the models they target — for example, the configuration for the controller is `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF` and for the plant it is `OpenIPSL_CHIL.RTS.CHIL.eFMUs.Grid4CHIL`. To build a configuration's eFMU from scratch, just call its `build()` function with `update=false` and `build_binary_stub=true`.
+The eFMU generation configurations live next to the models they target — for example, the configuration for the controller is `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF` and for the plant it is `OpenIPSL_CHIL.RTS.CHIL.eFMUs.Grid4CHIL`. To build a configuration's eFMU from scratch, just call its `build()` function with `update=false` and `build_binary_stub=true`. To investigate a generated eFMU the `browse_code()` function can be used.
 
 ## 4. Mil and SiL experiments in Dymola
 
@@ -141,10 +141,10 @@ Designing PSS controllers for microcontroller deployment, and real-time capable 
  - For each PSS design, a continuous, sampled, and eFMU SiL-stub based unit test (e.g., `PSSTypeIISimpleHPF`, `PSSTypeIISimpleHPF_Clocked`, and `PSSTypeIISimpleHPF_eFMU` experiments).
  - Likwise, open-loop plant tests from continuous towards eFMU SiL-stub based (`OpenIPSL_CHIL.RTS.Tests.CHIL` package, `Grid4CHIL`, `Grid4CHIL_Clocked` and `Grid4CHIL_eFMU` experiments).
  - Whole system tests, from continuous towards sampled CHiL setup (`OpenIPSL_CHIL.Examples.CHIL_Configuration.Grid4CHIL` package, `ReferenceSetup*` experiments), and actual cyber-physical system behavior simulation with sampled controller and continuous plant (`RefSim_ClockedPSS_CT_Plant` experiment).
- - SiL PSS tests derived from MiL tests (aligned with their respective eFMU generation configuration, e.g., `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF.SiLTest`).
+ - SiL tests derived from MiL tests (aligned with their respective eFMU generation configuration, e.g., `OpenIPSL_CHIL.Components.PSS.eFMUs.PSSTypeIISimpleHPF.SiLTest`).
 
 > [!NOTE]
-> It is important to be aware that refined experiments -- for example to introduce PSS sampling -- typically caused redesigns of components and/or design iterations -- for example unacceptable sampling artefacts can be compensated by decreasing sampling periods, requiring in turn parameter adjustments of input signal filters. Of course, each redesign requires another revalidation of previous experiments. Although the experiments of the `OpenIPSL_CHIL` library reflect the different development steps towards embedded application, the actual iterative development is not; the PSS and plant model designs of `OpenIPSL_CHIL` are final, and the history of intermediate designs -- and therefore the contribution of accompanying MiL to SiL experiments for the design process, justifying their need -- is lost.
+> It is important to be aware that refined experiments -- for example to introduce PSS sampling -- typically caused redesigns of components and/or design iterations -- for example unacceptable sampling artifacts can be compensated by decreasing sampling periods, requiring in turn parameter adjustments of input signal filters. Of course, each redesign requires another revalidation of previous experiments. Although the experiments of the `OpenIPSL_CHIL` library reflect the different development steps towards embedded application, the actual iterative development is not; the PSS and plant model designs of `OpenIPSL_CHIL` are final, and the history of intermediate designs -- and therefore the contribution of accompanying MiL to SiL experiments for the design process, justifying their need -- is lost.
 
 ## 5. Firmware development in STM32CubeMX and STM32CubeIDE
 
@@ -152,9 +152,19 @@ Actual firmware, running the eFMU production code generated for a certain `OpenI
 
 Each `./firmware/` subdirectory is a STM32CubeIDE project for developing the respective firmware; the project itself has been initially created by the STM32CubeMX configuration at its root (`*.ioc` files named like the targetted microcontroller). STM32CubeMX generated the initial STM32 hardware abstraction layer (HAL) integration code configuring the clock tree, pins, timers, etc. The eFMU production code simply is symbolically linked as source and include directories (e.g., `../../models/working-directory/Grid4CHIL/eFMU/PCode_SPE_fba3e0dfa6c8985b41bcbe3594ee941ce98b740c` for the `Grid4CHIL_H723ZG_FP64` firmware project); its integration within the STM32CubeMX-generated control-loop of the `main()` execution routin is handwritten as described in the paper.
 
-## 6. Load, build, and deploy firmware projects in STM32CubeIDE
+## 6. Import, build, and deploy firmware projects in STM32CubeIDE
 
-TODO
+To import a firmware project of the `./firmware` directory (cf. Step 5) in a STM32CubeIDE workspace, use _File_ menu -> _STM32 Project Create/Import_ -> _Import STM32 Project_ -> _STM32CubeMX1/STM32CubeIDE Project_ -> select the respective `./firmware` subdirectory via _Directory..._ -> check the _Folder_ checkbox (make sure _Detect and configure project natures_ is checked).
+
+> [!WARNING]
+> The STM32CubeIDE workspace is _not_ part of the repository -- only projects are. Any directory not within the repository can be used as workspace (never push your workspace directory by accident).
+
+> [!TIP]
+> When developing a new firmware -- i.e., not just importing any of the existing STM32CubeIDE projects -- the generated eFMU production code still has to be symbolically linked and system-integrated in the control-loop of the `main()` execution routin (cf. Step 5). Likewise, build options have to be configurated. Any of the existing projects can be used as template to this end; the general approach always is more or less the same. 
+
+To build the firmware, use _Project_ menu -> _Build All_ (make sure the _Release_ build is active: _Project_ menu -> _Build Configurations_ -> _Set Active_).
+
+To flash the firmware, use _Run_ menu -> _Run As_ -> _STM32 C/C++ Application_ -> select the _Release_ build elf in _Qualifiers_ -> _Ok_ -> _Debugger_ tab -> check _ST-LINK S/N_ and use _Scan_ to find all connected boards -> pick the right board based on its serial number (typically printed on a sticker on the board).
 
 ## 7. Conduct CHiL experiments in WaveForms
 

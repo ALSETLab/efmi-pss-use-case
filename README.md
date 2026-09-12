@@ -173,8 +173,8 @@ The signal path of the CHiL experimental setup of the paper is (_C_ is the contr
 ![CHiL experimental setup and signal path: the NUCLEO-L476RG controller (PSS) and NUCLEO-H723ZG plant interconnected with a Digilent Analog Discovery 3 capturing the signals.](./documentation/images/chil-setup.svg)
 
 1. Wire the boards and Analog Discovery 3 as shown in the picture above (signal path).
-3. Flash the controller firmware in `./firmware/PSSTypeIISimpleHPF_L476RG/Release/PSSTypeIISimpleHPF_L476RG.elf` on the NUCLEO-L476RG.
-2. Flash the plant firmware in `./firmware/Grid4CHIL_H723ZG/Release/Grid4CHIL_H723ZG.elf` on the NUCLEO-H723ZG.
+3. Flash the controller firmware in `./firmware/PSSTypeIISimpleHPF_L476RG/Release/PSSTypeIISimpleHPF_L476RG.elf` on the NUCLEO-L476RG (cf. Setp 6).
+2. Flash the plant firmware in `./firmware/Grid4CHIL_H723ZG/Release/Grid4CHIL_H723ZG.elf` on the NUCLEO-H723ZG (cf. Setp 6).
 4. Reset both boards via the reset button.
 5. Conduct measurements in Digilent WaveForms using the capture projects in `./measurements/*`. Remember that sustained fault injection via the _B1_ button will cause the plant to destabilize beyond recovery; if that happens, plant _and_ controller need to be reset via their _B2_ buttons. Likewise, with the PSS controller disengaged the plant cannot compensate injected faults (the _B1_ button disengages/enagages the controller). See the paper for details.
 6. Analyze captured results using the MATLAB scripts in `./postprocessing/*`.

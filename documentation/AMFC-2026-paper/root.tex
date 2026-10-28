@@ -1,0 +1,110 @@
+\documentclass{modelica}
+
+\addbibresource{paper.bib}
+
+\hypersetup{%
+  pdftitle  = {Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI},
+  pdfauthor = {Luigi Vanfretti, Christoff Bürger, Joseph Pizzimenti, Kyle Wilt, Hao Chang},
+  pdfsubject = {American Modelica and FMI Conference 2026},
+  pdfkeywords = {power systems, power grid, power system stabilizer, real-time simulation, CHiL, embedded control, Modelica, eFMI, Dymola, STM32, ARM Cortex-M},
+  colorlinks,
+  linkcolor=black,
+  urlcolor=black,
+  citecolor=black,
+  pdfpagelayout = SinglePage,
+  pdfcreator = pdflatex,
+  pdfproducer = pdflatex}
+
+% User packages
+\usepackage[inkscapelatex=false]{svg}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{mygreen}{HTML}{008c48}
+\definecolor{myblue}{HTML}{1c6cc8}
+\definecolor{mygray}{HTML}{999999}
+
+\usepackage{listings}
+\input{./listings-modelica.cfg}
+\lstset{%
+    language=modelica,
+    basicstyle=\fontsize{7.5pt}{9pt}\ttfamily,
+    commentstyle=\color{mygreen}\itshape,
+    keywordstyle=[1]\color{myblue}\bfseries,
+    keywordstyle=[2]\color{myblue}\bfseries,
+    keywordstyle=[3]\color{myblue}\bfseries,
+    xleftmargin=2.5ex,
+    numbersep=2.5pt}
+
+\usepackage{siunitx}
+\sisetup{per-mode = symbol}
+
+% Begin the document
+\begin{document}
+\thispagestyle{empty}
+
+\title{Real-time Simulation and CHiL Testing of Power System Stabilizers on Microcontrollers with Modelica and eFMI}
+\author[1]{Luigi Vanfretti}
+\author[2]{Christoff Bürger}
+\author[1]{Joseph Pizzimenti}
+\author[1]{Kyle Wilt}
+\author[1]{Hao Chang}
+\affil[1]{Electrical, Computer and Systems Engineering Department, Rensselaer Polytechnic Institute, USA, {\small\texttt{\{vanfrl,pizzij,wiltk2,changh7\}@rpi.edu}}}
+\affil[2]{Dassault Systèmes AB, Lund, Sweden, {\small\texttt{christoff.buerger@3ds.com}}}
+
+\maketitle\thispagestyle{empty} %% <-- you need this for the first page
+
+% User definitions
+\newcommand{\myitemsep}{\itemsep-0.1em}
+\newcommand{\regtm}{\textsuperscript{\textregistered}}
+\newcommand{\controller}{\textcolor{mygreen}{\textbf{\underline{controller}}}}
+\newcommand{\plant}{\textcolor{myblue}{\textbf{\underline{plant}}}}
+\newcommand{\generatorunit}{\textcolor{mygray}{\textbf{\underline{generator unit}}}}
+\newcommand{\squishlist}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+     \setlength{\parsep}{3pt}
+     \setlength{\topsep}{3pt}
+     \setlength{\partopsep}{0pt}
+     \setlength{\leftmargin}{1.5em}
+     \setlength{\labelwidth}{1em}
+     \setlength{\labelsep}{0.5em} } }
+\newcommand{\squishlisttwo}{
+ \begin{list}{$\bullet$}
+  { \setlength{\itemsep}{0pt}
+    \setlength{\parsep}{0pt}
+    \setlength{	opsep}{0pt}
+    \setlength{\partopsep}{0pt}
+    \setlength{\leftmargin}{2em}
+    \setlength{\labelwidth}{1.5em}
+    \setlength{\labelsep}{0.5em} } }
+\newcommand{\squishend}{
+  \end{list}  }
+
+% Actual paper contents
+\begin{abstract}
+Modern power grids face significant stability challenges, as shown by recent incidents such as the 2025 oscillations of the Iberian grid. These issues highlight the need for robust Model-Based Systems Engineering (MBSE) to enable rapid control redesign and deployment. Yet, the move to Controller Hardware-in-the-Loop (CHiL) testing is hindered by inefficient, manual re-implementation workflows, complex tooling and technology stacks with high software and hardware costs, and challenges to incorporate real-time suited plant models for controller testing. This lack of efficiency disrupts the traceability between design and implementation.
+
+This paper pioneers an automated workflow using the Modelica language and the eFMI (Functional Mock-up Interface for embedded systems) standards to bridge this gap. We introduce the \texttt{OpenIPSL\_CHIL} library, which provides extensions to the Open-Instance Power System Library (OpenIPSL) specifically for embedded real-time applications. Using Dymola's eFMI tooling, both the power system stabilizer (PSS) (a damping controller) and the generator interconnected to a power grid (the plant) are systematically synthesized into production-ready code and deployed onto low-cost ARM-based microcontrollers of the STM32 ecosystem.
+
+The methodology is validated by a full suite of Model-in-the-Loop (MiL), Software-in-the-Loop (SiL), and CHiL tests, ensuring that embedded behavior aligns with physics-based offline simulations, with the non-functional quality of generated production code ensured in the process by MISRA C:2023 and SEI CERT C Coding Standard compliance and real-time capability checks.
+
+The developed framework offers an open-source, traceable, and cost-effective alternative to expensive proprietary real-time platforms and significantly reduces capital expenditures for grid control research.
+\end{abstract}
+
+\noindent\emph{Keywords: power systems, power grid, power system stabilizer, real-time simulation, CHiL, embedded control, Modelica, eFMI, Dymola, STM32, ARM Cortex-M}
+
+\input{sections/01-introduction}
+\input{sections/02-efmi-plus-ds-toolchain}
+\input{sections/03-efmi-ps-use-case}
+\input{sections/04-embedded-code-generation}
+\input{sections/05-stm32-integration}
+\input{sections/06-RT-sim-and-CHIL}
+\input{sections/07-conclusions-et-al}
+\input{sections/08-related-work}
+\printbibliography
+%\newpage
+%\section*{Annex}
+
+\end{document}

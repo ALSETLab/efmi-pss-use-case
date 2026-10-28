@@ -1,0 +1,19 @@
+\section*{Acknowledgment}
+
+The authors would like to thank:
+
+\squishlist
+    \item Fabio Ballari and the CATIA\regtm{} Champions program at Dassault Systèmes\regtm{} for providing complimentary access to the \textbf{3D}EXPERIENCE\regtm{} platform\footnote{\tiny{\url{https://www.3ds.com/3dexperience/}}} and its Systems Software Production Engineer (SOP-OC) capabilities, which enabled the early development of this work.
+    \item Dr. Christopher R. Laughman at Mitsubishi Electric\regtm{} Research Laboratories for an unrestricted gift grant to Rensselaer Polytechnic Institute\regtm{} that funded the embedded hardware behind this project.
+    \item Daniel Marjamäki and Magnus Janagård of Cppcheck Solutions AB\footref{fnt:cppcheck-premium} for providing a free license of Cppcheck Premium.
+\squishend
+
+\section*{Appendix: Related work}
+
+Previous research has transitioned advanced controllers to real-time platforms, such as National Instruments hardware-based wide-area controllers in \cite{Vanfretti2018_Audur}, \cite{epri} and \cite{Schoenwald2017}. Moreover, recent industrial trials by Red Eléctrica and RTE on HVDC interconnectors \cite{Renedo2023} demonstrate that aligning simulation models with actual hardware behavior is now paramount. 
+
+Industrial platforms like GE's PhasorController \cite{Golshani2021} utilize deterministic PLC engines for real-time grid control; however, these solutions typically rely on manual imperative programming rather than the automated code synthesis central to a formal MBSE workflow, which severs the traceability between the physical model and the target implementation. The limitations of manual coding are particularly acute in enabling modern adaptive control strategies; for example, recent Terna research proposes online PSS tuning based on estimation \cite{Lauria2024_SEGAN}, while our previous work demonstrates the need for a continuous controller redesign \cite{Bombois2024, Vanfretti2024_IFAC}.
+
+This lack of traceability is similarly evident in the field of power system simulation, where the exchange of models within industry remains limited. The IEEE/CIGRE DLLs Guideline (ICDMS) \cite{CIGRE958} attempts to address model sharing by distributing vendor algorithms as precompiled DLLs; nevertheless, these remain 'black boxes' containing likely hand-written code, continuing to sever the connection to the underlying physics. As such DLLs are not suitable for real-time simulation, CHiL testing remains limited. This is even more challenging when trying to migrate large-scale models, such as the Continental Europe model, to real-time targets, which remains problematic \cite{Ramirez2024}. However, recent work has championed Modelica and FMI~\cite{FMIv2:0:2} to solve this, enabling models from the Open-Instance Power Systems Library (OpenIPSL) to be executed directly on dSPACE hardware \cite{deCastro2023_RealTime}.
+
+In this context, the eFMI Standard \cite{eFMI_Standard, Lenord2021} enables a continuum from offline simulation into the domain of hard real-time and safety-critical embedded software. Unlike opaque DLLs, eFMI guarantees traceability via GALEC, ensuring that production code is systematically generated from a source physics model. Although proven in automotive applications \cite{Ultsch2021, Kamp2025, Armugham2021}, its application in power system control is first explored in this paper.
